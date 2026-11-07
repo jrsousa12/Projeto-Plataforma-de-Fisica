@@ -721,3 +721,10 @@ details.sum .eq{max-width:100%;flex-wrap:wrap}
 :root[data-quiz="mec"][data-pal="indigo"][data-theme="dark"]{--bg:#1c0f0f;--surface:#2a1616;--line:#552424;--acc:#f87171;--acc2:#ef4444;--hero:#7f1d1d;--ink:#fff1f1;--muted:#e0b4b4}
 @media (prefers-color-scheme: dark){:root[data-quiz="mec"][data-pal="indigo"]:not([data-theme="light"]){--bg:#1c0f0f;--surface:#2a1616;--line:#552424;--acc:#f87171;--acc2:#ef4444;--hero:#7f1d1d;--ink:#fff1f1;--muted:#e0b4b4}}
 [data-a="mu"]{--dot:#3b82f6}[data-a="uv"]{--dot:#06b6d4}[data-a="ql"]{--dot:#22c55e}[data-a="lo"]{--dot:#84cc16}[data-a="mc"]{--dot:#a855f7}[data-a="lw"]{--dot:#ef4444}[data-a="at"]{--dot:#f97316}[data-a="tb"]{--dot:#eab308}[data-a="en"]{--dot:#f59e0b}[data-a="qm"]{--dot:#ec4899}[data-a="gv"]{--dot:#6366f1}
+
+#landing [data-q=edin]{--c:#0891b2}
+:root[data-quiz="edin"] .hero h1::before{content:"🔌 "}
+#landing [data-q=edin]::before{content:"🔌";background:#cffafe}
+:root[data-quiz="edin"][data-pal="indigo"]{--bg:#ecfeff;--line:#a5f3fc;--acc:#0891b2;--acc2:#0e7490;--hero:#0e7490;--ink:#082f3a;--muted:#3f6672}
+:root[data-quiz="edin"][data-pal="indigo"][data-theme="dark"]{--bg:#08191d;--surface:#0f2a31;--line:#1f4d58;--acc:#22d3ee;--acc2:#06b6d4;--hero:#155e75;--ink:#ecfeff;--muted:#a5d3dc}
+@media (prefers-color-scheme: dark){:root[data-quiz="edin"][data-pal="indigo"]:not([data-theme="light"]){--bg:#08191d;--surface:#0f2a31;--line:#1f4d58;--acc:#22d3ee;--acc2:#06b6d4;--hero:#155e75;--ink:#ecfeff;--muted:#a5d3dc}}

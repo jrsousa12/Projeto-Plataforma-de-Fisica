@@ -1,7 +1,7 @@
 # Uso: python3 captura_real.py ID [ID...]  (qualquer área: q=Eletro, f=Fluidos, t=Termo; mistura permitida)
 from playwright.sync_api import sync_playwright
 import sys
-AREA={'q':'eletro','f':'fluidos','t':'termo','o':'onda','p':'optica','m':'mec'}
+AREA={'q':'eletro','f':'fluidos','t':'termo','o':'onda','p':'optica','m':'mec','d':'edin'}
 with sync_playwright() as p:
     b=p.chromium.launch(executable_path='/usr/bin/google-chrome',args=['--no-sandbox'])
     for qid in sys.argv[1:]:

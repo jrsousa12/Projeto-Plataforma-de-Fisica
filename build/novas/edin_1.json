@@ -1,0 +1,1732 @@
+{
+ "quiz": "edin",
+ "questoes": [
+  {
+   "t": "cr",
+   "q": "O que é corrente elétrica em um fio metálico?",
+   "o": [
+    "O movimento ordenado de cargas elétricas (elétrons livres).",
+    "O movimento desordenado dos átomos do metal.",
+    "A carga elétrica armazenada no fio.",
+    "A força que o fio faz sobre os elétrons."
+   ],
+   "a": 0,
+   "h": "Pense em cargas que se movem em uma direção preferencial.",
+   "e": "Corrente elétrica é o fluxo ordenado de portadores de carga. Em um fio metálico, são os elétrons livres que se movem.",
+   "x": {
+    "1": "Os átomos do metal ficam presos na rede; quem se move são os elétrons livres.",
+    "2": "Carga armazenada é carga elétrica, não corrente.",
+    "3": "Corrente não é força: é o fluxo de cargas."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/eletrodinamica/",
+    "titulo": "Eletrodinâmica (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "corrente elétrica, resistência e lei de Ohm",
+    "verificar": [
+     "Eletrodinâmica",
+     "corrente elétrica"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "cr",
+   "q": "Pela seção de um fio passam 120 C de carga em 40 s. Qual é a intensidade da corrente elétrica?",
+   "o": [
+    "3 A",
+    "4800 A",
+    "0,33 A",
+    "80 A"
+   ],
+   "a": 0,
+   "h": "Use i = Q / Δt.",
+   "e": "i = Q / Δt = 120 / 40 = 3 A.",
+   "x": {
+    "1": "Multiplicou Q por Δt.",
+    "2": "Dividiu Δt por Q (40 / 120 ≈ 0,33).",
+    "3": "Subtraiu os valores (120 − 40)."
+   },
+   "c": 1,
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/eletrodinamica/",
+    "titulo": "Eletrodinâmica (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "corrente elétrica, resistência e lei de Ohm",
+    "verificar": [
+     "Eletrodinâmica",
+     "corrente elétrica"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "Q": "120 C",
+     "t": "40 s"
+    },
+    "expr": "Q/t",
+    "expr2": "Q*(1/t)",
+    "unidade": "A",
+    "simbolo": "i",
+    "formula": "i = Q / Δt",
+    "rotulos": {
+     "Q": "Q",
+     "t": "Δt"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "cr",
+   "q": "Um fio é percorrido por uma corrente de 2 A durante 5 minutos. Qual é a carga que atravessa a seção do fio nesse intervalo?",
+   "o": [
+    "600 C",
+    "10 C",
+    "2,5 C",
+    "150 C"
+   ],
+   "a": 0,
+   "h": "Converta os minutos em segundos antes de calcular.",
+   "e": "Δt = 5 min = 300 s. Q = i · Δt = 2 · 300 = 600 C.",
+   "x": {
+    "1": "Esqueceu de converter 5 min em segundos (2 · 5 = 10).",
+    "2": "Dividiu o tempo em minutos pela corrente (5 / 2).",
+    "3": "Dividiu o tempo em segundos pela corrente (300 / 2)."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/eletrodinamica/",
+    "titulo": "Eletrodinâmica (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "corrente elétrica, resistência e lei de Ohm",
+    "verificar": [
+     "Eletrodinâmica",
+     "corrente elétrica"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "i": "2 A",
+     "t": "5 min"
+    },
+    "expr": "i*t",
+    "expr2": "t*i",
+    "unidade": "C",
+    "simbolo": "Q",
+    "formula": "Q = i · Δt",
+    "rotulos": {
+     "i": "i",
+     "t": "Δt"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "cr",
+   "q": "Qual é o sentido convencional da corrente elétrica em um circuito?",
+   "o": [
+    "Do polo positivo para o negativo da fonte, fora dela.",
+    "Do polo negativo para o positivo, fora da fonte.",
+    "O mesmo sentido do movimento dos elétrons.",
+    "Varia a cada segundo, mesmo em corrente contínua."
+   ],
+   "a": 0,
+   "h": "Os elétrons se movem no sentido contrário ao convencional.",
+   "e": "Por convenção, a corrente vai do polo positivo ao negativo no circuito externo. Os elétrons, de carga negativa, se movem no sentido oposto.",
+   "x": {
+    "1": "Esse é o sentido real dos elétrons, oposto ao convencional.",
+    "2": "O sentido convencional é oposto ao dos elétrons.",
+    "3": "Na corrente contínua, o sentido não muda."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/eletrodinamica/",
+    "titulo": "Eletrodinâmica (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "corrente elétrica, resistência e lei de Ohm",
+    "verificar": [
+     "Eletrodinâmica",
+     "corrente elétrica"
+    ]
+   },
+   "an": "edin_corrente"
+  },
+  {
+   "t": "cr",
+   "q": "No Sistema Internacional, a unidade de intensidade de corrente elétrica é o:",
+   "o": [
+    "ampère (A), igual a 1 C/s.",
+    "volt (V), igual a 1 J/C.",
+    "ohm (Ω), igual a 1 V/A.",
+    "watt (W), igual a 1 J/s."
+   ],
+   "a": 0,
+   "h": "Corrente é carga dividida por tempo.",
+   "e": "A intensidade de corrente é carga por tempo. A unidade, o ampère, equivale a 1 coulomb por segundo.",
+   "x": {
+    "1": "O volt é a unidade de tensão (ddp).",
+    "2": "O ohm é a unidade de resistência.",
+    "3": "O watt é a unidade de potência."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/eletrodinamica/",
+    "titulo": "Eletrodinâmica (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "corrente elétrica, resistência e lei de Ohm",
+    "verificar": [
+     "Eletrodinâmica",
+     "corrente elétrica"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "cr",
+   "q": "Uma corrente de 250 mA circula por um aparelho durante 2 h. Qual é a carga que atravessa o aparelho?",
+   "o": [
+    "1800 C",
+    "500 C",
+    "0,5 C",
+    "30 C"
+   ],
+   "a": 0,
+   "h": "Converta mA em A e horas em segundos.",
+   "e": "i = 0,25 A e Δt = 2 h = 7200 s. Q = i · Δt = 0,25 · 7200 = 1800 C.",
+   "x": {
+    "1": "Multiplicou 250 por 2 sem converter as unidades.",
+    "2": "Converteu mA em A, mas não converteu as horas (0,25 · 2).",
+    "3": "Usou 2 h como 120 s (0,25 · 120)."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/eletrodinamica/",
+    "titulo": "Eletrodinâmica (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "corrente elétrica, resistência e lei de Ohm",
+    "verificar": [
+     "Eletrodinâmica",
+     "corrente elétrica"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "i": "250 mA",
+     "t": "2 h"
+    },
+    "expr": "i*t",
+    "expr2": "t*i",
+    "unidade": "C",
+    "simbolo": "Q",
+    "formula": "Q = i · Δt",
+    "rotulos": {
+     "i": "i",
+     "t": "Δt"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "cr",
+   "q": "Verdadeiro ou falso: a corrente elétrica em um fio metálico é um movimento ordenado de elétrons livres.",
+   "o": [
+    "Verdadeiro",
+    "Falso"
+   ],
+   "a": 0,
+   "h": "Pense em quem se move dentro do metal.",
+   "e": "Verdadeiro. Os elétrons livres do metal, empurrados por uma diferença de potencial, passam a se mover em uma direção preferencial.",
+   "v": 1,
+   "x": {
+    "1": "Os elétrons livres se movem de forma ordenada quando há ddp."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/eletrodinamica/",
+    "titulo": "Eletrodinâmica (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "corrente elétrica, resistência e lei de Ohm",
+    "verificar": [
+     "Eletrodinâmica",
+     "corrente elétrica"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Afirmação conceitual, sem processo para animar."
+   }
+  },
+  {
+   "t": "ro",
+   "q": "Um resistor de 20 Ω é percorrido por uma corrente de 3 A. Qual é a tensão entre seus terminais?",
+   "o": [
+    "60 V",
+    "6,7 V",
+    "23 V",
+    "17 V"
+   ],
+   "a": 0,
+   "h": "Use U = R · i.",
+   "e": "U = R · i = 20 · 3 = 60 V.",
+   "x": {
+    "1": "Dividiu R por i (20 / 3 ≈ 6,7).",
+    "2": "Somou R e i (20 + 3).",
+    "3": "Subtraiu i de R (20 − 3)."
+   },
+   "c": 1,
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/leis-de-ohm/",
+    "titulo": "Leis de Ohm (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "primeira e segunda leis de Ohm",
+    "verificar": [
+     "Primeira Lei de Ohm",
+     "Segunda Lei de Ohm"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "R": "20 Ω",
+     "i": "3 A"
+    },
+    "expr": "R*i",
+    "expr2": "i*R",
+    "unidade": "V",
+    "simbolo": "U",
+    "formula": "U = R · i",
+    "rotulos": {
+     "R": "R",
+     "i": "i"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "ro",
+   "q": "Um resistor de 4 Ω é ligado a uma fonte de 12 V. Qual é a corrente que o atravessa?",
+   "o": [
+    "3 A",
+    "48 A",
+    "0,33 A",
+    "8 A"
+   ],
+   "a": 0,
+   "h": "Use i = U / R.",
+   "e": "i = U / R = 12 / 4 = 3 A.",
+   "x": {
+    "1": "Multiplicou U por R.",
+    "2": "Dividiu R por U (4 / 12 ≈ 0,33).",
+    "3": "Subtraiu R de U (12 − 4)."
+   },
+   "c": 1,
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/leis-de-ohm/",
+    "titulo": "Leis de Ohm (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "primeira e segunda leis de Ohm",
+    "verificar": [
+     "Primeira Lei de Ohm",
+     "Segunda Lei de Ohm"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "U": "12 V",
+     "R": "4 Ω"
+    },
+    "expr": "U/R",
+    "expr2": "U*(1/R)",
+    "unidade": "A",
+    "simbolo": "i",
+    "formula": "i = U / R",
+    "rotulos": {
+     "U": "U",
+     "R": "R"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "ro",
+   "q": "Um chuveiro ligado em 220 V é atravessado por uma corrente de 5 A. Qual é a resistência elétrica do seu resistor?",
+   "o": [
+    "44 Ω",
+    "1100 Ω",
+    "0,023 Ω",
+    "225 Ω"
+   ],
+   "a": 0,
+   "h": "Use R = U / i.",
+   "e": "R = U / i = 220 / 5 = 44 Ω.",
+   "x": {
+    "1": "Multiplicou U por i.",
+    "2": "Inverteu a divisão (5 / 220 ≈ 0,023).",
+    "3": "Somou U e i (220 + 5)."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/leis-de-ohm/",
+    "titulo": "Leis de Ohm (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "primeira e segunda leis de Ohm",
+    "verificar": [
+     "Primeira Lei de Ohm",
+     "Segunda Lei de Ohm"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "U": "220 V",
+     "i": "5 A"
+    },
+    "expr": "U/i",
+    "expr2": "U*(1/i)",
+    "unidade": "Ω",
+    "simbolo": "R",
+    "formula": "R = U / i",
+    "rotulos": {
+     "U": "U",
+     "i": "i"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "ro",
+   "q": "Um resistor de 2 kΩ é percorrido por uma corrente de 5 mA. Qual é a tensão entre seus terminais?",
+   "o": [
+    "10 V",
+    "10000 V",
+    "0,01 V",
+    "0,4 V"
+   ],
+   "a": 0,
+   "h": "Converta kΩ em Ω e mA em A.",
+   "e": "R = 2000 Ω e i = 0,005 A. U = R · i = 2000 · 0,005 = 10 V.",
+   "x": {
+    "1": "Multiplicou 2000 por 5 sem converter mA em A.",
+    "2": "Converteu mal as unidades (2 · 0,005).",
+    "3": "Dividiu 2 por 5 em vez de multiplicar."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/leis-de-ohm/",
+    "titulo": "Leis de Ohm (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "primeira e segunda leis de Ohm",
+    "verificar": [
+     "Primeira Lei de Ohm",
+     "Segunda Lei de Ohm"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "R": "2 kΩ",
+     "i": "5 mA"
+    },
+    "expr": "R*i",
+    "expr2": "i*R",
+    "unidade": "V",
+    "simbolo": "U",
+    "formula": "U = R · i",
+    "rotulos": {
+     "R": "R",
+     "i": "i"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "ro",
+   "q": "Em um resistor ôhmico, o gráfico da tensão em função da corrente (U × i) é:",
+   "o": [
+    "uma reta que passa pela origem.",
+    "uma parábola.",
+    "uma reta horizontal.",
+    "uma curva que cai (hipérbole)."
+   ],
+   "a": 0,
+   "h": "Proporcionalidade direta gera uma reta pela origem.",
+   "e": "Em um resistor ôhmico, U e i são diretamente proporcionais. Por isso o gráfico é uma reta pela origem, com inclinação igual a R.",
+   "x": {
+    "1": "Uma parábola indicaria U proporcional a i².",
+    "2": "Uma reta horizontal indicaria U constante, sem depender de i.",
+    "3": "A hipérbole representa grandezas inversamente proporcionais."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/leis-de-ohm/",
+    "titulo": "Leis de Ohm (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "primeira e segunda leis de Ohm",
+    "verificar": [
+     "Primeira Lei de Ohm",
+     "Segunda Lei de Ohm"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "ro",
+   "q": "Um resistor ôhmico recebe uma tensão três vezes maior. A corrente que o atravessa:",
+   "o": [
+    "fica três vezes maior.",
+    "fica três vezes menor.",
+    "não muda.",
+    "fica nove vezes maior."
+   ],
+   "a": 0,
+   "h": "Com R constante, i é proporcional a U.",
+   "e": "Como R é constante, i = U / R. Triplicando U, a corrente também triplica.",
+   "x": {
+    "1": "Corrente e tensão são diretamente proporcionais, não inversamente.",
+    "2": "A corrente depende da tensão aplicada.",
+    "3": "A relação é linear, não quadrática."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/leis-de-ohm/",
+    "titulo": "Leis de Ohm (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "primeira e segunda leis de Ohm",
+    "verificar": [
+     "Primeira Lei de Ohm",
+     "Segunda Lei de Ohm"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "ro",
+   "q": "O ohm (Ω), unidade de resistência elétrica, equivale a:",
+   "o": [
+    "1 V/A",
+    "1 A/V",
+    "1 J/s",
+    "1 C/s"
+   ],
+   "a": 0,
+   "h": "Use R = U / i.",
+   "e": "A resistência é R = U / i. Logo, 1 Ω = 1 V/A.",
+   "x": {
+    "1": "1 A/V seria a condutância, a grandeza inversa.",
+    "2": "1 J/s é o watt (potência).",
+    "3": "1 C/s é o ampère (corrente)."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/resistencia-eletrica/",
+    "titulo": "Resistência Elétrica (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "resistência, resistividade e leis de Ohm",
+    "verificar": [
+     "Resistência",
+     "Segunda Lei de Ohm"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "ro",
+   "q": "Verdadeiro ou falso: em um resistor ôhmico, se a tensão dobra, a corrente também dobra.",
+   "o": [
+    "Verdadeiro",
+    "Falso"
+   ],
+   "a": 0,
+   "h": "Lembre da proporcionalidade da 1ª lei de Ohm.",
+   "e": "Verdadeiro. Em um resistor ôhmico, a corrente é diretamente proporcional à tensão (i = U / R, com R constante).",
+   "v": 1,
+   "x": {
+    "1": "A corrente é proporcional à tensão aplicada."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/leis-de-ohm/",
+    "titulo": "Leis de Ohm (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "primeira e segunda leis de Ohm",
+    "verificar": [
+     "Primeira Lei de Ohm",
+     "Segunda Lei de Ohm"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Afirmação conceitual, sem processo para animar."
+   }
+  },
+  {
+   "t": "sg",
+   "q": "Um fio de cobre tem resistividade de 1,7 × 10⁻⁸ Ω·m, comprimento de 100 m e seção de 1 mm² (1 × 10⁻⁶ m²). Qual é a sua resistência?",
+   "o": [
+    "1,7 Ω",
+    "0,17 Ω",
+    "17 Ω",
+    "1,7 × 10⁻¹² Ω"
+   ],
+   "a": 0,
+   "h": "Use R = ρ · L / A e a área em m².",
+   "e": "R = ρ · L / A = 1,7 × 10⁻⁸ · 100 / 1 × 10⁻⁶ = 1,7 Ω.",
+   "x": {
+    "1": "Errou uma potência de dez.",
+    "2": "Errou uma potência de dez, no outro sentido.",
+    "3": "Multiplicou por A em vez de dividir."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/resistencia-eletrica/",
+    "titulo": "Resistência Elétrica (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "resistência, resistividade e leis de Ohm",
+    "verificar": [
+     "Resistência",
+     "Segunda Lei de Ohm"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "rho": "1.7e-8 Ω·m",
+     "L": "100 m",
+     "A": "1e-6 m²"
+    },
+    "expr": "rho*L/A",
+    "expr2": "rho*(L/A)",
+    "unidade": "Ω",
+    "simbolo": "R",
+    "formula": "R = ρ · L / A",
+    "rotulos": {
+     "rho": "ρ",
+     "L": "L",
+     "A": "A"
+    },
+    "tol": 0.01
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "sg",
+   "q": "Um fio tem seu comprimento dobrado, mantidos o material e a área da seção. A resistência do fio:",
+   "o": [
+    "dobra.",
+    "cai à metade.",
+    "quadruplica.",
+    "não muda."
+   ],
+   "a": 0,
+   "h": "R é proporcional a L.",
+   "e": "Pela 2ª lei de Ohm, R = ρ·L/A. A resistência é proporcional ao comprimento: dobrando L, R dobra.",
+   "x": {
+    "1": "Maior comprimento, maior resistência.",
+    "2": "Maior comprimento aumenta a resistência, não diminui.",
+    "3": "A relação é linear, não quadrática."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/leis-de-ohm/",
+    "titulo": "Leis de Ohm (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "primeira e segunda leis de Ohm",
+    "verificar": [
+     "Primeira Lei de Ohm",
+     "Segunda Lei de Ohm"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "sg",
+   "q": "Um fio tem a área da seção dobrada, mantidos o material e o comprimento. A resistência do fio:",
+   "o": [
+    "cai à metade.",
+    "dobra.",
+    "não muda.",
+    "fica quatro vezes menor."
+   ],
+   "a": 0,
+   "h": "R é inversamente proporcional a A.",
+   "e": "Pela 2ª lei de Ohm, R = ρ·L/A. A resistência é inversamente proporcional à área: dobrando A, R cai à metade.",
+   "x": {
+    "1": "Fios mais grossos têm resistência menor.",
+    "2": "A área influencia a resistência.",
+    "3": "A relação é inversa simples, não quadrática."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/leis-de-ohm/",
+    "titulo": "Leis de Ohm (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "primeira e segunda leis de Ohm",
+    "verificar": [
+     "Primeira Lei de Ohm",
+     "Segunda Lei de Ohm"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "sg",
+   "q": "A resistividade de um material depende:",
+   "o": [
+    "do tipo de material e da temperatura.",
+    "do comprimento do fio.",
+    "da área da seção do fio.",
+    "da corrente que passa pelo fio."
+   ],
+   "a": 0,
+   "h": "Pense no que é característico do material.",
+   "e": "A resistividade é uma propriedade do material (e varia com a temperatura). Comprimento e área entram na resistência do fio, não na resistividade.",
+   "x": {
+    "1": "O comprimento afeta a resistência do fio, não a resistividade.",
+    "2": "A área afeta a resistência do fio, não a resistividade.",
+    "3": "A resistividade não depende da corrente."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/resistencia-eletrica/",
+    "titulo": "Resistência Elétrica (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "resistência, resistividade e leis de Ohm",
+    "verificar": [
+     "Resistência",
+     "Segunda Lei de Ohm"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "sg",
+   "q": "Um fio de nicromo tem resistividade de 1 × 10⁻⁶ Ω·m e seção de 2 × 10⁻⁶ m². Que comprimento ele deve ter para que sua resistência seja de 10 Ω?",
+   "o": [
+    "20 m",
+    "5 m",
+    "2 × 10⁻¹³ m",
+    "5 × 10¹² m"
+   ],
+   "a": 0,
+   "h": "Isole L em R = ρ · L / A.",
+   "e": "R = ρ · L / A, então L = R · A / ρ = (10 · 2 × 10⁻⁶) / (1 × 10⁻⁶) = 20 m.",
+   "x": {
+    "1": "Trocou A e ρ de lugar (R · ρ / A = 5).",
+    "2": "Multiplicou A por ρ e dividiu por R.",
+    "3": "Dividiu R por A·ρ."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/resistencia-eletrica/",
+    "titulo": "Resistência Elétrica (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "resistência, resistividade e leis de Ohm",
+    "verificar": [
+     "Resistência",
+     "Segunda Lei de Ohm"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "R": "10 Ω",
+     "A": "2e-6 m²",
+     "rho": "1e-6 Ω·m"
+    },
+    "expr": "R*A/rho",
+    "expr2": "R*(A/rho)",
+    "unidade": "m",
+    "simbolo": "L",
+    "formula": "L = R · A / ρ",
+    "rotulos": {
+     "R": "R",
+     "A": "A",
+     "rho": "ρ"
+    },
+    "tol": 0.01
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "sg",
+   "q": "Verdadeiro ou falso: o cobre é muito usado em fios de ligação porque tem baixa resistividade.",
+   "o": [
+    "Verdadeiro",
+    "Falso"
+   ],
+   "a": 0,
+   "h": "Pense na perda de energia no fio.",
+   "e": "Verdadeiro. Com baixa resistividade, o cobre dissipa pouca energia no fio e conduz bem a corrente.",
+   "v": 1,
+   "x": {
+    "1": "A baixa resistividade do cobre reduz a perda de energia."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/resistencia-eletrica/",
+    "titulo": "Resistência Elétrica (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "resistência, resistividade e leis de Ohm",
+    "verificar": [
+     "Resistência",
+     "Segunda Lei de Ohm"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Afirmação conceitual, sem processo para animar."
+   }
+  },
+  {
+   "t": "sg",
+   "q": "Verdadeiro ou falso: cortando um fio ao meio, a resistividade do material cai à metade.",
+   "o": [
+    "Verdadeiro",
+    "Falso"
+   ],
+   "a": 1,
+   "h": "Resistividade e resistência não são a mesma coisa.",
+   "e": "Falso. A resistividade é propriedade do material e não muda com o corte. O que cai à metade é a resistência do pedaço, pois L diminui.",
+   "v": 1,
+   "x": {
+    "0": "O corte muda L e, portanto, R, mas não muda ρ."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/resistencia-eletrica/",
+    "titulo": "Resistência Elétrica (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "resistência, resistividade e leis de Ohm",
+    "verificar": [
+     "Resistência",
+     "Segunda Lei de Ohm"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Afirmação conceitual, sem processo para animar."
+   }
+  },
+  {
+   "t": "sg",
+   "q": "Por que as resistências de chuveiros e aquecedores costumam ser feitas de níquel-cromo (nicromo)?",
+   "o": [
+    "Porque esse material tem resistividade alta e aquece bem.",
+    "Porque esse material tem resistividade nula.",
+    "Porque o nicromo não conduz corrente.",
+    "Porque o fio fica sem resistência."
+   ],
+   "a": 0,
+   "h": "Pense em um material que dissipa muita energia.",
+   "e": "O nicromo tem resistividade alta. Com isso, um fio de tamanho razoável tem resistência suficiente para dissipar muito calor.",
+   "x": {
+    "1": "Resistividade nula é característica de supercondutores.",
+    "2": "O nicromo conduz corrente, mas com muita resistência.",
+    "3": "Se não tivesse resistência, não aqueceria."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/resistencia-eletrica/",
+    "titulo": "Resistência Elétrica (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "resistência, resistividade e leis de Ohm",
+    "verificar": [
+     "Resistência",
+     "Segunda Lei de Ohm"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "rs",
+   "q": "Três resistores de 10 Ω, 20 Ω e 30 Ω são ligados em série. Qual é a resistência equivalente?",
+   "o": [
+    "60 Ω",
+    "5,5 Ω",
+    "6000 Ω",
+    "20 Ω"
+   ],
+   "a": 0,
+   "h": "Em série, some as resistências.",
+   "e": "Em série, as resistências se somam: Req = 10 + 20 + 30 = 60 Ω.",
+   "x": {
+    "1": "Usou a fórmula da associação em paralelo.",
+    "2": "Multiplicou as resistências.",
+    "3": "Fez a média das resistências."
+   },
+   "c": 1,
+   "n": 1,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/associacao-de-resistores.htm",
+    "titulo": "Associação de resistores (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "associação em série, em paralelo e mista",
+    "verificar": [
+     "Associação de resistores",
+     "em paralelo"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "R1": "10 Ω",
+     "R2": "20 Ω",
+     "R3": "30 Ω"
+    },
+    "expr": "R1+R2+R3",
+    "expr2": "R3+R2+R1",
+    "unidade": "Ω",
+    "simbolo": "Req",
+    "formula": "Req = R1 + R2 + R3",
+    "rotulos": {
+     "R1": "R₁",
+     "R2": "R₂",
+     "R3": "R₃"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "rs",
+   "q": "Dois resistores de 2 Ω e 4 Ω são ligados em série a uma fonte de 12 V. Qual é a corrente no circuito?",
+   "o": [
+    "2 A",
+    "6 A",
+    "1,5 A",
+    "3 A"
+   ],
+   "a": 0,
+   "h": "Calcule primeiro a resistência equivalente.",
+   "e": "Req = 2 + 4 = 6 Ω. Então i = U / Req = 12 / 6 = 2 A.",
+   "x": {
+    "1": "Usou só R₁ (12 / 2).",
+    "2": "Multiplicou as resistências (12 / 8).",
+    "3": "Usou só R₂ (12 / 4)."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/associacao-de-resistores.htm",
+    "titulo": "Associação de resistores (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "associação em série, em paralelo e mista",
+    "verificar": [
+     "Associação de resistores",
+     "em paralelo"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "U": "12 V",
+     "R1": "2 Ω",
+     "R2": "4 Ω"
+    },
+    "expr": "U/(R1+R2)",
+    "expr2": "U*(1/(R2+R1))",
+    "unidade": "A",
+    "simbolo": "i",
+    "formula": "i = U / (R1 + R2)",
+    "rotulos": {
+     "U": "U",
+     "R1": "R₁",
+     "R2": "R₂"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "rs",
+   "q": "Dois resistores, de 2 Ω e 4 Ω, são ligados em série a uma fonte de 12 V. Qual é a tensão no resistor de 4 Ω?",
+   "o": [
+    "8 V",
+    "4 V",
+    "6 V",
+    "12 V"
+   ],
+   "a": 0,
+   "h": "Ache a corrente e aplique a lei de Ohm em R₂.",
+   "e": "i = 12 / (2 + 4) = 2 A. A tensão em R₂ é U₂ = R₂ · i = 4 · 2 = 8 V.",
+   "x": {
+    "1": "Esse é o valor da tensão em R₁ (2 · 2).",
+    "2": "Dividiu a tensão igualmente entre os resistores.",
+    "3": "Essa é a tensão total, que se divide entre os dois."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/associacao-de-resistores.htm",
+    "titulo": "Associação de resistores (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "associação em série, em paralelo e mista",
+    "verificar": [
+     "Associação de resistores",
+     "em paralelo"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "U": "12 V",
+     "R1": "2 Ω",
+     "R2": "4 Ω"
+    },
+    "expr": "U*R2/(R1+R2)",
+    "expr2": "R2*(U/(R1+R2))",
+    "unidade": "V",
+    "simbolo": "U₂",
+    "formula": "U₂ = R₂ · i",
+    "rotulos": {
+     "U": "U",
+     "R1": "R₁",
+     "R2": "R₂"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "rs",
+   "q": "Em uma associação de resistores em série, o que é igual para todos os resistores?",
+   "o": [
+    "A corrente elétrica.",
+    "A tensão elétrica.",
+    "A resistência.",
+    "A potência."
+   ],
+   "a": 0,
+   "h": "Há um só caminho para as cargas.",
+   "e": "Em série há um único caminho para a corrente, então todos os resistores são percorridos pela mesma corrente. A tensão total se divide entre eles.",
+   "x": {
+    "1": "A tensão se divide entre os resistores em série.",
+    "2": "Os resistores podem ter valores diferentes.",
+    "3": "A potência depende de R e de i; resistores diferentes dissipam potências diferentes."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/associacao-de-resistores.htm",
+    "titulo": "Associação de resistores (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "associação em série, em paralelo e mista",
+    "verificar": [
+     "Associação de resistores",
+     "em paralelo"
+    ]
+   },
+   "an": "edin_serie"
+  },
+  {
+   "t": "rs",
+   "q": "Em um circuito com lâmpadas ligadas em série, uma delas queima e o circuito se abre. O que acontece com as outras?",
+   "o": [
+    "Todas apagam.",
+    "Todas brilham mais.",
+    "Só a vizinha apaga.",
+    "Nada muda."
+   ],
+   "a": 0,
+   "h": "Um caminho só: se quebra, a corrente para.",
+   "e": "Em série, o circuito tem um único caminho. Se um ponto se abre, a corrente deixa de circular e todas as lâmpadas apagam.",
+   "x": {
+    "1": "Sem corrente, nenhuma lâmpada brilha.",
+    "2": "A corrente é interrompida em todo o circuito.",
+    "3": "Há mudança: a corrente cai a zero."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/associacao-de-resistores.htm",
+    "titulo": "Associação de resistores (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "associação em série, em paralelo e mista",
+    "verificar": [
+     "Associação de resistores",
+     "em paralelo"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "rs",
+   "q": "Verdadeiro ou falso: na associação em série, a tensão total é a soma das tensões em cada resistor.",
+   "o": [
+    "Verdadeiro",
+    "Falso"
+   ],
+   "a": 0,
+   "h": "Pense em como a tensão se divide.",
+   "e": "Verdadeiro. Em série, a tensão da fonte se divide entre os resistores, e a soma das tensões parciais é igual à total.",
+   "v": 1,
+   "x": {
+    "1": "A soma das tensões parciais é a tensão total da fonte."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/associacao-de-resistores.htm",
+    "titulo": "Associação de resistores (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "associação em série, em paralelo e mista",
+    "verificar": [
+     "Associação de resistores",
+     "em paralelo"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Afirmação conceitual, sem processo para animar."
+   }
+  },
+  {
+   "t": "rs",
+   "q": "A resistência equivalente de uma associação em série é:",
+   "o": [
+    "maior que a de qualquer resistor da associação.",
+    "menor que a de qualquer resistor.",
+    "igual à média das resistências.",
+    "igual à menor das resistências."
+   ],
+   "a": 0,
+   "h": "Em série, os valores se somam.",
+   "e": "Em série, Req é a soma das resistências. Por isso é sempre maior que cada uma delas.",
+   "x": {
+    "1": "Isso vale para o paralelo.",
+    "2": "A média não aparece em nenhuma associação simples.",
+    "3": "Em série, Req supera até a maior resistência."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/associacao-de-resistores.htm",
+    "titulo": "Associação de resistores (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "associação em série, em paralelo e mista",
+    "verificar": [
+     "Associação de resistores",
+     "em paralelo"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "rp",
+   "q": "Dois resistores, de 6 Ω e 3 Ω, são ligados em paralelo. Qual é a resistência equivalente?",
+   "o": [
+    "2 Ω",
+    "9 Ω",
+    "4,5 Ω",
+    "18 Ω"
+   ],
+   "a": 0,
+   "h": "Use produto sobre soma.",
+   "e": "Para dois resistores em paralelo: Req = R₁·R₂ / (R₁ + R₂) = 6 · 3 / (6 + 3) = 2 Ω.",
+   "x": {
+    "1": "Somou as resistências (isso vale para a série).",
+    "2": "Fez a média das resistências.",
+    "3": "Multiplicou as resistências."
+   },
+   "c": 1,
+   "n": 1,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/associacao-de-resistores.htm",
+    "titulo": "Associação de resistores (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "associação em série, em paralelo e mista",
+    "verificar": [
+     "Associação de resistores",
+     "em paralelo"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "R1": "6 Ω",
+     "R2": "3 Ω"
+    },
+    "expr": "R1*R2/(R1+R2)",
+    "expr2": "1/(1/R1+1/R2)",
+    "unidade": "Ω",
+    "simbolo": "Req",
+    "formula": "Req = R₁·R₂ / (R₁ + R₂)",
+    "rotulos": {
+     "R1": "R₁",
+     "R2": "R₂"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "rp",
+   "q": "Três resistores iguais, de 12 Ω cada, são ligados em paralelo. Qual é a resistência equivalente?",
+   "o": [
+    "4 Ω",
+    "36 Ω",
+    "12 Ω",
+    "0,25 Ω"
+   ],
+   "a": 0,
+   "h": "Resistores iguais: divida R pelo número deles.",
+   "e": "Para n resistores iguais em paralelo, Req = R / n = 12 / 3 = 4 Ω.",
+   "x": {
+    "1": "Somou as resistências (série).",
+    "2": "Esqueceu de dividir: o equivalente é menor que cada resistor.",
+    "3": "Usou n / R sem inverter (3 / 12)."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/associacao-de-resistores.htm",
+    "titulo": "Associação de resistores (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "associação em série, em paralelo e mista",
+    "verificar": [
+     "Associação de resistores",
+     "em paralelo"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "R": "12 Ω"
+    },
+    "expr": "1/(3/R)",
+    "expr2": "R/3",
+    "unidade": "Ω",
+    "simbolo": "Req",
+    "formula": "Req = R / n",
+    "rotulos": {
+     "R": "R"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "rp",
+   "q": "Dois resistores, de 8 Ω e 12 Ω, são ligados em paralelo a uma fonte de 24 V. Qual é a corrente total fornecida pela fonte?",
+   "o": [
+    "5 A",
+    "1,2 A",
+    "3 A",
+    "2 A"
+   ],
+   "a": 0,
+   "h": "Em paralelo, as correntes se somam.",
+   "e": "Em R₁: i₁ = 24 / 8 = 3 A. Em R₂: i₂ = 24 / 12 = 2 A. A corrente total é i = 3 + 2 = 5 A.",
+   "x": {
+    "1": "Usou a resistência da série (24 / 20).",
+    "2": "Usou só R₁ (24 / 8).",
+    "3": "Usou só R₂ (24 / 12)."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/associacao-de-resistores.htm",
+    "titulo": "Associação de resistores (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "associação em série, em paralelo e mista",
+    "verificar": [
+     "Associação de resistores",
+     "em paralelo"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "U": "24 V",
+     "R1": "8 Ω",
+     "R2": "12 Ω"
+    },
+    "expr": "U/R1+U/R2",
+    "expr2": "U*(R1+R2)/(R1*R2)",
+    "unidade": "A",
+    "simbolo": "i",
+    "formula": "i = U/R₁ + U/R₂",
+    "rotulos": {
+     "U": "U",
+     "R1": "R₁",
+     "R2": "R₂"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "rp",
+   "q": "Dois resistores, de 8 Ω e 12 Ω, são ligados em paralelo. Qual é a resistência equivalente?",
+   "o": [
+    "4,8 Ω",
+    "20 Ω",
+    "10 Ω",
+    "96 Ω"
+   ],
+   "a": 0,
+   "h": "Use produto sobre soma.",
+   "e": "Req = R₁·R₂ / (R₁ + R₂) = 8 · 12 / (8 + 12) = 4,8 Ω.",
+   "x": {
+    "1": "Somou as resistências (série).",
+    "2": "Fez a média das resistências.",
+    "3": "Multiplicou as resistências."
+   },
+   "c": 1,
+   "n": 1,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/associacao-de-resistores.htm",
+    "titulo": "Associação de resistores (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "associação em série, em paralelo e mista",
+    "verificar": [
+     "Associação de resistores",
+     "em paralelo"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "R1": "8 Ω",
+     "R2": "12 Ω"
+    },
+    "expr": "R1*R2/(R1+R2)",
+    "expr2": "1/(1/R1+1/R2)",
+    "unidade": "Ω",
+    "simbolo": "Req",
+    "formula": "Req = R₁·R₂ / (R₁ + R₂)",
+    "rotulos": {
+     "R1": "R₁",
+     "R2": "R₂"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "rp",
+   "q": "Em uma associação de resistores em paralelo, o que é igual para todos os resistores?",
+   "o": [
+    "A tensão elétrica (ddp).",
+    "A corrente elétrica.",
+    "A resistência.",
+    "A potência."
+   ],
+   "a": 0,
+   "h": "Os resistores estão ligados aos mesmos pontos.",
+   "e": "Em paralelo, todos os resistores estão ligados aos mesmos dois pontos, então recebem a mesma ddp. A corrente total se divide entre eles.",
+   "x": {
+    "1": "A corrente se divide entre os ramos.",
+    "2": "Os resistores podem ter valores diferentes.",
+    "3": "Com R diferentes e mesma U, a potência (U²/R) é diferente."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/associacao-de-resistores.htm",
+    "titulo": "Associação de resistores (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "associação em série, em paralelo e mista",
+    "verificar": [
+     "Associação de resistores",
+     "em paralelo"
+    ]
+   },
+   "an": "edin_paralelo"
+  },
+  {
+   "t": "rp",
+   "q": "Em uma casa, uma lâmpada ligada em paralelo queima. O que acontece com os outros aparelhos?",
+   "o": [
+    "Continuam funcionando normalmente.",
+    "Todos desligam.",
+    "Todos funcionam com menos corrente.",
+    "Todos passam a receber tensão maior."
+   ],
+   "a": 0,
+   "h": "Cada ramo é independente.",
+   "e": "Em paralelo, cada ramo tem seu próprio caminho. Se um ramo se abre, os outros continuam ligados à mesma tensão.",
+   "x": {
+    "1": "Isso aconteceria em série.",
+    "2": "Cada ramo mantém sua corrente, que só depende da tensão e da resistência do ramo.",
+    "3": "A tensão da rede não muda."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/associacao-de-resistores.htm",
+    "titulo": "Associação de resistores (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "associação em série, em paralelo e mista",
+    "verificar": [
+     "Associação de resistores",
+     "em paralelo"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "rp",
+   "q": "A resistência equivalente de uma associação em paralelo é:",
+   "o": [
+    "menor que a menor das resistências.",
+    "maior que a maior das resistências.",
+    "igual à soma das resistências.",
+    "igual à média das resistências."
+   ],
+   "a": 0,
+   "h": "Mais caminhos facilitam a passagem da corrente.",
+   "e": "Em paralelo, a corrente ganha mais caminhos. Por isso o equivalente é sempre menor que o menor resistor.",
+   "x": {
+    "1": "Isso vale para a série.",
+    "2": "Em paralelo, os valores não se somam diretamente.",
+    "3": "A média não é a resistência equivalente."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/associacao-de-resistores.htm",
+    "titulo": "Associação de resistores (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "associação em série, em paralelo e mista",
+    "verificar": [
+     "Associação de resistores",
+     "em paralelo"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "rp",
+   "q": "Verdadeiro ou falso: em uma casa, os aparelhos são ligados em paralelo e recebem a mesma tensão da tomada.",
+   "o": [
+    "Verdadeiro",
+    "Falso"
+   ],
+   "a": 0,
+   "h": "Pense na tensão da tomada.",
+   "e": "Verdadeiro. Ligados em paralelo, os aparelhos recebem a mesma tensão. Cada um puxa a corrente que precisa.",
+   "v": 1,
+   "x": {
+    "1": "Em paralelo, a tensão é a mesma para todos os aparelhos."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/associacao-de-resistores.htm",
+    "titulo": "Associação de resistores (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "associação em série, em paralelo e mista",
+    "verificar": [
+     "Associação de resistores",
+     "em paralelo"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Afirmação conceitual, sem processo para animar."
+   }
+  },
+  {
+   "t": "rp",
+   "q": "Dois resistores, um de 2 Ω e outro de 10 Ω, são ligados em paralelo a uma fonte. Em qual passa a maior corrente?",
+   "o": [
+    "No de 2 Ω.",
+    "No de 10 Ω.",
+    "Passa a mesma corrente nos dois.",
+    "Não passa corrente em nenhum."
+   ],
+   "a": 0,
+   "h": "Compare i = U / R com U igual.",
+   "e": "Com a mesma tensão, i = U / R. O resistor de menor resistência (2 Ω) é atravessado pela maior corrente.",
+   "x": {
+    "1": "Maior resistência, menor corrente.",
+    "2": "As correntes só são iguais se as resistências forem iguais.",
+    "3": "Há corrente em ambos, pois estão ligados à fonte."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/associacao-de-resistores.htm",
+    "titulo": "Associação de resistores (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "associação em série, em paralelo e mista",
+    "verificar": [
+     "Associação de resistores",
+     "em paralelo"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "rm",
+   "q": "Um resistor de 4 Ω está em série com dois resistores em paralelo, de 6 Ω e 3 Ω. Qual é a resistência equivalente do conjunto?",
+   "o": [
+    "6 Ω",
+    "13 Ω",
+    "1,3 Ω",
+    "10 Ω"
+   ],
+   "a": 0,
+   "h": "Resolva primeiro o paralelo.",
+   "e": "O paralelo vale 6 · 3 / (6 + 3) = 2 Ω. Em série com 4 Ω: Req = 4 + 2 = 6 Ω.",
+   "x": {
+    "1": "Somou todas as resistências, como se fosse tudo em série.",
+    "2": "Calculou como se todos estivessem em paralelo.",
+    "3": "Ignorou o resistor de 3 Ω."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/associacao-de-resistores.htm",
+    "titulo": "Associação de resistores (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "associação em série, em paralelo e mista",
+    "verificar": [
+     "Associação de resistores",
+     "em paralelo"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "R1": "4 Ω",
+     "R2": "6 Ω",
+     "R3": "3 Ω"
+    },
+    "expr": "R1+R2*R3/(R2+R3)",
+    "expr2": "R1+1/(1/R2+1/R3)",
+    "unidade": "Ω",
+    "simbolo": "Req",
+    "formula": "Req = R₁ + R₂·R₃ / (R₂ + R₃)",
+    "rotulos": {
+     "R1": "R₁",
+     "R2": "R₂",
+     "R3": "R₃"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "rm",
+   "q": "O conjunto formado por um resistor de 4 Ω em série com dois resistores em paralelo (6 Ω e 3 Ω) é ligado a uma fonte de 12 V. Qual é a corrente fornecida pela fonte?",
+   "o": [
+    "2 A",
+    "0,92 A",
+    "9 A",
+    "6 A"
+   ],
+   "a": 0,
+   "h": "Use a resistência equivalente do conjunto.",
+   "e": "Req = 4 + 2 = 6 Ω. A corrente total é i = U / Req = 12 / 6 = 2 A.",
+   "x": {
+    "1": "Somou as três resistências (12 / 13).",
+    "2": "Calculou como se todos estivessem em paralelo (12 / 1,33).",
+    "3": "Usou só a parte em paralelo (12 / 2)."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/associacao-de-resistores.htm",
+    "titulo": "Associação de resistores (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "associação em série, em paralelo e mista",
+    "verificar": [
+     "Associação de resistores",
+     "em paralelo"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "U": "12 V",
+     "R1": "4 Ω",
+     "R2": "6 Ω",
+     "R3": "3 Ω"
+    },
+    "expr": "U/(R1+R2*R3/(R2+R3))",
+    "expr2": "U/(R1+1/(1/R2+1/R3))",
+    "unidade": "A",
+    "simbolo": "i",
+    "formula": "i = U / Req",
+    "rotulos": {
+     "U": "U",
+     "R1": "R₁",
+     "R2": "R₂",
+     "R3": "R₃"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "rm",
+   "q": "No mesmo circuito (4 Ω em série com 6 Ω e 3 Ω em paralelo, fonte de 12 V), qual é a tensão sobre o conjunto de 6 Ω e 3 Ω?",
+   "o": [
+    "4 V",
+    "8 V",
+    "12 V",
+    "6 V"
+   ],
+   "a": 0,
+   "h": "A corrente total passa pela resistência equivalente do paralelo.",
+   "e": "i = 12 / 6 = 2 A. A tensão no paralelo (2 Ω) é U = 2 · 2 = 4 V.",
+   "x": {
+    "1": "Esse é o valor da tensão no resistor de 4 Ω (4 · 2).",
+    "2": "Essa é a tensão total da fonte.",
+    "3": "Dividiu a tensão da fonte igualmente."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/associacao-de-resistores.htm",
+    "titulo": "Associação de resistores (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "associação em série, em paralelo e mista",
+    "verificar": [
+     "Associação de resistores",
+     "em paralelo"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "U": "12 V",
+     "R1": "4 Ω",
+     "R2": "6 Ω",
+     "R3": "3 Ω"
+    },
+    "expr": "U*R2*R3/(R1*(R2+R3)+R2*R3)",
+    "expr2": "U*(R2*R3/(R2+R3))/(R1+R2*R3/(R2+R3))",
+    "unidade": "V",
+    "simbolo": "U",
+    "formula": "U = Rp · i",
+    "rotulos": {
+     "U": "U",
+     "R1": "R₁",
+     "R2": "R₂",
+     "R3": "R₃"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  }
+ ]
+}

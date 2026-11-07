@@ -1324,6 +1324,415 @@ var DATA=/*AUTO:BEGIN*/[
 "formula": "g = G·M / R²",
 "subst": "g = G · (6·10²⁴)/((6,4·10⁶) · (6,4·10⁶))",
 "resultado": "g = 9,776 m/s²"
+},
+{
+"key": "calc_d002",
+"alt": "Resolução animada: Pela seção de um fio passam 120 C de carga em 40 s. Qual é a intensidade da corrente elétrica?",
+"molde": "generico",
+"vars": [
+"Q = 120 C",
+"Δt = 40 s"
+],
+"formula": "i = Q / Δt",
+"subst": "i = (120)/(40)",
+"resultado": "i = 3 A"
+},
+{
+"key": "calc_d003",
+"alt": "Resolução animada: Um fio é percorrido por uma corrente de 2 A durante 5 minutos. Qual é a carga que atravessa a seção do fio nesse intervalo?",
+"molde": "generico",
+"vars": [
+"i = 2 A",
+"Δt = 5 min"
+],
+"formula": "Q = i · Δt",
+"subst": "Q = (2) · (5)",
+"resultado": "Q = 600 C"
+},
+{
+"key": "calc_d006",
+"alt": "Resolução animada: Uma corrente de 250 mA circula por um aparelho durante 2 h. Qual é a carga que atravessa o aparelho?",
+"molde": "generico",
+"vars": [
+"i = 250 mA",
+"Δt = 2 h"
+],
+"formula": "Q = i · Δt",
+"subst": "Q = (250) · (2)",
+"resultado": "Q = 1800 C"
+},
+{
+"key": "calc_d008",
+"alt": "Resolução animada: Um resistor de 20 Ω é percorrido por uma corrente de 3 A. Qual é a tensão entre seus terminais?",
+"molde": "generico",
+"vars": [
+"R = 20 Ω",
+"i = 3 A"
+],
+"formula": "U = R · i",
+"subst": "U = (20) · (3)",
+"resultado": "U = 60 V"
+},
+{
+"key": "calc_d009",
+"alt": "Resolução animada: Um resistor de 4 Ω é ligado a uma fonte de 12 V. Qual é a corrente que o atravessa?",
+"molde": "generico",
+"vars": [
+"U = 12 V",
+"R = 4 Ω"
+],
+"formula": "i = U / R",
+"subst": "i = (12)/(4)",
+"resultado": "i = 3 A"
+},
+{
+"key": "calc_d010",
+"alt": "Resolução animada: Um chuveiro ligado em 220 V é atravessado por uma corrente de 5 A. Qual é a resistência elétrica do seu resistor?",
+"molde": "generico",
+"vars": [
+"U = 220 V",
+"i = 5 A"
+],
+"formula": "R = U / i",
+"subst": "R = (220)/(5)",
+"resultado": "R = 44 Ω"
+},
+{
+"key": "calc_d011",
+"alt": "Resolução animada: Um resistor de 2 kΩ é percorrido por uma corrente de 5 mA. Qual é a tensão entre seus terminais?",
+"molde": "generico",
+"vars": [
+"R = 2 kΩ",
+"i = 5 mA"
+],
+"formula": "U = R · i",
+"subst": "U = (2) · (5)",
+"resultado": "U = 10 V"
+},
+{
+"key": "calc_d016",
+"alt": "Resolução animada: Um fio de cobre tem resistividade de 1,7 × 10⁻⁸ Ω·m, comprimento de 100 m e seção de 1 mm² (1 × 10⁻⁶ m²). Qual é a sua resistência?",
+"molde": "generico",
+"vars": [
+"ρ = 1,7·10⁻⁸ Ω·m",
+"L = 100 m",
+"A = 1·10⁻⁶ m²"
+],
+"formula": "R = ρ · L / A",
+"subst": "R = (1,7·10⁻⁸) · (100)/(1·10⁻⁶)",
+"resultado": "R = 1,7 Ω"
+},
+{
+"key": "calc_d020",
+"alt": "Resolução animada: Um fio de nicromo tem resistividade de 1 × 10⁻⁶ Ω·m e seção de 2 × 10⁻⁶ m². Que comprimento ele deve ter para que sua resistência seja de 10",
+"molde": "generico",
+"vars": [
+"R = 10 Ω",
+"A = 2·10⁻⁶ m²",
+"ρ = 1·10⁻⁶ Ω·m"
+],
+"formula": "L = R · A / ρ",
+"subst": "L = (10) · (2·10⁻⁶)/(1·10⁻⁶)",
+"resultado": "L = 20 m"
+},
+{
+"key": "calc_d024",
+"alt": "Resolução animada: Três resistores de 10 Ω, 20 Ω e 30 Ω são ligados em série. Qual é a resistência equivalente?",
+"molde": "generico",
+"vars": [
+"R₁ = 10 Ω",
+"R₂ = 20 Ω",
+"R₃ = 30 Ω"
+],
+"formula": "Req = R1 + R2 + R3",
+"subst": "Req = (10)+(20)+(30)",
+"resultado": "Req = 60 Ω"
+},
+{
+"key": "calc_d025",
+"alt": "Resolução animada: Dois resistores de 2 Ω e 4 Ω são ligados em série a uma fonte de 12 V. Qual é a corrente no circuito?",
+"molde": "generico",
+"vars": [
+"U = 12 V",
+"R₁ = 2 Ω",
+"R₂ = 4 Ω"
+],
+"formula": "i = U / (R1 + R2)",
+"subst": "i = (12)/((2)+(4))",
+"resultado": "i = 2 A"
+},
+{
+"key": "calc_d026",
+"alt": "Resolução animada: Dois resistores, de 2 Ω e 4 Ω, são ligados em série a uma fonte de 12 V. Qual é a tensão no resistor de 4 Ω?",
+"molde": "generico",
+"vars": [
+"U = 12 V",
+"R₁ = 2 Ω",
+"R₂ = 4 Ω"
+],
+"formula": "U₂ = R₂ · i",
+"subst": "U₂ = (12) · (4)/((2)+(4))",
+"resultado": "U₂ = 8 V"
+},
+{
+"key": "calc_d031",
+"alt": "Resolução animada: Dois resistores, de 6 Ω e 3 Ω, são ligados em paralelo. Qual é a resistência equivalente?",
+"molde": "generico",
+"vars": [
+"R₁ = 6 Ω",
+"R₂ = 3 Ω"
+],
+"formula": "Req = R₁·R₂ / (R₁ + R₂)",
+"subst": "Req = (6) · (3)/((6)+(3))",
+"resultado": "Req = 2 Ω"
+},
+{
+"key": "calc_d032",
+"alt": "Resolução animada: Três resistores iguais, de 12 Ω cada, são ligados em paralelo. Qual é a resistência equivalente?",
+"molde": "generico",
+"vars": [
+"R = 12 Ω"
+],
+"formula": "Req = R / n",
+"subst": "Req = 1/(3/(12))",
+"resultado": "Req = 4 Ω"
+},
+{
+"key": "calc_d033",
+"alt": "Resolução animada: Dois resistores, de 8 Ω e 12 Ω, são ligados em paralelo a uma fonte de 24 V. Qual é a corrente total fornecida pela fonte?",
+"molde": "generico",
+"vars": [
+"U = 24 V",
+"R₁ = 8 Ω",
+"R₂ = 12 Ω"
+],
+"formula": "i = U/R₁ + U/R₂",
+"subst": "i = (24)/(8)+(24)/(12)",
+"resultado": "i = 5 A"
+},
+{
+"key": "calc_d034",
+"alt": "Resolução animada: Dois resistores, de 8 Ω e 12 Ω, são ligados em paralelo. Qual é a resistência equivalente?",
+"molde": "generico",
+"vars": [
+"R₁ = 8 Ω",
+"R₂ = 12 Ω"
+],
+"formula": "Req = R₁·R₂ / (R₁ + R₂)",
+"subst": "Req = (8) · (12)/((8)+(12))",
+"resultado": "Req = 4,8 Ω"
+},
+{
+"key": "calc_d040",
+"alt": "Resolução animada: Um resistor de 4 Ω está em série com dois resistores em paralelo, de 6 Ω e 3 Ω. Qual é a resistência equivalente do conjunto?",
+"molde": "generico",
+"vars": [
+"R₁ = 4 Ω",
+"R₂ = 6 Ω",
+"R₃ = 3 Ω"
+],
+"formula": "Req = R₁ + R₂·R₃ / (R₂ + R₃)",
+"subst": "Req = (4)+(6) · (3)/((6)+(3))",
+"resultado": "Req = 6 Ω"
+},
+{
+"key": "calc_d041",
+"alt": "Resolução animada: O conjunto formado por um resistor de 4 Ω em série com dois resistores em paralelo (6 Ω e 3 Ω) é ligado a uma fonte de 12 V. Qual é a corren",
+"molde": "generico",
+"vars": [
+"U = 12 V",
+"R₁ = 4 Ω",
+"R₂ = 6 Ω",
+"R₃ = 3 Ω"
+],
+"formula": "i = U / Req",
+"subst": "i = (12)/((4)+(6) · (3)/((6)+(3)))",
+"resultado": "i = 2 A"
+},
+{
+"key": "calc_d042",
+"alt": "Resolução animada: No mesmo circuito (4 Ω em série com 6 Ω e 3 Ω em paralelo, fonte de 12 V), qual é a tensão sobre o conjunto de 6 Ω e 3 Ω?",
+"molde": "generico",
+"vars": [
+"U = 12 V",
+"R₁ = 4 Ω",
+"R₂ = 6 Ω",
+"R₃ = 3 Ω"
+],
+"formula": "U = Rp · i",
+"subst": "U = (12) · (6) · (3)/((4) · ((6)+(3))+(6) · (3))",
+"resultado": "U = 4 V"
+},
+{
+"key": "calc_d043",
+"alt": "Resolução animada: Um aparelho ligado em 220 V é atravessado por uma corrente de 5 A. Qual é a sua potência elétrica?",
+"molde": "generico",
+"vars": [
+"U = 220 V",
+"i = 5 A"
+],
+"formula": "P = U · i",
+"subst": "P = (220) · (5)",
+"resultado": "P = 1100 W"
+},
+{
+"key": "calc_d044",
+"alt": "Resolução animada: Um resistor de 24 Ω é ligado a uma tensão de 120 V. Qual é a potência que ele dissipa?",
+"molde": "generico",
+"vars": [
+"U = 120 V",
+"R = 24 Ω"
+],
+"formula": "P = U² / R",
+"subst": "P = (120) · (120)/(24)",
+"resultado": "P = 600 W"
+},
+{
+"key": "calc_d045",
+"alt": "Resolução animada: Um resistor de 10 Ω é percorrido por uma corrente de 3 A. Qual é a potência dissipada?",
+"molde": "generico",
+"vars": [
+"R = 10 Ω",
+"i = 3 A"
+],
+"formula": "P = R · i²",
+"subst": "P = (10) · (3) · (3)",
+"resultado": "P = 90 W"
+},
+{
+"key": "calc_d046",
+"alt": "Resolução animada: Um chuveiro de 5500 W é ligado em 220 V. Qual é a corrente que ele puxa da rede?",
+"molde": "generico",
+"vars": [
+"P = 5500 W",
+"U = 220 V"
+],
+"formula": "i = P / U",
+"subst": "i = (5500)/(220)",
+"resultado": "i = 25 A"
+},
+{
+"key": "calc_d047",
+"alt": "Resolução animada: Um chuveiro com valores nominais de 220 V e 4400 W tem um resistor de qual resistência?",
+"molde": "generico",
+"vars": [
+"U = 220 V",
+"P = 4400 W"
+],
+"formula": "R = U² / P",
+"subst": "R = (220) · (220)/(4400)",
+"resultado": "R = 11 Ω"
+},
+{
+"key": "calc_d052",
+"alt": "Resolução animada: Um chuveiro de 4000 W fica ligado por 15 minutos. Qual é a energia elétrica consumida, em kWh?",
+"molde": "generico",
+"vars": [
+"P = 4000 W",
+"Δt = 15 min"
+],
+"formula": "E = P · Δt",
+"subst": "E = (4000) · (15)",
+"resultado": "E = 1 kWh"
+},
+{
+"key": "calc_d053",
+"alt": "Resolução animada: Uma lâmpada de 60 W fica acesa 5 horas por dia durante 30 dias (150 horas no total). Qual é a energia consumida, em kWh?",
+"molde": "generico",
+"vars": [
+"P = 60 W",
+"Δt = 150 h"
+],
+"formula": "E = P · Δt",
+"subst": "E = (60) · (150)",
+"resultado": "E = 9 kWh"
+},
+{
+"key": "calc_d054",
+"alt": "Resolução animada: Uma lâmpada de 100 W fica ligada por 2 minutos. Qual é a energia elétrica transformada, em joules?",
+"molde": "generico",
+"vars": [
+"P = 100 W",
+"Δt = 2 min"
+],
+"formula": "E = P · Δt",
+"subst": "E = (100) · (2)",
+"resultado": "E = 1,2·10⁴ J"
+},
+{
+"key": "calc_d055",
+"alt": "Resolução animada: Um aparelho de 1500 W consumiu 3 kWh de energia. Por quanto tempo ele ficou ligado?",
+"molde": "generico",
+"vars": [
+"E = 3 kWh",
+"P = 1500 W"
+],
+"formula": "Δt = E / P",
+"subst": "t = (3)/(1500)",
+"resultado": "t = 2 h"
+},
+{
+"key": "calc_d060",
+"alt": "Resolução animada: Um resistor de 10 Ω é atravessado por uma corrente de 2 A durante 5 minutos. Qual é a energia dissipada na forma de calor?",
+"molde": "generico",
+"vars": [
+"R = 10 Ω",
+"i = 2 A",
+"Δt = 5 min"
+],
+"formula": "E = R · i² · Δt",
+"subst": "E = (10) · (2) · (2) · (5)",
+"resultado": "E = 1,2·10⁴ J"
+},
+{
+"key": "calc_d061",
+"alt": "Resolução animada: Um fio de resistência 0,5 Ω é atravessado por uma corrente de 10 A. Qual é a potência dissipada por efeito Joule?",
+"molde": "generico",
+"vars": [
+"R = 0,5 Ω",
+"i = 10 A"
+],
+"formula": "P = R · i²",
+"subst": "P = (0,5) · (10) · (10)",
+"resultado": "P = 50 W"
+},
+{
+"key": "calc_d067",
+"alt": "Resolução animada: Um gerador tem força eletromotriz de 12 V e resistência interna de 1 Ω. Qual é a tensão entre seus terminais quando ele fornece 2 A?",
+"molde": "generico",
+"vars": [
+"ε = 12 V",
+"r = 1 Ω",
+"i = 2 A"
+],
+"formula": "U = ε − r · i",
+"subst": "U = (12)-(1) · (2)",
+"resultado": "U = 10 V"
+},
+{
+"key": "calc_d068",
+"alt": "Resolução animada: Um gerador de fem 12 V e resistência interna 1 Ω alimenta um resistor externo de 5 Ω. Qual é a corrente no circuito?",
+"molde": "generico",
+"vars": [
+"ε = 12 V",
+"r = 1 Ω",
+"R = 5 Ω"
+],
+"formula": "i = ε / (r + R)",
+"subst": "i = (12)/((1)+(5))",
+"resultado": "i = 2 A"
+},
+{
+"key": "calc_d069",
+"alt": "Resolução animada: Uma bateria de fem 12 V e resistência interna 0,5 Ω é colocada em curto-circuito. Qual é a corrente de curto-circuito?",
+"molde": "generico",
+"vars": [
+"ε = 12 V",
+"r = 0,5 Ω"
+],
+"formula": "icc = ε / r",
+"subst": "icc = (12)/(0,5)",
+"resultado": "icc = 24 A"
 }
 ]/*AUTO:END*/;
 function flame(x,y,cl){return'<g class="'+cl+'"><path d="M'+x+' '+y+'c-9-9-9-17-2-26 1 6 5 8 7 13 3-4 2-9 1-12 8 8 11 17 3 25-3 4-6 4-9 0z" fill="'+HOT+'" stroke="#a63a0f" stroke-width="1.2"/><path d="M'+x+' '+(y-2)+'c-4-4-3-9 0-13 2 4 5 6 1 13z" fill="#facc15"/></g>'}

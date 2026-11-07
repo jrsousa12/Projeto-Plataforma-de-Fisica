@@ -15,6 +15,7 @@ REGRAS = [  # (padrões, descrição); arquivos com a mesma descrição aparecem
  (["perguntas-onda.js"], "**Banco de perguntas** de Ondulatória (Som)"),
  (["perguntas-optica.js"], "**Banco de perguntas** de Óptica Geométrica"),
  (["perguntas-mec.js"], "**Banco de perguntas** de Mecânica (cinemática e dinâmica)"),
+ (["perguntas-edin.js"], "**Banco de perguntas** de Eletrodinâmica"),
  (["quiz-*.js"], "Configuração de cada quiz: nome, áreas, cartões, resumo, mensagens e questões numéricas"),
  (["figuras.js", "figuras-fluidos.js", "figuras-termo.js"], "Figuras (SVG) usadas nas perguntas e retratos ilustrados dos cientistas (desenhos próprios)"),
  (["figuras-anim.js"], "Kit de animação (cenas, legendas, linha do tempo)"),
