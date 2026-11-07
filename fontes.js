@@ -17,7 +17,8 @@ var A={
  fluidos:{nome:"Mecânica dos Fluidos",p:["tm","os","ph","hp"],t:["tm","os","ph","hp","is","gr","lt"]},
  termo:{nome:"Termologia",p:["tm","os","ph","hp"],t:["tm","os","ph","hp","is","gr","lt"]},
  onda:{nome:"Ondulatória: Som",p:["tm","os","ph","hp"],t:["tm","os","ph","hp","is","gr","lt","x-3cae83"]},
- optica:{nome:"Óptica Geométrica",p:["tm","os","ph","hp"],t:["tm","os","ph","hp","is","gr","lt"]}
+ optica:{nome:"Óptica Geométrica",p:["tm","os","ph","hp"],t:["tm","os","ph","hp","is","gr","lt"]},
+ mec:{nome:"Mecânica: Cinemática e Dinâmica",p:["tm","os","ph","hp"],t:["tm","os","ph","hp","is","gr","lt","x-3cae83"]}
 };
 function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e}
 function link(id,full){var f=I[id],a=el("a","flk");a.href=f.u;a.target="_blank";a.rel="noopener noreferrer";

@@ -15,11 +15,12 @@ Quiz de Física (ensino médio) que funciona direto no navegador, sem instalar n
 | `perguntas-termo.js` | **Banco de perguntas** de Termologia |
 | `perguntas-onda.js` | **Banco de perguntas** de Ondulatória (Som) |
 | `perguntas-optica.js` | **Banco de perguntas** de Óptica Geométrica |
-| `quiz-eletro.js`, `quiz-fluidos.js`, `quiz-onda.js`, `quiz-optica.js`, `quiz-termo.js` | Configuração de cada quiz: nome, áreas, cartões, resumo, mensagens e questões numéricas |
+| `perguntas-mec.js` | **Banco de perguntas** de Mecânica (cinemática e dinâmica) |
+| `quiz-eletro.js`, `quiz-fluidos.js`, `quiz-mec.js`, `quiz-onda.js`, `quiz-optica.js`, `quiz-termo.js` | Configuração de cada quiz: nome, áreas, cartões, resumo, mensagens e questões numéricas |
 | `figuras-fluidos.js`, `figuras-termo.js`, `figuras.js` | Figuras (SVG) usadas nas perguntas e retratos ilustrados dos cientistas (desenhos próprios) |
 | `figuras-anim.js` | Kit de animação (cenas, legendas, linha do tempo) |
 | `figuras-animq-auto.js` | Animações de resolução geradas automaticamente pelos moldes (não editar à mão) |
-| `figuras-animq-eletro.js`, `figuras-animq-eletro2.js`, `figuras-animq-eletro3.js`, `figuras-animq-eletro4.js`, `figuras-animq-fluidos.js`, `figuras-animq-fluidos2.js`, `figuras-animq-onda.js`, `figuras-animq-optica.js`, `figuras-animq-termo.js`, `figuras-animq-termo2.js`, `figuras-animq-termo3.js` | Animações feitas à mão para cada questão, por área |
+| `figuras-animq-eletro.js`, `figuras-animq-eletro2.js`, `figuras-animq-eletro3.js`, `figuras-animq-eletro4.js`, `figuras-animq-fluidos.js`, `figuras-animq-fluidos2.js`, `figuras-animq-mec.js`, `figuras-animq-onda.js`, `figuras-animq-optica.js`, `figuras-animq-termo.js`, `figuras-animq-termo2.js`, `figuras-animq-termo3.js` | Animações feitas à mão para cada questão, por área |
 | `fontes.js` | Lista de fontes de referência (botão FONTE e tela Fontes) |
 | `banco-extra.js`, `banco-proprio.js`, `editor.css`, `editor.html`, `editor.js` | Editor de questões; `banco-proprio.js` leva as perguntas próprias aos alunos |
 | `.github/workflows/validar.yml`, `validar-banco.js` | Conferem os bancos de perguntas (ids repetidos, gabarito, alternativas, áreas); os fluxos do GitHub rodam sozinhos a cada envio |

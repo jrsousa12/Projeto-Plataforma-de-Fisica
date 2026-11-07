@@ -1,0 +1,1395 @@
+{
+ "quiz": "mec",
+ "questoes": [
+  {
+   "t": "mu",
+   "q": "Um carro percorre 90 km em 1,5 h. Qual é a sua velocidade média, em km/h?",
+   "o": [
+    "60 km/h",
+    "135 km/h",
+    "16,7 km/h",
+    "45 km/h"
+   ],
+   "a": 0,
+   "h": "Divida a distância pelo tempo.",
+   "e": "A velocidade média é a razão entre o deslocamento e o intervalo de tempo: vm = Δs / Δt = 90 / 1,5 = 60 km/h.",
+   "x": {
+    "1": "Multiplicou a distância pelo tempo.",
+    "2": "Dividiu 60 km/h por 3,6, convertendo sem necessidade.",
+    "3": "Dividiu a distância por 2."
+   },
+   "c": 1,
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/movimento-uniforme/",
+    "titulo": "Movimento Uniforme (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "velocidade constante e função horária",
+    "verificar": [
+     "movimento uniforme",
+     "velocidade constante"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "ds": "90 km",
+     "dt": "1.5 h"
+    },
+    "expr": "ds/dt",
+    "expr2": "ds*(1/dt)",
+    "unidade": "km/h",
+    "simbolo": "vm",
+    "formula": "vm = Δs / Δt",
+    "rotulos": {
+     "ds": "Δs",
+     "dt": "Δt"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "mu",
+   "q": "No gráfico espaço × tempo de um movimento uniforme, a inclinação da reta representa:",
+   "o": [
+    "A velocidade do móvel.",
+    "A aceleração do móvel.",
+    "O deslocamento total.",
+    "O instante inicial."
+   ],
+   "a": 0,
+   "h": "Pense em quanto o espaço muda a cada segundo.",
+   "e": "No movimento uniforme, o espaço varia de forma linear com o tempo. Quanto mais inclinada a reta, maior a variação do espaço por segundo, ou seja, maior a velocidade.",
+   "x": {
+    "1": "No MU a aceleração é nula; ela aparece no gráfico v × t como uma reta horizontal sobre o eixo.",
+    "2": "O deslocamento é a diferença entre dois pontos da reta, não a sua inclinação.",
+    "3": "O instante inicial é onde o gráfico começa no eixo do tempo."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/movimento-uniforme/",
+    "titulo": "Movimento Uniforme (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "velocidade constante e função horária",
+    "verificar": [
+     "movimento uniforme",
+     "velocidade constante"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "mu",
+   "q": "Um ciclista se move a 72 km/h. Qual é essa velocidade em m/s?",
+   "o": [
+    "20 m/s",
+    "259 m/s",
+    "7,2 m/s",
+    "200 m/s"
+   ],
+   "a": 0,
+   "h": "1 m/s equivale a 3,6 km/h.",
+   "e": "Para passar de km/h para m/s, divide-se por 3,6: 72 / 3,6 = 20 m/s.",
+   "x": {
+    "1": "Multiplicou por 3,6 em vez de dividir.",
+    "2": "Dividiu por 10 em vez de 3,6.",
+    "3": "Errou uma casa decimal na conversão."
+   },
+   "c": 1,
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/movimento-uniforme/",
+    "titulo": "Movimento Uniforme (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "velocidade constante e função horária",
+    "verificar": [
+     "movimento uniforme",
+     "velocidade constante"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "v": "72 km/h"
+    },
+    "expr": "v",
+    "expr2": "2*v/2",
+    "unidade": "m/s",
+    "simbolo": "v",
+    "formula": "v em m/s",
+    "rotulos": {
+     "v": "v"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "mu",
+   "q": "Dois carros se aproximam em linha reta, em movimento uniforme, em sentidos opostos. Eles estão separados por 300 m, o carro A tem 20 m/s e o carro B tem 10 m/s. Em quanto tempo eles se encontram?",
+   "o": [
+    "10 s",
+    "15 s",
+    "30 s",
+    "60 s"
+   ],
+   "a": 0,
+   "h": "Em sentidos opostos, a velocidade de aproximação é a soma.",
+   "e": "Como os carros se aproximam, as velocidades se somam: 20 + 10 = 30 m/s. O tempo é t = d / (vA + vB) = 300 / 30 = 10 s.",
+   "x": {
+    "1": "Usou só a velocidade do carro A (300 / 20 = 15 s).",
+    "2": "Subtraiu as velocidades (300 / 10 = 30 s), o que vale para o mesmo sentido.",
+    "3": "Errou a operação com as velocidades."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/movimento-uniforme/",
+    "titulo": "Movimento Uniforme (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "velocidade constante e função horária",
+    "verificar": [
+     "movimento uniforme",
+     "velocidade constante"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "d": "300 m",
+     "va": "20 m/s",
+     "vb": "10 m/s"
+    },
+    "expr": "d/(va+vb)",
+    "expr2": "d/va/(1+vb/va)",
+    "unidade": "s",
+    "simbolo": "t",
+    "formula": "t = d / (vA + vB)",
+    "rotulos": {
+     "d": "d",
+     "va": "vA",
+     "vb": "vB"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "mu",
+   "q": "Verdadeiro ou falso: no movimento uniforme a aceleração do móvel é nula.",
+   "o": [
+    "Verdadeiro",
+    "Falso"
+   ],
+   "a": 0,
+   "h": "Velocidade constante significa que ela não varia.",
+   "e": "Verdadeiro. No movimento uniforme a velocidade é constante, então não há variação de velocidade e a aceleração é igual a zero.",
+   "v": 1,
+   "x": {
+    "1": "Se a velocidade não muda com o tempo, a aceleração é zero."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/movimento-uniforme/",
+    "titulo": "Movimento Uniforme (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "velocidade constante e função horária",
+    "verificar": [
+     "movimento uniforme",
+     "velocidade constante"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Afirmação conceitual, sem processo para animar."
+   }
+  },
+  {
+   "t": "mu",
+   "q": "Um móvel em movimento uniforme obedece à função horária s = 5 + 3t, no SI. Qual é a posição inicial e qual é a velocidade?",
+   "o": [
+    "Posição inicial 5 m e velocidade 3 m/s.",
+    "Posição inicial 3 m e velocidade 5 m/s.",
+    "Posição inicial 8 m e velocidade 3 m/s.",
+    "Posição inicial 5 m/s e velocidade 3 m."
+   ],
+   "a": 0,
+   "h": "Compare com s = s₀ + v·t.",
+   "e": "Comparando com s = s₀ + v·t, o termo que não multiplica t é a posição inicial (5 m) e o coeficiente de t é a velocidade (3 m/s).",
+   "x": {
+    "1": "Trocou os papéis dos números.",
+    "2": "Somou os números, que não representam uma posição.",
+    "3": "As unidades estão trocadas: posição é em metros e velocidade em m/s."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/movimento-uniforme/",
+    "titulo": "Movimento Uniforme (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "velocidade constante e função horária",
+    "verificar": [
+     "movimento uniforme",
+     "velocidade constante"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "uv",
+   "q": "O movimento uniformemente variado (MUV) é aquele em que:",
+   "o": [
+    "A aceleração é constante e diferente de zero.",
+    "A velocidade é constante.",
+    "A aceleração é nula.",
+    "A posição varia sempre com a mesma rapidez."
+   ],
+   "a": 0,
+   "h": "Velocidade variando de modo regular.",
+   "e": "No MUV a aceleração é constante e não nula, então a velocidade varia da mesma quantidade em intervalos de tempo iguais.",
+   "x": {
+    "1": "Velocidade constante é o movimento uniforme.",
+    "2": "Aceleração nula também é movimento uniforme.",
+    "3": "Posição variando sempre igual é movimento uniforme."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/movimento-uniformemente-variado/",
+    "titulo": "Movimento Uniformemente Variado (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "aceleração constante e equações do MUV",
+    "verificar": [
+     "movimento uniformemente variado",
+     "aceleração é constante"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "uv",
+   "q": "Um móvel tem velocidade inicial de 4 m/s e aceleração constante de 3 m/s². Qual é a sua velocidade após 5 s?",
+   "o": [
+    "19 m/s",
+    "15 m/s",
+    "9 m/s",
+    "35 m/s"
+   ],
+   "a": 0,
+   "h": "Aplique v = v₀ + a·t.",
+   "e": "Usando v = v₀ + a·t = 4 + 3 · 5 = 19 m/s.",
+   "x": {
+    "1": "Esqueceu a velocidade inicial.",
+    "2": "Somou 4 + 5, sem usar a aceleração.",
+    "3": "Multiplicou (4 + 3) por 5."
+   },
+   "c": 1,
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/movimento-uniformemente-variado/",
+    "titulo": "Movimento Uniformemente Variado (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "aceleração constante e equações do MUV",
+    "verificar": [
+     "movimento uniformemente variado",
+     "aceleração é constante"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "v0": "4 m/s",
+     "a": "3 m/s²",
+     "t": "5 s"
+    },
+    "expr": "v0+a*t",
+    "expr2": "(v0*t+a*t*t)/t",
+    "unidade": "m/s",
+    "simbolo": "v",
+    "formula": "v = v₀ + a·t",
+    "rotulos": {
+     "v0": "v₀",
+     "a": "a",
+     "t": "t"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "uv",
+   "q": "Um carro a 20 m/s freia com desaceleração constante de 4 m/s² até parar. Qual é a distância percorrida durante a frenagem?",
+   "o": [
+    "50 m",
+    "100 m",
+    "25 m",
+    "5 m"
+   ],
+   "a": 0,
+   "h": "Use a equação de Torricelli com v = 0.",
+   "e": "Pela equação de Torricelli, 0 = v₀² − 2·a·Δs, logo Δs = v₀² / (2a) = 400 / 8 = 50 m.",
+   "x": {
+    "1": "Esqueceu o fator 2 do denominador (400 / 4 = 100).",
+    "2": "Elevou o denominador ao quadrado (400 / 16 = 25).",
+    "3": "Dividiu só a velocidade pela aceleração (20 / 4 = 5)."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/movimento-uniformemente-variado/",
+    "titulo": "Movimento Uniformemente Variado (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "aceleração constante e equações do MUV",
+    "verificar": [
+     "movimento uniformemente variado",
+     "aceleração é constante"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "v0": "20 m/s",
+     "a": "4 m/s²"
+    },
+    "expr": "v0*v0/(2*a)",
+    "expr2": "v0*(v0/a)/2",
+    "unidade": "m",
+    "simbolo": "Δs",
+    "formula": "Δs = v₀² / (2a)",
+    "rotulos": {
+     "v0": "v₀",
+     "a": "a"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "uv",
+   "q": "Um objeto parte do repouso com aceleração constante de 2 m/s². Que distância ele percorre em 6 s?",
+   "o": [
+    "36 m",
+    "72 m",
+    "12 m",
+    "18 m"
+   ],
+   "a": 0,
+   "h": "Use Δs = a·t² / 2.",
+   "e": "Partindo do repouso, Δs = a·t² / 2 = 2 · 36 / 2 = 36 m.",
+   "x": {
+    "1": "Esqueceu de dividir por 2 (2 · 36 = 72).",
+    "2": "Calculou só a·t, que é a velocidade final.",
+    "3": "Dividiu por 4 em vez de por 2."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/movimento-uniformemente-variado-muv.htm",
+    "titulo": "Movimento Uniformemente Variado (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "funções horárias do MUV",
+    "verificar": [
+     "movimento uniformemente variado",
+     "aceleração escalar"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "a": "2 m/s²",
+     "t": "6 s"
+    },
+    "expr": "a*t*t/2",
+    "expr2": "a*t*(t/2)",
+    "unidade": "m",
+    "simbolo": "Δs",
+    "formula": "Δs = a·t² / 2",
+    "rotulos": {
+     "a": "a",
+     "t": "t"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "uv",
+   "q": "Em um gráfico velocidade × tempo, a área sob a curva entre dois instantes representa:",
+   "o": [
+    "O deslocamento do móvel nesse intervalo.",
+    "A aceleração do móvel.",
+    "A velocidade média apenas.",
+    "A força resultante."
+   ],
+   "a": 0,
+   "h": "Velocidade vezes tempo dá distância.",
+   "e": "A velocidade é a taxa de variação do espaço. Por isso a área sob o gráfico v × t, que mistura velocidade e tempo, dá o deslocamento.",
+   "x": {
+    "1": "A aceleração é a inclinação do gráfico v × t, não a área.",
+    "2": "A velocidade média exigiria dividir o deslocamento pelo tempo.",
+    "3": "O gráfico não traz informação sobre força."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/movimento-uniformemente-variado-muv.htm",
+    "titulo": "Movimento Uniformemente Variado (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "funções horárias do MUV",
+    "verificar": [
+     "movimento uniformemente variado",
+     "aceleração escalar"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "uv",
+   "q": "A velocidade de um móvel passa de 10 m/s para 30 m/s em 4 s. Qual é a sua aceleração média?",
+   "o": [
+    "5 m/s²",
+    "7,5 m/s²",
+    "2,5 m/s²",
+    "20 m/s²"
+   ],
+   "a": 0,
+   "h": "Divida a variação de velocidade pelo tempo.",
+   "e": "A aceleração média é a variação de velocidade dividida pelo tempo: a = (30 − 10) / 4 = 5 m/s².",
+   "x": {
+    "1": "Dividiu só a velocidade final pelo tempo.",
+    "2": "Dividiu só a velocidade inicial pelo tempo.",
+    "3": "Calculou a variação de velocidade e esqueceu de dividir pelo tempo."
+   },
+   "c": 1,
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/movimento-uniformemente-variado/",
+    "titulo": "Movimento Uniformemente Variado (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "aceleração constante e equações do MUV",
+    "verificar": [
+     "movimento uniformemente variado",
+     "aceleração é constante"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "v1": "10 m/s",
+     "v2": "30 m/s",
+     "dt": "4 s"
+    },
+    "expr": "(v2-v1)/dt",
+    "expr2": "v2/dt-v1/dt",
+    "unidade": "m/s²",
+    "simbolo": "a",
+    "formula": "a = Δv / Δt",
+    "rotulos": {
+     "v1": "v₁",
+     "v2": "v₂",
+     "dt": "Δt"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "uv",
+   "q": "Verdadeiro ou falso: no MUV, o gráfico espaço × tempo é uma reta inclinada.",
+   "o": [
+    "Verdadeiro",
+    "Falso"
+   ],
+   "a": 1,
+   "h": "A função horária do MUV é do 2º grau.",
+   "e": "Falso. No MUV o espaço depende do quadrado do tempo (s = s₀ + v₀·t + a·t²/2), por isso o gráfico s × t é uma parábola. A reta inclinada aparece no movimento uniforme.",
+   "v": 1,
+   "x": {
+    "0": "A função do 2º grau tem como gráfico uma parábola."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/movimento-uniformemente-variado/",
+    "titulo": "Movimento Uniformemente Variado (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "aceleração constante e equações do MUV",
+    "verificar": [
+     "movimento uniformemente variado",
+     "aceleração é constante"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Afirmação conceitual, sem processo para animar."
+   }
+  },
+  {
+   "t": "uv",
+   "q": "Um carro tem velocidade de +10 m/s e aceleração de −2 m/s². Como se classifica esse movimento?",
+   "o": [
+    "Retardado, pois velocidade e aceleração têm sinais opostos.",
+    "Acelerado, pois a aceleração é constante.",
+    "Uniforme, pois a velocidade é positiva.",
+    "Acelerado, pois a velocidade é positiva."
+   ],
+   "a": 0,
+   "h": "Compare os sinais da velocidade e da aceleração.",
+   "e": "Quando velocidade e aceleração têm sinais opostos, o módulo da velocidade diminui: o movimento é retardado.",
+   "x": {
+    "1": "A aceleração constante só indica MUV, não se o movimento é acelerado ou retardado.",
+    "2": "Há aceleração não nula, então não é uniforme.",
+    "3": "O sinal da velocidade sozinho não diz se ela aumenta ou diminui."
+   },
+   "n": 3,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/movimento-uniformemente-variado/",
+    "titulo": "Movimento Uniformemente Variado (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "aceleração constante e equações do MUV",
+    "verificar": [
+     "movimento uniformemente variado",
+     "aceleração é constante"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "ql",
+   "q": "Sem resistência do ar, duas esferas de massas diferentes são soltas da mesma altura ao mesmo tempo. O que acontece?",
+   "o": [
+    "Chegam juntas ao solo.",
+    "A mais pesada chega primeiro.",
+    "A mais leve chega primeiro.",
+    "Depende apenas da cor das esferas."
+   ],
+   "a": 0,
+   "h": "Todos caem com a mesma aceleração.",
+   "e": "Sem resistência do ar, todos os corpos caem com a mesma aceleração da gravidade, independentemente da massa. Por isso chegam juntos.",
+   "x": {
+    "1": "Foi a ideia antiga de que o mais pesado cai mais rápido; ela não vale sem resistência do ar.",
+    "2": "A massa menor não tem aceleração maior.",
+    "3": "A cor não influi na queda."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/queda-livre/",
+    "titulo": "Queda livre (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "queda livre, g e fórmulas",
+    "verificar": [
+     "queda livre",
+     "gravidade"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "ql",
+   "q": "Um corpo é solto do repouso e cai em queda livre. Comparando as distâncias percorridas em segundos sucessivos, o que acontece?",
+   "o": [
+    "Cada segundo percorre uma distância maior que o anterior.",
+    "Cada segundo percorre a mesma distância.",
+    "Cada segundo percorre uma distância menor que o anterior.",
+    "A distância é nula no primeiro segundo."
+   ],
+   "a": 0,
+   "h": "A velocidade aumenta a cada segundo.",
+   "e": "A velocidade aumenta 10 m/s a cada segundo, então a distância percorrida em cada segundo é maior. A partir do repouso, as distâncias totais são 5 m, 20 m e 45 m.",
+   "x": {
+    "1": "Isso aconteceria só se a velocidade fosse constante.",
+    "2": "A distância diminuiria se o corpo estivesse sendo freado.",
+    "3": "O corpo já se move no primeiro segundo."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/queda-livre/",
+    "titulo": "Queda livre (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "queda livre, g e fórmulas",
+    "verificar": [
+     "queda livre",
+     "gravidade"
+    ]
+   },
+   "an": "mec_queda"
+  },
+  {
+   "t": "ql",
+   "q": "Um objeto é abandonado do repouso de uma altura de 45 m. Desprezando a resistência do ar e adotando g = 10 m/s², quanto tempo ele leva para chegar ao solo?",
+   "o": [
+    "3 s",
+    "4,5 s",
+    "9 s",
+    "6 s"
+   ],
+   "a": 0,
+   "h": "Isole o tempo em h = g·t² / 2.",
+   "e": "De h = g·t² / 2 tiramos t = √(2h / g) = √(2 · 45 / 10) = √9 = 3 s.",
+   "x": {
+    "1": "Dividiu a altura por g, sem o fator 2 nem a raiz.",
+    "2": "Esqueceu de tirar a raiz quadrada (90 / 10 = 9).",
+    "3": "Dobrou o resultado correto."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/queda-livre/",
+    "titulo": "Queda livre (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "queda livre, g e fórmulas",
+    "verificar": [
+     "queda livre",
+     "gravidade"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "h": "45 m",
+     "g": "10 m/s²"
+    },
+    "expr": "sqrt(2*h/g)",
+    "expr2": "sqrt(h/g*2)",
+    "unidade": "s",
+    "simbolo": "t",
+    "formula": "t = √(2h / g)",
+    "rotulos": {
+     "h": "h",
+     "g": "g"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "ql",
+   "q": "Um corpo cai do repouso de uma altura de 20 m. Com g = 10 m/s² e sem resistência do ar, com que velocidade ele atinge o solo?",
+   "o": [
+    "20 m/s",
+    "200 m/s",
+    "40 m/s",
+    "10 m/s"
+   ],
+   "a": 0,
+   "h": "Use v² = 2·g·h.",
+   "e": "Pela equação de Torricelli, v² = 2·g·h = 2 · 10 · 20 = 400. Logo v = 20 m/s.",
+   "x": {
+    "1": "Multiplicou g por h, sem o fator 2 nem a raiz.",
+    "2": "Dobrou o resultado correto.",
+    "3": "Usou h = 5 m, sem relação com o enunciado."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/queda-livre/",
+    "titulo": "Queda livre (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "queda livre, g e fórmulas",
+    "verificar": [
+     "queda livre",
+     "gravidade"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "g": "10 m/s²",
+     "h": "20 m"
+    },
+    "expr": "sqrt(2*g*h)",
+    "expr2": "g*sqrt(2*h/g)",
+    "unidade": "m/s",
+    "simbolo": "v",
+    "formula": "v = √(2·g·h)",
+    "rotulos": {
+     "g": "g",
+     "h": "h"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "ql",
+   "q": "Uma pedra é lançada verticalmente para cima com velocidade de 30 m/s. Com g = 10 m/s² e sem resistência do ar, qual é a altura máxima atingida?",
+   "o": [
+    "45 m",
+    "90 m",
+    "15 m",
+    "30 m"
+   ],
+   "a": 0,
+   "h": "No ponto mais alto a velocidade é zero.",
+   "e": "No ponto mais alto, v = 0. Então H = v₀² / (2g) = 900 / 20 = 45 m.",
+   "x": {
+    "1": "Esqueceu o fator 2 do denominador (900 / 10 = 90).",
+    "2": "Dividiu por 60 em vez de 20.",
+    "3": "Repetiu a velocidade inicial como se fosse a altura."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/queda-livre/",
+    "titulo": "Queda livre (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "queda livre, g e fórmulas",
+    "verificar": [
+     "queda livre",
+     "gravidade"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "v0": "30 m/s",
+     "g": "10 m/s²"
+    },
+    "expr": "v0*v0/(2*g)",
+    "expr2": "v0*(v0/g)/2",
+    "unidade": "m",
+    "simbolo": "H",
+    "formula": "H = v₀² / (2g)",
+    "rotulos": {
+     "v0": "v₀",
+     "g": "g"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "ql",
+   "q": "Uma bola é lançada verticalmente para cima com velocidade de 20 m/s. Com g = 10 m/s², quanto tempo ela leva para atingir o ponto mais alto?",
+   "o": [
+    "2 s",
+    "4 s",
+    "200 s",
+    "0,5 s"
+   ],
+   "a": 0,
+   "h": "Faça v = 0 em v = v₀ − g·t.",
+   "e": "No ponto mais alto, v = 0. De v = v₀ − g·t sai t = v₀ / g = 20 / 10 = 2 s.",
+   "x": {
+    "1": "É o tempo total de subida e descida, não só o de subida.",
+    "2": "Multiplicou v₀ por g.",
+    "3": "Inverteu a divisão (10 / 20)."
+   },
+   "c": 1,
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/queda-livre/",
+    "titulo": "Queda livre (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "queda livre, g e fórmulas",
+    "verificar": [
+     "queda livre",
+     "gravidade"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "v0": "20 m/s",
+     "g": "10 m/s²"
+    },
+    "expr": "v0/g",
+    "expr2": "v0*(1/g)",
+    "unidade": "s",
+    "simbolo": "t",
+    "formula": "t = v₀ / g",
+    "rotulos": {
+     "v0": "v₀",
+     "g": "g"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "ql",
+   "q": "Verdadeiro ou falso: no lançamento vertical, no ponto mais alto da trajetória, a aceleração do corpo é nula.",
+   "o": [
+    "Verdadeiro",
+    "Falso"
+   ],
+   "a": 1,
+   "h": "A gravidade não deixa de atuar.",
+   "e": "Falso. No ponto mais alto a velocidade é zero por um instante, mas a aceleração continua sendo a da gravidade (cerca de 10 m/s², para baixo).",
+   "v": 1,
+   "x": {
+    "0": "Velocidade zero não significa aceleração zero: a gravidade segue atuando."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/queda-livre/",
+    "titulo": "Queda livre (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "queda livre, g e fórmulas",
+    "verificar": [
+     "queda livre",
+     "gravidade"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Afirmação conceitual, sem processo para animar."
+   }
+  },
+  {
+   "t": "lo",
+   "q": "Em um lançamento horizontal, o tempo de queda de um corpo depende:",
+   "o": [
+    "Apenas da altura de lançamento e da gravidade.",
+    "Da velocidade horizontal inicial.",
+    "Da massa do corpo.",
+    "Do alcance horizontal desejado."
+   ],
+   "a": 0,
+   "h": "Só a vertical decide o tempo de queda.",
+   "e": "Na vertical o movimento é uma queda livre a partir do repouso, então o tempo é t = √(2h / g). A velocidade horizontal só influencia o alcance.",
+   "x": {
+    "1": "A velocidade horizontal muda o alcance, e não o tempo.",
+    "2": "Sem resistência do ar, a massa não influi.",
+    "3": "O alcance é consequência do tempo, e não o contrário."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/lancamento-obliquo/",
+    "titulo": "Lançamento Oblíquo (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "lançamento oblíquo e fórmulas",
+    "verificar": [
+     "lançamento oblíquo",
+     "fórmulas"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "lo",
+   "q": "Uma bola é lançada horizontalmente com velocidade de 15 m/s do alto de um prédio de 20 m de altura. Com g = 10 m/s² e sem resistência do ar, qual é o alcance horizontal até o solo?",
+   "o": [
+    "30 m",
+    "60 m",
+    "20 m",
+    "15 m"
+   ],
+   "a": 0,
+   "h": "Primeiro ache o tempo de queda.",
+   "e": "O tempo de queda é t = √(2h / g) = √(2 · 20 / 10) = 2 s. No eixo horizontal o movimento é uniforme: x = v₀ · t = 15 · 2 = 30 m.",
+   "x": {
+    "1": "Usou o dobro do tempo de queda.",
+    "2": "Usou a altura como alcance.",
+    "3": "Usou só a velocidade, como se o tempo fosse 1 s."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/lancamento-obliquo/",
+    "titulo": "Lançamento Oblíquo (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "lançamento oblíquo e fórmulas",
+    "verificar": [
+     "lançamento oblíquo",
+     "fórmulas"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "v0": "15 m/s",
+     "h": "20 m",
+     "g": "10 m/s²"
+    },
+    "expr": "v0*sqrt(2*h/g)",
+    "expr2": "v0*sqrt(h/g)*sqrt(2)",
+    "unidade": "m",
+    "simbolo": "x",
+    "formula": "x = v₀ · √(2h / g)",
+    "rotulos": {
+     "v0": "v₀",
+     "h": "h",
+     "g": "g"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "lo",
+   "q": "Um projétil é lançado com velocidade de 50 m/s formando 37° com a horizontal (sen 37° = 0,6 e cos 37° = 0,8). Qual é a componente vertical da velocidade inicial?",
+   "o": [
+    "30 m/s",
+    "40 m/s",
+    "83 m/s",
+    "50 m/s"
+   ],
+   "a": 0,
+   "h": "A componente vertical usa o seno do ângulo.",
+   "e": "A componente vertical é v₀y = v₀ · sen θ = 50 · 0,6 = 30 m/s.",
+   "x": {
+    "1": "Essa é a componente horizontal (50 · 0,8).",
+    "2": "Dividiu 50 por 0,6.",
+    "3": "Essa é a velocidade total, e não a componente."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/lancamento-obliquo.htm",
+    "titulo": "Lançamento oblíquo (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "movimento composto, alcance e altura máxima",
+    "verificar": [
+     "lançamento oblíquo",
+     "movimento uniforme"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "v0": "50 m/s",
+     "s": "0.6"
+    },
+    "expr": "v0*s",
+    "expr2": "(v0/10)*(s*10)",
+    "unidade": "m/s",
+    "simbolo": "v₀y",
+    "formula": "v₀y = v₀ · sen θ",
+    "rotulos": {
+     "v0": "v₀",
+     "s": "sen θ"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "lo",
+   "q": "Um projétil é lançado do solo com velocidade de 20 m/s e ângulo de 45°. Com g = 10 m/s² e sem resistência do ar, qual é o alcance (mesmo nível de lançamento)?",
+   "o": [
+    "40 m",
+    "20 m",
+    "80 m",
+    "10 m"
+   ],
+   "a": 0,
+   "h": "Para 45°, sen 2θ = 1.",
+   "e": "Para 45°, sen 90° = 1, então A = v₀² / g = 400 / 10 = 40 m.",
+   "x": {
+    "1": "Usou a velocidade como alcance.",
+    "2": "Dobrou o alcance correto.",
+    "3": "Dividiu a velocidade por 2."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/lancamento-obliquo.htm",
+    "titulo": "Lançamento oblíquo (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "movimento composto, alcance e altura máxima",
+    "verificar": [
+     "lançamento oblíquo",
+     "movimento uniforme"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "v0": "20 m/s",
+     "g": "10 m/s²"
+    },
+    "expr": "v0*v0/g",
+    "expr2": "v0*(v0/g)",
+    "unidade": "m",
+    "simbolo": "A",
+    "formula": "A = v₀² · sen 2θ / g",
+    "rotulos": {
+     "v0": "v₀",
+     "g": "g"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "lo",
+   "q": "No ponto mais alto da trajetória de um projétil lançado obliquamente, desprezando o ar, o que acontece com as componentes da velocidade?",
+   "o": [
+    "A componente vertical é nula e a horizontal se mantém constante.",
+    "As duas componentes são nulas.",
+    "A componente horizontal é nula e a vertical é máxima.",
+    "As duas componentes são máximas."
+   ],
+   "a": 0,
+   "h": "A horizontal não tem aceleração.",
+   "e": "Na horizontal o movimento é uniforme, então vx não muda. Na vertical, a velocidade vai a zero no ponto mais alto antes de inverter o sentido.",
+   "x": {
+    "1": "Se as duas fossem nulas, o projétil pararia no ar.",
+    "2": "A horizontal nunca é nula nesse tipo de lançamento.",
+    "3": "A vertical é nula no topo e não máxima."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/lancamento-obliquo/",
+    "titulo": "Lançamento Oblíquo (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "lançamento oblíquo e fórmulas",
+    "verificar": [
+     "lançamento oblíquo",
+     "fórmulas"
+    ]
+   },
+   "an": "mec_obliquo"
+  },
+  {
+   "t": "lo",
+   "q": "Verdadeiro ou falso: o alcance máximo de um projétil lançado do solo, com a mesma velocidade, ocorre para um ângulo de 45° (sem resistência do ar).",
+   "o": [
+    "Verdadeiro",
+    "Falso"
+   ],
+   "a": 0,
+   "h": "Procure o ângulo em que sen 2θ vale 1.",
+   "e": "Verdadeiro. O alcance é proporcional a sen 2θ, que vale 1 (máximo) quando 2θ = 90°, ou seja, θ = 45°.",
+   "v": 1,
+   "x": {
+    "1": "sen 2θ é máximo para θ = 45°."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/lancamento-obliquo.htm",
+    "titulo": "Lançamento oblíquo (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "movimento composto, alcance e altura máxima",
+    "verificar": [
+     "lançamento oblíquo",
+     "movimento uniforme"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Afirmação conceitual, sem processo para animar."
+   }
+  },
+  {
+   "t": "mc",
+   "q": "Um corpo em movimento circular uniforme leva 0,5 s para dar uma volta completa. Qual é a sua frequência?",
+   "o": [
+    "2 Hz",
+    "0,5 Hz",
+    "4 Hz",
+    "1 Hz"
+   ],
+   "a": 0,
+   "h": "Frequência e período são inversos.",
+   "e": "A frequência é o inverso do período: f = 1 / T = 1 / 0,5 = 2 Hz.",
+   "x": {
+    "1": "Repetiu o valor do período.",
+    "2": "Usou 1 / 0,25.",
+    "3": "Dividiu 1 por 1."
+   },
+   "c": 1,
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/movimento-circular/",
+    "titulo": "Movimento Circular (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "período, frequência e velocidades",
+    "verificar": [
+     "período",
+     "frequência"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "T": "0.5 s"
+    },
+    "expr": "1/T",
+    "expr2": "2/(2*T)",
+    "unidade": "Hz",
+    "simbolo": "f",
+    "formula": "f = 1 / T",
+    "rotulos": {
+     "T": "T"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "mc",
+   "q": "Um corpo percorre uma circunferência de raio 2 m em movimento uniforme, com período de 4 s. Qual é a sua velocidade linear? (use π ≈ 3,14)",
+   "o": [
+    "3,14 m/s",
+    "1,57 m/s",
+    "50,3 m/s",
+    "0,5 m/s"
+   ],
+   "a": 0,
+   "h": "Uma volta tem comprimento 2πR.",
+   "e": "Em um período, o corpo percorre 2πR. Logo v = 2πR / T = 2 · 3,14 · 2 / 4 = 3,14 m/s.",
+   "x": {
+    "1": "Esqueceu o fator 2 do comprimento da circunferência.",
+    "2": "Multiplicou pelo período em vez de dividir.",
+    "3": "Dividiu apenas R por T."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/movimento-circular-uniforme.htm",
+    "titulo": "Movimento circular uniforme (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "MCU, aceleração centrípeta e velocidades",
+    "verificar": [
+     "movimento circular uniforme",
+     "aceleração"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "R": "2 m",
+     "T": "4 s"
+    },
+    "expr": "2*pi*R/T",
+    "expr2": "pi*R/(T/2)",
+    "unidade": "m/s",
+    "simbolo": "v",
+    "formula": "v = 2πR / T",
+    "rotulos": {
+     "R": "R",
+     "T": "T"
+    },
+    "tol": 0.01
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "mc",
+   "q": "Um corpo descreve uma trajetória circular de raio 5 m com velocidade de módulo constante de 10 m/s. Qual é o módulo da aceleração centrípeta?",
+   "o": [
+    "20 m/s²",
+    "2 m/s²",
+    "50 m/s²",
+    "10 m/s²"
+   ],
+   "a": 0,
+   "h": "Use a = v² / R.",
+   "e": "A aceleração centrípeta vale a = v² / R = 100 / 5 = 20 m/s².",
+   "x": {
+    "1": "Esqueceu de elevar a velocidade ao quadrado (10 / 5).",
+    "2": "Multiplicou v por R.",
+    "3": "Repetiu a velocidade."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/movimento-circular-uniforme.htm",
+    "titulo": "Movimento circular uniforme (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "MCU, aceleração centrípeta e velocidades",
+    "verificar": [
+     "movimento circular uniforme",
+     "aceleração"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "v": "10 m/s",
+     "R": "5 m"
+    },
+    "expr": "v*v/R",
+    "expr2": "v*(v/R)",
+    "unidade": "m/s²",
+    "simbolo": "a",
+    "formula": "a = v² / R",
+    "rotulos": {
+     "v": "v",
+     "R": "R"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "mc",
+   "q": "Em um movimento circular uniforme, a aceleração do corpo:",
+   "o": [
+    "Aponta para o centro da trajetória e muda a direção da velocidade.",
+    "É nula, pois a velocidade tem módulo constante.",
+    "É tangente à trajetória e aumenta o módulo da velocidade.",
+    "Aponta para fora da trajetória."
+   ],
+   "a": 0,
+   "h": "A velocidade muda de direção.",
+   "e": "O módulo da velocidade é constante, mas a direção muda o tempo todo. Essa mudança exige uma aceleração centrípeta, voltada para o centro.",
+   "x": {
+    "1": "Módulo constante não significa aceleração nula: a direção muda.",
+    "2": "Aceleração tangente mudaria o módulo da velocidade, o que não ocorre no MCU.",
+    "3": "A aceleração centrípeta é voltada para dentro."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/movimento-circular-uniforme.htm",
+    "titulo": "Movimento circular uniforme (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "MCU, aceleração centrípeta e velocidades",
+    "verificar": [
+     "movimento circular uniforme",
+     "aceleração"
+    ]
+   },
+   "an": "mec_mcu"
+  },
+  {
+   "t": "mc",
+   "q": "Verdadeiro ou falso: no movimento circular uniforme a velocidade vetorial é constante.",
+   "o": [
+    "Verdadeiro",
+    "Falso"
+   ],
+   "a": 1,
+   "h": "Velocidade vetorial inclui direção.",
+   "e": "Falso. O módulo da velocidade é constante, mas o vetor velocidade muda de direção a cada instante, então a velocidade vetorial não é constante.",
+   "v": 1,
+   "x": {
+    "0": "A direção do vetor velocidade muda o tempo todo."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/movimento-circular-uniforme.htm",
+    "titulo": "Movimento circular uniforme (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "MCU, aceleração centrípeta e velocidades",
+    "verificar": [
+     "movimento circular uniforme",
+     "aceleração"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Afirmação conceitual, sem processo para animar."
+   }
+  },
+  {
+   "t": "mc",
+   "q": "Uma roda gira em movimento uniforme com frequência de 5 Hz. Qual é a sua velocidade angular? (use π ≈ 3,14)",
+   "o": [
+    "31,4 rad/s",
+    "5 rad/s",
+    "15,7 rad/s",
+    "3,14 rad/s"
+   ],
+   "a": 0,
+   "h": "Use ω = 2π·f.",
+   "e": "A velocidade angular é ω = 2π·f = 2 · 3,14 · 5 = 31,4 rad/s.",
+   "x": {
+    "1": "Repetiu o valor da frequência.",
+    "2": "Esqueceu o fator 2.",
+    "3": "Usou f = 0,5 Hz."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/movimento-circular/",
+    "titulo": "Movimento Circular (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "período, frequência e velocidades",
+    "verificar": [
+     "período",
+     "frequência"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "f": "5 Hz"
+    },
+    "expr": "2*pi*f",
+    "expr2": "f*pi+f*pi",
+    "unidade": "rad/s",
+    "simbolo": "ω",
+    "formula": "ω = 2π·f",
+    "rotulos": {
+     "f": "f"
+    },
+    "tol": 0.01
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  }
+ ]
+}

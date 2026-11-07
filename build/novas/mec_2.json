@@ -1,0 +1,1870 @@
+{
+ "quiz": "mec",
+ "questoes": [
+  {
+   "t": "lw",
+   "q": "Um ônibus freia bruscamente e os passageiros em pé são lançados para a frente. Esse fato é explicado pela:",
+   "o": [
+    "1ª lei de Newton (inércia).",
+    "2ª lei de Newton.",
+    "3ª lei de Newton.",
+    "Lei da gravitação universal."
+   ],
+   "a": 0,
+   "h": "O corpo tende a manter a velocidade que tinha.",
+   "e": "Pela inércia, os passageiros tendem a manter o estado de movimento que tinham. Quando o ônibus para, o corpo continua para a frente.",
+   "x": {
+    "1": "A 2ª lei relaciona força resultante e aceleração.",
+    "2": "A 3ª lei trata de pares de ação e reação.",
+    "3": "A gravitação universal descreve a atração entre massas."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/leis-de-newton/",
+    "titulo": "Leis de Newton (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "as três leis de Newton",
+    "verificar": [
+     "Leis de Newton",
+     "Principia"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "lw",
+   "q": "Sobre um bloco de 4 kg, em uma superfície sem atrito, atuam duas forças horizontais de sentidos opostos: 30 N e 10 N. Qual é a aceleração do bloco?",
+   "o": [
+    "5 m/s²",
+    "10 m/s²",
+    "7,5 m/s²",
+    "2,5 m/s²"
+   ],
+   "a": 0,
+   "h": "Primeiro ache a força resultante.",
+   "e": "A força resultante é 30 − 10 = 20 N. Pela 2ª lei, a = F / m = 20 / 4 = 5 m/s².",
+   "x": {
+    "1": "Somou as forças, que têm sentidos opostos.",
+    "2": "Usou apenas a força de 30 N.",
+    "3": "Usou apenas a força de 10 N."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/forca-resultante/",
+    "titulo": "Força resultante (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "segunda lei e força resultante",
+    "verificar": [
+     "Força resultante",
+     "segunda Lei de Newton"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "f1": "30 N",
+     "f2": "10 N",
+     "m": "4 kg"
+    },
+    "expr": "(f1-f2)/m",
+    "expr2": "f1/m-f2/m",
+    "unidade": "m/s²",
+    "simbolo": "a",
+    "formula": "a = (F₁ − F₂) / m",
+    "rotulos": {
+     "f1": "F₁",
+     "f2": "F₂",
+     "m": "m"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "lw",
+   "q": "Um astronauta de 50 kg está na Lua, onde g = 1,6 m/s². Qual é o seu peso na Lua?",
+   "o": [
+    "80 N",
+    "500 N",
+    "31 N",
+    "8 N"
+   ],
+   "a": 0,
+   "h": "Peso é massa vezes aceleração da gravidade.",
+   "e": "O peso é P = m·g = 50 · 1,6 = 80 N. A massa continua 50 kg, mas o peso depende do local.",
+   "x": {
+    "1": "Esse é o peso na Terra (g = 10 m/s²).",
+    "2": "Dividiu a massa por g.",
+    "3": "Errou uma casa decimal."
+   },
+   "c": 1,
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/leis-de-newton/",
+    "titulo": "Leis de Newton (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "as três leis de Newton",
+    "verificar": [
+     "Leis de Newton",
+     "Principia"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "m": "50 kg",
+     "g": "1.6 m/s²"
+    },
+    "expr": "m*g",
+    "expr2": "g*m",
+    "unidade": "N",
+    "simbolo": "P",
+    "formula": "P = m·g",
+    "rotulos": {
+     "m": "m",
+     "g": "g"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "lw",
+   "q": "Um livro está em repouso sobre uma mesa. Qual é a força de reação ao peso do livro, segundo a 3ª lei de Newton?",
+   "o": [
+    "A força que o livro exerce sobre a Terra.",
+    "A força normal que a mesa exerce sobre o livro.",
+    "A força que o livro exerce sobre a mesa.",
+    "A força de atrito entre o livro e a mesa."
+   ],
+   "a": 0,
+   "h": "Reação é a mesma interação vista do outro corpo.",
+   "e": "O peso é a atração da Terra sobre o livro. A reação é a atração do livro sobre a Terra: mesma intensidade e direção, sentido oposto, aplicada em outro corpo.",
+   "x": {
+    "1": "A normal atua sobre o livro, assim como o peso; ação e reação atuam em corpos diferentes.",
+    "2": "Essa é a reação da normal, não do peso.",
+    "3": "Não há atrito necessário para o livro parado na horizontal."
+   },
+   "n": 3,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/leis-de-newton/",
+    "titulo": "Leis de Newton (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "as três leis de Newton",
+    "verificar": [
+     "Leis de Newton",
+     "Principia"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "lw",
+   "q": "Verdadeiro ou falso: as forças de ação e reação se anulam, porque têm módulos iguais e sentidos opostos.",
+   "o": [
+    "Verdadeiro",
+    "Falso"
+   ],
+   "a": 1,
+   "h": "Em que corpos elas atuam?",
+   "e": "Falso. Ação e reação têm o mesmo módulo e sentidos opostos, mas atuam em corpos diferentes. Para se anularem, as forças precisariam atuar no mesmo corpo.",
+   "v": 1,
+   "x": {
+    "0": "Elas estão aplicadas em corpos diferentes, então não se anulam."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/leis-de-newton/",
+    "titulo": "Leis de Newton (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "as três leis de Newton",
+    "verificar": [
+     "Leis de Newton",
+     "Principia"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Afirmação conceitual, sem processo para animar."
+   }
+  },
+  {
+   "t": "lw",
+   "q": "Uma pessoa de 60 kg está dentro de um elevador que sobe com aceleração de 2 m/s². Com g = 10 m/s², qual é a força normal do piso sobre ela?",
+   "o": [
+    "720 N",
+    "600 N",
+    "480 N",
+    "120 N"
+   ],
+   "a": 0,
+   "h": "A normal precisa vencer o peso e ainda acelerar a pessoa.",
+   "e": "No eixo vertical, N − P = m·a. Então N = m(g + a) = 60 · 12 = 720 N.",
+   "x": {
+    "1": "Esse é o peso, válido com o elevador parado ou em velocidade constante.",
+    "2": "Subtraiu a aceleração (60 · 8), o que vale na descida acelerada.",
+    "3": "Calculou só m·a."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/forca-resultante/",
+    "titulo": "Força resultante (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "segunda lei e força resultante",
+    "verificar": [
+     "Força resultante",
+     "segunda Lei de Newton"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "m": "60 kg",
+     "g": "10 m/s²",
+     "a": "2 m/s²"
+    },
+    "expr": "m*(g+a)",
+    "expr2": "m*g+m*a",
+    "unidade": "N",
+    "simbolo": "N",
+    "formula": "N = m(g + a)",
+    "rotulos": {
+     "m": "m",
+     "g": "g",
+     "a": "a"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "lw",
+   "q": "Uma astronauta viaja da Terra para a Lua. Qual grandeza dela permanece a mesma?",
+   "o": [
+    "A massa.",
+    "O peso.",
+    "A aceleração da gravidade que sente.",
+    "A força normal sobre ela."
+   ],
+   "a": 0,
+   "h": "Uma delas não depende do local.",
+   "e": "A massa mede a quantidade de matéria e a inércia, e não depende do local. O peso muda porque depende de g.",
+   "x": {
+    "1": "O peso depende de g, que é diferente na Lua.",
+    "2": "A gravidade na Lua é cerca de seis vezes menor.",
+    "3": "A normal depende do peso, que muda."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/leis-de-newton/",
+    "titulo": "Leis de Newton (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "as três leis de Newton",
+    "verificar": [
+     "Leis de Newton",
+     "Principia"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "lw",
+   "q": "Dois blocos, de 2 kg e 3 kg, estão ligados por um fio e apoiados em uma superfície sem atrito. Uma força de 20 N puxa o conjunto. Qual é a aceleração dos blocos?",
+   "o": [
+    "4 m/s²",
+    "10 m/s²",
+    "6,7 m/s²",
+    "8 m/s²"
+   ],
+   "a": 0,
+   "h": "Trate os blocos como um só conjunto.",
+   "e": "Os dois blocos têm a mesma aceleração. A massa total é 2 + 3 = 5 kg, então a = F / m = 20 / 5 = 4 m/s².",
+   "x": {
+    "1": "Usou só a massa de 2 kg (20 / 2).",
+    "2": "Usou só a massa de 3 kg (20 / 3).",
+    "3": "Errou a soma das massas."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/forca-resultante/",
+    "titulo": "Força resultante (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "segunda lei e força resultante",
+    "verificar": [
+     "Força resultante",
+     "segunda Lei de Newton"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "f": "20 N",
+     "m1": "2 kg",
+     "m2": "3 kg"
+    },
+    "expr": "f/(m1+m2)",
+    "expr2": "f/m1/(1+m2/m1)",
+    "unidade": "m/s²",
+    "simbolo": "a",
+    "formula": "a = F / (m₁ + m₂)",
+    "rotulos": {
+     "f": "F",
+     "m1": "m₁",
+     "m2": "m₂"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "at",
+   "q": "Um bloco de 10 kg está sobre um piso horizontal. O coeficiente de atrito cinético é 0,3. Com g = 10 m/s², qual é a força de atrito durante o deslizamento?",
+   "o": [
+    "30 N",
+    "3 N",
+    "100 N",
+    "300 N"
+   ],
+   "a": 0,
+   "h": "A normal vale o peso.",
+   "e": "No piso horizontal, N = m·g = 100 N. Então Fat = μ·N = 0,3 · 100 = 30 N.",
+   "x": {
+    "1": "Dividiu por 10 em vez de multiplicar.",
+    "2": "Esse é o valor da normal, sem o coeficiente.",
+    "3": "Multiplicou por 3 em vez de 0,3."
+   },
+   "c": 1,
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/forca-de-atrito/",
+    "titulo": "Força de Atrito (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "atrito estático e dinâmico",
+    "verificar": [
+     "força de atrito",
+     "atrito estático"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "mu": "0.3",
+     "m": "10 kg",
+     "g": "10 m/s²"
+    },
+    "expr": "mu*m*g",
+    "expr2": "m*g*mu",
+    "unidade": "N",
+    "simbolo": "Fat",
+    "formula": "Fat = μ·N",
+    "rotulos": {
+     "mu": "μ",
+     "m": "m",
+     "g": "g"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "at",
+   "q": "Por que costuma ser mais difícil começar a empurrar um armário do que mantê-lo em movimento?",
+   "o": [
+    "O atrito estático máximo é maior que o atrito cinético.",
+    "A massa do armário diminui quando ele se move.",
+    "O atrito deixa de existir quando o armário se move.",
+    "A força normal aumenta com o movimento."
+   ],
+   "a": 0,
+   "h": "Compare os dois tipos de atrito.",
+   "e": "Para iniciar o movimento é preciso vencer o atrito estático máximo, que é em geral maior que o atrito cinético que atua depois que o armário desliza.",
+   "x": {
+    "1": "A massa não muda com o movimento.",
+    "2": "O atrito cinético continua atuando.",
+    "3": "A normal não depende do movimento horizontal."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/forca-de-atrito/",
+    "titulo": "Força de Atrito (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "atrito estático e dinâmico",
+    "verificar": [
+     "força de atrito",
+     "atrito estático"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "at",
+   "q": "Um bloco desliza, sem atrito, em um plano inclinado de 30° (sen 30° = 0,5). Com g = 10 m/s², qual é a sua aceleração?",
+   "o": [
+    "5 m/s²",
+    "10 m/s²",
+    "8,7 m/s²",
+    "2,5 m/s²"
+   ],
+   "a": 0,
+   "h": "Use a = g · sen θ.",
+   "e": "Sem atrito, só a componente do peso ao longo do plano acelera o bloco: a = g · sen θ = 10 · 0,5 = 5 m/s².",
+   "x": {
+    "1": "Essa seria a queda livre, sem o plano.",
+    "2": "Usou cos 30° no lugar de sen 30°.",
+    "3": "Dividiu 5 por 2 sem motivo."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/plano-inclinado/",
+    "titulo": "Plano Inclinado (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "componentes do peso e atrito no plano",
+    "verificar": [
+     "plano inclinado",
+     "força peso"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "g": "10 m/s²",
+     "s": "0.5"
+    },
+    "expr": "g*s",
+    "expr2": "s*g",
+    "unidade": "m/s²",
+    "simbolo": "a",
+    "formula": "a = g · sen θ",
+    "rotulos": {
+     "g": "g",
+     "s": "sen θ"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "at",
+   "q": "Um bloco de 20 kg está sobre um plano inclinado cujo ângulo tem sen θ = 0,6 e cos θ = 0,8. Com g = 10 m/s², qual é a componente do peso paralela ao plano?",
+   "o": [
+    "120 N",
+    "160 N",
+    "200 N",
+    "12 N"
+   ],
+   "a": 0,
+   "h": "A componente paralela usa o seno.",
+   "e": "A componente do peso ao longo do plano é Px = m·g·sen θ = 20 · 10 · 0,6 = 120 N.",
+   "x": {
+    "1": "Essa é a componente perpendicular ao plano (usa cos θ).",
+    "2": "Esse é o peso total do bloco.",
+    "3": "Errou uma casa decimal."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/plano-inclinado/",
+    "titulo": "Plano Inclinado (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "componentes do peso e atrito no plano",
+    "verificar": [
+     "plano inclinado",
+     "força peso"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "m": "20 kg",
+     "g": "10 m/s²",
+     "s": "0.6"
+    },
+    "expr": "m*g*s",
+    "expr2": "s*m*g",
+    "unidade": "N",
+    "simbolo": "Px",
+    "formula": "Px = m·g·sen θ",
+    "rotulos": {
+     "m": "m",
+     "g": "g",
+     "s": "sen θ"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "at",
+   "q": "Um bloco de 5 kg repousa sobre um plano inclinado com cos θ = 0,8. Com g = 10 m/s², qual é a força normal do plano sobre o bloco?",
+   "o": [
+    "40 N",
+    "30 N",
+    "50 N",
+    "4 N"
+   ],
+   "a": 0,
+   "h": "A normal usa o cosseno do ângulo.",
+   "e": "No plano inclinado, a normal equilibra a componente perpendicular do peso: N = m·g·cos θ = 5 · 10 · 0,8 = 40 N.",
+   "x": {
+    "1": "Usou sen θ (0,6) no lugar de cos θ.",
+    "2": "Esse é o peso total do bloco.",
+    "3": "Errou uma casa decimal."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/plano-inclinado.htm",
+    "titulo": "Plano inclinado (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "forças no plano inclinado com e sem atrito",
+    "verificar": [
+     "plano inclinado",
+     "força de atrito"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "m": "5 kg",
+     "g": "10 m/s²",
+     "c": "0.8"
+    },
+    "expr": "m*g*c",
+    "expr2": "c*g*m",
+    "unidade": "N",
+    "simbolo": "N",
+    "formula": "N = m·g·cos θ",
+    "rotulos": {
+     "m": "m",
+     "g": "g",
+     "c": "cos θ"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "at",
+   "q": "Um bloco desce um plano inclinado com atrito (sen θ = 0,6, cos θ = 0,8 e μ = 0,5). Com g = 10 m/s², qual é a sua aceleração?",
+   "o": [
+    "2 m/s²",
+    "6 m/s²",
+    "3 m/s²",
+    "10 m/s²"
+   ],
+   "a": 0,
+   "h": "Subtraia o atrito da componente do peso.",
+   "e": "A aceleração é a = g(sen θ − μ·cos θ) = 10 · (0,6 − 0,5 · 0,8) = 10 · 0,2 = 2 m/s².",
+   "x": {
+    "1": "Ignorou o atrito (g · sen θ = 6).",
+    "2": "Usou μ·sen θ no lugar de μ·cos θ (10 · (0,6 − 0,3) = 3).",
+    "3": "Considerou queda livre."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/plano-inclinado.htm",
+    "titulo": "Plano inclinado (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "forças no plano inclinado com e sem atrito",
+    "verificar": [
+     "plano inclinado",
+     "força de atrito"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "g": "10 m/s²",
+     "s": "0.6",
+     "c": "0.8",
+     "mu": "0.5"
+    },
+    "expr": "g*(s-mu*c)",
+    "expr2": "g*s-g*mu*c",
+    "unidade": "m/s²",
+    "simbolo": "a",
+    "formula": "a = g(sen θ − μ·cos θ)",
+    "rotulos": {
+     "g": "g",
+     "s": "sen θ",
+     "c": "cos θ",
+     "mu": "μ"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "at",
+   "q": "Um bloco está sobre um plano inclinado. Qual componente do peso é responsável por puxar o bloco ao longo do plano?",
+   "o": [
+    "A componente paralela ao plano, Px = P · sen θ.",
+    "A componente perpendicular ao plano, Py = P · cos θ.",
+    "A força normal.",
+    "A força de atrito."
+   ],
+   "a": 0,
+   "h": "Qual componente tem a direção do movimento?",
+   "e": "O peso é decomposto em duas partes: uma perpendicular ao plano (equilibrada pela normal) e outra paralela ao plano, que tende a fazer o bloco escorregar.",
+   "x": {
+    "1": "Essa componente é equilibrada pela normal.",
+    "2": "A normal é perpendicular ao plano e não puxa o bloco.",
+    "3": "O atrito se opõe ao movimento do bloco."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/plano-inclinado/",
+    "titulo": "Plano Inclinado (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "componentes do peso e atrito no plano",
+    "verificar": [
+     "plano inclinado",
+     "força peso"
+    ]
+   },
+   "an": "mec_incl"
+  },
+  {
+   "t": "tb",
+   "q": "Uma força constante de 50 N desloca um bloco por 4 m. A força forma 60° com o deslocamento (cos 60° = 0,5). Qual é o trabalho da força?",
+   "o": [
+    "100 J",
+    "200 J",
+    "173 J",
+    "400 J"
+   ],
+   "a": 0,
+   "h": "Inclua o cosseno do ângulo.",
+   "e": "O trabalho é τ = F·d·cos θ = 50 · 4 · 0,5 = 100 J.",
+   "x": {
+    "1": "Esqueceu o cosseno do ângulo.",
+    "2": "Usou o seno de 60°.",
+    "3": "Multiplicou pelo ângulo em vez do cosseno."
+   },
+   "c": 1,
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/trabalho-na-fisica/",
+    "titulo": "Trabalho na Física (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "trabalho de uma força e teorema da energia cinética",
+    "verificar": [
+     "Trabalho",
+     "joule"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "f": "50 N",
+     "d": "4 m",
+     "c": "0.5"
+    },
+    "expr": "f*d*c",
+    "expr2": "c*d*f",
+    "unidade": "J",
+    "simbolo": "τ",
+    "formula": "τ = F·d·cos θ",
+    "rotulos": {
+     "f": "F",
+     "d": "d",
+     "c": "cos θ"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "tb",
+   "q": "Em qual situação o trabalho realizado por uma força é nulo?",
+   "o": [
+    "A força é perpendicular ao deslocamento.",
+    "A força é paralela ao deslocamento.",
+    "A força é muito intensa.",
+    "O deslocamento é muito grande."
+   ],
+   "a": 0,
+   "h": "Pense no ângulo de 90°.",
+   "e": "O trabalho é τ = F·d·cos θ. Com a força perpendicular ao deslocamento, θ = 90° e cos 90° = 0, então o trabalho é nulo.",
+   "x": {
+    "1": "Paralela, o cosseno vale 1 e o trabalho é máximo.",
+    "2": "A intensidade sozinha não anula o trabalho.",
+    "3": "Deslocamento grande aumenta o trabalho, não o anula."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/trabalho-na-fisica/",
+    "titulo": "Trabalho na Física (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "trabalho de uma força e teorema da energia cinética",
+    "verificar": [
+     "Trabalho",
+     "joule"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "tb",
+   "q": "Uma força realiza um trabalho de 1200 J em 20 s. Qual é a potência média?",
+   "o": [
+    "60 W",
+    "24000 W",
+    "600 W",
+    "6 W"
+   ],
+   "a": 0,
+   "h": "Divida o trabalho pelo tempo.",
+   "e": "Potência é trabalho por unidade de tempo: P = τ / Δt = 1200 / 20 = 60 W.",
+   "x": {
+    "1": "Multiplicou o trabalho pelo tempo.",
+    "2": "Dividiu por 2 em vez de 20.",
+    "3": "Errou uma casa decimal."
+   },
+   "c": 1,
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/potencia-mecanica-e-rendimento/",
+    "titulo": "Potência mecânica e rendimento (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "potência e rendimento",
+    "verificar": [
+     "Potência",
+     "trabalho"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "tau": "1200 J",
+     "t": "20 s"
+    },
+    "expr": "tau/t",
+    "expr2": "tau*(1/t)",
+    "unidade": "W",
+    "simbolo": "P",
+    "formula": "P = τ / Δt",
+    "rotulos": {
+     "tau": "τ",
+     "t": "Δt"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "tb",
+   "q": "Uma bomba eleva 200 kg de água a uma altura de 10 m em 20 s. Com g = 10 m/s², qual é a potência mínima necessária?",
+   "o": [
+    "1000 W",
+    "20000 W",
+    "2000 W",
+    "100 W"
+   ],
+   "a": 0,
+   "h": "Calcule o trabalho e depois divida pelo tempo.",
+   "e": "O trabalho contra o peso é τ = m·g·h = 200 · 10 · 10 = 20000 J. A potência é P = τ / Δt = 20000 / 20 = 1000 W.",
+   "x": {
+    "1": "Esse é o trabalho em joules; faltou dividir pelo tempo.",
+    "2": "Esqueceu a altura e o tempo.",
+    "3": "Errou a divisão por 200."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/potencia-mecanica-e-rendimento/",
+    "titulo": "Potência mecânica e rendimento (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "potência e rendimento",
+    "verificar": [
+     "Potência",
+     "trabalho"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "m": "200 kg",
+     "g": "10 m/s²",
+     "h": "10 m",
+     "t": "20 s"
+    },
+    "expr": "m*g*h/t",
+    "expr2": "m*g*(h/t)",
+    "unidade": "W",
+    "simbolo": "P",
+    "formula": "P = m·g·h / Δt",
+    "rotulos": {
+     "m": "m",
+     "g": "g",
+     "h": "h",
+     "t": "Δt"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "tb",
+   "q": "Um carro se desloca a 20 m/s com uma força motriz constante de 500 N. Qual é a potência desenvolvida pela força?",
+   "o": [
+    "10 kW",
+    "25 kW",
+    "100 kW",
+    "1 kW"
+   ],
+   "a": 0,
+   "h": "Use P = F·v.",
+   "e": "Com força e velocidade na mesma direção, P = F·v = 500 · 20 = 10000 W = 10 kW.",
+   "x": {
+    "1": "Dividiu a força pela velocidade.",
+    "2": "Multiplicou por 5 a mais.",
+    "3": "Errou duas casas decimais."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/potencia-mecanica-e-rendimento/",
+    "titulo": "Potência mecânica e rendimento (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "potência e rendimento",
+    "verificar": [
+     "Potência",
+     "trabalho"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "f": "500 N",
+     "v": "20 m/s"
+    },
+    "expr": "f*v",
+    "expr2": "v*f",
+    "unidade": "kW",
+    "simbolo": "P",
+    "formula": "P = F·v",
+    "rotulos": {
+     "f": "F",
+     "v": "v"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "tb",
+   "q": "Verdadeiro ou falso: o trabalho de uma força de atrito que se opõe ao deslocamento é negativo.",
+   "o": [
+    "Verdadeiro",
+    "Falso"
+   ],
+   "a": 0,
+   "h": "Qual é o ângulo entre o atrito e o deslocamento?",
+   "e": "Verdadeiro. A força de atrito tem sentido oposto ao deslocamento (θ = 180°), então cos 180° = −1 e o trabalho é negativo (trabalho resistente).",
+   "v": 1,
+   "x": {
+    "1": "O atrito atua contra o movimento; o trabalho é resistente."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/trabalho-na-fisica/",
+    "titulo": "Trabalho na Física (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "trabalho de uma força e teorema da energia cinética",
+    "verificar": [
+     "Trabalho",
+     "joule"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Afirmação conceitual, sem processo para animar."
+   }
+  },
+  {
+   "t": "en",
+   "q": "Um carro de 1200 kg se move a 72 km/h. Qual é a sua energia cinética?",
+   "o": [
+    "240 kJ",
+    "3110 kJ",
+    "480 kJ",
+    "24 kJ"
+   ],
+   "a": 0,
+   "h": "Converta a velocidade para m/s antes.",
+   "e": "Em m/s, v = 72 / 3,6 = 20 m/s. Então Ec = m·v² / 2 = 1200 · 400 / 2 = 240000 J = 240 kJ.",
+   "x": {
+    "1": "Usou 72 no lugar de 20 m/s, sem converter.",
+    "2": "Esqueceu o fator 1/2.",
+    "3": "Errou uma casa decimal."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/energia-cinetica/",
+    "titulo": "Energia Cinética (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "energia cinética e teorema trabalho-energia",
+    "verificar": [
+     "Energia Cinética",
+     "Teorema"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "m": "1200 kg",
+     "v": "72 km/h"
+    },
+    "expr": "m*v*v/2",
+    "expr2": "m*v*(v/2)",
+    "unidade": "kJ",
+    "simbolo": "Ec",
+    "formula": "Ec = m·v² / 2",
+    "rotulos": {
+     "m": "m",
+     "v": "v"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "en",
+   "q": "Um objeto de 3 kg está a 5 m de altura. Com g = 10 m/s², qual é a sua energia potencial gravitacional em relação ao solo?",
+   "o": [
+    "150 J",
+    "15 J",
+    "30 J",
+    "1500 J"
+   ],
+   "a": 0,
+   "h": "Use Ep = m·g·h.",
+   "e": "Ep = m·g·h = 3 · 10 · 5 = 150 J.",
+   "x": {
+    "1": "Dividiu por 10 em vez de multiplicar.",
+    "2": "Esqueceu a altura.",
+    "3": "Errou uma casa decimal."
+   },
+   "c": 1,
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/energia-mecanica/",
+    "titulo": "Energia mecânica (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "energia mecânica e conservação",
+    "verificar": [
+     "energia mecânica",
+     "conservação"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "m": "3 kg",
+     "g": "10 m/s²",
+     "h": "5 m"
+    },
+    "expr": "m*g*h",
+    "expr2": "h*g*m",
+    "unidade": "J",
+    "simbolo": "Ep",
+    "formula": "Ep = m·g·h",
+    "rotulos": {
+     "m": "m",
+     "g": "g",
+     "h": "h"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "en",
+   "q": "Um carrinho parte do repouso do topo de uma montanha-russa, a 20 m do solo. Sem atrito e com g = 10 m/s², qual é a sua velocidade ao passar por um ponto a 5 m do solo?",
+   "o": [
+    "17,3 m/s",
+    "20 m/s",
+    "10 m/s",
+    "300 m/s"
+   ],
+   "a": 0,
+   "h": "A energia potencial perdida vira cinética.",
+   "e": "Pela conservação da energia, m·g·(H − h) = m·v² / 2. Então v = √(2·g·(H − h)) = √(2 · 10 · 15) = √300; logo v = 17,32 m/s.",
+   "x": {
+    "1": "Usou a altura total (20 m) em vez do desnível.",
+    "2": "Usou só a altura do ponto (5 m).",
+    "3": "Esqueceu de tirar a raiz quadrada."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/energia-mecanica/",
+    "titulo": "Energia mecânica (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "energia mecânica e conservação",
+    "verificar": [
+     "energia mecânica",
+     "conservação"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "g": "10 m/s²",
+     "hh": "20 m",
+     "h": "5 m"
+    },
+    "expr": "sqrt(2*g*(hh-h))",
+    "expr2": "sqrt(2*g*hh-2*g*h)",
+    "unidade": "m/s",
+    "simbolo": "v",
+    "formula": "v = √(2·g·(H − h))",
+    "rotulos": {
+     "g": "g",
+     "hh": "H",
+     "h": "h"
+    },
+    "tol": 0.01
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "en",
+   "q": "Uma mola de constante elástica 200 N/m está comprimida de 0,1 m. Qual é a energia potencial elástica armazenada?",
+   "o": [
+    "1 J",
+    "20 J",
+    "10 J",
+    "0,1 J"
+   ],
+   "a": 0,
+   "h": "Use Ee = k·x² / 2.",
+   "e": "Ee = k·x² / 2 = 200 · 0,01 / 2 = 1 J.",
+   "x": {
+    "1": "Esqueceu de dividir por 2 e de elevar x ao quadrado.",
+    "2": "Multiplicou k por x sem o quadrado nem a divisão por 2.",
+    "3": "Dividiu k·x² por 20."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/energia-mecanica/",
+    "titulo": "Energia mecânica (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "energia mecânica e conservação",
+    "verificar": [
+     "energia mecânica",
+     "conservação"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "k": "200 N/m",
+     "x": "0.1 m"
+    },
+    "expr": "k*x*x/2",
+    "expr2": "k*x*(x/2)",
+    "unidade": "J",
+    "simbolo": "Ee",
+    "formula": "Ee = k·x² / 2",
+    "rotulos": {
+     "k": "k",
+     "x": "x"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "en",
+   "q": "Um carro de 1000 kg aumenta a velocidade de 10 m/s para 20 m/s. Qual foi o trabalho da força resultante?",
+   "o": [
+    "150 kJ",
+    "50 kJ",
+    "250 kJ",
+    "200 kJ"
+   ],
+   "a": 0,
+   "h": "O trabalho resultante é a variação da energia cinética.",
+   "e": "Pelo teorema da energia cinética, τ = ΔEc = m(v₂² − v₁²) / 2 = 1000 · (400 − 100) / 2 = 150000 J = 150 kJ.",
+   "x": {
+    "1": "Usou (v₂ − v₁)² no lugar de v₂² − v₁².",
+    "2": "Somou os quadrados das velocidades.",
+    "3": "Considerou só a energia cinética final."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/energia-cinetica/",
+    "titulo": "Energia Cinética (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "energia cinética e teorema trabalho-energia",
+    "verificar": [
+     "Energia Cinética",
+     "Teorema"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "m": "1000 kg",
+     "v1": "10 m/s",
+     "v2": "20 m/s"
+    },
+    "expr": "m*(v2*v2-v1*v1)/2",
+    "expr2": "m*v2*v2/2-m*v1*v1/2",
+    "unidade": "kJ",
+    "simbolo": "τ",
+    "formula": "τ = ΔEc",
+    "rotulos": {
+     "m": "m",
+     "v1": "v₁",
+     "v2": "v₂"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "en",
+   "q": "Um corpo cai em queda livre, sem resistência do ar. O que acontece durante a queda?",
+   "o": [
+    "A energia cinética aumenta, a potencial diminui e a mecânica se mantém constante.",
+    "A energia cinética e a potencial aumentam.",
+    "A energia mecânica aumenta.",
+    "A energia cinética diminui."
+   ],
+   "a": 0,
+   "h": "Uma energia se transforma na outra.",
+   "e": "A altura diminui (Ep diminui) e a velocidade aumenta (Ec aumenta). Sem forças dissipativas, a soma Ec + Ep se conserva.",
+   "x": {
+    "1": "A potencial diminui, pois a altura diminui.",
+    "2": "A energia mecânica não aumenta sem uma força externa.",
+    "3": "A velocidade aumenta, então a cinética aumenta."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/energia-mecanica/",
+    "titulo": "Energia mecânica (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "energia mecânica e conservação",
+    "verificar": [
+     "energia mecânica",
+     "conservação"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "en",
+   "q": "Verdadeiro ou falso: se a velocidade de um corpo dobra, sua energia cinética também dobra.",
+   "o": [
+    "Verdadeiro",
+    "Falso"
+   ],
+   "a": 1,
+   "h": "Observe que v está elevada ao quadrado.",
+   "e": "Falso. A energia cinética é proporcional ao quadrado da velocidade (Ec = m·v² / 2). Dobrando a velocidade, a energia cinética fica 4 vezes maior.",
+   "v": 1,
+   "x": {
+    "0": "Com v ao quadrado, dobrar v multiplica Ec por 4."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/energia-cinetica/",
+    "titulo": "Energia Cinética (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "energia cinética e teorema trabalho-energia",
+    "verificar": [
+     "Energia Cinética",
+     "Teorema"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Afirmação conceitual, sem processo para animar."
+   }
+  },
+  {
+   "t": "en",
+   "q": "Um bloco desliza sobre um piso áspero até parar. O que acontece com a energia mecânica?",
+   "o": [
+    "Parte dela se converte em energia térmica, e a energia total se conserva.",
+    "Ela desaparece, violando a conservação da energia.",
+    "Ela se converte toda em energia potencial.",
+    "Ela aumenta."
+   ],
+   "a": 0,
+   "h": "Pense no aquecimento das superfícies.",
+   "e": "O atrito é uma força dissipativa: transforma energia mecânica em energia térmica. A energia total do sistema se conserva, mas a mecânica diminui.",
+   "x": {
+    "1": "A energia nunca desaparece; ela se transforma.",
+    "2": "A altura do bloco não mudou, então não há ganho de Ep.",
+    "3": "Com atrito a energia mecânica só diminui."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/energia-mecanica/",
+    "titulo": "Energia mecânica (Toda Matéria)",
+    "conferido_em": "2026-11-07",
+    "base": "energia mecânica e conservação",
+    "verificar": [
+     "energia mecânica",
+     "conservação"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "qm",
+   "q": "Uma bola de 0,4 kg se move a 15 m/s. Qual é a sua quantidade de movimento?",
+   "o": [
+    "6 kg·m/s",
+    "37,5 kg·m/s",
+    "3 kg·m/s",
+    "60 kg·m/s"
+   ],
+   "a": 0,
+   "h": "Use Q = m·v.",
+   "e": "A quantidade de movimento é Q = m·v = 0,4 · 15 = 6 kg·m/s.",
+   "x": {
+    "1": "Dividiu a velocidade pela massa.",
+    "2": "Usou a metade, como na energia cinética.",
+    "3": "Errou uma casa decimal."
+   },
+   "c": 1,
+   "n": 1,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/impulso-quantidade-movimento.htm",
+    "titulo": "Impulso e Quantidade de Movimento (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "impulso e quantidade de movimento",
+    "verificar": [
+     "impulso",
+     "quantidade de movimento"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "m": "0.4 kg",
+     "v": "15 m/s"
+    },
+    "expr": "m*v",
+    "expr2": "v*m",
+    "unidade": "kg·m/s",
+    "simbolo": "Q",
+    "formula": "Q = m·v",
+    "rotulos": {
+     "m": "m",
+     "v": "v"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "qm",
+   "q": "Uma força média de 200 N atua sobre um corpo por 0,05 s. Qual é o impulso dessa força?",
+   "o": [
+    "10 N·s",
+    "4000 N·s",
+    "0,25 N·s",
+    "100 N·s"
+   ],
+   "a": 0,
+   "h": "Use I = F·Δt.",
+   "e": "O impulso é I = F·Δt = 200 · 0,05 = 10 N·s.",
+   "x": {
+    "1": "Dividiu a força pelo tempo.",
+    "2": "Dividiu o tempo pela força.",
+    "3": "Errou uma casa decimal."
+   },
+   "c": 1,
+   "n": 1,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/impulso-quantidade-movimento.htm",
+    "titulo": "Impulso e Quantidade de Movimento (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "impulso e quantidade de movimento",
+    "verificar": [
+     "impulso",
+     "quantidade de movimento"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "f": "200 N",
+     "dt": "0.05 s"
+    },
+    "expr": "f*dt",
+    "expr2": "dt*f",
+    "unidade": "N·s",
+    "simbolo": "I",
+    "formula": "I = F·Δt",
+    "rotulos": {
+     "f": "F",
+     "dt": "Δt"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "qm",
+   "q": "Uma bola de 0,5 kg, inicialmente parada, é chutada e sai com 20 m/s. O contato dura 0,01 s. Qual é a força média do chute?",
+   "o": [
+    "1000 N",
+    "10 N",
+    "100 N",
+    "10000 N"
+   ],
+   "a": 0,
+   "h": "Use F·Δt = m·Δv.",
+   "e": "Pelo teorema do impulso, F·Δt = m·Δv. Então F = m·Δv / Δt = 0,5 · 20 / 0,01 = 1000 N.",
+   "x": {
+    "1": "Esqueceu de dividir pelo tempo de contato muito curto.",
+    "2": "Dividiu por 0,1 em vez de 0,01.",
+    "3": "Errou uma casa decimal."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/impulso-quantidade-movimento.htm",
+    "titulo": "Impulso e Quantidade de Movimento (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "impulso e quantidade de movimento",
+    "verificar": [
+     "impulso",
+     "quantidade de movimento"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "m": "0.5 kg",
+     "dv": "20 m/s",
+     "dt": "0.01 s"
+    },
+    "expr": "m*dv/dt",
+    "expr2": "(m/dt)*dv",
+    "unidade": "N",
+    "simbolo": "F",
+    "formula": "F = m·Δv / Δt",
+    "rotulos": {
+     "m": "m",
+     "dv": "Δv",
+     "dt": "Δt"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "qm",
+   "q": "Um bloco de 2 kg com velocidade de 6 m/s colide com um bloco de 4 kg parado, e os dois ficam unidos. Qual é a velocidade do conjunto logo após o choque?",
+   "o": [
+    "2 m/s",
+    "3 m/s",
+    "6 m/s",
+    "4 m/s"
+   ],
+   "a": 0,
+   "h": "Conserve a quantidade de movimento total.",
+   "e": "A quantidade de movimento se conserva: 2 · 6 = (2 + 4) · v. Então v = 12 / 6 = 2 m/s.",
+   "x": {
+    "1": "Dividiu a velocidade por 2, ignorando as massas.",
+    "2": "Manteve a velocidade do primeiro bloco.",
+    "3": "Usou a massa do segundo bloco sozinha."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/impulso-quantidade-movimento.htm",
+    "titulo": "Impulso e Quantidade de Movimento (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "impulso e quantidade de movimento",
+    "verificar": [
+     "impulso",
+     "quantidade de movimento"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "m1": "2 kg",
+     "v1": "6 m/s",
+     "m2": "4 kg"
+    },
+    "expr": "m1*v1/(m1+m2)",
+    "expr2": "v1/(1+m2/m1)",
+    "unidade": "m/s",
+    "simbolo": "v",
+    "formula": "v = m₁·v₁ / (m₁ + m₂)",
+    "rotulos": {
+     "m1": "m₁",
+     "v1": "v₁",
+     "m2": "m₂"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "qm",
+   "q": "Em uma colisão entre dois corpos em um sistema isolado, o que se conserva sempre?",
+   "o": [
+    "A quantidade de movimento total do sistema.",
+    "A energia cinética total do sistema.",
+    "A velocidade de cada corpo.",
+    "A quantidade de movimento de cada corpo."
+   ],
+   "a": 0,
+   "h": "Qual grandeza vale para todo tipo de colisão?",
+   "e": "Em um sistema isolado, a quantidade de movimento total se conserva em qualquer colisão. A energia cinética só se conserva nas colisões perfeitamente elásticas.",
+   "x": {
+    "1": "Só nas colisões elásticas.",
+    "2": "As velocidades mudam na colisão.",
+    "3": "Cada corpo troca quantidade de movimento com o outro."
+   },
+   "n": 3,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/impulso-quantidade-movimento.htm",
+    "titulo": "Impulso e Quantidade de Movimento (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "impulso e quantidade de movimento",
+    "verificar": [
+     "impulso",
+     "quantidade de movimento"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "qm",
+   "q": "Por que o air bag e o cinto de segurança reduzem as lesões em uma batida?",
+   "o": [
+    "Aumentam o tempo de contato, diminuindo a força média sobre o corpo.",
+    "Aumentam a velocidade do carro na batida.",
+    "Diminuem a massa do passageiro.",
+    "Eliminam o impulso sobre o passageiro."
+   ],
+   "a": 0,
+   "h": "O impulso é o mesmo, então o que muda?",
+   "e": "O impulso para parar o passageiro é o mesmo. Como I = F·Δt, aumentar Δt diminui a força média.",
+   "x": {
+    "1": "Não alteram a velocidade do carro.",
+    "2": "A massa do passageiro não muda.",
+    "3": "O impulso necessário para parar o passageiro continua o mesmo."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/impulso-quantidade-movimento.htm",
+    "titulo": "Impulso e Quantidade de Movimento (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "impulso e quantidade de movimento",
+    "verificar": [
+     "impulso",
+     "quantidade de movimento"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "qm",
+   "q": "Verdadeiro ou falso: a quantidade de movimento é uma grandeza escalar.",
+   "o": [
+    "Verdadeiro",
+    "Falso"
+   ],
+   "a": 1,
+   "h": "Ela tem direção e sentido?",
+   "e": "Falso. A quantidade de movimento Q = m·v é uma grandeza vetorial, com a mesma direção e sentido da velocidade.",
+   "v": 1,
+   "x": {
+    "0": "A velocidade é vetorial, então Q também é."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/impulso-quantidade-movimento.htm",
+    "titulo": "Impulso e Quantidade de Movimento (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "impulso e quantidade de movimento",
+    "verificar": [
+     "impulso",
+     "quantidade de movimento"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Afirmação conceitual, sem processo para animar."
+   }
+  },
+  {
+   "t": "gv",
+   "q": "Segundo a lei da gravitação universal de Newton, a força de atração entre dois corpos é:",
+   "o": [
+    "Proporcional ao produto das massas e inversamente proporcional ao quadrado da distância.",
+    "Proporcional à soma das massas e à distância.",
+    "Proporcional à distância e independente das massas.",
+    "Inversamente proporcional ao produto das massas."
+   ],
+   "a": 0,
+   "h": "Veja a fórmula F = G·M·m / d².",
+   "e": "A lei diz F = G·M·m / d²: a força cresce com as massas e diminui com o quadrado da distância entre os centros.",
+   "x": {
+    "1": "Não depende da soma das massas nem aumenta com a distância.",
+    "2": "A força depende das massas e diminui com a distância.",
+    "3": "A força aumenta quando as massas aumentam."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/lei-gravitacao-newton.htm",
+    "titulo": "Lei da Gravitação de Newton (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "lei da gravitação universal",
+    "verificar": [
+     "gravitação",
+     "inversamente proporcional"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "gv",
+   "q": "Se a distância entre dois corpos for triplicada, o que acontece com a força gravitacional entre eles?",
+   "o": [
+    "Fica dividida por 9.",
+    "Fica dividida por 3.",
+    "Fica multiplicada por 3.",
+    "Fica multiplicada por 9."
+   ],
+   "a": 0,
+   "h": "Lembre do quadrado da distância.",
+   "e": "A força é inversamente proporcional ao quadrado da distância. Com d multiplicado por 3, F fica dividida por 3² = 9.",
+   "x": {
+    "1": "Isso valeria se a força dependesse de d, e não de d².",
+    "2": "A força diminui com a distância.",
+    "3": "A força diminui com a distância e não aumenta."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/lei-gravitacao-newton.htm",
+    "titulo": "Lei da Gravitação de Newton (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "lei da gravitação universal",
+    "verificar": [
+     "gravitação",
+     "inversamente proporcional"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "gv",
+   "q": "Dois corpos de 1000 kg e 2000 kg estão a 10 m de distância. Com G = 6,67 × 10⁻¹¹ N·m²/kg², qual é a força gravitacional entre eles?",
+   "o": [
+    "1,3 × 10⁻⁶ N",
+    "1,3 × 10⁻⁴ N",
+    "1,3 × 10⁻⁸ N",
+    "6,7 × 10⁻⁹ N"
+   ],
+   "a": 0,
+   "h": "Use F = G·m₁·m₂ / d².",
+   "e": "F = G·m₁·m₂ / d² = 6,67 × 10⁻¹¹ · 1000 · 2000 / 100 ; portanto F = 1,33 × 10⁻⁶ N.",
+   "x": {
+    "1": "Errou duas potências de dez.",
+    "2": "Errou duas potências de dez, no outro sentido.",
+    "3": "Multiplicou G por d² em vez de dividir."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/lei-gravitacao-newton.htm",
+    "titulo": "Lei da Gravitação de Newton (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "lei da gravitação universal",
+    "verificar": [
+     "gravitação",
+     "inversamente proporcional"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "m1": "1000 kg",
+     "m2": "2000 kg",
+     "d": "10 m"
+    },
+    "expr": "G*m1*m2/(d*d)",
+    "expr2": "G*m1*(m2/(d*d))",
+    "unidade": "N",
+    "simbolo": "F",
+    "formula": "F = G·m₁·m₂ / d²",
+    "rotulos": {
+     "m1": "m₁",
+     "m2": "m₂",
+     "d": "d"
+    },
+    "tol": 0.05
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "gv",
+   "q": "Segundo a terceira lei de Kepler, um planeta mais distante do Sol, em comparação com um mais próximo, tem período orbital:",
+   "o": [
+    "Maior.",
+    "Menor.",
+    "Igual.",
+    "Nulo."
+   ],
+   "a": 0,
+   "h": "T² é proporcional a r³.",
+   "e": "A terceira lei de Kepler diz que o quadrado do período é proporcional ao cubo do raio médio da órbita (T² ∝ r³). Órbita maior, período maior.",
+   "x": {
+    "1": "Períodos menores são de planetas mais próximos.",
+    "2": "Os períodos diferem, pois dependem do raio.",
+    "3": "Todo planeta tem período diferente de zero."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/gravitacao.htm",
+    "titulo": "Gravitação (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "leis de Kepler e gravitação",
+    "verificar": [
+     "Kepler",
+     "gravitação"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "gv",
+   "q": "Segundo a segunda lei de Kepler, em que ponto da órbita um planeta se move mais rápido?",
+   "o": [
+    "No ponto mais próximo do Sol (periélio).",
+    "No ponto mais distante do Sol (afélio).",
+    "Sempre com a mesma velocidade.",
+    "No ponto em que a órbita é mais larga."
+   ],
+   "a": 0,
+   "h": "Áreas iguais em tempos iguais.",
+   "e": "A linha que une o planeta ao Sol varre áreas iguais em tempos iguais. Perto do Sol o raio é menor, então a velocidade precisa ser maior.",
+   "x": {
+    "1": "No afélio ele é mais lento.",
+    "2": "A velocidade varia ao longo da órbita elíptica.",
+    "3": "A largura da órbita não define a velocidade."
+   },
+   "n": 3,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/gravitacao.htm",
+    "titulo": "Gravitação (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "leis de Kepler e gravitação",
+    "verificar": [
+     "Kepler",
+     "gravitação"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "gv",
+   "q": "A Terra tem massa de 6 × 10²⁴ kg e raio de 6,4 × 10⁶ m. Com G = 6,67 × 10⁻¹¹ N·m²/kg², qual é a aceleração da gravidade na sua superfície?",
+   "o": [
+    "9,8 m/s²",
+    "98 m/s²",
+    "0,98 m/s²",
+    "1,6 m/s²"
+   ],
+   "a": 0,
+   "h": "Use g = G·M / R².",
+   "e": "g = G·M / R² = 6,67 × 10⁻¹¹ · 6 × 10²⁴ / (6,4 × 10⁶)² ; portanto g = 9,78 m/s²  (cerca de 9,8 m/s²).",
+   "x": {
+    "1": "Errou uma potência de dez.",
+    "2": "Errou uma potência de dez, no outro sentido.",
+    "3": "Esse é o valor de g na Lua."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/lei-gravitacao-newton.htm",
+    "titulo": "Lei da Gravitação de Newton (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "lei da gravitação universal",
+    "verificar": [
+     "gravitação",
+     "inversamente proporcional"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "M": "6e24 kg",
+     "R": "6.4e6 m"
+    },
+    "expr": "G*M/(R*R)",
+    "expr2": "G*(M/(R*R))",
+    "unidade": "m/s²",
+    "simbolo": "g",
+    "formula": "g = G·M / R²",
+    "rotulos": {
+     "M": "M",
+     "R": "R"
+    },
+    "tol": 0.01
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "gv",
+   "q": "Verdadeiro ou falso: um astronauta flutua dentro de uma estação orbital porque não existe gravidade naquele local.",
+   "o": [
+    "Verdadeiro",
+    "Falso"
+   ],
+   "a": 1,
+   "h": "A gravidade que mantém a estação em órbita atua no astronauta também.",
+   "e": "Falso. Na altitude da estação, a gravidade da Terra ainda é grande (cerca de 90% da superfície). Ele flutua porque ele e a estação estão em queda livre, caindo juntos em torno da Terra.",
+   "v": 1,
+   "x": {
+    "0": "A gravidade existe e mantém a órbita; eles estão em queda livre."
+   },
+   "n": 3,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/gravitacao.htm",
+    "titulo": "Gravitação (PrePara Enem)",
+    "conferido_em": "2026-11-07",
+    "base": "leis de Kepler e gravitação",
+    "verificar": [
+     "Kepler",
+     "gravitação"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Afirmação conceitual, sem processo para animar."
+   }
+  }
+ ]
+}

@@ -339,7 +339,7 @@ function graf(h,t){
   o+='<div class="gr"><h4>Questões nos últimos 7 dias</h4>'+c2+'</svg><p class="lg">Quantidade de questões respondidas por dia.</p></div>'}
  return o}
 function overview(){
- var D=[["eletro","Eletrostática","eletriz:"],["fluidos","Mecânica dos Fluidos","fluidos:"],["termo","Termologia","termo:"],["onda","Ondulatória: Som","onda:"],["optica","Óptica Geométrica","optica:"]],rows=[],T=0,A=0,Rd=0;
+ var D=[["eletro","Eletrostática","eletriz:"],["fluidos","Mecânica dos Fluidos","fluidos:"],["termo","Termologia","termo:"],["onda","Ondulatória: Som","onda:"],["optica","Óptica Geométrica","optica:"],["mec","Mecânica: Cinemática e Dinâmica","mec:"]],rows=[],T=0,A=0,Rd=0;
  D.forEach(function(d){var H=[];try{H=JSON.parse(localStorage.getItem(d[2]+"hist")||"[]")}catch(e){}if(!Array.isArray(H))H=[];var q=0,a=0;H.forEach(function(x){if(!x||!x.a)return;Object.keys(x.a).forEach(function(k){a+=x.a[k][0];q+=x.a[k][1]})});rows.push({n:d[1],id:d[0],r:H.length,q:q,a:a});T+=q;A+=a;Rd+=H.length});
  if(!T)return '<p>Ainda não há dados. Termine um quiz para ver a comparação entre os três temas.</p>';
  var o='<div class="gk"><div><b>'+Rd+'</b>rodadas</div><div><b>'+T+'</b>questões</div><div><b>'+Math.round(100*A/T)+'%</b>de acerto</div></div><div class="gr"><h4>Acerto em cada quiz</h4>';
@@ -426,14 +426,14 @@ upd();
 (function(){
 var NOH=!/^(https?|file):$/.test(location.protocol),m=/[?&]q=(\w+)/.exec(location.search),q=m&&m[1];
 /* arquivos de cada quiz: só os do quiz escolhido são carregados (no arquivo único eles já vêm embutidos) */
-var ARQ={eletro:["perguntas-eletro.js","quiz-eletro.js","figuras.js","figuras-anim.js","figuras-animq-eletro.js","figuras-animq-eletro2.js","figuras-animq-eletro3.js","figuras-animq-eletro4.js","figuras-animq-auto.js"],fluidos:["perguntas-fluidos.js","quiz-fluidos.js","figuras-fluidos.js","figuras-anim.js","figuras-animq-fluidos.js","figuras-animq-fluidos2.js","figuras-animq-auto.js"],optica:["perguntas-optica.js","quiz-optica.js","figuras-anim.js","figuras-animq-optica.js","figuras-animq-auto.js"],onda:["perguntas-onda.js","quiz-onda.js","figuras-anim.js","figuras-animq-onda.js","figuras-animq-auto.js"],termo:["perguntas-termo.js","quiz-termo.js","figuras-termo.js","figuras-anim.js","figuras-animq-termo.js","figuras-animq-termo2.js","figuras-animq-termo3.js","figuras-animq-auto.js"]};
+var ARQ={eletro:["perguntas-eletro.js","quiz-eletro.js","figuras.js","figuras-anim.js","figuras-animq-eletro.js","figuras-animq-eletro2.js","figuras-animq-eletro3.js","figuras-animq-eletro4.js","figuras-animq-auto.js"],fluidos:["perguntas-fluidos.js","quiz-fluidos.js","figuras-fluidos.js","figuras-anim.js","figuras-animq-fluidos.js","figuras-animq-fluidos2.js","figuras-animq-auto.js"],optica:["perguntas-optica.js","quiz-optica.js","figuras-anim.js","figuras-animq-optica.js","figuras-animq-auto.js"],mec:["perguntas-mec.js","quiz-mec.js","figuras-anim.js","figuras-animq-mec.js","figuras-animq-auto.js"],onda:["perguntas-onda.js","quiz-onda.js","figuras-anim.js","figuras-animq-onda.js","figuras-animq-auto.js"],termo:["perguntas-termo.js","quiz-termo.js","figuras-termo.js","figuras-anim.js","figuras-animq-termo.js","figuras-animq-termo2.js","figuras-animq-termo3.js","figuras-animq-auto.js"]};
 function carregar(id){
   if(window.QUIZZES&&window.QUIZZES[id])return Promise.resolve();
   return ARQ[id].reduce(function(p,f){return p.then(function(){return new Promise(function(ok,err){var s=document.createElement("script");s.src=f;s.onload=ok;s.onerror=function(){err(new Error(f))};document.head.appendChild(s)})})},Promise.resolve()).then(function(){if(window.BancoExtra)window.BancoExtra.registrar(id)})}
 function go(id){carregar(id).then(function(){document.body.classList.remove("pre");window.__boot(id)}).catch(function(){var l=document.getElementById("landing");if(l){var p=document.createElement("p");p.className="msg no";p.textContent="Não foi possível carregar este quiz. Confira a conexão e tente de novo.";l.appendChild(p)}})}
 /* Tela inicial: progresso, medalhas e sequência de dias, calculados só com os dados já guardados neste aparelho */
 function landingStats(){
-  var PX={eletro:["q","eletriz:"],fluidos:["f","fluidos:"],termo:["t","termo:"],onda:["o","onda:"],optica:["p","optica:"]},P=(window.Perfil&&window.Perfil.ler)?window.Perfil.ler():{},dias={},fm=function(d){var x=new Date(d);return x.getFullYear()+"-"+x.getMonth()+"-"+x.getDate()};
+  var PX={eletro:["q","eletriz:"],fluidos:["f","fluidos:"],termo:["t","termo:"],onda:["o","onda:"],optica:["p","optica:"],mec:["m","mec:"]},P=(window.Perfil&&window.Perfil.ler)?window.Perfil.ler():{},dias={},fm=function(d){var x=new Date(d);return x.getFullYear()+"-"+x.getMonth()+"-"+x.getDate()};
   function rd(k,d){try{var v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}}
   Object.keys(PX).forEach(function(id){
     var L=PX[id][0],tent=0,ac=0,dist=0;

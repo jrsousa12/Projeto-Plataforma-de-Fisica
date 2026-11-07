@@ -20,7 +20,7 @@ with sync_playwright() as p:
     ck(pg.locator('#fbody a[target=_blank][rel*=noopener]').count()>=20,'links abrem em outra aba')
     pg.locator('#fback').click();ck(pg.locator('#landing').is_visible(),'volta para a escolha')
     pg.close()
-    for q in ('eletro','fluidos','termo','onda','optica'):
+    for q in ('eletro','fluidos','termo','onda','optica','mec'):
         # 2) botão FONTE na pergunta respondida
         pg=novo('index.html?q=%s#debug'%q)
         pg.locator('#go').click();pg.wait_for_timeout(300)
@@ -38,7 +38,7 @@ with sync_playwright() as p:
         ck(pg.locator('#fontes').is_visible() and not pg.locator('#quiz').is_visible(),q+': tela Fontes aberta pelo ⋯')
         ck(pg.locator('#exitq').is_hidden(),q+': sem aviso de perda de progresso')
         ck(pg.locator('#fvolta').is_visible(),q+': botão voltar ao quiz na tela Fontes')
-        ck(pg.locator('#fbody h3').first.inner_text().startswith({'eletro':'Eletro','fluidos':'Mec','termo':'Termo','onda':'Ondul','optica':'Óptic'}[q]),q+': área atual primeiro')
+        ck(pg.locator('#fbody h3').first.inner_text().startswith({'eletro':'Eletro','fluidos':'Mec','termo':'Termo','onda':'Ondul','optica':'Óptic','mec':'Mec'}[q]),q+': área atual primeiro')
         e1=pg.evaluate("__qz('ST.get(\"sess\",null).el')");pg.wait_for_timeout(2300)
         # 4) início da área mostra o botão de retorno
         pg.locator('#homebtn').click();pg.wait_for_timeout(200)

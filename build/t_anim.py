@@ -3,7 +3,7 @@ B='http://localhost:8123/'
 with sync_playwright() as p:
     b=p.chromium.launch(executable_path='/usr/bin/google-chrome',args=['--no-sandbox'])
     errs=[];tot=0;bad=[]
-    for q in ('eletro','fluidos','termo','onda','optica'):
+    for q in ('eletro','fluidos','termo','onda','optica','mec'):
         pg=b.new_page(viewport={'width':400,'height':820})
         pg.on('pageerror',lambda e:errs.append(str(e)));pg.on('console',lambda m: errs.append(m.text) if m.type=='error' else None)
         pg.goto(B+'index.html?q='+q+'#debug');pg.wait_for_timeout(500)

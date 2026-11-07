@@ -16,7 +16,7 @@ import ast, datetime, difflib, json, math, operator, os, re, shutil, subprocess,
 AQUI = os.path.dirname(os.path.abspath(__file__))
 APP = os.path.join(AQUI, "..", "app")
 NOVAS = os.path.join(AQUI, "novas")
-PREFIXO = {"eletro": "q", "fluidos": "f", "termo": "t", "onda": "o", "optica": "p"}
+PREFIXO = {"eletro": "q", "fluidos": "f", "termo": "t", "onda": "o", "optica": "p", "mec": "m"}
 MOLDES = ("generico", "dilatacao", "calor", "pressao", "coulomb", "bernoulli", "latente", "potencial")
 
 # ----------------------------------------------------------------- utilidades
@@ -68,7 +68,7 @@ BASE = {"m": _u(1, m=1), "g": _u(1e-3, kg=1), "kg": _u(1, kg=1), "s": _u(1, s=1)
         "C": _u(1, A=1, s=1), "V": _u(1, kg=1, m=2, s=-3, A=-1), "F": _u(1, kg=-1, m=-2, s=4, A=2), "Hz": _u(1, s=-1),
         "cal": Q(4.186) * J, "atm": Q(101325) * PA, "mmHg": Q(133.322) * PA, "cmHg": Q(1333.22) * PA, "L": _u(1e-3, m=3),
         "ohm": _u(1, kg=1, m=2, s=-3, A=-2), "Ω": _u(1, kg=1, m=2, s=-3, A=-2), "ton": _u(1000, kg=1), "kgf": Q(9.80665) * N_,
-        "dB": Q(1), "di": _u(1, m=-1), "eV": Q(1.602e-19) * J, "dina": Q(1e-5) * N_, "1": Q(1)}
+        "dB": Q(1), "rad": Q(1), "di": _u(1, m=-1), "eV": Q(1.602e-19) * J, "dina": Q(1e-5) * N_, "1": Q(1)}
 PREF = {"p": 1e-12, "n": 1e-9, "µ": 1e-6, "μ": 1e-6, "u": 1e-6, "m": 1e-3, "c": 1e-2, "d": 1e-1, "da": 10, "h": 1e2, "k": 1e3, "M": 1e6, "G": 1e9}
 SUP = str.maketrans("⁰¹²³⁴⁵⁶⁷⁸⁹⁻", "0123456789-")
 

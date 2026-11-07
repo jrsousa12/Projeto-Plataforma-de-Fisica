@@ -2,7 +2,7 @@
    Cada aluno entra com um código individual e só ele acessa o próprio documento (regras no README).
    O aparelho continua sendo a cópia principal: sem internet ou sem configuração, tudo funciona como antes. */
 (function(){"use strict";
-var C=window.NUVEM_CONFIG||{},KS="eletriz:nuvem",QS=["eletriz:","fluidos:","termo:","onda:","optica:"];
+var C=window.NUVEM_CONFIG||{},KS="eletriz:nuvem",QS=["eletriz:","fluidos:","termo:","onda:","optica:","mec:"];
 var AUTH=C.authBase||"https://identitytoolkit.googleapis.com/v1",TOK=C.tokenBase||"https://securetoken.googleapis.com/v1",FS=C.fsBase||"https://firestore.googleapis.com/v1";
 var tok=null,exp=0,tim=null,ocupado=false;
 function ler(k,d){try{var v=localStorage.getItem(k);return v===null?d:JSON.parse(v)}catch(e){return d}}
@@ -43,7 +43,7 @@ function sincronizar(){if(!ativo()||!sessao()||ocupado)return Promise.resolve(fa
   return baixar().then(function(n){var loc=coletar(),s=sessao(),fin=loc;if(n&&n.ts>(s.ult||0)){fin=juntar(loc,n.d);aplicarLocal(fin)}return enviar(fin).then(function(){return n&&n.ts>(s.ult||0)?"mesclado":"enviado"})}).then(function(r){ocupado=false;N.aviso("");return r},function(e){ocupado=false;N.aviso(e.message||"erro");return false})}
 function agendar(){if(!ativo()||!sessao())return;clearTimeout(tim);tim=setTimeout(sincronizar,4000)}
 /* qualquer gravação de desempenho, caderno ou histórico agenda um envio */
-Storage.prototype.setItem=function(k,v){setRaw.call(this,k,v);if(this===window.localStorage&&/^(eletriz|fluidos|termo|onda|optica):(perfil|book|hist)$/.test(k))agendar()};
+Storage.prototype.setItem=function(k,v){setRaw.call(this,k,v);if(this===window.localStorage&&/^(eletriz|fluidos|termo|onda|optica|mec):(perfil|book|hist)$/.test(k))agendar()};
 var N=window.Nuvem={
   ativo:ativo,logado:function(){return !!sessao()},codigo:function(){var s=sessao();return s?s.cod:""},ultima:function(){var s=sessao();return s&&s.ult||0},aviso:function(){},
   entrar:function(cod){if(!ativo())return Promise.reject(new Error("A nuvem não está configurada."));var c=norm(cod);if(c.length<6)return Promise.reject(new Error("Digite o código completo."));

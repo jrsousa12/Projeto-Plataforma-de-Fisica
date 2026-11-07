@@ -802,6 +802,528 @@ var DATA=/*AUTO:BEGIN*/[
 "formula": "V = −1 / d",
 "subst": "V = −1/(0,5)",
 "resultado": "V = −2 di"
+},
+{
+"key": "calc_m001",
+"alt": "Resolução animada: Um carro percorre 90 km em 1,5 h. Qual é a sua velocidade média, em km/h?",
+"molde": "generico",
+"vars": [
+"Δs = 90 km",
+"Δt = 1,5 h"
+],
+"formula": "vm = Δs / Δt",
+"subst": "vm = (90)/(1,5)",
+"resultado": "vm = 60 km/h"
+},
+{
+"key": "calc_m003",
+"alt": "Resolução animada: Um ciclista se move a 72 km/h. Qual é essa velocidade em m/s?",
+"molde": "generico",
+"vars": [
+"v = 72 km/h"
+],
+"formula": "v em m/s",
+"subst": "v = (72)",
+"resultado": "v = 20 m/s"
+},
+{
+"key": "calc_m004",
+"alt": "Resolução animada: Dois carros se aproximam em linha reta, em movimento uniforme, em sentidos opostos. Eles estão separados por 300 m, o carro A tem 20 m/s e o",
+"molde": "generico",
+"vars": [
+"d = 300 m",
+"vA = 20 m/s",
+"vB = 10 m/s"
+],
+"formula": "t = d / (vA + vB)",
+"subst": "t = (300)/((20)+(10))",
+"resultado": "t = 10 s"
+},
+{
+"key": "calc_m008",
+"alt": "Resolução animada: Um móvel tem velocidade inicial de 4 m/s e aceleração constante de 3 m/s². Qual é a sua velocidade após 5 s?",
+"molde": "generico",
+"vars": [
+"v₀ = 4 m/s",
+"a = 3 m/s²",
+"t = 5 s"
+],
+"formula": "v = v₀ + a·t",
+"subst": "v = (4)+(3) · (5)",
+"resultado": "v = 19 m/s"
+},
+{
+"key": "calc_m009",
+"alt": "Resolução animada: Um carro a 20 m/s freia com desaceleração constante de 4 m/s² até parar. Qual é a distância percorrida durante a frenagem?",
+"molde": "generico",
+"vars": [
+"v₀ = 20 m/s",
+"a = 4 m/s²"
+],
+"formula": "Δs = v₀² / (2a)",
+"subst": "Δs = (20) · (20)/(2 · (4))",
+"resultado": "Δs = 50 m"
+},
+{
+"key": "calc_m010",
+"alt": "Resolução animada: Um objeto parte do repouso com aceleração constante de 2 m/s². Que distância ele percorre em 6 s?",
+"molde": "generico",
+"vars": [
+"a = 2 m/s²",
+"t = 6 s"
+],
+"formula": "Δs = a·t² / 2",
+"subst": "Δs = (2) · (6) · (6)/2",
+"resultado": "Δs = 36 m"
+},
+{
+"key": "calc_m012",
+"alt": "Resolução animada: A velocidade de um móvel passa de 10 m/s para 30 m/s em 4 s. Qual é a sua aceleração média?",
+"molde": "generico",
+"vars": [
+"v₁ = 10 m/s",
+"v₂ = 30 m/s",
+"Δt = 4 s"
+],
+"formula": "a = Δv / Δt",
+"subst": "a = ((30)-(10))/(4)",
+"resultado": "a = 5 m/s²"
+},
+{
+"key": "calc_m017",
+"alt": "Resolução animada: Um objeto é abandonado do repouso de uma altura de 45 m. Desprezando a resistência do ar e adotando g = 10 m/s², quanto tempo ele leva para ",
+"molde": "generico",
+"vars": [
+"h = 45 m",
+"g = 10 m/s²"
+],
+"formula": "t = √(2h / g)",
+"subst": "t = sqrt(2 · (45)/(10))",
+"resultado": "t = 3 s"
+},
+{
+"key": "calc_m018",
+"alt": "Resolução animada: Um corpo cai do repouso de uma altura de 20 m. Com g = 10 m/s² e sem resistência do ar, com que velocidade ele atinge o solo?",
+"molde": "generico",
+"vars": [
+"g = 10 m/s²",
+"h = 20 m"
+],
+"formula": "v = √(2·g·h)",
+"subst": "v = sqrt(2 · (10) · (20))",
+"resultado": "v = 20 m/s"
+},
+{
+"key": "calc_m019",
+"alt": "Resolução animada: Uma pedra é lançada verticalmente para cima com velocidade de 30 m/s. Com g = 10 m/s² e sem resistência do ar, qual é a altura máxima atingi",
+"molde": "generico",
+"vars": [
+"v₀ = 30 m/s",
+"g = 10 m/s²"
+],
+"formula": "H = v₀² / (2g)",
+"subst": "H = (30) · (30)/(2 · (10))",
+"resultado": "H = 45 m"
+},
+{
+"key": "calc_m020",
+"alt": "Resolução animada: Uma bola é lançada verticalmente para cima com velocidade de 20 m/s. Com g = 10 m/s², quanto tempo ela leva para atingir o ponto mais alto?",
+"molde": "generico",
+"vars": [
+"v₀ = 20 m/s",
+"g = 10 m/s²"
+],
+"formula": "t = v₀ / g",
+"subst": "t = (20)/(10)",
+"resultado": "t = 2 s"
+},
+{
+"key": "calc_m023",
+"alt": "Resolução animada: Uma bola é lançada horizontalmente com velocidade de 15 m/s do alto de um prédio de 20 m de altura. Com g = 10 m/s² e sem resistência do ar,",
+"molde": "generico",
+"vars": [
+"v₀ = 15 m/s",
+"h = 20 m",
+"g = 10 m/s²"
+],
+"formula": "x = v₀ · √(2h / g)",
+"subst": "x = (15) · sqrt(2 · (20)/(10))",
+"resultado": "x = 30 m"
+},
+{
+"key": "calc_m024",
+"alt": "Resolução animada: Um projétil é lançado com velocidade de 50 m/s formando 37° com a horizontal (sen 37° = 0,6 e cos 37° = 0,8). Qual é a componente vertical d",
+"molde": "generico",
+"vars": [
+"v₀ = 50 m/s",
+"sen θ = 0,6"
+],
+"formula": "v₀y = v₀ · sen θ",
+"subst": "v₀y = (50) · (0,6)",
+"resultado": "v₀y = 30 m/s"
+},
+{
+"key": "calc_m025",
+"alt": "Resolução animada: Um projétil é lançado do solo com velocidade de 20 m/s e ângulo de 45°. Com g = 10 m/s² e sem resistência do ar, qual é o alcance (mesmo nív",
+"molde": "generico",
+"vars": [
+"v₀ = 20 m/s",
+"g = 10 m/s²"
+],
+"formula": "A = v₀² · sen 2θ / g",
+"subst": "A = (20) · (20)/(10)",
+"resultado": "A = 40 m"
+},
+{
+"key": "calc_m028",
+"alt": "Resolução animada: Um corpo em movimento circular uniforme leva 0,5 s para dar uma volta completa. Qual é a sua frequência?",
+"molde": "generico",
+"vars": [
+"T = 0,5 s"
+],
+"formula": "f = 1 / T",
+"subst": "f = 1/(0,5)",
+"resultado": "f = 2 Hz"
+},
+{
+"key": "calc_m029",
+"alt": "Resolução animada: Um corpo percorre uma circunferência de raio 2 m em movimento uniforme, com período de 4 s. Qual é a sua velocidade linear? (use π ≈ 3,14)",
+"molde": "generico",
+"vars": [
+"R = 2 m",
+"T = 4 s"
+],
+"formula": "v = 2πR / T",
+"subst": "v = 2 · pi · (2)/(4)",
+"resultado": "v = 3,142 m/s"
+},
+{
+"key": "calc_m030",
+"alt": "Resolução animada: Um corpo descreve uma trajetória circular de raio 5 m com velocidade de módulo constante de 10 m/s. Qual é o módulo da aceleração centrípeta",
+"molde": "generico",
+"vars": [
+"v = 10 m/s",
+"R = 5 m"
+],
+"formula": "a = v² / R",
+"subst": "a = (10) · (10)/(5)",
+"resultado": "a = 20 m/s²"
+},
+{
+"key": "calc_m033",
+"alt": "Resolução animada: Uma roda gira em movimento uniforme com frequência de 5 Hz. Qual é a sua velocidade angular? (use π ≈ 3,14)",
+"molde": "generico",
+"vars": [
+"f = 5 Hz"
+],
+"formula": "ω = 2π·f",
+"subst": "ω = 2 · pi · (5)",
+"resultado": "ω = 31,42 rad/s"
+},
+{
+"key": "calc_m035",
+"alt": "Resolução animada: Sobre um bloco de 4 kg, em uma superfície sem atrito, atuam duas forças horizontais de sentidos opostos: 30 N e 10 N. Qual é a aceleração do",
+"molde": "generico",
+"vars": [
+"F₁ = 30 N",
+"F₂ = 10 N",
+"m = 4 kg"
+],
+"formula": "a = (F₁ − F₂) / m",
+"subst": "a = ((30)-(10))/(4)",
+"resultado": "a = 5 m/s²"
+},
+{
+"key": "calc_m036",
+"alt": "Resolução animada: Um astronauta de 50 kg está na Lua, onde g = 1,6 m/s². Qual é o seu peso na Lua?",
+"molde": "generico",
+"vars": [
+"m = 50 kg",
+"g = 1,6 m/s²"
+],
+"formula": "P = m·g",
+"subst": "P = (50) · (1,6)",
+"resultado": "P = 80 N"
+},
+{
+"key": "calc_m039",
+"alt": "Resolução animada: Uma pessoa de 60 kg está dentro de um elevador que sobe com aceleração de 2 m/s². Com g = 10 m/s², qual é a força normal do piso sobre ela?",
+"molde": "generico",
+"vars": [
+"m = 60 kg",
+"g = 10 m/s²",
+"a = 2 m/s²"
+],
+"formula": "N = m(g + a)",
+"subst": "N = (60) · ((10)+(2))",
+"resultado": "N = 720 N"
+},
+{
+"key": "calc_m041",
+"alt": "Resolução animada: Dois blocos, de 2 kg e 3 kg, estão ligados por um fio e apoiados em uma superfície sem atrito. Uma força de 20 N puxa o conjunto. Qual é a a",
+"molde": "generico",
+"vars": [
+"F = 20 N",
+"m₁ = 2 kg",
+"m₂ = 3 kg"
+],
+"formula": "a = F / (m₁ + m₂)",
+"subst": "a = (20)/((2)+(3))",
+"resultado": "a = 4 m/s²"
+},
+{
+"key": "calc_m042",
+"alt": "Resolução animada: Um bloco de 10 kg está sobre um piso horizontal. O coeficiente de atrito cinético é 0,3. Com g = 10 m/s², qual é a força de atrito durante o",
+"molde": "generico",
+"vars": [
+"μ = 0,3",
+"m = 10 kg",
+"g = 10 m/s²"
+],
+"formula": "Fat = μ·N",
+"subst": "Fat = (0,3) · (10) · (10)",
+"resultado": "Fat = 30 N"
+},
+{
+"key": "calc_m044",
+"alt": "Resolução animada: Um bloco desliza, sem atrito, em um plano inclinado de 30° (sen 30° = 0,5). Com g = 10 m/s², qual é a sua aceleração?",
+"molde": "generico",
+"vars": [
+"g = 10 m/s²",
+"sen θ = 0,5"
+],
+"formula": "a = g · sen θ",
+"subst": "a = (10) · (0,5)",
+"resultado": "a = 5 m/s²"
+},
+{
+"key": "calc_m045",
+"alt": "Resolução animada: Um bloco de 20 kg está sobre um plano inclinado cujo ângulo tem sen θ = 0,6 e cos θ = 0,8. Com g = 10 m/s², qual é a componente do peso para",
+"molde": "generico",
+"vars": [
+"m = 20 kg",
+"g = 10 m/s²",
+"sen θ = 0,6"
+],
+"formula": "Px = m·g·sen θ",
+"subst": "Px = (20) · (10) · (0,6)",
+"resultado": "Px = 120 N"
+},
+{
+"key": "calc_m046",
+"alt": "Resolução animada: Um bloco de 5 kg repousa sobre um plano inclinado com cos θ = 0,8. Com g = 10 m/s², qual é a força normal do plano sobre o bloco?",
+"molde": "generico",
+"vars": [
+"m = 5 kg",
+"g = 10 m/s²",
+"cos θ = 0,8"
+],
+"formula": "N = m·g·cos θ",
+"subst": "N = (5) · (10) · (0,8)",
+"resultado": "N = 40 N"
+},
+{
+"key": "calc_m047",
+"alt": "Resolução animada: Um bloco desce um plano inclinado com atrito (sen θ = 0,6, cos θ = 0,8 e μ = 0,5). Com g = 10 m/s², qual é a sua aceleração?",
+"molde": "generico",
+"vars": [
+"g = 10 m/s²",
+"sen θ = 0,6",
+"cos θ = 0,8",
+"μ = 0,5"
+],
+"formula": "a = g(sen θ − μ·cos θ)",
+"subst": "a = (10) · ((0,6)-(0,5) · (0,8))",
+"resultado": "a = 2 m/s²"
+},
+{
+"key": "calc_m049",
+"alt": "Resolução animada: Uma força constante de 50 N desloca um bloco por 4 m. A força forma 60° com o deslocamento (cos 60° = 0,5). Qual é o trabalho da força?",
+"molde": "generico",
+"vars": [
+"F = 50 N",
+"d = 4 m",
+"cos θ = 0,5"
+],
+"formula": "τ = F·d·cos θ",
+"subst": "τ = (50) · (4) · (0,5)",
+"resultado": "τ = 100 J"
+},
+{
+"key": "calc_m051",
+"alt": "Resolução animada: Uma força realiza um trabalho de 1200 J em 20 s. Qual é a potência média?",
+"molde": "generico",
+"vars": [
+"τ = 1200 J",
+"Δt = 20 s"
+],
+"formula": "P = τ / Δt",
+"subst": "P = (1200)/(20)",
+"resultado": "P = 60 W"
+},
+{
+"key": "calc_m052",
+"alt": "Resolução animada: Uma bomba eleva 200 kg de água a uma altura de 10 m em 20 s. Com g = 10 m/s², qual é a potência mínima necessária?",
+"molde": "generico",
+"vars": [
+"m = 200 kg",
+"g = 10 m/s²",
+"h = 10 m",
+"Δt = 20 s"
+],
+"formula": "P = m·g·h / Δt",
+"subst": "P = (200) · (10) · (10)/(20)",
+"resultado": "P = 1000 W"
+},
+{
+"key": "calc_m053",
+"alt": "Resolução animada: Um carro se desloca a 20 m/s com uma força motriz constante de 500 N. Qual é a potência desenvolvida pela força?",
+"molde": "generico",
+"vars": [
+"F = 500 N",
+"v = 20 m/s"
+],
+"formula": "P = F·v",
+"subst": "P = (500) · (20)",
+"resultado": "P = 10 kW"
+},
+{
+"key": "calc_m055",
+"alt": "Resolução animada: Um carro de 1200 kg se move a 72 km/h. Qual é a sua energia cinética?",
+"molde": "generico",
+"vars": [
+"m = 1200 kg",
+"v = 72 km/h"
+],
+"formula": "Ec = m·v² / 2",
+"subst": "Ec = (1200) · (72) · (72)/2",
+"resultado": "Ec = 240 kJ"
+},
+{
+"key": "calc_m056",
+"alt": "Resolução animada: Um objeto de 3 kg está a 5 m de altura. Com g = 10 m/s², qual é a sua energia potencial gravitacional em relação ao solo?",
+"molde": "generico",
+"vars": [
+"m = 3 kg",
+"g = 10 m/s²",
+"h = 5 m"
+],
+"formula": "Ep = m·g·h",
+"subst": "Ep = (3) · (10) · (5)",
+"resultado": "Ep = 150 J"
+},
+{
+"key": "calc_m057",
+"alt": "Resolução animada: Um carrinho parte do repouso do topo de uma montanha-russa, a 20 m do solo. Sem atrito e com g = 10 m/s², qual é a sua velocidade ao passar ",
+"molde": "generico",
+"vars": [
+"g = 10 m/s²",
+"H = 20 m",
+"h = 5 m"
+],
+"formula": "v = √(2·g·(H − h))",
+"subst": "v = sqrt(2 · (10) · ((20)-(5)))",
+"resultado": "v = 17,32 m/s"
+},
+{
+"key": "calc_m058",
+"alt": "Resolução animada: Uma mola de constante elástica 200 N/m está comprimida de 0,1 m. Qual é a energia potencial elástica armazenada?",
+"molde": "generico",
+"vars": [
+"k = 200 N/m",
+"x = 0,1 m"
+],
+"formula": "Ee = k·x² / 2",
+"subst": "Ee = (200) · (0,1) · (0,1)/2",
+"resultado": "Ee = 1 J"
+},
+{
+"key": "calc_m059",
+"alt": "Resolução animada: Um carro de 1000 kg aumenta a velocidade de 10 m/s para 20 m/s. Qual foi o trabalho da força resultante?",
+"molde": "generico",
+"vars": [
+"m = 1000 kg",
+"v₁ = 10 m/s",
+"v₂ = 20 m/s"
+],
+"formula": "τ = ΔEc",
+"subst": "τ = (1000) · ((20) · (20)-(10) · (10))/2",
+"resultado": "τ = 150 kJ"
+},
+{
+"key": "calc_m063",
+"alt": "Resolução animada: Uma bola de 0,4 kg se move a 15 m/s. Qual é a sua quantidade de movimento?",
+"molde": "generico",
+"vars": [
+"m = 0,4 kg",
+"v = 15 m/s"
+],
+"formula": "Q = m·v",
+"subst": "Q = (0,4) · (15)",
+"resultado": "Q = 6 kg·m/s"
+},
+{
+"key": "calc_m064",
+"alt": "Resolução animada: Uma força média de 200 N atua sobre um corpo por 0,05 s. Qual é o impulso dessa força?",
+"molde": "generico",
+"vars": [
+"F = 200 N",
+"Δt = 0,05 s"
+],
+"formula": "I = F·Δt",
+"subst": "I = (200) · (0,05)",
+"resultado": "I = 10 N·s"
+},
+{
+"key": "calc_m065",
+"alt": "Resolução animada: Uma bola de 0,5 kg, inicialmente parada, é chutada e sai com 20 m/s. O contato dura 0,01 s. Qual é a força média do chute?",
+"molde": "generico",
+"vars": [
+"m = 0,5 kg",
+"Δv = 20 m/s",
+"Δt = 0,01 s"
+],
+"formula": "F = m·Δv / Δt",
+"subst": "F = (0,5) · (20)/(0,01)",
+"resultado": "F = 1000 N"
+},
+{
+"key": "calc_m066",
+"alt": "Resolução animada: Um bloco de 2 kg com velocidade de 6 m/s colide com um bloco de 4 kg parado, e os dois ficam unidos. Qual é a velocidade do conjunto logo ap",
+"molde": "generico",
+"vars": [
+"m₁ = 2 kg",
+"v₁ = 6 m/s",
+"m₂ = 4 kg"
+],
+"formula": "v = m₁·v₁ / (m₁ + m₂)",
+"subst": "v = (2) · (6)/((2)+(4))",
+"resultado": "v = 2 m/s"
+},
+{
+"key": "calc_m072",
+"alt": "Resolução animada: Dois corpos de 1000 kg e 2000 kg estão a 10 m de distância. Com G = 6,67 × 10⁻¹¹ N·m²/kg², qual é a força gravitacional entre eles?",
+"molde": "generico",
+"vars": [
+"m₁ = 1000 kg",
+"m₂ = 2000 kg",
+"d = 10 m"
+],
+"formula": "F = G·m₁·m₂ / d²",
+"subst": "F = G · (1000) · (2000)/((10) · (10))",
+"resultado": "F = 1,33·10⁻⁶ N"
+},
+{
+"key": "calc_m075",
+"alt": "Resolução animada: A Terra tem massa de 6 × 10²⁴ kg e raio de 6,4 × 10⁶ m. Com G = 6,67 × 10⁻¹¹ N·m²/kg², qual é a aceleração da gravidade na sua superfície?",
+"molde": "generico",
+"vars": [
+"M = 6·10²⁴ kg",
+"R = 6,4·10⁶ m"
+],
+"formula": "g = G·M / R²",
+"subst": "g = G · (6·10²⁴)/((6,4·10⁶) · (6,4·10⁶))",
+"resultado": "g = 9,776 m/s²"
 }
 ]/*AUTO:END*/;
 function flame(x,y,cl){return'<g class="'+cl+'"><path d="M'+x+' '+y+'c-9-9-9-17-2-26 1 6 5 8 7 13 3-4 2-9 1-12 8 8 11 17 3 25-3 4-6 4-9 0z" fill="'+HOT+'" stroke="#a63a0f" stroke-width="1.2"/><path d="M'+x+' '+(y-2)+'c-4-4-3-9 0-13 2 4 5 6 1 13z" fill="#facc15"/></g>'}

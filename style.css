@@ -712,3 +712,12 @@ details.sum .eq{max-width:100%;flex-wrap:wrap}
 :root[data-quiz="optica"][data-pal="indigo"][data-theme="dark"]{--bg:#0b1b19;--surface:#122826;--line:#1f4a45;--acc:#2dd4bf;--acc2:#14b8a6;--hero:#115e59;--ink:#e8fffb;--muted:#a3d1ca}
 @media (prefers-color-scheme: dark){:root[data-quiz="optica"][data-pal="indigo"]:not([data-theme="light"]){--bg:#0b1b19;--surface:#122826;--line:#1f4a45;--acc:#2dd4bf;--acc2:#14b8a6;--hero:#115e59;--ink:#e8fffb;--muted:#a3d1ca}}
 [data-a="fl"]{--dot:#eab308}[data-a="ep"]{--dot:#3b82f6}[data-a="ee"]{--dot:#8b5cf6}[data-a="rf"]{--dot:#14b8a6}[data-a="rt"]{--dot:#f43f5e}[data-a="ln"]{--dot:#f97316}[data-a="vi"]{--dot:#22c55e}
+
+/* Mecânica (identidade vermelho-tijolo) */
+#landing [data-q=mec]{--c:#dc2626}
+:root[data-quiz="mec"] .hero h1::before{content:"🚀 "}
+#landing [data-q=mec]::before{content:"🚀";background:#fee2e2}
+:root[data-quiz="mec"][data-pal="indigo"]{--bg:#fef2f2;--line:#fecaca;--acc:#dc2626;--acc2:#b91c1c;--hero:#b91c1c;--ink:#3b1212;--muted:#7a4a4a}
+:root[data-quiz="mec"][data-pal="indigo"][data-theme="dark"]{--bg:#1c0f0f;--surface:#2a1616;--line:#552424;--acc:#f87171;--acc2:#ef4444;--hero:#7f1d1d;--ink:#fff1f1;--muted:#e0b4b4}
+@media (prefers-color-scheme: dark){:root[data-quiz="mec"][data-pal="indigo"]:not([data-theme="light"]){--bg:#1c0f0f;--surface:#2a1616;--line:#552424;--acc:#f87171;--acc2:#ef4444;--hero:#7f1d1d;--ink:#fff1f1;--muted:#e0b4b4}}
+[data-a="mu"]{--dot:#3b82f6}[data-a="uv"]{--dot:#06b6d4}[data-a="ql"]{--dot:#22c55e}[data-a="lo"]{--dot:#84cc16}[data-a="mc"]{--dot:#a855f7}[data-a="lw"]{--dot:#ef4444}[data-a="at"]{--dot:#f97316}[data-a="tb"]{--dot:#eab308}[data-a="en"]{--dot:#f59e0b}[data-a="qm"]{--dot:#ec4899}[data-a="gv"]{--dot:#6366f1}
