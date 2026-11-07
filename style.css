@@ -735,3 +735,9 @@ details.sum .eq{max-width:100%;flex-wrap:wrap}
 .fr>.d{padding:.06em .25em 0}
 .fr>.sl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .eln .fr,.fb .fr,.hint .fr{font-size:1.05em}
+
+/* Troca de baralho na tela de cartões: Conceitos / Curiosidades */
+.seg{display:flex;gap:6px;margin:0 0 12px;padding:4px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.seg button{flex:1;font:inherit;font-weight:700;font-size:.95rem;padding:10px 8px;border:0;border-radius:10px;background:none;color:var(--ink);cursor:pointer;min-height:44px}
+.seg button.on{background:var(--c,var(--acc,#0891b2));color:#fff}
+.seg.hidden{display:none}

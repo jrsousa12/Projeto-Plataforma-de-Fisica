@@ -21,6 +21,7 @@ REGRAS = [  # (padrões, descrição); arquivos com a mesma descrição aparecem
  (["figuras-anim.js"], "Kit de animação (cenas, legendas, linha do tempo)"),
  (["figuras-animq-auto.js"], "Animações de resolução geradas automaticamente pelos moldes (não editar à mão)"),
  (["figuras-animq-*.js"], "Animações feitas à mão para cada questão, por área"),
+ (["figuras-fenomeno-*.js"], "Simulações do fenômeno (corpo em movimento + gráfico desenhado no tempo), que substituem as resoluções passo a passo"),
  (["fontes.js"], "Lista de fontes de referência (botão FONTE e tela Fontes)"),
  (["banco-extra.js", "banco-proprio.js", "editor.html", "editor.js", "editor.css"], "Editor de questões; `banco-proprio.js` leva as perguntas próprias aos alunos"),
  (["validar-banco.js", ".github/workflows/*.yml"], "Conferem os bancos de perguntas (ids repetidos, gabarito, alternativas, áreas); os fluxos do GitHub rodam sozinhos a cada envio"),

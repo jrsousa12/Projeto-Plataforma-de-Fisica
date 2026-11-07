@@ -337,15 +337,15 @@ var DATA=/*AUTO:BEGIN*/[
 },
 {
 "key": "calc_o025",
-"alt": "Resolução animada: Uma fonte sonora pontual emite uma potência de 10 W. Qual é a intensidade a 2 m dela, sem reflexões? (use π ≈ 3,14)",
+"alt": "Resolução animada: Uma fonte sonora pontual emite uma potência de 10 W. Qual é a intensidade a 2 m dela, sem reflexões? (use π ≈ 3)",
 "molde": "generico",
 "vars": [
 "P = 10 W",
 "r = 2 m"
 ],
 "formula": "I = P / (4π r²)",
-"subst": "I = 10 / (4 · pi · 2²)",
-"resultado": "I = 0,199 W/m²"
+"subst": "I = 10 / (4 · 3 · 2²)",
+"resultado": "I = 0,208 W/m²"
 },
 {
 "key": "calc_o029",
@@ -987,15 +987,15 @@ var DATA=/*AUTO:BEGIN*/[
 },
 {
 "key": "calc_m029",
-"alt": "Resolução animada: Um corpo percorre uma circunferência de raio 2 m em movimento uniforme, com período de 4 s. Qual é a sua velocidade linear? (use π ≈ 3,14)",
+"alt": "Resolução animada: Um corpo percorre uma circunferência de raio 2 m em movimento uniforme, com período de 4 s. Qual é a sua velocidade linear? (use π ≈ 3)",
 "molde": "generico",
 "vars": [
 "R = 2 m",
 "T = 4 s"
 ],
 "formula": "v = 2πR / T",
-"subst": "v = 2 · pi · 2 / 4",
-"resultado": "v = 3,142 m/s"
+"subst": "v = 2 · 3 · 2 / 4",
+"resultado": "v = 3 m/s"
 },
 {
 "key": "calc_m030",
@@ -1011,14 +1011,14 @@ var DATA=/*AUTO:BEGIN*/[
 },
 {
 "key": "calc_m033",
-"alt": "Resolução animada: Uma roda gira em movimento uniforme com frequência de 5 Hz. Qual é a sua velocidade angular? (use π ≈ 3,14)",
+"alt": "Resolução animada: Uma roda gira em movimento uniforme com frequência de 5 Hz. Qual é a sua velocidade angular? (use π ≈ 3)",
 "molde": "generico",
 "vars": [
 "f = 5 Hz"
 ],
 "formula": "ω = 2π·f",
-"subst": "ω = 2 · pi · 5",
-"resultado": "ω = 31,42 rad/s"
+"subst": "ω = 2 · 3 · 5",
+"resultado": "ω = 30 rad/s"
 },
 {
 "key": "calc_m035",
