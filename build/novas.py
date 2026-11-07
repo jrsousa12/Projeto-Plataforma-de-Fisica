@@ -365,6 +365,27 @@ def carregar(arq):
     j = json.load(open(arq, encoding="utf-8"))
     return j["quiz"], j["questoes"]
 
+
+# ----------------------------------------------------------------- equações: toda divisão deve virar fração empilhada (app/eq.js)
+_UN = {"m","s","h","km","kg","g","N","C","J","W","V","A","Pa","L","cm","mm","K","mol","min","Hz","cal","rad","atm","kWh","kW","mA","dB","mmHg","µC","μC","nC","mC","kΩ","Ω","°C"}
+_UNPAT = re.compile(r"(?<![\w])([A-Za-zΔεπρτωθλμΩ°µ][\w₀-₉Δ]*)/([A-Za-zΔεπρτωθλμΩ°µ(][\w₀-₉Δ]*)")
+def _sem_sup(t): return t.translate(str.maketrans("", "", "²³¹⁰⁴⁵⁶⁷⁸⁹⁻"))
+def checar_equacoes(d, loc, R):
+    """Avisa quando uma divisão não vai ser mostrada como fração (escrita sem espaços ou com termos que o app não reconhece)."""
+    textos = [("explicação", d.get("e", "")), ("dica", d.get("h", ""))] + [(f"x[{k}]", v) for k, v in (d.get("x") or {}).items()]
+    if d.get("calc", {}).get("formula"): textos.append(("fórmula", d["calc"]["formula"]))
+    for nome, t in textos:
+        for m in _UNPAT.finditer(t or ""):
+            a, b = _sem_sup(m.group(1)), _sem_sup(m.group(2)).lstrip("(")
+            if len(a) <= 4 and len(b) <= 4 and not (a in _UN and b in _UN): R.W(loc, f"{nome}: divisão sem espaços «{m.group(0)}» não vira fração; escreva «{m.group(1)} / {m.group(2)}»")
+    try:
+        import subprocess
+        out = subprocess.run(["node", os.path.join(AQUI, "eqcheck.js")], input=json.dumps([t or "" for _, t in textos]), capture_output=True, text=True, timeout=30)
+        if out.returncode == 0:
+            for (nome, _), bad in zip(textos, json.loads(out.stdout)):
+                for b in bad: R.W(loc, f"{nome}: a divisão perto de «{b.strip()}» não virou fração (confira se numerador e denominador são só símbolos, números e unidades)")
+    except Exception: pass
+
 def verificar(arqs, online=False, salvar=True):
     R = Rel(); info = dump(); dom = json.load(open(os.path.join(AQUI, "fontes_confiaveis.json")))["dominios"]; linhas = []
     arqs = arqs or sorted(os.path.join(NOVAS, f) for f in os.listdir(NOVAS) if f.endswith(".json"))
@@ -378,6 +399,7 @@ def verificar(arqs, online=False, salvar=True):
             checar_fonte(d, loc, R, dom, online)
             duplicadas(d, loc, R, info, quiz)
             checar_calculo(d, loc, R)
+            checar_equacoes(d, loc, R)
             if d.get("c") and not d.get("calc") is None: auditar_explicacao(d, loc, R, estrito=True)
             st, mot = classificar_animacao(d, loc, R, info)
             linhas.append((loc, d.get("q", "")[:70], st, mot))
@@ -400,20 +422,53 @@ def _num(v):
         m, e = t.split("e"); sup = str(int(e)).translate(str.maketrans("-0123456789", "⁻⁰¹²³⁴⁵⁶⁷⁸⁹")); t = f"{m}·10{sup}"
     return t.replace(".", ",")
 
+
+# ----------------------------------------------------------------- texto da substituição (frações "a / b", sem parênteses sobrando)
+import ast as _ast
+_SUPS = str.maketrans("0123456789-", "⁰¹²³⁴⁵⁶⁷⁸⁹⁻")
+def expr_texto(expr, val):
+    """Escreve a expressão com os valores já trocados: 'a · b / c', '√(...)', 'x²'. val: nome -> texto do valor."""
+    def num(v): return ("%g" % v).replace(".", ",").replace("-", "−")
+    def go(n):
+        if isinstance(n, _ast.Constant): return num(n.value), 5
+        if isinstance(n, _ast.Name):
+            t = val.get(n.id, n.id); return t, (2 if ("·" in t or " " in t) else 5)
+        if isinstance(n, _ast.UnaryOp) and isinstance(n.op, _ast.USub):
+            t, p = go(n.operand); return "−" + (f"({t})" if p < 5 else t), 4
+        if isinstance(n, _ast.BinOp):
+            op = type(n.op); L, pl = go(n.left); R, pr = go(n.right)
+            if op is _ast.Pow:
+                b = f"({L})" if pl < 5 else L
+                if isinstance(n.right, _ast.Constant) and float(n.right.value).is_integer() and 0 <= n.right.value <= 9:
+                    return b + str(int(n.right.value)).translate(_SUPS), 5
+                return b + "^" + (f"({R})" if pr < 5 else R), 3
+            if op is _ast.Add: return f"{L} + {R}", 1
+            if op is _ast.Sub: return f"{L} − " + (f"({R})" if pr <= 1 else R), 1
+            if op is _ast.Mult: return (f"({L})" if pl < 2 else L) + " · " + (f"({R})" if pr < 2 else R), 2
+            if op is _ast.Div: return (f"({L})" if pl < 2 else L) + " / " + (f"({R})" if pr <= 2 else R), 2
+        if isinstance(n, _ast.Call):
+            nome = n.func.id; args = ", ".join(go(a)[0] for a in n.args)
+            return ("√" if nome == "sqrt" else nome) + "(" + args + ")", 5
+        raise ValueError("expressão não suportada")
+    return go(_ast.parse(expr.strip(), mode="eval").body)[0]
+
 def entrada_molde(d, nid, molde):
     c = d["calc"]; vs = {k: qty(v) for k, v in c["vars"].items()}
     r = avaliar(c["expr"], vs); alvo = unidade(c["unidade"]); val = r.v / alvo.v
     esc = lambda x: x.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
     nome = c.get("simbolo", "resultado")
     rot = c.get("rotulos", {}); bonito = lambda t: re.sub(r"(\d)e(-?\d+)", lambda m: m.group(1) + "·10" + str(int(m.group(2))).translate(str.maketrans("-0123456789", "⁻⁰¹²³⁴⁵⁶⁷⁸⁹")), str(t)).replace(".", ",")
-    subst = c["expr"]
-    for k, v in c["vars"].items(): subst = re.sub(rf"\b{re.escape(k)}\b", "(" + bonito(str(v).split()[0]) + ")", subst)
+    pronto = True
+    try: subst = expr_texto(c["expr"], {k: bonito(str(v).split()[0]) for k, v in c["vars"].items()})
+    except Exception:
+        pronto = False; subst = c["expr"]
+        for k, v in c["vars"].items(): subst = re.sub(rf"\b{re.escape(k)}\b", "(" + bonito(str(v).split()[0]) + ")", subst)
     pretty = lambda x: re.sub(r"\b(" + "|".join(map(re.escape, rot)) + r")\b", lambda m: rot[m.group(1)], x.replace("**", "^").replace("*", " · ")) if rot else x.replace("**", "^").replace("*", " · ")
     mn = lambda t: re.sub(r"(?<![\w)])-(?=[\d(])", "−", t.replace("log10", "log"))
     un = "" if c["unidade"].strip() in ("", "1") else " " + c["unidade"]
     return {"key": f"calc_{nid}", "alt": "Resolução animada: " + (c.get("descricao") or re.sub(r"\s+", " ", d["q"])[:140]),
             "molde": molde, "vars": [esc(f"{rot.get(k, k)} = {bonito(v)}") for k, v in c["vars"].items()],
-            "formula": esc(mn(c.get("formula") or f"{nome} = " + pretty(c["expr"]))), "subst": esc(mn(f"{nome} = " + pretty(subst))),
+            "formula": esc(mn(c.get("formula") or f"{nome} = " + pretty(c["expr"]))), "subst": esc(mn(f"{nome} = " + (subst if pronto else pretty(subst)))),
             "resultado": esc(mn(f"{nome} = {_num(val)}{un}"))}
 
 def gravar_moldes(entradas):

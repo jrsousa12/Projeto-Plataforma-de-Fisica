@@ -128,7 +128,7 @@ function pick(k,nok){
   $("hbtn").classList.add("hidden");$("fonteq").classList.remove("hidden");
   $("fb").innerHTML='<div class="fb'+(ok?"":" no")+'"><b>'+(ok?(hinted&&mode==="tempo"?"Correto, com dica! (meio ponto)":"Correto!"):(k===-1?"Tempo esgotado.":"Não foi dessa vez."))+'</b><p></p></div>';
   fmtE($("fb").querySelector("p"),G?G.e+" Resposta: "+G.at:d.e,!!(G||d.c));if(d.an&&window.ANIM&&window.ANIM[d.an]){var A=window.ANIM[d.an],w=document.createElement("div");w.className="fig anim";w.innerHTML='<svg viewBox="0 0 320 '+A.h+'" role="img" aria-label="'+A.a+'">'+A.s+'</svg><div class="anrow"><button type="button" class="btn alt anp" aria-pressed="false">⏸ Pausar</button><button type="button" class="btn alt anr">↻ Ver de novo</button></div><label class="anlb">Linha do tempo<input type="range" class="anrg" min="0" step="50" value="0" aria-label="Linha do tempo da animação"></label><details class="antx"><summary>Descrição em texto</summary><p></p></details>';w.querySelector(".antx p").textContent=A.a;$("fb").appendChild(w);anCtl(w,w.querySelector("svg"),A,function(){setTimeout(function(){var n=$("next");if(n&&!n.classList.contains("hidden"))n.scrollIntoView({block:"center",behavior:"smooth"})},500)})}
-  if(!ok&&!G&&oi>=0){var fp=document.createElement("p");fp.className="fbx";fp.textContent="Você marcou: "+d.o[oi]+(d.x&&d.x[oi]?" — "+d.x[oi]:"");$("fb").querySelector(".fb").appendChild(fp)}
+  if(!ok&&!G&&oi>=0){var fp=document.createElement("p");fp.className="fbx";Eq.set(fp,"Você marcou: "+d.o[oi]+(d.x&&d.x[oi]?" — "+d.x[oi]:""));$("fb").querySelector(".fb").appendChild(fp)}
   if(mf){var mp=document.createElement("p");mp.className="msg ok";mp.textContent="🎯 Meta do dia cumprida! Muito bem!";$("fb").appendChild(mp)}
   $("next").textContent=i<order.length-1?"Próxima pergunta":"Ver resultado";
   $("next").classList.remove("hidden");$("fb").scrollIntoView({block:"start",behavior:"smooth"});
@@ -173,7 +173,7 @@ function finish(){
     c.querySelector("h3").textContent=d.q;
     c.querySelector(".a").textContent=r.pick<0?"Sem resposta (tempo esgotado)":d.o[r.pick];
     c.querySelector(".b").textContent=d.o[d.a];
-    c.querySelector(".x").textContent=d.e.replace(/\n/g," ");if(r.g){c.querySelector("h3").textContent=r.g.q;c.querySelector(".a").textContent=String(r.v).replace(".",",");c.querySelector(".b").textContent=r.g.at;c.querySelector(".x").textContent=r.g.e}
+    Eq.set(c.querySelector(".x"),d.e.replace(/\n/g," "));if(r.g){c.querySelector("h3").textContent=r.g.q;c.querySelector(".a").textContent=String(r.v).replace(".",",");c.querySelector(".b").textContent=r.g.at;Eq.set(c.querySelector(".x"),r.g.e)}
   });
   $("redo").classList.toggle("hidden",!wrong.length);
   window.__wrong=wrong.map(function(r){return r.qi});
@@ -209,7 +209,7 @@ function bkGet(){return ST.get("book",{})}
 function bkSet(o){ST.set("book",o)}
 function bkUpdate(qi,ok){if(Q[qi].g)return;var o=bkGet(),k=Q[qi].id,x=o[k];if(!ok){x=x||{w:0,r:0};x.w++;x.r=0;o[k]=x}else if(x){x.r++;if(x.r>=2)delete o[k]}bkSet(o)}
 function bkList(){var o=bkGet();return Object.keys(o).filter(function(k){return HI[k]!==undefined}).sort(function(a,b){return o[b].w-o[a].w}).map(function(k){return HI[k]})}
-function renderBook(){var l=bkList(),o=bkGet(),h="";l.forEach(function(qi){var d=Q[qi];h+='<div class="rv"><h3>'+esc(d.q)+'</h3><p><b>Correta:</b> '+esc(d.o[d.a])+'</p><p>'+esc(d.e.replace(/\n/g," "))+'</p><p style="color:var(--muted)">Erros: '+o[d.id].w+' · '+TN[d.t]+'</p></div>'});$("bookbody").innerHTML=h||'<p>Seu caderno está vazio. As questões que você errar aparecem aqui e saem depois de 2 acertos seguidos.</p>';$("btrain").classList.toggle("hidden",!l.length);$("bclear").classList.toggle("hidden",!l.length)}
+function renderBook(){var l=bkList(),o=bkGet(),h="";l.forEach(function(qi){var d=Q[qi];h+='<div class="rv"><h3>'+esc(d.q)+'</h3><p><b>Correta:</b> '+esc(d.o[d.a])+'</p><p>'+Eq.html(d.e.replace(/\n/g," "))+'</p><p style="color:var(--muted)">Erros: '+o[d.id].w+' · '+TN[d.t]+'</p></div>'});$("bookbody").innerHTML=h||'<p>Seu caderno está vazio. As questões que você errar aparecem aqui e saem depois de 2 acertos seguidos.</p>';$("btrain").classList.toggle("hidden",!l.length);$("bclear").classList.toggle("hidden",!l.length)}
 function sheetOpts(){
   if($("sopts"))return;
   var d=document.createElement("div");d.id="sopts";d.className="noprt";
@@ -228,7 +228,7 @@ function renderSheet(){
   var topo=prova?'<div style="border:1.5px solid var(--ink);padding:10px 12px;margin-bottom:12px"><p style="margin:0 0 6px"><b>'+esc($("sh").value||"Escola ______________________  Turma ______")+'</b></p><p style="margin:0 0 6px">'+esc(QZ.nome)+' · Prova</p><p style="margin:0">Nome: ______________________________________ Data: ___/___/_____ Nota: ______</p></div><p style="margin:0 0 10px;font-size:.9rem">Marque apenas uma alternativa em cada questão.</p>':'<h3 style="margin:0 0 4px;font-family:Georgia,serif">Lista de exercícios: '+QZ.nome.toLowerCase()+'</h3><p style="margin:0 0 10px;color:var(--muted);font-size:.9rem">Áreas: '+sel.map(function(k){return TN[k]}).join(", ")+'</p>',h=topo,g='',res=[];
   ids.forEach(function(qi,x){var d=Q[qi],pm=d.v?d.o.map(function(_,y){return y}):shuf(d.o.map(function(_,y){return y})),L="ABCD".charAt(pm.indexOf(d.a));res.push((x+1)+"-"+L);
     h+='<div class="sq"><p><b>'+(x+1)+'.</b> '+esc(d.q)+'</p>'+(d.f?'<div class="fig sf"><svg viewBox="0 0 320 140">'+FIG[d.f].s+'</svg></div>':'')+'<ol type="A">'+pm.map(function(oi){return '<li>'+esc(d.o[oi])+'</li>'}).join("")+'</ol></div>';
-    g+='<p><b>'+(x+1)+'. '+L+'</b> '+esc(d.e.replace(/\n/g," "))+'</p>'});
+    g+='<p><b>'+(x+1)+'. '+L+'</b> '+Eq.html(d.e.replace(/\n/g," "))+'</p>'});
   if(!ids.length)h+='<p class="msg neu">Selecione ao menos uma área na tela inicial.</p>';
   $("sheetbody").innerHTML=h+($("sg").checked&&ids.length?'<div class="pb"><h3 style="font-family:Georgia,serif">Gabarito'+(prova?' · '+esc($("sh").value||""):'')+'</h3><p><b>'+res.join(" · ")+'</b></p><h3 style="font-family:Georgia,serif">Comentários</h3>'+g+'</div>':'');
 }
@@ -287,10 +287,10 @@ Q.push.apply(Q,QZ.gq(GQ,Rn,fc,sc,sup));;
 var G=null,NV=0;
 function submitNum(){if(locked)return;var v=parseFloat(($("num").value||"").replace("−","-").replace(",","."));if(isNaN(v))return;NV=v;var ok=Math.abs(v-G.ans)<=Math.abs(G.ans)*0.02;$("num").disabled=true;$("nsend").classList.add("hidden");pick(-2,ok)}
 var CARDS=QZ.cards.slice(),fi=0,fl=false;
-function mkFace(cl,c,tx){var e=document.createElement("span");e.className=cl;if(c[2]&&window.AV&&AV[c[2]]){var w=document.createElement("span");w.innerHTML='<svg class="av" viewBox="0 0 100 100" role="img" aria-label="Retrato ilustrado">'+AV[c[2]]+'</svg>';e.appendChild(w.firstChild)}var t=document.createElement("span");t.textContent=tx;e.appendChild(t);return e}
-function fmtE(el,t,calc){el.textContent="";if(!calc&&t.indexOf("\n")<0){el.textContent=t;return}
+function mkFace(cl,c,tx){var e=document.createElement("span");e.className=cl;if(c[2]&&window.AV&&AV[c[2]]){var w=document.createElement("span");w.innerHTML='<svg class="av" viewBox="0 0 100 100" role="img" aria-label="Retrato ilustrado">'+AV[c[2]]+'</svg>';e.appendChild(w.firstChild)}var t=document.createElement("span");Eq.set(t,tx);e.appendChild(t);return e}
+function fmtE(el,t,calc){el.textContent="";if(!calc&&t.indexOf("\n")<0){Eq.set(el,t);return}
  var L=[];if(t.indexOf("\n")>=0){L=t.split("\n")}else t.replace(/([.!?])\s+(?=[A-ZΔΦΣ(−0-9])/g,"$1\u0001").split("\u0001").forEach(function(sn){sn.split(" → ").forEach(function(p,k){var q=p.replace(/\.$/,"").split(" = ");if(q.length>2){L.push((k?"→ ":"")+q[0]+" = "+q[1]);for(var j=2;j<q.length;j++)L.push("= "+q[j])}else L.push((k?"→ ":"")+p)})});
- L.forEach(function(x,k){var d=document.createElement("span");d.className="eln";d.textContent=x;el.appendChild(d)});el.classList.add("calc")}
+ L.forEach(function(x,k){var d=document.createElement("span");d.className="eln";Eq.set(d,x);el.appendChild(d)});el.classList.add("calc")}
 function renderCard(){var c=CARDS[fi],f=$("fc");$("cc").textContent="Cartão "+(fi+1)+" de "+CARDS.length+(fl?" · resposta":" · conceito");
  if(f.getAttribute("data-k")!==c[0]){f.setAttribute("data-k",c[0]);f.innerHTML="";var i=document.createElement("span");i.className="fci";i.appendChild(mkFace("fcf",c,c[0]));i.appendChild(mkFace("fcb",c,c[1]));f.appendChild(i);f.className="fc nt"+(fl?" back":"");void f.offsetWidth;f.classList.remove("nt")}
  else f.className="fc"+(fl?" back":"");
@@ -359,7 +359,7 @@ $("hclear").onclick=function(){ST.del("hist");renderHist()};
 $("mopen").onclick=function(){begin("simulado")};
 $("bexp").onclick=function(){var c=btoa(JSON.stringify(bkGet()));$("bkio").value=c;try{navigator.clipboard.writeText(c).catch(function(){})}catch(e){}$("bmsg").textContent="Código gerado. Copie e cole em outro aparelho."};
 $("bimp").onclick=function(){try{var o=JSON.parse(atob($("bkio").value.trim())),c=bkGet();Object.keys(o).forEach(function(k0){var k=LEG[k0]||k0;if(!c[k]||c[k].w<o[k0].w)c[k]=o[k0]});bkSet(c);renderBook();$("bmsg").textContent="Caderno importado."}catch(e){$("bmsg").textContent="Código inválido."}};
-$("hbtn").onclick=function(){if(locked)return;var d=Q[order[i]];if(!hinted){hinted=true;$("hint").innerHTML='<div class="hint"></div>';$("hint").firstChild.textContent="Dica: "+d.h;if(d.g||d.o.length<4){$("hbtn").classList.add("hidden")}else{$("hbtn").textContent="Eliminar duas alternativas"}}else{var bs=$("opts").children,n=0;for(var k=0;k<bs.length&&n<2;k++){if(perm[k]!==d.a&&!bs[k].disabled){bs[k].disabled=true;bs[k].style.opacity=".35";n++}}$("hbtn").classList.add("hidden")}};
+$("hbtn").onclick=function(){if(locked)return;var d=Q[order[i]];if(!hinted){hinted=true;$("hint").innerHTML='<div class="hint"></div>';Eq.set($("hint").firstChild,"Dica: "+d.h);if(d.g||d.o.length<4){$("hbtn").classList.add("hidden")}else{$("hbtn").textContent="Eliminar duas alternativas"}}else{var bs=$("opts").children,n=0;for(var k=0;k<bs.length&&n<2;k++){if(perm[k]!==d.a&&!bs[k].disabled){bs[k].disabled=true;bs[k].style.opacity=".35";n++}}$("hbtn").classList.add("hidden")}};
 $("go2").onclick=function(){begin("tempo")};
 $("share").onclick=function(){var b=$("share"),t="Fiz "+num(score)+"/"+order.length+" no quiz de "+QZ.nome.toLowerCase()+" ("+(mode==="tempo"?"cronometrado":"modo estudo")+") em "+$("s3").textContent+". Tente também!"+(/^https?:$/.test(location.protocol)?" "+location.origin+location.pathname:"");var show=function(){var s=$("shtxt");if(!s){s=document.createElement("p");s.id="shtxt";s.className="hint";s.style.userSelect="all";b.parentNode.insertBefore(s,b.nextSibling)}s.textContent="Copie e envie: "+t};try{if(navigator.share){navigator.share({text:t}).catch(function(e){if(!e||e.name!=="AbortError")show()})}else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){b.textContent="Copiado!"}).catch(show)}else{show()}}catch(e){show()}};
 $("prt").onclick=function(){try{window.print()}catch(e){}};

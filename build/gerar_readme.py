@@ -27,6 +27,7 @@ REGRAS = [  # (padrões, descrição); arquivos com a mesma descrição aparecem
  (["firebase-config.js", "nuvem.js"], "Nuvem opcional (Firebase): login por código e sincronização do histórico do aluno"),
  (["perfil.js"], "Desempenho do aluno, treino adaptativo (tudo guardado no aparelho)"),
  (["fx.js"], "Som, vibração e confete"),
+ (["eq.js"], "Mostra divisões \"a / b\" como fração empilhada (explicações, dicas, cartões e animações)"),
  (["manifest.webmanifest", "sw.js", "icon-*.png", "icon.svg"], "Instalação no celular e uso sem internet"),
 ]
 def arquivos():

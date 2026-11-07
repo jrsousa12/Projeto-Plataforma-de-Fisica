@@ -14,7 +14,7 @@ var DATA=/*AUTO:BEGIN*/[
 "ΔT = 60 °C"
 ],
 "formula": "Q = m · c · ΔT",
-"subst": "Q = (250) · (1) · (60)",
+"subst": "Q = 250 · 1 · 60",
 "resultado": "Q = 1,5·10⁴ cal"
 },
 {
@@ -27,7 +27,7 @@ var DATA=/*AUTO:BEGIN*/[
 "ΔT = 100 °C"
 ],
 "formula": "Q = m · c · ΔT",
-"subst": "Q = (400) · (0,11) · (100)",
+"subst": "Q = 400 · 0,11 · 100",
 "resultado": "Q = 4400 cal"
 },
 {
@@ -39,7 +39,7 @@ var DATA=/*AUTO:BEGIN*/[
 "c = 0,09 cal/g·°C"
 ],
 "formula": "C = m · c",
-"subst": "C = (200) · (0,09)",
+"subst": "C = 200 · 0,09",
 "resultado": "C = 18 cal/°C"
 },
 {
@@ -51,7 +51,7 @@ var DATA=/*AUTO:BEGIN*/[
 "L = 80 cal/g"
 ],
 "formula": "Q = m · L",
-"subst": "Q = (300) · (80)",
+"subst": "Q = 300 · 80",
 "resultado": "Q = 2,4·10⁴ cal"
 },
 {
@@ -63,7 +63,7 @@ var DATA=/*AUTO:BEGIN*/[
 "L = 540 cal/g"
 ],
 "formula": "Q = m · L",
-"subst": "Q = (50) · (540)",
+"subst": "Q = 50 · 540",
 "resultado": "Q = 2,7·10⁴ cal"
 },
 {
@@ -76,7 +76,7 @@ var DATA=/*AUTO:BEGIN*/[
 "ΔT = 40 °C"
 ],
 "formula": "ΔV = V₀ · γ · ΔT",
-"subst": "ΔV = (500) · (1·10⁻³) · (40)",
+"subst": "ΔV = 500 · 1·10⁻³ · 40",
 "resultado": "ΔV = 20 cm^3"
 },
 {
@@ -88,7 +88,7 @@ var DATA=/*AUTO:BEGIN*/[
 "q = 3 µC"
 ],
 "formula": "E = F / q",
-"subst": "E = (0,12)/(3)",
+"subst": "E = 0,12 / 3",
 "resultado": "E = 4·10⁴ N/C"
 },
 {
@@ -100,7 +100,7 @@ var DATA=/*AUTO:BEGIN*/[
 "E = 2000 N/C"
 ],
 "formula": "F = q · E",
-"subst": "F = (1,6·10⁻¹⁹) · (2000)",
+"subst": "F = 1,6·10⁻¹⁹ · 2000",
 "resultado": "F = 3,2·10⁻¹⁶ N"
 },
 {
@@ -114,7 +114,7 @@ var DATA=/*AUTO:BEGIN*/[
 "d = 0,3 m"
 ],
 "formula": "U = k · q₁ · q₂ / d",
-"subst": "U = (9·10⁹) · (5) · (-2)/(0,3)",
+"subst": "U = 9·10⁹ · 5 · (-2) / 0,3",
 "resultado": "U = -0,3 J"
 },
 {
@@ -127,7 +127,7 @@ var DATA=/*AUTO:BEGIN*/[
 "d = 0,4 m"
 ],
 "formula": "ΔU = q · E · d",
-"subst": "ΔU = (2) · (500) · (0,4)",
+"subst": "ΔU = 2 · 500 · 0,4",
 "resultado": "ΔU = 0,0004 J"
 },
 {
@@ -139,7 +139,7 @@ var DATA=/*AUTO:BEGIN*/[
 "ΔV = 180 V"
 ],
 "formula": "W = q · (V_i − V_f)",
-"subst": "W = (8) · (180)",
+"subst": "W = 8 · 180",
 "resultado": "W = 0,00144 J"
 },
 {
@@ -151,7 +151,7 @@ var DATA=/*AUTO:BEGIN*/[
 "d = 2 cm"
 ],
 "formula": "E = U / d",
-"subst": "E = (600)/(2)",
+"subst": "E = 600 / 2",
 "resultado": "E = 3·10⁴ V/m"
 },
 {
@@ -163,7 +163,7 @@ var DATA=/*AUTO:BEGIN*/[
 "A = 0,02 m^2"
 ],
 "formula": "σ = Q / A",
-"subst": "σ = (6)/(0,02)",
+"subst": "σ = 6 / 0,02",
 "resultado": "σ = 0,0003 C/m^2"
 },
 {
@@ -175,7 +175,7 @@ var DATA=/*AUTO:BEGIN*/[
 "R = 0,1 m"
 ],
 "formula": "σ = Q / (4π R²)",
-"subst": "σ = (4)/(4 · pi · (0,1)^2)",
+"subst": "σ = 4 / (4 · pi · 0,1²)",
 "resultado": "σ = 3,183·10⁻⁵ C/m^2"
 },
 {
@@ -187,7 +187,7 @@ var DATA=/*AUTO:BEGIN*/[
 "V = 12 V"
 ],
 "formula": "C = Q / V",
-"subst": "C = (60)/(12)",
+"subst": "C = 60 / 12",
 "resultado": "C = 5 µF"
 },
 {
@@ -199,7 +199,7 @@ var DATA=/*AUTO:BEGIN*/[
 "V = 9 V"
 ],
 "formula": "Q = C · V",
-"subst": "Q = (20) · (9)",
+"subst": "Q = 20 · 9",
 "resultado": "Q = 180 µC"
 },
 {
@@ -211,7 +211,7 @@ var DATA=/*AUTO:BEGIN*/[
 "V = 50 V"
 ],
 "formula": "E = C · V² / 2",
-"subst": "E = (100) · (50)^2/2",
+"subst": "E = 100 · 50² / 2",
 "resultado": "E = 0,125 J"
 },
 {
@@ -223,7 +223,7 @@ var DATA=/*AUTO:BEGIN*/[
 "C₂ = 3 µF"
 ],
 "formula": "1/C_eq = 1/C₁ + 1/C₂",
-"subst": "C_eq = 1/(1/(6)+1/(3))",
+"subst": "C_eq = 1 / (1 / 6 + 1 / 3)",
 "resultado": "C_eq = 2 µF"
 },
 {
@@ -236,7 +236,7 @@ var DATA=/*AUTO:BEGIN*/[
 "C₃ = 5 µF"
 ],
 "formula": "C_eq = C₁ + C₂ + C₃",
-"subst": "C_eq = (2)+(3)+(5)",
+"subst": "C_eq = 2 + 3 + 5",
 "resultado": "C_eq = 10 µF"
 },
 {
@@ -249,7 +249,7 @@ var DATA=/*AUTO:BEGIN*/[
 "C₃ = 3 µF"
 ],
 "formula": "C_eq = C₁·(C₂+C₃) / (C₁+C₂+C₃)",
-"subst": "C_eq = (4) · ((3)+(3))/((4)+(3)+(3))",
+"subst": "C_eq = 4 · (3 + 3) / (4 + 3 + 3)",
 "resultado": "C_eq = 2,4 µF"
 },
 {
@@ -261,7 +261,7 @@ var DATA=/*AUTO:BEGIN*/[
 "V = 12 V"
 ],
 "formula": "Q = C_eq · V",
-"subst": "Q = (2) · (12)",
+"subst": "Q = 2 · 12",
 "resultado": "Q = 24 µC"
 },
 {
@@ -273,7 +273,7 @@ var DATA=/*AUTO:BEGIN*/[
 "f = 680 Hz"
 ],
 "formula": "v = λ · f",
-"subst": "v = (0,5) · (680)",
+"subst": "v = 0,5 · 680",
 "resultado": "v = 340 m/s"
 },
 {
@@ -284,7 +284,7 @@ var DATA=/*AUTO:BEGIN*/[
 "f = 250 Hz"
 ],
 "formula": "T = 1 / f",
-"subst": "T = 1/(250)",
+"subst": "T = 1 / 250",
 "resultado": "T = 0,004 s"
 },
 {
@@ -296,7 +296,7 @@ var DATA=/*AUTO:BEGIN*/[
 "v = 340 m/s"
 ],
 "formula": "t = d / v",
-"subst": "t = (1700)/(340)",
+"subst": "t = 1700 / 340",
 "resultado": "t = 5 s"
 },
 {
@@ -308,7 +308,7 @@ var DATA=/*AUTO:BEGIN*/[
 "f = 500 Hz"
 ],
 "formula": "λ = v / f",
-"subst": "λ = (1500)/(500)",
+"subst": "λ = 1500 / 500",
 "resultado": "λ = 3 m"
 },
 {
@@ -320,7 +320,7 @@ var DATA=/*AUTO:BEGIN*/[
 "I₀ = 1·10⁻¹² W/m²"
 ],
 "formula": "β = 10 · log(I / I₀)",
-"subst": "β = 10 · log((1·10⁻⁵)/(1·10⁻¹²))",
+"subst": "β = 10 · log(1·10⁻⁵ / 1·10⁻¹²)",
 "resultado": "β = 70 dB"
 },
 {
@@ -332,7 +332,7 @@ var DATA=/*AUTO:BEGIN*/[
 "I₀ = 1·10⁻¹² W/m²"
 ],
 "formula": "I = I₀ · 10^(β/10)",
-"subst": "I = (1·10⁻¹²) · 10^((60)/10)",
+"subst": "I = 1·10⁻¹² · 10^(60 / 10)",
 "resultado": "I = 1·10⁻⁶ W/m²"
 },
 {
@@ -344,7 +344,7 @@ var DATA=/*AUTO:BEGIN*/[
 "r = 2 m"
 ],
 "formula": "I = P / (4π r²)",
-"subst": "I = (10)/(4 · pi · (2)^2)",
+"subst": "I = 10 / (4 · pi · 2²)",
 "resultado": "I = 0,199 W/m²"
 },
 {
@@ -356,7 +356,7 @@ var DATA=/*AUTO:BEGIN*/[
 "Δt = 0,1 s"
 ],
 "formula": "2d = v · Δt  →  d = v · Δt / 2",
-"subst": "d = (340) · (0,1)/2",
+"subst": "d = 340 · 0,1 / 2",
 "resultado": "d = 17 m"
 },
 {
@@ -368,7 +368,7 @@ var DATA=/*AUTO:BEGIN*/[
 "Δt = 0,8 s"
 ],
 "formula": "d = v · Δt / 2",
-"subst": "d = (1500) · (0,8)/2",
+"subst": "d = 1500 · 0,8 / 2",
 "resultado": "d = 600 m"
 },
 {
@@ -380,7 +380,7 @@ var DATA=/*AUTO:BEGIN*/[
 "Δt = 4 s"
 ],
 "formula": "d = v · Δt / 2",
-"subst": "d = (340) · (4)/2",
+"subst": "d = 340 · 4 / 2",
 "resultado": "d = 680 m"
 },
 {
@@ -392,7 +392,7 @@ var DATA=/*AUTO:BEGIN*/[
 "f₂ = 444 Hz"
 ],
 "formula": "f_bat = |f₂ − f₁|",
-"subst": "f_bat = (444)-(440)",
+"subst": "f_bat = 444 − 440",
 "resultado": "f_bat = 4 Hz"
 },
 {
@@ -404,7 +404,7 @@ var DATA=/*AUTO:BEGIN*/[
 "f₂ = 516 Hz"
 ],
 "formula": "f = (f₁ + f₂) / 2",
-"subst": "f = ((512)+(516))/2",
+"subst": "f = (512 + 516) / 2",
 "resultado": "f = 514 Hz"
 },
 {
@@ -417,7 +417,7 @@ var DATA=/*AUTO:BEGIN*/[
 "v_F = 30 m/s"
 ],
 "formula": "f' = f · v / (v − v_F)",
-"subst": "f' = (800) · (340)/((340)-(30))",
+"subst": "f' = 800 · 340 / (340 − 30)",
 "resultado": "f' = 877,4 Hz"
 },
 {
@@ -430,7 +430,7 @@ var DATA=/*AUTO:BEGIN*/[
 "v_F = 30 m/s"
 ],
 "formula": "f' = f · v / (v + v_F)",
-"subst": "f' = (800) · (340)/((340)+(30))",
+"subst": "f' = 800 · 340 / (340 + 30)",
 "resultado": "f' = 735,1 Hz"
 },
 {
@@ -442,7 +442,7 @@ var DATA=/*AUTO:BEGIN*/[
 "v_som = 340 m/s"
 ],
 "formula": "M = v_fonte / v_som",
-"subst": "M = (680)/(340)",
+"subst": "M = 680 / 340",
 "resultado": "M = 2"
 },
 {
@@ -453,7 +453,7 @@ var DATA=/*AUTO:BEGIN*/[
 "d = 15 cm"
 ],
 "formula": "λ = 2 · d",
-"subst": "λ = 2 · (15)",
+"subst": "λ = 2 · 15",
 "resultado": "λ = 0,3 m"
 },
 {
@@ -465,7 +465,7 @@ var DATA=/*AUTO:BEGIN*/[
 "n = 3"
 ],
 "formula": "λ = 2L / n",
-"subst": "λ = 2 · (1,2)/(3)",
+"subst": "λ = 2 · 1,2 / 3",
 "resultado": "λ = 0,8 m"
 },
 {
@@ -477,7 +477,7 @@ var DATA=/*AUTO:BEGIN*/[
 "f₁ = 500 Hz"
 ],
 "formula": "v = 2 · L · f₁",
-"subst": "v = 2 · (0,5) · (500)",
+"subst": "v = 2 · 0,5 · 500",
 "resultado": "v = 500 m/s"
 },
 {
@@ -489,7 +489,7 @@ var DATA=/*AUTO:BEGIN*/[
 "μ = 0,01 kg/m"
 ],
 "formula": "v = √(T / μ)",
-"subst": "v = sqrt((100)/(0,01))",
+"subst": "v = √(100 / 0,01)",
 "resultado": "v = 100 m/s"
 },
 {
@@ -502,7 +502,7 @@ var DATA=/*AUTO:BEGIN*/[
 "L = 2 m"
 ],
 "formula": "v = 2 · L · (f₂ − f₁)",
-"subst": "v = 2 · (2) · ((125)-(100))",
+"subst": "v = 2 · 2 · (125 − 100)",
 "resultado": "v = 100 m/s"
 },
 {
@@ -514,7 +514,7 @@ var DATA=/*AUTO:BEGIN*/[
 "L = 0,6 m"
 ],
 "formula": "f₂ = 2 · v / (2L)",
-"subst": "f₂ = (360)/(0,6)",
+"subst": "f₂ = 360 / 0,6",
 "resultado": "f₂ = 600 Hz"
 },
 {
@@ -526,7 +526,7 @@ var DATA=/*AUTO:BEGIN*/[
 "L = 0,85 m"
 ],
 "formula": "f₁ = v / (2L)",
-"subst": "f₁ = (340)/(2 · (0,85))",
+"subst": "f₁ = 340 / (2 · 0,85)",
 "resultado": "f₁ = 200 Hz"
 },
 {
@@ -538,7 +538,7 @@ var DATA=/*AUTO:BEGIN*/[
 "L = 0,85 m"
 ],
 "formula": "f₁ = v / (4L)",
-"subst": "f₁ = (340)/(4 · (0,85))",
+"subst": "f₁ = 340 / (4 · 0,85)",
 "resultado": "f₁ = 100 Hz"
 },
 {
@@ -551,7 +551,7 @@ var DATA=/*AUTO:BEGIN*/[
 "L = 0,5 m"
 ],
 "formula": "fₙ = n · v / (4L)",
-"subst": "f₃ = (3) · (340)/(4 · (0,5))",
+"subst": "f₃ = 3 · 340 / (4 · 0,5)",
 "resultado": "f₃ = 510 Hz"
 },
 {
@@ -563,7 +563,7 @@ var DATA=/*AUTO:BEGIN*/[
 "f₁ = 340 Hz"
 ],
 "formula": "L = v / (2 f₁)",
-"subst": "L = (340)/(2 · (340))",
+"subst": "L = 340 / (2 · 340)",
 "resultado": "L = 0,5 m"
 },
 {
@@ -576,7 +576,7 @@ var DATA=/*AUTO:BEGIN*/[
 "s = 1,2 m"
 ],
 "formula": "h = H · s / S",
-"subst": "h = (6) · (1,2)/(4)",
+"subst": "h = 6 · 1,2 / 4",
 "resultado": "h = 1,8 m"
 },
 {
@@ -589,7 +589,7 @@ var DATA=/*AUTO:BEGIN*/[
 "p' = 0,2 m"
 ],
 "formula": "i = o · p' / p",
-"subst": "i = (2) · (0,2)/(8)",
+"subst": "i = 2 · 0,2 / 8",
 "resultado": "i = 0,05 m"
 },
 {
@@ -601,7 +601,7 @@ var DATA=/*AUTO:BEGIN*/[
 "c = 3·10⁸ m/s"
 ],
 "formula": "t = d / c",
-"subst": "t = (1,5·10¹¹)/(3·10⁸)",
+"subst": "t = 1,5·10¹¹ / 3·10⁸",
 "resultado": "t = 500 s"
 },
 {
@@ -612,7 +612,7 @@ var DATA=/*AUTO:BEGIN*/[
 "d = 1,5 m"
 ],
 "formula": "D = 2 · d",
-"subst": "D = 2 · (1,5)",
+"subst": "D = 2 · 1,5",
 "resultado": "D = 3 m"
 },
 {
@@ -623,7 +623,7 @@ var DATA=/*AUTO:BEGIN*/[
 "H = 1,8 m"
 ],
 "formula": "h = H / 2",
-"subst": "h = (1,8)/2",
+"subst": "h = 1,8 / 2",
 "resultado": "h = 0,9 m"
 },
 {
@@ -634,7 +634,7 @@ var DATA=/*AUTO:BEGIN*/[
 "θ = 60"
 ],
 "formula": "N = 360° / θ − 1",
-"subst": "N = 360/(60)-1",
+"subst": "N = 360 / 60 − 1",
 "resultado": "N = 5"
 },
 {
@@ -645,7 +645,7 @@ var DATA=/*AUTO:BEGIN*/[
 "v = 2 m/s"
 ],
 "formula": "v_rel = 2 · v",
-"subst": "v_rel = 2 · (2)",
+"subst": "v_rel = 2 · 2",
 "resultado": "v_rel = 4 m/s"
 },
 {
@@ -656,7 +656,7 @@ var DATA=/*AUTO:BEGIN*/[
 "R = 40 cm"
 ],
 "formula": "f = R / 2",
-"subst": "f = (40)/2",
+"subst": "f = 40 / 2",
 "resultado": "f = 20 cm"
 },
 {
@@ -668,7 +668,7 @@ var DATA=/*AUTO:BEGIN*/[
 "p = 30 cm"
 ],
 "formula": "1/f = 1/p + 1/p'",
-"subst": "p' = 1/(1/(10)-1/(30))",
+"subst": "p' = 1 / (1 / 10 − 1 / 30)",
 "resultado": "p' = 15 cm"
 },
 {
@@ -680,7 +680,7 @@ var DATA=/*AUTO:BEGIN*/[
 "p = 30 cm"
 ],
 "formula": "A = − p' / p",
-"subst": "A = −(15)/(30)",
+"subst": "A = −15 / 30",
 "resultado": "A = −0,5"
 },
 {
@@ -692,7 +692,7 @@ var DATA=/*AUTO:BEGIN*/[
 "p = 30 cm"
 ],
 "formula": "1/f = 1/p + 1/p'",
-"subst": "p' = 1/(1/(−15)-1/(30))",
+"subst": "p' = 1 / (1/−15 − 1 / 30)",
 "resultado": "p' = −10 cm"
 },
 {
@@ -704,7 +704,7 @@ var DATA=/*AUTO:BEGIN*/[
 "n = 1,5"
 ],
 "formula": "v = c / n",
-"subst": "v = (3·10⁸)/(1,5)",
+"subst": "v = 3·10⁸ / 1,5",
 "resultado": "v = 2·10⁸ m/s"
 },
 {
@@ -717,7 +717,7 @@ var DATA=/*AUTO:BEGIN*/[
 "n₂ = 1,5"
 ],
 "formula": "sen θ₂ = n₁ · sen θ₁ / n₂",
-"subst": "sen θ₂ = (1) · (0,5)/(1,5)",
+"subst": "sen θ₂ = 1 · 0,5 / 1,5",
 "resultado": "sen θ₂ = 0,333"
 },
 {
@@ -730,7 +730,7 @@ var DATA=/*AUTO:BEGIN*/[
 "sen θ₂ = 0,5"
 ],
 "formula": "n₂ = n₁ · sen θ₁ / sen θ₂",
-"subst": "n₂ = (1) · (0,8)/(0,5)",
+"subst": "n₂ = 1 · 0,8 / 0,5",
 "resultado": "n₂ = 1,6"
 },
 {
@@ -742,7 +742,7 @@ var DATA=/*AUTO:BEGIN*/[
 "n₂ = 1"
 ],
 "formula": "sen L = n₂ / n₁",
-"subst": "sen L = (1)/(2)",
+"subst": "sen L = 1 / 2",
 "resultado": "sen L = 0,5"
 },
 {
@@ -753,7 +753,7 @@ var DATA=/*AUTO:BEGIN*/[
 "f = 0,5 m"
 ],
 "formula": "V = 1 / f",
-"subst": "V = 1/(0,5)",
+"subst": "V = 1 / 0,5",
 "resultado": "V = 2 di"
 },
 {
@@ -765,7 +765,7 @@ var DATA=/*AUTO:BEGIN*/[
 "p = 60 cm"
 ],
 "formula": "1/f = 1/p + 1/p'",
-"subst": "p' = 1/(1/(20)-1/(60))",
+"subst": "p' = 1 / (1 / 20 − 1 / 60)",
 "resultado": "p' = 30 cm"
 },
 {
@@ -777,7 +777,7 @@ var DATA=/*AUTO:BEGIN*/[
 "p = 20 cm"
 ],
 "formula": "1/f = 1/p + 1/p'",
-"subst": "p' = 1/(1/(−20)-1/(20))",
+"subst": "p' = 1 / (1/−20 − 1 / 20)",
 "resultado": "p' = −10 cm"
 },
 {
@@ -789,7 +789,7 @@ var DATA=/*AUTO:BEGIN*/[
 "V₂ = 2 di"
 ],
 "formula": "f = 1 / (V₁ + V₂)",
-"subst": "f = 1/((3)+(2))",
+"subst": "f = 1 / (3 + 2)",
 "resultado": "f = 0,2 m"
 },
 {
@@ -800,7 +800,7 @@ var DATA=/*AUTO:BEGIN*/[
 "d = 0,5 m"
 ],
 "formula": "V = −1 / d",
-"subst": "V = −1/(0,5)",
+"subst": "V = −1 / 0,5",
 "resultado": "V = −2 di"
 },
 {
@@ -812,7 +812,7 @@ var DATA=/*AUTO:BEGIN*/[
 "Δt = 1,5 h"
 ],
 "formula": "vm = Δs / Δt",
-"subst": "vm = (90)/(1,5)",
+"subst": "vm = 90 / 1,5",
 "resultado": "vm = 60 km/h"
 },
 {
@@ -823,7 +823,7 @@ var DATA=/*AUTO:BEGIN*/[
 "v = 72 km/h"
 ],
 "formula": "v em m/s",
-"subst": "v = (72)",
+"subst": "v = 72",
 "resultado": "v = 20 m/s"
 },
 {
@@ -836,7 +836,7 @@ var DATA=/*AUTO:BEGIN*/[
 "vB = 10 m/s"
 ],
 "formula": "t = d / (vA + vB)",
-"subst": "t = (300)/((20)+(10))",
+"subst": "t = 300 / (20 + 10)",
 "resultado": "t = 10 s"
 },
 {
@@ -849,7 +849,7 @@ var DATA=/*AUTO:BEGIN*/[
 "t = 5 s"
 ],
 "formula": "v = v₀ + a·t",
-"subst": "v = (4)+(3) · (5)",
+"subst": "v = 4 + 3 · 5",
 "resultado": "v = 19 m/s"
 },
 {
@@ -861,7 +861,7 @@ var DATA=/*AUTO:BEGIN*/[
 "a = 4 m/s²"
 ],
 "formula": "Δs = v₀² / (2a)",
-"subst": "Δs = (20) · (20)/(2 · (4))",
+"subst": "Δs = 20 · 20 / (2 · 4)",
 "resultado": "Δs = 50 m"
 },
 {
@@ -873,7 +873,7 @@ var DATA=/*AUTO:BEGIN*/[
 "t = 6 s"
 ],
 "formula": "Δs = a·t² / 2",
-"subst": "Δs = (2) · (6) · (6)/2",
+"subst": "Δs = 2 · 6 · 6 / 2",
 "resultado": "Δs = 36 m"
 },
 {
@@ -886,7 +886,7 @@ var DATA=/*AUTO:BEGIN*/[
 "Δt = 4 s"
 ],
 "formula": "a = Δv / Δt",
-"subst": "a = ((30)-(10))/(4)",
+"subst": "a = (30 − 10) / 4",
 "resultado": "a = 5 m/s²"
 },
 {
@@ -898,7 +898,7 @@ var DATA=/*AUTO:BEGIN*/[
 "g = 10 m/s²"
 ],
 "formula": "t = √(2h / g)",
-"subst": "t = sqrt(2 · (45)/(10))",
+"subst": "t = √(2 · 45 / 10)",
 "resultado": "t = 3 s"
 },
 {
@@ -910,7 +910,7 @@ var DATA=/*AUTO:BEGIN*/[
 "h = 20 m"
 ],
 "formula": "v = √(2·g·h)",
-"subst": "v = sqrt(2 · (10) · (20))",
+"subst": "v = √(2 · 10 · 20)",
 "resultado": "v = 20 m/s"
 },
 {
@@ -922,7 +922,7 @@ var DATA=/*AUTO:BEGIN*/[
 "g = 10 m/s²"
 ],
 "formula": "H = v₀² / (2g)",
-"subst": "H = (30) · (30)/(2 · (10))",
+"subst": "H = 30 · 30 / (2 · 10)",
 "resultado": "H = 45 m"
 },
 {
@@ -934,7 +934,7 @@ var DATA=/*AUTO:BEGIN*/[
 "g = 10 m/s²"
 ],
 "formula": "t = v₀ / g",
-"subst": "t = (20)/(10)",
+"subst": "t = 20 / 10",
 "resultado": "t = 2 s"
 },
 {
@@ -947,7 +947,7 @@ var DATA=/*AUTO:BEGIN*/[
 "g = 10 m/s²"
 ],
 "formula": "x = v₀ · √(2h / g)",
-"subst": "x = (15) · sqrt(2 · (20)/(10))",
+"subst": "x = 15 · √(2 · 20 / 10)",
 "resultado": "x = 30 m"
 },
 {
@@ -959,7 +959,7 @@ var DATA=/*AUTO:BEGIN*/[
 "sen θ = 0,6"
 ],
 "formula": "v₀y = v₀ · sen θ",
-"subst": "v₀y = (50) · (0,6)",
+"subst": "v₀y = 50 · 0,6",
 "resultado": "v₀y = 30 m/s"
 },
 {
@@ -971,7 +971,7 @@ var DATA=/*AUTO:BEGIN*/[
 "g = 10 m/s²"
 ],
 "formula": "A = v₀² · sen 2θ / g",
-"subst": "A = (20) · (20)/(10)",
+"subst": "A = 20 · 20 / 10",
 "resultado": "A = 40 m"
 },
 {
@@ -982,7 +982,7 @@ var DATA=/*AUTO:BEGIN*/[
 "T = 0,5 s"
 ],
 "formula": "f = 1 / T",
-"subst": "f = 1/(0,5)",
+"subst": "f = 1 / 0,5",
 "resultado": "f = 2 Hz"
 },
 {
@@ -994,7 +994,7 @@ var DATA=/*AUTO:BEGIN*/[
 "T = 4 s"
 ],
 "formula": "v = 2πR / T",
-"subst": "v = 2 · pi · (2)/(4)",
+"subst": "v = 2 · pi · 2 / 4",
 "resultado": "v = 3,142 m/s"
 },
 {
@@ -1006,7 +1006,7 @@ var DATA=/*AUTO:BEGIN*/[
 "R = 5 m"
 ],
 "formula": "a = v² / R",
-"subst": "a = (10) · (10)/(5)",
+"subst": "a = 10 · 10 / 5",
 "resultado": "a = 20 m/s²"
 },
 {
@@ -1017,7 +1017,7 @@ var DATA=/*AUTO:BEGIN*/[
 "f = 5 Hz"
 ],
 "formula": "ω = 2π·f",
-"subst": "ω = 2 · pi · (5)",
+"subst": "ω = 2 · pi · 5",
 "resultado": "ω = 31,42 rad/s"
 },
 {
@@ -1030,7 +1030,7 @@ var DATA=/*AUTO:BEGIN*/[
 "m = 4 kg"
 ],
 "formula": "a = (F₁ − F₂) / m",
-"subst": "a = ((30)-(10))/(4)",
+"subst": "a = (30 − 10) / 4",
 "resultado": "a = 5 m/s²"
 },
 {
@@ -1042,7 +1042,7 @@ var DATA=/*AUTO:BEGIN*/[
 "g = 1,6 m/s²"
 ],
 "formula": "P = m·g",
-"subst": "P = (50) · (1,6)",
+"subst": "P = 50 · 1,6",
 "resultado": "P = 80 N"
 },
 {
@@ -1055,7 +1055,7 @@ var DATA=/*AUTO:BEGIN*/[
 "a = 2 m/s²"
 ],
 "formula": "N = m(g + a)",
-"subst": "N = (60) · ((10)+(2))",
+"subst": "N = 60 · (10 + 2)",
 "resultado": "N = 720 N"
 },
 {
@@ -1068,7 +1068,7 @@ var DATA=/*AUTO:BEGIN*/[
 "m₂ = 3 kg"
 ],
 "formula": "a = F / (m₁ + m₂)",
-"subst": "a = (20)/((2)+(3))",
+"subst": "a = 20 / (2 + 3)",
 "resultado": "a = 4 m/s²"
 },
 {
@@ -1081,7 +1081,7 @@ var DATA=/*AUTO:BEGIN*/[
 "g = 10 m/s²"
 ],
 "formula": "Fat = μ·N",
-"subst": "Fat = (0,3) · (10) · (10)",
+"subst": "Fat = 0,3 · 10 · 10",
 "resultado": "Fat = 30 N"
 },
 {
@@ -1093,7 +1093,7 @@ var DATA=/*AUTO:BEGIN*/[
 "sen θ = 0,5"
 ],
 "formula": "a = g · sen θ",
-"subst": "a = (10) · (0,5)",
+"subst": "a = 10 · 0,5",
 "resultado": "a = 5 m/s²"
 },
 {
@@ -1106,7 +1106,7 @@ var DATA=/*AUTO:BEGIN*/[
 "sen θ = 0,6"
 ],
 "formula": "Px = m·g·sen θ",
-"subst": "Px = (20) · (10) · (0,6)",
+"subst": "Px = 20 · 10 · 0,6",
 "resultado": "Px = 120 N"
 },
 {
@@ -1119,7 +1119,7 @@ var DATA=/*AUTO:BEGIN*/[
 "cos θ = 0,8"
 ],
 "formula": "N = m·g·cos θ",
-"subst": "N = (5) · (10) · (0,8)",
+"subst": "N = 5 · 10 · 0,8",
 "resultado": "N = 40 N"
 },
 {
@@ -1133,7 +1133,7 @@ var DATA=/*AUTO:BEGIN*/[
 "μ = 0,5"
 ],
 "formula": "a = g(sen θ − μ·cos θ)",
-"subst": "a = (10) · ((0,6)-(0,5) · (0,8))",
+"subst": "a = 10 · (0,6 − 0,5 · 0,8)",
 "resultado": "a = 2 m/s²"
 },
 {
@@ -1146,7 +1146,7 @@ var DATA=/*AUTO:BEGIN*/[
 "cos θ = 0,5"
 ],
 "formula": "τ = F·d·cos θ",
-"subst": "τ = (50) · (4) · (0,5)",
+"subst": "τ = 50 · 4 · 0,5",
 "resultado": "τ = 100 J"
 },
 {
@@ -1158,7 +1158,7 @@ var DATA=/*AUTO:BEGIN*/[
 "Δt = 20 s"
 ],
 "formula": "P = τ / Δt",
-"subst": "P = (1200)/(20)",
+"subst": "P = 1200 / 20",
 "resultado": "P = 60 W"
 },
 {
@@ -1172,7 +1172,7 @@ var DATA=/*AUTO:BEGIN*/[
 "Δt = 20 s"
 ],
 "formula": "P = m·g·h / Δt",
-"subst": "P = (200) · (10) · (10)/(20)",
+"subst": "P = 200 · 10 · 10 / 20",
 "resultado": "P = 1000 W"
 },
 {
@@ -1184,7 +1184,7 @@ var DATA=/*AUTO:BEGIN*/[
 "v = 20 m/s"
 ],
 "formula": "P = F·v",
-"subst": "P = (500) · (20)",
+"subst": "P = 500 · 20",
 "resultado": "P = 10 kW"
 },
 {
@@ -1196,7 +1196,7 @@ var DATA=/*AUTO:BEGIN*/[
 "v = 72 km/h"
 ],
 "formula": "Ec = m·v² / 2",
-"subst": "Ec = (1200) · (72) · (72)/2",
+"subst": "Ec = 1200 · 72 · 72 / 2",
 "resultado": "Ec = 240 kJ"
 },
 {
@@ -1209,7 +1209,7 @@ var DATA=/*AUTO:BEGIN*/[
 "h = 5 m"
 ],
 "formula": "Ep = m·g·h",
-"subst": "Ep = (3) · (10) · (5)",
+"subst": "Ep = 3 · 10 · 5",
 "resultado": "Ep = 150 J"
 },
 {
@@ -1222,7 +1222,7 @@ var DATA=/*AUTO:BEGIN*/[
 "h = 5 m"
 ],
 "formula": "v = √(2·g·(H − h))",
-"subst": "v = sqrt(2 · (10) · ((20)-(5)))",
+"subst": "v = √(2 · 10 · (20 − 5))",
 "resultado": "v = 17,32 m/s"
 },
 {
@@ -1234,7 +1234,7 @@ var DATA=/*AUTO:BEGIN*/[
 "x = 0,1 m"
 ],
 "formula": "Ee = k·x² / 2",
-"subst": "Ee = (200) · (0,1) · (0,1)/2",
+"subst": "Ee = 200 · 0,1 · 0,1 / 2",
 "resultado": "Ee = 1 J"
 },
 {
@@ -1247,7 +1247,7 @@ var DATA=/*AUTO:BEGIN*/[
 "v₂ = 20 m/s"
 ],
 "formula": "τ = ΔEc",
-"subst": "τ = (1000) · ((20) · (20)-(10) · (10))/2",
+"subst": "τ = 1000 · (20 · 20 − 10 · 10) / 2",
 "resultado": "τ = 150 kJ"
 },
 {
@@ -1259,7 +1259,7 @@ var DATA=/*AUTO:BEGIN*/[
 "v = 15 m/s"
 ],
 "formula": "Q = m·v",
-"subst": "Q = (0,4) · (15)",
+"subst": "Q = 0,4 · 15",
 "resultado": "Q = 6 kg·m/s"
 },
 {
@@ -1271,7 +1271,7 @@ var DATA=/*AUTO:BEGIN*/[
 "Δt = 0,05 s"
 ],
 "formula": "I = F·Δt",
-"subst": "I = (200) · (0,05)",
+"subst": "I = 200 · 0,05",
 "resultado": "I = 10 N·s"
 },
 {
@@ -1284,7 +1284,7 @@ var DATA=/*AUTO:BEGIN*/[
 "Δt = 0,01 s"
 ],
 "formula": "F = m·Δv / Δt",
-"subst": "F = (0,5) · (20)/(0,01)",
+"subst": "F = 0,5 · 20 / 0,01",
 "resultado": "F = 1000 N"
 },
 {
@@ -1297,7 +1297,7 @@ var DATA=/*AUTO:BEGIN*/[
 "m₂ = 4 kg"
 ],
 "formula": "v = m₁·v₁ / (m₁ + m₂)",
-"subst": "v = (2) · (6)/((2)+(4))",
+"subst": "v = 2 · 6 / (2 + 4)",
 "resultado": "v = 2 m/s"
 },
 {
@@ -1310,7 +1310,7 @@ var DATA=/*AUTO:BEGIN*/[
 "d = 10 m"
 ],
 "formula": "F = G·m₁·m₂ / d²",
-"subst": "F = G · (1000) · (2000)/((10) · (10))",
+"subst": "F = G · 1000 · 2000 / (10 · 10)",
 "resultado": "F = 1,33·10⁻⁶ N"
 },
 {
@@ -1322,7 +1322,7 @@ var DATA=/*AUTO:BEGIN*/[
 "R = 6,4·10⁶ m"
 ],
 "formula": "g = G·M / R²",
-"subst": "g = G · (6·10²⁴)/((6,4·10⁶) · (6,4·10⁶))",
+"subst": "g = G · 6·10²⁴ / (6,4·10⁶ · 6,4·10⁶)",
 "resultado": "g = 9,776 m/s²"
 },
 {
@@ -1334,7 +1334,7 @@ var DATA=/*AUTO:BEGIN*/[
 "Δt = 40 s"
 ],
 "formula": "i = Q / Δt",
-"subst": "i = (120)/(40)",
+"subst": "i = 120 / 40",
 "resultado": "i = 3 A"
 },
 {
@@ -1346,7 +1346,7 @@ var DATA=/*AUTO:BEGIN*/[
 "Δt = 5 min"
 ],
 "formula": "Q = i · Δt",
-"subst": "Q = (2) · (5)",
+"subst": "Q = 2 · 5",
 "resultado": "Q = 600 C"
 },
 {
@@ -1358,7 +1358,7 @@ var DATA=/*AUTO:BEGIN*/[
 "Δt = 2 h"
 ],
 "formula": "Q = i · Δt",
-"subst": "Q = (250) · (2)",
+"subst": "Q = 250 · 2",
 "resultado": "Q = 1800 C"
 },
 {
@@ -1370,7 +1370,7 @@ var DATA=/*AUTO:BEGIN*/[
 "i = 3 A"
 ],
 "formula": "U = R · i",
-"subst": "U = (20) · (3)",
+"subst": "U = 20 · 3",
 "resultado": "U = 60 V"
 },
 {
@@ -1382,7 +1382,7 @@ var DATA=/*AUTO:BEGIN*/[
 "R = 4 Ω"
 ],
 "formula": "i = U / R",
-"subst": "i = (12)/(4)",
+"subst": "i = 12 / 4",
 "resultado": "i = 3 A"
 },
 {
@@ -1394,7 +1394,7 @@ var DATA=/*AUTO:BEGIN*/[
 "i = 5 A"
 ],
 "formula": "R = U / i",
-"subst": "R = (220)/(5)",
+"subst": "R = 220 / 5",
 "resultado": "R = 44 Ω"
 },
 {
@@ -1406,7 +1406,7 @@ var DATA=/*AUTO:BEGIN*/[
 "i = 5 mA"
 ],
 "formula": "U = R · i",
-"subst": "U = (2) · (5)",
+"subst": "U = 2 · 5",
 "resultado": "U = 10 V"
 },
 {
@@ -1419,7 +1419,7 @@ var DATA=/*AUTO:BEGIN*/[
 "A = 1·10⁻⁶ m²"
 ],
 "formula": "R = ρ · L / A",
-"subst": "R = (1,7·10⁻⁸) · (100)/(1·10⁻⁶)",
+"subst": "R = 1,7·10⁻⁸ · 100 / 1·10⁻⁶",
 "resultado": "R = 1,7 Ω"
 },
 {
@@ -1432,7 +1432,7 @@ var DATA=/*AUTO:BEGIN*/[
 "ρ = 1·10⁻⁶ Ω·m"
 ],
 "formula": "L = R · A / ρ",
-"subst": "L = (10) · (2·10⁻⁶)/(1·10⁻⁶)",
+"subst": "L = 10 · 2·10⁻⁶ / 1·10⁻⁶",
 "resultado": "L = 20 m"
 },
 {
@@ -1445,7 +1445,7 @@ var DATA=/*AUTO:BEGIN*/[
 "R₃ = 30 Ω"
 ],
 "formula": "Req = R1 + R2 + R3",
-"subst": "Req = (10)+(20)+(30)",
+"subst": "Req = 10 + 20 + 30",
 "resultado": "Req = 60 Ω"
 },
 {
@@ -1458,7 +1458,7 @@ var DATA=/*AUTO:BEGIN*/[
 "R₂ = 4 Ω"
 ],
 "formula": "i = U / (R1 + R2)",
-"subst": "i = (12)/((2)+(4))",
+"subst": "i = 12 / (2 + 4)",
 "resultado": "i = 2 A"
 },
 {
@@ -1471,7 +1471,7 @@ var DATA=/*AUTO:BEGIN*/[
 "R₂ = 4 Ω"
 ],
 "formula": "U₂ = R₂ · i",
-"subst": "U₂ = (12) · (4)/((2)+(4))",
+"subst": "U₂ = 12 · 4 / (2 + 4)",
 "resultado": "U₂ = 8 V"
 },
 {
@@ -1483,7 +1483,7 @@ var DATA=/*AUTO:BEGIN*/[
 "R₂ = 3 Ω"
 ],
 "formula": "Req = R₁·R₂ / (R₁ + R₂)",
-"subst": "Req = (6) · (3)/((6)+(3))",
+"subst": "Req = 6 · 3 / (6 + 3)",
 "resultado": "Req = 2 Ω"
 },
 {
@@ -1494,7 +1494,7 @@ var DATA=/*AUTO:BEGIN*/[
 "R = 12 Ω"
 ],
 "formula": "Req = R / n",
-"subst": "Req = 1/(3/(12))",
+"subst": "Req = 1 / (3 / 12)",
 "resultado": "Req = 4 Ω"
 },
 {
@@ -1507,7 +1507,7 @@ var DATA=/*AUTO:BEGIN*/[
 "R₂ = 12 Ω"
 ],
 "formula": "i = U/R₁ + U/R₂",
-"subst": "i = (24)/(8)+(24)/(12)",
+"subst": "i = 24 / 8 + 24 / 12",
 "resultado": "i = 5 A"
 },
 {
@@ -1519,7 +1519,7 @@ var DATA=/*AUTO:BEGIN*/[
 "R₂ = 12 Ω"
 ],
 "formula": "Req = R₁·R₂ / (R₁ + R₂)",
-"subst": "Req = (8) · (12)/((8)+(12))",
+"subst": "Req = 8 · 12 / (8 + 12)",
 "resultado": "Req = 4,8 Ω"
 },
 {
@@ -1532,7 +1532,7 @@ var DATA=/*AUTO:BEGIN*/[
 "R₃ = 3 Ω"
 ],
 "formula": "Req = R₁ + R₂·R₃ / (R₂ + R₃)",
-"subst": "Req = (4)+(6) · (3)/((6)+(3))",
+"subst": "Req = 4 + 6 · 3 / (6 + 3)",
 "resultado": "Req = 6 Ω"
 },
 {
@@ -1546,7 +1546,7 @@ var DATA=/*AUTO:BEGIN*/[
 "R₃ = 3 Ω"
 ],
 "formula": "i = U / Req",
-"subst": "i = (12)/((4)+(6) · (3)/((6)+(3)))",
+"subst": "i = 12 / (4 + 6 · 3 / (6 + 3))",
 "resultado": "i = 2 A"
 },
 {
@@ -1560,7 +1560,7 @@ var DATA=/*AUTO:BEGIN*/[
 "R₃ = 3 Ω"
 ],
 "formula": "U = Rp · i",
-"subst": "U = (12) · (6) · (3)/((4) · ((6)+(3))+(6) · (3))",
+"subst": "U = 12 · 6 · 3 / (4 · (6 + 3) + 6 · 3)",
 "resultado": "U = 4 V"
 },
 {
@@ -1572,7 +1572,7 @@ var DATA=/*AUTO:BEGIN*/[
 "i = 5 A"
 ],
 "formula": "P = U · i",
-"subst": "P = (220) · (5)",
+"subst": "P = 220 · 5",
 "resultado": "P = 1100 W"
 },
 {
@@ -1584,7 +1584,7 @@ var DATA=/*AUTO:BEGIN*/[
 "R = 24 Ω"
 ],
 "formula": "P = U² / R",
-"subst": "P = (120) · (120)/(24)",
+"subst": "P = 120 · 120 / 24",
 "resultado": "P = 600 W"
 },
 {
@@ -1596,7 +1596,7 @@ var DATA=/*AUTO:BEGIN*/[
 "i = 3 A"
 ],
 "formula": "P = R · i²",
-"subst": "P = (10) · (3) · (3)",
+"subst": "P = 10 · 3 · 3",
 "resultado": "P = 90 W"
 },
 {
@@ -1608,7 +1608,7 @@ var DATA=/*AUTO:BEGIN*/[
 "U = 220 V"
 ],
 "formula": "i = P / U",
-"subst": "i = (5500)/(220)",
+"subst": "i = 5500 / 220",
 "resultado": "i = 25 A"
 },
 {
@@ -1620,7 +1620,7 @@ var DATA=/*AUTO:BEGIN*/[
 "P = 4400 W"
 ],
 "formula": "R = U² / P",
-"subst": "R = (220) · (220)/(4400)",
+"subst": "R = 220 · 220 / 4400",
 "resultado": "R = 11 Ω"
 },
 {
@@ -1632,7 +1632,7 @@ var DATA=/*AUTO:BEGIN*/[
 "Δt = 15 min"
 ],
 "formula": "E = P · Δt",
-"subst": "E = (4000) · (15)",
+"subst": "E = 4000 · 15",
 "resultado": "E = 1 kWh"
 },
 {
@@ -1644,7 +1644,7 @@ var DATA=/*AUTO:BEGIN*/[
 "Δt = 150 h"
 ],
 "formula": "E = P · Δt",
-"subst": "E = (60) · (150)",
+"subst": "E = 60 · 150",
 "resultado": "E = 9 kWh"
 },
 {
@@ -1656,7 +1656,7 @@ var DATA=/*AUTO:BEGIN*/[
 "Δt = 2 min"
 ],
 "formula": "E = P · Δt",
-"subst": "E = (100) · (2)",
+"subst": "E = 100 · 2",
 "resultado": "E = 1,2·10⁴ J"
 },
 {
@@ -1668,7 +1668,7 @@ var DATA=/*AUTO:BEGIN*/[
 "P = 1500 W"
 ],
 "formula": "Δt = E / P",
-"subst": "t = (3)/(1500)",
+"subst": "t = 3 / 1500",
 "resultado": "t = 2 h"
 },
 {
@@ -1681,7 +1681,7 @@ var DATA=/*AUTO:BEGIN*/[
 "Δt = 5 min"
 ],
 "formula": "E = R · i² · Δt",
-"subst": "E = (10) · (2) · (2) · (5)",
+"subst": "E = 10 · 2 · 2 · 5",
 "resultado": "E = 1,2·10⁴ J"
 },
 {
@@ -1693,7 +1693,7 @@ var DATA=/*AUTO:BEGIN*/[
 "i = 10 A"
 ],
 "formula": "P = R · i²",
-"subst": "P = (0,5) · (10) · (10)",
+"subst": "P = 0,5 · 10 · 10",
 "resultado": "P = 50 W"
 },
 {
@@ -1706,7 +1706,7 @@ var DATA=/*AUTO:BEGIN*/[
 "i = 2 A"
 ],
 "formula": "U = ε − r · i",
-"subst": "U = (12)-(1) · (2)",
+"subst": "U = 12 − 1 · 2",
 "resultado": "U = 10 V"
 },
 {
@@ -1719,7 +1719,7 @@ var DATA=/*AUTO:BEGIN*/[
 "R = 5 Ω"
 ],
 "formula": "i = ε / (r + R)",
-"subst": "i = (12)/((1)+(5))",
+"subst": "i = 12 / (1 + 5)",
 "resultado": "i = 2 A"
 },
 {
@@ -1731,7 +1731,7 @@ var DATA=/*AUTO:BEGIN*/[
 "r = 0,5 Ω"
 ],
 "formula": "icc = ε / r",
-"subst": "icc = (12)/(0,5)",
+"subst": "icc = 12 / 0,5",
 "resultado": "icc = 24 A"
 }
 ]/*AUTO:END*/;
@@ -1747,9 +1747,20 @@ function motivo(m,T,tr){var s="";
  else if(m==="latente"){s+='<rect class="ice" x="130" y="30" width="60" height="40" rx="5" fill="#bfe3f5" stroke="currentColor" stroke-width="2" style="transform-box:fill-box;transform-origin:50% 100%"/><path d="M110 74H210" stroke="currentColor" stroke-width="2.4"/><ellipse class="pd" cx="160" cy="74" rx="10" ry="3" fill="'+COLD+'" fill-opacity=".7" style="transform-box:fill-box;transform-origin:50% 50%"/>'+flame(160,86,"fl");tr.push(N.sc(".ice",T,[[0,1,1],[2,1,1],[9,.35,.4]]));tr.push(N.sc(".pd",T,[[0,.1,1],[2,.1,1],[9,5,1.6]]))}
  else if(m==="potencial"){s+='<circle cx="160" cy="46" r="26" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 3"/><circle cx="160" cy="46" r="40" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 3"/><circle cx="160" cy="46" r="10" fill="#ef4444" fill-opacity=".85" stroke="currentColor" stroke-width="2"/>'+t_(160,50,"+",{s:13,f:"#fff"})+'<g class="qt"><circle cx="196" cy="46" r="5" fill="#3b82f6" stroke="currentColor" stroke-width="1.5"/>'+t_(196,38,"q",{s:10})+'</g>';tr.push(N.tr(".qt",T,[[0,0,0],[2,0,0],[9,-14,0]]))}
  return s}
-function build(d){var H=214,vars=d.vars||[],n=Math.min(vars.length,4),T=16,tr=[],s=motivo(d.molde,T,tr);
+/* linha de equação em SVG: divisões "a / b" viram fração empilhada (usa Eq.parts de eq.js) */
+var CV=null;function wd(t,sz){try{CV=CV||document.createElement("canvas").getContext("2d");CV.font="700 "+sz+"px "+(getComputedStyle(document.body).fontFamily||"sans-serif");return CV.measureText(t).width}catch(e){return t.length*sz*.58}}
+function un(t){return String(t).replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&amp;/g,"&")}
+function ex(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+function pf(str){return window.Eq?Eq.parts(un(str)):[{x:un(str)}]}
+function temFr(str){return pf(str).some(function(q){return q.n!==undefined})}
+function eqLine(cx,yb,str,sz,cls){var P=pf(str);if(!P.some(function(q){return q.n!==undefined}))return t_(cx,yb,str,{s:sz,c:cls});
+ var pad=4,W=P.map(function(q){return q.n!==undefined?Math.max(wd(q.n,sz),wd(q.d,sz))+2*pad:wd(q.x,sz)}),tot=W.reduce(function(a,b){return a+b},0),x=cx-tot/2,ax=yb-sz*.3,o="",at=' font-size="'+sz+'" font-weight="700"'+(cls?' class="'+cls+'"':'');
+ P.forEach(function(q,k){if(q.n===undefined){if(q.x)o+='<text x="'+x.toFixed(1)+'" y="'+yb+'" text-anchor="start" xml:space="preserve" style="white-space:pre"'+at+'>'+ex(q.x)+'</text>'}
+  else{var xc=x+W[k]/2;o+='<text x="'+xc.toFixed(1)+'" y="'+(ax-3).toFixed(1)+'" text-anchor="middle"'+at+'>'+ex(q.n)+'</text><line x1="'+(x+2).toFixed(1)+'" y1="'+ax.toFixed(1)+'" x2="'+(x+W[k]-2).toFixed(1)+'" y2="'+ax.toFixed(1)+'" stroke="currentColor" stroke-width="1.5"/><text x="'+xc.toFixed(1)+'" y="'+(ax+sz*.8+2).toFixed(1)+'" text-anchor="middle"'+at+'>'+ex(q.d)+'</text>'}
+  x+=W[k]});return o}
+function build(d){var vars=d.vars||[],n=Math.min(vars.length,4),T=16,tr=[],s=motivo(d.molde,T,tr),fm=temFr(d.formula)?{h:30,b:18}:{h:20,b:14},sb=temFr(d.subst)?{h:30,b:18}:{h:20,b:14},y0=150,H=y0+fm.h+sb.h+24;
  vars.slice(0,4).forEach(function(v,k){s+=t_(160,100+15*k-(n>3?4:0),v,{s:12})});
- s+='<g class="s2">'+t_(160,168,d.formula,{s:13})+'</g><g class="s3">'+t_(160,186,d.subst,{s:13})+'</g><g class="s4">'+t_(160,206,d.resultado,{s:15,c:"fin"})+'</g>';
+ s+='<g class="s2">'+eqLine(160,y0+fm.b,d.formula,13)+'</g><g class="s3">'+eqLine(160,y0+fm.h+sb.b,d.subst,13)+'</g><g class="s4">'+t_(160,y0+fm.h+sb.h+16,d.resultado,{s:15,c:"fin"})+'</g>';
  var st=[[0,"Dados do problema"],[3,"Fórmula que relaciona as grandezas"],[6,"Substituindo os valores|(confira as unidades)"],[9.5,"Resultado"]],
  c=N.cap(st.map(function(a){return a[1]}),st.map(function(a){return a[0]}),T,H);
  for(var k=1;k<st.length;k++)tr.push(N.vis(".s"+(k+1),T,st[k][0]));

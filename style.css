@@ -728,3 +728,10 @@ details.sum .eq{max-width:100%;flex-wrap:wrap}
 :root[data-quiz="edin"][data-pal="indigo"]{--bg:#ecfeff;--line:#a5f3fc;--acc:#0891b2;--acc2:#0e7490;--hero:#0e7490;--ink:#082f3a;--muted:#3f6672}
 :root[data-quiz="edin"][data-pal="indigo"][data-theme="dark"]{--bg:#08191d;--surface:#0f2a31;--line:#1f4d58;--acc:#22d3ee;--acc2:#06b6d4;--hero:#155e75;--ink:#ecfeff;--muted:#a5d3dc}
 @media (prefers-color-scheme: dark){:root[data-quiz="edin"][data-pal="indigo"]:not([data-theme="light"]){--bg:#08191d;--surface:#0f2a31;--line:#1f4d58;--acc:#22d3ee;--acc2:#06b6d4;--hero:#155e75;--ink:#ecfeff;--muted:#a5d3dc}}
+
+/* frações empilhadas (eq.js) */
+.fr{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 .18em;line-height:1.2;text-align:center;font-family:"Times New Roman",Times,Georgia,serif}
+.fr>.n{border-bottom:1.5px solid currentColor;padding:0 .25em .06em}
+.fr>.d{padding:.06em .25em 0}
+.fr>.sl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.eln .fr,.fb .fr,.hint .fr{font-size:1.05em}

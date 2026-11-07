@@ -7,4 +7,5 @@ cd /home/claude/quiz/build && python3 bundle.py | tail -1
 python3 versao.py
 cd ../app && node validar-banco.js | tail -2
 cd ../build && python3 novas.py auditar --estrito | tail -2
+python3 t_eq.py | tail -2
 python3 gerar_readme.py

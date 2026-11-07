@@ -28,6 +28,7 @@ Quiz de Física (ensino médio) que funciona direto no navegador, sem instalar n
 | `firebase-config.js`, `nuvem.js` | Nuvem opcional (Firebase): login por código e sincronização do histórico do aluno |
 | `perfil.js` | Desempenho do aluno, treino adaptativo (tudo guardado no aparelho) |
 | `fx.js` | Som, vibração e confete |
+| `eq.js` | Mostra divisões "a / b" como fração empilhada (explicações, dicas, cartões e animações) |
 | `icon-192.png`, `icon-512.png`, `icon.svg`, `manifest.webmanifest`, `sw.js` | Instalação no celular e uso sem internet |
 <!-- ARQUIVOS:FIM -->
 
