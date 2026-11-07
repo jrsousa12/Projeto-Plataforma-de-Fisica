@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#5b3df5">
+<title>Editor de questões</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="editor.css">
+</head>
+<body class="prof">
+<header class="hero"><div class="in"><h1>Editor de questões</h1><p>Crie, edite e oculte perguntas sem mexer no código.</p></div></header>
+<main><section class="card" id="v" aria-live="polite"></section>
+<section class="card" id="cods"><div class="cnt noprt">Códigos dos alunos</div><p class="noprt">Cada aluno entra na nuvem com um código só dele (para guardar o histórico). Gere, imprima, recorte e entregue um por aluno. Guarde a lista com você.</p>
+<div class="row noprt" style="gap:8px;align-items:end"><div style="flex:1"><label class="nl" for="cn">Quantos códigos</label><input id="cn" class="fld" type="number" min="1" max="60" value="30"></div><button class="btn" id="cg" style="flex:1">Gerar</button><button class="btn alt" id="cp" style="flex:1">Imprimir</button></div>
+<div id="clist" class="clist"></div></section>
+<p class="noprt" style="text-align:center"><a class="lnkb" href="index.html">← Voltar ao quiz</a></p></main>
+<script src="banco-proprio.js"></script>
+<script src="perguntas-eletro.js"></script>
+<script src="perguntas-fluidos.js"></script>
+<script src="perguntas-termo.js"></script>
+<script src="quiz-eletro.js"></script>
+<script src="quiz-fluidos.js"></script>
+<script src="quiz-termo.js"></script>
+<script src="banco-extra.js"></script>
+<script src="figuras.js"></script>
+<script src="figuras-fluidos.js"></script>
+<script src="figuras-termo.js"></script>
+<script src="editor.js"></script>
+<script>(function(){var A="23456789ABCDEFGHJKMNPQRSTUVWXYZ",$=function(i){return document.getElementById(i)};function cod(){var b=new Uint8Array(8);crypto.getRandomValues(b);var s="";for(var i=0;i<8;i++){s+=A.charAt(b[i]%A.length);if(i===3)s+="-"}return s}
+$("cg").onclick=function(){var n=Math.max(1,Math.min(60,+$("cn").value||30)),h="",v={};while(Object.keys(v).length<n)v[cod()]=1;Object.keys(v).forEach(function(c,i){h+="<div><small>"+(i+1)+"</small> <b>"+c+"</b></div>"});$("clist").innerHTML=h};
+$("cp").onclick=function(){if(!$("clist").children.length)$("cg").onclick();window.print()}})();</script>
+</body>
+</html>

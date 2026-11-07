@@ -1,0 +1,68 @@
+/* Estilos da sala ao vivo (aluno e professor) */
+.opts4{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.opts4.dois{grid-template-columns:1fr}
+.bo{font:inherit;font-weight:800;font-size:1.05rem;color:#fff;border:0;border-radius:16px;padding:18px 12px;min-height:84px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center;box-shadow:0 5px 0 rgba(0,0,0,.25);transition:transform .08s,box-shadow .08s}
+.bo:active:not(:disabled){transform:translateY(5px);box-shadow:none}
+.bo:disabled{cursor:default}
+.bo .ltr{font-size:1.6rem;line-height:1}
+.bo.c0{background:#2563eb}.bo.c1{background:#ea580c}.bo.c2{background:#16a34a}.bo.c3{background:#9333ea}
+.bo.fade{opacity:.35;box-shadow:none}
+.bo.certa{outline:5px solid #fff;box-shadow:0 0 0 8px var(--ok)}
+.bo.escolhida{outline:4px solid var(--ink)}
+.stbar{height:10px;background:var(--line);border-radius:6px;overflow:hidden;margin:10px 0}
+.stbar i{display:block;height:100%;width:100%;background:var(--acc);transition:width .25s linear}
+.stbar.low i{background:var(--bad)}
+.big{font-size:1.6rem;font-weight:800;letter-spacing:-.02em;line-height:1.3;margin:6px 0}
+.cod{font-size:3.2rem;font-weight:800;letter-spacing:.18em;color:var(--acc);margin:4px 0}
+.msg{padding:14px 16px;border-radius:16px;font-weight:700;margin:12px 0}
+.msg.ok{background:var(--okbg);color:var(--ok)}.msg.no{background:var(--badbg);color:var(--bad)}.msg.neu{background:var(--bg)}
+.pts{font-size:2.6rem;font-weight:800;color:var(--acc);line-height:1.1}
+.pill{display:inline-block;background:var(--bg);border:2px solid var(--line);border-radius:999px;padding:5px 12px;margin:3px;font-weight:700;font-size:.9rem}
+.lnkb{display:inline-block;margin-top:14px;color:var(--acc);font-weight:800;text-decoration:none}
+input.cd{font:inherit;font-size:1.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.2em;text-align:center;width:100%;padding:12px;border:2px solid var(--line);border-radius:14px;background:var(--bg);color:var(--ink)}
+.row{display:flex;gap:10px;flex-wrap:wrap}.row>*{flex:1}
+.dist{display:flex;flex-direction:column;gap:6px;margin:10px 0}
+.dist div{display:flex;align-items:center;gap:8px}
+.dist b{width:22px}
+.dist span.bar{height:22px;border-radius:6px;min-width:4px}
+.dist small{color:var(--muted);font-weight:700}
+table.tb{width:100%;border-collapse:collapse;font-size:.95rem}
+table.tb th,table.tb td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line)}
+table.tb td.n,table.tb th.n{text-align:right;font-variant-numeric:tabular-nums}
+.pod{display:flex;gap:10px;align-items:flex-end;justify-content:center;margin:14px 0}
+.pod div{flex:1;max-width:180px;text-align:center;border-radius:14px 14px 0 0;padding:12px 6px;color:#fff;font-weight:800}
+.pod .p1{background:#f59e0b;height:150px}.pod .p2{background:#64748b;height:120px}.pod .p3{background:#b45309;height:96px}
+.pod small{display:block;font-weight:700;opacity:.9}
+/* tela do professor (projetada) */
+body.prof main{max-width:1100px}
+body.prof .q{font-size:2.1rem}
+body.prof .opts4{gap:16px}
+body.prof .bo{font-size:1.5rem;min-height:120px;cursor:default;box-shadow:none}
+body.prof .bo .ltr{font-size:2.4rem}
+body.prof .cod{font-size:6rem}
+body.prof .hero h1{font-size:2.2rem}
+body.prof .fig svg{max-height:260px}
+.prof .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:760px){.prof .grid2{grid-template-columns:1fr}body.prof .q{font-size:1.5rem}body.prof .cod{font-size:3.4rem}}
+@media print{.hero,.noprt{display:none!important}body{background:#fff}.card{border:0;box-shadow:none;break-inside:avoid}}
+
+/* ---- pequenas melhorias ---- */
+#v{position:relative}
+.hero .azb{position:absolute;right:16px;top:12px;font:inherit;font-weight:800;color:#fff;background:rgba(255,255,255,.18);border:0;border-radius:999px;padding:7px 14px;cursor:pointer}
+html.xl{font-size:140%}
+.qrbox{background:#fff;border-radius:16px;padding:10px;max-width:260px;margin:0 auto;border:2px solid var(--line)}
+.qrbox svg{display:block;width:100%;height:auto}
+.cdv{position:absolute;inset:0;z-index:5;display:none;align-items:center;justify-content:center;background:var(--surface);border-radius:inherit;font-size:9rem;font-weight:800;color:var(--acc)}
+.cdv small{position:absolute;top:22px;font-size:1.2rem;color:var(--muted);font-weight:700}
+.pzmsg{display:none;margin:10px 0}
+.pzmsg.on{display:block}
+body.off::before{content:"Sem conexão. Tentando reconectar…";position:fixed;left:0;right:0;top:0;z-index:300;background:var(--bad);color:#fff;text-align:center;font-weight:800;padding:8px}
+details.rev{margin-top:14px}
+details.rev summary{cursor:pointer;font-weight:800;color:var(--acc)}
+details.rev .rv{margin-top:10px}
+.eqs{display:grid;gap:10px;margin-top:10px}.eqb{text-align:center;padding:16px}.eqb small{display:block;font-weight:600;opacity:.9}
+.eqp{display:inline-block;color:#fff;border-radius:999px;padding:1px 9px;font-size:.78rem;font-weight:800;margin-left:6px;vertical-align:middle}
+.eqt .eqp{margin-left:0}
+
+.clist{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin-top:12px}.clist div{border:1px dashed var(--muted,#999);border-radius:8px;padding:8px 10px;font-size:1.05rem;letter-spacing:.08em}.clist b{font-family:ui-monospace,monospace}
+@media print{#v,.noprt{display:none!important}#cods{box-shadow:none}.clist{grid-template-columns:repeat(3,1fr)}}
