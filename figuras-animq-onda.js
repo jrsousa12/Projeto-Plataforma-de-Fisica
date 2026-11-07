@@ -14,12 +14,14 @@ var FL='style="transform-box:fill-box;transform-origin:50% 50%"';
  s+='<g class="s2">'+N.arrow(120,200,86,"an-a3",3)+t_(160,108,"propagação",{s:11})+'</g>';
  C("som_long","Animação: as partículas do ar vibram para frente e para trás na direção em que a onda sonora avança, formando regiões de compressão e de rarefação",H,s,tr,T,["O som é uma onda mecânica longitudinal.|As partículas vibram na direção da propagação.","Formam-se compressões (partículas juntas)|e rarefações (partículas afastadas).","Sem meio material não há som: ele não se propaga no vácuo."],[0,3,6])})();
 
-/* ---- qualidades: altura, intensidade ---- */
-(function(){var T=8,H=190,s='<defs><clipPath id="qcl"><rect x="20" y="0" width="280" height="190"/></clipPath></defs><g clip-path="url(#qcl)">',tr=[];
+/* ---- qualidades: altura, intensidade e timbre ---- */
+(function(){var T=8,H=250,s='<defs><clipPath id="qcl"><rect x="20" y="0" width="280" height="250"/></clipPath></defs><g clip-path="url(#qcl)">',tr=[];
+ function comp(x0,x1,y,A,lam,st){var p="",x,u;for(x=x0;x<=x1+.01;x+=st){u=2*PI*(x-x0)/lam;p+=(x===x0?"M":"L")+x.toFixed(1)+" "+(y-A*(Math.sin(u)+.5*Math.sin(2*u)+.3*Math.sin(3*u))/1.55).toFixed(1)}return p}
  var rows=[[38,10,70,"Grave: baixa frequência"],[92,10,35,"Agudo: alta frequência"],[154,24,70,"Forte: maior amplitude (mesma altura do grave)"]];
  rows.forEach(function(r,k){s+='<g class="w'+k+'"><path d="'+sinp(-100,420,r[0],r[1],r[2],0,3)+'" fill="none" stroke="var(--acc)" stroke-width="2.4"/></g>';tr.push(N.tr(".w"+k,T,[[0,0,0],[T,-r[2]*2,0]],"linear"))});
- s+='</g>';rows.forEach(function(r){s+=t_(24,r[0]-r[1]-5,r[3],{s:10,a:"start"})});
- C("qualid","Animação: três ondas sonoras; a de menor frequência é grave, a de maior frequência é aguda, e a de maior amplitude, com a mesma frequência da grave, é mais forte",H,s,tr,T,["Altura: depende da frequência (grave ou agudo).","Intensidade: depende da amplitude (fraco ou forte).","Timbre: forma da onda, que distingue as fontes."],[0,3,6])})();
+ s+='<g class="w3"><path d="'+comp(-100,420,222,20,70,3)+'" fill="none" stroke="var(--neg)" stroke-width="2.4"/></g>';tr.push(N.tr(".w3",T,[[0,0,0],[T,-140,0]],"linear"));
+ s+='</g>';rows.forEach(function(r){s+=t_(24,r[0]-r[1]-5,r[3],{s:10,a:"start"})});s+=t_(24,190,"Timbre: mesma altura, outra forma de onda",{s:10,a:"start"});
+ C("qualid","Animação: quatro ondas sonoras; a de menor frequência é grave, a de maior frequência é aguda, a de maior amplitude é mais forte, e uma onda com a mesma frequência da grave, mas com outra forma, tem outro timbre",H,s,tr,T,["Altura: depende da frequência (grave ou agudo).","Intensidade: depende da amplitude (fraco ou forte).","Timbre: depende da forma da onda|e distingue as fontes."],[0,2.5,5])})();
 
 /* ---- eco / sonar: ida e volta ---- */
 (function(){var T=10,H=120,s='',tr=[];

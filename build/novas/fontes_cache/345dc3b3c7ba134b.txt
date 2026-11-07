@@ -1,0 +1,2 @@
+https://www.todamateria.com.br/exercicios-trabalho-energia-no-campo-eletrico/#2026-11-07
+Exercícios sobre trabalho e energia no campo elétrico. A força elétrica é uma força conservativa. O trabalho da força elétrica sobre uma carga que atravessa uma diferença de potencial U vale W = q · U. Em um campo elétrico uniforme, a força vale F = q · E e o trabalho W = q · E · d. O trabalho da força elétrica entre dois pontos vale W = q · (V_inicial − V_final).

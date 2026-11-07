@@ -1,0 +1,311 @@
+{
+ "quiz": "termo",
+ "questoes": [
+  {
+   "t": "cl",
+   "q": "Uma panela contém 250 g de água a 20 °C. Qual a quantidade de calor necessária para aquecê-la até 80 °C? (calor específico da água: 1 cal/g·°C)",
+   "o": [
+    "15 000 cal",
+    "5 000 cal",
+    "20 000 cal",
+    "1 500 cal"
+   ],
+   "a": 0,
+   "h": "Use Q = m · c · ΔT com a variação de temperatura, não a temperatura final.",
+   "e": "ΔT = 80 − 20 = 60 °C. Q = m·c·ΔT = 250 · 1 · 60 = 15 000 cal (15 kcal).",
+   "x": [
+    "Usou só a temperatura final (80 °C) no lugar de ΔT.",
+    "Usou ΔT = 20 °C.",
+    "Errou a conta da multiplicação por 10."
+   ],
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/calorimetria/",
+    "titulo": "Calorimetria",
+    "conferido_em": "2026-11-07",
+    "base": "Q = m·c·ΔT",
+    "verificar": [
+     "Q = m . c . ΔT",
+     "calor específico"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "m": "250 g",
+     "c": "1 cal/g·°C",
+     "dT": "60 °C"
+    },
+    "expr": "m*c*dT",
+    "expr2": "c*dT*m",
+    "unidade": "cal",
+    "simbolo": "Q",
+    "formula": "Q = m · c · ΔT",
+    "rotulos": {
+     "m": "m",
+     "c": "c",
+     "dT": "ΔT"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "calor"
+   }
+  },
+  {
+   "t": "cl",
+   "q": "Um bloco de ferro de 400 g (c = 0,11 cal/g·°C) é aquecido de 20 °C a 120 °C. Que quantidade de calor ele recebe?",
+   "o": [
+    "4 400 cal",
+    "440 cal",
+    "44 000 cal",
+    "5 280 cal"
+   ],
+   "a": 0,
+   "h": "O calor específico do ferro já é dado: aplique Q = m · c · ΔT.",
+   "e": "ΔT = 120 − 20 = 100 °C. Q = 400 · 0,11 · 100 = 4 400 cal.",
+   "x": [
+    "Errou a casa decimal ao multiplicar por 0,11.",
+    "Esqueceu de multiplicar por 100 °C no último passo.",
+    "Usou ΔT = 120 °C."
+   ],
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/calorimetria/",
+    "titulo": "Calorimetria",
+    "conferido_em": "2026-11-07",
+    "base": "Q = m·c·ΔT",
+    "verificar": [
+     "Q = m . c . ΔT",
+     "calor específico"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "m": "400 g",
+     "c": "0.11 cal/g·°C",
+     "dT": "100 °C"
+    },
+    "expr": "m*c*dT",
+    "expr2": "dT*m*c",
+    "unidade": "cal",
+    "simbolo": "Q",
+    "formula": "Q = m · c · ΔT",
+    "rotulos": {
+     "m": "m",
+     "c": "c",
+     "dT": "ΔT"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "calor"
+   }
+  },
+  {
+   "t": "cl",
+   "q": "Um objeto de 200 g de cobre tem calor específico de 0,09 cal/g·°C. Qual é a capacidade térmica desse objeto?",
+   "o": [
+    "18 cal/°C",
+    "2,2 cal/°C",
+    "0,45 cal/°C",
+    "1 800 cal/°C"
+   ],
+   "a": 0,
+   "h": "Capacidade térmica é o produto da massa pelo calor específico.",
+   "e": "C = m · c = 200 · 0,09 = 18 cal/°C. Isso significa 18 cal para elevar o objeto em 1 °C.",
+   "x": [
+    "Dividiu a massa pelo calor específico.",
+    "Dividiu o calor específico pela massa.",
+    "Errou duas casas decimais."
+   ],
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/calorimetria/",
+    "titulo": "Calorimetria",
+    "conferido_em": "2026-11-07",
+    "base": "capacidade térmica C = m·c",
+    "verificar": [
+     "C = m.c",
+     "capacidade térmica"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "m": "200 g",
+     "c": "0.09 cal/g·°C"
+    },
+    "expr": "m*c",
+    "expr2": "c*m",
+    "unidade": "cal/°C",
+    "simbolo": "C",
+    "formula": "C = m · c",
+    "rotulos": {
+     "m": "m",
+     "c": "c"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "me",
+   "q": "Quanto calor é preciso para fundir totalmente 300 g de gelo a 0 °C? (calor latente de fusão do gelo: 80 cal/g)",
+   "o": [
+    "24 000 cal",
+    "3,75 cal",
+    "240 cal",
+    "2 400 cal"
+   ],
+   "a": 0,
+   "h": "Durante a mudança de estado não há ΔT: use Q = m · L.",
+   "e": "Na fusão a temperatura não muda; usa-se Q = m · L = 300 · 80 = 24 000 cal (24 kcal).",
+   "x": [
+    "Dividiu a massa pelo calor latente.",
+    "Errou por fator 100.",
+    "Errou por fator 10."
+   ],
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/calorimetria/",
+    "titulo": "Calorimetria",
+    "conferido_em": "2026-11-07",
+    "base": "Q = m·L na mudança de estado",
+    "verificar": [
+     "Q = m . L",
+     "calor latente"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "m": "300 g",
+     "L": "80 cal/g"
+    },
+    "expr": "m*L",
+    "expr2": "L*m",
+    "unidade": "cal",
+    "simbolo": "Q",
+    "formula": "Q = m · L",
+    "rotulos": {
+     "m": "m",
+     "L": "L"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "latente"
+   }
+  },
+  {
+   "t": "me",
+   "q": "Qual a quantidade de calor para vaporizar 50 g de água que já está a 100 °C? (calor latente de vaporização: 540 cal/g)",
+   "o": [
+    "27 000 cal",
+    "10,8 cal",
+    "2 700 cal",
+    "5 400 cal"
+   ],
+   "a": 0,
+   "h": "Água já a 100 °C: não há aquecimento, só mudança de estado.",
+   "e": "A água já está na temperatura de ebulição, então só há mudança de estado: Q = m · L = 50 · 540 = 27 000 cal.",
+   "x": [
+    "Dividiu a massa pelo calor latente.",
+    "Errou por fator 10.",
+    "Errou por fator 5."
+   ],
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/calorimetria/",
+    "titulo": "Calorimetria",
+    "conferido_em": "2026-11-07",
+    "base": "Q = m·L na mudança de estado",
+    "verificar": [
+     "Q = m . L",
+     "calor latente"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "m": "50 g",
+     "L": "540 cal/g"
+    },
+    "expr": "m*L",
+    "expr2": "L*m",
+    "unidade": "cal",
+    "simbolo": "Q",
+    "formula": "Q = m · L",
+    "rotulos": {
+     "m": "m",
+     "L": "L"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "latente"
+   }
+  },
+  {
+   "t": "dl",
+   "q": "Um líquido ocupa 500 cm³ a 20 °C e tem coeficiente de dilatação volumétrica de 1,0·10⁻³ °C⁻¹. De quanto aumenta seu volume ao ser aquecido até 60 °C?",
+   "o": [
+    "20 cm³",
+    "2 cm³",
+    "200 cm³",
+    "0,5 cm³"
+   ],
+   "a": 0,
+   "h": "Use ΔV = V₀ · γ · ΔT.",
+   "e": "ΔT = 60 − 20 = 40 °C. ΔV = V₀ · γ · ΔT = 500 · 1,0·10⁻³ · 40 = 20 cm³.",
+   "x": [
+    "Errou a potência de dez do coeficiente.",
+    "Usou ΔT = 4 °C.",
+    "Dividiu em vez de multiplicar."
+   ],
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/formulas-de-fisica/",
+    "titulo": "Fórmulas de Física",
+    "conferido_em": "2026-11-07",
+    "base": "dilatação volumétrica ΔV = V0·γ·ΔT",
+    "verificar": [
+     "ΔV = V0",
+     "dilatação volumétrica"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "V0": "500 cm^3",
+     "gama": "1e-3 1/°C",
+     "dT": "40 °C"
+    },
+    "expr": "V0*gama*dT",
+    "expr2": "dT*gama*V0",
+    "unidade": "cm^3",
+    "simbolo": "ΔV",
+    "formula": "ΔV = V₀ · γ · ΔT",
+    "rotulos": {
+     "V0": "V₀",
+     "gama": "γ",
+     "dT": "ΔT"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "dilatacao"
+   }
+  }
+ ]
+}

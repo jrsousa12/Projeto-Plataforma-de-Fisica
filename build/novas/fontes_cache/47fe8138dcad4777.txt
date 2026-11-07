@@ -1,0 +1,2 @@
+https://www.todamateria.com.br/exercicio-sobre-capacitores-com-questoes-resolvidas/#2026-11-07
+Exercícios sobre capacitores. Um capacitor armazena energia potencial eletrostática. Ao inserir um dielétrico, a capacitância aumenta. A capacitância é inversamente proporcional à distância entre as placas. A energia armazenada E = C U² / 2 é diretamente proporcional à capacitância. A unidade da capacitância é o farad (F). Q = C . U.

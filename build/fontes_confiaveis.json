@@ -1,0 +1,18 @@
+{
+ "_nota": "Lista de sites de física aceitos como fonte (testados em 06/11/2026). Edite aqui para incluir ou retirar sites.",
+ "dominios": {
+  "phet.colorado.edu": "PhET Simulações (pt_BR); licença: conferir antes de reutilizar",
+  "openstax.org": "OpenStax University Physics; proíbe uso para treinar LLMs",
+  "phys.libretexts.org": "LibreTexts Física, CC BY 4.0",
+  "todamateria.com.br": "Toda Matéria: resumos e exercícios com gabarito",
+  "infoescola.com": "InfoEscola Física: artigos em pt-BR",
+  "preparaenem.com": "PrePara ENEM: resumos e exercícios",
+  "fep.if.usp.br": "GREF/USP: Leituras de Física (copiar só sem alterar, com créditos)",
+  "ocw.mit.edu": "MIT OpenCourseWare, Creative Commons",
+  "learn.mit.edu": "MIT Learn",
+  "compadre.org": "ComPADRE / The Physics Front",
+  "periodicos.ufsc.br": "Caderno Brasileiro de Ensino de Física, CC BY-NC-ND",
+  "hyperphysics.phy-astr.gsu.edu": "HyperPhysics (indexado pelo ComPADRE)",
+  "physicsclassroom.com": "The Physics Classroom (indexado pelo ComPADRE)"
+ }
+}

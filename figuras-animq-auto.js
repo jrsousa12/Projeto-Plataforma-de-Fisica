@@ -320,7 +320,7 @@ var DATA=/*AUTO:BEGIN*/[
 "I₀ = 1·10⁻¹² W/m²"
 ],
 "formula": "β = 10 · log(I / I₀)",
-"subst": "β = 10 · log10((1·10⁻⁵)/(1·10⁻¹²))",
+"subst": "β = 10 · log((1·10⁻⁵)/(1·10⁻¹²))",
 "resultado": "β = 70 dB"
 },
 {
@@ -345,7 +345,7 @@ var DATA=/*AUTO:BEGIN*/[
 ],
 "formula": "I = P / (4π r²)",
 "subst": "I = (10)/(4 · pi · (2)^2)",
-"resultado": "I = 0,1989 W/m²"
+"resultado": "I = 0,199 W/m²"
 },
 {
 "key": "calc_o029",
@@ -443,7 +443,7 @@ var DATA=/*AUTO:BEGIN*/[
 ],
 "formula": "M = v_fonte / v_som",
 "subst": "M = (680)/(340)",
-"resultado": "M = 2 1"
+"resultado": "M = 2"
 },
 {
 "key": "calc_o050",
@@ -635,7 +635,7 @@ var DATA=/*AUTO:BEGIN*/[
 ],
 "formula": "N = 360° / θ − 1",
 "subst": "N = 360/(60)-1",
-"resultado": "N = 5 1"
+"resultado": "N = 5"
 },
 {
 "key": "calc_p017",
@@ -680,8 +680,8 @@ var DATA=/*AUTO:BEGIN*/[
 "p = 30 cm"
 ],
 "formula": "A = − p' / p",
-"subst": "A = -(15)/(30)",
-"resultado": "A = -0,5 1"
+"subst": "A = −(15)/(30)",
+"resultado": "A = −0,5"
 },
 {
 "key": "calc_p027",
@@ -692,8 +692,8 @@ var DATA=/*AUTO:BEGIN*/[
 "p = 30 cm"
 ],
 "formula": "1/f = 1/p + 1/p'",
-"subst": "p' = 1/(1/(-15)-1/(30))",
-"resultado": "p' = -10 cm"
+"subst": "p' = 1/(1/(−15)-1/(30))",
+"resultado": "p' = −10 cm"
 },
 {
 "key": "calc_p029",
@@ -718,7 +718,7 @@ var DATA=/*AUTO:BEGIN*/[
 ],
 "formula": "sen θ₂ = n₁ · sen θ₁ / n₂",
 "subst": "sen θ₂ = (1) · (0,5)/(1,5)",
-"resultado": "sen θ₂ = 0,3333 1"
+"resultado": "sen θ₂ = 0,333"
 },
 {
 "key": "calc_p033",
@@ -731,7 +731,7 @@ var DATA=/*AUTO:BEGIN*/[
 ],
 "formula": "n₂ = n₁ · sen θ₁ / sen θ₂",
 "subst": "n₂ = (1) · (0,8)/(0,5)",
-"resultado": "n₂ = 1,6 1"
+"resultado": "n₂ = 1,6"
 },
 {
 "key": "calc_p038",
@@ -743,7 +743,7 @@ var DATA=/*AUTO:BEGIN*/[
 ],
 "formula": "sen L = n₂ / n₁",
 "subst": "sen L = (1)/(2)",
-"resultado": "sen L = 0,5 1"
+"resultado": "sen L = 0,5"
 },
 {
 "key": "calc_p048",
@@ -777,16 +777,16 @@ var DATA=/*AUTO:BEGIN*/[
 "p = 20 cm"
 ],
 "formula": "1/f = 1/p + 1/p'",
-"subst": "p' = 1/(1/(-20)-1/(20))",
-"resultado": "p' = -10 cm"
+"subst": "p' = 1/(1/(−20)-1/(20))",
+"resultado": "p' = −10 cm"
 },
 {
 "key": "calc_p051",
 "alt": "Resolução animada: Duas lentes finas justapostas têm vergências de +3 di e +2 di. Qual é a distância focal do conjunto?",
 "molde": "generico",
 "vars": [
-"V₁ = 3 1/m",
-"V₂ = 2 1/m"
+"V₁ = 3 di",
+"V₂ = 2 di"
 ],
 "formula": "f = 1 / (V₁ + V₂)",
 "subst": "f = 1/((3)+(2))",
@@ -800,8 +800,8 @@ var DATA=/*AUTO:BEGIN*/[
 "d = 0,5 m"
 ],
 "formula": "V = −1 / d",
-"subst": "V = -1/(0,5)",
-"resultado": "V = -2 di"
+"subst": "V = −1/(0,5)",
+"resultado": "V = −2 di"
 }
 ]/*AUTO:END*/;
 function flame(x,y,cl){return'<g class="'+cl+'"><path d="M'+x+' '+y+'c-9-9-9-17-2-26 1 6 5 8 7 13 3-4 2-9 1-12 8 8 11 17 3 25-3 4-6 4-9 0z" fill="'+HOT+'" stroke="#a63a0f" stroke-width="1.2"/><path d="M'+x+' '+(y-2)+'c-4-4-3-9 0-13 2 4 5 6 1 13z" fill="#facc15"/></g>'}

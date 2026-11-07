@@ -1,0 +1,2 @@
+https://www.todamateria.com.br/associacao-de-capacitores/#2026-11-07
+Associação de Capacitores: em série, paralelo e mista. Em série, todos os capacitores têm a mesma carga, Q = constante. Em paralelo, todos têm a mesma ddp, V = constante, e somamos as capacitâncias. Na associação mista o cálculo deve ser feito em partes: primeiro a associação em paralelo, depois a associação em série. Capacitância equivalente.

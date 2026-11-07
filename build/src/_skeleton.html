@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quiz: Eletrostática</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero"><svg class="bg" viewBox="0 0 230 120" aria-hidden="true"><g fill="none" stroke="#f5b700" stroke-width="2"><circle cx="60" cy="60" r="26"/><circle cx="150" cy="40" r="18"/><circle cx="185" cy="90" r="22"/></g></svg>
+<div class="in"><div class="tools"><div class="nav off" id="navb"><button id="back" aria-label="Voltar">← Voltar</button><button id="homebtn" aria-label="Ir para a tela inicial">⌂ Início</button></div><div class="zt"><button id="fz" aria-label="Aumentar a fonte">A+</button><button id="th" aria-label="Alternar tema claro e escuro">Tema</button><button id="pal" aria-label="Trocar a paleta de cores">Cores</button></div></div><h1>Eletrostática</h1><p>Quiz de física para o ensino médio.</p><div class="hst" id="hst"></div></div></header>
+<main>
+  <div class="bar hidden" id="bar"><span class="chip">Pontos: <b id="pts">0</b></span><span class="chip">Tempo: <b id="tm">00:00</b></span></div>
+  <div class="dots hidden" id="dots" aria-hidden="true"></div>
+  <div class="card hidden" id="exitq" role="alertdialog" aria-label="Sair do quiz"><b>Sair do quiz?</b><p class="exp">Seu progresso nesta rodada será perdido.</p><button class="btn" id="exstay">Continuar o quiz</button><button class="btn alt" id="exleave">Sair e perder o progresso</button></div>
+  <section class="card" id="home"><div class="cnt">Quiz de 10 perguntas</div><label class="nl" for="nick">Apelido (nome fictício)</label><input id="nick" maxlength="16" autocomplete="off" placeholder="Ex.: Elétron Veloz"><div class="arhead"><span class="nl">Áreas do conhecimento</span><button type="button" id="allareas">Selecionar todas</button></div><div class="chips" id="chips"></div><label class="nl" style="margin-top:12px"><input type="checkbox" id="reinf" checked> Reforço automático (repete questões que errei)</label><span class="sec">Escolha o modo para começar</span><div class="modes"><button class="btn" id="go">Modo estudo<small>Sem tempo e com dicas grátis</small></button><button class="btn alt" id="go2">Modo cronometrado<small>30 s por pergunta e ranking</small></button><button class="btn alt" id="mopen">Simulado<small>20 questões em 40 minutos</small></button></div><span class="sec more">Mais opções</span><div class="tiles"><button class="btn alt" id="bopen">Caderno de erros (0)</button><button class="btn alt" id="sopen">Lista de exercícios para imprimir</button><button class="btn alt" id="fopen">Cartões de revisão</button><button class="btn alt" id="hopen">Meu desempenho</button></div><details class="sum"><summary>Resumo rápido (ideias e fórmulas)</summary><p><b>Atrito:</b> dois corpos trocam elétrons e ficam com cargas opostas.</p><p><b>Contato:</b> um corpo carregado toca outro, e os dois ficam com cargas de mesmo sinal.</p><p><b>Indução:</b> um corpo carregado se aproxima sem tocar, e o outro fica com carga de sinal oposto (com ligação à terra).</p><p>Em todos, só os elétrons se movem e a carga total se conserva.</p><p><b>Coulomb:</b> F = k·|q₁·q₂| / d².</p><p><b>Campo:</b> E = F/q; para carga puntiforme, E = k·Q/d².</p><p><b>Potencial:</b> V = k·Q/d e W = q·U.</p><p><b>Condutores:</b> em equilíbrio, E = 0 no interior e as cargas ficam na superfície.</p></details><div id="rank"></div></section>
+  <section class="card hidden" id="quiz">
+    <div class="tbar hidden" id="tbar"><i id="tfill"></i></div>
+    <div class="cnt" id="count"></div>
+    <p class="q" id="q"></p>
+    <div class="fig hidden" id="fig"></div>
+    <div class="opts" id="opts"></div>
+    <button class="lnk" id="hbtn">Ver dica (vale meio ponto)</button>
+    <div id="hint"></div>
+    <div id="fb" aria-live="polite"></div>
+    <button class="btn hidden" id="next"></button>
+  </section>
+  <section class="card hidden" id="cards"><div class="cnt" id="cc"></div><button class="fc" id="fc" aria-live="polite"></button><button class="btn" id="cflip">Virar cartão</button><button class="btn alt" id="cnext">Próximo</button><button class="btn alt" id="cshuf">Embaralhar</button><button class="btn alt" id="cback">Voltar ao início</button></section>
+  <section class="card hidden" id="hist"><div class="cnt">Meu desempenho</div><div id="histbody"></div><button class="btn alt" id="hback">Voltar ao início</button><button class="btn alt" id="hclear">Apagar histórico</button></section>
+  <section class="card hidden" id="book"><div class="cnt">Caderno de erros</div><div id="bookbody"></div><textarea id="bkio" rows="3" placeholder="Código do caderno (para exportar ou importar)" class="fld"></textarea><p id="bmsg" style="font-size:.85rem;color:var(--muted);margin:4px 0"></p><button class="btn alt" id="bexp">Exportar caderno</button><button class="btn alt" id="bimp">Importar caderno</button><button class="btn" id="btrain">Treinar com meus erros</button><button class="btn alt" id="bclear">Limpar caderno</button><button class="btn alt" id="bback">Voltar ao início</button></section>
+  <section class="card hidden" id="sheet"><div id="sheetbody"></div><button class="btn" id="sprint">Imprimir ou salvar em PDF</button><button class="btn alt" id="snew">Gerar outra lista</button><button class="btn alt" id="sback">Voltar ao início</button></section>
+  <section class="card hidden" id="end">
+    <div class="cnt">Resultado final</div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div class="stats"><div>Acertos<b id="s1"></b></div><div>Dicas usadas<b id="s2"></b></div><div>Tempo<b id="s3"></b></div></div>
+    <div id="areas"></div><div id="rank2"></div><div id="rev"></div>
+    <button class="btn hidden" id="redo">Refazer só os erros</button>
+    <button class="btn alt" id="share">Compartilhar resultado</button><button class="btn alt" id="prt">Imprimir ou salvar em PDF</button><button class="btn alt" id="again">Jogar de novo</button><button class="btn alt" id="gohome">Voltar ao início</button>
+  </section>
+</main>
+<nav class="bnav" id="bnav" aria-label="Menu principal"><div class="in">
+<button type="button" data-t="homebtn" data-v="home"><i aria-hidden="true">🏠</i><span>Início</span></button>
+<button type="button" data-t="bopen" data-v="book"><i aria-hidden="true">📕</i><span>Erros</span><b class="bdg" id="bdg" hidden></b></button>
+<button type="button" data-t="fopen" data-v="cards"><i aria-hidden="true">🃏</i><span>Cartões</span></button>
+<button type="button" data-t="sopen" data-v="sheet"><i aria-hidden="true">🖨️</i><span>Lista</span></button>
+<button type="button" data-t="hopen" data-v="hist"><i aria-hidden="true">📊</i><span>Desempenho</span></button>
+</div></nav>
+</body>
+</html>

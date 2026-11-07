@@ -1,0 +1,7 @@
+https://openstax.org/books/university-physics-volume-2/pages/1-key-terms#2026-11-07
+Ch. 1 Key Terms - University Physics Volume 2
+calorie (cal): energy needed to change the temperature of 1.00 g of water by 1.00°C
+specific heat: amount of heat necessary to change the temperature of 1.00 kg of a substance by 1.00°C; also called "specific heat capacity"
+thermal equilibrium: condition in which heat no longer flows between two objects that are in contact; the two objects have the same temperature
+zeroth law of thermodynamics: law that states that if two objects are in thermal equilibrium, and a third object is in thermal equilibrium with one of those objects, it is also in thermal equilibrium with the other object
+Kelvin scale (K): temperature scale in which 0 K is the lowest possible temperature, representing absolute zero

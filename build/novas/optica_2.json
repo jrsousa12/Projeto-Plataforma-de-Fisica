@@ -1,0 +1,1205 @@
+{
+ "quiz": "optica",
+ "questoes": [
+  {
+   "t": "rf",
+   "q": "A refração da luz é o fenômeno em que a luz:",
+   "o": [
+    "Passa de um meio para outro e muda de velocidade, em geral mudando também de direção.",
+    "Volta ao meio de origem ao atingir uma superfície.",
+    "Contorna um obstáculo.",
+    "Se decompõe em várias cores sempre que muda de meio."
+   ],
+   "a": 0,
+   "h": "Pense em trocar de meio.",
+   "e": "Na refração, a luz atravessa a fronteira entre dois meios e a sua velocidade muda. Se a incidência for oblíqua, a direção também muda.",
+   "x": {
+    "1": "Isso descreve a reflexão.",
+    "2": "Isso descreve a difração.",
+    "3": "A decomposição em cores é a dispersão, que não ocorre em todos os casos."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/1-3-refraction",
+    "titulo": "1.3 Refraction",
+    "conferido_em": "2026-11-07",
+    "base": "índice de refração e lei de Snell",
+    "verificar": [
+     "index of refraction",
+     "Snell"
+    ]
+   },
+   "an": "opt_snell"
+  },
+  {
+   "t": "rf",
+   "q": "Qual é a velocidade da luz em um vidro de índice de refração 1,5? (c = 3 × 10⁸ m/s)",
+   "o": [
+    "2,0 × 10⁸ m/s",
+    "4,5 × 10⁸ m/s",
+    "3,0 × 10⁸ m/s",
+    "1,5 × 10⁸ m/s"
+   ],
+   "a": 0,
+   "h": "Use n = c / v e isole v.",
+   "e": "v = c / n = 3 × 10⁸ / 1,5 = 2,0 × 10⁸ m/s.",
+   "x": {
+    "1": "Multiplicou c por n.",
+    "2": "Em um meio material, a luz é mais lenta que no vácuo.",
+    "3": "Dividiu c por 2 em vez de dividir por n."
+   },
+   "c": 1,
+   "n": 1,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/1-3-refraction",
+    "titulo": "1.3 Refraction",
+    "conferido_em": "2026-11-07",
+    "base": "índice de refração e lei de Snell",
+    "verificar": [
+     "index of refraction",
+     "Snell"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "c": "3e8 m/s",
+     "n": "1.5"
+    },
+    "expr": "c/n",
+    "expr2": "c*(1/n)",
+    "unidade": "m/s",
+    "simbolo": "v",
+    "formula": "v = c / n",
+    "rotulos": {
+     "c": "c",
+     "n": "n"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "rf",
+   "q": "Um feixe de luz monocromática passa do ar para o vidro. Qual grandeza do feixe não muda?",
+   "o": [
+    "A frequência.",
+    "A velocidade.",
+    "O comprimento de onda.",
+    "A direção, sempre."
+   ],
+   "a": 0,
+   "h": "Quem fixa a frequência: a fonte ou o meio?",
+   "e": "A frequência é determinada pela fonte e não muda na refração. A velocidade e o comprimento de onda mudam, e a direção muda se a incidência for oblíqua.",
+   "x": {
+    "1": "A velocidade da luz é menor no vidro.",
+    "2": "O comprimento de onda diminui, pois v diminui com f fixa.",
+    "3": "Em incidência normal não há mudança de direção, mas na oblíqua há."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/1-3-refraction",
+    "titulo": "1.3 Refraction",
+    "conferido_em": "2026-11-07",
+    "base": "índice de refração e lei de Snell",
+    "verificar": [
+     "index of refraction",
+     "Snell"
+    ]
+   },
+   "an": "opt_snell"
+  },
+  {
+   "t": "rf",
+   "q": "Um raio de luz passa do ar para o vidro, incidindo obliquamente. Em relação à normal, o raio refratado:",
+   "o": [
+    "Aproxima-se da normal.",
+    "Afasta-se da normal.",
+    "Mantém o mesmo ângulo.",
+    "Fica paralelo à superfície."
+   ],
+   "a": 0,
+   "h": "O vidro tem n maior que o ar.",
+   "e": "Ao passar para um meio de maior índice de refração (em que a luz é mais lenta), o raio se aproxima da normal: θ₂ < θ₁.",
+   "x": {
+    "1": "O afastamento ocorre ao passar para um meio de n menor.",
+    "2": "O ângulo só se mantém na incidência normal ou se os meios forem iguais.",
+    "3": "Isso só ocorre no ângulo limite, ao sair de um meio mais refringente."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/1-3-refraction",
+    "titulo": "1.3 Refraction",
+    "conferido_em": "2026-11-07",
+    "base": "índice de refração e lei de Snell",
+    "verificar": [
+     "index of refraction",
+     "Snell"
+    ]
+   },
+   "an": "opt_snell"
+  },
+  {
+   "t": "rf",
+   "q": "Um raio de luz incide do ar (n₁ = 1) em uma superfície de vidro (n₂ = 1,5) com sen θ₁ = 0,5. Qual é o valor de sen θ₂?",
+   "o": [
+    "0,33",
+    "0,75",
+    "0,50",
+    "1,5"
+   ],
+   "a": 0,
+   "h": "Use a lei de Snell e isole sen θ₂.",
+   "e": "n₁ · sen θ₁ = n₂ · sen θ₂, logo sen θ₂ = 1 · 0,5 / 1,5 = 0,33.",
+   "x": {
+    "1": "Multiplicou por n₂ em vez de dividir.",
+    "2": "Esse valor corresponderia a nenhuma mudança de meio.",
+    "3": "Esse valor é o próprio n₂."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/1-3-refraction",
+    "titulo": "1.3 Refraction",
+    "conferido_em": "2026-11-07",
+    "base": "índice de refração e lei de Snell",
+    "verificar": [
+     "index of refraction",
+     "Snell"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "n1": "1",
+     "s1": "0.5",
+     "n2": "1.5"
+    },
+    "expr": "n1*s1/n2",
+    "expr2": "(s1/n2)*n1",
+    "unidade": "1",
+    "simbolo": "sen θ₂",
+    "formula": "sen θ₂ = n₁ · sen θ₁ / n₂",
+    "rotulos": {
+     "n1": "n₁",
+     "s1": "sen θ₁",
+     "n2": "n₂"
+    },
+    "tol": 0.02
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "rf",
+   "q": "Um raio de luz incide do ar (n = 1) em um material desconhecido, com sen θ₁ = 0,8. O raio refratado tem sen θ₂ = 0,5. Qual é o índice de refração do material?",
+   "o": [
+    "1,6",
+    "0,63",
+    "1,3",
+    "0,4"
+   ],
+   "a": 0,
+   "h": "Isole n₂ na lei de Snell.",
+   "e": "n₁ · sen θ₁ = n₂ · sen θ₂, logo n₂ = 1 · 0,8 / 0,5 = 1,6.",
+   "x": {
+    "1": "Inverteu a razão dos senos.",
+    "2": "Subtraiu os senos.",
+    "3": "Multiplicou os senos."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/1-3-refraction",
+    "titulo": "1.3 Refraction",
+    "conferido_em": "2026-11-07",
+    "base": "índice de refração e lei de Snell",
+    "verificar": [
+     "index of refraction",
+     "Snell"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "n1": "1",
+     "s1": "0.8",
+     "s2": "0.5"
+    },
+    "expr": "n1*s1/s2",
+    "expr2": "(s1/s2)*n1",
+    "unidade": "1",
+    "simbolo": "n₂",
+    "formula": "n₂ = n₁ · sen θ₁ / sen θ₂",
+    "rotulos": {
+     "n1": "n₁",
+     "s1": "sen θ₁",
+     "s2": "sen θ₂"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "rf",
+   "q": "Uma piscina com água limpa parece mais rasa quando vista de cima. A explicação é:",
+   "o": [
+    "A refração da luz ao passar da água para o ar, que faz o fundo parecer mais próximo da superfície.",
+    "A reflexão total da luz no fundo da piscina.",
+    "A dispersão da luz branca na água.",
+    "A difração da luz nas bordas da piscina."
+   ],
+   "a": 0,
+   "h": "A luz muda de direção na superfície.",
+   "e": "Ao sair da água para o ar, os raios se afastam da normal. Os olhos prolongam esses raios em linha reta e “veem” o fundo em uma posição mais alta: profundidade aparente menor.",
+   "x": {
+    "1": "A reflexão total não é o que faz o fundo parecer mais alto.",
+    "2": "A dispersão separa cores, e não altera a profundidade aparente.",
+    "3": "A difração é o contorno de obstáculos."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/1-3-refraction",
+    "titulo": "1.3 Refraction",
+    "conferido_em": "2026-11-07",
+    "base": "índice de refração e lei de Snell",
+    "verificar": [
+     "index of refraction",
+     "Snell"
+    ]
+   },
+   "an": "opt_snell"
+  },
+  {
+   "t": "rf",
+   "q": "Um lápis parcialmente mergulhado em um copo com água parece “quebrado” na superfície. Esse efeito se deve à:",
+   "o": [
+    "Refração da luz ao passar da água para o ar.",
+    "Reflexão da luz no vidro do copo.",
+    "Absorção da luz pela água.",
+    "Difração da luz no lápis."
+   ],
+   "a": 0,
+   "h": "Pense em luz mudando de meio.",
+   "e": "Os raios que vêm da parte submersa mudam de direção ao passar da água para o ar. Isso desloca a imagem dessa parte do lápis, que parece desalinhada.",
+   "x": {
+    "1": "A reflexão no vidro produz brilho, não o desvio aparente.",
+    "2": "A absorção diminui a intensidade, e não desloca a imagem.",
+    "3": "A difração não explica esse efeito."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/1-3-refraction",
+    "titulo": "1.3 Refraction",
+    "conferido_em": "2026-11-07",
+    "base": "índice de refração e lei de Snell",
+    "verificar": [
+     "index of refraction",
+     "Snell"
+    ]
+   },
+   "an": "opt_snell"
+  },
+  {
+   "t": "rf",
+   "q": "Os índices de refração da água, do vidro comum e do diamante são, aproximadamente, 1,33, 1,5 e 2,4. Em qual desses meios a luz tem a menor velocidade?",
+   "o": [
+    "No diamante.",
+    "Na água.",
+    "No vidro.",
+    "A velocidade é igual nos três."
+   ],
+   "a": 0,
+   "h": "n é inversamente proporcional a v.",
+   "e": "Como n = c / v, o maior índice corresponde à menor velocidade. O diamante tem o maior n, então a luz é mais lenta nele.",
+   "x": {
+    "1": "A água tem o menor índice, portanto a luz é mais rápida nela.",
+    "2": "O vidro tem índice menor que o diamante.",
+    "3": "Os índices são diferentes, portanto as velocidades também são."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/1-3-refraction",
+    "titulo": "1.3 Refraction",
+    "conferido_em": "2026-11-07",
+    "base": "índice de refração e lei de Snell",
+    "verificar": [
+     "index of refraction",
+     "Snell"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "rt",
+   "q": "Quais são as condições para ocorrer reflexão total da luz?",
+   "o": [
+    "Ir do meio mais refringente para o menos refringente, com ângulo de incidência maior que o ângulo limite.",
+    "Ir do meio menos refringente para o mais refringente, com ângulo qualquer.",
+    "Incidir perpendicularmente à superfície.",
+    "Passar de um meio para outro de mesmo índice de refração."
+   ],
+   "a": 0,
+   "h": "São duas condições.",
+   "e": "A reflexão total exige que a luz vá do meio de maior n para o de menor n e que o ângulo de incidência seja maior que o ângulo limite L.",
+   "x": {
+    "1": "Do menos para o mais refringente, o raio sempre refrata.",
+    "2": "Na incidência perpendicular, a luz passa sem desvio.",
+    "3": "Com índices iguais não há mudança de meio óptico."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/1-4-total-internal-reflection",
+    "titulo": "1.4 Total Internal Reflection",
+    "conferido_em": "2026-11-07",
+    "base": "ângulo crítico e fibra óptica",
+    "verificar": [
+     "critical angle",
+     "total internal reflection"
+    ]
+   },
+   "an": "opt_total"
+  },
+  {
+   "t": "rt",
+   "q": "Um raio de luz passa de um meio de índice n₁ = 2 para o ar (n₂ = 1). Qual é o valor do seno do ângulo limite?",
+   "o": [
+    "0,5",
+    "2",
+    "1",
+    "0,25"
+   ],
+   "a": 0,
+   "h": "sen L = n₂/n₁, com n₁ o maior índice.",
+   "e": "sen L = n₂ / n₁ = 1 / 2 = 0,5. O ângulo limite vale 30°.",
+   "x": {
+    "1": "Inverteu a razão dos índices.",
+    "2": "Esse valor corresponderia a n₁ = n₂.",
+    "3": "Elevou a razão ao quadrado."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/1-4-total-internal-reflection",
+    "titulo": "1.4 Total Internal Reflection",
+    "conferido_em": "2026-11-07",
+    "base": "ângulo crítico e fibra óptica",
+    "verificar": [
+     "critical angle",
+     "total internal reflection"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "n1": "2",
+     "n2": "1"
+    },
+    "expr": "n2/n1",
+    "expr2": "1/(n1/n2)",
+    "unidade": "1",
+    "simbolo": "sen L",
+    "formula": "sen L = n₂ / n₁",
+    "rotulos": {
+     "n1": "n₁",
+     "n2": "n₂"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "rt",
+   "q": "As fibras ópticas, usadas na internet e em endoscópios, guiam a luz por longas distâncias. O fenômeno que permite isso é:",
+   "o": [
+    "A reflexão total.",
+    "A dispersão da luz branca.",
+    "A difração por fendas.",
+    "A absorção da luz."
+   ],
+   "a": 0,
+   "h": "Pense na luz “presa” dentro do fio.",
+   "e": "O núcleo da fibra tem índice maior que a casca. A luz incide na fronteira com ângulo maior que o limite e sofre reflexão total, repetidas vezes, ao longo da fibra.",
+   "x": {
+    "1": "Dispersão separa cores e atrapalharia o sinal.",
+    "2": "A difração não conduz a luz.",
+    "3": "Absorção reduz o sinal, e não o conduz."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/1-4-total-internal-reflection",
+    "titulo": "1.4 Total Internal Reflection",
+    "conferido_em": "2026-11-07",
+    "base": "ângulo crítico e fibra óptica",
+    "verificar": [
+     "critical angle",
+     "total internal reflection"
+    ]
+   },
+   "an": "opt_total"
+  },
+  {
+   "t": "rt",
+   "q": "O diamante brilha mais do que o vidro comum, em parte porque o seu índice de refração é maior. Isso torna o ângulo limite:",
+   "o": [
+    "Menor, e a luz sofre reflexão total com mais facilidade.",
+    "Maior, e a luz sofre reflexão total com mais dificuldade.",
+    "Igual ao do vidro.",
+    "Nulo."
+   ],
+   "a": 0,
+   "h": "Índice maior, razão menor.",
+   "e": "sen L = n₂ / n₁. Com n₁ maior, sen L e L diminuem. O ângulo limite do diamante é pequeno (cerca de 24°), então ocorre muita reflexão total no interior da pedra.",
+   "x": {
+    "1": "Índice maior gera ângulo limite menor.",
+    "2": "Os ângulos limites dependem do índice, portanto diferem.",
+    "3": "Se L fosse nulo, qualquer raio sofreria reflexão total."
+   },
+   "n": 3,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/1-4-total-internal-reflection",
+    "titulo": "1.4 Total Internal Reflection",
+    "conferido_em": "2026-11-07",
+    "base": "ângulo crítico e fibra óptica",
+    "verificar": [
+     "critical angle",
+     "total internal reflection"
+    ]
+   },
+   "an": "opt_total"
+  },
+  {
+   "t": "rt",
+   "q": "Ao atravessar um prisma de vidro, a luz branca se decompõe em várias cores. Isso ocorre porque:",
+   "o": [
+    "O índice de refração do vidro é diferente para cada cor, e cada cor se desvia de um ângulo diferente.",
+    "O prisma adiciona cores à luz.",
+    "Todas as cores se refratam com o mesmo ângulo.",
+    "O prisma absorve parte da luz e reflete o restante."
+   ],
+   "a": 0,
+   "h": "Cada cor tem seu próprio n.",
+   "e": "Cada cor tem índice de refração um pouco diferente no vidro, então cada uma se desvia de um ângulo diferente. É a dispersão da luz.",
+   "x": {
+    "1": "O prisma não cria cores: separa as que já existem na luz branca.",
+    "2": "Se o ângulo fosse igual, não haveria separação.",
+    "3": "Não é absorção que separa as cores."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/1-5-dispersion",
+    "titulo": "1.5 Dispersion",
+    "conferido_em": "2026-11-07",
+    "base": "dispersão da luz branca em prismas",
+    "verificar": [
+     "dispersion",
+     "prism"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "rt",
+   "q": "Uma camisa é vista como azul quando iluminada por luz branca. Isso significa que ela:",
+   "o": [
+    "Reflete a luz azul e absorve as demais cores.",
+    "Absorve a luz azul e reflete as demais cores.",
+    "Emite luz azul própria.",
+    "Reflete todas as cores igualmente."
+   ],
+   "a": 0,
+   "h": "A cor vista é a cor refletida.",
+   "e": "A cor de um corpo iluminado por luz branca é a cor que ele reflete difusamente. A camisa azul reflete o azul e absorve as demais.",
+   "x": {
+    "1": "Isso descreveria um corpo de cor amarelada ou avermelhada.",
+    "2": "Uma camisa não emite luz própria.",
+    "3": "Se refletisse todas as cores, ela seria branca."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/1-5-dispersion",
+    "titulo": "1.5 Dispersion",
+    "conferido_em": "2026-11-07",
+    "base": "dispersão da luz branca em prismas",
+    "verificar": [
+     "dispersion",
+     "prism"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "ln",
+   "q": "No ar, uma lente de vidro com bordas finas é:",
+   "o": [
+    "Convergente.",
+    "Divergente.",
+    "Plana.",
+    "Sempre refletora."
+   ],
+   "a": 0,
+   "h": "Bordas finas, no ar.",
+   "e": "Lentes de bordas finas, em meio de índice menor que o da lente (como o ar), são convergentes: raios paralelos ao eixo convergem para o foco.",
+   "x": {
+    "1": "Lentes de bordas grossas, no ar, são divergentes.",
+    "2": "Uma lente plana não desvia os raios paralelos.",
+    "3": "Lentes refratam a luz."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-4-thin-lenses",
+    "titulo": "2.4 Thin Lenses",
+    "conferido_em": "2026-11-07",
+    "base": "lentes delgadas, foco e aumento",
+    "verificar": [
+     "thin lens",
+     "focal length"
+    ]
+   },
+   "an": "opt_lente"
+  },
+  {
+   "t": "ln",
+   "q": "Uma lente de bordas finas, feita de vidro, é mergulhada em um líquido de índice de refração maior que o do vidro. Ela passa a se comportar como lente:",
+   "o": [
+    "Divergente.",
+    "Convergente.",
+    "Plana.",
+    "Refletora."
+   ],
+   "a": 0,
+   "h": "Compare os índices do vidro e do líquido.",
+   "e": "O comportamento da lente depende do índice relativo entre lente e meio. Se o meio é mais refringente que a lente, uma lente de bordas finas se torna divergente.",
+   "x": {
+    "1": "No ar seria convergente, mas aqui o meio é mais refringente.",
+    "2": "Ela continua desviando os raios.",
+    "3": "Ela refrata a luz, não a reflete."
+   },
+   "n": 3,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-4-thin-lenses",
+    "titulo": "2.4 Thin Lenses",
+    "conferido_em": "2026-11-07",
+    "base": "lentes delgadas, foco e aumento",
+    "verificar": [
+     "thin lens",
+     "focal length"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "ln",
+   "q": "Uma lente divergente, no ar, fornece de um objeto real:",
+   "o": [
+    "Imagem virtual, direta e menor.",
+    "Imagem real, invertida e menor.",
+    "Imagem virtual, direta e maior.",
+    "Imagem real, invertida e maior."
+   ],
+   "a": 0,
+   "h": "Imagem sempre virtual e menor.",
+   "e": "A lente divergente, no ar, forma de objetos reais sempre imagem virtual, direta e menor, do mesmo lado do objeto.",
+   "x": {
+    "1": "Imagem real só é obtida com lentes convergentes.",
+    "2": "Imagem virtual e maior é a da lupa (convergente).",
+    "3": "Imagem real e maior é a do projetor."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-4-thin-lenses",
+    "titulo": "2.4 Thin Lenses",
+    "conferido_em": "2026-11-07",
+    "base": "lentes delgadas, foco e aumento",
+    "verificar": [
+     "thin lens",
+     "focal length"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "ln",
+   "q": "Uma lupa é uma lente convergente. Para que ela forneça uma imagem ampliada e direta, o objeto deve ser colocado:",
+   "o": [
+    "Entre a lente e o foco.",
+    "Além do dobro da distância focal.",
+    "Exatamente sobre o foco.",
+    "A uma distância qualquer."
+   ],
+   "a": 0,
+   "h": "Muito perto da lente.",
+   "e": "Com o objeto entre o foco e a lente, a imagem é virtual, direta e maior que o objeto. É o uso da lupa.",
+   "x": {
+    "1": "Além de 2f a imagem é real, invertida e menor.",
+    "2": "Sobre o foco os raios emergem paralelos e a imagem se forma no infinito.",
+    "3": "A posição influencia o tipo de imagem."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-4-thin-lenses",
+    "titulo": "2.4 Thin Lenses",
+    "conferido_em": "2026-11-07",
+    "base": "lentes delgadas, foco e aumento",
+    "verificar": [
+     "thin lens",
+     "focal length"
+    ]
+   },
+   "an": "opt_lente"
+  },
+  {
+   "t": "ln",
+   "q": "Um projetor de slides forma, em uma tela, uma imagem ampliada do slide. Essa imagem é:",
+   "o": [
+    "Real e invertida.",
+    "Virtual e direta.",
+    "Virtual e invertida.",
+    "Real e direta."
+   ],
+   "a": 0,
+   "h": "Se aparece na tela, é real.",
+   "e": "Imagens projetáveis em uma tela são reais. A lente convergente do projetor, com o slide entre f e 2f, forma imagem real, invertida e maior. Por isso o slide é colocado de cabeça para baixo.",
+   "x": {
+    "1": "Imagens virtuais não podem ser projetadas.",
+    "2": "A imagem do projetor é invertida em relação ao slide.",
+    "3": "A imagem real de uma lente convergente é invertida."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-4-thin-lenses",
+    "titulo": "2.4 Thin Lenses",
+    "conferido_em": "2026-11-07",
+    "base": "lentes delgadas, foco e aumento",
+    "verificar": [
+     "thin lens",
+     "focal length"
+    ]
+   },
+   "an": "opt_lente"
+  },
+  {
+   "t": "ln",
+   "q": "Uma lente convergente tem distância focal de 0,5 m. Qual é a sua vergência?",
+   "o": [
+    "2 di",
+    "0,5 di",
+    "50 di",
+    "−2 di"
+   ],
+   "a": 0,
+   "h": "A vergência é o inverso da distância focal em metros.",
+   "e": "V = 1 / f = 1 / 0,5 = 2 di (dioptrias).",
+   "x": {
+    "1": "Confundiu f com V.",
+    "2": "Usou f em centímetros (1/0,02).",
+    "3": "Lentes convergentes têm vergência positiva."
+   },
+   "c": 1,
+   "n": 1,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-4-thin-lenses",
+    "titulo": "2.4 Thin Lenses",
+    "conferido_em": "2026-11-07",
+    "base": "lentes delgadas, foco e aumento",
+    "verificar": [
+     "thin lens",
+     "focal length"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "f": "0.5 m"
+    },
+    "expr": "1/f",
+    "expr2": "f**(-1)",
+    "unidade": "di",
+    "simbolo": "V",
+    "formula": "V = 1 / f",
+    "rotulos": {
+     "f": "f"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "ln",
+   "q": "Uma lente convergente tem distância focal de 20 cm. Um objeto real está a 60 cm dela. A que distância da lente se forma a imagem?",
+   "o": [
+    "30 cm",
+    "15 cm",
+    "−30 cm",
+    "40 cm"
+   ],
+   "a": 0,
+   "h": "Use a equação de Gauss.",
+   "e": "1/f = 1/p + 1/p', logo 1/p' = 1/20 − 1/60 = 2/60. Então p' = 30 cm (imagem real).",
+   "x": {
+    "1": "Somou os inversos em vez de subtrair.",
+    "2": "Um valor negativo indicaria imagem virtual.",
+    "3": "Usou p' = p − f."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-4-thin-lenses",
+    "titulo": "2.4 Thin Lenses",
+    "conferido_em": "2026-11-07",
+    "base": "lentes delgadas, foco e aumento",
+    "verificar": [
+     "thin lens",
+     "focal length"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "f": "20 cm",
+     "p": "60 cm"
+    },
+    "expr": "1/(1/f-1/p)",
+    "expr2": "f*p/(p-f)",
+    "unidade": "cm",
+    "simbolo": "p'",
+    "formula": "1/f = 1/p + 1/p'",
+    "rotulos": {
+     "f": "f",
+     "p": "p"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "ln",
+   "q": "Uma lente divergente tem distância focal de −20 cm. Um objeto real está a 20 cm dela. Em que posição se forma a imagem?",
+   "o": [
+    "−10 cm",
+    "10 cm",
+    "−20 cm",
+    "−5 cm"
+   ],
+   "a": 0,
+   "h": "Na lente divergente, f é negativo.",
+   "e": "1/p' = 1/f − 1/p = −1/20 − 1/20 = −2/20. Então p' = −10 cm (imagem virtual, do mesmo lado do objeto).",
+   "x": {
+    "1": "Um valor positivo indicaria imagem real.",
+    "2": "Usou f no lugar de p'.",
+    "3": "Errou a soma das frações."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-4-thin-lenses",
+    "titulo": "2.4 Thin Lenses",
+    "conferido_em": "2026-11-07",
+    "base": "lentes delgadas, foco e aumento",
+    "verificar": [
+     "thin lens",
+     "focal length"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "f": "-20 cm",
+     "p": "20 cm"
+    },
+    "expr": "1/(1/f-1/p)",
+    "expr2": "f*p/(p-f)",
+    "unidade": "cm",
+    "simbolo": "p'",
+    "formula": "1/f = 1/p + 1/p'",
+    "rotulos": {
+     "f": "f",
+     "p": "p"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "ln",
+   "q": "Duas lentes finas justapostas têm vergências de +3 di e +2 di. Qual é a distância focal do conjunto?",
+   "o": [
+    "0,20 m",
+    "5,0 m",
+    "1,0 m",
+    "0,83 m"
+   ],
+   "a": 0,
+   "h": "Some as vergências, e não as distâncias focais.",
+   "e": "As vergências se somam: V = 3 + 2 = 5 di. Então f = 1 / V = 1 / 5 = 0,20 m.",
+   "x": {
+    "1": "Confundiu a vergência total com a distância focal.",
+    "2": "Multiplicou as vergências.",
+    "3": "Somou as distâncias focais das lentes."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-4-thin-lenses",
+    "titulo": "2.4 Thin Lenses",
+    "conferido_em": "2026-11-07",
+    "base": "lentes delgadas, foco e aumento",
+    "verificar": [
+     "thin lens",
+     "focal length"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "V1": "3 1/m",
+     "V2": "2 1/m"
+    },
+    "expr": "1/(V1+V2)",
+    "expr2": "1/V1/(1+V2/V1)",
+    "unidade": "m",
+    "simbolo": "f",
+    "formula": "f = 1 / (V₁ + V₂)",
+    "rotulos": {
+     "V1": "V₁",
+     "V2": "V₂"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "vi",
+   "q": "Em uma pessoa míope, a imagem de objetos distantes se forma antes da retina. Qual lente corrige esse defeito?",
+   "o": [
+    "Divergente.",
+    "Convergente.",
+    "Plana.",
+    "Convergente, de grande vergência."
+   ],
+   "a": 0,
+   "h": "A imagem está “à frente” da retina.",
+   "e": "A lente divergente afasta os raios antes de entrarem no olho e leva a imagem de volta para a retina. Ela tem vergência negativa.",
+   "x": {
+    "1": "A convergente aproximaria ainda mais a imagem do cristalino.",
+    "2": "Lente plana não altera os raios.",
+    "3": "Quanto maior a convergência, pior ficaria a miopia."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-5-the-eye",
+    "titulo": "2.5 The Eye",
+    "conferido_em": "2026-11-07",
+    "base": "olho, miopia e hipermetropia",
+    "verificar": [
+     "nearsightedness",
+     "farsightedness"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Questão sobre correção da visão; a cena disponível de lente não cobre o olho."
+   }
+  },
+  {
+   "t": "vi",
+   "q": "Uma pessoa hipermetrope tem dificuldade para ver de perto, pois a imagem se forma depois da retina. O defeito é corrigido com lente:",
+   "o": [
+    "Convergente.",
+    "Divergente.",
+    "Cilíndrica de bordas grossas.",
+    "Plana."
+   ],
+   "a": 0,
+   "h": "A imagem está “atrás” da retina.",
+   "e": "A lente convergente antecipa a convergência dos raios e leva a imagem para a retina.",
+   "x": {
+    "1": "A divergente é usada na miopia.",
+    "2": "O astigmatismo é que exige lente cilíndrica.",
+    "3": "Lente plana não corrige o defeito."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-5-the-eye",
+    "titulo": "2.5 The Eye",
+    "conferido_em": "2026-11-07",
+    "base": "olho, miopia e hipermetropia",
+    "verificar": [
+     "nearsightedness",
+     "farsightedness"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Questão sobre correção da visão; a cena disponível de lente não cobre o olho."
+   }
+  },
+  {
+   "t": "vi",
+   "q": "O ponto remoto de uma pessoa míope é de 50 cm. Qual é a vergência da lente que corrige o defeito (lente que forma, no ponto remoto, a imagem de objetos distantes)?",
+   "o": [
+    "−2 di",
+    "+2 di",
+    "−0,5 di",
+    "+0,5 di"
+   ],
+   "a": 0,
+   "h": "A distância focal é igual, em módulo, ao ponto remoto.",
+   "e": "A lente deve ter distância focal f = −0,5 m (divergente). V = 1 / f = 1 / (−0,5) = −2 di.",
+   "x": {
+    "1": "Lente divergente tem vergência negativa.",
+    "2": "Esse valor seria f, e não V.",
+    "3": "Confundiu f com V e esqueceu o sinal."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-5-the-eye",
+    "titulo": "2.5 The Eye",
+    "conferido_em": "2026-11-07",
+    "base": "olho, miopia e hipermetropia",
+    "verificar": [
+     "nearsightedness",
+     "farsightedness"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "d": "0.5 m"
+    },
+    "expr": "-1/d",
+    "expr2": "-(1/d)",
+    "unidade": "di",
+    "simbolo": "V",
+    "formula": "V = −1 / d",
+    "rotulos": {
+     "d": "d"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "vi",
+   "q": "O olho humano e uma câmera fotográfica são parecidos porque, em ambos, uma lente convergente forma:",
+   "o": [
+    "Uma imagem real e invertida em uma superfície sensível à luz (retina ou filme).",
+    "Uma imagem virtual e direta no cristalino.",
+    "Uma imagem virtual e invertida na pupila.",
+    "Uma imagem real e direta na íris."
+   ],
+   "a": 0,
+   "h": "Onde a luz é detectada?",
+   "e": "A lente (cristalino, no olho) forma uma imagem real e invertida na retina (ou no filme/sensor da câmera). O cérebro interpreta a imagem na posição correta.",
+   "x": {
+    "1": "A imagem na retina é real, e não virtual.",
+    "2": "A imagem real não se forma na pupila.",
+    "3": "A imagem na retina é invertida."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-5-the-eye",
+    "titulo": "2.5 The Eye",
+    "conferido_em": "2026-11-07",
+    "base": "olho, miopia e hipermetropia",
+    "verificar": [
+     "nearsightedness",
+     "farsightedness"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Questão sobre analogia olho-câmera; as cenas disponíveis não cobrem o olho."
+   }
+  },
+  {
+   "t": "vi",
+   "q": "A presbiopia (vista cansada) é a dificuldade de enxergar de perto, que aparece com a idade, por perda de flexibilidade do cristalino. Ela costuma ser corrigida com lentes:",
+   "o": [
+    "Convergentes.",
+    "Divergentes.",
+    "Planas.",
+    "Opacas."
+   ],
+   "a": 0,
+   "h": "É um problema parecido com o da hipermetropia.",
+   "e": "Com o cristalino menos flexível, o olho não consegue convergir os raios de objetos próximos. Lentes convergentes (como as de leitura) compensam essa falta de convergência.",
+   "x": {
+    "1": "Divergentes corrigem a miopia.",
+    "2": "Lentes planas não alteram a convergência.",
+    "3": "Lentes opacas não deixam passar a luz."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-5-the-eye",
+    "titulo": "2.5 The Eye",
+    "conferido_em": "2026-11-07",
+    "base": "olho, miopia e hipermetropia",
+    "verificar": [
+     "nearsightedness",
+     "farsightedness"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Questão sobre defeitos da visão; as cenas disponíveis não cobrem o olho."
+   }
+  },
+  {
+   "t": "vi",
+   "q": "Em um microscópio composto, a objetiva e a ocular são lentes convergentes. A imagem final vista pelo observador é:",
+   "o": [
+    "Virtual, invertida e muito ampliada em relação ao objeto.",
+    "Real, direta e menor que o objeto.",
+    "Virtual, direta e menor que o objeto.",
+    "Real, invertida e do mesmo tamanho."
+   ],
+   "a": 0,
+   "h": "A ocular funciona como lupa.",
+   "e": "A objetiva forma uma imagem real, invertida e ampliada. A ocular funciona como lupa sobre ela e dá a imagem final virtual, mantendo a inversão e ampliando ainda mais.",
+   "x": {
+    "1": "A imagem final do microscópio é virtual, e não real.",
+    "2": "O microscópio amplia, e não reduz.",
+    "3": "A imagem final é bem maior que o objeto."
+   },
+   "n": 3,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-5-the-eye",
+    "titulo": "2.5 The Eye",
+    "conferido_em": "2026-11-07",
+    "base": "olho, miopia e hipermetropia",
+    "verificar": [
+     "nearsightedness",
+     "farsightedness"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Questão sobre instrumento óptico de dois estágios, sem cena disponível."
+   }
+  },
+  {
+   "t": "cx",
+   "q": "Qual cientista dá nome à lei que relaciona os ângulos de incidência e de refração com os índices de refração dos meios?",
+   "o": [
+    "Willebrord Snell.",
+    "Isaac Newton.",
+    "Galileu Galilei.",
+    "Albert Einstein."
+   ],
+   "a": 0,
+   "h": "O nome aparece na fórmula.",
+   "e": "A lei da refração é a lei de Snell (n₁ · sen θ₁ = n₂ · sen θ₂), em homenagem ao holandês Willebrord Snell. Na França, ela também leva o nome de Descartes.",
+   "x": {
+    "1": "Newton mostrou, com prismas, que a luz branca é composta de cores.",
+    "2": "Galileu usou o telescópio para observar o céu.",
+    "3": "Einstein trabalhou com a natureza da luz, mas não com a lei da refração."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/1-3-refraction",
+    "titulo": "1.3 Refraction",
+    "conferido_em": "2026-11-07",
+    "base": "índice de refração e lei de Snell",
+    "verificar": [
+     "index of refraction",
+     "Snell"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Questão sobre história da ciência, sem cálculo nem processo para animar."
+   }
+  },
+  {
+   "t": "cx",
+   "q": "Com experimentos usando prismas, que cientista mostrou que a luz branca é formada por várias cores e que cada cor se refrata de modo diferente?",
+   "o": [
+    "Isaac Newton.",
+    "Willebrord Snell.",
+    "René Descartes.",
+    "Marie Curie."
+   ],
+   "a": 0,
+   "h": "Pense no prisma e no espectro.",
+   "e": "Isaac Newton usou prismas para decompor a luz branca e depois recompô-la, mostrando que as cores já estão na luz branca.",
+   "x": {
+    "1": "Snell estudou a relação dos ângulos na refração.",
+    "2": "Descartes escreveu sobre a refração, mas não fez a decomposição da luz branca.",
+    "3": "Marie Curie trabalhou com radioatividade."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/1-5-dispersion",
+    "titulo": "1.5 Dispersion",
+    "conferido_em": "2026-11-07",
+    "base": "dispersão da luz branca em prismas",
+    "verificar": [
+     "dispersion",
+     "prism"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Questão sobre história da ciência, sem cálculo nem processo para animar."
+   }
+  }
+ ]
+}

@@ -1,0 +1,1471 @@
+{
+ "quiz": "eletro",
+ "questoes": [
+  {
+   "t": "ca",
+   "q": "Em uma região do espaço, as linhas de campo estão bem mais juntas perto do ponto A do que perto do ponto B. O que isso indica?",
+   "o": [
+    "O campo elétrico é mais intenso em A do que em B.",
+    "O campo elétrico é mais intenso em B do que em A.",
+    "O campo elétrico tem o mesmo módulo em A e em B.",
+    "Há carga negativa em A e positiva em B."
+   ],
+   "a": 0,
+   "h": "Pense no que a concentração de linhas representa.",
+   "e": "A densidade das linhas representa a intensidade do campo: onde elas estão mais próximas, o campo é mais intenso.",
+   "x": {
+    "1": "Inverteu a relação: mais linhas juntas significa campo mais forte.",
+    "2": "Se o campo fosse igual, as linhas teriam o mesmo espaçamento.",
+    "3": "O sinal das cargas não é dado pelo espaçamento das linhas."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/campo-eletrico/",
+    "titulo": "Campo elétrico: o que é, como calcular, força e potencial elétrico",
+    "conferido_em": "2026-11-07",
+    "base": "linhas de força e relação E = F/q",
+    "verificar": [
+     "linhas de força",
+     "E = F / q"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "ca",
+   "q": "As linhas de campo de um dipolo elétrico (uma carga +Q e uma carga −Q) são desenhadas:",
+   "o": [
+    "Saindo da carga positiva e chegando à carga negativa.",
+    "Saindo da carga negativa e chegando à positiva.",
+    "Saindo das duas cargas, sem se encontrar.",
+    "Chegando às duas cargas, vindas do infinito."
+   ],
+   "a": 0,
+   "h": "Lembre a convenção de sentido: o campo aponta como a força sobre uma carga de prova positiva.",
+   "e": "Por convenção, as linhas de campo saem das cargas positivas e chegam às negativas.",
+   "x": {
+    "1": "Isso inverte o sentido convencional das linhas.",
+    "2": "Isso só vale para duas cargas positivas.",
+    "3": "Isso só vale para duas cargas negativas."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/campo-eletrico/",
+    "titulo": "Campo elétrico: o que é, como calcular, força e potencial elétrico",
+    "conferido_em": "2026-11-07",
+    "base": "linhas de força e relação E = F/q",
+    "verificar": [
+     "linhas de força",
+     "E = F / q"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "ca",
+   "q": "Em qualquer ponto de uma linha de campo elétrico, o vetor campo elétrico é:",
+   "o": [
+    "Tangente à linha, no sentido dela.",
+    "Perpendicular à linha.",
+    "Sempre vertical, para cima.",
+    "Nulo, pois a linha é só um desenho."
+   ],
+   "a": 0,
+   "h": "Pense na direção em que uma carga de prova positiva seria empurrada.",
+   "e": "O vetor campo elétrico tangencia a linha de campo em cada ponto e tem o mesmo sentido dela.",
+   "x": {
+    "1": "O campo é perpendicular às superfícies equipotenciais, não às linhas.",
+    "2": "A direção depende do campo, não é sempre vertical.",
+    "3": "O desenho representa um campo real, que pode ser intenso."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/campo-eletrico/",
+    "titulo": "Campo elétrico: o que é, como calcular, força e potencial elétrico",
+    "conferido_em": "2026-11-07",
+    "base": "linhas de força e relação E = F/q",
+    "verificar": [
+     "linhas de força",
+     "E = F / q"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "ca",
+   "q": "Duas cargas positivas e iguais ficam próximas uma da outra. O que se observa nas linhas de campo na região entre elas?",
+   "o": [
+    "As linhas se afastam uma das outras, sem se cruzar, e há um ponto no meio onde o campo é nulo.",
+    "As linhas ligam as duas cargas, como em um dipolo.",
+    "As linhas ficam paralelas e igualmente espaçadas.",
+    "As linhas se cruzam no ponto médio."
+   ],
+   "a": 0,
+   "h": "O campo é a soma vetorial dos campos das duas cargas.",
+   "e": "Cargas de mesmo sinal repelem as linhas: elas se curvam e se afastam. No ponto médio os campos das duas cargas se anulam.",
+   "x": {
+    "1": "Linhas que ligam as cargas aparecem quando elas têm sinais opostos.",
+    "2": "Linhas paralelas e uniformes aparecem entre placas, não entre duas cargas puntiformes.",
+    "3": "Linhas de campo nunca se cruzam."
+   },
+   "n": 3,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/campo-eletrico/",
+    "titulo": "Campo elétrico: o que é, como calcular, força e potencial elétrico",
+    "conferido_em": "2026-11-07",
+    "base": "linhas de força e relação E = F/q",
+    "verificar": [
+     "linhas de força",
+     "E = F / q"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "ca",
+   "q": "Uma carga de prova de 3 µC, colocada em um ponto, sofre uma força de 0,12 N. Qual é a intensidade do campo elétrico nesse ponto?",
+   "o": [
+    "4,0 × 10⁴ N/C",
+    "3,6 × 10⁻⁷ N/C",
+    "4,0 × 10⁻⁵ N/C",
+    "0,36 N/C"
+   ],
+   "a": 0,
+   "h": "Use E = F / q com a carga em coulomb.",
+   "e": "E = F / q = 0,12 / (3 × 10⁻⁶) = 4,0 × 10⁴ N/C.",
+   "x": {
+    "1": "Multiplicou F por q em vez de dividir.",
+    "2": "Inverteu a divisão (q / F) e errou o expoente.",
+    "3": "Usou q = 3 C no lugar de 3 µC."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/campo-eletrico/",
+    "titulo": "Campo elétrico: o que é, como calcular, força e potencial elétrico",
+    "conferido_em": "2026-11-07",
+    "base": "linhas de força e relação E = F/q",
+    "verificar": [
+     "linhas de força",
+     "E = F / q"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "F": "0.12 N",
+     "q": "3 µC"
+    },
+    "expr": "F/q",
+    "expr2": "F/q",
+    "unidade": "N/C",
+    "simbolo": "E",
+    "formula": "E = F / q",
+    "rotulos": {
+     "F": "F",
+     "q": "q"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "coulomb"
+   }
+  },
+  {
+   "t": "ca",
+   "q": "Um elétron (carga de módulo 1,6 × 10⁻¹⁹ C) está em um campo elétrico uniforme de 2 000 N/C. Qual é a intensidade da força elétrica sobre ele?",
+   "o": [
+    "3,2 × 10⁻¹⁶ N",
+    "8,0 × 10⁻²³ N",
+    "3,2 × 10⁻¹⁹ N",
+    "1,3 × 10²² N"
+   ],
+   "a": 0,
+   "h": "A força é o produto da carga pelo campo.",
+   "e": "F = |q| · E = 1,6 × 10⁻¹⁹ × 2 000 = 3,2 × 10⁻¹⁶ N.",
+   "x": {
+    "1": "Dividiu a carga pelo campo.",
+    "2": "Esqueceu de multiplicar pelo campo (usou só 2 × 1,6 × 10⁻¹⁹).",
+    "3": "Dividiu o campo pela carga."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/campo-eletrico/",
+    "titulo": "Campo elétrico: o que é, como calcular, força e potencial elétrico",
+    "conferido_em": "2026-11-07",
+    "base": "linhas de força e relação E = F/q",
+    "verificar": [
+     "linhas de força",
+     "E = F / q"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "q": "1.6e-19 C",
+     "E": "2000 N/C"
+    },
+    "expr": "q*E",
+    "expr2": "E*q",
+    "unidade": "N",
+    "simbolo": "F",
+    "formula": "F = q · E",
+    "rotulos": {
+     "q": "q",
+     "E": "E"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "coulomb"
+   }
+  },
+  {
+   "t": "ca",
+   "q": "Em um ponto de campo elétrico, a carga de prova é trocada por outra com o dobro do valor (mesmo sinal). O que acontece?",
+   "o": [
+    "O campo no ponto continua o mesmo e a força sobre a carga dobra.",
+    "O campo dobra e a força também dobra.",
+    "O campo dobra e a força continua a mesma.",
+    "O campo e a força continuam os mesmos."
+   ],
+   "a": 0,
+   "h": "Quem cria o campo? E de que depende a força?",
+   "e": "O campo depende da carga que o cria, não da carga de prova. Como F = q·E, dobrando q a força dobra.",
+   "x": {
+    "1": "O campo E = F/q não depende da carga de prova.",
+    "2": "O campo não muda com a carga de prova, e a força muda.",
+    "3": "Se q dobra e E é o mesmo, a força dobra."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/campo-eletrico/",
+    "titulo": "Campo elétrico: o que é, como calcular, força e potencial elétrico",
+    "conferido_em": "2026-11-07",
+    "base": "força elétrica e vetor campo elétrico",
+    "verificar": [
+     "campo elétrico uniforme",
+     "carga de prova"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "ca",
+   "q": "Um próton e um elétron são colocados, um de cada vez, no mesmo ponto de um campo elétrico uniforme. As forças sobre eles têm:",
+   "o": [
+    "Mesma intensidade e sentidos opostos.",
+    "Intensidades diferentes e mesmo sentido.",
+    "Mesma intensidade e mesmo sentido.",
+    "Intensidades diferentes e sentidos opostos."
+   ],
+   "a": 0,
+   "h": "Compare o módulo e o sinal das duas cargas.",
+   "e": "As cargas têm o mesmo módulo, então F = |q|·E é igual nos dois. Como os sinais são opostos, os sentidos são opostos.",
+   "x": {
+    "1": "Os módulos das cargas são iguais, logo as forças têm mesma intensidade.",
+    "2": "Sinais opostos fazem os sentidos serem opostos.",
+    "3": "As intensidades são iguais e os sentidos são opostos."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/campo-eletrico/",
+    "titulo": "Campo elétrico: o que é, como calcular, força e potencial elétrico",
+    "conferido_em": "2026-11-07",
+    "base": "força elétrica e vetor campo elétrico",
+    "verificar": [
+     "campo elétrico uniforme",
+     "carga de prova"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "po",
+   "q": "Duas cargas, +5 µC e −2 µC, estão separadas por 0,3 m, no vácuo. Qual é a energia potencial elétrica do sistema? (k = 9 × 10⁹ N·m²/C²)",
+   "o": [
+    "−0,30 J",
+    "+0,30 J",
+    "−0,090 J",
+    "−3,0 J"
+   ],
+   "a": 0,
+   "h": "Mantenha o sinal das cargas na fórmula.",
+   "e": "U = k·q₁·q₂ / d = 9 × 10⁹ × 5 × 10⁻⁶ × (−2 × 10⁻⁶) / 0,3 = −0,30 J. O sinal é negativo porque as cargas têm sinais opostos.",
+   "x": {
+    "1": "Ignorou o sinal negativo da segunda carga.",
+    "2": "Dividiu por d² em vez de d.",
+    "3": "Errou uma potência de dez."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/eletrostatica/",
+    "titulo": "Eletrostática: o que é, fórmulas e exercícios",
+    "conferido_em": "2026-11-07",
+    "base": "energia potencial elétrica de cargas",
+    "verificar": [
+     "energia potencial elétrica",
+     "carga de prova"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "k": "9e9 N·m²/C²",
+     "q1": "5 µC",
+     "q2": "-2 µC",
+     "d": "0.3 m"
+    },
+    "expr": "k*q1*q2/d",
+    "expr2": "q1*q2*k/d",
+    "unidade": "J",
+    "simbolo": "U",
+    "formula": "U = k · q₁ · q₂ / d",
+    "rotulos": {
+     "k": "k",
+     "q1": "q₁",
+     "q2": "q₂",
+     "d": "d"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "potencial"
+   }
+  },
+  {
+   "t": "po",
+   "q": "Uma carga de 2 µC está em um campo elétrico uniforme de 500 N/C e é deslocada 0,4 m no sentido contrário ao da força elétrica. Quanta energia potencial elétrica ela ganha?",
+   "o": [
+    "4,0 × 10⁻⁴ J",
+    "1,0 × 10⁻³ J",
+    "2,5 × 10⁻³ J",
+    "4,0 × 10⁻¹ J"
+   ],
+   "a": 0,
+   "h": "Use q·E·d, com a carga em coulomb.",
+   "e": "A energia ganha é igual ao trabalho do agente externo: q·E·d = 2 × 10⁻⁶ × 500 × 0,4 = 4,0 × 10⁻⁴ J.",
+   "x": {
+    "1": "Errou o expoente ao converter µC.",
+    "2": "Calculou q·E sem multiplicar por 0,4 m de forma correta e errou a escala.",
+    "3": "Usou 2 C no lugar de 2 µC."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/exercicios-trabalho-energia-no-campo-eletrico/",
+    "titulo": "Exercícios sobre trabalho e energia no campo elétrico",
+    "conferido_em": "2026-11-07",
+    "base": "W = q·U e W = q·E·d",
+    "verificar": [
+     "W = q · U",
+     "força conservativa"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "q": "2 µC",
+     "E": "500 N/C",
+     "d": "0.4 m"
+    },
+    "expr": "q*E*d",
+    "expr2": "d*E*q",
+    "unidade": "J",
+    "simbolo": "ΔU",
+    "formula": "ΔU = q · E · d",
+    "rotulos": {
+     "q": "q",
+     "E": "E",
+     "d": "d"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "potencial"
+   }
+  },
+  {
+   "t": "po",
+   "q": "Uma partícula de carga negativa é atraída para perto de um núcleo positivo fixo. Como varia a energia potencial elétrica do conjunto durante a aproximação?",
+   "o": [
+    "Diminui, pois as cargas se atraem e a força realiza trabalho positivo.",
+    "Aumenta, pois as cargas ficam mais próximas.",
+    "Não muda, pois só a velocidade muda.",
+    "Passa a ser sempre positiva."
+   ],
+   "a": 0,
+   "h": "Quem realiza trabalho: a força elétrica ou um agente externo?",
+   "e": "Cargas de sinais opostos se atraem. Ao se aproximarem, a força elétrica realiza trabalho positivo e a energia potencial diminui.",
+   "x": {
+    "1": "Aproximar cargas de sinais opostos libera energia, não armazena.",
+    "2": "A distância muda, então a energia potencial muda.",
+    "3": "Para sinais opostos a energia potencial é negativa."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/eletrostatica/",
+    "titulo": "Eletrostática: o que é, fórmulas e exercícios",
+    "conferido_em": "2026-11-07",
+    "base": "energia potencial elétrica de cargas",
+    "verificar": [
+     "energia potencial elétrica",
+     "carga de prova"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "po",
+   "q": "Duas cargas de mesmo sinal, mantidas próximas, são soltas e começam a se repelir. O que acontece com as energias do sistema, enquanto se afastam?",
+   "o": [
+    "A energia cinética aumenta e a energia potencial elétrica diminui.",
+    "A energia cinética diminui e a potencial aumenta.",
+    "As duas energias aumentam.",
+    "As duas energias diminuem."
+   ],
+   "a": 0,
+   "h": "Pense na conservação da energia mecânica.",
+   "e": "A repulsão realiza trabalho positivo: a energia potencial vira energia cinética, e a soma permanece constante.",
+   "x": {
+    "1": "Isso aconteceria se um agente externo forçasse as cargas a se aproximar.",
+    "2": "A soma das duas se conserva, então não podem aumentar juntas.",
+    "3": "A soma das duas se conserva, então não podem diminuir juntas."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/eletrostatica/",
+    "titulo": "Eletrostática: o que é, fórmulas e exercícios",
+    "conferido_em": "2026-11-07",
+    "base": "energia potencial elétrica de cargas",
+    "verificar": [
+     "energia potencial elétrica",
+     "carga de prova"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "po",
+   "q": "Uma carga de 8 µC se desloca de um ponto a 300 V até outro a 120 V. Qual é o trabalho da força elétrica sobre ela?",
+   "o": [
+    "1,44 × 10⁻³ J",
+    "3,36 × 10⁻³ J",
+    "2,4 × 10⁻³ J",
+    "1,44 × 10³ J"
+   ],
+   "a": 0,
+   "h": "O trabalho é a carga vezes a diferença de potencial entre os pontos.",
+   "e": "W = q·(V_inicial − V_final) = 8 × 10⁻⁶ × (300 − 120) = 1,44 × 10⁻³ J.",
+   "x": {
+    "1": "Somou os potenciais (300 + 120).",
+    "2": "Usou só o potencial inicial (300 V).",
+    "3": "Esqueceu de converter µC para C."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/exercicios-trabalho-energia-no-campo-eletrico/",
+    "titulo": "Exercícios sobre trabalho e energia no campo elétrico",
+    "conferido_em": "2026-11-07",
+    "base": "W = q·U e W = q·E·d",
+    "verificar": [
+     "W = q · U",
+     "força conservativa"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "q": "8 µC",
+     "dV": "180 V"
+    },
+    "expr": "q*dV",
+    "expr2": "dV*q",
+    "unidade": "J",
+    "simbolo": "W",
+    "formula": "W = q · (V_i − V_f)",
+    "rotulos": {
+     "q": "q",
+     "dV": "ΔV"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "potencial"
+   }
+  },
+  {
+   "t": "po",
+   "q": "Duas placas paralelas, separadas por 2 cm, têm entre elas uma diferença de potencial de 600 V. Qual é a intensidade do campo elétrico uniforme entre as placas?",
+   "o": [
+    "3,0 × 10⁴ V/m",
+    "1,2 × 10⁴ V/m",
+    "3,0 × 10² V/m",
+    "1,2 × 10³ V/m"
+   ],
+   "a": 0,
+   "h": "Converta a distância para metros e use E = U / d.",
+   "e": "d = 2 cm = 0,02 m. E = U / d = 600 / 0,02 = 3,0 × 10⁴ V/m.",
+   "x": {
+    "1": "Multiplicou U por d em vez de dividir.",
+    "2": "Usou d = 2 m em vez de 0,02 m e errou.",
+    "3": "Usou d = 2 m e dividiu."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/campo-eletrico/",
+    "titulo": "Campo elétrico: o que é, como calcular, força e potencial elétrico",
+    "conferido_em": "2026-11-07",
+    "base": "força elétrica e vetor campo elétrico",
+    "verificar": [
+     "campo elétrico uniforme",
+     "carga de prova"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "U": "600 V",
+     "d": "2 cm"
+    },
+    "expr": "U/d",
+    "expr2": "U/d",
+    "unidade": "V/m",
+    "simbolo": "E",
+    "formula": "E = U / d",
+    "rotulos": {
+     "U": "U",
+     "d": "d"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "potencial"
+   }
+  },
+  {
+   "t": "po",
+   "q": "A diferença de potencial entre dois pontos de uma mesma superfície equipotencial vale:",
+   "o": [
+    "Zero.",
+    "Metade do potencial da superfície.",
+    "O potencial da superfície.",
+    "Infinita."
+   ],
+   "a": 0,
+   "h": "Equipotencial: o mesmo potencial em todos os pontos.",
+   "e": "Pontos de uma equipotencial têm o mesmo potencial, então a diferença entre eles é zero.",
+   "x": {
+    "1": "Não existe 'metade' aqui: os potenciais são iguais.",
+    "2": "A ddp é a diferença, não o valor do potencial.",
+    "3": "Não há razão para a ddp ser infinita."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/tensao-eletrica/",
+    "titulo": "Tensão elétrica: o que é, fórmulas e exercícios",
+    "conferido_em": "2026-11-07",
+    "base": "ddp e volt (J/C)",
+    "verificar": [
+     "diferença de potencial",
+     "Volt"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "po",
+   "q": "Verdadeiro ou falso: um passarinho pousado em um fio de alta tensão não leva choque porque seus dois pés estão praticamente no mesmo potencial.",
+   "o": [
+    "Verdadeiro",
+    "Falso"
+   ],
+   "a": 0,
+   "h": "O que provoca a passagem de corrente pelo corpo?",
+   "e": "A corrente depende da diferença de potencial entre os pontos de contato. Com os pés no mesmo fio, a ddp é praticamente nula.",
+   "v": 1,
+   "x": {
+    "1": "A afirmação é verdadeira: sem ddp entre os pés, não há corrente relevante pelo corpo."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/tensao-eletrica/",
+    "titulo": "Tensão elétrica: o que é, fórmulas e exercícios",
+    "conferido_em": "2026-11-07",
+    "base": "ddp e volt (J/C)",
+    "verificar": [
+     "diferença de potencial",
+     "Volt"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Afirmação conceitual, sem processo para animar."
+   }
+  },
+  {
+   "t": "di",
+   "q": "Uma chapa metálica de 0,02 m² de área recebe uma carga de 6 µC distribuída uniformemente. Qual é a densidade superficial de cargas?",
+   "o": [
+    "3,0 × 10⁻⁴ C/m²",
+    "1,2 × 10⁻⁷ C/m²",
+    "3,0 × 10⁻³ C/m²",
+    "1,2 × 10⁻⁴ C/m²"
+   ],
+   "a": 0,
+   "h": "A densidade superficial é a carga por unidade de área.",
+   "e": "σ = Q / A = 6 × 10⁻⁶ / 0,02 = 3,0 × 10⁻⁴ C/m².",
+   "x": {
+    "1": "Multiplicou Q por A.",
+    "2": "Errou o expoente ao dividir.",
+    "3": "Usou A = 0,05 m²."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-2/pages/7-5-equipotential-surfaces-and-conductors",
+    "titulo": "7.5 Equipotential Surfaces and Conductors",
+    "conferido_em": "2026-11-07",
+    "base": "densidade superficial de carga em condutores",
+    "verificar": [
+     "surface charge density",
+     "radius of curvature"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "Q": "6 µC",
+     "A": "0.02 m^2"
+    },
+    "expr": "Q/A",
+    "expr2": "Q/A",
+    "unidade": "C/m^2",
+    "simbolo": "σ",
+    "formula": "σ = Q / A",
+    "rotulos": {
+     "Q": "Q",
+     "A": "A"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "di",
+   "q": "Uma esfera condutora de raio 0,1 m tem carga de 4 µC. Considerando a carga uniformemente distribuída na superfície, qual é a densidade superficial de cargas? (área da esfera = 4πR²)",
+   "o": [
+    "3,2 × 10⁻⁵ C/m²",
+    "4,0 × 10⁻⁵ C/m²",
+    "1,3 × 10⁻⁴ C/m²",
+    "3,2 × 10⁻³ C/m²"
+   ],
+   "a": 0,
+   "h": "Calcule primeiro a área da superfície esférica.",
+   "e": "A = 4πR² = 4π × 0,01 ≈ 0,126 m². σ = Q / A = 4 × 10⁻⁶ / 0,126 ≈ 3,2 × 10⁻⁵ C/m² (resultado ≈ 3,18 × 10⁻⁵).",
+   "x": {
+    "1": "Dividiu só por R² (0,01 m²), esquecendo o 4π.",
+    "2": "Dividiu por πR², esquecendo o fator 4.",
+    "3": "Errou o expoente."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-2/pages/7-5-equipotential-surfaces-and-conductors",
+    "titulo": "7.5 Equipotential Surfaces and Conductors",
+    "conferido_em": "2026-11-07",
+    "base": "densidade superficial de carga em condutores",
+    "verificar": [
+     "surface charge density",
+     "radius of curvature"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "Q": "4 µC",
+     "R": "0.1 m"
+    },
+    "expr": "Q/(4*pi*R**2)",
+    "expr2": "Q/(4*pi)/R**2",
+    "unidade": "C/m^2",
+    "simbolo": "σ",
+    "formula": "σ = Q / (4π R²)",
+    "rotulos": {
+     "Q": "Q",
+     "R": "R"
+    },
+    "tol": 0.02
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "di",
+   "q": "Em um condutor carregado e isolado, com uma parte pontiaguda e uma parte achatada, a densidade superficial de cargas é:",
+   "o": [
+    "Maior na parte pontiaguda.",
+    "Maior na parte achatada.",
+    "A mesma em toda a superfície.",
+    "Nula na parte pontiaguda."
+   ],
+   "a": 0,
+   "h": "Pense no poder das pontas.",
+   "e": "As cargas se concentram nas regiões de menor raio de curvatura, como as pontas, onde a densidade superficial é maior.",
+   "x": {
+    "1": "A concentração acontece nas pontas, não nas partes achatadas.",
+    "2": "A densidade só é uniforme em uma esfera isolada.",
+    "3": "Nas pontas a densidade é maior, não nula."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "PrePara Enem",
+    "url": "https://www.preparaenem.com/fisica/condutor-pontiagudo.htm",
+    "titulo": "Condutor pontiagudo",
+    "conferido_em": "2026-11-07",
+    "base": "densidade superficial maior nas pontas",
+    "verificar": [
+     "densidade superficial",
+     "pontiagud"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "di",
+   "q": "A mesma carga é distribuída uniformemente sobre uma superfície. Se a área da superfície for dobrada, a densidade superficial de cargas:",
+   "o": [
+    "Fica pela metade.",
+    "Dobra.",
+    "Fica quatro vezes menor.",
+    "Não muda."
+   ],
+   "a": 0,
+   "h": "Densidade é carga dividida por área.",
+   "e": "σ = Q / A. Com Q constante e A dobrada, σ cai à metade.",
+   "x": {
+    "1": "Dobra se a área cair pela metade, não se ela dobrar.",
+    "2": "A relação com a área não é quadrática.",
+    "3": "A densidade depende da área."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-2/pages/7-5-equipotential-surfaces-and-conductors",
+    "titulo": "7.5 Equipotential Surfaces and Conductors",
+    "conferido_em": "2026-11-07",
+    "base": "densidade superficial de carga em condutores",
+    "verificar": [
+     "surface charge density",
+     "radius of curvature"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "di",
+   "q": "Verdadeiro ou falso: a unidade da densidade superficial de cargas no Sistema Internacional é o C/m².",
+   "o": [
+    "Verdadeiro",
+    "Falso"
+   ],
+   "a": 0,
+   "h": "Carga dividida por área.",
+   "e": "Densidade superficial é carga por área: coulomb por metro quadrado.",
+   "v": 1,
+   "x": {
+    "1": "A afirmação é verdadeira: σ = Q/A, em C/m²."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-2/pages/7-5-equipotential-surfaces-and-conductors",
+    "titulo": "7.5 Equipotential Surfaces and Conductors",
+    "conferido_em": "2026-11-07",
+    "base": "densidade superficial de carga em condutores",
+    "verificar": [
+     "surface charge density",
+     "radius of curvature"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Afirmação conceitual, sem processo para animar."
+   }
+  },
+  {
+   "t": "di",
+   "q": "Duas esferas condutoras de mesmo raio e mesma carga, uma maciça e outra oca, estão isoladas e em equilíbrio. A densidade superficial de cargas na superfície externa é:",
+   "o": [
+    "Igual nas duas.",
+    "Maior na esfera maciça.",
+    "Maior na esfera oca.",
+    "Nula na esfera maciça."
+   ],
+   "a": 0,
+   "h": "Onde ficam as cargas em excesso de um condutor?",
+   "e": "Em condutores em equilíbrio, as cargas ficam na superfície externa. Mesmo raio e mesma carga dão a mesma densidade.",
+   "x": {
+    "1": "A carga fica na superfície, não no volume, então maciça ou oca não importa.",
+    "2": "A esfera oca não concentra cargas.",
+    "3": "As cargas não ficam no interior da maciça."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-2/pages/7-5-equipotential-surfaces-and-conductors",
+    "titulo": "7.5 Equipotential Surfaces and Conductors",
+    "conferido_em": "2026-11-07",
+    "base": "densidade superficial de carga em condutores",
+    "verificar": [
+     "surface charge density",
+     "radius of curvature"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "cp",
+   "q": "Um capacitor, de modo geral, serve para armazenar:",
+   "o": [
+    "Carga elétrica e energia potencial elétrica no campo entre suas armaduras.",
+    "Corrente elétrica.",
+    "Calor.",
+    "Apenas cargas positivas."
+   ],
+   "a": 0,
+   "h": "Pense em duas placas com cargas opostas.",
+   "e": "O capacitor armazena cargas opostas em suas armaduras e, com isso, energia potencial elétrica no campo entre elas.",
+   "x": {
+    "1": "Corrente é movimento de cargas, não algo armazenado.",
+    "2": "Não é um acumulador de calor.",
+    "3": "Ele armazena cargas de sinais opostos."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/exercicio-sobre-capacitores-com-questoes-resolvidas/",
+    "titulo": "Exercícios sobre capacitores",
+    "conferido_em": "2026-11-07",
+    "base": "dielétrico, distância e energia",
+    "verificar": [
+     "dielétrico",
+     "energia potencial eletrostática"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "cp",
+   "q": "Um capacitor armazena uma carga de 60 µC quando submetido a uma tensão de 12 V. Qual é a sua capacitância?",
+   "o": [
+    "5 µF",
+    "720 µF",
+    "0,2 µF",
+    "72 µF"
+   ],
+   "a": 0,
+   "h": "Use C = Q / V.",
+   "e": "C = Q / V = 60 µC / 12 V = 5 µF.",
+   "x": {
+    "1": "Multiplicou Q por V.",
+    "2": "Inverteu a divisão (V / Q).",
+    "3": "Somou Q e V."
+   },
+   "c": 1,
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/capacitores/",
+    "titulo": "Capacitor: o que é, fórmula, função e exercícios",
+    "conferido_em": "2026-11-07",
+    "base": "C = Q/V, energia e associações",
+    "verificar": [
+     "Capacitância",
+     "farad"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "Q": "60 µC",
+     "V": "12 V"
+    },
+    "expr": "Q/V",
+    "expr2": "Q/V",
+    "unidade": "µF",
+    "simbolo": "C",
+    "formula": "C = Q / V",
+    "rotulos": {
+     "Q": "Q",
+     "V": "V"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "cp",
+   "q": "Um capacitor de 20 µF é ligado a uma bateria de 9 V. Qual é a carga armazenada?",
+   "o": [
+    "180 µC",
+    "2,2 µC",
+    "29 µC",
+    "0,45 µC"
+   ],
+   "a": 0,
+   "h": "Use Q = C · V.",
+   "e": "Q = C · V = 20 µF × 9 V = 180 µC.",
+   "x": {
+    "1": "Dividiu C por V.",
+    "2": "Somou C e V.",
+    "3": "Dividiu V por C."
+   },
+   "c": 1,
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/exercicio-sobre-capacitores-com-questoes-resolvidas/",
+    "titulo": "Exercícios sobre capacitores",
+    "conferido_em": "2026-11-07",
+    "base": "dielétrico, distância e energia",
+    "verificar": [
+     "dielétrico",
+     "energia potencial eletrostática"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "C": "20 µF",
+     "V": "9 V"
+    },
+    "expr": "C*V",
+    "expr2": "V*C",
+    "unidade": "µC",
+    "simbolo": "Q",
+    "formula": "Q = C · V",
+    "rotulos": {
+     "C": "C",
+     "V": "V"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "cp",
+   "q": "Um capacitor de 100 µF é carregado com uma tensão de 50 V. Qual é a energia armazenada nele?",
+   "o": [
+    "0,125 J",
+    "0,25 J",
+    "5,0 J",
+    "2,5 × 10⁻³ J"
+   ],
+   "a": 0,
+   "h": "Use E = C·V²/2, com C em farad.",
+   "e": "E = C·V² / 2 = 100 × 10⁻⁶ × 50² / 2 = 0,125 J.",
+   "x": {
+    "1": "Esqueceu de dividir por 2.",
+    "2": "Usou V no lugar de V² e errou a escala.",
+    "3": "Usou V (sem elevar ao quadrado) e dividiu por 2."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/capacitores/",
+    "titulo": "Capacitor: o que é, fórmula, função e exercícios",
+    "conferido_em": "2026-11-07",
+    "base": "C = Q/V, energia e associações",
+    "verificar": [
+     "Capacitância",
+     "farad"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "C": "100 µF",
+     "V": "50 V"
+    },
+    "expr": "C*V**2/2",
+    "expr2": "V*V*C/2",
+    "unidade": "J",
+    "simbolo": "E",
+    "formula": "E = C · V² / 2",
+    "rotulos": {
+     "C": "C",
+     "V": "V"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "cp",
+   "q": "Ao inserir um material dielétrico entre as placas de um capacitor, a capacitância:",
+   "o": [
+    "Aumenta.",
+    "Diminui.",
+    "Não muda.",
+    "Fica igual a zero."
+   ],
+   "a": 0,
+   "h": "O dielétrico permite armazenar mais carga para a mesma tensão.",
+   "e": "O dielétrico aumenta a permissividade do meio entre as placas, e isso aumenta a capacitância.",
+   "x": {
+    "1": "Ele aumenta a capacitância, não a reduz.",
+    "2": "A capacitância depende do meio entre as placas.",
+    "3": "A capacitância não seria nula."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/exercicio-sobre-capacitores-com-questoes-resolvidas/",
+    "titulo": "Exercícios sobre capacitores",
+    "conferido_em": "2026-11-07",
+    "base": "dielétrico, distância e energia",
+    "verificar": [
+     "dielétrico",
+     "energia potencial eletrostática"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "cp",
+   "q": "Em um capacitor de placas paralelas, a distância entre as placas é dobrada (área e meio iguais). A capacitância:",
+   "o": [
+    "Fica pela metade.",
+    "Dobra.",
+    "Fica quatro vezes maior.",
+    "Não muda."
+   ],
+   "a": 0,
+   "h": "C é inversamente proporcional a d.",
+   "e": "A capacitância é inversamente proporcional à distância entre as placas: dobrando d, C cai à metade.",
+   "x": {
+    "1": "Dobraria se a distância fosse reduzida à metade.",
+    "2": "A relação não é quadrática.",
+    "3": "A capacitância depende da distância."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/exercicio-sobre-capacitores-com-questoes-resolvidas/",
+    "titulo": "Exercícios sobre capacitores",
+    "conferido_em": "2026-11-07",
+    "base": "dielétrico, distância e energia",
+    "verificar": [
+     "dielétrico",
+     "energia potencial eletrostática"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "cp",
+   "q": "Um capacitor está carregado. Se a tensão aplicada for dobrada, a energia armazenada:",
+   "o": [
+    "Fica quatro vezes maior.",
+    "Dobra.",
+    "Fica pela metade.",
+    "Não muda."
+   ],
+   "a": 0,
+   "h": "A energia depende do quadrado da tensão.",
+   "e": "E = C·V²/2. Com V dobrado, V² fica quatro vezes maior, e a energia também.",
+   "x": {
+    "1": "Dobraria se E fosse proporcional a V.",
+    "2": "A energia aumenta com a tensão.",
+    "3": "A energia aumenta com a tensão."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/exercicios-sobre-diferenca-de-potencial-com-respostas-explicadas/",
+    "titulo": "Exercícios sobre diferença de potencial",
+    "conferido_em": "2026-11-07",
+    "base": "energia no capacitor e ddp",
+    "verificar": [
+     "diferença de potencial",
+     "capacitor"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "cp",
+   "q": "Verdadeiro ou falso: 1 farad é igual a 1 coulomb por volt.",
+   "o": [
+    "Verdadeiro",
+    "Falso"
+   ],
+   "a": 0,
+   "h": "A unidade vem da definição C = Q / V.",
+   "e": "C = Q / V, então 1 F = 1 C / 1 V.",
+   "v": 1,
+   "x": {
+    "1": "A afirmação é verdadeira: farad é coulomb por volt."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/capacitores/",
+    "titulo": "Capacitor: o que é, fórmula, função e exercícios",
+    "conferido_em": "2026-11-07",
+    "base": "C = Q/V, energia e associações",
+    "verificar": [
+     "Capacitância",
+     "farad"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Afirmação conceitual, sem processo para animar."
+   }
+  },
+  {
+   "t": "cp",
+   "q": "Dois capacitores, de 6 µF e 3 µF, são ligados em série. Qual é a capacitância equivalente?",
+   "o": [
+    "2 µF",
+    "9 µF",
+    "4,5 µF",
+    "18 µF"
+   ],
+   "a": 0,
+   "h": "Em série, some os inversos.",
+   "e": "1/C_eq = 1/6 + 1/3 = 1/2, então C_eq = 2 µF.",
+   "x": {
+    "1": "Somou as capacitâncias (isso vale para a associação em paralelo).",
+    "2": "Fez a média das capacitâncias.",
+    "3": "Multiplicou as capacitâncias, sem dividir pela soma."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/associacao-de-capacitores/",
+    "titulo": "Associação de Capacitores: em série, paralelo e mista",
+    "conferido_em": "2026-11-07",
+    "base": "série, paralelo e mista",
+    "verificar": [
+     "Associação de Capacitores",
+     "capacitância"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "C1": "6 µF",
+     "C2": "3 µF"
+    },
+    "expr": "1/(1/C1+1/C2)",
+    "expr2": "C1*C2/(C1+C2)",
+    "unidade": "µF",
+    "simbolo": "C_eq",
+    "formula": "1/C_eq = 1/C₁ + 1/C₂",
+    "rotulos": {
+     "C1": "C₁",
+     "C2": "C₂"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "cp",
+   "q": "Três capacitores, de 2 µF, 3 µF e 5 µF, são ligados em paralelo. Qual é a capacitância equivalente?",
+   "o": [
+    "10 µF",
+    "30 µF",
+    "0,97 µF",
+    "3,3 µF"
+   ],
+   "a": 0,
+   "h": "Em paralelo, some as capacitâncias.",
+   "e": "Em paralelo as capacitâncias se somam: 2 + 3 + 5 = 10 µF.",
+   "x": {
+    "1": "Multiplicou as capacitâncias.",
+    "2": "Somou os inversos, como em série, e errou o resultado.",
+    "3": "Fez a média das capacitâncias."
+   },
+   "c": 1,
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/associacao-de-capacitores/",
+    "titulo": "Associação de Capacitores: em série, paralelo e mista",
+    "conferido_em": "2026-11-07",
+    "base": "série, paralelo e mista",
+    "verificar": [
+     "Associação de Capacitores",
+     "capacitância"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "C1": "2 µF",
+     "C2": "3 µF",
+     "C3": "5 µF"
+    },
+    "expr": "C1+C2+C3",
+    "expr2": "C3+C2+C1",
+    "unidade": "µF",
+    "simbolo": "C_eq",
+    "formula": "C_eq = C₁ + C₂ + C₃",
+    "rotulos": {
+     "C1": "C₁",
+     "C2": "C₂",
+     "C3": "C₃"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "cp",
+   "q": "Um capacitor de 4 µF está em série com um conjunto formado por dois capacitores de 3 µF ligados em paralelo. Qual é a capacitância equivalente da associação?",
+   "o": [
+    "2,4 µF",
+    "10 µF",
+    "1,5 µF",
+    "7 µF"
+   ],
+   "a": 0,
+   "h": "Resolva primeiro o paralelo e depois a série.",
+   "e": "O paralelo vale 3 + 3 = 6 µF. Em série com 4 µF: C_eq = 4×6/(4+6) = 2,4 µF.",
+   "x": {
+    "1": "Somou tudo (4 + 3 + 3).",
+    "2": "Tratou os três como se fossem em série com valor igual.",
+    "3": "Somou 4 e 3 e errou a ligação."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/associacao-de-capacitores/",
+    "titulo": "Associação de Capacitores: em série, paralelo e mista",
+    "conferido_em": "2026-11-07",
+    "base": "série, paralelo e mista",
+    "verificar": [
+     "Associação de Capacitores",
+     "capacitância"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "C1": "4 µF",
+     "C2": "3 µF",
+     "C3": "3 µF"
+    },
+    "expr": "C1*(C2+C3)/(C1+C2+C3)",
+    "expr2": "1/(1/C1+1/(C2+C3))",
+    "unidade": "µF",
+    "simbolo": "C_eq",
+    "formula": "C_eq = C₁·(C₂+C₃) / (C₁+C₂+C₃)",
+    "rotulos": {
+     "C1": "C₁",
+     "C2": "C₂",
+     "C3": "C₃"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "cp",
+   "q": "Em uma associação de capacitores, qual afirmação é correta?",
+   "o": [
+    "Em série, todos têm a mesma carga; em paralelo, todos têm a mesma tensão.",
+    "Em série, todos têm a mesma tensão; em paralelo, todos têm a mesma carga.",
+    "Em série e em paralelo, todos têm a mesma carga.",
+    "Em série e em paralelo, todos têm a mesma tensão."
+   ],
+   "a": 0,
+   "h": "Série: um depois do outro. Paralelo: mesmos terminais.",
+   "e": "Em série a carga é a mesma (Q constante) e as tensões se somam. Em paralelo a tensão é a mesma (V constante) e as cargas se somam.",
+   "x": {
+    "1": "Inverteu as grandezas constantes de cada associação.",
+    "2": "Só em série a carga é igual.",
+    "3": "Só em paralelo a tensão é igual."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/associacao-de-capacitores/",
+    "titulo": "Associação de Capacitores: em série, paralelo e mista",
+    "conferido_em": "2026-11-07",
+    "base": "série, paralelo e mista",
+    "verificar": [
+     "Associação de Capacitores",
+     "capacitância"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "cp",
+   "q": "Dois capacitores, de 6 µF e 3 µF, são ligados em série a uma fonte de 12 V. Qual é a carga em cada capacitor?",
+   "o": [
+    "24 µC",
+    "72 µC",
+    "36 µC",
+    "4 µC"
+   ],
+   "a": 0,
+   "h": "Em série a carga é a mesma em todos. Calcule C_eq primeiro.",
+   "e": "C_eq = 6×3/(6+3) = 2 µF. Em série a carga é a mesma e igual à da associação: Q = C_eq · V = 2 × 12 = 24 µC.",
+   "x": {
+    "1": "Usou a carga do capacitor de 6 µF ligado direto na fonte.",
+    "2": "Somou as cargas de cada um ligado direto na fonte (72 + 36 não, usou 6 µF · 12 V).",
+    "3": "Dividiu 12 V pelo número de capacitores e errou."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/associacao-de-capacitores/",
+    "titulo": "Associação de Capacitores: em série, paralelo e mista",
+    "conferido_em": "2026-11-07",
+    "base": "série, paralelo e mista",
+    "verificar": [
+     "Associação de Capacitores",
+     "capacitância"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "Ceq": "2 µF",
+     "V": "12 V"
+    },
+    "expr": "Ceq*V",
+    "expr2": "V*Ceq",
+    "unidade": "µC",
+    "simbolo": "Q",
+    "formula": "Q = C_eq · V",
+    "rotulos": {
+     "Ceq": "C_eq",
+     "V": "V"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "cp",
+   "q": "Três capacitores iguais, de capacitância C cada, são ligados em série. A capacitância equivalente é:",
+   "o": [
+    "C / 3",
+    "3C",
+    "C",
+    "C / 9"
+   ],
+   "a": 0,
+   "h": "Some os inversos.",
+   "e": "Em série, 1/C_eq = 3/C, então C_eq = C/3.",
+   "x": {
+    "1": "3C seria o valor em paralelo.",
+    "2": "A capacitância equivalente em série é menor que C.",
+    "3": "Somou o inverso errado."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/capacitores/",
+    "titulo": "Capacitor: o que é, fórmula, função e exercícios",
+    "conferido_em": "2026-11-07",
+    "base": "C = Q/V, energia e associações",
+    "verificar": [
+     "Capacitância",
+     "farad"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  }
+ ]
+}

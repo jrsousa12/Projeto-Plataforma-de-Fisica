@@ -1,0 +1,57 @@
+{
+ "quiz": "termo",
+ "questoes": [
+  {
+   "t": "dl",
+   "q": "Um trilho de aço de 10 m de comprimento a 20 °C é aquecido até 55 °C. Sabendo que o coeficiente de dilatação linear do aço é 12·10⁻⁶ °C⁻¹, de quantos milímetros o trilho se alonga?",
+   "o": [
+    "4,2 mm",
+    "42 mm",
+    "0,42 mm",
+    "12 mm"
+   ],
+   "a": 0,
+   "h": "Use ΔL = L₀ · α · ΔT e converta o resultado de metros para milímetros.",
+   "e": "ΔT = 55 − 20 = 35 °C. ΔL = 10 · 12·10⁻⁶ · 35 = 4,2·10⁻³ m = 4,2 mm.",
+   "x": [
+    "Esqueceu de dividir por 10 ao converter para milímetros.",
+    "Converteu errado a potência de dez.",
+    "Confundiu o coeficiente com a variação de comprimento."
+   ],
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-2/pages/1-3-thermal-expansion",
+    "titulo": "1.3 Thermal Expansion - University Physics Volume 2",
+    "conferido_em": "2026-11-07",
+    "base": "equação da dilatação linear ΔL = αLΔT",
+    "verificar": [
+     "thermal expansion",
+     "coefficient of linear expansion"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "L0": "10 m",
+     "alfa": "12e-6 1/K",
+     "dT": "35 K"
+    },
+    "expr": "L0*alfa*dT",
+    "expr2": "alfa*dT*L0",
+    "unidade": "mm",
+    "simbolo": "ΔL",
+    "formula": "ΔL = L₀ · α · ΔT",
+    "rotulos": {
+     "L0": "L₀",
+     "alfa": "α",
+     "dT": "ΔT"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "dilatacao"
+   }
+  }
+ ]
+}

@@ -1,0 +1,211 @@
+(function(){"use strict";
+var FIG=window.FIG,Q=window.BANK.slice();
+/* Armazenamento versionado: todas as chaves ficam sob o prefixo "eletriz:" e há migração do formato antigo. */
+var LEG={};
+var ST=(function(){var P="eletriz:";
+function g(k,d){try{var v=localStorage.getItem(P+k);return v===null?d:JSON.parse(v)}catch(e){return d}}
+function s(k,v){try{localStorage.setItem(P+k,JSON.stringify(v))}catch(e){}}
+function del(k){try{localStorage.removeItem(P+k)}catch(e){}}
+function mig(){if(g("ver",0)>=2)return;try{var L=function(k){return localStorage.getItem(k)},b=L("eletriz-book");
+if(b){var o=JSON.parse(b),n={};Object.keys(o).forEach(function(k){if(LEG[k])n[LEG[k]]=o[k]});s("book",n)}
+var h=L("eletriz-hist");if(h)s("hist",JSON.parse(h));var r=L("eletrizacao-rank");if(r)s("rank",JSON.parse(r));
+if(L("eletriz-nick"))s("nick",L("eletriz-nick"));if(L("eletriz-theme"))s("theme",L("eletriz-theme"));if(L("eletriz-big"))s("big",L("eletriz-big")==="1")}catch(e){}s("ver",2)}
+return {get:g,set:s,del:del,mig:mig}})();
+Q.forEach(function(d){LEG[hk(d.q)]=d.id});ST.mig();
+var shuf=function(a){a=a.slice();for(var n=a.length-1;n>0;n--){var j=Math.floor(Math.random()*(n+1)),t=a[n];a[n]=a[j];a[j]=t}return a};
+var perm=[];
+function poolSel(){return Q.map(function(_,k){return k}).filter(function(k){return sel.indexOf(Q[k].t)>=0})}
+function pickSet(n){n=n||10;var pool=poolSel(),pk=[];if($("reinf").checked){pk=shuf(bkList().filter(function(k){return pool.indexOf(k)>=0})).slice(0,Math.floor(n*0.4))}var rest=shuf(pool.filter(function(k){return pk.indexOf(k)<0}));return shuf(pk.concat(rest.slice(0,n-pk.length)))}
+var $=function(id){return document.getElementById(id)};
+var order=[],i=0,score=0,res=[],locked=false,hinted=false,t0=0,timer=null;
+function fmt(s){var m=Math.floor(s/60),r=s%60;return (m<10?"0":"")+m+":"+(r<10?"0":"")+r}
+function num(n){return String(n).replace(".",",")}
+function tick(){var sc2=Math.floor((Date.now()-t0)/1000);if(mode==="simulado"){var r=2400-sc2;$("tm").textContent=fmt(Math.max(r,0));if(r<=0&&!$("quiz").classList.contains("hidden")){finish()}}else{$("tm").textContent=fmt(sc2)}}
+function dots(){
+  var h="";
+  for(var k=0;k<order.length;k++){h+='<div class="dot '+(k<res.length?(res[k].ok?"ok":"bad"):(k===i?"cur":""))+'"></div>'}
+  $("dots").innerHTML=h;
+}
+function start(list,full){
+  isFull=full!==false;order=list;i=0;score=0;res=[];
+  ["home","book","sheet","cards","hist"].forEach(function(id){$(id).classList.add("hidden")});$("bar").classList.remove("hidden");$("dots").classList.remove("hidden");
+  $("end").classList.add("hidden");$("quiz").classList.remove("hidden");setHash("quiz");$("exitq").classList.add("hidden");
+  t0=Date.now();clearInterval(timer);timer=setInterval(tick,1000);tick();
+  show();
+}
+function show(){
+  locked=false;hinted=false;
+  var d=Q[order[i]];G=d.g?d.g():null;$("quiz").setAttribute("data-a",d.t);$("quiz").classList.remove("qin");void $("quiz").offsetWidth;$("quiz").classList.add("qin");
+  perm=d.v?d.o.map(function(_,n){return n}):shuf(d.o.map(function(_,n){return n}));
+  $("count").textContent="Pergunta "+(i+1)+" de "+order.length+" · "+TN[d.t];
+  $("pts").textContent=num(score);
+  $("q").textContent=G?G.q:d.q;
+  var fg=$("fig");
+  if(d.f){fg.innerHTML='<svg viewBox="0 0 320 140" role="img" aria-label="'+FIG[d.f].a+'">'+FIG[d.f].s+'</svg>';fg.classList.remove("hidden")}else{fg.classList.add("hidden");fg.innerHTML=""}
+  $("fb").innerHTML="";$("hint").innerHTML="";
+  $("hbtn").classList.remove("hidden");$("hbtn").textContent=mode==="tempo"?"Ver dica (vale meio ponto)":"Ver dica";if(mode==="simulado")$("hbtn").classList.add("hidden");startQ();
+  $("next").classList.add("hidden");
+  var box=$("opts");box.innerHTML="";if(G){box.innerHTML='<input id="num" inputmode="decimal" autocomplete="off" placeholder="Sua resposta em '+G.u+' (margem de 2%)" class="fld"><button class="btn" id="nsend" style="margin-top:0">Responder</button>';$("nsend").onclick=submitNum;$("num").onkeydown=function(e){if(e.key==="Enter")submitNum()}}
+  perm.forEach(function(oi,k){var t=d.o[oi];
+    var b=document.createElement("button");b.className="opt";
+    var l=document.createElement("span");l.className="l";l.textContent="ABCD".charAt(k);
+    var s=document.createElement("span");s.textContent=t;
+    b.appendChild(l);b.appendChild(s);b.onclick=function(){pick(k)};box.appendChild(b);
+  });
+  dots();
+}
+function pick(k,nok){
+  if(locked)return;locked=true;clearInterval(qt);
+  var d=Q[order[i]],oi=k<0?-1:perm[k],ok=nok!==undefined?nok:oi===d.a,bs=$("opts").children;
+  for(var n=0;n<bs.length;n++){bs[n].disabled=true;if(perm[n]===d.a)bs[n].classList.add("right")}
+  if(!ok&&k>=0)bs[k].classList.add("wrong");if(ok&&bs[k])bs[k].classList.add("win");
+  if(ok)score+=(hinted&&mode==="tempo")?0.5:1;
+  res.push({qi:order[i],pick:oi,ok:ok,hint:hinted,g:G,v:NV});bkUpdate(order[i],ok);if(ok){var ch=$("pts").parentNode;ch.classList.remove("bump");void ch.offsetWidth;ch.classList.add("bump")}if(mode==="simulado"){$("pts").textContent="–";if(i<order.length-1){i++;show()}else{finish()}return}
+  $("pts").textContent=num(score);
+  $("hbtn").classList.add("hidden");
+  $("fb").innerHTML='<div class="fb'+(ok?"":" no")+'"><b>'+(ok?(hinted&&mode==="tempo"?"Correto, com dica! (meio ponto)":"Correto!"):(k===-1?"Tempo esgotado.":"Não foi dessa vez."))+'</b><p></p></div>';
+  $("fb").querySelector("p").textContent=G?G.e+" Resposta: "+G.at:d.e;
+  $("next").textContent=i<order.length-1?"Próxima pergunta":"Ver resultado";
+  $("next").classList.remove("hidden");$("next").scrollIntoView({block:"nearest"});
+  dots();
+}
+$("next").onclick=function(){if(i<order.length-1){i++;show()}else{finish()}};
+function finish(){
+  clearInterval(timer);clearInterval(qt);
+  var secs=Math.floor((Date.now()-t0)/1000),right=res.filter(function(r){return r.ok}).length,hints=res.filter(function(r){return r.hint}).length;
+  $("quiz").classList.add("hidden");$("end").classList.remove("hidden");setHash("resultado",true);$("exitq").classList.add("hidden");
+  $("final").textContent=num(score)+" / "+order.length;
+  if(isFull&&mode==="tempo"){saveRank(secs)}rank($("rank2"));
+  var ag={};res.forEach(function(r){var t=Q[r.qi].t;ag[t]=ag[t]||[0,0];ag[t][1]++;if(r.ok)ag[t][0]++});histAdd(ag);
+  $("areas").innerHTML='<div class="rk"><h3>Desempenho por área</h3><ol>'+Object.keys(ag).map(function(t){return '<li>'+TN[t]+': <b>'+ag[t][0]+' de '+ag[t][1]+'</b></li>'}).join("")+'</ol></div>';
+  $("s1").textContent=right+" de "+order.length;$("s2").textContent=hints;$("s3").textContent=fmt(secs);
+  var p=score/order.length;$("final").classList.toggle("party",p>=0.7);
+  $("msg").textContent=p===1?"Perfeito! Você domina os processos de eletrização.":p>=0.7?"Muito bem! Revise só os pontos que errou.":p>=0.4?"Bom começo. Vale rever a diferença entre contato e indução.":"Revise os conceitos básicos e tente de novo. Você chega lá!";
+  var wrong=res.filter(function(r){return !r.ok}),h="";
+  wrong.forEach(function(r){
+    var d=Q[r.qi];
+    h+='<div class="rv"><h3></h3><p><b>Você marcou:</b> <span class="a"></span></p><p><b>Correta:</b> <span class="b"></span></p><p class="x"></p></div>';
+  });
+  $("rev").innerHTML=wrong.length?'<h3 style="font-family:Georgia,serif;margin:16px 0 0">Revise estas perguntas</h3>'+h:'';
+  var cards=$("rev").querySelectorAll(".rv");
+  wrong.forEach(function(r,n){
+    var d=Q[r.qi],c=cards[n];
+    c.querySelector("h3").textContent=d.q;
+    c.querySelector(".a").textContent=r.pick<0?"Sem resposta (tempo esgotado)":d.o[r.pick];
+    c.querySelector(".b").textContent=d.o[d.a];
+    c.querySelector(".x").textContent=d.e;if(r.g){c.querySelector("h3").textContent=r.g.q;c.querySelector(".a").textContent=String(r.v).replace(".",",");c.querySelector(".b").textContent=r.g.at;c.querySelector(".x").textContent=r.g.e}
+  });
+  $("redo").classList.toggle("hidden",!wrong.length);
+  window.__wrong=wrong.map(function(r){return r.qi});
+  dots();
+}
+$("redo").onclick=function(){start(window.__wrong.slice(),false)};
+var mode="estudo",TL=30,isFull=true;
+function getRank(){return ST.get("rank",[])}
+function saveRank(secs){try{var r=getRank();r.push({n:nick,s:score,t:secs});r.sort(function(a,b){return b.s-a.s||a.t-b.t});ST.set("rank",r.slice(0,20))}catch(e){}}
+function rank(el){var r=getRank().slice(0,5);el.innerHTML='<div class="rk"><h3>Melhores pontuações (cronometrado)</h3>'+(r.length?'<ol>'+r.map(function(x){return '<li>'+esc(x.n||"Anônimo")+': <b>'+num(x.s)+'</b> pontos · '+fmt(x.t)+'</li>'}).join("")+'</ol><small>Salvo neste navegador.</small>':'<small>Nenhuma pontuação ainda. Jogue uma rodada!</small>')+'</div>'}
+function goHome(){clearInterval(timer);clearInterval(qt);["quiz","end","bar","dots","book","sheet","cards","hist"].forEach(function(id){$(id).classList.add("hidden")});$("home").classList.remove("hidden");rank($("rank"));$("bopen").textContent="Caderno de erros ("+bkList().length+")";setHash("inicio");$("exitq").classList.add("hidden")}
+var qt=null,qs=0,nick="Anônimo";
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function startQ(){
+  clearInterval(qt);var tb=$("tbar");
+  if(mode!=="tempo"){tb.classList.add("hidden");return}
+  tb.classList.remove("hidden");tb.classList.remove("low");qs=Date.now();$("tfill").style.width="100%";
+  qt=setInterval(function(){var l=TL*1000-(Date.now()-qs);if(l<=0){$("tfill").style.width="0%";pick(-1);return}$("tfill").style.width=(l/(TL*10))+"%";tb.classList.toggle("low",l<8000)},200);
+}
+function begin(m){mode=m;nick=($("nick").value||"").trim()||"Anônimo";ST.set("nick",nick);start(pickSet(m==="simulado"?20:10),true)}
+var TN={el:"Eletrização",co:"Lei de Coulomb",ca:"Campo elétrico",po:"Potencial elétrico",eq:"Condutores em equilíbrio"},sel=Object.keys(TN);
+Object.keys(TN).forEach(function(k){var b=document.createElement("button");b.className="chip2 on";b.setAttribute("data-a",k);b.textContent=TN[k];b.setAttribute("aria-pressed","true");b.onclick=function(){var on=sel.indexOf(k)>=0;if(on&&sel.length===1)return;sel=on?sel.filter(function(x){return x!==k}):sel.concat(k);b.classList.toggle("on",!on);b.setAttribute("aria-pressed",String(!on))};$("chips").appendChild(b)});
+function hk(q){var h=0;for(var n=0;n<q.length;n++)h=(h*31+q.charCodeAt(n))|0;return String(h)}
+var HI={};Q.forEach(function(d,k){HI[d.id]=k});
+function bkGet(){return ST.get("book",{})}
+function bkSet(o){ST.set("book",o)}
+function bkUpdate(qi,ok){if(Q[qi].g)return;var o=bkGet(),k=Q[qi].id,x=o[k];if(!ok){x=x||{w:0,r:0};x.w++;x.r=0;o[k]=x}else if(x){x.r++;if(x.r>=2)delete o[k]}bkSet(o)}
+function bkList(){var o=bkGet();return Object.keys(o).filter(function(k){return HI[k]!==undefined}).sort(function(a,b){return o[b].w-o[a].w}).map(function(k){return HI[k]})}
+function renderBook(){var l=bkList(),o=bkGet(),h="";l.forEach(function(qi){var d=Q[qi];h+='<div class="rv"><h3>'+esc(d.q)+'</h3><p><b>Correta:</b> '+esc(d.o[d.a])+'</p><p>'+esc(d.e)+'</p><p style="color:var(--muted)">Erros: '+o[d.id].w+' · '+TN[d.t]+'</p></div>'});$("bookbody").innerHTML=h||'<p>Seu caderno está vazio. As questões que você errar aparecem aqui e saem depois de 2 acertos seguidos.</p>';$("btrain").classList.toggle("hidden",!l.length);$("bclear").classList.toggle("hidden",!l.length)}
+function renderSheet(){var ids=shuf(poolSel().filter(function(k){return !Q[k].g})).slice(0,10),h='<h3 style="margin:0 0 4px;font-family:Georgia,serif">Lista de exercícios: eletrostática</h3><p style="margin:0 0 10px;color:var(--muted);font-size:.9rem">Áreas: '+sel.map(function(k){return TN[k]}).join(", ")+'</p>',g='';
+ids.forEach(function(qi,n){var d=Q[qi],pm=d.v?d.o.map(function(_,x){return x}):shuf(d.o.map(function(_,x){return x}));h+='<div class="sq"><p><b>'+(n+1)+'.</b> '+esc(d.q)+'</p>'+(d.f?'<div class="fig sf"><svg viewBox="0 0 320 140">'+FIG[d.f].s+'</svg></div>':'')+'<ol type="A">'+pm.map(function(oi){return '<li>'+esc(d.o[oi])+'</li>'}).join("")+'</ol></div>';g+='<p><b>'+(n+1)+'. '+"ABCD".charAt(pm.indexOf(d.a))+'</b> '+esc(d.e)+'</p>'});
+$("sheetbody").innerHTML=h+'<div class="pb"><h3 style="font-family:Georgia,serif">Gabarito comentado</h3>'+g+'</div>'}
+function openOnly(id){["home","quiz","end","book","sheet","cards","hist"].forEach(function(x){$(x).classList.add("hidden")});["bar","dots"].forEach(function(x){$(x).classList.add("hidden")});$(id).classList.remove("hidden");window.scrollTo(0,0);setHash(VMAP[id])}
+$("bopen").onclick=function(){openOnly("book");renderBook()};
+$("bback").onclick=goHome;$("sback").onclick=goHome;
+$("bclear").onclick=function(){bkSet({});renderBook()};
+$("btrain").onclick=function(){var l=bkList();if(l.length){mode="estudo";start(shuf(l).slice(0,10),false)}};
+$("sopen").onclick=function(){openOnly("sheet");renderSheet()};
+$("snew").onclick=renderSheet;
+$("sprint").onclick=function(){try{window.print()}catch(e){}};
+$("go").onclick=function(){begin("estudo")};
+var Rn=function(a){return a[Math.floor(Math.random()*a.length)]},fc=function(x){return (+x.toPrecision(3)+"").replace(".",",")};
+var sup=function(n){return String(n).replace(/[-0-9]/g,function(c){return "⁻⁰¹²³⁴⁵⁶⁷⁸⁹".charAt("-0123456789".indexOf(c))})};
+var sc=function(x){if(!x)return "0";var e=Math.floor(Math.log10(Math.abs(x)));if(e>=-2&&e<=3)return fc(x);return fc(x/Math.pow(10,e))+" × 10"+sup(e)};
+var gn=0;
+function GQ(t,id,h,f){return {t:t,o:[],a:0,q:"Questão numérica: "+id,h:h,e:"",g:f,id:"n"+(++gn)}}
+Q.push(
+GQ("co","força de Coulomb","Use F = k·q₁·q₂ / d².",function(){var a=Rn([1,2,3,4,5]),b=Rn([1,2,3,6]),d=Rn([0.1,0.2,0.3,0.5]),F=9e9*a*b*1e-12/(d*d);return {q:"Duas cargas de +"+a+" µC e +"+b+" µC estão a "+fc(d)+" m no vácuo. Qual é a intensidade da força entre elas, em N? (k = 9 × 10⁹ N·m²/C²)",ans:F,u:"N",at:sc(F)+" N",e:"F = 9 × 10⁹ × "+a+" × 10⁻⁶ × "+b+" × 10⁻⁶ / ("+fc(d)+")² = "+sc(F)+" N."}}),
+GQ("ca","campo de carga puntiforme","Use E = k·Q / d².",function(){var a=Rn([1,2,4,5]),d=Rn([0.3,0.5,1,2]),E=9e9*a*1e-6/(d*d);return {q:"Qual é o módulo do campo elétrico a "+fc(d)+" m de uma carga puntiforme de +"+a+" µC, no vácuo, em N/C? (k = 9 × 10⁹ N·m²/C²)",ans:E,u:"N/C",at:sc(E)+" N/C",e:"E = 9 × 10⁹ × "+a+" × 10⁻⁶ / ("+fc(d)+")² = "+sc(E)+" N/C."}}),
+GQ("po","potencial de carga puntiforme","Use V = k·Q / d.",function(){var a=Rn([2,3,5,6]),d=Rn([1,2,3,6]),V=9e9*a*1e-6/d;return {q:"Qual é o potencial elétrico a "+d+" m de uma carga de +"+a+" µC, no vácuo, em V? (k = 9 × 10⁹ N·m²/C²)",ans:V,u:"V",at:sc(V)+" V",e:"V = 9 × 10⁹ × "+a+" × 10⁻⁶ / "+d+" = "+sc(V)+" V."}}),
+GQ("po","trabalho e diferença de potencial","Use W = q·U, com q em coulombs.",function(){var a=Rn([1,2,4,5]),U=Rn([50,100,200,500]),W=a*1e-6*U;return {q:"Uma carga de "+a+" µC se desloca entre dois pontos com diferença de potencial de "+U+" V. Qual é o trabalho da força elétrica, em J?",ans:W,u:"J",at:sc(W)+" J",e:"W = q·U = "+a+" × 10⁻⁶ × "+U+" = "+sc(W)+" J."}}),
+GQ("el","número de elétrons","Use n = Q / e.",function(){var a=Rn([1.6,3.2,4.8,8]),n=a*1e-6/1.6e-19;return {q:"Um corpo tem carga de +"+fc(a)+" µC. Quantos elétrons ele perdeu? (e = 1,6 × 10⁻¹⁹ C)",ans:n,u:"elétrons",at:sc(n)+" elétrons",e:"n = Q / e = "+fc(a)+" × 10⁻⁶ / 1,6 × 10⁻¹⁹ = "+sc(n)+" elétrons."}}),
+GQ("el","divisão de carga entre esferas","Some as cargas com sinal e divida por dois.",function(){var a=Rn([6,8,10,12]),b=Rn([-2,-4,2,4]),r=(a+b)/2;return {q:"A esfera A (+"+a+" µC) toca a esfera B ("+(b>0?"+":"−")+Math.abs(b)+" µC), idêntica. Qual é a carga final de cada esfera, em µC?",ans:r,u:"µC",at:fc(r)+" µC",e:"Carga total = "+a+" + ("+b+") = "+(a+b)+" µC. Dividindo por dois: "+fc(r)+" µC em cada esfera."}}),
+GQ("ca","força sobre carga em campo","Use F = q·E.",function(){var a=Rn([1,2,5]),E=Rn([1e3,2e4,3e5]),F=a*1e-6*E;return {q:"Uma carga de "+a+" µC está em um campo elétrico de "+sc(E)+" N/C. Qual é a intensidade da força sobre ela, em N?",ans:F,u:"N",at:sc(F)+" N",e:"F = q·E = "+a+" × 10⁻⁶ × "+sc(E)+" = "+sc(F)+" N."}})
+);
+var G=null,NV=0;
+function submitNum(){if(locked)return;var v=parseFloat(($("num").value||"").replace("−","-").replace(",","."));if(isNaN(v))return;NV=v;var ok=Math.abs(v-G.ans)<=Math.abs(G.ans)*0.02;$("num").disabled=true;$("nsend").classList.add("hidden");pick(-2,ok)}
+var CARDS=[["Carga elementar","e = 1,6 × 10⁻¹⁹ C"],["Quantização da carga","Q = n·e, com n inteiro"],["Conservação da carga","Em sistema isolado, a soma algébrica das cargas é constante."],["Lei de Coulomb","F = k·|q₁·q₂| / d², com k ≈ 9 × 10⁹ N·m²/C²"],["Campo elétrico","E = F/q. Carga puntiforme: E = k·|Q| / d². Unidade: N/C."],["Sentido do campo","Sai das cargas positivas e chega às negativas."],["Força sobre carga no campo","F = q·E. Se q é negativa, F tem sentido oposto a E."],["Potencial de carga puntiforme","V = k·Q / d (grandeza escalar)"],["Trabalho e diferença de potencial","W = q·U, com U = V_A − V_B"],["Campo uniforme","U = E·d"],["Energia potencial de duas cargas","Ep = k·q₁·q₂ / d"],["Superfície equipotencial","W = 0 ao longo dela. As linhas de campo são perpendiculares a ela."],["Eletrização por atrito","Corpos neutros trocam elétrons e ficam com cargas opostas."],["Eletrização por contato","O neutro fica com carga de mesmo sinal. Condutores idênticos dividem a carga."],["Eletrização por indução","O induzido fica com sinal oposto ao do indutor, com ligação à terra."],["Condutor em equilíbrio","E = 0 no interior, carga na superfície e potencial constante."],["Poder das pontas","Densidade de cargas e campo são maiores onde o raio de curvatura é menor."],["Gaiola de Faraday","Condutor oco blinda o interior: o campo no interior é nulo."]],fi=0,fl=false;
+function renderCard(){$("cc").textContent="Cartão "+(fi+1)+" de "+CARDS.length+(fl?" · resposta":" · conceito");$("fc").textContent=fl?CARDS[fi][1]:CARDS[fi][0];$("fc").className="fc"+(fl?" back":"")}
+function flip(){fl=!fl;renderCard()}
+$("fopen").onclick=function(){openOnly("cards");fi=0;fl=false;renderCard()};
+$("fc").onclick=flip;$("cflip").onclick=flip;
+$("cnext").onclick=function(){fi=(fi+1)%CARDS.length;fl=false;renderCard()};
+$("cshuf").onclick=function(){CARDS=shuf(CARDS);fi=0;fl=false;renderCard()};
+$("cback").onclick=goHome;
+function histAdd(ag){if(!isFull)return;var h=ST.get("hist",[]);h.push({d:Date.now(),a:ag,s:score,n:order.length});ST.set("hist",h.slice(-50))}
+function renderHist(){var h=ST.get("hist",[]);var t={},o="";h.forEach(function(x){Object.keys(x.a).forEach(function(k){t[k]=t[k]||[0,0];t[k][0]+=x.a[k][0];t[k][1]+=x.a[k][1]})});
+Object.keys(TN).forEach(function(k){if(t[k]){var p=Math.round(100*t[k][0]/t[k][1]);o+='<p style="margin:8px 0 0"><b>'+TN[k]+'</b>: '+p+'% ('+t[k][0]+' de '+t[k][1]+')</p><div class="hb"><i style="width:'+p+'%"></i></div>'}});
+if(h.length){o+='<p style="margin:10px 0 4px"><b>Últimas rodadas</b></p><ol style="padding-left:22px;margin:0;font-size:.93rem">'+h.slice(-5).reverse().map(function(x){return '<li>'+new Date(x.d).toLocaleDateString("pt-BR")+': '+num(x.s)+' / '+x.n+'</li>'}).join("")+'</ol>'}
+$("histbody").innerHTML=o||'<p>Ainda não há dados. Termine um quiz para ver sua evolução por área.</p>'}
+$("hopen").onclick=function(){openOnly("hist");renderHist()};$("hback").onclick=goHome;
+$("hclear").onclick=function(){ST.del("hist");renderHist()};
+$("mopen").onclick=function(){begin("simulado")};
+$("bexp").onclick=function(){var c=btoa(JSON.stringify(bkGet()));$("bkio").value=c;try{navigator.clipboard.writeText(c).catch(function(){})}catch(e){}$("bmsg").textContent="Código gerado. Copie e cole em outro aparelho."};
+$("bimp").onclick=function(){try{var o=JSON.parse(atob($("bkio").value.trim())),c=bkGet();Object.keys(o).forEach(function(k0){var k=LEG[k0]||k0;if(!c[k]||c[k].w<o[k0].w)c[k]=o[k0]});bkSet(c);renderBook();$("bmsg").textContent="Caderno importado."}catch(e){$("bmsg").textContent="Código inválido."}};
+$("hbtn").onclick=function(){if(locked)return;var d=Q[order[i]];if(!hinted){hinted=true;$("hint").innerHTML='<div class="hint"></div>';$("hint").firstChild.textContent="Dica: "+d.h;if(d.g||d.o.length<4){$("hbtn").classList.add("hidden")}else{$("hbtn").textContent="Eliminar duas alternativas"}}else{var bs=$("opts").children,n=0;for(var k=0;k<bs.length&&n<2;k++){if(perm[k]!==d.a&&!bs[k].disabled){bs[k].disabled=true;bs[k].style.opacity=".35";n++}}$("hbtn").classList.add("hidden")}};
+$("go2").onclick=function(){begin("tempo")};
+$("share").onclick=function(){var b=$("share"),t="Fiz "+num(score)+"/"+order.length+" no quiz de eletrostática ("+(mode==="tempo"?"cronometrado":"modo estudo")+") em "+$("s3").textContent+". Tente também!";if(navigator.share){navigator.share({text:t}).catch(function(){})}else if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){b.textContent="Copiado!"}).catch(function(){})}};
+$("prt").onclick=function(){try{window.print()}catch(e){}};
+$("fz").onclick=function(){var h=document.documentElement;h.classList.toggle("big");ST.set("big",h.classList.contains("big"));};
+$("th").onclick=function(){var h=document.documentElement,c=h.getAttribute("data-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"),n=c==="dark"?"light":"dark";h.setAttribute("data-theme",n);ST.set("theme",n);};
+var sv=ST.get("theme","");if(sv)document.documentElement.setAttribute("data-theme",sv);if(ST.get("big",false))document.documentElement.classList.add("big");$("nick").value=ST.get("nick","");
+$("again").onclick=function(){start(pickSet(mode==="simulado"?20:10))};
+/* Navegação: cada tela tem um endereço #nome, então o botão voltar do celular e do navegador funciona. */
+var VW={inicio:1,quiz:1,resultado:1,caderno:1,lista:1,cartoes:1,desempenho:1},VMAP={home:"inicio",book:"caderno",sheet:"lista",cards:"cartoes",hist:"desempenho"};
+var curV="inicio",stk=["inicio"],skip=false,pend=null;
+var NOH=!/^(https?|file):$/.test(location.protocol);function setHash(v,rep){if(curV!==v){curV=v;if(rep){stk[stk.length-1]=v}else{stk.push(v)}if(!NOH&&location.hash!=="#"+v){skip=true;try{if(rep){location.replace("#"+v)}else{location.hash=v}}catch(e){skip=false}}}$("navb").classList.toggle("off",v==="inicio")}
+function running(){return curV==="quiz"&&!$("quiz").classList.contains("hidden")}
+function askExit(v){pend=v;$("exitq").classList.remove("hidden");window.scrollTo(0,0);$("exstay").focus()}
+function navTo(v){if(v==="caderno"){openOnly("book");renderBook()}else if(v==="lista"){openOnly("sheet");renderSheet()}else if(v==="cartoes"){openOnly("cards");fi=0;fl=false;renderCard()}else if(v==="desempenho"){openOnly("hist");renderHist()}else{goHome()}}
+window.addEventListener("hashchange",function(){if(skip){skip=false;return}var v=location.hash.slice(1)||"inicio";if(!VW[v]||v===curV)return;
+if(running()){skip=true;location.hash="quiz";askExit(v);return}
+if(stk.length>1&&stk[stk.length-2]===v){stk.pop()}else{stk.push(v)}curV=v;navTo(v)});
+$("back").onclick=function(){if(running()){askExit("inicio")}else if(!NOH&&stk.length>1){history.back()}else{goHome()}};
+$("homebtn").onclick=function(){if(running()){askExit("inicio")}else{goHome()}};
+$("exstay").onclick=function(){$("exitq").classList.add("hidden")};
+$("exleave").onclick=function(){$("exitq").classList.add("hidden");clearInterval(qt);clearInterval(timer);stk.pop();curV="";var v=pend||"inicio";pend=null;navTo(v)};
+document.addEventListener("keydown",function(e){if(e.key!=="Escape")return;if(!$("exitq").classList.contains("hidden")){$("exstay").click()}else if(curV!=="inicio"){$("back").click()}});
+$("gohome").onclick=goHome;
+goHome();
+$("hst").innerHTML="<span>"+Q.length+" questões</span><span>5 áreas</span><span>3 modos</span>";
+document.querySelectorAll(".chip2").forEach(function(b){var k=b.getAttribute("data-a");b.textContent=TN[k]+" · "+Q.filter(function(d){return d.t===k}).length});
+var PALS=["indigo","floresta","grafite"],pv=ST.get("pal","indigo");document.documentElement.setAttribute("data-pal",pv);
+$("pal").onclick=function(){var c=document.documentElement.getAttribute("data-pal")||"indigo",n=PALS[(PALS.indexOf(c)+1)%PALS.length];document.documentElement.setAttribute("data-pal",n);ST.set("pal",n);var bt=$("pal");bt.textContent={indigo:"Índigo",floresta:"Floresta",grafite:"Grafite"}[n];setTimeout(function(){bt.textContent="Cores"},1400)};
+/* Validação do banco: roda ao abrir a página. Abra com #teste para ver o resultado no topo. */
+function validateBank(){var er=[],ids={},qs={};Q.forEach(function(d,k){var w="Q"+(k+1)+" ("+(d.id||"sem id")+")";
+if(!d.id)er.push(w+": sem id");else if(ids[d.id])er.push(w+": id repetido");ids[d.id]=1;
+if(!TN[d.t])er.push(w+": área inválida");if(!d.h)er.push(w+": sem dica");
+if(!d.g){if(!d.e)er.push(w+": sem explicação");if(!d.o||d.o.length<2)er.push(w+": poucas alternativas");else{if(!(d.a>=0&&d.a<d.o.length))er.push(w+": gabarito fora do intervalo");if(new Set(d.o).size!==d.o.length)er.push(w+": alternativas repetidas")}if(qs[d.q])er.push(w+": pergunta repetida");qs[d.q]=1}
+if(d.f&&!FIG[d.f])er.push(w+": figura inexistente ("+d.f+")")});return er}
+var BE=validateBank();
+if(BE.length){console.warn("Banco com problemas:\n"+BE.join("\n"))}
+if(location.hash==="#teste"){document.querySelector(".hero p").textContent=BE.length?"Banco: "+BE.length+" problema(s). Veja o console.":"Banco OK: "+Q.length+" questões validadas."}
+if(location.hash==="#debug"){window.__qz=function(c){return eval(c)}}
+})();

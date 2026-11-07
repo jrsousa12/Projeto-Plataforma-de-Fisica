@@ -1,0 +1,2 @@
+https://openstax.org/books/university-physics-volume-2/pages/1-3-thermal-expansion#2026-11-07
+Thermal expansion: the change in size of a system as its temperature changes. Linear thermal expansion: change in length ΔL = α L ΔT, where α is the coefficient of linear expansion. Expansion joints in railroad tracks and bridges.

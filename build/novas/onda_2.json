@@ -1,0 +1,1436 @@
+{
+ "quiz": "onda",
+ "questoes": [
+  {
+   "t": "fn",
+   "q": "Uma pessoa ouve a conversa de colegas que estão do outro lado de um muro, mas não consegue vê-los. Qual fenômeno explica por que o som chega até ela?",
+   "o": [
+    "Difração: o som contorna o obstáculo, pois seu comprimento de onda é comparável às dimensões do muro.",
+    "Refração: o som atravessa o muro sem mudar de direção.",
+    "Polarização: o muro filtra a vibração.",
+    "Efeito Doppler: a pessoa se aproxima da fonte."
+   ],
+   "a": 0,
+   "h": "Compare o comprimento de onda do som com o do muro.",
+   "e": "O comprimento de onda do som vai de centímetros a vários metros, comparável ao tamanho de obstáculos comuns. Por isso ele contorna (difrata) o muro. A luz tem comprimento de onda minúsculo e quase não contorna.",
+   "x": {
+    "1": "Refração é mudança de velocidade ao trocar de meio.",
+    "2": "Polarização só ocorre em ondas transversais, e o som no ar é longitudinal.",
+    "3": "O efeito Doppler envolve movimento relativo, que aqui não existe."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "PhET",
+    "url": "https://phet.colorado.edu/pt_BR/simulations/waves-intro",
+    "titulo": "Ondas: Introdução",
+    "conferido_em": "2026-11-07",
+    "base": "propagação, reflexão e contorno de obstáculos por ondas",
+    "verificar": [
+     "ondas",
+     "frequência"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sobre contorno de obstáculos, sem cálculo; a animação disponível não cobre difração."
+   }
+  },
+  {
+   "t": "fn",
+   "q": "Fones de ouvido com cancelamento de ruído captam o som do ambiente e emitem uma onda com a mesma frequência e amplitude, mas em oposição de fase. Qual fenômeno reduz o ruído?",
+   "o": [
+    "Interferência destrutiva.",
+    "Interferência construtiva.",
+    "Reverberação.",
+    "Difração."
+   ],
+   "a": 0,
+   "h": "Ondas em oposição de fase se somam ou se anulam?",
+   "e": "Duas ondas iguais em oposição de fase se anulam ao se superpor. É a interferência destrutiva.",
+   "x": {
+    "1": "Na construtiva as ondas estão em fase e o som aumenta.",
+    "2": "Reverberação é prolongamento do som por reflexões.",
+    "3": "Difração é o contorno de obstáculos."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "PhET",
+    "url": "https://phet.colorado.edu/pt_BR/simulations/wave-interference",
+    "titulo": "Interferência de Onda",
+    "conferido_em": "2026-11-07",
+    "base": "interferência construtiva e destrutiva",
+    "verificar": [
+     "interferência",
+     "ondas"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sobre superposição de ondas, sem cálculo; sem animação própria nesta área."
+   }
+  },
+  {
+   "t": "fn",
+   "q": "Um cantor consegue quebrar uma taça de cristal ao emitir uma nota. Qual fenômeno explica o fato?",
+   "o": [
+    "Ressonância: a frequência do som é igual à frequência natural de vibração da taça.",
+    "Eco: o som volta da parede e bate na taça.",
+    "Efeito Doppler: o cantor se move em relação à taça.",
+    "Batimento: dois sons diferentes se somam."
+   ],
+   "a": 0,
+   "h": "Pense na frequência natural de vibração.",
+   "e": "Quando a frequência do som é igual a uma frequência natural da taça, ela absorve energia a cada ciclo e vibra com amplitude crescente, até quebrar. É a ressonância.",
+   "x": {
+    "1": "O eco é uma reflexão percebida depois de 0,1 s.",
+    "2": "Doppler exige movimento relativo entre fonte e receptor.",
+    "3": "Batimento ocorre com duas frequências próximas."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-1/pages/16-6-standing-waves-and-resonance",
+    "titulo": "16.6 Standing Waves and Resonance",
+    "conferido_em": "2026-11-07",
+    "base": "ressonância e ondas estacionárias",
+    "verificar": [
+     "resonance",
+     "standing wave"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito de ressonância, sem cálculo e sem cena disponível."
+   }
+  },
+  {
+   "t": "fn",
+   "q": "Dois alto-falantes idênticos emitem o mesmo tom, e as ondas chegam em fase a um ponto. O que se percebe nesse ponto?",
+   "o": [
+    "Um som mais intenso, por interferência construtiva.",
+    "Silêncio, por interferência destrutiva.",
+    "Um som mais agudo.",
+    "Um som mais lento."
+   ],
+   "a": 0,
+   "h": "Em fase significa que as vibrações se reforçam.",
+   "e": "Ondas em fase se somam: a amplitude resultante é maior e o som é mais intenso (interferência construtiva). A frequência não muda.",
+   "x": {
+    "1": "O silêncio ocorreria com ondas em oposição de fase.",
+    "2": "A frequência continua a mesma, logo a altura não muda.",
+    "3": "A velocidade do som no ar não depende da interferência."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "PhET",
+    "url": "https://phet.colorado.edu/pt_BR/simulations/wave-interference",
+    "titulo": "Interferência de Onda",
+    "conferido_em": "2026-11-07",
+    "base": "interferência construtiva e destrutiva",
+    "verificar": [
+     "interferência",
+     "ondas"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito de superposição, sem cálculo e sem cena disponível."
+   }
+  },
+  {
+   "t": "fn",
+   "q": "Dois diapasões, de 440 Hz e 444 Hz, soam ao mesmo tempo. Quantos batimentos por segundo se percebem?",
+   "o": [
+    "4 Hz",
+    "884 Hz",
+    "442 Hz",
+    "0,25 Hz"
+   ],
+   "a": 0,
+   "h": "A frequência de batimento é a diferença.",
+   "e": "A frequência de batimento é a diferença entre as frequências: f = 444 − 440 = 4 Hz.",
+   "x": {
+    "1": "Somou as frequências.",
+    "2": "442 Hz é a média, a frequência percebida do som.",
+    "3": "Usou o inverso da diferença."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "HyperPhysics",
+    "url": "https://hyperphysics.phy-astr.gsu.edu/hbase/Sound/beat.html",
+    "titulo": "Beats",
+    "conferido_em": "2026-11-07",
+    "base": "batimentos e frequência de batimento",
+    "verificar": [
+     "beat",
+     "frequency"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "f1": "440 Hz",
+     "f2": "444 Hz"
+    },
+    "expr": "f2-f1",
+    "expr2": "abs(f1-f2)",
+    "unidade": "Hz",
+    "simbolo": "f_bat",
+    "formula": "f_bat = |f₂ − f₁|",
+    "rotulos": {
+     "f1": "f₁",
+     "f2": "f₂"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "fn",
+   "q": "Dois sons de 512 Hz e 516 Hz são produzidos juntos. Qual é a frequência do som resultante que o ouvinte percebe, entre os batimentos?",
+   "o": [
+    "514 Hz",
+    "4 Hz",
+    "1028 Hz",
+    "2 Hz"
+   ],
+   "a": 0,
+   "h": "A frequência percebida é a média das duas.",
+   "e": "O som percebido tem frequência média: f = (512 + 516) / 2 = 514 Hz. Os batimentos têm 4 Hz.",
+   "x": {
+    "1": "4 Hz é a frequência dos batimentos, e não a do som.",
+    "2": "Somou as duas frequências.",
+    "3": "Dividiu a diferença por 2."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "HyperPhysics",
+    "url": "https://hyperphysics.phy-astr.gsu.edu/hbase/Sound/beat.html",
+    "titulo": "Beats",
+    "conferido_em": "2026-11-07",
+    "base": "batimentos e frequência de batimento",
+    "verificar": [
+     "beat",
+     "frequency"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "f1": "512 Hz",
+     "f2": "516 Hz"
+    },
+    "expr": "(f1+f2)/2",
+    "expr2": "f1+(f2-f1)/2",
+    "unidade": "Hz",
+    "simbolo": "f",
+    "formula": "f = (f₁ + f₂) / 2",
+    "rotulos": {
+     "f1": "f₁",
+     "f2": "f₂"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "dp",
+   "q": "Uma ambulância com a sirene ligada se aproxima de um pedestre parado. Ele percebe o som da sirene:",
+   "o": [
+    "Mais agudo, pois a frequência percebida é maior que a emitida.",
+    "Mais grave, pois a frequência percebida é menor que a emitida.",
+    "Mais forte, mas com a mesma frequência.",
+    "Com a mesma frequência e a mesma altura."
+   ],
+   "a": 0,
+   "h": "Pense nas frentes de onda mais juntas.",
+   "e": "Na aproximação, as frentes de onda chegam mais próximas umas das outras. A frequência percebida aumenta e o som parece mais agudo (efeito Doppler).",
+   "x": {
+    "1": "O som mais grave ocorre no afastamento.",
+    "2": "A intensidade pode mudar, mas o efeito Doppler altera a frequência percebida.",
+    "3": "A frequência percebida muda, mesmo que a emitida seja constante."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/efeito-doppler/",
+    "titulo": "Efeito Doppler",
+    "conferido_em": "2026-11-07",
+    "base": "frequência percebida na aproximação e no afastamento",
+    "verificar": [
+     "efeito Doppler",
+     "frequência"
+    ]
+   },
+   "an": "doppler"
+  },
+  {
+   "t": "dp",
+   "q": "A ambulância passa pelo pedestre e começa a se afastar. O que acontece com a frequência emitida pela sirene e com a percebida pelo pedestre?",
+   "o": [
+    "A emitida não muda, e a percebida fica menor.",
+    "A emitida fica menor, e a percebida também.",
+    "A emitida não muda, e a percebida fica maior.",
+    "As duas ficam iguais à frequência do pedestre."
+   ],
+   "a": 0,
+   "h": "A fonte não muda; o que muda é o que chega ao ouvido.",
+   "e": "A sirene continua emitindo a mesma frequência. No afastamento, as frentes de onda chegam mais espaçadas, e a frequência percebida diminui (som mais grave).",
+   "x": {
+    "1": "A fonte emite sempre a mesma frequência.",
+    "2": "No afastamento a frequência percebida diminui.",
+    "3": "O pedestre não tem frequência própria."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/efeito-doppler/",
+    "titulo": "Efeito Doppler",
+    "conferido_em": "2026-11-07",
+    "base": "frequência percebida na aproximação e no afastamento",
+    "verificar": [
+     "efeito Doppler",
+     "frequência"
+    ]
+   },
+   "an": "doppler"
+  },
+  {
+   "t": "dp",
+   "q": "Verdadeiro ou falso: no efeito Doppler, o movimento da fonte altera a velocidade com que o som se propaga no ar.",
+   "o": [
+    "Verdadeiro",
+    "Falso"
+   ],
+   "a": 1,
+   "h": "A velocidade depende do meio.",
+   "e": "Falso. A velocidade do som no ar depende do meio (e da temperatura), não do movimento da fonte. O que muda é o comprimento de onda à frente e atrás da fonte, e a frequência percebida.",
+   "v": 1,
+   "x": {
+    "0": "A velocidade do som é determinada pelo meio. O movimento da fonte muda λ e a frequência percebida."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "HyperPhysics",
+    "url": "https://hyperphysics.phy-astr.gsu.edu/hbase/Sound/dopp.html",
+    "titulo": "Doppler Effect",
+    "conferido_em": "2026-11-07",
+    "base": "frequência percebida com fonte em movimento",
+    "verificar": [
+     "Doppler",
+     "source"
+    ]
+   },
+   "an": "doppler"
+  },
+  {
+   "t": "dp",
+   "q": "O radar usado para medir a velocidade de veículos em rodovias e o ultrassom Doppler, usado para medir o fluxo de sangue, se baseiam em qual fenômeno?",
+   "o": [
+    "Efeito Doppler: a frequência da onda refletida em um corpo em movimento é diferente da emitida.",
+    "Ressonância: o corpo vibra na frequência natural.",
+    "Difração: a onda contorna o veículo.",
+    "Reverberação: o som se prolonga."
+   ],
+   "a": 0,
+   "h": "Pense em onda refletida por algo em movimento.",
+   "e": "Ao refletir em um corpo em movimento, a onda volta com a frequência alterada. A diferença entre a frequência emitida e a recebida permite calcular a velocidade (efeito Doppler).",
+   "x": {
+    "1": "Ressonância ocorre quando a frequência externa coincide com a natural.",
+    "2": "Difração é contorno de obstáculos.",
+    "3": "Reverberação é prolongamento do som em um ambiente."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/efeito-doppler/",
+    "titulo": "Efeito Doppler",
+    "conferido_em": "2026-11-07",
+    "base": "frequência percebida na aproximação e no afastamento",
+    "verificar": [
+     "efeito Doppler",
+     "frequência"
+    ]
+   },
+   "an": "doppler"
+  },
+  {
+   "t": "dp",
+   "q": "Uma ambulância, com sirene de 800 Hz, se aproxima a 30 m/s de um observador parado. A velocidade do som no ar é 340 m/s. Qual é a frequência percebida pelo observador?",
+   "o": [
+    "877 Hz",
+    "735 Hz",
+    "871 Hz",
+    "800 Hz"
+   ],
+   "a": 0,
+   "h": "Na aproximação, o denominador é v − vF.",
+   "e": "f' = f · v / (v − vF) = 800 · 340 / (340 − 30) = 877 Hz (aproximadamente).",
+   "x": {
+    "1": "Esse é o valor para a ambulância se afastando.",
+    "2": "Trocou o sinal e usou v + vF no numerador.",
+    "3": "800 Hz seria a frequência emitida, sem efeito Doppler."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/exercicios-sobre-o-efeito-doppler-com-gabarito/",
+    "titulo": "Exercícios sobre o efeito Doppler",
+    "conferido_em": "2026-11-07",
+    "base": "cálculo da frequência percebida",
+    "verificar": [
+     "Doppler",
+     "observador"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "f": "800 Hz",
+     "v": "340 m/s",
+     "vf": "30 m/s"
+    },
+    "expr": "f*v/(v-vf)",
+    "expr2": "f/(1-vf/v)",
+    "unidade": "Hz",
+    "simbolo": "f'",
+    "formula": "f' = f · v / (v − v_F)",
+    "rotulos": {
+     "f": "f",
+     "v": "v",
+     "vf": "v_F"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "dp",
+   "q": "A mesma ambulância (sirene de 800 Hz), agora se afastando a 30 m/s de um observador parado, com o som a 340 m/s. Qual é a frequência percebida?",
+   "o": [
+    "735 Hz",
+    "877 Hz",
+    "700 Hz",
+    "800 Hz"
+   ],
+   "a": 0,
+   "h": "No afastamento, o denominador é v + vF.",
+   "e": "No afastamento, f' = f · v / (v + vF) = 800 · 340 / (340 + 30) = 735 Hz (aproximadamente).",
+   "x": {
+    "1": "Esse é o valor para a ambulância se aproximando.",
+    "2": "Subtraiu 100 Hz sem usar a fórmula.",
+    "3": "800 Hz seria a frequência emitida."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/exercicios-sobre-o-efeito-doppler-com-gabarito/",
+    "titulo": "Exercícios sobre o efeito Doppler",
+    "conferido_em": "2026-11-07",
+    "base": "cálculo da frequência percebida",
+    "verificar": [
+     "Doppler",
+     "observador"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "f": "800 Hz",
+     "v": "340 m/s",
+     "vf": "30 m/s"
+    },
+    "expr": "f*v/(v+vf)",
+    "expr2": "f/(1+vf/v)",
+    "unidade": "Hz",
+    "simbolo": "f'",
+    "formula": "f' = f · v / (v + v_F)",
+    "rotulos": {
+     "f": "f",
+     "v": "v",
+     "vf": "v_F"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "dp",
+   "q": "Um avião voa a 680 m/s em uma região onde a velocidade do som é de 340 m/s. Qual é o número de Mach do avião?",
+   "o": [
+    "2",
+    "0,5",
+    "1",
+    "3"
+   ],
+   "a": 0,
+   "h": "O número de Mach é uma razão entre velocidades.",
+   "e": "M = vavião / vsom = 680 / 340 = 2. O avião é supersônico.",
+   "x": {
+    "1": "Inverteu a razão (340 / 680).",
+    "2": "Mach 1 seria 340 m/s.",
+    "3": "Somou as velocidades e dividiu por 340."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-1/pages/17-8-shock-waves",
+    "titulo": "17.8 Shock Waves",
+    "conferido_em": "2026-11-07",
+    "base": "número de Mach e cone de onda de choque",
+    "verificar": [
+     "shock wave",
+     "Mach"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "vf": "680 m/s",
+     "vs": "340 m/s"
+    },
+    "expr": "vf/vs",
+    "expr2": "vf*(1/vs)",
+    "unidade": "1",
+    "simbolo": "M",
+    "formula": "M = v_fonte / v_som",
+    "rotulos": {
+     "vf": "v_fonte",
+     "vs": "v_som"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "dp",
+   "q": "Um avião supersônico passa sobre uma cidade, e as pessoas ouvem um estrondo. Qual alternativa descreve corretamente esse fenômeno?",
+   "o": [
+    "O estrondo acompanha todo o voo supersônico, pois a onda de choque em forma de cone vai varrendo o solo.",
+    "O estrondo ocorre uma única vez, no instante em que o avião atinge a velocidade do som.",
+    "O estrondo é causado pelo motor do avião, e não pela velocidade.",
+    "O estrondo só existe quando o avião está parado."
+   ],
+   "a": 0,
+   "h": "Pense em um cone que acompanha o avião.",
+   "e": "Em voo supersônico, as frentes de onda se acumulam em um cone. A onda de choque é contínua e vai varrendo o solo ao longo da trajetória. Cada observador ouve o estrondo quando o cone passa por ele.",
+   "x": {
+    "1": "Não é um evento único: a onda de choque é contínua enquanto o voo for supersônico.",
+    "2": "O estrondo é efeito da velocidade, não do ruído do motor.",
+    "3": "Parado, o avião não gera onda de choque."
+   },
+   "n": 3,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-1/pages/17-8-shock-waves",
+    "titulo": "17.8 Shock Waves",
+    "conferido_em": "2026-11-07",
+    "base": "número de Mach e cone de onda de choque",
+    "verificar": [
+     "shock wave",
+     "Mach"
+    ]
+   },
+   "an": "mach"
+  },
+  {
+   "t": "oe",
+   "q": "Como se forma uma onda estacionária em uma corda presa nas duas extremidades?",
+   "o": [
+    "Pela superposição de duas ondas iguais que se propagam em sentidos opostos, como a incidente e a refletida.",
+    "Pela superposição de duas ondas de frequências muito diferentes no mesmo sentido.",
+    "Pela passagem de um único pulso, sem reflexão.",
+    "Pela absorção da onda nas extremidades."
+   ],
+   "a": 0,
+   "h": "Pense em onda incidente e onda refletida.",
+   "e": "Quando a onda incidente se reflete na ponta e se superpõe à onda que chega, com mesma frequência e amplitude, e sentidos opostos, surge um padrão de nós e ventres fixos: a onda estacionária.",
+   "x": {
+    "1": "Ondas de frequências muito diferentes geram batimentos ou ondas complexas, não o padrão estacionário simples.",
+    "2": "Sem reflexão não há onda contrária para formar o padrão.",
+    "3": "Se a onda fosse absorvida, não haveria reflexão."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-1/pages/16-6-standing-waves-and-resonance",
+    "titulo": "16.6 Standing Waves and Resonance",
+    "conferido_em": "2026-11-07",
+    "base": "ressonância e ondas estacionárias",
+    "verificar": [
+     "resonance",
+     "standing wave"
+    ]
+   },
+   "an": "estac"
+  },
+  {
+   "t": "oe",
+   "q": "Em uma onda estacionária, o que são nós e ventres?",
+   "o": [
+    "Nós são pontos de amplitude nula, e ventres, pontos de amplitude máxima.",
+    "Nós são pontos de amplitude máxima, e ventres, pontos de amplitude nula.",
+    "Nós são as extremidades livres, e ventres, as fixas.",
+    "Nós e ventres são pontos que se deslocam com a velocidade da onda."
+   ],
+   "a": 0,
+   "h": "Nó lembra “parado”.",
+   "e": "Nos nós, as ondas se anulam o tempo todo (amplitude zero). Nos ventres, elas se reforçam e a amplitude é máxima (o dobro da amplitude de cada onda).",
+   "x": {
+    "1": "É o contrário: o nó não vibra.",
+    "2": "Extremidades fixas são nós; livres são ventres.",
+    "3": "Os nós e os ventres ficam em posições fixas."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-1/pages/16-6-standing-waves-and-resonance",
+    "titulo": "16.6 Standing Waves and Resonance",
+    "conferido_em": "2026-11-07",
+    "base": "ressonância e ondas estacionárias",
+    "verificar": [
+     "resonance",
+     "standing wave"
+    ]
+   },
+   "an": "estac"
+  },
+  {
+   "t": "oe",
+   "q": "Verdadeiro ou falso: em uma onda estacionária ideal, há transporte de energia ao longo da corda.",
+   "o": [
+    "Verdadeiro",
+    "Falso"
+   ],
+   "a": 1,
+   "h": "Pense em nós parados.",
+   "e": "Falso. A onda estacionária não transporta energia de um ponto a outro: a energia fica oscilando entre as formas cinética e potencial entre os nós.",
+   "v": 1,
+   "x": {
+    "0": "A energia não flui ao longo da corda, pois as duas ondas componentes transportam energia em sentidos opostos e se compensam."
+   },
+   "n": 3,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-1/pages/16-6-standing-waves-and-resonance",
+    "titulo": "16.6 Standing Waves and Resonance",
+    "conferido_em": "2026-11-07",
+    "base": "ressonância e ondas estacionárias",
+    "verificar": [
+     "resonance",
+     "standing wave"
+    ]
+   },
+   "an": "estac"
+  },
+  {
+   "t": "oe",
+   "q": "Em uma corda com onda estacionária, a distância entre dois nós consecutivos é de 15 cm. Qual é o comprimento de onda?",
+   "o": [
+    "0,30 m",
+    "0,15 m",
+    "0,075 m",
+    "0,60 m"
+   ],
+   "a": 0,
+   "h": "Entre dois nós consecutivos há λ/2.",
+   "e": "Entre dois nós consecutivos há meio comprimento de onda: λ/2 = 0,15 m. Logo λ = 0,30 m.",
+   "x": {
+    "1": "Tomou a distância entre nós como λ inteiro.",
+    "2": "Dividiu a distância por 2 em vez de multiplicar.",
+    "3": "Multiplicou por 4."
+   },
+   "c": 1,
+   "n": 1,
+   "fonte": {
+    "site": "HyperPhysics",
+    "url": "https://hyperphysics.phy-astr.gsu.edu/hbase/Waves/string.html",
+    "titulo": "Waves on a String",
+    "conferido_em": "2026-11-07",
+    "base": "velocidade na corda e frequências naturais",
+    "verificar": [
+     "string",
+     "tension"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "d": "15 cm"
+    },
+    "expr": "2*d",
+    "expr2": "d+d",
+    "unidade": "m",
+    "simbolo": "λ",
+    "formula": "λ = 2 · d",
+    "rotulos": {
+     "d": "d"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "oe",
+   "q": "Uma corda de 1,2 m, presa nas duas pontas, vibra com 3 fusos (3 ventres). Qual é o comprimento de onda?",
+   "o": [
+    "0,8 m",
+    "1,2 m",
+    "2,4 m",
+    "0,4 m"
+   ],
+   "a": 0,
+   "h": "Cada fuso é meio comprimento de onda.",
+   "e": "Cada fuso vale λ/2. Com 3 fusos: L = 3 · λ/2, logo λ = 2 · 1,2 / 3 = 0,8 m.",
+   "x": {
+    "1": "Tomou L como o comprimento de onda.",
+    "2": "Usou 2L sem dividir pelo número de fusos.",
+    "3": "Dividiu L por 3."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "HyperPhysics",
+    "url": "https://hyperphysics.phy-astr.gsu.edu/hbase/Waves/string.html",
+    "titulo": "Waves on a String",
+    "conferido_em": "2026-11-07",
+    "base": "velocidade na corda e frequências naturais",
+    "verificar": [
+     "string",
+     "tension"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "L": "1.2 m",
+     "n": "3"
+    },
+    "expr": "2*L/n",
+    "expr2": "L/(n/2)",
+    "unidade": "m",
+    "simbolo": "λ",
+    "formula": "λ = 2L / n",
+    "rotulos": {
+     "L": "L",
+     "n": "n"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "cv",
+   "q": "Um violonista pressiona uma corda em um traste, encurtando a parte que vibra. O que ocorre com o som emitido?",
+   "o": [
+    "Fica mais agudo, pois a frequência aumenta.",
+    "Fica mais grave, pois a frequência diminui.",
+    "Fica mais forte, mas com a mesma altura.",
+    "Muda de timbre, mas não de altura."
+   ],
+   "a": 0,
+   "h": "f₁ é inversamente proporcional a L.",
+   "e": "Na corda presa nas pontas, f₁ = v / (2L). Com L menor e v igual, f₁ aumenta: o som fica mais agudo.",
+   "x": {
+    "1": "Frequência menor daria um som mais grave.",
+    "2": "A intensidade depende da amplitude.",
+    "3": "A altura muda porque a frequência mudou."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "HyperPhysics",
+    "url": "https://hyperphysics.phy-astr.gsu.edu/hbase/Waves/string.html",
+    "titulo": "Waves on a String",
+    "conferido_em": "2026-11-07",
+    "base": "velocidade na corda e frequências naturais",
+    "verificar": [
+     "string",
+     "tension"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "cv",
+   "q": "Em um violão, as cordas mais grossas produzem sons mais graves que as finas. Isso ocorre porque, ao serem mais grossas (maior massa por unidade de comprimento), elas têm:",
+   "o": [
+    "Velocidade de propagação menor e, portanto, frequência menor.",
+    "Velocidade de propagação maior e, portanto, frequência maior.",
+    "Tensão sempre maior e mesma frequência.",
+    "Comprimento maior, embora todas tenham o mesmo comprimento."
+   ],
+   "a": 0,
+   "h": "Pense em v = √(T/μ).",
+   "e": "Na corda, v = √(T/μ). Com μ maior, v diminui, e f₁ = v/(2L) também diminui: som mais grave.",
+   "x": {
+    "1": "Com μ maior, v diminui.",
+    "2": "A tensão pode até ser igual, mas μ maior reduz v.",
+    "3": "Todas as cordas de um violão têm o mesmo comprimento vibrante."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "HyperPhysics",
+    "url": "https://hyperphysics.phy-astr.gsu.edu/hbase/Waves/string.html",
+    "titulo": "Waves on a String",
+    "conferido_em": "2026-11-07",
+    "base": "velocidade na corda e frequências naturais",
+    "verificar": [
+     "string",
+     "tension"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "cv",
+   "q": "Ao aumentar a tensão de uma corda (afinar o instrumento), mantendo o comprimento e a massa por unidade de comprimento, o que ocorre com o som?",
+   "o": [
+    "A frequência aumenta, pois v = √(T/μ) cresce.",
+    "A frequência diminui, pois a corda fica mais esticada.",
+    "A frequência não muda.",
+    "O timbre desaparece."
+   ],
+   "a": 0,
+   "h": "A velocidade na corda aumenta com T.",
+   "e": "Com T maior, v = √(T/μ) cresce e f₁ = v/(2L) cresce. Se a tensão quadruplicar, a frequência dobra.",
+   "x": {
+    "1": "É o contrário: mais tensão, som mais agudo.",
+    "2": "Mudar T muda v e a frequência.",
+    "3": "O timbre não desaparece: muda a altura."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "HyperPhysics",
+    "url": "https://hyperphysics.phy-astr.gsu.edu/hbase/Waves/string.html",
+    "titulo": "Waves on a String",
+    "conferido_em": "2026-11-07",
+    "base": "velocidade na corda e frequências naturais",
+    "verificar": [
+     "string",
+     "tension"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "cv",
+   "q": "Uma corda de violão de 0,5 m, presa nas duas pontas, emite como fundamental uma nota de 500 Hz. Qual é a velocidade das ondas na corda?",
+   "o": [
+    "500 m/s",
+    "250 m/s",
+    "1000 m/s",
+    "2000 m/s"
+   ],
+   "a": 0,
+   "h": "Isole v em f₁ = v/(2L).",
+   "e": "Para a fundamental, f₁ = v / (2L). Logo v = 2 · L · f₁ = 2 · 0,5 · 500 = 500 m/s.",
+   "x": {
+    "1": "Usou L · f sem o fator 2.",
+    "2": "Dividiu f por L.",
+    "3": "Multiplicou por 4."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "InfoEscola",
+    "url": "https://www.infoescola.com/fisica/harmonica/",
+    "titulo": "Harmônica (harmônicos em cordas e tubos)",
+    "conferido_em": "2026-11-07",
+    "base": "harmônicos em cordas e tubos",
+    "verificar": [
+     "harmônicos",
+     "cordas"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "L": "0.5 m",
+     "f": "500 Hz"
+    },
+    "expr": "2*L*f",
+    "expr2": "f*(2*L)",
+    "unidade": "m/s",
+    "simbolo": "v",
+    "formula": "v = 2 · L · f₁",
+    "rotulos": {
+     "L": "L",
+     "f": "f₁"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "cv",
+   "q": "Uma corda tem massa por unidade de comprimento de 0,01 kg/m e é tracionada com 100 N. Qual é a velocidade das ondas na corda?",
+   "o": [
+    "100 m/s",
+    "10000 m/s",
+    "10 m/s",
+    "1 m/s"
+   ],
+   "a": 0,
+   "h": "Use a equação de Taylor: v = √(T/μ).",
+   "e": "v = √(T / μ) = √(100 / 0,01) = √10000 = 100 m/s.",
+   "x": {
+    "1": "Esqueceu a raiz quadrada.",
+    "2": "Usou a raiz de T e esqueceu μ.",
+    "3": "Multiplicou T por μ e tirou a raiz."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "HyperPhysics",
+    "url": "https://hyperphysics.phy-astr.gsu.edu/hbase/Waves/string.html",
+    "titulo": "Waves on a String",
+    "conferido_em": "2026-11-07",
+    "base": "velocidade na corda e frequências naturais",
+    "verificar": [
+     "string",
+     "tension"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "T": "100 N",
+     "mu": "0.01 kg/m"
+    },
+    "expr": "sqrt(T/mu)",
+    "expr2": "(T/mu)**0.5",
+    "unidade": "m/s",
+    "simbolo": "v",
+    "formula": "v = √(T / μ)",
+    "rotulos": {
+     "T": "T",
+     "mu": "μ"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "cv",
+   "q": "Uma corda de 2 m, presa nas duas pontas, vibra com dois harmônicos consecutivos de frequências 100 Hz e 125 Hz. Qual é a velocidade das ondas na corda?",
+   "o": [
+    "100 m/s",
+    "200 m/s",
+    "50 m/s",
+    "450 m/s"
+   ],
+   "a": 0,
+   "h": "A diferença entre harmônicos consecutivos é a fundamental.",
+   "e": "Harmônicos consecutivos diferem de f₁: f₁ = 125 − 100 = 25 Hz. Então v = 2 · L · f₁ = 2 · 2 · 25 = 100 m/s.",
+   "x": {
+    "1": "Usou 4L · f₁ sem o fator correto.",
+    "2": "Dividiu o resultado por 2.",
+    "3": "Usou a média das frequências no lugar de f₁."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "InfoEscola",
+    "url": "https://www.infoescola.com/fisica/harmonica/",
+    "titulo": "Harmônica (harmônicos em cordas e tubos)",
+    "conferido_em": "2026-11-07",
+    "base": "harmônicos em cordas e tubos",
+    "verificar": [
+     "harmônicos",
+     "cordas"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "fa": "100 Hz",
+     "fb": "125 Hz",
+     "L": "2 m"
+    },
+    "expr": "2*L*(fb-fa)",
+    "expr2": "(fb-fa)*L*2",
+    "unidade": "m/s",
+    "simbolo": "v",
+    "formula": "v = 2 · L · (f₂ − f₁)",
+    "rotulos": {
+     "fa": "f₁",
+     "fb": "f₂",
+     "L": "L"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "cv",
+   "q": "Uma corda de 0,6 m, presa nas duas pontas, é percorrida por ondas de velocidade 360 m/s. Qual é a frequência do segundo harmônico?",
+   "o": [
+    "600 Hz",
+    "300 Hz",
+    "1200 Hz",
+    "180 Hz"
+   ],
+   "a": 0,
+   "h": "No segundo harmônico, n = 2.",
+   "e": "f₂ = 2 · v / (2L) = v / L = 360 / 0,6 = 600 Hz.",
+   "x": {
+    "1": "300 Hz é a fundamental.",
+    "2": "Usou n = 4.",
+    "3": "Dividiu a velocidade por 2."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "InfoEscola",
+    "url": "https://www.infoescola.com/fisica/harmonica/",
+    "titulo": "Harmônica (harmônicos em cordas e tubos)",
+    "conferido_em": "2026-11-07",
+    "base": "harmônicos em cordas e tubos",
+    "verificar": [
+     "harmônicos",
+     "cordas"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "v": "360 m/s",
+     "L": "0.6 m"
+    },
+    "expr": "v/L",
+    "expr2": "2*v/(2*L)",
+    "unidade": "Hz",
+    "simbolo": "f₂",
+    "formula": "f₂ = 2 · v / (2L)",
+    "rotulos": {
+     "v": "v",
+     "L": "L"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "ts",
+   "q": "Verdadeiro ou falso: um tubo sonoro fechado em uma das extremidades emite somente harmônicos de ordem ímpar.",
+   "o": [
+    "Verdadeiro",
+    "Falso"
+   ],
+   "a": 0,
+   "h": "Pense em nó na ponta fechada e ventre na aberta.",
+   "e": "Verdadeiro. No tubo fechado há nó na ponta fechada e ventre na aberta. Só cabem frequências f = n·v/(4L) com n ímpar (1, 3, 5…).",
+   "v": 1,
+   "x": {
+    "1": "No tubo fechado só existem os harmônicos de ordem ímpar: 1º, 3º, 5º… Não existe o 2º harmônico."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "HyperPhysics",
+    "url": "https://hyperphysics.phy-astr.gsu.edu/hbase/Waves/clocol.html",
+    "titulo": "Closed Tube Resonance",
+    "conferido_em": "2026-11-07",
+    "base": "tubo fechado: harmônicos ímpares",
+    "verificar": [
+     "closed",
+     "odd harmonics"
+    ]
+   },
+   "an": "tubos"
+  },
+  {
+   "t": "ts",
+   "q": "Dois tubos sonoros têm o mesmo comprimento: um é aberto nas duas pontas e o outro é fechado em uma delas. Comparando as frequências fundamentais, o tubo fechado emite:",
+   "o": [
+    "Uma frequência igual à metade da do tubo aberto.",
+    "Uma frequência igual ao dobro da do tubo aberto.",
+    "A mesma frequência do tubo aberto.",
+    "Uma frequência quatro vezes menor."
+   ],
+   "a": 0,
+   "h": "Compare v/(2L) e v/(4L).",
+   "e": "Aberto: f₁ = v/(2L). Fechado: f₁ = v/(4L), que é metade. Ou seja, uma oitava abaixo.",
+   "x": {
+    "1": "Dobro seria o contrário.",
+    "2": "As fórmulas têm denominadores diferentes.",
+    "3": "A razão entre os dois é 2, e não 4."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "HyperPhysics",
+    "url": "https://hyperphysics.phy-astr.gsu.edu/hbase/Waves/opecol.html",
+    "titulo": "Open Tube Resonance",
+    "conferido_em": "2026-11-07",
+    "base": "tubo aberto: todos os harmônicos",
+    "verificar": [
+     "open",
+     "harmonics"
+    ]
+   },
+   "an": "tubos"
+  },
+  {
+   "t": "ts",
+   "q": "Uma flauta afinada em uma sala fria é usada em um palco quente e passa a soar mais aguda. A explicação é:",
+   "o": [
+    "Com o ar mais quente, a velocidade do som aumenta; como f = v/(2L) e L não muda, a frequência aumenta.",
+    "Com o ar mais quente, o tubo se contrai muito e a frequência cai.",
+    "A temperatura muda a frequência da fonte, mas não a velocidade.",
+    "O ar quente é menos denso e por isso o som fica mais lento."
+   ],
+   "a": 0,
+   "h": "Lembre como a temperatura afeta v.",
+   "e": "A frequência de ressonância do tubo é proporcional à velocidade do som no ar do tubo. Com o ar quente, v aumenta e a frequência também.",
+   "x": {
+    "1": "A dilatação do tubo é desprezível frente à variação de v.",
+    "2": "A velocidade, e não a fonte, muda com a temperatura.",
+    "3": "No ar quente o som é mais rápido, não mais lento."
+   },
+   "n": 3,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-1/pages/17-4-normal-modes-of-a-standing-sound-wave",
+    "titulo": "17.4 Normal Modes of a Standing Sound Wave",
+    "conferido_em": "2026-11-07",
+    "base": "modos normais em tubos",
+    "verificar": [
+     "normal modes",
+     "open"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "ts",
+   "q": "Um tubo aberto nas duas extremidades tem 0,85 m. Com a velocidade do som igual a 340 m/s, qual é a frequência fundamental?",
+   "o": [
+    "200 Hz",
+    "400 Hz",
+    "100 Hz",
+    "289 Hz"
+   ],
+   "a": 0,
+   "h": "No tubo aberto, f₁ = v/(2L).",
+   "e": "No tubo aberto, f₁ = v / (2L) = 340 / (2 · 0,85) = 200 Hz.",
+   "x": {
+    "1": "400 Hz usa L em vez de 2L.",
+    "2": "100 Hz é a fundamental do tubo fechado.",
+    "3": "Multiplicou v por L."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "HyperPhysics",
+    "url": "https://hyperphysics.phy-astr.gsu.edu/hbase/Waves/opecol.html",
+    "titulo": "Open Tube Resonance",
+    "conferido_em": "2026-11-07",
+    "base": "tubo aberto: todos os harmônicos",
+    "verificar": [
+     "open",
+     "harmonics"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "v": "340 m/s",
+     "L": "0.85 m"
+    },
+    "expr": "v/(2*L)",
+    "expr2": "(v/L)/2",
+    "unidade": "Hz",
+    "simbolo": "f₁",
+    "formula": "f₁ = v / (2L)",
+    "rotulos": {
+     "v": "v",
+     "L": "L"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "ts",
+   "q": "Um tubo fechado em uma extremidade tem 0,85 m. Com a velocidade do som igual a 340 m/s, qual é a frequência fundamental?",
+   "o": [
+    "100 Hz",
+    "200 Hz",
+    "50 Hz",
+    "400 Hz"
+   ],
+   "a": 0,
+   "h": "No tubo fechado, f₁ = v/(4L).",
+   "e": "No tubo fechado, f₁ = v / (4L) = 340 / (4 · 0,85) = 100 Hz.",
+   "x": {
+    "1": "200 Hz é a do tubo aberto.",
+    "2": "Dividiu por 8L.",
+    "3": "Usou v / L."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "HyperPhysics",
+    "url": "https://hyperphysics.phy-astr.gsu.edu/hbase/Waves/clocol.html",
+    "titulo": "Closed Tube Resonance",
+    "conferido_em": "2026-11-07",
+    "base": "tubo fechado: harmônicos ímpares",
+    "verificar": [
+     "closed",
+     "odd harmonics"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "v": "340 m/s",
+     "L": "0.85 m"
+    },
+    "expr": "v/(4*L)",
+    "expr2": "(v/L)/4",
+    "unidade": "Hz",
+    "simbolo": "f₁",
+    "formula": "f₁ = v / (4L)",
+    "rotulos": {
+     "v": "v",
+     "L": "L"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "ts",
+   "q": "Um tubo fechado em uma extremidade tem 0,5 m e a velocidade do som é 340 m/s. Qual é a frequência do terceiro harmônico (n = 3)?",
+   "o": [
+    "510 Hz",
+    "340 Hz",
+    "1020 Hz",
+    "170 Hz"
+   ],
+   "a": 0,
+   "h": "No tubo fechado, fₙ = n · v / (4L), com n ímpar.",
+   "e": "f₃ = 3 · v / (4L) = 3 · 340 / (4 · 0,5) = 510 Hz.",
+   "x": {
+    "1": "340 Hz seria n = 2, que não existe no tubo fechado.",
+    "2": "Usou 2L no denominador.",
+    "3": "170 Hz é a fundamental."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "HyperPhysics",
+    "url": "https://hyperphysics.phy-astr.gsu.edu/hbase/Waves/clocol.html",
+    "titulo": "Closed Tube Resonance",
+    "conferido_em": "2026-11-07",
+    "base": "tubo fechado: harmônicos ímpares",
+    "verificar": [
+     "closed",
+     "odd harmonics"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "n": "3",
+     "v": "340 m/s",
+     "L": "0.5 m"
+    },
+    "expr": "n*v/(4*L)",
+    "expr2": "(n*v)/(L*4)",
+    "unidade": "Hz",
+    "simbolo": "f₃",
+    "formula": "fₙ = n · v / (4L)",
+    "rotulos": {
+     "n": "n",
+     "v": "v",
+     "L": "L"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "ts",
+   "q": "Que comprimento deve ter um tubo aberto nas duas extremidades para que sua frequência fundamental seja 340 Hz? (velocidade do som: 340 m/s)",
+   "o": [
+    "0,5 m",
+    "1,0 m",
+    "0,25 m",
+    "2,0 m"
+   ],
+   "a": 0,
+   "h": "Isole L em f₁ = v/(2L).",
+   "e": "f₁ = v / (2L). Logo L = v / (2 f₁) = 340 / (2 · 340) = 0,5 m.",
+   "x": {
+    "1": "Usou L = v / f₁, sem o fator 2.",
+    "2": "Dividiu por 4 em vez de 2.",
+    "3": "Multiplicou por 2 em vez de dividir."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "HyperPhysics",
+    "url": "https://hyperphysics.phy-astr.gsu.edu/hbase/Waves/opecol.html",
+    "titulo": "Open Tube Resonance",
+    "conferido_em": "2026-11-07",
+    "base": "tubo aberto: todos os harmônicos",
+    "verificar": [
+     "open",
+     "harmonics"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "v": "340 m/s",
+     "f": "340 Hz"
+    },
+    "expr": "v/(2*f)",
+    "expr2": "(v/f)/2",
+    "unidade": "m",
+    "simbolo": "L",
+    "formula": "L = v / (2 f₁)",
+    "rotulos": {
+     "v": "v",
+     "f": "f₁"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "cn",
+   "q": "Quem propôs, em 1842, que a frequência de uma onda percebida por um observador depende do movimento relativo entre a fonte e o observador?",
+   "o": [
+    "Christian Doppler.",
+    "Ernst Mach.",
+    "Alexander Graham Bell.",
+    "Hermann von Helmholtz."
+   ],
+   "a": 0,
+   "h": "Lembre do nome do efeito.",
+   "e": "O físico austríaco Christian Doppler propôs a ideia em 1842. O efeito leva seu nome.",
+   "x": {
+    "1": "Mach estudou ondas de choque e velocidades supersônicas.",
+    "2": "Bell é lembrado pelo telefone e pela unidade que dá nome ao decibel.",
+    "3": "Helmholtz estudou o timbre e a percepção do som."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "Toda Matéria",
+    "url": "https://www.todamateria.com.br/efeito-doppler/",
+    "titulo": "Efeito Doppler",
+    "conferido_em": "2026-11-07",
+    "base": "frequência percebida na aproximação e no afastamento",
+    "verificar": [
+     "efeito Doppler",
+     "frequência"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Questão sobre história da ciência, sem cálculo nem processo para animar."
+   }
+  },
+  {
+   "t": "cn",
+   "q": "O número que compara a velocidade de um objeto com a do som no meio leva o nome de qual cientista?",
+   "o": [
+    "Ernst Mach.",
+    "Christian Doppler.",
+    "Marin Mersenne.",
+    "Alexander Graham Bell."
+   ],
+   "a": 0,
+   "h": "Lembre de “Mach 2”.",
+   "e": "O número de Mach, M = v_objeto / v_som, homenageia o físico austríaco Ernst Mach, que estudou projéteis supersônicos e ondas de choque.",
+   "x": {
+    "1": "Doppler está ligado à variação de frequência percebida.",
+    "2": "Mersenne estudou as cordas vibrantes.",
+    "3": "Bell está ligado ao telefone e ao bel."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-1/pages/17-8-shock-waves",
+    "titulo": "17.8 Shock Waves",
+    "conferido_em": "2026-11-07",
+    "base": "número de Mach e cone de onda de choque",
+    "verificar": [
+     "shock wave",
+     "Mach"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Questão sobre história da ciência, sem cálculo nem processo para animar."
+   }
+  },
+  {
+   "t": "cn",
+   "q": "O decibel (dB) é um submúltiplo do bel, unidade que homenageia qual personagem?",
+   "o": [
+    "Alexander Graham Bell.",
+    "Isaac Newton.",
+    "Christian Doppler.",
+    "Ernst Mach."
+   ],
+   "a": 0,
+   "h": "O nome da unidade lembra o inventor ligado ao telefone.",
+   "e": "O bel foi nomeado em homenagem a Alexander Graham Bell, pioneiro das comunicações. O decibel vale um décimo do bel.",
+   "x": {
+    "1": "Newton dá nome à unidade de força.",
+    "2": "Doppler dá nome ao efeito da frequência percebida.",
+    "3": "Mach dá nome ao número de velocidade relativa ao som."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "HyperPhysics",
+    "url": "https://hyperphysics.phy-astr.gsu.edu/hbase/Sound/db.html",
+    "titulo": "Decibel Level Comparison Chart",
+    "conferido_em": "2026-11-07",
+    "base": "unidade bel e decibel",
+    "verificar": [
+     "decibel",
+     "bel"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Questão sobre história da ciência, sem cálculo nem processo para animar."
+   }
+  }
+ ]
+}

@@ -1,0 +1,14 @@
+name: Validar quiz
+on: [push, pull_request]
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Sintaxe dos arquivos JavaScript
+        run: for f in *.js; do node --check "$f" || exit 1; done
+      - name: Validar bancos de perguntas
+        run: node validar-banco.js

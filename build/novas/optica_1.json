@@ -1,0 +1,1066 @@
+{
+ "quiz": "optica",
+ "questoes": [
+  {
+   "t": "fl",
+   "q": "Um vidro fosco deixa passar a luz, mas não permite enxergar com nitidez os objetos do outro lado. Esse meio é classificado como:",
+   "o": [
+    "Translúcido.",
+    "Transparente.",
+    "Opaco.",
+    "Refletor."
+   ],
+   "a": 0,
+   "h": "Passa luz, mas sem nitidez.",
+   "e": "No meio translúcido a luz passa, mas se espalha, e as imagens ficam sem nitidez. No transparente enxergamos com nitidez. No opaco a luz não passa.",
+   "x": {
+    "1": "No meio transparente os objetos atrás são vistos com nitidez.",
+    "2": "No opaco a luz praticamente não atravessa.",
+    "3": "Refletor não é classificação de transparência."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/1-1-the-propagation-of-light",
+    "titulo": "1.1 The Propagation of Light",
+    "conferido_em": "2026-11-07",
+    "base": "propagação retilínea, raios e velocidade da luz",
+    "verificar": [
+     "propagation of light",
+     "ray"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "fl",
+   "q": "Qual dos corpos abaixo é uma fonte primária de luz?",
+   "o": [
+    "A chama de uma vela.",
+    "A Lua.",
+    "Um espelho exposto ao Sol.",
+    "Uma folha de papel branca."
+   ],
+   "a": 0,
+   "h": "Quem produz luz própria?",
+   "e": "Fonte primária é a que produz a própria luz, como a chama, o Sol e uma lâmpada acesa. A Lua, o espelho e o papel apenas refletem a luz que recebem (fontes secundárias).",
+   "x": {
+    "1": "A Lua só reflete a luz do Sol.",
+    "2": "O espelho reflete a luz que recebe.",
+    "3": "O papel é iluminado, mas não produz luz."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/1-1-the-propagation-of-light",
+    "titulo": "1.1 The Propagation of Light",
+    "conferido_em": "2026-11-07",
+    "base": "propagação retilínea, raios e velocidade da luz",
+    "verificar": [
+     "propagation of light",
+     "ray"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "fl",
+   "q": "Verdadeiro ou falso: a Lua é uma fonte primária de luz.",
+   "o": [
+    "Verdadeiro",
+    "Falso"
+   ],
+   "a": 1,
+   "h": "Pense em de onde vem a luz que vemos da Lua.",
+   "e": "Falso. A Lua não produz luz própria: ela reflete a luz do Sol, sendo fonte secundária (corpo iluminado).",
+   "v": 1,
+   "x": {
+    "0": "A luz da Lua é luz do Sol refletida. Por isso ela é fonte secundária."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/1-1-the-propagation-of-light",
+    "titulo": "1.1 The Propagation of Light",
+    "conferido_em": "2026-11-07",
+    "base": "propagação retilínea, raios e velocidade da luz",
+    "verificar": [
+     "propagation of light",
+     "ray"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Afirmação conceitual, sem processo para animar."
+   }
+  },
+  {
+   "t": "fl",
+   "q": "A formação de sombras nítidas por um objeto opaco iluminado por uma lâmpada pequena é explicada pelo princípio da:",
+   "o": [
+    "Propagação retilínea da luz.",
+    "Independência dos raios de luz.",
+    "Reversibilidade dos raios de luz.",
+    "Reflexão total."
+   ],
+   "a": 0,
+   "h": "A luz caminha em linha reta.",
+   "e": "Em meio homogêneo e transparente, a luz se propaga em linha reta. Por isso o objeto bloqueia os raios e forma sombra com contorno bem definido.",
+   "x": {
+    "1": "Esse princípio diz que raios que se cruzam não se alteram.",
+    "2": "Esse princípio diz que o caminho da luz é o mesmo na ida e na volta.",
+    "3": "Reflexão total é outro fenômeno, ligado à refração."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/1-1-the-propagation-of-light",
+    "titulo": "1.1 The Propagation of Light",
+    "conferido_em": "2026-11-07",
+    "base": "propagação retilínea, raios e velocidade da luz",
+    "verificar": [
+     "propagation of light",
+     "ray"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "fl",
+   "q": "Em um eclipse solar total, em uma região da Terra, qual é a posição dos astros?",
+   "o": [
+    "A Lua entre o Sol e a Terra, projetando sua sombra na região.",
+    "A Terra entre o Sol e a Lua, projetando sua sombra na Lua.",
+    "O Sol entre a Terra e a Lua.",
+    "A Terra, o Sol e a Lua formando um ângulo reto."
+   ],
+   "a": 0,
+   "h": "Quem fica no meio?",
+   "e": "No eclipse solar, a Lua passa entre o Sol e a Terra. Como a luz se propaga em linha reta, a sombra da Lua cai sobre uma região da Terra.",
+   "x": {
+    "1": "Essa é a situação do eclipse lunar.",
+    "2": "O Sol não fica entre a Terra e a Lua nos eclipses.",
+    "3": "Em ângulo reto ocorrem as fases quarto crescente e minguante."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/1-1-the-propagation-of-light",
+    "titulo": "1.1 The Propagation of Light",
+    "conferido_em": "2026-11-07",
+    "base": "propagação retilínea, raios e velocidade da luz",
+    "verificar": [
+     "propagation of light",
+     "ray"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "fl",
+   "q": "Um motorista vê, pelo retrovisor, os olhos do motorista que vem atrás. Então o outro motorista também consegue ver os olhos do primeiro. Esse fato ilustra o princípio da:",
+   "o": [
+    "Reversibilidade dos raios de luz.",
+    "Propagação retilínea da luz.",
+    "Independência dos raios de luz.",
+    "Refração da luz."
+   ],
+   "a": 0,
+   "h": "O trajeto é o mesmo ida e volta.",
+   "e": "O caminho seguido pela luz é o mesmo nos dois sentidos: se a luz vai de A até B por um trajeto, ela volta de B até A pelo mesmo trajeto. É a reversibilidade.",
+   "x": {
+    "1": "A propagação retilínea fala de linhas retas em meios homogêneos.",
+    "2": "A independência trata do cruzamento de raios.",
+    "3": "A refração é mudança de meio."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/1-1-the-propagation-of-light",
+    "titulo": "1.1 The Propagation of Light",
+    "conferido_em": "2026-11-07",
+    "base": "propagação retilínea, raios e velocidade da luz",
+    "verificar": [
+     "propagation of light",
+     "ray"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "fl",
+   "q": "Um poste de 6 m de altura projeta no chão uma sombra de 4 m. No mesmo instante, uma pessoa projeta uma sombra de 1,2 m. Qual é a altura da pessoa?",
+   "o": [
+    "1,8 m",
+    "0,8 m",
+    "3,0 m",
+    "7,2 m"
+   ],
+   "a": 0,
+   "h": "Use semelhança de triângulos.",
+   "e": "Os triângulos são semelhantes: H / S = h / s. Então h = 6 · 1,2 / 4 = 1,8 m.",
+   "x": {
+    "1": "Inverteu a proporção.",
+    "2": "Dividiu a sombra por 2 sem usar a proporção.",
+    "3": "Multiplicou a altura do poste pela sombra da pessoa."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/1-1-the-propagation-of-light",
+    "titulo": "1.1 The Propagation of Light",
+    "conferido_em": "2026-11-07",
+    "base": "propagação retilínea, raios e velocidade da luz",
+    "verificar": [
+     "propagation of light",
+     "ray"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "H": "6 m",
+     "S": "4 m",
+     "s": "1.2 m"
+    },
+    "expr": "H*s/S",
+    "expr2": "(H/S)*s",
+    "unidade": "m",
+    "simbolo": "h",
+    "formula": "h = H · s / S",
+    "rotulos": {
+     "H": "H",
+     "S": "S",
+     "s": "s"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "fl",
+   "q": "Em uma câmara escura de orifício, uma pessoa de 2 m de altura está a 8 m do orifício, e o anteparo está a 0,2 m dele. Qual é a altura da imagem formada?",
+   "o": [
+    "0,05 m",
+    "0,5 m",
+    "80 m",
+    "0,0125 m"
+   ],
+   "a": 0,
+   "h": "A imagem é proporcional às distâncias ao orifício.",
+   "e": "Por semelhança de triângulos, i / o = p' / p. Então i = 2 · 0,2 / 8 = 0,05 m.",
+   "x": {
+    "1": "Errou a potência de dez na conta.",
+    "2": "Inverteu a razão das distâncias.",
+    "3": "Dividiu a distância do anteparo por 16."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/1-1-the-propagation-of-light",
+    "titulo": "1.1 The Propagation of Light",
+    "conferido_em": "2026-11-07",
+    "base": "propagação retilínea, raios e velocidade da luz",
+    "verificar": [
+     "propagation of light",
+     "ray"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "o": "2 m",
+     "p": "8 m",
+     "pl": "0.2 m"
+    },
+    "expr": "o*pl/p",
+    "expr2": "o*(pl/p)",
+    "unidade": "m",
+    "simbolo": "i",
+    "formula": "i = o · p' / p",
+    "rotulos": {
+     "o": "o",
+     "p": "p",
+     "pl": "p'"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "fl",
+   "q": "A distância média entre o Sol e a Terra é de 1,5 × 10¹¹ m. Com a velocidade da luz de 3 × 10⁸ m/s, quanto tempo a luz do Sol leva para chegar à Terra?",
+   "o": [
+    "500 s",
+    "5,0 × 10⁻³ s",
+    "4,5 × 10¹⁹ s",
+    "50 s"
+   ],
+   "a": 0,
+   "h": "Use v = d / t.",
+   "e": "t = d / c = 1,5 × 10¹¹ / 3 × 10⁸ = 500 s (cerca de 8 min 20 s).",
+   "x": {
+    "1": "Inverteu a divisão (c / d).",
+    "2": "Multiplicou a distância pela velocidade.",
+    "3": "Errou uma potência de dez."
+   },
+   "c": 1,
+   "n": 1,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/1-1-the-propagation-of-light",
+    "titulo": "1.1 The Propagation of Light",
+    "conferido_em": "2026-11-07",
+    "base": "propagação retilínea, raios e velocidade da luz",
+    "verificar": [
+     "propagation of light",
+     "ray"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "d": "1.5e11 m",
+     "c": "3e8 m/s"
+    },
+    "expr": "d/c",
+    "expr2": "d*(1/c)",
+    "unidade": "s",
+    "simbolo": "t",
+    "formula": "t = d / c",
+    "rotulos": {
+     "d": "d",
+     "c": "c"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "ep",
+   "q": "Um raio de luz incide em um espelho plano formando 30° com a superfície do espelho. Qual é o ângulo de reflexão, medido em relação à normal?",
+   "o": [
+    "60°",
+    "30°",
+    "90°",
+    "120°"
+   ],
+   "a": 0,
+   "h": "Os ângulos da lei da reflexão são medidos em relação à normal.",
+   "e": "O ângulo de incidência é medido em relação à normal: 90° − 30° = 60°. Pela lei da reflexão, o ângulo de reflexão também vale 60°.",
+   "x": {
+    "1": "30° é o ângulo com a superfície, e não com a normal.",
+    "2": "90° seria incidência perpendicular ao espelho.",
+    "3": "120° é o ângulo entre o raio incidente e o refletido, não o de reflexão."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/1-2-the-law-of-reflection",
+    "titulo": "1.2 The Law of Reflection",
+    "conferido_em": "2026-11-07",
+    "base": "lei da reflexão e reflexão difusa",
+    "verificar": [
+     "law of reflection",
+     "diffuse"
+    ]
+   },
+   "an": "opt_plano"
+  },
+  {
+   "t": "ep",
+   "q": "A imagem de um objeto real formada por um espelho plano é:",
+   "o": [
+    "Virtual, direta e do mesmo tamanho do objeto.",
+    "Real, invertida e do mesmo tamanho do objeto.",
+    "Virtual, invertida e menor que o objeto.",
+    "Real, direta e maior que o objeto."
+   ],
+   "a": 0,
+   "h": "Pense na sua imagem em um espelho de banheiro.",
+   "e": "No espelho plano a imagem é virtual (formada pelo prolongamento dos raios), direta, do mesmo tamanho e simétrica ao objeto em relação ao espelho.",
+   "x": {
+    "1": "Imagens reais podem ser projetadas em anteparo; a do espelho plano não pode.",
+    "2": "O espelho plano não inverte nem diminui a imagem.",
+    "3": "A imagem não é ampliada."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-1-images-formed-by-plane-mirrors",
+    "titulo": "2.1 Images Formed by Plane Mirrors",
+    "conferido_em": "2026-11-07",
+    "base": "imagem virtual no espelho plano",
+    "verificar": [
+     "plane mirror",
+     "virtual image"
+    ]
+   },
+   "an": "opt_plano"
+  },
+  {
+   "t": "ep",
+   "q": "Verdadeiro ou falso: a imagem formada por um espelho plano pode ser projetada em um anteparo (tela).",
+   "o": [
+    "Verdadeiro",
+    "Falso"
+   ],
+   "a": 1,
+   "h": "Imagem virtual não é projetável.",
+   "e": "Falso. A imagem do espelho plano é virtual: forma-se no prolongamento dos raios refletidos, atrás do espelho, e não pode ser projetada.",
+   "v": 1,
+   "x": {
+    "0": "Só imagens reais, formadas pelo encontro dos próprios raios, podem ser projetadas."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-1-images-formed-by-plane-mirrors",
+    "titulo": "2.1 Images Formed by Plane Mirrors",
+    "conferido_em": "2026-11-07",
+    "base": "imagem virtual no espelho plano",
+    "verificar": [
+     "plane mirror",
+     "virtual image"
+    ]
+   },
+   "an": "opt_plano"
+  },
+  {
+   "t": "ep",
+   "q": "Uma pessoa está a 1,5 m de um espelho plano. Qual é a distância entre ela e a sua imagem?",
+   "o": [
+    "3,0 m",
+    "1,5 m",
+    "0,75 m",
+    "4,5 m"
+   ],
+   "a": 0,
+   "h": "A imagem está atrás do espelho, à mesma distância.",
+   "e": "A imagem é simétrica ao objeto: fica a 1,5 m atrás do espelho. A distância entre as duas é 2 · 1,5 = 3,0 m.",
+   "x": {
+    "1": "Esqueceu de contar a distância da imagem ao espelho.",
+    "2": "Dividiu a distância por 2.",
+    "3": "Multiplicou por 3."
+   },
+   "c": 1,
+   "n": 1,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-1-images-formed-by-plane-mirrors",
+    "titulo": "2.1 Images Formed by Plane Mirrors",
+    "conferido_em": "2026-11-07",
+    "base": "imagem virtual no espelho plano",
+    "verificar": [
+     "plane mirror",
+     "virtual image"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "d": "1.5 m"
+    },
+    "expr": "2*d",
+    "expr2": "d+d",
+    "unidade": "m",
+    "simbolo": "D",
+    "formula": "D = 2 · d",
+    "rotulos": {
+     "d": "d"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "ep",
+   "q": "Qual é a altura mínima de um espelho plano vertical para que uma pessoa de 1,80 m de altura se veja de corpo inteiro?",
+   "o": [
+    "0,90 m",
+    "1,80 m",
+    "0,60 m",
+    "3,60 m"
+   ],
+   "a": 0,
+   "h": "É uma fração da altura da pessoa.",
+   "e": "A altura mínima é a metade da altura da pessoa: 1,80 / 2 = 0,90 m.",
+   "x": {
+    "1": "O espelho não precisa ter a altura da pessoa toda.",
+    "2": "Dividiu por 3 em vez de 2.",
+    "3": "Dobrou a altura em vez de dividir."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-1-images-formed-by-plane-mirrors",
+    "titulo": "2.1 Images Formed by Plane Mirrors",
+    "conferido_em": "2026-11-07",
+    "base": "imagem virtual no espelho plano",
+    "verificar": [
+     "plane mirror",
+     "virtual image"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "H": "1.8 m"
+    },
+    "expr": "H/2",
+    "expr2": "H*0.5",
+    "unidade": "m",
+    "simbolo": "h",
+    "formula": "h = H / 2",
+    "rotulos": {
+     "H": "H"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "ep",
+   "q": "Dois espelhos planos formam entre si um ângulo de 60°. Quantas imagens se formam de um objeto colocado entre eles?",
+   "o": [
+    "5",
+    "6",
+    "3",
+    "11"
+   ],
+   "a": 0,
+   "h": "Lembre de subtrair 1 na fórmula.",
+   "e": "N = 360° / θ − 1 = 360 / 60 − 1 = 5 imagens.",
+   "x": {
+    "1": "Esqueceu de subtrair 1.",
+    "2": "Dividiu 360 por 120.",
+    "3": "Usou um ângulo de 30° na conta."
+   },
+   "c": 1,
+   "n": 2,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-1-images-formed-by-plane-mirrors",
+    "titulo": "2.1 Images Formed by Plane Mirrors",
+    "conferido_em": "2026-11-07",
+    "base": "imagem virtual no espelho plano",
+    "verificar": [
+     "plane mirror",
+     "virtual image"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "ang": "60"
+    },
+    "expr": "360/ang-1",
+    "expr2": "(360-ang)/ang",
+    "unidade": "1",
+    "simbolo": "N",
+    "formula": "N = 360° / θ − 1",
+    "rotulos": {
+     "ang": "θ"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "ep",
+   "q": "Um raio de luz incide em um espelho plano, que gira de 20° em torno de um eixo, sem que o raio incidente mude de direção. De quanto gira o raio refletido?",
+   "o": [
+    "40°",
+    "20°",
+    "10°",
+    "80°"
+   ],
+   "a": 0,
+   "h": "O raio refletido gira o dobro.",
+   "e": "Quando o espelho gira de um ângulo α, o raio refletido gira de 2α. Aqui, 2 · 20° = 40°.",
+   "x": {
+    "1": "O raio refletido gira o dobro do espelho, não o mesmo ângulo.",
+    "2": "Dividiu por 2 em vez de multiplicar.",
+    "3": "Multiplicou por 4."
+   },
+   "n": 3,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/1-2-the-law-of-reflection",
+    "titulo": "1.2 The Law of Reflection",
+    "conferido_em": "2026-11-07",
+    "base": "lei da reflexão e reflexão difusa",
+    "verificar": [
+     "law of reflection",
+     "diffuse"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "ep",
+   "q": "Uma pessoa se aproxima de um espelho plano com velocidade de 2 m/s. Com que velocidade ela se aproxima da própria imagem?",
+   "o": [
+    "4 m/s",
+    "2 m/s",
+    "1 m/s",
+    "8 m/s"
+   ],
+   "a": 0,
+   "h": "A imagem se move em sentido oposto, na mesma rapidez.",
+   "e": "A imagem também se aproxima do espelho a 2 m/s. A velocidade de aproximação entre pessoa e imagem é 2 + 2 = 4 m/s.",
+   "x": {
+    "1": "2 m/s é a velocidade da imagem em relação ao espelho.",
+    "2": "Dividiu por 2.",
+    "3": "Multiplicou por 4."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-1-images-formed-by-plane-mirrors",
+    "titulo": "2.1 Images Formed by Plane Mirrors",
+    "conferido_em": "2026-11-07",
+    "base": "imagem virtual no espelho plano",
+    "verificar": [
+     "plane mirror",
+     "virtual image"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "v": "2 m/s"
+    },
+    "expr": "2*v",
+    "expr2": "v+v",
+    "unidade": "m/s",
+    "simbolo": "v_rel",
+    "formula": "v_rel = 2 · v",
+    "rotulos": {
+     "v": "v"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "ee",
+   "q": "Um espelho esférico fornece, de objetos reais, sempre imagens virtuais, diretas e menores. Esse espelho é:",
+   "o": [
+    "Convexo.",
+    "Côncavo.",
+    "Plano.",
+    "Convergente."
+   ],
+   "a": 0,
+   "h": "Divergente e imagem sempre menor.",
+   "e": "O espelho convexo é divergente e, para objetos reais, produz sempre imagem virtual, direta e menor. Por isso é usado onde se quer grande campo de visão.",
+   "x": {
+    "1": "O côncavo pode dar imagens reais, invertidas e maiores.",
+    "2": "O plano forma imagem do mesmo tamanho.",
+    "3": "Convergente é o espelho côncavo."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-2-spherical-mirrors",
+    "titulo": "2.2 Spherical Mirrors",
+    "conferido_em": "2026-11-07",
+    "base": "foco, equação dos espelhos e aumento",
+    "verificar": [
+     "spherical mirror",
+     "focal length"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "ee",
+   "q": "Qual tipo de espelho é usado como retrovisor de carros e em lojas, para aumentar o campo de visão?",
+   "o": [
+    "Convexo.",
+    "Côncavo.",
+    "Plano.",
+    "Côncavo, com o objeto além de C."
+   ],
+   "a": 0,
+   "h": "Pense em imagem menor e campo maior.",
+   "e": "O espelho convexo dá imagens menores, o que permite ver uma região bem maior (campo de visão amplo). Por isso é usado em retrovisores e vigilância.",
+   "x": {
+    "1": "O côncavo dá campo menor e imagens ampliadas ou invertidas.",
+    "2": "O plano tem campo limitado ao tamanho do espelho.",
+    "3": "Com o objeto além de C a imagem é invertida, o que atrapalha o uso."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-2-spherical-mirrors",
+    "titulo": "2.2 Spherical Mirrors",
+    "conferido_em": "2026-11-07",
+    "base": "foco, equação dos espelhos e aumento",
+    "verificar": [
+     "spherical mirror",
+     "focal length"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Conceito sem cálculo e sem processo que precise de animação."
+   }
+  },
+  {
+   "t": "ee",
+   "q": "Um dentista usa um pequeno espelho para ver os dentes ampliados. O espelho é côncavo e o dente fica:",
+   "o": [
+    "Entre o foco e o vértice, formando imagem virtual, direta e maior.",
+    "Além do centro de curvatura, formando imagem real e menor.",
+    "Sobre o foco, formando imagem nítida.",
+    "Entre o foco e o centro, formando imagem virtual."
+   ],
+   "a": 0,
+   "h": "Imagem ampliada e direta.",
+   "e": "Com o objeto entre o foco F e o vértice V, o espelho côncavo forma imagem virtual, direta e maior. É o caso do espelho de dentista e de maquiagem.",
+   "x": {
+    "1": "Além de C a imagem é real, invertida e menor.",
+    "2": "Sobre o foco os raios saem paralelos e não há imagem.",
+    "3": "Entre F e C a imagem é real e invertida."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-2-spherical-mirrors",
+    "titulo": "2.2 Spherical Mirrors",
+    "conferido_em": "2026-11-07",
+    "base": "foco, equação dos espelhos e aumento",
+    "verificar": [
+     "spherical mirror",
+     "focal length"
+    ]
+   },
+   "an": "opt_concavo"
+  },
+  {
+   "t": "ee",
+   "q": "Em um espelho côncavo, um raio de luz que incide paralelamente ao eixo principal é refletido:",
+   "o": [
+    "Passando pelo foco.",
+    "Paralelamente ao eixo.",
+    "Passando pelo vértice, sem desvio.",
+    "Afastando-se do foco, como se viesse dele."
+   ],
+   "a": 0,
+   "h": "Lembre da propriedade do espelho convergente.",
+   "e": "Em um espelho côncavo, raios paralelos ao eixo principal convergem, após a reflexão, para o foco F.",
+   "x": {
+    "1": "Isso não ocorre com raios paralelos ao eixo.",
+    "2": "O raio que atinge o vértice se reflete simetricamente em relação ao eixo.",
+    "3": "Esse é o comportamento do espelho convexo."
+   },
+   "n": 1,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-2-spherical-mirrors",
+    "titulo": "2.2 Spherical Mirrors",
+    "conferido_em": "2026-11-07",
+    "base": "foco, equação dos espelhos e aumento",
+    "verificar": [
+     "spherical mirror",
+     "focal length"
+    ]
+   },
+   "an": "opt_concavo"
+  },
+  {
+   "t": "ee",
+   "q": "Verdadeiro ou falso: o foco de um espelho esférico convexo é virtual.",
+   "o": [
+    "Verdadeiro",
+    "Falso"
+   ],
+   "a": 0,
+   "h": "Os raios refletidos divergem.",
+   "e": "Verdadeiro. No espelho convexo, os raios refletidos divergem, e o foco é o ponto de onde parecem sair, atrás do espelho: é um foco virtual. Por isso f < 0.",
+   "v": 1,
+   "x": {
+    "1": "No convexo o foco está atrás do espelho, no prolongamento dos raios refletidos."
+   },
+   "n": 2,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-2-spherical-mirrors",
+    "titulo": "2.2 Spherical Mirrors",
+    "conferido_em": "2026-11-07",
+    "base": "foco, equação dos espelhos e aumento",
+    "verificar": [
+     "spherical mirror",
+     "focal length"
+    ]
+   },
+   "animacao": {
+    "decisao": "nao_aplica",
+    "motivo": "Afirmação conceitual, sem processo para animar."
+   }
+  },
+  {
+   "t": "ee",
+   "q": "Um espelho esférico tem raio de curvatura de 40 cm. Qual é a sua distância focal?",
+   "o": [
+    "20 cm",
+    "80 cm",
+    "40 cm",
+    "10 cm"
+   ],
+   "a": 0,
+   "h": "O foco fica a meia distância do centro de curvatura.",
+   "e": "f = R / 2 = 40 / 2 = 20 cm.",
+   "x": {
+    "1": "Dobrou o raio em vez de dividir.",
+    "2": "Tomou o raio como a distância focal.",
+    "3": "Dividiu o raio por 4."
+   },
+   "c": 1,
+   "n": 1,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-2-spherical-mirrors",
+    "titulo": "2.2 Spherical Mirrors",
+    "conferido_em": "2026-11-07",
+    "base": "foco, equação dos espelhos e aumento",
+    "verificar": [
+     "spherical mirror",
+     "focal length"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "R": "40 cm"
+    },
+    "expr": "R/2",
+    "expr2": "R*0.5",
+    "unidade": "cm",
+    "simbolo": "f",
+    "formula": "f = R / 2",
+    "rotulos": {
+     "R": "R"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "ee",
+   "q": "Um espelho côncavo tem distância focal de 10 cm. Um objeto real está a 30 cm do vértice. A que distância do espelho se forma a imagem?",
+   "o": [
+    "15 cm",
+    "7,5 cm",
+    "−15 cm",
+    "20 cm"
+   ],
+   "a": 0,
+   "h": "Use a equação de Gauss e isole 1/p'.",
+   "e": "1/f = 1/p + 1/p', logo 1/p' = 1/10 − 1/30 = 2/30. Então p' = 15 cm (imagem real).",
+   "x": {
+    "1": "Somou os inversos em vez de subtrair.",
+    "2": "O sinal negativo indicaria imagem virtual, o que não ocorre aqui.",
+    "3": "Usou p' = p − f."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-2-spherical-mirrors",
+    "titulo": "2.2 Spherical Mirrors",
+    "conferido_em": "2026-11-07",
+    "base": "foco, equação dos espelhos e aumento",
+    "verificar": [
+     "spherical mirror",
+     "focal length"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "f": "10 cm",
+     "p": "30 cm"
+    },
+    "expr": "1/(1/f-1/p)",
+    "expr2": "f*p/(p-f)",
+    "unidade": "cm",
+    "simbolo": "p'",
+    "formula": "1/f = 1/p + 1/p'",
+    "rotulos": {
+     "f": "f",
+     "p": "p"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "ee",
+   "q": "No espelho côncavo da questão anterior (f = 10 cm, objeto a 30 cm, imagem a 15 cm), qual é o aumento linear transversal A = −p'/p?",
+   "o": [
+    "−0,5",
+    "0,5",
+    "−2",
+    "2"
+   ],
+   "a": 0,
+   "h": "Use A = −p'/p.",
+   "e": "A = −p' / p = −15 / 30 = −0,5. O sinal negativo indica imagem invertida e a imagem tem metade do tamanho do objeto.",
+   "x": {
+    "1": "Esqueceu o sinal: a imagem é invertida.",
+    "2": "Inverteu a razão (p / p').",
+    "3": "Inverteu a razão e esqueceu o sinal."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-2-spherical-mirrors",
+    "titulo": "2.2 Spherical Mirrors",
+    "conferido_em": "2026-11-07",
+    "base": "foco, equação dos espelhos e aumento",
+    "verificar": [
+     "spherical mirror",
+     "focal length"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "pl": "15 cm",
+     "p": "30 cm"
+    },
+    "expr": "-pl/p",
+    "expr2": "0-(pl/p)",
+    "unidade": "1",
+    "simbolo": "A",
+    "formula": "A = − p' / p",
+    "rotulos": {
+     "pl": "p'",
+     "p": "p"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  },
+  {
+   "t": "ee",
+   "q": "Um objeto real é colocado além do centro de curvatura de um espelho côncavo. A imagem formada é:",
+   "o": [
+    "Real, invertida e menor que o objeto.",
+    "Virtual, direta e maior que o objeto.",
+    "Real, invertida e maior que o objeto.",
+    "Virtual, direta e menor que o objeto."
+   ],
+   "a": 0,
+   "h": "Objeto longe do espelho côncavo.",
+   "e": "Com o objeto além de C, a imagem fica entre C e F: é real, invertida e menor que o objeto.",
+   "x": {
+    "1": "Imagem virtual e direta ocorre com o objeto entre F e V.",
+    "2": "Imagem real e maior ocorre com o objeto entre C e F.",
+    "3": "Imagem virtual, direta e menor é a do espelho convexo."
+   },
+   "n": 3,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-2-spherical-mirrors",
+    "titulo": "2.2 Spherical Mirrors",
+    "conferido_em": "2026-11-07",
+    "base": "foco, equação dos espelhos e aumento",
+    "verificar": [
+     "spherical mirror",
+     "focal length"
+    ]
+   },
+   "an": "opt_concavo"
+  },
+  {
+   "t": "ee",
+   "q": "Um espelho convexo tem distância focal de −15 cm. Um objeto está a 30 cm do espelho. Em que posição se forma a imagem?",
+   "o": [
+    "−10 cm",
+    "10 cm",
+    "−30 cm",
+    "−5 cm"
+   ],
+   "a": 0,
+   "h": "No convexo, f é negativo.",
+   "e": "1/p' = 1/f − 1/p = −1/15 − 1/30 = −3/30. Então p' = −10 cm. O sinal negativo indica imagem virtual, atrás do espelho.",
+   "x": {
+    "1": "O sinal positivo indicaria imagem real, o que não ocorre no convexo.",
+    "2": "Usou f no lugar de p'.",
+    "3": "Errou a soma das frações."
+   },
+   "c": 1,
+   "n": 3,
+   "fonte": {
+    "site": "OpenStax",
+    "url": "https://openstax.org/books/university-physics-volume-3/pages/2-2-spherical-mirrors",
+    "titulo": "2.2 Spherical Mirrors",
+    "conferido_em": "2026-11-07",
+    "base": "foco, equação dos espelhos e aumento",
+    "verificar": [
+     "spherical mirror",
+     "focal length"
+    ]
+   },
+   "calc": {
+    "vars": {
+     "f": "-15 cm",
+     "p": "30 cm"
+    },
+    "expr": "1/(1/f-1/p)",
+    "expr2": "f*p/(p-f)",
+    "unidade": "cm",
+    "simbolo": "p'",
+    "formula": "1/f = 1/p + 1/p'",
+    "rotulos": {
+     "f": "f",
+     "p": "p"
+    }
+   },
+   "animacao": {
+    "decisao": "molde",
+    "molde": "generico"
+   }
+  }
+ ]
+}

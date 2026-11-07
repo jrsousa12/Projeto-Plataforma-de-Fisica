@@ -1,0 +1,19 @@
+[["Carga elementar","e = 1,6 × 10⁻¹⁹ C"],["Quantização da carga","Q = n·e, com n inteiro"],["Conservação da carga","Em sistema isolado, a soma algébrica das cargas é constante."],["Lei de Coulomb","F = k·|q₁·q₂| / d², com k ≈ 9 × 10⁹ N·m²/C²"],["Campo elétrico","E = F/q. Carga puntiforme: E = k·|Q| / d². Unidade: N/C."],["Sentido do campo","Sai das cargas positivas e chega às negativas."],["Força sobre carga no campo","F = q·E. Se q é negativa, F tem sentido oposto a E."],["Potencial de carga puntiforme","V = k·Q / d (grandeza escalar)"],["Trabalho e diferença de potencial","W = q·U, com U = V_A − V_B"],["Campo uniforme","U = E·d"],["Energia potencial de duas cargas","Ep = k·q₁·q₂ / d"],["Superfície equipotencial","W = 0 ao longo dela. As linhas de campo são perpendiculares a ela."],["Eletrização por atrito","Corpos neutros trocam elétrons e ficam com cargas opostas."],["Eletrização por contato","O neutro fica com carga de mesmo sinal. Condutores idênticos dividem a carga."],["Eletrização por indução","O induzido fica com sinal oposto ao do indutor, com ligação à terra."],["Condutor em equilíbrio","E = 0 no interior, carga na superfície e potencial constante."],["Poder das pontas","Densidade de cargas e campo são maiores onde o raio de curvatura é menor."],["Gaiola de Faraday","Condutor oco blinda o interior: o campo no interior é nulo."]],fi=0,fl=false;
+function renderCard(){$("cc").textContent="Cartão "+(fi+1)+" de "+CARDS.length+(fl?" · resposta":" · conceito");$("fc").textContent=fl?CARDS[fi][1]:CARDS[fi][0];$("fc").className="fc"+(fl?" back":"")}
+function flip(){fl=!fl;renderCard()}
+$("fopen").onclick=function(){openOnly("cards");fi=0;fl=false;renderCard()};
+$("fc").onclick=flip;$("cflip").onclick=flip;
+$("cnext").onclick=function(){fi=(fi+1)%CARDS.length;fl=false;renderCard()};
+$("cshuf").onclick=function(){CARDS=shuf(CARDS);fi=0;fl=false;renderCard()};
+$("cback").onclick=goHome;
+function histAdd(ag){if(!isFull)return;var h=ST.get("hist",[]);h.push({d:Date.now(),a:ag,s:score,n:order.length});ST.set("hist",h.slice(-50))}
+function renderHist(){var h=ST.get("hist",[]);var t={},o="";h.forEach(function(x){Object.keys(x.a).forEach(function(k){t[k]=t[k]||[0,0];t[k][0]+=x.a[k][0];t[k][1]+=x.a[k][1]})});
+Object.keys(TN).forEach(function(k){if(t[k]){var p=Math.round(100*t[k][0]/t[k][1]);o+='<p style="margin:8px 0 0"><b>'+TN[k]+'</b>: '+p+'% ('+t[k][0]+' de '+t[k][1]+')</p><div class="hb"><i style="width:'+p+'%"></i></div>'}});
+if(h.length){o+='<p style="margin:10px 0 4px"><b>Últimas rodadas</b></p><ol style="padding-left:22px;margin:0;font-size:.93rem">'+h.slice(-5).reverse().map(function(x){return '<li>'+new Date(x.d).toLocaleDateString("pt-BR")+': '+num(x.s)+' / '+x.n+'</li>'}).join("")+'</ol>'}
+$("histbody").innerHTML=o||'<p>Ainda não há dados. Termine um quiz para ver sua evolução por área.</p>'}
+$("hopen").onclick=function(){openOnly("hist");renderHist()};$("hback").onclick=goHome;
+$("hclear").onclick=function(){ST.del("hist");renderHist()};
+$("mopen").onclick=function(){begin("simulado")};
+$("bexp").onclick=function(){var c=btoa(JSON.stringify(bkGet()));$("bkio").value=c;try{navigator.clipboard.writeText(c).catch(function(){})}catch(e){}$("bmsg").textContent="Código gerado. Copie e cole em outro aparelho."};
+$("bimp").onclick=function(){try{var o=JSON.parse(atob($("bkio").value.trim())),c=bkGet();Object.keys(o).forEach(function(k0){var k=LEG[k0]||k0;if(!c[k]||c[k].w<o[k0].w)c[k]=o[k0]});bkSet(c);renderBook();$("bmsg").textContent="Caderno importado."}catch(e){$("bmsg").textContent="Código inválido."}};
+$("hbtn").onclick=function(){if(locked)return;var d=Q[order[i]]

@@ -1,0 +1,2 @@
+https://openstax.org/books/university-physics-volume-2/pages/7-5-equipotential-surfaces-and-conductors#2026-11-07
+7.5 Equipotential Surfaces and Conductors. Two large conducting plates carry equal and opposite charges, with a surface charge density σ. Distribution of Charges on Conductors. The net charge on a conducting sphere and its surface charge density are related by q = σ(4πR²). The surface charge density is higher at locations with a small radius of curvature than at locations with a large radius of curvature.
