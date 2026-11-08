@@ -46,9 +46,9 @@ function dots(){
   $("dots").innerHTML=h;
 }
 function elapsed(){return Math.max(0,Math.floor(((pz||Date.now())-t0)/1000))}
-function save(){try{if(!order.length||$("quiz").classList.contains("hidden"))return;ST.set("sess",{v:1,m:mode,o:order,r:res,sc:score,st:streak,f:isFull,el:elapsed(),qr:qrem,at:Date.now()})}catch(e){}}
+function save(){try{if(!order.length||$("quiz").classList.contains("hidden"))return;ST.set("sess",{v:2,m:mode,ids:order.map(function(k){return Q[k].id}),r:res.map(function(x){var y={};for(var c in x)y[c]=x[c];y.id=Q[x.qi].id;return y}),sc:score,st:streak,f:isFull,el:elapsed(),qr:qrem,at:Date.now()})}catch(e){}}
 function setPz(p){var q=$("quiz"),b=$("tpause");if(!b)return;if(p&&!pz)pz=Date.now();else if(!p&&pz){t0+=Date.now()-pz;pz=0;tick()}q.classList.toggle("pausado",!!pz);b.setAttribute("aria-pressed",pz?"true":"false");b.textContent=pz?"▶ Continuar":"⏸ Pausar";b.setAttribute("aria-label",pz?"Continuar o tempo":"Pausar o tempo");if(pz)save()}
-$("tpause").onclick=function(){if(!locked||pz)setPz(!pz);else setPz(!pz)};
+$("tpause").onclick=function(){setPz(!pz)};
 /* Pausa o relógio sem sair da tela (também o tempo da pergunta no modo cronometrado) e devolve se pausou agora. */
 function qPause(){if($("quiz").classList.contains("hidden")||pz)return false;if(mode==="tempo"&&!locked){qrem=Math.max(1,qTL*1000-(Date.now()-qs));clearInterval(qt)}else qrem=0;setPz(true);return true}
 function qResume(){setPz(false);if(mode==="tempo"&&qrem>0&&!locked){qs=Date.now()-(qTL*1000-qrem);qrem=0;runQt()}else qrem=0}
@@ -84,7 +84,7 @@ function show(){
   $("pts").textContent=num(score);
   $("q").textContent=G?G.q:d.q;
   var fg=$("fig");
-  if(d.f){fg.innerHTML='<svg viewBox="0 0 320 140" role="img" aria-label="'+FIG[d.f].a+'">'+FIG[d.f].s+'</svg>';fg.classList.remove("hidden")}else{fg.classList.add("hidden");fg.innerHTML=""}
+  if(d.f){fg.innerHTML='<svg viewBox="0 0 320 140" role="img" aria-label="'+esc(FIG[d.f].a)+'">'+FIG[d.f].s+'</svg>';fg.classList.remove("hidden")}else{fg.classList.add("hidden");fg.innerHTML=""}
   $("fb").innerHTML="";$("hint").innerHTML="";
   $("hbtn").classList.remove("hidden");$("hbtn").textContent=mode==="tempo"?"Ver dica (vale meio ponto)":"Ver dica";if(mode==="simulado")$("hbtn").classList.add("hidden");startQ();
   $("next").classList.add("hidden");
@@ -127,7 +127,7 @@ function pick(k,nok){
   $("pts").textContent=num(score);
   $("hbtn").classList.add("hidden");$("fonteq").classList.remove("hidden");
   $("fb").innerHTML='<div class="fb'+(ok?"":" no")+'"><b>'+(ok?(hinted&&mode==="tempo"?"Correto, com dica! (meio ponto)":"Correto!"):(k===-1?"Tempo esgotado.":"Não foi dessa vez."))+'</b><p></p></div>';
-  fmtE($("fb").querySelector("p"),G?G.e+" Resposta: "+G.at:d.e,!!(G||d.c));if(d.an&&window.ANIM&&window.ANIM[d.an]){var A=window.ANIM[d.an],w=document.createElement("div");w.className="fig anim";w.innerHTML='<svg viewBox="0 0 320 '+A.h+'" role="img" aria-label="'+A.a+'">'+A.s+'</svg><div class="anrow"><button type="button" class="btn alt anp" aria-pressed="false">⏸ Pausar</button><button type="button" class="btn alt anr">↻ Ver de novo</button></div><label class="anlb">Linha do tempo<input type="range" class="anrg" min="0" step="50" value="0" aria-label="Linha do tempo da animação"></label><details class="antx"><summary>Descrição em texto</summary><p></p></details>';w.querySelector(".antx p").textContent=A.a;$("fb").appendChild(w);anCtl(w,w.querySelector("svg"),A,function(){setTimeout(function(){var n=$("next");if(n&&!n.classList.contains("hidden"))n.scrollIntoView({block:"center",behavior:"smooth"})},500)})}
+  fmtE($("fb").querySelector("p"),G?G.e+" Resposta: "+G.at:d.e,!!(G||d.c));if(d.an&&window.ANIM&&window.ANIM[d.an]){var A=window.ANIM[d.an],w=document.createElement("div");w.className="fig anim";w.innerHTML='<svg viewBox="0 0 320 '+A.h+'" role="img" aria-label="'+esc(A.a)+'">'+A.s+'</svg><div class="anrow"><button type="button" class="btn alt anp" aria-pressed="false">⏸ Pausar</button><button type="button" class="btn alt anr">↻ Ver de novo</button></div><label class="anlb">Linha do tempo<input type="range" class="anrg" min="0" step="50" value="0" aria-label="Linha do tempo da animação"></label><details class="antx"><summary>Descrição em texto</summary><p></p></details>';w.querySelector(".antx p").textContent=A.a;$("fb").appendChild(w);anCtl(w,w.querySelector("svg"),A,function(){setTimeout(function(){var n=$("next");if(n&&!n.classList.contains("hidden"))n.scrollIntoView({block:"center",behavior:"smooth"})},500)})}
   if(!ok&&!G&&oi>=0){var fp=document.createElement("p");fp.className="fbx";Eq.set(fp,"Você marcou: "+d.o[oi]+(d.x&&d.x[oi]?" — "+d.x[oi]:""));$("fb").querySelector(".fb").appendChild(fp)}
   if(mf){var mp=document.createElement("p");mp.className="msg ok";mp.textContent="🎯 Meta do dia cumprida! Muito bem!";$("fb").appendChild(mp)}
   $("next").textContent=i<order.length-1?"Próxima pergunta":"Ver resultado";
@@ -285,7 +285,10 @@ var gn=0;
 function GQ(t,id,h,f){return {t:t,o:[],a:0,q:"Questão numérica: "+id,h:h,e:"",g:f,id:"n"+(++gn)}}
 Q.push.apply(Q,QZ.gq(GQ,Rn,fc,sc,sup));;
 var G=null,NV=0;
-function submitNum(){if(locked)return;var v=parseFloat(($("num").value||"").replace("−","-").replace(",","."));if(isNaN(v))return;NV=v;var ok=Math.abs(v-G.ans)<=Math.abs(G.ans)*0.02;$("num").disabled=true;$("nsend").classList.add("hidden");pick(-2,ok)}
+/* lê o número digitado: aceita vírgula ou ponto decimal e notação científica (2,5 × 10⁴, 2,5x10^4, 2,5·10^-3, 2.5e4); a unidade depois do número é ignorada */
+function lerNum(t){t=String(t||"").replace(/[−–]/g,"-").replace(/\s+/g,"").replace(/[⁻⁰¹²³⁴⁵⁶⁷⁸⁹]+/g,function(m){return "^"+m.replace(/./g,function(c){return "-0123456789".charAt("⁻⁰¹²³⁴⁵⁶⁷⁸⁹".indexOf(c))})});
+ t=t.replace(/^([-+]?)10\^/,"$11x10^");var m=/^([-+]?\d+(?:[.,]\d+)?)(?:[x×*·]10\^?([-+]?\d+)|e([-+]?\d+))?(?:[^\d^].*)?$/i.exec(t);if(!m)return NaN;var e=m[2]!==undefined?m[2]:m[3];return parseFloat(m[1].replace(",","."))*(e!==undefined?Math.pow(10,+e):1)}
+function submitNum(){if(locked)return;var v=lerNum($("num").value);var er=$("numerr");if(isNaN(v)){if(!er){er=document.createElement("p");er.id="numerr";er.className="msg no";er.setAttribute("role","alert");$("opts").appendChild(er)}er.textContent="Não entendi o número. Escreva só o valor, por exemplo 2,5 ou 2,5 × 10^4.";return}if(er)er.remove();NV=v;var ok=Math.abs(v-G.ans)<=Math.abs(G.ans)*0.02;$("num").disabled=true;$("nsend").classList.add("hidden");pick(-2,ok)}
 var CARDS=QZ.cards.slice(),fi=0,fl=false,DK=0;
 function setDeck(k){DK=k;CARDS=(k&&QZ.curio?QZ.curio:QZ.cards).slice();fi=0;fl=false;$("dk0").className=k?"":"on";$("dk1").className=k?"on":"";$("dk0").setAttribute("aria-pressed",k?"false":"true");$("dk1").setAttribute("aria-pressed",k?"true":"false");renderCard()}
 $("cdeck").classList.toggle("hidden",!(QZ.curio&&QZ.curio.length));$("dk0").onclick=function(){setDeck(0)};$("dk1").onclick=function(){setDeck(1)};
@@ -343,7 +346,7 @@ function graf(h,t){
 function overview(){
  var D=[["eletro","Eletrostática","eletriz:"],["fluidos","Mecânica dos Fluidos","fluidos:"],["termo","Termologia","termo:"],["onda","Ondulatória: Som","onda:"],["optica","Óptica Geométrica","optica:"],["mec","Mecânica: Cinemática e Dinâmica","mec:"],["edin","Eletrodinâmica","edin:"]],rows=[],T=0,A=0,Rd=0;
  D.forEach(function(d){var H=[];try{H=JSON.parse(localStorage.getItem(d[2]+"hist")||"[]")}catch(e){}if(!Array.isArray(H))H=[];var q=0,a=0;H.forEach(function(x){if(!x||!x.a)return;Object.keys(x.a).forEach(function(k){a+=x.a[k][0];q+=x.a[k][1]})});rows.push({n:d[1],id:d[0],r:H.length,q:q,a:a});T+=q;A+=a;Rd+=H.length});
- if(!T)return '<p>Ainda não há dados. Termine um quiz para ver a comparação entre os três temas.</p>';
+ if(!T)return '<p>Ainda não há dados. Termine um quiz para ver a comparação entre os quizzes.</p>';
  var o='<div class="gk"><div><b>'+Rd+'</b>rodadas</div><div><b>'+T+'</b>questões</div><div><b>'+Math.round(100*A/T)+'%</b>de acerto</div></div><div class="gr"><h4>Acerto em cada quiz</h4>';
  rows.forEach(function(r){var p=r.q?Math.round(100*r.a/r.q):0;o+='<div class="ab"><div class="t"><span>'+esc(r.n)+(r.id===id?" (este)":"")+'</span><span>'+(r.q?r.a+' de '+r.q+' · '+p+'%':'sem dados')+'</span></div><div class="tr"><i class="'+(p>=70?"b1":p>=50?"b2":"b3")+'" style="width:'+p+'%"></i></div></div>'});
  o+='<p class="lg">Soma das rodadas completas de cada quiz neste aparelho.</p></div><div class="gr"><h4>Rodadas por quiz</h4>';
@@ -360,7 +363,7 @@ $("hopen").onclick=function(){openOnly("hist");renderHist()};$("hback").onclick=
 $("hclear").onclick=function(){ST.del("hist");renderHist()};
 $("mopen").onclick=function(){begin("simulado")};
 $("bexp").onclick=function(){var c=btoa(JSON.stringify(bkGet()));$("bkio").value=c;try{navigator.clipboard.writeText(c).catch(function(){})}catch(e){}$("bmsg").textContent="Código gerado. Copie e cole em outro aparelho."};
-$("bimp").onclick=function(){try{var o=JSON.parse(atob($("bkio").value.trim())),c=bkGet();Object.keys(o).forEach(function(k0){var k=LEG[k0]||k0;if(!c[k]||c[k].w<o[k0].w)c[k]=o[k0]});bkSet(c);renderBook();$("bmsg").textContent="Caderno importado."}catch(e){$("bmsg").textContent="Código inválido."}};
+$("bimp").onclick=function(){try{var o=JSON.parse(atob($("bkio").value.trim())),c=bkGet();if(!o||typeof o!=="object"||Array.isArray(o))throw 0;Object.keys(o).forEach(function(k0){var k=LEG[k0]||k0,x=o[k0];if(HI[k]===undefined||!x||typeof x!=="object")return;x={w:Math.min(999,Math.max(0,Math.round(+x.w)||0)),r:Math.min(9,Math.max(0,Math.round(+x.r)||0))};if(!x.w)return;if(!c[k]||c[k].w<x.w)c[k]=x});bkSet(c);renderBook();$("bmsg").textContent="Caderno importado."}catch(e){$("bmsg").textContent="Código inválido."}};
 $("hbtn").onclick=function(){if(locked)return;var d=Q[order[i]];if(!hinted){hinted=true;$("hint").innerHTML='<div class="hint"></div>';Eq.set($("hint").firstChild,"Dica: "+d.h);if(d.g||d.o.length<4){$("hbtn").classList.add("hidden")}else{$("hbtn").textContent="Eliminar duas alternativas"}}else{var bs=$("opts").children,n=0;for(var k=0;k<bs.length&&n<2;k++){if(perm[k]!==d.a&&!bs[k].disabled){bs[k].disabled=true;bs[k].style.opacity=".35";n++}}$("hbtn").classList.add("hidden")}};
 $("go2").onclick=function(){begin("tempo")};
 $("share").onclick=function(){var b=$("share"),t="Fiz "+num(score)+"/"+order.length+" no quiz de "+QZ.nome.toLowerCase()+" ("+(mode==="tempo"?"cronometrado":"modo estudo")+") em "+$("s3").textContent+". Tente também!"+(/^https?:$/.test(location.protocol)?" "+location.origin+location.pathname:"");var show=function(){var s=$("shtxt");if(!s){s=document.createElement("p");s.id="shtxt";s.className="hint";s.style.userSelect="all";b.parentNode.insertBefore(s,b.nextSibling)}s.textContent="Copie e envie: "+t};try{if(navigator.share){navigator.share({text:t}).catch(function(e){if(!e||e.name!=="AbortError")show()})}else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){b.textContent="Copiado!"}).catch(show)}else{show()}}catch(e){show()}};
@@ -384,18 +387,21 @@ $("exleave").onclick=function(){$("exitq").classList.add("hidden");clearInterval
 document.addEventListener("keydown",function(e){if(e.key!=="Escape")return;if(!$("exitq").classList.contains("hidden")){$("exstay").click()}else if(curV!=="inicio"){$("back").click()}});
 $("gohome").onclick=goHome;
 /* Fontes de referência: o quiz em andamento fica guardado (com o tempo pausado) e pode ser retomado da tela inicial da área. */
-function sessOk(S){return !!(S&&S.v===1&&Array.isArray(S.o)&&Array.isArray(S.r)&&S.o.length&&S.o.every(function(k){return k>=0&&k<Q.length})&&Date.now()-S.at<432e5&&(S.m==="estudo"||S.m==="tempo"||S.m==="simulado"))}
+/* lê a sessão guardada e converte os ids de volta em posições do banco atual; devolve null se alguma pergunta não existir mais */
+function sessGet(){var S=ST.get("sess",null);if(!(S&&S.v===2&&Array.isArray(S.ids)&&Array.isArray(S.r)&&S.ids.length&&Date.now()-S.at<432e5&&(S.m==="estudo"||S.m==="tempo"||S.m==="simulado")))return null;
+ var IX={};Q.forEach(function(d,k){IX[d.id]=k});var o=S.ids.map(function(x){return IX[x]}),r=S.r.map(function(x){var y={};for(var c in x)y[c]=x[c];y.qi=IX[x&&x.id];return y});
+ if(o.some(function(k){return k===undefined})||r.some(function(x){return x.qi===undefined}))return null;S.o=o;S.r=r;return S}
 function parkQuiz(){if(!running())return false;qPause();save();parked=true;autoP=false;clearInterval(timer);clearInterval(qt);return true}
 function openFontes(){if(running())parkQuiz();["home","quiz","end","book","sheet","cards","hist","bar","dots","exitq"].forEach(function(x){$(x).classList.add("hidden")});Fontes.tela($("fbody"),id);$("fontes").classList.remove("hidden");retUi();window.scrollTo(0,0);setHash("fontes")}
-function retomar(){var S=ST.get("sess",null);if(!sessOk(S)){goHome();return}mode=S.m;nick=SH.get("nick","")||"Anônimo";start(S.o,S.f,S)}
-function retUi(){var S=ST.get("sess",null),ok=sessOk(S),b=$("retq"),v=$("fvolta");[b,v].forEach(function(x){if(!x)return;x.classList.toggle("hidden",!ok);if(ok){x.textContent="";var t=document.createElement("span");t.textContent="↩ Voltar ao quiz atual";x.appendChild(t);var sm=document.createElement("small"),n=Math.min(S.r.length+1,S.o.length),el=S.el||0;sm.textContent="Pergunta "+n+" de "+S.o.length+" · "+(S.m==="simulado"?"restam "+fmt(Math.max(0,2400-el)):"tempo "+fmt(el))+" (pausado)";x.appendChild(sm)}})}
+function retomar(){var S=sessGet();if(!S){goHome();return}mode=S.m;nick=SH.get("nick","")||"Anônimo";start(S.o,S.f,S)}
+function retUi(){var S=sessGet(),ok=!!S,b=$("retq"),v=$("fvolta");[b,v].forEach(function(x){if(!x)return;x.classList.toggle("hidden",!ok);if(ok){x.textContent="";var t=document.createElement("span");t.textContent="↩ Voltar ao quiz atual";x.appendChild(t);var sm=document.createElement("small"),n=Math.min(S.r.length+1,S.o.length),el=S.el||0;sm.textContent="Pergunta "+n+" de "+S.o.length+" · "+(S.m==="simulado"?"restam "+fmt(Math.max(0,2400-el)):"tempo "+fmt(el))+" (pausado)";x.appendChild(sm)}})}
 $("retq").onclick=retomar;$("fvolta").onclick=retomar;
 $("fonteq").onclick=function(e){e.stopPropagation();var p=$("fpop"),abre=p.classList.contains("hidden");if(abre)Fontes.quadro(p,id,openFontes);p.classList.toggle("hidden",!abre);$("fonteq").setAttribute("aria-expanded",abre?"true":"false")};
 document.addEventListener("click",function(e){var p=$("fpop");if(p&&!p.classList.contains("hidden")&&!p.contains(e.target)&&e.target!==$("fonteq")){p.classList.add("hidden");$("fonteq").setAttribute("aria-expanded","false")}});
 window.QzFonte={abrir:openFontes,voltar:function(){$("back").click()}};
-var DBGF=location.hash==="#debug",TSTF=location.hash==="#teste",SS=ST.get("sess",null);
+var DBGF=location.hash==="#debug",TSTF=location.hash==="#teste",SS=sessGet();
 goHome();
-try{if(sessOk(SS)){mode=SS.m;nick=SH.get("nick","")||"Anônimo";start(SS.o,SS.f,SS)}}catch(e){goHome()}
+try{if(SS){mode=SS.m;nick=SH.get("nick","")||"Anônimo";start(SS.o,SS.f,SS)}}catch(e){goHome()}
 $("hst").innerHTML="<span>"+Q.length+" questões</span><span>"+Object.keys(TN).length+" áreas</span><span>3 modos</span>";document.documentElement.setAttribute("data-quiz",id);$("navb").classList.remove("off");$("homebtn").hidden=true;document.title="Quiz: "+QZ.nome;document.querySelector(".hero h1").textContent=QZ.nome;document.querySelector(".hero p").textContent=QZ.subt;document.querySelector("details.sum").innerHTML=QZ.resumo;$("go2").querySelector("small").textContent=QZ.tempoDesc;
 document.querySelectorAll(".chip2[data-a]").forEach(function(b){var k=b.getAttribute("data-a");b.textContent=TN[k]+" · "+Q.filter(function(d){return d.t===k}).length});
 /* Validação do banco: roda ao abrir a página. Abra com #teste para ver o resultado no topo. */

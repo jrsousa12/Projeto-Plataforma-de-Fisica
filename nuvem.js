@@ -46,7 +46,7 @@ function agendar(){if(!ativo()||!sessao())return;clearTimeout(tim);tim=setTimeou
 Storage.prototype.setItem=function(k,v){setRaw.call(this,k,v);if(this===window.localStorage&&/^(eletriz|fluidos|termo|onda|optica|mec|edin):(perfil|book|hist)$/.test(k))agendar()};
 var N=window.Nuvem={
   ativo:ativo,logado:function(){return !!sessao()},codigo:function(){var s=sessao();return s?s.cod:""},ultima:function(){var s=sessao();return s&&s.ult||0},aviso:function(){},
-  entrar:function(cod){if(!ativo())return Promise.reject(new Error("A nuvem não está configurada."));var c=norm(cod);if(c.length<6)return Promise.reject(new Error("Digite o código completo."));
+  entrar:function(cod){if(!ativo())return Promise.reject(new Error("A nuvem não está configurada."));var c=norm(cod);if(c.length<8)return Promise.reject(new Error("Digite o código completo (8 letras e números)."));
     var corpo={email:email(c),password:c,returnSecureToken:true};
     return api(AUTH+"/accounts:signInWithPassword?key="+C.apiKey,corpo).catch(function(e){
       if(/INVALID_PASSWORD|EMAIL_NOT_FOUND|INVALID_LOGIN_CREDENTIALS|USER_NOT_FOUND/.test(e.message))return api(AUTH+"/accounts:signUp?key="+C.apiKey,corpo);throw e}).then(function(j){guarda(j,c);return sincronizar().then(function(r){return r||"enviado"})}).catch(function(e){

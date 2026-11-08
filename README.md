@@ -95,7 +95,7 @@ service cloud.firestore {
 
 **Como funciona:** o aparelho continua sendo a cópia principal. Depois de cada resposta o app envia os dados em segundo plano; ao entrar em outro aparelho, o histórico é baixado e unido ao que já existe. Relatórios ("O que melhorar", evolução por semana) são calculados no próprio aparelho. Para a escola: o app guarda só o código, as respostas e as datas, sem nome real. Avise a direção e as famílias sobre a coleta (LGPD).
 
-**Limites:** quem souber o código de um aluno acessa o histórico dele, então trate o código como senha. O plano gratuito tem limites diários de leituras e escritas, suficientes para turmas; acompanhe o consumo no console.
+**Limites:** quem souber o código de um aluno acessa o histórico dele, então trate o código como senha. O app só aceita códigos com 8 letras e números (o formato gerado pelo editor), para evitar códigos fáceis de adivinhar. O plano gratuito tem limites diários de leituras e escritas, suficientes para turmas; acompanhe o consumo no console.
 
 ## Dois quizzes na mesma aplicação
 

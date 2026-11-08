@@ -2,7 +2,7 @@ import re,os
 # o app fica na raiz do repositório (pasta acima de build/); o arquivo único sai em build/saida/
 d=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))+os.sep
 h=open(d+'index.html',encoding='utf-8').read()
-for pat in (r'<link rel="manifest"[^>]*>\n?',r'<link rel="apple-touch-icon"[^>]*>\n?',r'<link rel="icon"[^>]*>\n?',r'<div id="splash".*?</div>\n?',r'<a class="btn alt" id="salalink2?".*?</a>'):
+for pat in (r'<!-- Segurança:.*?-->\n?',r'<meta http-equiv="Content-Security-Policy"[^>]*>\n?',r'<link rel="manifest"[^>]*>\n?',r'<link rel="apple-touch-icon"[^>]*>\n?',r'<link rel="icon"[^>]*>\n?',r'<div id="splash".*?</div>\n?',r'<a class="btn alt" id="salalink2?".*?</a>'):
     h=re.sub(pat,'',h,flags=re.S)
 css=open(d+'style.css',encoding='utf-8').read()
 h=h.replace('<link rel="stylesheet" href="style.css">','<style>\n'+css+'</style>')
