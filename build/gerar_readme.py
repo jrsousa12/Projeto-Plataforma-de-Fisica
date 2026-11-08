@@ -7,6 +7,7 @@ import fnmatch, os, re, sys
 APP = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."); README = os.path.join(APP, "README.md")
 REGRAS = [  # (padrões, descrição); arquivos com a mesma descrição aparecem juntos
  (["index.html"], "Página principal do quiz"),
+ (["quizzes.js"], "**Lista única dos quizzes**: nome, arquivos e onde cada um guarda o progresso (veja \"Acrescentar um quiz\")"),
  (["style.css"], "Visual (cores, fontes, menus)"),
  (["script.js"], "Lógica do quiz"),
  (["perguntas-eletro.js"], "**Banco de perguntas** de Eletrostática (edite aqui para incluir questões)"),
@@ -24,7 +25,8 @@ REGRAS = [  # (padrões, descrição); arquivos com a mesma descrição aparecem
  (["figuras-fenomeno-*.js"], "Simulações do fenômeno (corpo em movimento + gráfico desenhado no tempo), que substituem as resoluções passo a passo"),
  (["fontes.js"], "Lista de fontes de referência (botão FONTE e tela Fontes)"),
  (["banco-extra.js", "banco-proprio.js", "editor.html", "editor.js", "editor.css"], "Editor de questões; `banco-proprio.js` leva as perguntas próprias aos alunos"),
- (["validar-banco.js", ".github/workflows/*.yml"], "Conferem os bancos de perguntas (ids repetidos, gabarito, alternativas, áreas); os fluxos do GitHub rodam sozinhos a cada envio"),
+ (["validar-banco.js"], "Confere os bancos de perguntas (ids repetidos, gabarito, alternativas, áreas) e a lista quizzes.js"),
+ ([".github/workflows/*.yml"], "Fluxos automáticos do GitHub: a cada envio validam os bancos, rodam os testes de navegador e atualizam a versão do app"),
  (["firebase-config.js", "nuvem.js"], "Nuvem opcional (Firebase): login por código e sincronização do histórico do aluno"),
  (["perfil.js"], "Desempenho do aluno, treino adaptativo (tudo guardado no aparelho)"),
  (["fx.js"], "Som, vibração e confete"),

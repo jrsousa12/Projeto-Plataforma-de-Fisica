@@ -6,7 +6,7 @@ var I={
  "tm":{n:"Toda Matéria · Física",u:"https://www.todamateria.com.br/fisica/",d:"Resumos e exercícios com gabarito, em português",s:"Toda Matéria"},
  "os":{n:"OpenStax",u:"https://openstax.org/",d:"Livros-texto universitários gratuitos de Física",s:"OpenStax"},
  "ph":{n:"PhET · Simulações",u:"https://phet.colorado.edu/pt_BR/",d:"Simulações interativas em português",s:"PhET, Univ. do Colorado"},
- "hp":{n:"HyperPhysics",u:"http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html",d:"Mapa de conceitos de Física",s:"HyperPhysics, Georgia State"},
+ "hp":{n:"HyperPhysics",u:"https://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html",d:"Mapa de conceitos de Física",s:"HyperPhysics, Georgia State"},
  "is":{n:"InfoEscola · Física",u:"https://www.infoescola.com/fisica/",d:"Artigos de Física em português",s:"InfoEscola"},
  "gr":{n:"GREF/USP · Leituras de Física",u:"https://fep.if.usp.br/~profis/gref.html",d:"Leituras de Física para o aluno",s:"GREF, Instituto de Física da USP"},
  "lt":{n:"LibreTexts · Física",u:"https://phys.libretexts.org/",d:"Livros abertos de Física",s:"LibreTexts"},

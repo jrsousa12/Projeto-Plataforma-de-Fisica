@@ -12,3 +12,24 @@ jobs:
         run: for f in *.js; do node --check "$f" || exit 1; done
       - name: Validar bancos de perguntas
         run: node validar-banco.js
+      - name: Conferir a tabela de arquivos do README
+        run: python3 build/gerar_readme.py --verificar
+
+  testes:
+    # Testes de navegador (build/t_*.py): abrem o quiz no Chromium e conferem telas, fluxos, animações e nuvem simulada.
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar Playwright
+        run: |
+          pip install playwright pillow
+          python -m playwright install --with-deps chromium
+      - name: Rodar os testes
+        run: cd build && python3 testes.py

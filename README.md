@@ -8,6 +8,7 @@ Quiz de Física (ensino médio) que funciona direto no navegador, sem instalar n
 | Arquivo | Para que serve |
 |---|---|
 | `index.html` | Página principal do quiz |
+| `quizzes.js` | **Lista única dos quizzes**: nome, arquivos e onde cada um guarda o progresso (veja "Acrescentar um quiz") |
 | `style.css` | Visual (cores, fontes, menus) |
 | `script.js` | Lógica do quiz |
 | `perguntas-eletro.js` | **Banco de perguntas** de Eletrostática (edite aqui para incluir questões) |
@@ -25,7 +26,8 @@ Quiz de Física (ensino médio) que funciona direto no navegador, sem instalar n
 | `figuras-fenomeno-mec.js` | Simulações do fenômeno (corpo em movimento + gráfico desenhado no tempo), que substituem as resoluções passo a passo |
 | `fontes.js` | Lista de fontes de referência (botão FONTE e tela Fontes) |
 | `banco-extra.js`, `banco-proprio.js`, `editor.css`, `editor.html`, `editor.js` | Editor de questões; `banco-proprio.js` leva as perguntas próprias aos alunos |
-| `.github/workflows/validar.yml`, `validar-banco.js` | Conferem os bancos de perguntas (ids repetidos, gabarito, alternativas, áreas); os fluxos do GitHub rodam sozinhos a cada envio |
+| `validar-banco.js` | Confere os bancos de perguntas (ids repetidos, gabarito, alternativas, áreas) e a lista quizzes.js |
+| `.github/workflows/validar.yml`, `.github/workflows/versao.yml` | Fluxos automáticos do GitHub: a cada envio validam os bancos, rodam os testes de navegador e atualizam a versão do app |
 | `firebase-config.js`, `nuvem.js` | Nuvem opcional (Firebase): login por código e sincronização do histórico do aluno |
 | `perfil.js` | Desempenho do aluno, treino adaptativo (tudo guardado no aparelho) |
 | `fx.js` | Som, vibração e confete |
@@ -97,13 +99,18 @@ service cloud.firestore {
 
 **Limites:** quem souber o código de um aluno acessa o histórico dele, então trate o código como senha. O app só aceita códigos com 8 letras e números (o formato gerado pelo editor), para evitar códigos fáceis de adivinhar. O plano gratuito tem limites diários de leituras e escritas, suficientes para turmas; acompanhe o consumo no console.
 
-## Dois quizzes na mesma aplicação
+## Vários quizzes na mesma aplicação
 
-A página inicial (`index.html`) pergunta qual quiz abrir. Para abrir direto, use `index.html?q=eletro`, `?q=fluidos` ou `?q=termo`. O botão Voltar leva à escolha. Cada quiz guarda caderno de erros, ranking e desempenho separados. 
+A página inicial (`index.html`) pergunta qual quiz abrir. Para abrir direto, use `index.html?q=` com o id do quiz (`eletro`, `fluidos`, `termo`, `onda`, `optica`, `mec`, `edin`). O botão Voltar leva à escolha. Cada quiz guarda caderno de erros, ranking e desempenho separados.
 
-**Só o quiz escolhido é carregado:** ao abrir `?q=fluidos`, o navegador baixa apenas `perguntas-fluidos.js`, `quiz-fluidos.js` e `figuras-fluidos.js`, em vez de todos os bancos. (O arquivo único `Quiz__Eletrost_tica_3.html` traz tudo embutido.)
+**Só o quiz escolhido é carregado:** ao abrir `?q=fluidos`, o navegador baixa apenas os arquivos de Fluidos listados em `quizzes.js`, em vez de todos os bancos. (O arquivo único gerado em `build/saida/` traz tudo embutido.)
 
-**Para criar outro quiz:** copie `quiz-fluidos.js`, `perguntas-fluidos.js` e `figuras-fluidos.js` com o novo nome e ajuste o conteúdo (as chaves das áreas devem ser diferentes das dos outros quizzes). Depois registre os três arquivos na lista `ARQ` no fim de `script.js`, no `sw.js`, no `editor.html` e em `validar-banco.js` (ele já os encontra pelo nome), e acrescente um botão `data-q` na tela de escolha de `index.html`.
+### Acrescentar um quiz
+
+1. Copie `quiz-fluidos.js` e `perguntas-fluidos.js` com o novo nome e ajuste o conteúdo. As chaves das áreas devem ser diferentes das dos outros quizzes.
+2. Acrescente uma linha em **`quizzes.js`** com o id, o nome, o prefixo (o mesmo `prefix` do `quiz-*.js`), a letra dos ids das perguntas e os arquivos. Essa lista única é usada pelo quiz, pelo editor, pelo modo sem internet, pela nuvem e pelas ferramentas de `build/`.
+3. Em `index.html`, acrescente um botão `data-q` na tela de escolha; em `style.css`, as cores do quiz (copie as de outro); em `fontes.js`, as fontes de referência (opcional).
+4. Rode `node validar-banco.js`: ele avisa se faltar algo na lista ou se um arquivo não existir.
 
 As perguntas de Fluidos foram escritas para este projeto (não são cópia do livro) e devem ser revisadas pelo professor. Os retratos de Torricelli, Pascal, Arquimedes e Stevin são ilustrações simples feitas no próprio código.
 
@@ -120,3 +127,12 @@ As perguntas de Fluidos foram escritas para este projeto (não são cópia do li
 ## Conferir o banco de perguntas
 
 Depois de editar um `perguntas-*.js`, rode `node validar-banco.js` (precisa do Node.js). Ele aponta ids repetidos, gabarito fora das alternativas, alternativas repetidas ou vazias, áreas inexistentes e figuras que faltam. No GitHub, a mesma conferência roda sozinha a cada envio (aba **Actions**); se aparecer um X vermelho, abra o detalhe para ver a pergunta com problema.
+
+## Automático no GitHub (aba Actions)
+
+A cada envio, dois fluxos rodam sozinhos:
+
+- **Validar quiz:** confere a sintaxe dos arquivos, os bancos de perguntas e a tabela de arquivos deste README e, em seguida, roda os testes de navegador (`build/t_*.py`, cerca de 15 minutos), que abrem o quiz no Chromium e conferem telas, modos, animações e a nuvem simulada. Um X vermelho mostra qual passo falhou.
+- **Atualizar versão do app:** só no `main`. Recalcula a versão do cache do `sw.js` (para os celulares baixarem a versão nova) e a tabela de arquivos do README. Se algo mudou, grava um commit automático "Atualiza a versão do app". Assim, não é preciso rodar `build/tudo.sh` antes de enviar arquivos pelo site do GitHub.
+
+Para rodar os testes no seu computador: `pip install playwright pillow`, `python -m playwright install chromium` e `cd build && python3 testes.py`.

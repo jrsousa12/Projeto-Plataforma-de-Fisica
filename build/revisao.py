@@ -13,7 +13,8 @@ import json, os, subprocess, sys
 from playwright.sync_api import sync_playwright
 from PIL import Image, ImageDraw
 AQUI = os.path.dirname(os.path.abspath(__file__)); SAI = os.path.join(AQUI, "revisao"); os.makedirs(SAI, exist_ok=True)
-AREA = {"q": "eletro", "f": "fluidos", "t": "termo", "o": "onda", "p": "optica", "m": "mec", "d": "edin"}; PORTA = os.environ.get("PORTA", "8123")
+from lista_quizzes import por_letra
+AREA = por_letra(); PORTA = os.environ.get("PORTA", "8123")
 JS_CHECA = """() => {
   const svg = document.querySelector('#fb .anim svg'); if (!svg) return null;
   const vb = svg.viewBox.baseVal, out = [], tx = [];

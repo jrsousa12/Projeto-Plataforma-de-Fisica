@@ -3,8 +3,10 @@
 import hashlib,re,os
 A=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))+os.sep
 sw=open(A+'sw.js',encoding='utf-8').read()
-lista=re.search(r'ARQUIVOS=\[(.*?)\]',sw,re.S).group(1)
+import json,subprocess
+lista=re.search(r'BASE\s*=\s*\[(.*?)\]',sw,re.S).group(1)
 arqs=[x for x in re.findall(r'"([^"]+)"',lista) if x!='./']
+arqs+=json.loads(subprocess.check_output(['node','-e','console.log(JSON.stringify(require(process.argv[1]).todosArquivos()))',A+'quizzes.js'],text=True))  # arquivos dos quizzes (quizzes.js)
 h=hashlib.sha1()
 for f in sorted(arqs):
     p=A+f

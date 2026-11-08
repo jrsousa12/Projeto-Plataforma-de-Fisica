@@ -17,24 +17,8 @@
 <div id="clist" class="clist"></div></section>
 <p class="noprt" style="text-align:center"><a class="lnkb" href="index.html">← Voltar ao quiz</a></p></main>
 <script src="banco-proprio.js"></script>
-<script src="perguntas-eletro.js"></script>
-<script src="perguntas-fluidos.js"></script>
-<script src="perguntas-termo.js"></script>
-<script src="perguntas-onda.js"></script>
-<script src="perguntas-optica.js"></script>
-<script src="perguntas-mec.js"></script>
-<script src="perguntas-edin.js"></script>
-<script src="quiz-eletro.js"></script>
-<script src="quiz-fluidos.js"></script>
-<script src="quiz-termo.js"></script>
-<script src="quiz-onda.js"></script>
-<script src="quiz-optica.js"></script>
-<script src="quiz-mec.js"></script>
-<script src="quiz-edin.js"></script>
-<script src="banco-extra.js"></script>
-<script src="figuras.js"></script>
-<script src="figuras-fluidos.js"></script>
-<script src="figuras-termo.js"></script>
+<script src="quizzes.js"></script>
+<!-- editor.js carrega os bancos e as configurações de todos os quizzes da lista (quizzes.js) -->
 <script src="editor.js"></script>
 <script>(function(){var A="23456789ABCDEFGHJKMNPQRSTUVWXYZ",$=function(i){return document.getElementById(i)};function cod(){var b=new Uint8Array(8);crypto.getRandomValues(b);var s="";for(var i=0;i<8;i++){s+=A.charAt(b[i]%A.length);if(i===3)s+="-"}return s}
 $("cg").onclick=function(){var n=Math.max(1,Math.min(60,+$("cn").value||30)),h="",v={};while(Object.keys(v).length<n)v[cod()]=1;Object.keys(v).forEach(function(c,i){h+="<div><small>"+(i+1)+"</small> <b>"+c+"</b></div>"});$("clist").innerHTML=h};
