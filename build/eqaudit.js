@@ -1,6 +1,6 @@
 // Varre todos os bancos (app/perguntas-*.js) e cartões e lista divisões que não viram fração empilhada.
-const fs=require("fs"),vm=require("vm"),path=require("path"),Eq=require("../app/eq.js");
-const APP=path.join(__dirname,"..","app"),UN=new Set("m s h km kg g N C J W V A Pa L cm mm K mol min Hz cal rad atm kWh kW mA dB mmHg µC μC nC mC kΩ Ω °C".split(" "));
+const fs=require("fs"),vm=require("vm"),path=require("path"),Eq=require("../eq.js");
+const APP=path.join(__dirname,".."),UN=new Set("m s h km kg g N C J W V A Pa L cm mm K mol min Hz cal rad atm kWh kW mA dB mmHg µC μC nC mC kΩ Ω °C".split(" "));
 const RX=/(?<![\w])([A-Za-zΔεπρτωθλμΩ°µ][\wΔ₀-₉]*)\/([A-Za-zΔεπρτωθλμΩ°µ(][\wΔ₀-₉]*)/g,SUP=/[²³¹⁰⁴⁵⁶⁷⁸⁹⁻]/g;
 const win={BANKS:{},QUIZZES:{}};const ctx=vm.createContext({window:win,document:{}});
 for(const f of fs.readdirSync(APP).filter(f=>/^(perguntas|banco).*\.js$/.test(f))){try{vm.runInContext(fs.readFileSync(path.join(APP,f),"utf8"),ctx)}catch(e){}}

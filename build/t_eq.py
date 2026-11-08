@@ -2,7 +2,7 @@
 import subprocess, json, os, sys
 AQUI = os.path.dirname(os.path.abspath(__file__))
 js = r'''
-const Eq=require("../app/eq.js");let ok=0,bad=0;
+const Eq=require("../eq.js");let ok=0,bad=0;
 function ck(nome,cond){if(cond)ok++;else{bad++;console.log("FALHOU:",nome)}}
 const simp=h=>h.replace(/<span class="sl">\/<\/span>/g,"").replace(/<span class="fr"><span class="n">/g,"[").replace(/<\/span><span class="d">/g,"|").replace(/<\/span><\/span>/g,"]");
 const T=[["i = Q / Δt = 120 / 40 = 3 A.","i = [Q|Δt] = [120|40] = 3 A."],

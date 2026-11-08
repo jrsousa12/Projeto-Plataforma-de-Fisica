@@ -1,6 +1,6 @@
 /* Exporta bancos, áreas e animações (chave -> texto alternativo) como JSON. Uso: node dump_banco.js [pasta_app] */
 const fs=require("fs"),vm=require("vm"),path=require("path");
-const dir=process.argv[2]||path.join(__dirname,"..","app");
+const dir=process.argv[2]||path.join(__dirname,"..");
 const win={};win.window=win;win.localStorage={getItem(){return null},setItem(){}};
 const ctx=vm.createContext(win);
 const arqs=fs.readdirSync(dir).filter(f=>/^(perguntas|quiz|figuras)(-.*)?\.js$/.test(f)).sort((a,b)=>{const r=f=>/^perguntas/.test(f)?0:f==="figuras.js"?1:2;return r(a)-r(b)||a.localeCompare(b)});

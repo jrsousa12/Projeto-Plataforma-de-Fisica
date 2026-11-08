@@ -1,7 +1,7 @@
 from playwright.sync_api import sync_playwright
 B='http://localhost:8123/'
 with sync_playwright() as p:
-    b=p.chromium.launch(executable_path='/usr/bin/google-chrome',args=['--no-sandbox'])
+    b=p.chromium.launch(executable_path=__import__('os').environ.get('CHROME_PATH') or None,args=['--no-sandbox'])
     errs=[];tot=0;bad=[]
     for q in ('eletro','fluidos','termo','onda','optica','mec','edin'):
         pg=b.new_page(viewport={'width':400,'height':820})

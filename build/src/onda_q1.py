@@ -1,3 +1,4 @@
+import os
 # Gera o lote 1 (seções 1 a 5) de Ondulatória: Som.
 import json
 TM="Toda Matéria"; HP="HyperPhysics"; OSX="OpenStax"; PE="PrePara Enem"; IE="InfoEscola"
@@ -179,4 +180,4 @@ mc("ec","Morcegos e golfinhos se orientam emitindo sons de frequência acima de 
  ["Infrassons têm frequência abaixo de 20 Hz.","Sons acima de 20 kHz não são audíveis pelos humanos.","São ondas mecânicas, e não eletromagnéticas."],EXA,1),
 ]
 print(len(Q))
-json.dump({"quiz":"onda","questoes":Q},open("/home/claude/quiz/build/novas/onda_1.json","w",encoding="utf-8"),ensure_ascii=False,indent=1)
+json.dump({"quiz":"onda","questoes":Q},open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),"novas","onda_1.json"),"w",encoding="utf-8"),ensure_ascii=False,indent=1)

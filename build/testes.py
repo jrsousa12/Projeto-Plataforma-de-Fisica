@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Roda todos os testes de navegador e resume: ./testes.py [nome ...]  (sem nomes = todos)."""
 import subprocess,sys,glob,os,re,time
-os.chdir('/home/claude/quiz/build')
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 ignorar=("Clipboard API has been blocked","reading 'textContent'")  # artefatos conhecidos do ambiente de teste
 nomes=sys.argv[1:] or sorted(glob.glob('t_*.py'))
 falhas=0

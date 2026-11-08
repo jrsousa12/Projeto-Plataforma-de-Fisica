@@ -6,7 +6,7 @@ def ck(c,m):
 now=int(time.time()*1000)
 hist=[{'d':now-i*864e5*1.3,'s':[5,6,7.5,6.5,8,9,7,8.5][i%8],'n':10,'a':{'el':[3,5],'co':[2,5]}} for i in range(8,-1,-1)]
 with sync_playwright() as p:
-    b=p.chromium.launch(executable_path='/usr/bin/google-chrome',args=['--no-sandbox'])
+    b=p.chromium.launch(executable_path=__import__('os').environ.get('CHROME_PATH') or None,args=['--no-sandbox'])
     ctx=b.new_context(viewport={'width':360,'height':760});errs=[]
     pg=ctx.new_page();pg.on('pageerror',lambda e:errs.append(str(e)))
     pg.goto(B+'index.html');pg.wait_for_timeout(900)

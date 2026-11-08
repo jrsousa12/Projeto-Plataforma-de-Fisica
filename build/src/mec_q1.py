@@ -163,4 +163,4 @@ calc("mc","Uma roda gira em movimento uniforme com frequência de 5 Hz. Qual é 
  {"f":"5 Hz"},"2*pi*f","f*pi+f*pi","rad/s","ω","ω = 2π·f",{"f":"f"},"generico",2,0.01),
 ]
 print(len(Q))
-json.dump({"quiz":"mec","questoes":Q},open("/home/claude/quiz/build/novas/mec_1.json","w",encoding="utf-8"),ensure_ascii=False,indent=1)
+json.dump({"quiz":"mec","questoes":Q},open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),"novas","mec_1.json"),"w",encoding="utf-8"),ensure_ascii=False,indent=1)

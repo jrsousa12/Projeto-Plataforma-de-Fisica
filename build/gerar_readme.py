@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Gera a tabela "Arquivos" do app/README.md a partir dos arquivos que existem de verdade.
+"""Gera a tabela "Arquivos" do README.md a partir dos arquivos que existem de verdade.
   python3 gerar_readme.py             reescreve a tabela (entre <!-- ARQUIVOS:INICIO --> e <!-- ARQUIVOS:FIM -->)
   python3 gerar_readme.py --verificar não grava; sai com erro se a tabela estiver desatualizada ou houver arquivo sem descrição
 Para descrever um arquivo novo, acrescente uma linha em REGRAS (padrão de nome, texto)."""
 import fnmatch, os, re, sys
-APP = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "app"); README = os.path.join(APP, "README.md")
+APP = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."); README = os.path.join(APP, "README.md")
 REGRAS = [  # (padrões, descrição); arquivos com a mesma descrição aparecem juntos
  (["index.html"], "Página principal do quiz"),
  (["style.css"], "Visual (cores, fontes, menus)"),
@@ -34,10 +34,10 @@ REGRAS = [  # (padrões, descrição); arquivos com a mesma descrição aparecem
 def arquivos():
     r = []
     for raiz, ds, fs in os.walk(APP):
-        ds[:] = [d for d in ds if d not in (".git", "__pycache__")]
+        ds[:] = [d for d in ds if d not in (".git", "__pycache__") and not (raiz == APP and d == "build")]  # build/ são ferramentas, não o app
         for f in fs:
             rel = os.path.relpath(os.path.join(raiz, f), APP).replace(os.sep, "/")
-            if rel != "README.md" and not f.startswith("_") and not f.endswith(".pyc"): r.append(rel)
+            if rel not in ("README.md", ".gitignore") and not f.startswith("_") and not f.endswith(".pyc"): r.append(rel)
     return sorted(r)
 def montar():
     grupos = {}; sem = []

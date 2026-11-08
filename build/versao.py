@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Atualiza a versão do cache do sw.js a partir do conteúdo dos arquivos (muda sozinha quando algo muda)."""
 import hashlib,re,os
-A='/home/claude/quiz/app/'
+A=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))+os.sep
 sw=open(A+'sw.js',encoding='utf-8').read()
 lista=re.search(r'ARQUIVOS=\[(.*?)\]',sw,re.S).group(1)
 arqs=[x for x in re.findall(r'"([^"]+)"',lista) if x!='./']

@@ -14,7 +14,7 @@ Saída 1 se houver erro. Relatório em novas/relatorio.md.
 import ast, datetime, difflib, json, math, operator, os, re, shutil, subprocess, sys, tempfile, unicodedata, urllib.parse, urllib.request
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
-APP = os.path.join(AQUI, "..", "app")
+APP = os.path.join(AQUI, "..")  # o app fica na raiz do repositório
 NOVAS = os.path.join(AQUI, "novas")
 PREFIXO = {"eletro": "q", "fluidos": "f", "termo": "t", "onda": "o", "optica": "p", "mec": "m", "edin": "d"}
 MOLDES = ("generico", "dilatacao", "calor", "pressao", "coulomb", "bernoulli", "latente", "potencial")

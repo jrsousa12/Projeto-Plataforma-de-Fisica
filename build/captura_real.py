@@ -3,7 +3,7 @@ from playwright.sync_api import sync_playwright
 import sys
 AREA={'q':'eletro','f':'fluidos','t':'termo','o':'onda','p':'optica','m':'mec','d':'edin'}
 with sync_playwright() as p:
-    b=p.chromium.launch(executable_path='/usr/bin/google-chrome',args=['--no-sandbox'])
+    b=p.chromium.launch(executable_path=__import__('os').environ.get('CHROME_PATH') or None,args=['--no-sandbox'])
     for qid in sys.argv[1:]:
         pg=b.new_page(viewport={'width':390,'height':844},device_scale_factor=2)
         pg.goto('http://localhost:8123/index.html?q=%s#debug'%AREA[qid[0]]);pg.wait_for_timeout(500)

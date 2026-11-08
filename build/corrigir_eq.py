@@ -2,7 +2,7 @@
 """Corrige nos bancos (app/perguntas-*.js) as divisões escritas sem espaços (Q/t, v/(2L), T/μ), para o app mostrar fração empilhada.
 Unidades (m/s, cal/(g·°C), km/h) não são alteradas. Pode rodar de novo sem problema."""
 import re, os, glob
-APP = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "app")
+APP = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 UN = set("m s h km kg g N C J W V A Pa L cm mm K mol min Hz cal rad atm kWh kW mA dB mmHg µC μC nC mC kΩ Ω °C".split())
 RX = re.compile(r"(?<![\w])([A-Za-zΔεπρτωθλμΩ°µ][\wΔ₀-₉]*)/([A-Za-zΔεπρτωθλμΩ°µ(][\wΔ₀-₉]*)")
 SUP = str.maketrans("", "", "²³¹⁰⁴⁵⁶⁷⁸⁹⁻")

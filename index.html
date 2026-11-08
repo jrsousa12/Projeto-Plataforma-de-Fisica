@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Segurança: só roda scripts deste site e só conversa com o próprio site e com o Firebase (nuvem opcional). localhost:8124 é o Firebase simulado dos testes (build/mockfb.py); 'unsafe-eval' é só para o modo #debug usado pelos testes automáticos. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://firestore.googleapis.com http://localhost:8124; object-src 'none'; base-uri 'self'; form-action 'none'">
 <title>Quiz de Física</title>
 <meta name="theme-color" content="#17153b">
 <link rel="manifest" href="manifest.webmanifest">

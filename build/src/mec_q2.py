@@ -212,4 +212,4 @@ vf("gv","um astronauta flutua dentro de uma estação orbital porque não existe
  "A gravidade existe e mantém a órbita; eles estão em queda livre.",GRV2,3),
 ]
 print(len(Q))
-json.dump({"quiz":"mec","questoes":Q},open("/home/claude/quiz/build/novas/mec_2.json","w",encoding="utf-8"),ensure_ascii=False,indent=1)
+json.dump({"quiz":"mec","questoes":Q},open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),"novas","mec_2.json"),"w",encoding="utf-8"),ensure_ascii=False,indent=1)

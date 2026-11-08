@@ -1,6 +1,6 @@
 from playwright.sync_api import sync_playwright
 with sync_playwright() as p:
-    b=p.chromium.launch(executable_path='/usr/bin/google-chrome',args=['--no-sandbox'])
+    b=p.chromium.launch(executable_path=__import__('os').environ.get('CHROME_PATH') or None,args=['--no-sandbox'])
     pg=b.new_page(viewport={'width':800,'height':1000}); errs=[]
     pg.on('pageerror',lambda e:errs.append(str(e)))
     pg.goto('http://localhost:8123/index.html?q=fluidos'); pg.wait_for_timeout(400)

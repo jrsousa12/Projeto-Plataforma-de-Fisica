@@ -202,4 +202,4 @@ calc("rm","No mesmo circuito (4 Ω em série com 6 Ω e 3 Ω em paralelo, fonte 
  {"U":"12 V","R1":"4 Ω","R2":"6 Ω","R3":"3 Ω"},"U*R2*R3/(R1*(R2+R3)+R2*R3)","U*(R2*R3/(R2+R3))/(R1+R2*R3/(R2+R3))","V","U","U = Rp · i",{"U":"U","R1":"R₁","R2":"R₂","R3":"R₃"},"generico",3),
 ]
 print(len(Q))
-json.dump({"quiz":"edin","questoes":Q},open("/home/claude/quiz/build/novas/edin_1.json","w",encoding="utf-8"),ensure_ascii=False,indent=1)
+json.dump({"quiz":"edin","questoes":Q},open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),"novas","edin_1.json"),"w",encoding="utf-8"),ensure_ascii=False,indent=1)

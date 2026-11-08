@@ -3,7 +3,7 @@ from playwright.sync_api import sync_playwright
 B='http://localhost:8123/';FB='http://127.0.0.1:8124'
 CFG='window.NUVEM_CONFIG={apiKey:"k",projectId:"p",authBase:"%s/v1",tokenBase:"%s/v1",fsBase:"%s/v1"};'%(FB,FB,FB)
 with sync_playwright() as p:
-    b=p.chromium.launch(executable_path='/usr/bin/google-chrome',args=['--no-sandbox']);errs=[]
+    b=p.chromium.launch(executable_path=__import__('os').environ.get('CHROME_PATH') or None,args=['--no-sandbox']);errs=[]
     def novo(cfg=CFG):
         ctx=b.new_context(viewport={'width':400,'height':820});ctx.route('**/firebase-config.js',lambda r:r.fulfill(body=cfg,content_type='application/javascript'))
         pg=ctx.new_page();pg.on('pageerror',lambda e:errs.append(str(e)));pg.on('console',lambda m: errs.append(m.text) if m.type=='error' and 'favicon' not in m.text and 'status of 40' not in m.text else None);return ctx,pg
