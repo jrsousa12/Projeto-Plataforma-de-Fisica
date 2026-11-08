@@ -202,4 +202,4 @@ mc("cn","O decibel (dB) é um submúltiplo do bel, unidade que homenageia qual p
  mot="Questão sobre história da ciência, sem cálculo nem processo para animar."),
 ]
 print(len(Q))
-json.dump({"quiz":"onda","questoes":Q},open("/home/claude/quiz/build/novas/onda_2.json","w",encoding="utf-8"),ensure_ascii=False,indent=1)
+json.dump({"quiz":"onda","questoes":Q},open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),"novas","onda_2.json"),"w",encoding="utf-8"),ensure_ascii=False,indent=1)

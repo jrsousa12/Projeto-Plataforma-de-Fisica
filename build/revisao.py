@@ -8,7 +8,7 @@ Uso (na pasta build/):
   python3 revisao.py --todas         tudo
 Gera revisao/folha_N.png (várias animações lado a lado, no começo e no fim) e revisao/relatorio.md.
 O relatório aponta automaticamente: texto fora da figura e textos sobrepostos no quadro final.
-Precisa de um servidor em http://localhost:8123 servindo app/ (cd app && python3 -m http.server 8123)."""
+Precisa de um servidor em http://localhost:8123 servindo a raiz do repositório (cd .. && python3 -m http.server 8123)."""
 import json, os, subprocess, sys
 from playwright.sync_api import sync_playwright
 from PIL import Image, ImageDraw

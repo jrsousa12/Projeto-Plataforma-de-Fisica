@@ -4,3 +4,4 @@ __pycache__/
 build/revisao/
 build/wrap_bundle.html
 build/npm/
+build/saida/

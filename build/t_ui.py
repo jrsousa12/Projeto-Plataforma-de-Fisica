@@ -1,6 +1,6 @@
 from playwright.sync_api import sync_playwright
 with sync_playwright() as p:
-    b=p.chromium.launch(executable_path='/usr/bin/google-chrome',args=['--no-sandbox'])
+    b=p.chromium.launch(executable_path=__import__('os').environ.get('CHROME_PATH') or None,args=['--no-sandbox'])
     pg=b.new_page(viewport={'width':400,'height':820}); errs=[]
     pg.on('pageerror',lambda e:errs.append(str(e)))
     def st(): return pg.evaluate('()=>[document.documentElement.className,document.documentElement.getAttribute("data-theme"),document.documentElement.getAttribute("data-pal")]')

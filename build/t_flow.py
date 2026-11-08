@@ -1,4 +1,4 @@
-import html,sys
+import html,sys,os
 from playwright.sync_api import sync_playwright
 def play(pg,fr,btn,perfect,tag,errs):
     f=fr
@@ -28,10 +28,10 @@ def play(pg,fr,btn,perfect,tag,errs):
             pg.wait_for_timeout(300)
     print('  após botões, erros:',errs)
 with sync_playwright() as p:
-    b=p.chromium.launch(executable_path='/usr/bin/google-chrome',args=['--no-sandbox'])
-    for name,url,iframe in (('http','http://localhost:8123/index.html?q=eletro',False),('arquivo único','file:///home/claude/quiz/Quiz__Eletrost_tica_3.html?q=eletro',False),('prévia (iframe)','file:///home/claude/quiz/build/wrap_bundle.html',True)):
+    b=p.chromium.launch(executable_path=__import__('os').environ.get('CHROME_PATH') or None,args=['--no-sandbox'])
+    for name,url,iframe in (('http','http://localhost:8123/index.html?q=eletro',False),('arquivo único','file://'+os.path.abspath('saida/quiz-arquivo-unico.html')+'?q=eletro',False),('prévia (iframe)','file://'+os.path.abspath('wrap_bundle.html'),True)):
         if iframe:
-            s=open('/home/claude/quiz/Quiz__Eletrost_tica_3.html',encoding='utf-8').read()
+            s=open('saida/quiz-arquivo-unico.html',encoding='utf-8').read()
             open('wrap_bundle.html','w',encoding='utf-8').write('<!doctype html><iframe id="f" style="width:390px;height:800px" sandbox="allow-scripts allow-modals allow-popups" srcdoc="'+html.escape(s,quote=True)+'"></iframe>')
         for mode,btn in (('estudo','#go'),('cronometrado','#go2'),('simulado','#mopen')):
             pg=b.new_page(viewport={'width':400,'height':820}); errs=[]

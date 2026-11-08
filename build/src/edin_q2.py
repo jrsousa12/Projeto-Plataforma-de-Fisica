@@ -144,4 +144,4 @@ vf("ge","duas pilhas iguais ligadas em série, uma após a outra, somam suas for
  "Em série, as fems se somam.",GER,1),
 ]
 print(len(Q))
-json.dump({"quiz":"edin","questoes":Q},open("/home/claude/quiz/build/novas/edin_2.json","w",encoding="utf-8"),ensure_ascii=False,indent=1)
+json.dump({"quiz":"edin","questoes":Q},open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),"novas","edin_2.json"),"w",encoding="utf-8"),ensure_ascii=False,indent=1)

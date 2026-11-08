@@ -4,7 +4,7 @@ ERR=[]
 def ck(c,m):
     if not c: ERR.append(m); print('FALHOU:',m)
 with sync_playwright() as p:
-    b=p.chromium.launch(executable_path='/usr/bin/google-chrome',args=['--no-sandbox'])
+    b=p.chromium.launch(executable_path=__import__('os').environ.get('CHROME_PATH') or None,args=['--no-sandbox'])
     errs=[]
     def novo(url):
         pg=b.new_page(viewport={'width':400,'height':820})

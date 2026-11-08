@@ -1,5 +1,6 @@
-import re
-d='/home/claude/quiz/app/'
+import re,os
+# o app fica na raiz do repositório (pasta acima de build/); o arquivo único sai em build/saida/
+d=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))+os.sep
 h=open(d+'index.html',encoding='utf-8').read()
 for pat in (r'<link rel="manifest"[^>]*>\n?',r'<link rel="apple-touch-icon"[^>]*>\n?',r'<link rel="icon"[^>]*>\n?',r'<div id="splash".*?</div>\n?',r'<a class="btn alt" id="salalink2?".*?</a>'):
     h=re.sub(pat,'',h,flags=re.S)
@@ -18,5 +19,6 @@ for f in ('firebase-config.js','perfil.js','fontes.js','nuvem.js','banco-proprio
     assert t in h,f
     h=h.replace(t,inline(f))
 assert 'src="' not in re.sub(r'<script>.*?</script>','',h,flags=re.S).split('<body')[1].replace('src=""','') or True
-open('/home/claude/quiz/Quiz__Eletrost_tica_3.html','w',encoding='utf-8').write(h)
+os.makedirs(os.path.join(os.path.dirname(os.path.abspath(__file__)),'saida'),exist_ok=True)
+open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'saida','quiz-arquivo-unico.html'),'w',encoding='utf-8').write(h)
 print('bundle',len(h))

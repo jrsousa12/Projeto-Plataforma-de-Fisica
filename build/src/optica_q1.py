@@ -128,4 +128,4 @@ calc("ee","Um espelho convexo tem distância focal de −15 cm. Um objeto está 
  {"f":"-15 cm","p":"30 cm"},"1/(1/f-1/p)","f*p/(p-f)","cm","p'","1/f = 1/p + 1/p'",{"f":"f","p":"p"},"generico",3),
 ]
 print(len(Q))
-json.dump({"quiz":"optica","questoes":Q},open("/home/claude/quiz/build/novas/optica_1.json","w",encoding="utf-8"),ensure_ascii=False,indent=1)
+json.dump({"quiz":"optica","questoes":Q},open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),"novas","optica_1.json"),"w",encoding="utf-8"),ensure_ascii=False,indent=1)
