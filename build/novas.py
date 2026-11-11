@@ -16,7 +16,8 @@ import ast, datetime, difflib, json, math, operator, os, re, shutil, subprocess,
 AQUI = os.path.dirname(os.path.abspath(__file__))
 APP = os.path.join(AQUI, "..")  # o app fica na raiz do repositório
 NOVAS = os.path.join(AQUI, "novas")
-PREFIXO = {"eletro": "q", "fluidos": "f", "termo": "t", "onda": "o", "optica": "p", "mec": "m", "edin": "d"}
+from lista_quizzes import letra_por_id
+PREFIXO = letra_por_id()  # lista única em quizzes.js
 MOLDES = ("generico", "dilatacao", "calor", "pressao", "coulomb", "bernoulli", "latente", "potencial")
 
 # ----------------------------------------------------------------- utilidades

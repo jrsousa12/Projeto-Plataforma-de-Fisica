@@ -2,6 +2,8 @@
 """Roda todos os testes de navegador e resume: ./testes.py [nome ...]  (sem nomes = todos)."""
 import subprocess,sys,glob,os,re,time
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
+# o t_flow.py abre o arquivo único (build/saida/), que não fica no Git: gera antes de testar
+subprocess.run([sys.executable,'bundle.py'],check=True,stdout=subprocess.DEVNULL)
 ignorar=("Clipboard API has been blocked","reading 'textContent'")  # artefatos conhecidos do ambiente de teste
 nomes=sys.argv[1:] or sorted(glob.glob('t_*.py'))
 falhas=0

@@ -1,0 +1,27 @@
+name: Atualizar versão do app
+# A cada envio para o main, atualiza a versão do cache do sw.js (para o celular baixar a versão nova)
+# e a tabela de arquivos do README. Se algo mudou, grava um commit automático.
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  versao:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 20
+      - name: Calcular a versão e atualizar o README
+        run: |
+          python3 build/versao.py
+          python3 build/gerar_readme.py
+      - name: Gravar se mudou
+        run: |
+          if git diff --quiet; then echo "Nada a atualizar."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Atualiza a versão do app (cache) e o README"
+          git push
