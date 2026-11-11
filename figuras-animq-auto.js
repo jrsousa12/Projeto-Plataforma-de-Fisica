@@ -175,8 +175,8 @@ var DATA=/*AUTO:BEGIN*/[
 "R = 0,1 m"
 ],
 "formula": "σ = Q / (4π R²)",
-"subst": "σ = 4 / (4 · pi · 0,1²)",
-"resultado": "σ = 3,183·10⁻⁵ C/m^2"
+"subst": "σ = 4 / (4 · 3 · 0,1²)",
+"resultado": "σ = 3,333·10⁻⁵ C/m^2"
 },
 {
 "key": "calc_q203",

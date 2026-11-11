@@ -23,7 +23,7 @@ Quiz de Física (ensino médio) que funciona direto no navegador, sem instalar n
 | `figuras-anim.js` | Kit de animação (cenas, legendas, linha do tempo) |
 | `figuras-animq-auto.js` | Animações de resolução geradas automaticamente pelos moldes (não editar à mão) |
 | `figuras-animq-edin.js`, `figuras-animq-eletro.js`, `figuras-animq-eletro2.js`, `figuras-animq-eletro3.js`, `figuras-animq-eletro4.js`, `figuras-animq-fluidos.js`, `figuras-animq-fluidos2.js`, `figuras-animq-mec.js`, `figuras-animq-onda.js`, `figuras-animq-optica.js`, `figuras-animq-termo.js`, `figuras-animq-termo2.js`, `figuras-animq-termo3.js` | Animações feitas à mão para cada questão, por área |
-| `figuras-fenomeno-mec.js` | Simulações do fenômeno (corpo em movimento + gráfico desenhado no tempo), que substituem as resoluções passo a passo |
+| `figuras-fenomeno-base.js`, `figuras-fenomeno-eletro.js`, `figuras-fenomeno-mec.js`, `figuras-fenomeno-mfluidos.js`, `figuras-fenomeno-onda.js`, `figuras-fenomeno-optica.js`, `figuras-fenomeno-termo.js` | Simulações do fenômeno (corpo em movimento + gráfico desenhado no tempo), que substituem as resoluções passo a passo |
 | `fontes.js` | Lista de fontes de referência (botão FONTE e tela Fontes) |
 | `banco-extra.js`, `banco-proprio.js`, `editor.css`, `editor.html`, `editor.js` | Editor de questões; `banco-proprio.js` leva as perguntas próprias aos alunos |
 | `validar-banco.js` | Confere os bancos de perguntas (ids repetidos, gabarito, alternativas, áreas) e a lista quizzes.js |

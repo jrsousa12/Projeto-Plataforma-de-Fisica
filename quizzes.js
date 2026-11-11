@@ -22,6 +22,8 @@
         "figuras-animq-eletro3.js",
         "figuras-animq-eletro4.js",
         "figuras-animq-auto.js",
+        "figuras-fenomeno-base.js",
+        "figuras-fenomeno-eletro.js",
       ],
     },
     {
@@ -37,6 +39,8 @@
         "figuras-animq-fluidos.js",
         "figuras-animq-fluidos2.js",
         "figuras-animq-auto.js",
+        "figuras-fenomeno-base.js",
+        "figuras-fenomeno-mfluidos.js",
       ],
     },
     {
@@ -53,6 +57,8 @@
         "figuras-animq-termo2.js",
         "figuras-animq-termo3.js",
         "figuras-animq-auto.js",
+        "figuras-fenomeno-base.js",
+        "figuras-fenomeno-termo.js",
       ],
     },
     {
@@ -66,6 +72,8 @@
         "figuras-anim.js",
         "figuras-animq-onda.js",
         "figuras-animq-auto.js",
+        "figuras-fenomeno-base.js",
+        "figuras-fenomeno-onda.js",
       ],
     },
     {
@@ -79,6 +87,8 @@
         "figuras-anim.js",
         "figuras-animq-optica.js",
         "figuras-animq-auto.js",
+        "figuras-fenomeno-base.js",
+        "figuras-fenomeno-optica.js",
       ],
     },
     {
@@ -106,6 +116,8 @@
         "figuras-anim.js",
         "figuras-animq-edin.js",
         "figuras-animq-auto.js",
+        "figuras-fenomeno-base.js",
+        "figuras-fenomeno-eletro.js",
       ],
     },
   ];
