@@ -67,8 +67,12 @@ var FL='style="transform-box:fill-box;transform-origin:50% 50%"';
  s+='<path class="o1" d="'+env(x0,L,48,22,function(u){return Math.cos(PI*u)})+'" fill="none" stroke="var(--acc)" stroke-width="3" '+FL+'/>';
  s+='<path class="f1" d="'+env(x0,L,122,22,function(u){return Math.cos(PI*u/2)})+'" fill="none" stroke="var(--acc)" stroke-width="3" '+FL+'/>';
  s+='<path class="f3" d="'+env(x0,L,122,22,function(u){return Math.cos(3*PI*u/2)})+'" fill="none" stroke="var(--neg)" stroke-width="2.4" stroke-dasharray="5 3" '+FL+'/>';
- [["o1",48],["f1",122],["f3",122]].forEach(function(a){var k=a[0],pts=[],j;for(j=0;j<=20;j++)pts.push([j*.5,Math.cos(PI*j/2)*1]);tr.push(N.sc("."+k,T,pts.map(function(p){return[p[0],1,p[1]]}),"linear"))});
+ /* corrigido: o tubo aberto agora mostra também o 2º e o 3º harmônicos, tracejados (ventres nas duas pontas: cos 2πu e cos 3πu), junto com o 3º do tubo fechado; antes só aparecia o 1º. */
+ s+='<path class="o2" d="'+env(x0,L,48,22,function(u){return Math.cos(2*PI*u)})+'" fill="none" stroke="var(--neg)" stroke-width="2.2" stroke-dasharray="5 3" '+FL+'/>';
+ s+='<path class="o3" d="'+env(x0,L,48,22,function(u){return Math.cos(3*PI*u)})+'" fill="none" stroke="var(--neg)" stroke-width="2.2" stroke-dasharray="2 3" '+FL+'/>';
+ [["o1",48],["o2",48],["o3",48],["f1",122],["f3",122]].forEach(function(a){var k=a[0],pts=[],j;for(j=0;j<=20;j++)pts.push([j*.5,Math.cos(PI*j/2)*1]);tr.push(N.sc("."+k,T,pts.map(function(p){return[p[0],1,p[1]]}),"linear"))});
  tr.push(N.vis(".f3",T,6));tr.push(N.op(".f1",T,[[0,1],[6,1],[6.4,.35]]));
+ tr.push(N.vis(".o2",T,6),N.vis(".o3",T,6),N.op(".o1",T,[[0,1],[6,1],[6.4,.35]]));
  s+=t_(x0-6,52,"aberto",{s:10,a:"end"})+t_(x0-6,126,"fechado",{s:10,a:"end"});
  s+='<g class="s2">'+t_(x0+L-4,172,"nó na ponta fechada",{s:10,a:"end"})+'</g>';tr.push(N.vis(".s2",T,3));
  C("tubos","Animação: no tubo aberto há ventres de deslocamento nas duas pontas; no tubo fechado há um nó na ponta fechada e um ventre na aberta, o que permite apenas harmônicos ímpares",H,s,tr,T,["Tubo aberto: ventres nas duas pontas.|Todos os harmônicos.","Tubo fechado: nó na ponta fechada, ventre na aberta.","Por isso só harmônicos ímpares: 1º, 3º, 5º…"],[0,3,6])})();

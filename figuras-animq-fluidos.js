@@ -88,7 +88,8 @@ function prensa(key,alt,mode){var T=mode==="desl"?7.4:8,tr=[],y0L=60,y0R=104,dL=
   s+=N.varrow(176,yR-2,yR-62,"an-a2 f2",6).replace("<g ",'<g style="transform-box:fill-box;transform-origin:50% 100%" ')+'<text class="f2l" x="186" y="'+(yR-40)+'" font-size="13" font-weight="800">F₂ = 10·F₁</text>';
     s+='<g class="pa">'+N.varrow(54,yL+34,yL+14,"an-a3",2)+N.varrow(190,yR+40,yR+20,"an-a3",2)+N.varrow(270,yR+40,yR+20,"an-a3",2)+'<text x="108" y="154" font-size="11" font-weight="700" text-anchor="middle" class="pt">mesma p</text></g>';
   tr.push(N.sc(".f1",T,[[0,1,0],[1.0,1,0],[1.8,1,1]]),N.vis(".f1,.f1l",T,1.0),N.vis(".pa",T,3.2),N.sc(".f2",T,[[0,1,0],[5.2,1,0],[6.6,1,1]]),N.vis(".f2",T,5.2),N.vis(".f2l",T,6.2));
-  var c=N.cap(["A força F₁ no êmbolo menor|cria a pressão p = F₁/A₁","A mesma pressão p age|no êmbolo maior (princípio de Pascal)","F₂ = p·A₂: como A₂ é maior,|F₂ é maior: F₂/F₁ = A₂/A₁"],[0,1.0,3.2],T,196);
+ /* corrigido: a 3ª legenda (F₂ = p·A₂) passa a aparecer em 5,6 s, depois de F₂ começar a crescer; antes aparecia em 3,2 s, antes da força. */
+  var c=N.cap(["A força F₁ no êmbolo menor|cria a pressão p = F₁/A₁","A mesma pressão p age|no êmbolo maior (princípio de Pascal)","F₂ = p·A₂: como A₂ é maior,|F₂ é maior: F₂/F₁ = A₂/A₁"],[0,1.0,5.6],T,196);
   /* a última legenda entra quando F₂ aparece */
  }
  N.reg(key,{a:alt,h:226,s:s+c.s,t:tr.concat(c.t),T:T})}

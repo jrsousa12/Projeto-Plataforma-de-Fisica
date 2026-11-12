@@ -13,8 +13,9 @@ N.calc("opt_plano","Animação: um raio de luz incide em um espelho plano e é r
  steps:[[0,"Um raio de luz incide no espelho plano."],[3,"A normal é a reta perpendicular|ao espelho no ponto de incidência."],[6,"O raio refletido sai com r̂ = î."]]});
 
 /* ---- espelho côncavo ---- */
+/* corrigido: F em x=195.5 (ponto médio entre V=262 e C=129); raios refletidos recalculados para cruzar em F. — ref. Moysés Vol. 4 Cap. 1 */
 N.calc("opt_concavo","Animação: raios paralelos ao eixo principal de um espelho côncavo são refletidos passando pelo foco; por isso o espelho côncavo é convergente e a distância focal é a metade do raio de curvatura",{h:196,
- s:'<line x1="20" y1="70" x2="290" y2="70" stroke="currentColor" stroke-opacity=".4"/><path d="M262 22Q236 70 262 118" fill="none" stroke="currentColor" stroke-width="4"/>'+pt(129,70,"C")+pt(189,70,"F")+t_(249,52,"V",{s:11})+'<g class="s2">'+ray(40,40,254,40,"",RC)+ray(254,40,100,111,"","var(--neg)")+ray(40,100,254,100,"",RC)+ray(254,100,100,29,"","var(--neg)")+'</g><g class="s3">'+N.dm(189,249,148,"f = R/2","")+'</g>',
+ s:'<line x1="20" y1="70" x2="290" y2="70" stroke="currentColor" stroke-opacity=".4"/><path d="M262 22Q236 70 262 118" fill="none" stroke="currentColor" stroke-width="4"/>'+pt(129,70,"C")+pt(195.5,70,"F")+t_(249,52,"V",{s:11})+'<g class="s2">'+ray(40,40,254,40,"",RC)+ray(254,40,115.5,111,"","var(--neg)")+ray(40,100,254,100,"",RC)+ray(254,100,115.5,29,"","var(--neg)")+'</g><g class="s3">'+N.dm(195.5,249,148,"f = R/2","")+'</g>',
  steps:[[0,"Espelho côncavo: a face refletora|está voltada para o centro C."],[3,"Raios paralelos ao eixo principal|refletem passando pelo foco F."],[6,"Por isso ele é convergente: f = R/2."]]});
 
 /* ---- refração (Snell) ---- */
