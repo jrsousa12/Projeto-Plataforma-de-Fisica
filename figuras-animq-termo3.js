@@ -29,9 +29,10 @@ function calc(key,alt,H,s,tr,st){var T=st[st.length-1][0]+3.6,c=N.cap(st.map(fun
  s+='<rect x="136" y="30" width="48" height="48" fill="none" stroke="currentColor" stroke-dasharray="4 3"/><rect class="g2" x="136" y="30" width="48" height="48" fill="'+HOT+'" fill-opacity=".6" stroke="currentColor" stroke-width="2" style="transform-box:fill-box;transform-origin:0 0"/>'+t_(160,18,"2 dimensões",{s:11})+t_(160,100,"área",{s:10});
  s+='<g class="g3" style="transform-box:fill-box;transform-origin:0 100%"><rect x="244" y="44" width="34" height="34" fill="'+HOT+'" fill-opacity=".6" stroke="currentColor" stroke-width="2"/><path d="M244 44l10-10h34l-10 10M288 34v34l-10 10" fill="'+HOT+'" fill-opacity=".4" stroke="currentColor" stroke-width="2"/></g>'+t_(266,18,"3 dimensões",{s:11})+t_(266,92,"volume",{s:10});
  tr.push(N.sc(".g1",T,[[0,1,1],[2,1,1],[6,1.14,1]]),N.sc(".g2",T,[[0,1,1],[2,1,1],[6,1.14,1.14]]),N.sc(".g3",T,[[0,1,1],[2,1,1],[6,1.14,1.14]]));
+ /* corrigido: barras de 16 px por α (16, 32 e 48 px) e título em y = 112; antes eram 18 px por α e a barra de γ (54 px) subia por cima do título. A proporção 1 : 2 : 3 foi mantida. */
  var base=170;s+='<path d="M20 '+base+'H300" stroke="currentColor" stroke-width="2"/>';
- [[1,"α","linear"],[2,"β ≈ 2α","superficial"],[3,"γ ≈ 3α","volumétrico"]].forEach(function(b,k){var x=X[k];s+='<rect class="b'+k+'" x="'+(x-18)+'" y="'+(base-18*b[0])+'" width="36" height="'+(18*b[0])+'" fill="#f59e0b" fill-opacity=".8" stroke="currentColor" style="transform-box:fill-box;transform-origin:50% 100%"/>'+t_(x,base+16,b[1],{s:13});tr.push(N.sc(".b"+k,T,[[0,1,.01],[6.4+1.4*k,1,.01],[7.8+1.4*k,1,1]]))});
- s+=t_(160,118,"coeficientes (cada dimensão a mais soma um α)",{s:10,c:"fin"});tr.push(N.vis(".fin",T,6));
+ [[1,"α","linear"],[2,"β ≈ 2α","superficial"],[3,"γ ≈ 3α","volumétrico"]].forEach(function(b,k){var x=X[k];s+='<rect class="b'+k+'" x="'+(x-18)+'" y="'+(base-16*b[0])+'" width="36" height="'+(16*b[0])+'" fill="#f59e0b" fill-opacity=".8" stroke="currentColor" style="transform-box:fill-box;transform-origin:50% 100%"/>'+t_(x,base+16,b[1],{s:13});tr.push(N.sc(".b"+k,T,[[0,1,.01],[6.4+1.4*k,1,.01],[7.8+1.4*k,1,1]]))});
+ s+=t_(160,112,"coeficientes (cada dimensão a mais soma um α)",{s:10,c:"fin"});tr.push(N.vis(".fin",T,6));
  C("dil_coef","Animação: uma barra, uma placa e um cubo são aquecidos e dilatam em uma, duas e três dimensões; os coeficientes de dilatação ficam na proporção alfa, beta igual a 2 alfa e gama igual a 3 alfa",H,s,tr,T,["Aquecendo um sólido, ele dilata em todas|as direções: comprimento, área e volume","Quanto mais dimensões dilatam,|maior é o aumento relativo","Os coeficientes ficam na proporção:|α : β : γ = 1 : 2 : 3"],[0,2,6.4])})();
 
 /* ---- tampa emperrada ---- */
@@ -45,32 +46,36 @@ function calc(key,alt,H,s,tr,st){var T=st[st.length-1][0]+3.6,c=N.cap(st.map(fun
  s+='<circle cx="216" cy="84" r="28" fill="#cfe7fb" fill-opacity=".6" stroke="currentColor" stroke-width="2"/><circle class="ring" cx="216" cy="84" r="28" fill="none" stroke="#6b7280" stroke-width="8"/>'+t_(216,140,"vista de cima",{s:11});
  tr.push(N.pr(".ring",T,"r",[[0,32],[3,32],[8,36]]));
  s+='<g class="gp">'+t_(216,160,"folga: a tampa afrouxa",{s:11})+'</g>';tr.push(N.vis(".gp",T,8.4));
- s+='<rect x="270" y="30" width="14" height="60" fill="#f59e0b" fill-opacity=".8" stroke="currentColor"/><rect x="292" y="30" width="14" height="22" fill="#3b82f6" fill-opacity=".7" stroke="currentColor"/>'+t_(277,104,"metal",{s:9})+t_(299,48,"vidro",{s:9});
+ /* corrigido: rótulo "vidro" em y = 66, abaixo da barra azul; antes ficava em y = 48, por cima dela. */
+ s+='<rect x="270" y="30" width="14" height="60" fill="#f59e0b" fill-opacity=".8" stroke="currentColor"/><rect x="292" y="30" width="14" height="22" fill="#3b82f6" fill-opacity=".7" stroke="currentColor"/>'+t_(277,104,"metal",{s:9})+t_(299,66,"vidro",{s:9});
  C("tampa","Animação: ao passar a tampa metálica emperrada de um vidro sob água quente, o metal dilata mais que o vidro; a tampa aumenta, a folga aparece e ela se solta com facilidade",H,s,tr,T,["A tampa metálica está justa e emperrada|no gargalo de vidro","Com água quente, tampa e vidro dilatam,|mas o metal dilata mais que o vidro","A tampa fica folgada em relação ao vidro:|agora é fácil abri-la"],[0,2.8,8])})();
 
 /* ---- caloria ---- */
+/* corrigido: "1 cal ≈ 4,2 J" em (250, 170), à direita; antes ficava em (160, 190), por cima da chama. A base da chama subiu de y = 198 para 196, para caber na figura (h = 200). */
 (function(){var T=15,H=200,s='',tr=[];
- s+=cup(80,70,70,70,COLD)+t_(115,160,"1 g de água",{s:12})+flame(115,198,"fl");tr.push(N.op(".fl",T,[[0,0],[1.6,0],[2,1],[T,1]]));
+ s+=cup(80,70,70,70,COLD)+t_(115,160,"1 g de água",{s:12})+flame(115,196,"fl");tr.push(N.op(".fl",T,[[0,0],[1.6,0],[2,1],[T,1]]));
  s+=N.th(200,50,80,"mer",.5);tr.push(N.sc(".mer",T,[[0,1,.4],[2,1,.4],[6,1,.58]]));
  var tq=N.seq("tq",200,38,["14,5 °C","15,5 °C"],[0,6],T,{s:11}),qq=N.seq("qq",115,50,["calor: 0 cal","calor: 0,5 cal","calor: 1 cal"],[0,3,6],T,{s:13});s+=tq.s+qq.s;tr=tr.concat(tq.t,qq.t);
- s+=t_(160,190,"1 cal ≈ 4,2 J",{s:16,c:"fj"})+t_(160,36,"",{s:1});tr.push(N.vis(".fj",T,9.6));
+ s+=t_(250,170,"1 cal ≈ 4,2 J",{s:16,c:"fj"})+t_(160,36,"",{s:1});tr.push(N.vis(".fj",T,9.6));
  s+='<g class="fe"><rect x="244" y="64" width="50" height="14" fill="#f59e0b" fill-opacity=".8" stroke="currentColor"/>'+t_(269,60,"4,2 J",{s:11})+'<rect x="244" y="100" width="50" height="14" fill="#fb923c" fill-opacity=".8" stroke="currentColor"/>'+t_(269,96,"1 cal",{s:11})+'</g>';tr.push(N.vis(".fe",T,9.6));
  C("caloria","Animação: uma caloria é o calor necessário para elevar de 1 grau Celsius a temperatura de 1 grama de água, e equivale a cerca de 4,2 joules",H,s,tr,T,["Um grama de água recebe calor de uma chama","Para a temperatura subir 1 °C,|é preciso fornecer 1 caloria","A caloria é unidade de energia:|1 cal ≈ 4,2 J. Calor específico da água: 1 cal/g·°C"],[0,2,6.2])})();
 
 /* ---- calor específico: areia x água ---- */
+/* corrigido: a areia vai a 70 °C (20, 30, 45, 60, 70); antes ia a 60 °C. Com a mesma massa (100 g) e o mesmo calor, ΔT é inversamente proporcional a c: a água (c = 1,0) sobe 10 °C com Q = 100 · 1,0 · 10 = 1000 cal, então a areia (c = 0,2) sobe 1000 / (100 · 0,2) = 50 °C. Em cada instante ΔT(areia) = 5 · ΔT(água). — ref. Moysés, Curso de Física Básica, vol. 2, cap. 8 (Q = m·c·ΔT) */
 (function(){var T=16,H=206,s='',tr=[];
  [[84,"areia","#d6b87a","0,2",.9],[236,"água","var(--f-agua)","1,0",.4]].forEach(function(p,k){var x=p[0];
   s+=cup(x-42,70,84,56,p[2],"ca"+k)+t_(x,152,p[1]+" (100 g)",{s:12})+t_(x,168,"c = "+p[3]+" cal/g·°C",{s:11})+flame(x,138,"fl"+k);tr.push(N.op(".fl"+k,T,[[0,0],[1.4,0],[1.8,1],[T,1]]));
   s+=N.th(x+56,40,70,"mer"+k,p[4]);tr.push(N.sc(".mer"+k,T,[[0,1,.3],[1.8,1,.3],[11,1,p[4]]]))});
- var a=N.seq("ta",140,34,["20 °C","30 °C","40 °C","50 °C","60 °C"],[0,3.2,5.2,7.2,9.2],T,{s:11}),b=N.seq("tb",292,34,["20 °C","22 °C","25 °C","28 °C","30 °C"],[0,3.2,5.2,7.2,9.2],T,{s:11});
+ var a=N.seq("ta",140,34,["20 °C","30 °C","45 °C","60 °C","70 °C"],[0,3.2,5.2,7.2,9.2],T,{s:11}),b=N.seq("tb",292,34,["20 °C","22 °C","25 °C","28 °C","30 °C"],[0,3.2,5.2,7.2,9.2],T,{s:11});
  s+=a.s.replace(/x="140"/g,'x="140"')+b.s;tr=tr.concat(a.t,b.t);
  s+=t_(160,12,"mesma massa, mesmo calor",{s:11});
  s+=t_(160,20,"",{s:1});
  C("cal_esp","Animação: areia e água, de mesma massa, recebem a mesma quantidade de calor; a areia, de calor específico menor, esquenta bem mais que a água, que tem calor específico maior",H,s,tr,T,["Mesma massa e mesma chama:|os dois recebem o mesmo calor","A areia (c pequeno) esquenta depressa;|a água (c grande) esquenta devagar","Q = m · c · ΔT: com Q e m iguais,|menor c ⇒ maior ΔT. Por isso a areia queima o pé"],[0,1.8,6.4])})();
 
 /* ---- capacidade térmica ---- */
+/* corrigido: massas de 20 g e 100 g; antes eram 100 g e 500 g, o que não combinava com C = 20 e 100 cal/°C para a água (C = m·c, com c = 1 cal/g·°C). As temperaturas continuam certas: ΔT = Q / C = 1000 / 20 = 50 °C e 1000 / 100 = 10 °C. — ref. Moysés, vol. 2, cap. 8 */
 (function(){var T=16,H=206,s='',tr=[];
- [[84,"pequeno (100 g)",50,"C = 20 cal/°C",.92,"70 °C"],[236,"grande (500 g)",70,"C = 100 cal/°C",.4,"30 °C"]].forEach(function(p,k){var x=p[0],w=k?100:60;
+ [[84,"pequeno (20 g)",50,"C = 20 cal/°C",.92,"70 °C"],[236,"grande (100 g)",70,"C = 100 cal/°C",.4,"30 °C"]].forEach(function(p,k){var x=p[0],w=k?100:60;
   s+=cup(x-w/2,100-(k?20:0)+0,w,60+(k?20:0),COLD)+t_(x,174,p[1],{s:11})+t_(x,190,p[3],{s:12})+arr(x,205,x,196,HOT,"hf"+k,3);
   s+=N.th(x+(k?66:50),30,70,"mer"+k,p[4]);tr.push(N.sc(".mer"+k,T,[[0,1,.2],[2,1,.2],[9,1,p[4]]]))});
  var a=N.seq("ta",134,24,["20 °C","45 °C","70 °C"],[0,4,7],T,{s:11}),b=N.seq("tb",302,24,["20 °C","25 °C","30 °C"],[0,4,7],T,{s:11});s+=a.s+b.s;tr=tr.concat(a.t,b.t);
@@ -79,6 +84,7 @@ function calc(key,alt,H,s,tr,st){var T=st[st.length-1][0]+3.6,c=N.cap(st.map(fun
  C("cap_term","Animação: dois recipientes com água, um pequeno e um grande, recebem a mesma quantidade de calor; o pequeno esquenta muito e o grande pouco, pois tem maior capacidade térmica",H,s,tr,T,["Dois corpos recebem o mesmo calor,|1000 cal cada um","O pequeno esquenta 50 °C;|o grande, só 10 °C","Capacidade térmica: C = Q / ΔT = m · c.|Mais massa ⇒ maior C ⇒ muda menos a temperatura"],[0,2,7])})();
 
 /* ---- Joule: trabalho vira calor ---- */
+/* corrigido: "1 cal ≈ 4,2 J" (antes 4,18 J), para ficar igual à questão t033, ao cartão "Equivalência" e à animação "caloria". */
 (function(){var T=16,H=200,s='',tr=[];
  s+=cup(40,110,110,70,COLD)+'<line x1="95" y1="70" x2="95" y2="150" stroke="currentColor" stroke-width="3"/><g class="pd" style="transform-box:fill-box;transform-origin:50% 50%"><circle cx="95" cy="150" r="3" fill="currentColor"/><path d="M60 150h70M95 125v50" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></g>';
  tr.push(N.rot(".pd",T,[[0,0],[T,1400]]));
@@ -87,8 +93,8 @@ function calc(key,alt,H,s,tr,st){var T=st[st.length-1][0]+3.6,c=N.cap(st.map(fun
  tr.push(N.tr(".wt",T,[[0,0,0],[.5,0,0],[12,0,52]]));
  s+=N.th(272,60,90,"mer",.35)+t_(272,176,"água",{s:11});tr.push(N.sc(".mer",T,[[0,1,.3],[.5,1,.3],[12,1,.42]]));
  var q=N.seq("tq",272,48,["20,0 °C","20,2 °C","20,5 °C"],[0,5,9],T,{s:11});s+=q.s;tr=tr.concat(q.t);
- s+=t_(160,22,"o peso desce e gira as pás",{s:11})+t_(160,196,"energia mecânica ⇒ calor:  1 cal ≈ 4,18 J",{s:12,c:"fin"});tr.push(N.vis(".fin",T,11.4));
- C("joule_pa","Animação: um peso que desce faz girar pás dentro da água de um recipiente; a energia mecânica vira calor e a temperatura da água sobe um pouco, mostrando a equivalência entre trabalho e calor",H,s,tr,T,["Um peso desce e faz girar as pás|mergulhadas na água, sem chama alguma","O atrito das pás com a água aquece:|a temperatura sobe","Joule mostrou que trabalho mecânico vira calor:|1 cal ≈ 4,18 J"],[0,3,9])})();
+ s+=t_(160,22,"o peso desce e gira as pás",{s:11})+t_(160,196,"energia mecânica ⇒ calor:  1 cal ≈ 4,2 J",{s:12,c:"fin"});tr.push(N.vis(".fin",T,11.4));
+ C("joule_pa","Animação: um peso que desce faz girar pás dentro da água de um recipiente; a energia mecânica vira calor e a temperatura da água sobe um pouco, mostrando a equivalência entre trabalho e calor",H,s,tr,T,["Um peso desce e faz girar as pás|mergulhadas na água, sem chama alguma","O atrito das pás com a água aquece:|a temperatura sobe","Joule mostrou que trabalho mecânico vira calor:|1 cal ≈ 4,2 J"],[0,3,9])})();
 /* ================= resoluções de cálculo ================= */
 function CALC(key,alt,H,vis,tr,st,lines,ly){
  var T=st[st.length-1][0]+4,c=N.cap(st.map(function(a){return a[1]}),st.map(function(a){return a[0]}),T,H),g='';

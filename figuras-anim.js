@@ -5,7 +5,7 @@
   "use strict";
   window.ANIM = window.ANIM || {};
   var N = (window.AN = {});
-  N.sp = 1.7; /* fator de lentidão: todas as animações rodam mais devagar para dar tempo de ler */
+  N.sp = 1.3; /* corrigido: fator de lentidão reduzido de 1.7 para 1.3 (~24% mais rápido). */ /* fator de lentidão: todas as animações rodam mais devagar para dar tempo de ler */
   N.reg = function (k, o) {
     if (N._cap && !o.cap) o.cap = N._cap;
     N._cap = null;

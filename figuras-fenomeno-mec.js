@@ -212,12 +212,13 @@ bars("calc_m036","Simulação: o astronauta de 50 kg tem a mesma massa em qualqu
  caps:["O astronauta tem 50 kg em qualquer lugar.|O peso depende da gravidade local.","Na Terra (g = 10 m/s²) a barra é grande.|Na Lua, com g menor, ela é bem menor.","P = m · g = 50 · 1,6 = 80 N na Lua.|A massa não mudou: continua 50 kg."]});
 
 /* ===== planos inclinados ===== */
+/* corrigido: começa com ângulo 0 (horizontal) e inclina até o ângulo final; antes o plano começava inclinado e desinclinava enquanto o gráfico crescia, em contradição com as legendas. */
 function rampa(key,alt,o){
  var th=o.th,deg=th*180/PI,px=24,py=94,
   inner='<line x1="0" y1="0" x2="160" y2="0" stroke="currentColor" stroke-width="3"/><rect x="70" y="-26" width="40" height="26" fill="'+ACC+'" fill-opacity=".45" stroke="currentColor" stroke-width="2"/>'+t_(90,-8,o.lab,{s:11}),
-  sc='<line x1="10" y1="94" x2="200" y2="94" stroke="currentColor" stroke-opacity=".4" stroke-width="2"/><g class="rp" style="transform-origin:'+px+'px '+py+'px"><g transform="translate('+px+' '+py+') rotate('+(-deg)+')">'+inner+'</g></g>'+t_(250,34,o.fl,{s:12})+t_(250,50,o.fl2,{s:12});
+  sc='<line x1="10" y1="94" x2="200" y2="94" stroke="currentColor" stroke-opacity=".4" stroke-width="2"/><g class="rp" style="transform-origin:'+px+'px '+py+'px"><g transform="translate('+px+' '+py+') rotate(0)">'+inner+'</g></g>'+t_(250,34,o.fl,{s:12})+t_(250,50,o.fl2,{s:12});
  xy(key,alt,{ym:o.ym,xl:"",xe:f(deg,0)+"°",yl:o.yl,ye:o.ye,sc:sc,cv:[cvP(function(q){return o.Y(th*q)})],
-  tr:function(T,T0,D){return[N.rot(".rp",T,[[T0,deg],[T0+D,0]],"linear")]},
+  tr:function(T,T0,D){return[N.rot(".rp",T,[[T0,0],[T0+D,deg]],"linear")]},
   gs:o.gs,end:o.end,rd:function(q){return"θ = "+f(deg*q,0)+"°  ·  "+o.rl(th*q)},caps:o.caps})}
 rampa("calc_m044","Simulação: ao inclinar o plano até 30°, a aceleração de um bloco sem atrito cresce com o ângulo segundo g·sen θ, chegando a 5 m/s²",{th:PI/6,lab:"bloco",fl:"sem atrito",fl2:"g = 10 m/s²",ym:5,yl:"a (m/s²)",ye:"5",Y:function(t){return 10*Math.sin(t)},rl:function(t){return"a = "+f(10*Math.sin(t))+" m/s²"},
  caps:["Quanto mais inclinado o plano,|mais o peso puxa o bloco ao longo dele.","Sem atrito, só essa parte acelera o bloco:|a = g · sen θ.","Com θ = 30°: a = 10 · 0,5 = 5 m/s²."]});
@@ -257,13 +258,14 @@ xy("calc_m056","Simulação: um objeto de 3 kg é erguido até 5 m; a energia po
  sc:'<line x1="100" y1="94" x2="100" y2="14" stroke="currentColor" stroke-opacity=".4"/>'+GR+mvg("m0",100,24,'<circle cx="0" cy="0" r="9" fill="'+ACC+'" stroke="currentColor" stroke-width="2"/>'+t_(0,4,"3",{s:11})+'<line x1="18" y1="0" x2="18" y2="26" stroke="'+NEG+'" stroke-width="3"/><path d="M18 34L13 24L23 24Z" fill="'+NEG+'"/>'+t_(26,18,"P = 30 N",{s:11,a:"start"})),
  mv:[[".m0",function(q){return[100,86-62*q]},16]],cv:[cvP(function(q){return 150*q})],
  rd:function(q){return"h = "+f(5*q)+" m  ·  Ep = "+f(150*q,0)+" J"},caps:["O objeto de 3 kg é erguido do solo.|Quanto mais alto, mais energia potencial.","A energia cresce em reta com a altura:|o mesmo ganho a cada metro.","Ep = m · g · h = 3 · 10 · 5 = 150 J."]});
+/* corrigido: legenda "descida simplificada" adicionada; antes a animação mostrava descida com velocidade ~constante sem aviso. */
 (function(){var hx=function(h){return 20+260*Math.pow(1-h/20,.9)},hy=function(h){return 96-82*h/20},d="",i;for(i=0;i<=40;i++){var h=20-20*i/40;d+=(i?"L":"M")+r(hx(h))+" "+r(hy(h))+" "}
  var cart='<rect x="-12" y="-14" width="24" height="10" rx="2" fill="'+ACC+'" fill-opacity=".6" stroke="currentColor" stroke-width="2"/><circle cx="-6" cy="-3" r="3" fill="var(--surface)" stroke="currentColor" stroke-width="1.6"/><circle cx="6" cy="-3" r="3" fill="var(--surface)" stroke="currentColor" stroke-width="1.6"/>',hh=function(q){return 20-15*q};
- xy("calc_m057","Simulação: um carrinho desce uma montanha-russa de 20 m sem atrito; a energia potencial diminui e a cinética aumenta na mesma medida, e a soma permanece constante, dando 17,3 m/s a 5 m do solo",{ym:200,xl:"",x0t:"20 m",xe:"5 m",yl:"J por kg",ye:"200",
- sc:'<path d="'+d+'" fill="none" stroke="currentColor" stroke-width="3"/>'+mvg("m0",hx(5),hy(5),cart)+t_(34,12,"H = 20 m",{s:11,a:"start"}),
+ xy("calc_m057","Simulação: um carrinho desce uma montanha-russa de 20 m sem atrito; a energia potencial diminui e a cinética aumenta na mesma medida, e a soma permanece constante, dando 17,3 m/s a 5 m do solo. A descida é simplificada (velocidade aproximadamente constante) para focar na transformação de energia.",{ym:200,xl:"",x0t:"20 m",xe:"5 m",yl:"J por kg",ye:"200",
+ sc:'<path d="'+d+'" fill="none" stroke="currentColor" stroke-width="3"/>'+mvg("m0",hx(5),hy(5),cart)+t_(34,12,"H = 20 m",{s:11,a:"start"})+t_(180,12,"descida simplificada",{s:9,a:"middle",f:"var(--muted)"}),
  mv:[[".m0",function(q){return[hx(hh(q)),hy(hh(q))]},30]],cv:[cvP(function(q){return 10*hh(q)}),cvP(function(q){return 10*(20-hh(q))},NEG)],
  gs:function(gx,gy){return'<line x1="'+gx(0)+'" y1="'+gy(200)+'" x2="'+gx(1)+'" y2="'+gy(200)+'" stroke="currentColor" stroke-dasharray="4 3" stroke-opacity=".6"/>'+t_(gx(.04),gy(200)+14,"Ep",{s:12,a:"start"})+t_(gx(.96),gy(10*(20-5))-8,"Ec",{s:12,a:"end",f:NEG})+t_(gx(1),gy(200)-5,"Ep + Ec = constante",{s:10,a:"end"})},
- rd:function(q){return"h = "+f(hh(q))+" m  ·  v = "+f(Math.sqrt(20*(20-hh(q))))+" m/s"},caps:["O carrinho parte do topo, a 20 m,|e desce sem atrito.","A energia potencial vira cinética:|a soma Ep + Ec não muda.","A 5 m do solo: g·(H − h) = v² / 2|v = √(2 · 10 · 15) = √300 ≈ 17,3 m/s."]})})();
+ rd:function(q){return"h = "+f(hh(q))+" m  ·  v = "+f(Math.sqrt(20*(20-hh(q))))+" m/s"},caps:["O carrinho parte do topo, a 20 m,|e desce sem atrito (descida simplificada).","A energia potencial vira cinética:|a soma Ep + Ec não muda.","A 5 m do solo: g·(H − h) = v² / 2|v = √(2 · 10 · 15) = √300 ≈ 17,3 m/s."]})})();
 (function(){var zz='<path d="M0 -14L10 -14L15 -24L25 -4L35 -24L45 -4L55 -24L65 -4L70 -14L80 -14" fill="none" stroke="currentColor" stroke-width="2.4"/>';
  xy("calc_m058","Simulação: uma mola de 200 N/m é comprimida 0,1 m; a força cresce em reta com a compressão e a área sob o gráfico, 1 J, é a energia armazenada",{ym:20,xl:"",xe:"0,1 m",yl:"F (N)",ye:"20",area:1,
  sc:GR+'<rect x="12" y="62" width="8" height="32" fill="currentColor" fill-opacity=".4"/><g class="sp" style="transform-origin:20px 94px"><g transform="translate(20 94) scale(.6 1)">'+zz+'</g></g>'+mvg("m0",68,94,blk(0,34,"")),

@@ -40,20 +40,22 @@ function C(key,alt,H,s,tr,T,caps,times){N.scene(key,alt,H,s,tr,T,caps,times)}
  var tc=["0","25","50","75","100"],tf=["32","77","122","167","212"],tk=["273","298","323","348","373"],ts=[0,3,5.2,7.4,9.6];
  var a=N.seq("tc",200,56,tc.map(function(v){return"TC = "+v+" °C"}),ts,T,{s:15}),b=N.seq("tf",200,86,tf.map(function(v){return"TF = "+v+" °F"}),ts,T,{s:15}),c=N.seq("tk",200,116,tk.map(function(v){return"TK = "+v+" K"}),ts,T,{s:15});
  s+=a.s+b.s+c.s;tr=tr.concat(a.t,b.t,c.t);
- s+=t_(200,146,"TK = TC + 273 · TC/5 = (TF − 32)/9",{s:10,c:"fm"})+t_(200,164,"ΔTK = ΔTC · ΔTF = 1,8 · ΔTC",{s:10,c:"fm2"});
+ /* corrigido: as duas relações de cada linha agora são separadas por ";"; antes eram separadas por "·", e "TC + 273 · TC/5" podia ser lido como um produto. */
+ s+=t_(200,146,"TK = TC + 273;  TC/5 = (TF − 32)/9",{s:10,c:"fm"})+t_(200,164,"ΔTK = ΔTC;  ΔTF = 1,8 · ΔTC",{s:10,c:"fm2"});
  tr.push(N.vis(".fm",T,10.4),N.vis(".fm2",T,11.4));
  C("escalas","Animação: um termômetro sobe do ponto de fusão do gelo ao de ebulição da água e mostra os valores correspondentes nas escalas Celsius, Fahrenheit e Kelvin: 0, 32 e 273 até 100, 212 e 373",H,s,tr,T,["O mesmo termômetro lido em três escalas:|gelo derretendo = 0 °C = 32 °F = 273 K","Subindo, as leituras mudam juntas:|Celsius e Kelvin variam igual, Fahrenheit varia 1,8 vez","Água fervendo = 100 °C = 212 °F = 373 K.|Kelvin = Celsius + 273; não há Kelvin negativo"],[0,3,9.6])})();
 
 /* ---- onde C e F coincidem ---- */
+/* corrigido: legenda "A reta TF = TC" (antes "TC = TC"); a reta de conversão termina em TC = 50 (antes passava do topo da figura, até y = −12); rótulos "TF = 1,8·TC + 32" e "−40" afastados das retas. TF = 1,8·TC + 32 e TF = TC se cruzam em −40 (1,8·TC + 32 = TC → TC = −40). */
 (function(){var T=14,H=196,s='',tr=[],X=function(c){return 160+c*1.1},Y=function(v){return 100-v*.8};
  s+='<path d="M40 100H290M160 20V176" stroke="currentColor" stroke-width="1.5"/>'+t_(292,96,"TC",{s:11,a:"start"})+t_(166,24,"T",{s:11,a:"start"});
  s+='<path class="l1" pathLength="100" d="M'+X(-60)+' '+Y(-60)+'L'+X(60)+' '+Y(60)+'" stroke="currentColor" stroke-opacity=".6" stroke-width="2.5" fill="none" stroke-dasharray="100" stroke-dashoffset="0"/>';
- s+='<path class="l2" pathLength="100" d="M'+X(-60)+' '+Y(-76)+'L'+X(60)+' '+Y(140)+'" stroke="var(--f-calor)" stroke-width="3" fill="none" stroke-dasharray="100" stroke-dashoffset="0"/>';
+ s+='<path class="l2" pathLength="100" d="M'+X(-60)+' '+Y(-76)+'L'+X(50)+' '+Y(122)+'" stroke="var(--f-calor)" stroke-width="3" fill="none" stroke-dasharray="100" stroke-dashoffset="0"/>';
  tr.push(N.pr(".l1",T,"strokeDashoffset",[[0,100],[.2,100],[2,0]]),N.pr(".l2",T,"strokeDashoffset",[[0,100],[2,100],[4.4,0]]));
- s+=t_(X(46),Y(40)+14,"TF = TC",{s:11,a:"start"})+t_(X(40),Y(100)+4,"TF = 1,8·TC + 32",{s:11,a:"start"});
- s+='<g class="pt"><circle cx="'+X(-40)+'" cy="'+Y(-40)+'" r="6" fill="var(--acc)"/><line x1="'+X(-40)+'" y1="'+Y(-40)+'" x2="'+X(-40)+'" y2="100" stroke="currentColor" stroke-dasharray="3 3"/>'+t_(X(-40)-6,Y(-40)+16,"−40",{s:12,a:"end"})+'</g>';tr.push(N.vis(".pt",T,4.8));
+ s+=t_(X(46),Y(40)+14,"TF = TC",{s:11,a:"start"})+t_(X(58),Y(100)+12,"TF = 1,8·TC + 32",{s:11,a:"start"});
+ s+='<g class="pt"><circle cx="'+X(-40)+'" cy="'+Y(-40)+'" r="6" fill="var(--acc)"/><line x1="'+X(-40)+'" y1="'+Y(-40)+'" x2="'+X(-40)+'" y2="100" stroke="currentColor" stroke-dasharray="3 3"/>'+t_(X(-40)+9,Y(-40)+17,"−40",{s:12,a:"start"})+'</g>';tr.push(N.vis(".pt",T,4.8));
  s+=t_(160,190,"−40 °C = −40 °F",{s:14,c:"fi"});tr.push(N.vis(".fi",T,6));
- C("menos40","Animação: as retas das escalas Celsius e Fahrenheit se cruzam em menos 40: nessa temperatura os dois termômetros marcam o mesmo número, menos 40",H,s,tr,T,["Plotando TF contra TC, a conversão|é uma reta: TF = 1,8 · TC + 32","A reta TC = TC (mesmo valor) é a diagonal.|Elas se cruzam em um único ponto","No cruzamento, TC = TF = −40:|as duas escalas marcam o mesmo número"],[0,2,4.8])})();
+ C("menos40","Animação: as retas das escalas Celsius e Fahrenheit se cruzam em menos 40: nessa temperatura os dois termômetros marcam o mesmo número, menos 40",H,s,tr,T,["Plotando TF contra TC, a conversão|é uma reta: TF = 1,8 · TC + 32","A reta TF = TC (mesmo valor) é a diagonal.|Elas se cruzam em um único ponto","No cruzamento, TC = TF = −40:|as duas escalas marcam o mesmo número"],[0,2,4.8])})();
 
 /* ---- estados físicos ---- */
 (function(){var T=16,H=206,s='',tr=[],i,j;
@@ -64,7 +66,8 @@ function C(key,alt,H,s,tr,T,caps,times){N.scene(key,alt,H,s,tr,T,caps,times)}
  var gs=[[246,70],[290,82],[262,108],[240,116],[296,114]];gs.forEach(function(p,k){s+=mol(p[0],p[1],"var(--f-calor)","mg"+k,5);tr.push(N.jit(".mg"+k,T,[[0,T,.25,16]]))});
  var G1='<g class="g1">'+arr(82,80,121,80,HOT,"",3)+arr(121,106,82,106,COLD,"",3)+t_(102,72,"fusão",{s:10})+t_(102,124,"solidif.",{s:9})+'</g>';
  var G2='<g class="g2">'+arr(199,80,238,80,HOT,"",3)+arr(238,106,199,106,COLD,"",3)+t_(219,72,"vapor.",{s:10})+t_(219,124,"cond.",{s:9})+'</g>';
- var G3='<g class="g3"><path d="M43 52C110 -2 210 -2 277 52" fill="none" stroke="var(--acc)" stroke-width="3" stroke-dasharray="6 4"/>'+t_(160,26,"sublimação (direta)",{s:11})+'</g>';
+ /* corrigido: rótulo "sublimação (direta)" em y = 42, por baixo do arco; antes ficava em y = 26 e o arco tracejado passava por cima das pontas do texto. */
+ var G3='<g class="g3"><path d="M43 52C110 -2 210 -2 277 52" fill="none" stroke="var(--acc)" stroke-width="3" stroke-dasharray="6 4"/>'+t_(160,42,"sublimação (direta)",{s:11})+'</g>';
  s+=G1+G2+G3;
  tr.push(N.vis(".g1",T,1.2),N.vis(".g2",T,5),N.vis(".g3",T,9));
  s+=t_(160,176,"aquecer: ordem → desordem (↑ energia)",{s:10,c:"fa"})+t_(160,192,"resfriar: o caminho inverso",{s:10,c:"fb"});tr.push(N.vis(".fa",T,3),N.vis(".fb",T,7.4));
@@ -82,7 +85,8 @@ function C(key,alt,H,s,tr,T,caps,times){N.scene(key,alt,H,s,tr,T,caps,times)}
  C("pressao_ebul","Animação: três recipientes com água fervendo: ao nível do mar a 100 graus, no alto da montanha a cerca de 90 graus, pois a pressão é menor, e na panela de pressão a cerca de 120 graus, pois a pressão é maior",H,s,tr,T,["Ao nível do mar a pressão é normal:|a água ferve a 100 °C","Em grande altitude a pressão é menor:|a água ferve a uma temperatura menor","Na panela de pressão a pressão é maior:|a água ferve acima de 100 °C e cozinha mais rápido"],[0,3.4,5.8])})();
 
 /* ---- evaporação x ebulição ---- */
-(function(){var T=15,H=204,s='',tr=[],i;
+/* corrigido: altura da figura de 204 para 218, para a chama (base em y = 212) aparecer inteira; antes ficava cortada embaixo. */
+(function(){var T=15,H=218,s='',tr=[],i;
  [[80,"evaporação"],[240,"ebulição"]].forEach(function(p,k){var x=p[0];
   s+='<path d="M'+(x-44)+' 54V134a8 8 0 0 0 8 8h72a8 8 0 0 0 8-8V54" fill="none" stroke="currentColor" stroke-width="2.4"/><rect x="'+(x-42)+'" y="80" width="84" height="60" rx="4" fill="var(--f-agua)" fill-opacity=".45"/>'+t_(x,164,p[1],{s:13});
   s+=t_(x,178,k?"no líquido todo (100 °C)":"só na superfície",{s:10})});

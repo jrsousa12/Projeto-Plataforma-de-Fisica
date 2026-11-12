@@ -12,7 +12,8 @@ function along(pts,t0,speeds){ /* amostra uma polilinha: devolve [[t,x,y],...] c
  s+='<line x1="36" y1="48" x2="306" y2="48" stroke="currentColor" stroke-opacity=".25" stroke-dasharray="3 4"/><line x1="36" y1="112" x2="306" y2="112" stroke="currentColor" stroke-opacity=".25" stroke-dasharray="3 4"/>';
  var d="M"+P.map(function(p){return p[0]+" "+p[1]}).join("L");
  s+='<path class="cv" d="'+d+'" fill="none" stroke="var(--f-calor)" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="'+tot+'" stroke-dashoffset="0"/>';
- s+='<text class="n1" x="64" y="98" font-size="10" text-anchor="middle">gelo</text><text class="n2" x="109" y="126" font-size="10" text-anchor="middle">fusão</text><text class="n3" x="158" y="84" font-size="10" text-anchor="start">água líquida</text><text class="n4" x="224" y="40" font-size="10" text-anchor="middle">ebulição</text><text class="n5" x="296" y="46" font-size="10" text-anchor="end">vapor</text>';
+ /* corrigido: rótulo "vapor" em (300, 62), abaixo da linha de 100 °C; antes ficava em (296, 46), por cima do fim da curva. */
+ s+='<text class="n1" x="64" y="98" font-size="10" text-anchor="middle">gelo</text><text class="n2" x="109" y="126" font-size="10" text-anchor="middle">fusão</text><text class="n3" x="158" y="84" font-size="10" text-anchor="start">água líquida</text><text class="n4" x="224" y="40" font-size="10" text-anchor="middle">ebulição</text><text class="n5" x="300" y="62" font-size="10" text-anchor="end">vapor</text>';
  s+='<circle class="dot" cx="296" cy="28" r="6" fill="var(--spark)" stroke="currentColor" stroke-width="1.5"/>';
  var ts=[t0];D.forEach(function(x){ts.push(ts[ts.length-1]+x)});
  /* deslocamento da curva: dashoffset de tot a 0, proporcional ao comprimento percorrido por trecho */
@@ -100,7 +101,7 @@ function circ(key,alt,cfg){var T=cfg.T||9,L=cfg.L,Rr=cfg.R,top=cfg.top,bot=cfg.b
  var c=N.cap(["A chama, no centro, aquece a água de baixo","A água quente sobe pelo meio e esfria;|ao descer pelos lados, fica azul (mais densa)","Formam-se correntes de convecção; no alto,|parte da água evapora e sai como vapor"],[0,2.7,5.4],T,178);
  N.reg("convec",{a:"Animação: a chama, no centro do recipiente, aquece a água de baixo, que sobe pelo meio; ao esfriar, a água desce pelos lados e fica azul. Forma-se uma corrente de convecção e sai vapor de água do recipiente",h:208,s:s+c.s,t:tr.concat(c.t),T:T})})();
 circ("geladeira","Animação: no interior da geladeira o ar frio do congelador, no alto, é mais denso e desce, e o ar mais quente sobe pelo outro lado, formando uma corrente de convecção",
- {L:100,R:220,top:80,bot:128,T:9,cy:172,h:204,caps:["O congelador fica na parte de cima","O ar frio é mais denso e desce|o ar mais quente sobe","A corrente de convecção resfria|toda a geladeira"],
+ {L:100,R:220,top:80,bot:128,T:9,cy:172,h:204,caps:["O congelador fica na parte de cima","O ar frio é mais denso e desce;|o ar mais quente sobe","A corrente de convecção resfria|toda a geladeira"],
   base:'<rect x="70" y="26" width="180" height="116" rx="8" fill="var(--f-vidro)" stroke="currentColor" stroke-width="2.5"/><rect x="76" y="32" width="168" height="26" rx="4" fill="#bfe6f5" stroke="currentColor" stroke-width="1.5"/><text x="160" y="50" text-anchor="middle" font-size="11" font-weight="700" style="fill:#1b1b1b">congelador</text><line x1="70" y1="62" x2="250" y2="62" stroke="currentColor" stroke-width="2"/>'});
 
 /* ================= PRIORIDADE MÉDIA ================= */
@@ -181,7 +182,8 @@ function sol(cx,cy){var r='<g class="sun"><circle cx="'+cx+'" cy="'+cy+'" r="11"
  s+='<text x="96" y="92" font-size="9" text-anchor="middle" transform="rotate(-90 96 92)">vácuo</text>';
  s+=N.arrow(180,203,100,"an-a2 c1",3)+'<text class="x1" x="222" y="105" text-anchor="middle" font-size="18" font-weight="700" fill="var(--neg)">✕</text>';
  s+=N.arrow(130,110,72,"an-a2 c2",3)+N.arrow(112,134,80,"an-a1 c3",3);
- s+=N.varrow(160,58,42,"an-a2 c4",3)+'<text class="x4" x="160" y="12" text-anchor="middle" font-size="16" font-weight="700" fill="var(--neg)">✕</text>';
+ /* corrigido: o ✕ da convecção foi para (204, 32), ao lado da tampa; antes ficava em y = 12 e saía pelo topo da figura (de −4 a 16). */
+ s+=N.varrow(160,58,42,"an-a2 c4",3)+'<text class="x4" x="204" y="32" text-anchor="middle" font-size="16" font-weight="700" fill="var(--neg)">✕</text>';
  tr.push(N.vis(".c1",T,.6),N.vis(".x1",T,2.4),N.vis(".c2",T,3.4),N.vis(".c3",T,4.6),N.vis(".c4",T,6.6),N.vis(".x4",T,8));
  var c=N.cap(["Parede dupla com vácuo entre as paredes:|a condução é bloqueada","Paredes espelhadas refletem de volta|o calor irradiado","A tampa impede a convecção:|o calor quase não escapa"],[0,3.2,6.4],T,176);
  N.reg("garrafa",{a:"Animação: a garrafa térmica tem parede dupla com vácuo, que bloqueia a condução; paredes espelhadas, que refletem a irradiação; e tampa, que impede a convecção, mantendo o líquido quente",h:196,s:s+c.s,t:tr.concat(c.t),T:T})})();
@@ -229,8 +231,9 @@ N.calc("calc_t087","Animação passo a passo: ao misturar 200 gramas de água a 
 N.calc("calc_t098","Animação passo a passo: ao misturar 500 gramas de água a 80 graus com 1500 gramas a 20 graus, em um recipiente isolado, a temperatura final é 35 graus",{h:H,cy:CY,
  s:bk(24,.35,VM,"500 g","80 °C")+N.t(98,62,"+",{s:20})+bk(116,.9,AG,"1 500 g","20 °C")+'<g class="s4">'+N.t(206,62,"=",{s:20})+bk(232,1,"#b58fc9","2 000 g","35 °C")+'</g>',
  steps:[[0,"Sistema isolado:|calor cedido + calor recebido = 0"],[3,"500 · 1 · (T − 80) + 1 500 · 1 · (T − 20) = 0"],[6,"2 000 · T = 40 000 + 30 000"],[8.6,"T = 70 000 / 2 000 = 35 °C"]]});
+/* corrigido: rótulo "200 °C → 30 °C" em (270, 60), à direita do béquer; antes ficava em (160, 30), embaixo do bloco no início da animação (o bloco começa 52 px acima). */
 N.calc("calc_t088","Animação passo a passo: um bloco metálico de 100 gramas a 200 graus é colocado em 200 gramas de água a 20 graus e o equilíbrio ocorre a 30 graus; o calor específico do metal é cerca de 0,12 caloria por grama e por grau",{h:H,cy:CY,
- s:N.bk(100,38,120,60,.7,AG)+'<g class="blk"><rect x="140" y="66" width="40" height="24" rx="3" fill="#8b95a5" stroke="currentColor" stroke-width="2"/>'+'<text x="160" y="83" text-anchor="middle" font-size="11" style="fill:#14161a">100 g</text></g>'+N.t(160,30,"200 °C → 30 °C",{s:11})+N.t(50,60,"água",{s:11})+N.t(50,72,"200 g, 20 °C",{s:10})+'<g class="s2">'+N.arrow(186,214,78,"an-a2",3)+'</g>',
+ s:N.bk(100,38,120,60,.7,AG)+'<g class="blk"><rect x="140" y="66" width="40" height="24" rx="3" fill="#8b95a5" stroke="currentColor" stroke-width="2"/>'+'<text x="160" y="83" text-anchor="middle" font-size="11" style="fill:#14161a">100 g</text></g>'+N.t(270,60,"200 °C → 30 °C",{s:11})+N.t(50,60,"água",{s:11})+N.t(50,72,"200 g, 20 °C",{s:10})+'<g class="s2">'+N.arrow(186,214,78,"an-a2",3)+'</g>',
  tr:[N.tr(".blk",11.8,[[0,0,-52],[2.4,0,-52],[3.6,0,0]],"linear")],
  steps:[[0,"Bloco quente (100 g, 200 °C) na água|(200 g, 20 °C). Equilíbrio em 30 °C"],[3,"Calor cedido pelo bloco = calor recebido pela água"],[5.6,"100 · c · (200 − 30) = 200 · 1 · (30 − 20)"],[8.2,"17 000 · c = 2 000 → c ≈ 0,12 cal/g·°C"]]});
 (function(){var pivot=function(t){return t};
@@ -260,8 +263,9 @@ N.calc("calc_t095","Animação passo a passo: um corpo de 400 gramas com calor e
  s:'<rect x="90" y="40" width="70" height="50" rx="4" fill="#8d99ad" stroke="currentColor" stroke-width="2"/>'+N.t(125,60,"400 g",{s:12,f:"#14161a"})+N.t(125,76,"c = 0,25",{s:11,f:"#14161a"})+N.arrow(30,84,66,"an-a2",3.5)+N.t(50,56,"3 000 cal",{s:11})+'<rect x="226" y="14" width="14" height="84" rx="7" fill="none" stroke="currentColor" stroke-width="2"/><rect class="mr" x="229" y="40" width="8" height="56" rx="4" fill="var(--f-verm)" style="transform-box:fill-box;transform-origin:50% 100%"/>'+'<g class="s4">'+N.t(256,60,"+30 °C",{a:"start",s:12})+'</g>',
  tr:[N.sc(".mr",11.8,[[0,1,.45],[2.6,1,.45],[7,1,1]],"linear")],
  steps:[[0,"Corpo de 400 g, c = 0,25 cal/g·°C,|recebe Q = 3 000 cal"],[3,"Q = m · c · ΔT → ΔT = Q / (m · c)"],[5.6,"ΔT = 3 000 / (400 · 0,25) = 3 000 / 100"],[8.2,"ΔT = 30 °C"]]});
+/* corrigido: "e = 5 mm" foi para a linha de dados embaixo (y = 120), junto com A e ΔT; antes ficava em (160, 13), encostado no topo da vidraça (y = 14). */
 N.calc("calc_t096","Animação passo a passo: pela vidraça de 1,5 metro quadrado, 5 milímetros de espessura e condutividade de 0,8, com diferença de temperatura de 10 graus, o fluxo de calor por condução é 2400 watts",{h:H,cy:CY,
- s:'<rect x="60" y="20" width="60" height="80" fill="var(--f-verm)" fill-opacity=".25"/><rect x="200" y="20" width="60" height="80" fill="var(--f-agua)" fill-opacity=".3"/><rect x="152" y="14" width="16" height="92" fill="var(--f-vidro)" stroke="currentColor" stroke-width="2.5"/>'+N.t(90,64,"quente",{s:12})+N.t(230,64,"frio",{s:12})+N.arrow(100,196,44,"an-a2",3.5)+N.arrow(100,196,76,"an-a2",3.5)+N.t(160,13,"e = 5 mm",{s:11})+N.t(160,120,"A = 1,5 m²    ΔT = 10 °C",{s:11}),
+ s:'<rect x="60" y="20" width="60" height="80" fill="var(--f-verm)" fill-opacity=".25"/><rect x="200" y="20" width="60" height="80" fill="var(--f-agua)" fill-opacity=".3"/><rect x="152" y="14" width="16" height="92" fill="var(--f-vidro)" stroke="currentColor" stroke-width="2.5"/>'+N.t(90,64,"quente",{s:12})+N.t(230,64,"frio",{s:12})+N.arrow(100,196,44,"an-a2",3.5)+N.arrow(100,196,76,"an-a2",3.5)+N.t(160,120,"A = 1,5 m²;  e = 5 mm;  ΔT = 10 °C",{s:11}),
  steps:[[0,"Condução pela vidraça: Φ = k · A · ΔT / L|k = 0,8; A = 1,5 m²; ΔT = 10 °C; L = 0,005 m"],[3.2,"Φ = 0,8 · 1,5 · 10 / 0,005"],[6,"Φ = 12 / 0,005"],[8.4,"Φ = 2 400 W"]]});
 N.calc("calc_t097","Animação passo a passo: um recipiente de capacidade térmica de 50 calorias por grau com 250 gramas de água a 20 graus recebe 5000 calorias; a temperatura final é cerca de 36,7 graus",{h:H,cy:CY,
  s:N.bk(100,18,120,62,.75,AG)+N.t(160,50,"250 g de água",{s:11})+N.t(160,64,"C = 50 cal/°C",{s:11})+N.arrow(30,92,52,"an-a2",3.5)+N.t(56,40,"5 000 cal",{s:11})+N.t(262,48,"20 °C",{s:12,c:"t0",o:0})+N.t(262,48,"36,7 °C",{s:12,c:"t1"}),
