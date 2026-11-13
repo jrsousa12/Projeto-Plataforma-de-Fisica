@@ -473,96 +473,23 @@ window.__boot = function (id) {
   var rel = window.AppRelatorio({ id: id, Q: Q, HI: HI, ST: ST, esc: esc }),
     relatorio = rel.relatorio,
     contaHtml = rel.contaHtml;
-  /* perfil e treino adaptativo (tela "Meu desempenho") */
-  function perfilUI() {
-    var el = document.createElement("div");
-    el.id = "perfilbox";
-    var R = window.Perfil.resumo(Q),
-      o = "",
-      pior = null;
-    Object.keys(TN).forEach(function (k) {
-      var r = R[k];
-      if (!r) return;
-      var pc = r.n ? Math.round((100 * r.ac) / r.n) : null;
-      if (pc !== null && (pior === null || pc < pior.pc)) pior = { k: k, pc: pc };
-      o +=
-        '<p style="margin:6px 0 0"><b>' +
-        esc(TN[k]) +
-        "</b>: " +
-        r.vistas +
-        " de " +
-        r.tot +
-        " perguntas vistas, " +
-        r.dom +
-        " dominadas</p>";
-    });
-    var nv = Object.keys(window.Perfil.ler()).length;
-    el.innerHTML =
-      '<p style="margin:16px 0 4px"><b>Perguntas dominadas</b></p><p class="msg neu" style="margin:0 0 6px">Dominada: 2 ou mais tentativas e pelo menos 80% de acerto.</p>' +
-      o +
-      (pior && pior.pc < 70
-        ? '<p class="msg no" style="margin-top:10px">Para reforçar: <b>' +
-          esc(TN[pior.k]) +
-          "</b> (" +
-          pior.pc +
-          "% de acerto).</p>"
-        : "") +
-      '<button class="btn" id="tadapt" style="margin-top:10px">Treino adaptativo (10 perguntas)</button><p class="msg neu" style="margin-top:6px">Sorteia mais perguntas das que você errou, ainda não viu ou não revê há tempo.</p>' +
-      relatorio() +
-      contaHtml();
-    ($("hp2") || $("histbody")).appendChild(el);
-    $("tadapt").onclick = function () {
+  /* Perfil e treino adaptativo (tela "Meu desempenho"): ver app-perfil.js */
+  var perfilUI = window.AppPerfil({
+    $: $,
+    Q: Q,
+    TN: TN,
+    esc: esc,
+    relatorio: relatorio,
+    contaHtml: contaHtml,
+    poolSel: poolSel,
+    estudar: function (lista) {
       mode = "estudo";
-      var ids = poolSel()
-          .map(function (k) {
-            return { k: k, id: Q[k].id };
-          })
-          .filter(function (x) {
-            return !Q[x.k].g;
-          }),
-        s = window.Perfil.sugerir(ids, 10);
-      if (s.length) start(s, false);
-    };
-    var nm = function (t, ok) {
-      var m = $("nmsg");
-      if (!m) return;
-      m.textContent = t;
-      m.className = "msg " + (ok ? "ok" : "no");
-      m.style.display = "block";
-    };
-    if ($("trpior"))
-      $("trpior").onclick = function () {
-        mode = "estudo";
-        if (window.__pior.length) start(window.__pior.slice(), false);
-      };
-    if ($("nent"))
-      $("nent").onclick = function () {
-        nm("Entrando…", true);
-        window.Nuvem.entrar($("ncod").value)
-          .then(function () {
-            renderHist();
-            nm("Conectado! Seu histórico está sincronizado.", true);
-          })
-          .catch(function (e) {
-            nm(e.message, false);
-          });
-      };
-    if ($("nsinc"))
-      $("nsinc").onclick = function () {
-        nm("Sincronizando…", true);
-        window.Nuvem.sincronizar().then(function (r) {
-          if (r) {
-            renderHist();
-            nm("Sincronizado.", true);
-          } else nm("Não foi possível sincronizar agora.", false);
-        });
-      };
-    if ($("nsair"))
-      $("nsair").onclick = function () {
-        window.Nuvem.sair();
-        renderHist();
-      };
-  }
+      start(lista, false);
+    },
+    renderHist: function () {
+      renderHist();
+    },
+  }).perfilUI;
   function openOnly(id) {
     if (id !== "quiz" && !parked) ST.del("sess");
     ["home", "quiz", "end", "book", "sheet", "cards", "hist", "fontes"].forEach(function (x) {
@@ -664,51 +591,15 @@ window.__boot = function (id) {
   $("go2").onclick = function () {
     begin("tempo");
   };
-  $("share").onclick = function () {
-    var b = $("share"),
-      t =
-        "Fiz " +
-        num(score) +
-        "/" +
-        order.length +
-        " no quiz de " +
-        QZ.nome.toLowerCase() +
-        " (" +
-        (mode === "tempo" ? "cronometrado" : "modo estudo") +
-        ") em " +
-        $("s3").textContent +
-        ". Tente também!" +
-        (/^https?:$/.test(location.protocol) ? " " + location.origin + location.pathname : "");
-    var show = function () {
-      var s = $("shtxt");
-      if (!s) {
-        s = document.createElement("p");
-        s.id = "shtxt";
-        s.className = "hint";
-        s.style.userSelect = "all";
-        b.parentNode.insertBefore(s, b.nextSibling);
-      }
-      s.textContent = "Copie e envie: " + t;
-    };
-    try {
-      if (navigator.share) {
-        navigator.share({ text: t }).catch(function (e) {
-          if (!e || e.name !== "AbortError") show();
-        });
-      } else if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard
-          .writeText(t)
-          .then(function () {
-            b.textContent = "Copiado!";
-          })
-          .catch(show);
-      } else {
-        show();
-      }
-    } catch (e) {
-      show();
-    }
-  };
+  /* Botão "Compartilhar resultado": ver app-compartilhar.js */
+  window.AppCompartilhar({
+    $: $,
+    QZ: QZ,
+    num: num,
+    dados: function () {
+      return { score: score, n: order.length, mode: mode };
+    },
+  });
   $("prt").onclick = function () {
     try {
       window.print();

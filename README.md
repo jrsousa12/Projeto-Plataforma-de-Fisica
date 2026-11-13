@@ -10,7 +10,7 @@ Quiz de Física (ensino médio) que funciona direto no navegador, sem instalar n
 | `index.html` | Página principal do quiz |
 | `quizzes.js` | **Lista única dos quizzes**: nome, arquivos e onde cada um guarda o progresso (veja "Acrescentar um quiz") |
 | `style.css` | Visual (cores, fontes, menus) |
-| `script.js` | Lógica do quiz (rodada, resultado, perfil, navegação) |
+| `script.js` | Lógica do quiz (início da rodada, pergunta, resposta, fim da rodada, níveis) |
 | `app-graficos.js` | Gráficos de desempenho do histórico |
 | `app-historico.js` | Tela de histórico e desempenho |
 | `app-folha.js` | Lista de exercícios e prova para imprimir |
@@ -28,6 +28,8 @@ Quiz de Física (ensino médio) que funciona direto no navegador, sem instalar n
 | `app-animacao.js` | Controles da animação da explicação (pausar, ver de novo, linha do tempo, legendas) |
 | `app-numeros.js` | Questões numéricas (sorteio de valores, notação científica, leitura do número digitado) |
 | `app-retorno.js` | Retorno depois de responder (Correto/Não foi dessa vez, explicação, Você marcou, meta do dia) |
+| `app-perfil.js` | Quadro de perguntas dominadas, treino adaptativo e botões da conta na nuvem |
+| `app-compartilhar.js` | Botão Compartilhar resultado (compartilha, copia ou mostra o texto) |
 | `app-meta.js` | Meta diária de questões |
 | `app-nav.js` | Barra de navegação inferior e seleção de áreas |
 | `app-escolha.js` | Tela de escolha do quiz e início (?q=...) |
