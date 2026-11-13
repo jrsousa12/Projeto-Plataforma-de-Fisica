@@ -22,6 +22,8 @@ Todo arquivo novo do app entra em: `index.html` (`<script>`, na ordem certa), `s
    - **Navegação** (endereços #nome, botão voltar, aviso "sair do quiz?", Esc) — feito: `app-telas.js` (131); `script.js` 1422 → 1318. `VMAP` ficou no `script.js` (usado pelo `openOnly`); parar os relógios chega como `c.pararRelogios`. O botão "início" só aparece no quiz e nas Fontes (regra do CSS, não é erro). Teste novo: `build/t_telas.py`.
    - **Relógio** (tempo da rodada, pausa, tempo por pergunta no cronometrado) — feito: `app-relogio.js` (155); `script.js` 1318 → 1216. Corrigido erro do passo anterior: `var TL` (navegação) apagava `TL = 30` (segundos por pergunta) e a barra do cronometrado não esgotava; a navegação agora é `TE`. Teste novo: `build/t_relogio.py` (usa relógio simulado do Playwright, `pg.clock`).
    - **Resultado** (tela do fim da rodada e ranking) — feito: `app-resultado.js` (253); `script.js` 1216 → 1039. O `finish()` ficou no `script.js` (fecha a rodada, completa o simulado, grava o histórico) e chama `RS.mostrar({...})`, que só monta a tela. Teste novo: `build/t_resultado.py`.
+   - **Pergunta/resposta** — feito: `app-animacao.js` (133), `app-numeros.js` (47) e `app-retorno.js` (85); `script.js` 1039 → 814. `show()`, `pick()` e `submitNum()` ficaram no `script.js` (mexem em pontuação, sequência e `locked`); o `pick` chama `RT.mostrar({...})`, que só monta a caixa de retorno. Teste novo: `build/t_retorno.py`. Parte difícil concluída.
+   - Resta no `script.js` (814): início da rodada, `show`/`pick`, `finish`, níveis, perfil e dica, muito ligados entre si. Decidir com o dono (18/11): dividir mais ou registrar como exceção tolerada.
 7. Opcional: `style.css` e `build/novas.py`.
 
 ## Decisões que valem daqui em diante

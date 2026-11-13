@@ -62,6 +62,10 @@ window.__boot = function (id) {
   });
   /* Tela do resultado (fim da rodada) e ranking: ver app-resultado.js */
   var RS = window.AppResultado({ $: $, Q: Q, QZ: QZ, esc: esc, num: num, fmt: fmt, ST: ST });
+  /* Questões numéricas: app-numeros.js. Retorno depois de responder: app-retorno.js. Animação: app-animacao.js */
+  var NU = window.AppNumeros(),
+    RT = window.AppRetorno({ $: $, esc: esc }),
+    fmtE = RT.fmtE;
   var order = [],
     i = 0,
     score = 0,
@@ -254,118 +258,6 @@ window.__boot = function (id) {
     dots();
     save();
   }
-  function capUi(w, svg, A) {
-    var C = A.cap,
-      k,
-      ol = document.createElement("ol"),
-      sp = (window.AN && AN.sp) || 1,
-      els = svg.querySelectorAll("text"),
-      bb = 0,
-      li = [];
-    for (k = els.length - 1; k >= 0; k--) {
-      if (/(^|\s)cp\d+(\s|$)/.test(els[k].getAttribute("class") || "")) els[k].parentNode.removeChild(els[k]);
-    }
-    try {
-      var b = svg.getBBox();
-      bb = Math.ceil(b.y + b.height) + 8;
-    } catch (e) {}
-    svg.setAttribute("viewBox", "0 0 320 " + Math.min(A.h, Math.max(C.y - 4, bb)));
-    ol.className = "ancap";
-    C.list.forEach(function (t) {
-      var l = document.createElement("li");
-      t.split("|").forEach(function (x) {
-        var sp2 = document.createElement("span");
-        sp2.textContent = x;
-        l.appendChild(sp2);
-      });
-      ol.appendChild(l);
-      li.push(l);
-    });
-    w.insertBefore(ol, w.querySelector(".anrow"));
-    var cur = -2;
-    return function (ms) {
-      var t = ms / 1000,
-        n = 0;
-      C.times.forEach(function (x, j) {
-        if (x * sp <= t + 0.001) n = j;
-      });
-      if (n === cur) return;
-      cur = n;
-      li.forEach(function (l, j) {
-        l.className = j === n ? "on" : j < n ? "done" : "";
-      });
-    };
-  }
-  function anCtl(w, svg, A, onEnd) {
-    var pb = w.querySelector(".anp"),
-      rv = w.querySelector(".anr"),
-      rg = w.querySelector(".anrg"),
-      T = Math.round((A.T || 8) * 1000 * ((window.AN && AN.sp) || 1)),
-      paused = false,
-      raf = 0,
-      cu = A.cap ? capUi(w, svg, A) : null;
-    function all() {
-      try {
-        return svg.getAnimations ? svg.getAnimations({ subtree: true }) : [];
-      } catch (e) {
-        return [];
-      }
-    }
-    function setP(p) {
-      paused = p;
-      all().forEach(function (a) {
-        try {
-          p ? a.pause() : a.play();
-        } catch (e) {}
-      });
-      pb.textContent = p ? "▶ Continuar" : "⏸ Pausar";
-      pb.setAttribute("aria-pressed", p ? "true" : "false");
-    }
-    function loop() {
-      if (!w.isConnected) return;
-      if (!paused) {
-        var a = all()[0];
-        if (a && a.currentTime != null) var ct = Math.min(T, Math.round(a.currentTime % (T + 1)));
-        rg.value = String(ct);
-        if (cu) cu(ct);
-        if (onEnd && ct >= T - 60) {
-          var f = onEnd;
-          onEnd = null;
-          f();
-        }
-      }
-      raf = requestAnimationFrame(loop);
-    }
-    function go() {
-      window.AN.run(svg, A);
-      paused = false;
-      pb.textContent = "⏸ Pausar";
-      pb.setAttribute("aria-pressed", "false");
-      rg.value = "0";
-      cancelAnimationFrame(raf);
-      if (all().length) {
-        w.classList.remove("static");
-        loop();
-      } else {
-        w.classList.add("static");
-      }
-    }
-    rg.max = String(T);
-    pb.onclick = function () {
-      setP(!paused);
-    };
-    rv.onclick = go;
-    rg.oninput = function () {
-      setP(true);
-      var v = +rg.value;
-      all().forEach(function (a) {
-        try {
-          a.currentTime = v;
-        } catch (e) {}
-      });
-    };
-    go();
-  }
   function pick(k, nok) {
     if (locked) return;
     locked = true;
@@ -405,57 +297,8 @@ window.__boot = function (id) {
       return;
     }
     $("pts").textContent = num(score);
-    $("hbtn").classList.add("hidden");
-    $("fonteq").classList.remove("hidden");
-    $("fb").innerHTML =
-      '<div class="fb' +
-      (ok ? "" : " no") +
-      '"><b>' +
-      (ok
-        ? hinted && mode === "tempo"
-          ? "Correto, com dica! (meio ponto)"
-          : "Correto!"
-        : k === -1
-          ? "Tempo esgotado."
-          : "Não foi dessa vez.") +
-      "</b><p></p></div>";
-    fmtE($("fb").querySelector("p"), G ? G.e + " Resposta: " + G.at : d.e, !!(G || d.c));
-    if (d.an && window.ANIM && window.ANIM[d.an]) {
-      var A = window.ANIM[d.an],
-        w = document.createElement("div");
-      w.className = "fig anim";
-      w.innerHTML =
-        '<svg viewBox="0 0 320 ' +
-        A.h +
-        '" role="img" aria-label="' +
-        esc(A.a) +
-        '">' +
-        A.s +
-        '</svg><div class="anrow"><button type="button" class="btn alt anp" aria-pressed="false">⏸ Pausar</button><button type="button" class="btn alt anr">↻ Ver de novo</button></div><label class="anlb">Linha do tempo<input type="range" class="anrg" min="0" step="50" value="0" aria-label="Linha do tempo da animação"></label><details class="antx"><summary>Descrição em texto</summary><p></p></details>';
-      w.querySelector(".antx p").textContent = A.a;
-      $("fb").appendChild(w);
-      anCtl(w, w.querySelector("svg"), A, function () {
-        setTimeout(function () {
-          var n = $("next");
-          if (n && !n.classList.contains("hidden")) n.scrollIntoView({ block: "center", behavior: "smooth" });
-        }, 500);
-      });
-    }
-    if (!ok && !G && oi >= 0) {
-      var fp = document.createElement("p");
-      fp.className = "fbx";
-      Eq.set(fp, "Você marcou: " + d.o[oi] + (d.x && d.x[oi] ? " — " + d.x[oi] : ""));
-      $("fb").querySelector(".fb").appendChild(fp);
-    }
-    if (mf) {
-      var mp = document.createElement("p");
-      mp.className = "msg ok";
-      mp.textContent = "🎯 Meta do dia cumprida! Muito bem!";
-      $("fb").appendChild(mp);
-    }
-    $("next").textContent = i < order.length - 1 ? "Próxima pergunta" : "Ver resultado";
-    $("next").classList.remove("hidden");
-    $("fb").scrollIntoView({ block: "start", behavior: "smooth" });
+    /* caixa de retorno (explicação, animação, "Você marcou", meta): app-retorno.js */
+    RT.mostrar({ ok: ok, k: k, oi: oi, d: d, G: G, hinted: hinted, mode: mode, mf: mf, ultima: i >= order.length - 1 });
     dots();
     save();
   }
@@ -742,52 +585,13 @@ window.__boot = function (id) {
   $("go").onclick = function () {
     begin("estudo");
   };
-  var Rn = function (a) {
-      return a[Math.floor(Math.random() * a.length)];
-    },
-    fc = function (x) {
-      return (+x.toPrecision(3) + "").replace(".", ",");
-    };
-  var sup = function (n) {
-    return String(n).replace(/[-0-9]/g, function (c) {
-      return "⁻⁰¹²³⁴⁵⁶⁷⁸⁹".charAt("-0123456789".indexOf(c));
-    });
-  };
-  var sc = function (x) {
-    if (!x) return "0";
-    var e = Math.floor(Math.log10(Math.abs(x)));
-    if (e >= -2 && e <= 3) return fc(x);
-    return fc(x / Math.pow(10, e)) + " × 10" + sup(e);
-  };
-  var gn = 0;
-  function GQ(t, id, h, f) {
-    return { t: t, o: [], a: 0, q: "Questão numérica: " + id, h: h, e: "", g: f, id: "n" + ++gn };
-  }
-  Q.push.apply(Q, QZ.gq(GQ, Rn, fc, sc, sup));
+  /* Questões numéricas (sorteio de valores, notação científica, leitura do número): app-numeros.js */
+  Q.push.apply(Q, QZ.gq(NU.GQ, NU.Rn, NU.fc, NU.sc, NU.sup));
   var G = null,
     NV = 0;
-  /* lê o número digitado: aceita vírgula ou ponto decimal e notação científica (2,5 × 10⁴, 2,5x10^4, 2,5·10^-3, 2.5e4); a unidade depois do número é ignorada */
-  function lerNum(t) {
-    t = String(t || "")
-      .replace(/[−–]/g, "-")
-      .replace(/\s+/g, "")
-      .replace(/[⁻⁰¹²³⁴⁵⁶⁷⁸⁹]+/g, function (m) {
-        return (
-          "^" +
-          m.replace(/./g, function (c) {
-            return "-0123456789".charAt("⁻⁰¹²³⁴⁵⁶⁷⁸⁹".indexOf(c));
-          })
-        );
-      });
-    t = t.replace(/^([-+]?)10\^/, "$11x10^");
-    var m = /^([-+]?\d+(?:[.,]\d+)?)(?:[x×*·]10\^?([-+]?\d+)|e([-+]?\d+))?(?:[^\d^].*)?$/i.exec(t);
-    if (!m) return NaN;
-    var e = m[2] !== undefined ? m[2] : m[3];
-    return parseFloat(m[1].replace(",", ".")) * (e !== undefined ? Math.pow(10, +e) : 1);
-  }
   function submitNum() {
     if (locked) return;
-    var v = lerNum($("num").value);
+    var v = NU.lerNum($("num").value);
     var er = $("numerr");
     if (isNaN(v)) {
       if (!er) {
@@ -809,35 +613,6 @@ window.__boot = function (id) {
   }
   /* Cartões de revisão ficam em app-cartoes.js. */
   var abrirCartoes = window.AppCartoes({ $: $, QZ: QZ, shuf: shuf, goHome: goHome, openOnly: openOnly }).abrirCartoes;
-  function fmtE(el, t, calc) {
-    el.textContent = "";
-    if (!calc && t.indexOf("\n") < 0) {
-      Eq.set(el, t);
-      return;
-    }
-    var L = [];
-    if (t.indexOf("\n") >= 0) {
-      L = t.split("\n");
-    } else
-      t.replace(/([.!?])\s+(?=[A-ZΔΦΣ(−0-9])/g, "$1\u0001")
-        .split("\u0001")
-        .forEach(function (sn) {
-          sn.split(" → ").forEach(function (p, k) {
-            var q = p.replace(/\.$/, "").split(" = ");
-            if (q.length > 2) {
-              L.push((k ? "→ " : "") + q[0] + " = " + q[1]);
-              for (var j = 2; j < q.length; j++) L.push("= " + q[j]);
-            } else L.push((k ? "→ " : "") + p);
-          });
-        });
-    L.forEach(function (x, k) {
-      var d = document.createElement("span");
-      d.className = "eln";
-      Eq.set(d, x);
-      el.appendChild(d);
-    });
-    el.classList.add("calc");
-  }
   function histAdd(ag) {
     if (!isFull) return;
     var h = ST.get("hist", []);
