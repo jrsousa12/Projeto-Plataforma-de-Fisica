@@ -1345,130 +1345,43 @@ window.__boot = function (id) {
     }
   });
   $("gohome").onclick = goHome;
-  /* Fontes de referência: o quiz em andamento fica guardado (com o tempo pausado) e pode ser retomado da tela inicial da área. */
-  /* lê a sessão guardada e converte os ids de volta em posições do banco atual; devolve null se alguma pergunta não existir mais */
+  /* Fontes e "retomar de onde parou": ver app-sessao.js */
+  var SE = window.AppSessao({
+    $: $,
+    ST: ST,
+    Q: Q,
+    id: id,
+    Fontes: Fontes,
+    fmt: fmt,
+    setHash: setHash,
+    goHome: goHome,
+    running: running,
+    qPause: qPause,
+    save: save,
+    estacionar: function () {
+      parked = true;
+      autoP = false;
+      clearInterval(timer);
+      clearInterval(qt);
+    },
+    retomarCom: function (S) {
+      mode = S.m;
+      nick = SH.get("nick", "") || "Anônimo";
+      start(S.o, S.f, S);
+    },
+  });
   function sessGet() {
-    var S = ST.get("sess", null);
-    if (
-      !(
-        S &&
-        S.v === 2 &&
-        Array.isArray(S.ids) &&
-        Array.isArray(S.r) &&
-        S.ids.length &&
-        Date.now() - S.at < 432e5 &&
-        (S.m === "estudo" || S.m === "tempo" || S.m === "simulado")
-      )
-    )
-      return null;
-    var IX = {};
-    Q.forEach(function (d, k) {
-      IX[d.id] = k;
-    });
-    var o = S.ids.map(function (x) {
-        return IX[x];
-      }),
-      r = S.r.map(function (x) {
-        var y = {};
-        for (var c in x) y[c] = x[c];
-        y.qi = IX[x && x.id];
-        return y;
-      });
-    if (
-      o.some(function (k) {
-        return k === undefined;
-      }) ||
-      r.some(function (x) {
-        return x.qi === undefined;
-      })
-    )
-      return null;
-    S.o = o;
-    S.r = r;
-    return S;
-  }
-  function parkQuiz() {
-    if (!running()) return false;
-    qPause();
-    save();
-    parked = true;
-    autoP = false;
-    clearInterval(timer);
-    clearInterval(qt);
-    return true;
+    return SE.sessGet();
   }
   function openFontes() {
-    if (running()) parkQuiz();
-    ["home", "quiz", "end", "book", "sheet", "cards", "hist", "bar", "dots", "exitq"].forEach(function (x) {
-      $(x).classList.add("hidden");
-    });
-    Fontes.tela($("fbody"), id);
-    $("fontes").classList.remove("hidden");
-    retUi();
-    window.scrollTo(0, 0);
-    setHash("fontes");
+    return SE.openFontes();
   }
   function retomar() {
-    var S = sessGet();
-    if (!S) {
-      goHome();
-      return;
-    }
-    mode = S.m;
-    nick = SH.get("nick", "") || "Anônimo";
-    start(S.o, S.f, S);
+    return SE.retomar();
   }
   function retUi() {
-    var S = sessGet(),
-      ok = !!S,
-      b = $("retq"),
-      v = $("fvolta");
-    [b, v].forEach(function (x) {
-      if (!x) return;
-      x.classList.toggle("hidden", !ok);
-      if (ok) {
-        x.textContent = "";
-        var t = document.createElement("span");
-        t.textContent = "↩ Voltar ao quiz atual";
-        x.appendChild(t);
-        var sm = document.createElement("small"),
-          n = Math.min(S.r.length + 1, S.o.length),
-          el = S.el || 0;
-        sm.textContent =
-          "Pergunta " +
-          n +
-          " de " +
-          S.o.length +
-          " · " +
-          (S.m === "simulado" ? "restam " + fmt(Math.max(0, 2400 - el)) : "tempo " + fmt(el)) +
-          " (pausado)";
-        x.appendChild(sm);
-      }
-    });
+    return SE.retUi();
   }
-  $("retq").onclick = retomar;
-  $("fvolta").onclick = retomar;
-  $("fonteq").onclick = function (e) {
-    e.stopPropagation();
-    var p = $("fpop"),
-      abre = p.classList.contains("hidden");
-    if (abre) Fontes.quadro(p, id, openFontes);
-    p.classList.toggle("hidden", !abre);
-    $("fonteq").setAttribute("aria-expanded", abre ? "true" : "false");
-  };
-  document.addEventListener("click", function (e) {
-    var p = $("fpop");
-    if (p && !p.classList.contains("hidden") && !p.contains(e.target) && e.target !== $("fonteq")) {
-      p.classList.add("hidden");
-      $("fonteq").setAttribute("aria-expanded", "false");
-    }
-  });
-  window.QzFonte = {
-    abrir: openFontes,
-    voltar: function () {
-      $("back").click();
-    },
-  };
   var DBGF = location.hash === "#debug",
     SS = sessGet();
   goHome();

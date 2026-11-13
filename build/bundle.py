@@ -17,7 +17,7 @@ def inline(f):
 tag='<script src="banco-extra.js"></script>'
 assert tag in h
 h=h.replace(tag,'\n'.join(inline(f) for f in quiz)+'\n'+tag)
-for f in ('quizzes.js','firebase-config.js','perfil.js','fontes.js','nuvem.js','banco-proprio.js','banco-extra.js','fx.js','eq.js','app-meta.js','app-graficos.js','app-historico.js','app-folha.js','app-relatorio.js','app-cartoes.js','app-caderno.js','app-validacao.js','app-armazenamento.js','app-sorteio.js','app-revisao.js','script.js','app-nav.js','app-escolha.js','app-subscritos.js','app-sombra.js'):
+for f in ('quizzes.js','firebase-config.js','perfil.js','fontes.js','nuvem.js','banco-proprio.js','banco-extra.js','fx.js','eq.js','app-meta.js','app-graficos.js','app-historico.js','app-folha.js','app-relatorio.js','app-cartoes.js','app-caderno.js','app-validacao.js','app-armazenamento.js','app-sorteio.js','app-revisao.js','app-sessao.js','script.js','app-nav.js','app-escolha.js','app-subscritos.js','app-sombra.js'):
     t='<script src="%s"></script>'%f
     assert t in h,f
     h=h.replace(t,inline(f))
