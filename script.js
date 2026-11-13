@@ -1050,197 +1050,26 @@ window.__boot = function (id) {
     $("btrain").classList.toggle("hidden", !l.length);
     $("bclear").classList.toggle("hidden", !l.length);
   }
-  function sheetOpts() {
-    if ($("sopts")) return;
-    var d = document.createElement("div");
-    d.id = "sopts";
-    d.className = "noprt";
-    d.innerHTML =
-      '<div class="cnt">Montar lista ou prova</div><div style="display:flex;gap:10px;flex-wrap:wrap"><div style="flex:1;min-width:120px"><label class="nl" for="sn">Questões</label><select id="sn" class="fld"><option>5</option><option selected>10</option><option>15</option><option>20</option></select></div><div style="flex:2;min-width:160px"><label class="nl" for="sfm">Formato</label><select id="sfm" class="fld"><option value="lista">Lista de exercícios</option><option value="prova">Prova (com cabeçalho)</option></select></div></div><label class="nl" for="sh">Escola e turma (cabeçalho da prova)</label><input id="sh" class="fld" maxlength="70" autocomplete="off" placeholder="Ex.: Escola Antônio Teodoro Leal · 1º ano A"><label class="nl" style="display:block;margin:6px 0"><input type="checkbox" id="sg" checked> Incluir gabarito comentado em página separada</label><label class="nl" style="display:block;margin:6px 0 12px"><input type="checkbox" id="scc" checked> Incluir perguntas de cálculo</label>';
-    $("sheetbody").parentNode.insertBefore(d, $("sheetbody"));
-    ["sn", "sfm", "sg", "scc"].forEach(function (i) {
-      $(i).onchange = renderSheet;
-    });
-    $("sh").oninput = renderSheet;
-  }
-  function renderSheet() {
-    sheetOpts();
-    var n = +$("sn").value,
-      prova = $("sfm").value === "prova",
-      calc = $("scc").checked,
-      porA = {};
-    Q.forEach(function (d, k) {
-      if (sel.indexOf(d.t) >= 0 && !d.g && (calc || !d.c)) {
-        (porA[d.t] = porA[d.t] || []).push(k);
-      }
-    });
-    Object.keys(porA).forEach(function (a) {
-      porA[a] = shuf(porA[a]);
-    });
-    var ids = [],
-      ks = Object.keys(porA),
-      i = 0;
-    while (ids.length < n && ks.length) {
-      var a = ks[i % ks.length];
-      if (porA[a].length) ids.push(porA[a].shift());
-      else {
-        ks.splice(i % ks.length, 1);
-        continue;
-      }
-      i++;
-    }
-    ids = shuf(ids);
-    var topo = prova
-        ? '<div style="border:1.5px solid var(--ink);padding:10px 12px;margin-bottom:12px"><p style="margin:0 0 6px"><b>' +
-          esc($("sh").value || "Escola ______________________  Turma ______") +
-          '</b></p><p style="margin:0 0 6px">' +
-          esc(QZ.nome) +
-          ' · Prova</p><p style="margin:0">Nome: ______________________________________ Data: ___/___/_____ Nota: ______</p></div><p style="margin:0 0 10px;font-size:.9rem">Marque apenas uma alternativa em cada questão.</p>'
-        : '<h3 style="margin:0 0 4px;font-family:Georgia,serif">Lista de exercícios: ' +
-          QZ.nome.toLowerCase() +
-          '</h3><p style="margin:0 0 10px;color:var(--muted);font-size:.9rem">Áreas: ' +
-          sel
-            .map(function (k) {
-              return TN[k];
-            })
-            .join(", ") +
-          "</p>",
-      h = topo,
-      g = "",
-      res = [];
-    ids.forEach(function (qi, x) {
-      var d = Q[qi],
-        pm = d.v
-          ? d.o.map(function (_, y) {
-              return y;
-            })
-          : shuf(
-              d.o.map(function (_, y) {
-                return y;
-              })
-            ),
-        L = "ABCD".charAt(pm.indexOf(d.a));
-      res.push(x + 1 + "-" + L);
-      h +=
-        '<div class="sq"><p><b>' +
-        (x + 1) +
-        ".</b> " +
-        esc(d.q) +
-        "</p>" +
-        (d.f ? '<div class="fig sf"><svg viewBox="0 0 320 140">' + FIG[d.f].s + "</svg></div>" : "") +
-        '<ol type="A">' +
-        pm
-          .map(function (oi) {
-            return "<li>" + esc(d.o[oi]) + "</li>";
-          })
-          .join("") +
-        "</ol></div>";
-      g += "<p><b>" + (x + 1) + ". " + L + "</b> " + Eq.html(d.e.replace(/\n/g, " ")) + "</p>";
-    });
-    if (!ids.length) h += '<p class="msg neu">Selecione ao menos uma área na tela inicial.</p>';
-    $("sheetbody").innerHTML =
-      h +
-      ($("sg").checked && ids.length
-        ? '<div class="pb"><h3 style="font-family:Georgia,serif">Gabarito' +
-          (prova ? " · " + esc($("sh").value || "") : "") +
-          "</h3><p><b>" +
-          res.join(" · ") +
-          '</b></p><h3 style="font-family:Georgia,serif">Comentários</h3>' +
-          g +
-          "</div>"
-        : "");
-  }
+  /* Folha de exercícios e relatório ficam em app-folha.js e app-relatorio.js. */
+  var renderSheet = window.AppFolha({
+    $: $,
+    id: id,
+    Q: Q,
+    QZ: QZ,
+    FIG: FIG,
+    TN: TN,
+    esc: esc,
+    shuf: shuf,
+    goHome: goHome,
+    openOnly: openOnly,
+    sel: function () {
+      return sel;
+    },
+  }).renderSheet;
+  var rel = window.AppRelatorio({ id: id, Q: Q, HI: HI, ST: ST, esc: esc }),
+    relatorio = rel.relatorio,
+    contaHtml = rel.contaHtml;
   /* perfil e treino adaptativo (tela "Meu desempenho") */
-  function relatorio() {
-    var P = window.Perfil.ler(),
-      L = [],
-      h = "";
-    Object.keys(P).forEach(function (id) {
-      var e = P[id];
-      if (HI[id] === undefined || e[0] < 2) return;
-      var pc = Math.round((100 * e[1]) / e[0]);
-      if (pc < 70) L.push({ i: HI[id], pc: pc, n: e[0] });
-    });
-    L.sort(function (a, b) {
-      return a.pc - b.pc || b.n - a.n;
-    });
-    var H = ST.get("hist", []),
-      sem = {};
-    H.forEach(function (x) {
-      var k = Math.floor(x.d / 6048e5);
-      sem[k] = sem[k] || [0, 0];
-      Object.keys(x.a).forEach(function (t) {
-        sem[k][0] += x.a[t][0];
-        sem[k][1] += x.a[t][1];
-      });
-    });
-    var ks = Object.keys(sem).sort().slice(-4);
-    h += '<p style="margin:16px 0 4px"><b>O que melhorar</b></p>';
-    if (!L.length)
-      h +=
-        '<p class="msg neu" style="margin:0">Nenhuma pergunta com acerto abaixo de 70% (entre as que você tentou 2 vezes ou mais). Continue praticando!</p>';
-    else
-      h +=
-        '<p class="msg neu" style="margin:0 0 6px">Perguntas em que você mais erra:</p><ol style="padding-left:22px;margin:0;font-size:.93rem">' +
-        L.slice(0, 5)
-          .map(function (x) {
-            var q = Q[x.i].q;
-            return (
-              "<li>" +
-              esc(q.length > 90 ? q.slice(0, 90) + "…" : q) +
-              ' <small style="color:var(--muted)">(' +
-              x.pc +
-              "% em " +
-              x.n +
-              " tentativas)</small></li>"
-            );
-          })
-          .join("") +
-        '</ol><button class="btn alt" id="trpior" style="margin-top:8px">Treinar estas perguntas</button>';
-    if (ks.length > 1)
-      h +=
-        '<p style="margin:12px 0 4px"><b>Evolução por semana</b></p>' +
-        ks
-          .map(function (k) {
-            var p = Math.round((100 * sem[k][0]) / sem[k][1]);
-            return (
-              '<p style="margin:4px 0 0;font-size:.9rem">Semana de ' +
-              new Date(k * 6048e5).toLocaleDateString("pt-BR") +
-              ": " +
-              p +
-              "% (" +
-              sem[k][0] +
-              " de " +
-              sem[k][1] +
-              ')</p><div class="hb"><i style="width:' +
-              p +
-              '%"></i></div>'
-            );
-          })
-          .join("");
-    window.__pior = L.slice(0, 5).map(function (x) {
-      return x.i;
-    });
-    return h;
-  }
-  function contaHtml() {
-    var N = window.Nuvem;
-    if (!N || !N.ativo())
-      return '<p class="msg neu" style="margin-top:14px">Seu histórico fica guardado neste aparelho. Para levar a outro aparelho, use o caderno de erros (exportar e importar).</p>';
-    var h = '<p style="margin:16px 0 4px"><b>Minha conta</b></p>';
-    if (N.logado()) {
-      var u = N.ultima();
-      h +=
-        '<p class="msg ok" style="margin:0 0 6px">Conectado com o código <b>' +
-        esc(N.codigo()) +
-        "</b>." +
-        (u ? " Última sincronização: " + new Date(u).toLocaleString("pt-BR") + "." : "") +
-        '</p><button class="btn alt" id="nsinc">Sincronizar agora</button><button class="btn alt" id="nsair">Sair da conta</button>';
-    } else
-      h +=
-        '<p class="msg neu" style="margin:0 0 6px">Entre com o código que o professor entregou para guardar seu histórico na nuvem e usá-lo em qualquer aparelho.</p><label class="nl" for="ncod">Seu código</label><input id="ncod" class="fld" autocomplete="off" autocapitalize="characters" maxlength="12" placeholder="Ex.: K7M2-QX9P"><button class="btn" id="nent">Entrar</button>';
-    return h + '<p class="msg neu" id="nmsg" style="display:none;margin-top:6px"></p>';
-  }
   function perfilUI() {
     var el = document.createElement("div");
     el.id = "perfilbox";
@@ -1347,7 +1176,6 @@ window.__boot = function (id) {
     renderBook();
   };
   $("bback").onclick = goHome;
-  $("sback").onclick = goHome;
   $("bclear").onclick = function () {
     bkSet({});
     renderBook();
@@ -1358,16 +1186,6 @@ window.__boot = function (id) {
       mode = "estudo";
       start(shuf(l).slice(0, 10), false);
     }
-  };
-  $("sopen").onclick = function () {
-    openOnly("sheet");
-    renderSheet();
-  };
-  $("snew").onclick = renderSheet;
-  $("sprint").onclick = function () {
-    try {
-      window.print();
-    } catch (e) {}
   };
   $("go").onclick = function () {
     begin("estudo");

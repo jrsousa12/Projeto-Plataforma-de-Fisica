@@ -25,6 +25,10 @@ with sync_playwright() as p:
     pg.evaluate("document.getElementById('hopen').click()"); pg.wait_for_timeout(400)
     corpo=pg.inner_text('#histbody'); print('tela desempenho:',len(corpo),'caracteres | html',pg.evaluate("document.getElementById('histbody').innerHTML.length"),'| classe',pg.get_attribute('#hist','class'))
     assert pg.locator('#hist:not(.hidden)').count() and len(corpo)>20, 'tela de desempenho vazia'
+    # relatório e bloco da conta (app-relatorio.js) entram na aba de perfil
+    perf=pg.evaluate("(document.getElementById('perfilbox')||{}).textContent||''")
+    print('perfil:',len(perf),'caracteres | conta:','neste aparelho' in perf or 'Seu código' in perf or 'Conectado' in perf or 'Sincroniz' in perf)
+    assert pg.locator('#perfilbox #tadapt').count()==1 and ('neste aparelho' in perf or 'Seu código' in perf or 'Sincroniz' in perf or 'Sair' in perf), 'relatório/conta não apareceu no perfil'
     pg.click('#hclear'); pg.wait_for_timeout(300)
     resto=pg.evaluate("()=>{for(var k in localStorage) if(/hist$/.test(k)) return localStorage[k]; return null}")
     print('após apagar:',resto)
