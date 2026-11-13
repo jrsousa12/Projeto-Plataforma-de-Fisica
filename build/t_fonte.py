@@ -1,3 +1,4 @@
+import os,re
 from playwright.sync_api import sync_playwright
 B='http://localhost:8123/'
 ERR=[]
@@ -16,7 +17,8 @@ with sync_playwright() as p:
     pg.locator('#mnu').click();ck(pg.locator('#fonte').is_visible(),'item Fonte no menu (escolha)')
     pg.locator('#fonte').click();pg.wait_for_timeout(200)
     ck(pg.locator('#fontes').is_visible() and not pg.locator('#landing').is_visible(),'tela Fontes abre na escolha')
-    ck(pg.locator('#fbody .fsec').count()==3,'3 áreas na tela Fontes')
+    nq=len(re.findall(r'id: *"[a-z0-9]+"',open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','quizzes.js')).read()))
+    ck(pg.locator('#fbody .fsec').count()==nq,'uma área por quiz na tela Fontes (%d)'%nq)
     ck(pg.locator('#fbody a[target=_blank][rel*=noopener]').count()>=20,'links abrem em outra aba')
     pg.locator('#fback').click();ck(pg.locator('#landing').is_visible(),'volta para a escolha')
     pg.close()
