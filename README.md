@@ -18,6 +18,8 @@ Quiz de Física (ensino médio) que funciona direto no navegador, sem instalar n
 | `app-cartoes.js` | Cartões de revisão (conceitos e curiosidades) |
 | `app-caderno.js` | Caderno de erros (lista, exportar e importar) |
 | `app-validacao.js` | Validação do banco ao abrir (console; #teste mostra no topo) |
+| `app-armazenamento.js` | Gravação do progresso no aparelho (com migração do formato antigo) |
+| `app-sorteio.js` | Sorteio das questões da rodada (áreas, nível, reforço do caderno) |
 | `app-meta.js` | Meta diária de questões |
 | `app-nav.js` | Barra de navegação inferior e seleção de áreas |
 | `app-escolha.js` | Tela de escolha do quiz e início (?q=...) |

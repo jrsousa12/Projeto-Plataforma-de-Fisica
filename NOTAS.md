@@ -15,7 +15,8 @@ Todo arquivo novo do app entra em: `index.html` (`<script>`, na ordem certa), `s
 5. **Cartões** — feito: `app-cartoes.js` (127); `script.js` 1864 → 1749. A navegação (#cartoes) chama `abrirCartoes()`. Teste novo: `build/t_cartoes.py`.
    **Caderno de erros** — feito: `app-caderno.js` (115); `script.js` 1749 → 1664. Botão Treinar ficou no `script.js`. Teste novo: `build/t_caderno.py`.
    **Validação do banco** — feito: `app-validacao.js` (43); `script.js` 1664 → 1629. O `#debug` com `eval` ficou no `script.js`. Teste novo: `build/t_valida.py`. Etapas fáceis concluídas.
-6. **Parte difícil (adiada; lembrete no `CLAUDE.md` para 18/11/2026):** rodada do quiz, relógio, fontes/retomar e navegação (~1000 linhas). Exige reorganizar a troca de informação; decidir se faz ou vira exceção tolerada.
+6. **Parte difícil** (aprovada pelo dono em 13/11/2026). Ordem: armazenamento/sorteio → revisão → sessão (fontes/retomar) → navegação → relógio → resultado → pergunta/resposta. Variáveis que mudam passam por funções (`c.mode()`) ou por um objeto comum.
+   - **Armazenamento e sorteio** — feito: `app-armazenamento.js` (48) e `app-sorteio.js` (50); `script.js` 1629 → 1564. Teste novo: `build/t_sorteio.py`.
 7. Opcional: `style.css` e `build/novas.py`.
 
 ## Decisões que valem daqui em diante

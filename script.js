@@ -4,53 +4,10 @@ window.__boot = function (id) {
   var QZ = window.QUIZZES[id],
     FIG = window.FIG,
     Q = window.BANKS[id].slice();
-  /* Armazenamento versionado: todas as chaves ficam sob o prefixo "eletriz:" e há migração do formato antigo. */
+  /* Armazenamento (app-armazenamento.js) e sorteio das questões (app-sorteio.js). */
   var LEG = {};
   var mkST = function (P) {
-    function g(k, d) {
-      try {
-        var v = localStorage.getItem(P + k);
-        return v === null ? d : JSON.parse(v);
-      } catch (e) {
-        return d;
-      }
-    }
-    function s(k, v) {
-      try {
-        localStorage.setItem(P + k, JSON.stringify(v));
-      } catch (e) {}
-    }
-    function del(k) {
-      try {
-        localStorage.removeItem(P + k);
-      } catch (e) {}
-    }
-    function mig() {
-      if (g("ver", 0) >= 2) return;
-      try {
-        var L = function (k) {
-            return localStorage.getItem(k);
-          },
-          b = L("eletriz-book");
-        if (b) {
-          var o = JSON.parse(b),
-            n = {};
-          Object.keys(o).forEach(function (k) {
-            if (LEG[k]) n[LEG[k]] = o[k];
-          });
-          s("book", n);
-        }
-        var h = L("eletriz-hist");
-        if (h) s("hist", JSON.parse(h));
-        var r = L("eletrizacao-rank");
-        if (r) s("rank", JSON.parse(r));
-        if (L("eletriz-nick")) s("nick", L("eletriz-nick"));
-        if (L("eletriz-theme")) s("theme", L("eletriz-theme"));
-        if (L("eletriz-big")) s("big", L("eletriz-big") === "1");
-      } catch (e) {}
-      s("ver", 2);
-    }
-    return { get: g, set: s, del: del, mig: mig };
+    return window.AppArmazenamento(P, LEG);
   };
   var ST = mkST(QZ.prefix),
     SH = mkST("eletriz:");
@@ -60,52 +17,30 @@ window.__boot = function (id) {
     });
     ST.mig();
   }
-  var shuf = function (a) {
-    a = a.slice();
-    for (var n = a.length - 1; n > 0; n--) {
-      var j = Math.floor(Math.random() * (n + 1)),
-        t = a[n];
-      a[n] = a[j];
-      a[j] = t;
-    }
-    return a;
-  };
   var perm = [];
-  function poolSel() {
-    var b = Q.map(function (_, k) {
-      return k;
-    }).filter(function (k) {
-      return sel.indexOf(Q[k].t) >= 0 && !(mode === "tempo" && QZ.semCalculo && (Q[k].c || Q[k].g));
-    });
-    if (lvl) {
-      var f = b.filter(function (k) {
-        return (Q[k].n || 2) === lvl;
-      });
-      if (f.length) return f;
-    }
-    return b;
-  }
-  function pickSet(n) {
-    n = n || 10;
-    var pool = poolSel(),
-      pk = [];
-    if ($("reinf").checked) {
-      pk = shuf(
-        bkList().filter(function (k) {
-          return pool.indexOf(k) >= 0;
-        })
-      ).slice(0, Math.floor(n * 0.4));
-    }
-    var rest = shuf(
-      pool.filter(function (k) {
-        return pk.indexOf(k) < 0;
-      })
-    );
-    return shuf(pk.concat(rest.slice(0, n - pk.length)));
-  }
   var $ = function (id) {
     return document.getElementById(id);
   };
+  var SO = window.AppSorteio({
+      Q: Q,
+      QZ: QZ,
+      $: $,
+      sel: function () {
+        return sel;
+      },
+      mode: function () {
+        return mode;
+      },
+      lvl: function () {
+        return lvl;
+      },
+      bkList: function () {
+        return bkList();
+      },
+    }),
+    shuf = SO.shuf,
+    poolSel = SO.poolSel,
+    pickSet = SO.pickSet;
   var order = [],
     i = 0,
     score = 0,
