@@ -11,8 +11,8 @@ Todo arquivo novo do app entra em: `index.html` (`<script>`, na ordem certa), `s
 1. **Dados das animações automáticas** — feito (`4d36e8c`): `figuras-animq-auto-dados.js` separado de `figuras-animq-auto.js`.
 2. **Blocos independentes do `script.js`** — feito (`9a9a20d`): `app-meta.js`, `app-nav.js`, `app-escolha.js`, `app-subscritos.js`, `app-sombra.js`.
 3. **Histórico e gráficos** — feito: `app-graficos.js` (250) e `app-historico.js` (166); `script.js` 2425 → 2046. `histAdd` ficou no `script.js` (lê a pontuação, que muda). Teste novo: `build/t_hist.py`.
-4. **Relatório e folha** → arquivo próprio — próximo. Mapear antes, incluindo o parâmetro `id` do `__boot`.
-5. Opcional: `style.css` e `build/novas.py`.
+4. **Folha e relatório** — feito: `app-folha.js` (127) e `app-relatorio.js` (100); `script.js` 2046 → 1864. As áreas marcadas (`sel`) mudam, a folha lê por `c.sel()`. Teste novo: `build/t_folha.py`; `t_hist.py` confere o relatório.
+5. **Próximo (a decidir com o dono):** continuar dividindo o `script.js` (1864 linhas: rodada, resultado, caderno, cartões, perfil, navegação), ou partir para `style.css` / `build/novas.py`.
 
 ## Decisões que valem daqui em diante
 
