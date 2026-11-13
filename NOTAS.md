@@ -13,7 +13,8 @@ Todo arquivo novo do app entra em: `index.html` (`<script>`, na ordem certa), `s
 3. **Histórico e gráficos** — feito: `app-graficos.js` (250) e `app-historico.js` (166); `script.js` 2425 → 2046. `histAdd` ficou no `script.js` (lê a pontuação, que muda). Teste novo: `build/t_hist.py`.
 4. **Folha e relatório** — feito: `app-folha.js` (127) e `app-relatorio.js` (100); `script.js` 2046 → 1864. As áreas marcadas (`sel`) mudam, a folha lê por `c.sel()`. Teste novo: `build/t_folha.py`; `t_hist.py` confere o relatório.
 5. **Cartões** — feito: `app-cartoes.js` (127); `script.js` 1864 → 1749. A navegação (#cartoes) chama `abrirCartoes()`. Teste novo: `build/t_cartoes.py`.
-   **Ainda propostas (aguardando o dono):** caderno de erros → `app-caderno.js`; validação do banco → `app-validacao.js` (o `#debug` com `eval` fica no `script.js`).
+   **Caderno de erros** — feito: `app-caderno.js` (115); `script.js` 1749 → 1664. Botão Treinar ficou no `script.js`. Teste novo: `build/t_caderno.py`.
+   **Ainda proposta (aguardando o dono):** validação do banco → `app-validacao.js` (o `#debug` com `eval` fica no `script.js`).
 6. **Parte difícil (adiada; lembrete no `CLAUDE.md` para 18/11/2026):** rodada do quiz, relógio, fontes/retomar e navegação (~1000 linhas). Exige reorganizar a troca de informação; decidir se faz ou vira exceção tolerada.
 7. Opcional: `style.css` e `build/novas.py`.
 
