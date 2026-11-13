@@ -45,6 +45,8 @@ Quiz de Física (ensino médio) que funciona direto no navegador, sem instalar n
 | `quiz-edin.js`, `quiz-eletro.js`, `quiz-fluidos.js`, `quiz-mec.js`, `quiz-onda.js`, `quiz-optica.js`, `quiz-termo.js` | Configuração de cada quiz: nome, áreas, cartões, resumo, mensagens e questões numéricas |
 | `figuras-fluidos.js`, `figuras-termo.js`, `figuras.js` | Figuras (SVG) usadas nas perguntas e retratos ilustrados dos cientistas (desenhos próprios) |
 | `figuras-anim.js` | Kit de animação (cenas, legendas, linha do tempo) |
+| `figuras-anim-pecas.js` | Peças de desenho das animações (cargas, cotas, setas, béquer) |
+| `figuras-anim-passos.js` | Animações de resolução passo a passo (cena com legendas, medidores, termômetro) |
 | `figuras-animq-auto.js` | Desenho das animações de resolução automáticas (moldes) |
 | `figuras-animq-auto-dados.js` | Dados das animações de resolução, gravados por build/novas.py (não editar à mão) |
 | `figuras-animq-edin.js`, `figuras-animq-eletro.js`, `figuras-animq-eletro2.js`, `figuras-animq-eletro3.js`, `figuras-animq-eletro4.js`, `figuras-animq-fluidos.js`, `figuras-animq-fluidos2.js`, `figuras-animq-mec.js`, `figuras-animq-onda.js`, `figuras-animq-optica.js`, `figuras-animq-termo.js`, `figuras-animq-termo2.js`, `figuras-animq-termo3.js` | Animações feitas à mão para cada questão, por área |

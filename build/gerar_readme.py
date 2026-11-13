@@ -44,6 +44,8 @@ REGRAS = [  # (padrões, descrição); arquivos com a mesma descrição aparecem
  (["quiz-*.js"], "Configuração de cada quiz: nome, áreas, cartões, resumo, mensagens e questões numéricas"),
  (["figuras.js", "figuras-fluidos.js", "figuras-termo.js"], "Figuras (SVG) usadas nas perguntas e retratos ilustrados dos cientistas (desenhos próprios)"),
  (["figuras-anim.js"], "Kit de animação (cenas, legendas, linha do tempo)"),
+ (["figuras-anim-pecas.js"], "Peças de desenho das animações (cargas, cotas, setas, béquer)"),
+ (["figuras-anim-passos.js"], "Animações de resolução passo a passo (cena com legendas, medidores, termômetro)"),
  (["figuras-animq-auto.js"], "Desenho das animações de resolução automáticas (moldes)"),
  (["figuras-animq-auto-dados.js"], "Dados das animações de resolução, gravados por build/novas.py (não editar à mão)"),
  (["figuras-animq-*.js"], "Animações feitas à mão para cada questão, por área"),

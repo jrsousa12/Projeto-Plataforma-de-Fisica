@@ -26,6 +26,7 @@ Todo arquivo novo do app entra em: `index.html` (`<script>`, na ordem certa), `s
    - **Perfil e Compartilhar** (decidido com o dono em 13/11, adiantando o dia 18) — feito: `app-perfil.js` (97) e `app-compartilhar.js` (54); `script.js` 814 → 705. Teste novo: `build/t_perfil.py`.
    - **Encerrado**: o resto do `script.js` (início da rodada, `show`/`pick`, `finish`, níveis) fica como exceção tolerada (registrado no `CLAUDE.md`).
 7. Opcional: `style.css` e `build/novas.py`.
+   - **Kit de animação** — feito: `figuras-anim.js` 540 → 212, mais `figuras-anim-pecas.js` (175, peças de desenho) e `figuras-anim-passos.js` (163, cena com legendas, medidores, termômetro). Registrados em `quizzes.js` (o `sw.js` e o `bundle.py` leem de lá). Os três usam `window.AN = window.AN || {}` porque o `validar-banco.js` carrega em ordem alfabética.
 
 ## Decisões que valem daqui em diante
 
