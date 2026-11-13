@@ -21,6 +21,7 @@ Todo arquivo novo do app entra em: `index.html` (`<script>`, na ordem certa), `s
    - **Sessão (fontes / retomar de onde parou)** — feito: `app-sessao.js` (125); `script.js` 1509 → 1422. O que altera variáveis do `script.js` (pausar, retomar) fica em funções passadas ao módulo (`c.estacionar`, `c.retomarCom`). Teste novo: `build/t_sessao.py` (ao recarregar volta à mesma pergunta; sessão de mais de 12 h não é oferecida).
    - **Navegação** (endereços #nome, botão voltar, aviso "sair do quiz?", Esc) — feito: `app-telas.js` (131); `script.js` 1422 → 1318. `VMAP` ficou no `script.js` (usado pelo `openOnly`); parar os relógios chega como `c.pararRelogios`. O botão "início" só aparece no quiz e nas Fontes (regra do CSS, não é erro). Teste novo: `build/t_telas.py`.
    - **Relógio** (tempo da rodada, pausa, tempo por pergunta no cronometrado) — feito: `app-relogio.js` (155); `script.js` 1318 → 1216. Corrigido erro do passo anterior: `var TL` (navegação) apagava `TL = 30` (segundos por pergunta) e a barra do cronometrado não esgotava; a navegação agora é `TE`. Teste novo: `build/t_relogio.py` (usa relógio simulado do Playwright, `pg.clock`).
+   - **Resultado** (tela do fim da rodada e ranking) — feito: `app-resultado.js` (253); `script.js` 1216 → 1039. O `finish()` ficou no `script.js` (fecha a rodada, completa o simulado, grava o histórico) e chama `RS.mostrar({...})`, que só monta a tela. Teste novo: `build/t_resultado.py`.
 7. Opcional: `style.css` e `build/novas.py`.
 
 ## Decisões que valem daqui em diante

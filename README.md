@@ -24,6 +24,7 @@ Quiz de Física (ensino médio) que funciona direto no navegador, sem instalar n
 | `app-sessao.js` | Guardar e retomar o quiz de onde parou; tela de Fontes de referência |
 | `app-telas.js` | Navegação entre telas (endereços #nome, botão voltar, aviso de sair do quiz) |
 | `app-relogio.js` | Relógio do quiz (tempo da rodada, pausa e tempo por pergunta no cronometrado) |
+| `app-resultado.js` | Tela do resultado (nota, desempenho por área, revisão das erradas e ranking) |
 | `app-meta.js` | Meta diária de questões |
 | `app-nav.js` | Barra de navegação inferior e seleção de áreas |
 | `app-escolha.js` | Tela de escolha do quiz e início (?q=...) |
