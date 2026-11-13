@@ -18,7 +18,6 @@ Todo arquivo novo do app entra em: `index.html` (`<script>`, na ordem certa), `s
 
 - Todo teste novo vai para `build/t_*.py` (o `testes.py` roda todos), para poder repetir depois.
 - No mapeamento de dependências, incluir o parâmetro `id` do `__boot` (passou despercebido no passo 3; o teste pegou).
-
 - Arquivos novos do app usam prefixo `app-` (o prefixo `quiz-` é lido pelo `validar-banco.js` como banco).
 - A divisão não muda a lógica: só move código; variáveis compartilhadas passam por um objeto comum.
 - `sw.js`: páginas usam internet primeiro (3 s); demais arquivos usam a cópia e atualizam em segundo plano. Funciona porque o nome do cache muda a cada versão (`build/versao.py`). Não trocar sem motivo.
