@@ -19,6 +19,7 @@ Todo arquivo novo do app entra em: `index.html` (`<script>`, na ordem certa), `s
    - **Armazenamento e sorteio** — feito: `app-armazenamento.js` (48) e `app-sorteio.js` (50); `script.js` 1629 → 1564. Teste novo: `build/t_sorteio.py`.
    - **Rever perguntas anteriores** (botão "← Anterior", não a revisão do fim) — feito: `app-revisao.js` (87); `script.js` 1564 → 1509. Teste novo: `build/t_revisao.py`.
    - **Sessão (fontes / retomar de onde parou)** — feito: `app-sessao.js` (125); `script.js` 1509 → 1422. O que altera variáveis do `script.js` (pausar, retomar) fica em funções passadas ao módulo (`c.estacionar`, `c.retomarCom`). Teste novo: `build/t_sessao.py` (ao recarregar volta à mesma pergunta; sessão de mais de 12 h não é oferecida).
+   - **Navegação** (endereços #nome, botão voltar, aviso "sair do quiz?", Esc) — feito: `app-telas.js` (131); `script.js` 1422 → 1318. `VMAP` ficou no `script.js` (usado pelo `openOnly`); parar os relógios chega como `c.pararRelogios`. O botão "início" só aparece no quiz e nas Fontes (regra do CSS, não é erro). Teste novo: `build/t_telas.py`.
 7. Opcional: `style.css` e `build/novas.py`.
 
 ## Decisões que valem daqui em diante

@@ -1217,133 +1217,29 @@ window.__boot = function (id) {
   $("again").onclick = function () {
     start(pickSet(mode === "simulado" ? 20 : 10));
   };
-  /* Navegação: cada tela tem um endereço #nome, então o botão voltar do celular e do navegador funciona. */
-  var VW = { inicio: 1, quiz: 1, resultado: 1, caderno: 1, lista: 1, cartoes: 1, desempenho: 1, fontes: 1 },
-    VMAP = { home: "inicio", book: "caderno", sheet: "lista", cards: "cartoes", hist: "desempenho" };
-  var curV = "inicio",
-    stk = ["inicio"],
-    skip = false,
-    pend = null;
-  var NOH = !/^(https?|file):$/.test(location.protocol);
+  /* Navegação entre telas, botão voltar e aviso de sair do quiz: ver app-telas.js */
+  var VMAP = { home: "inicio", book: "caderno", sheet: "lista", cards: "cartoes", hist: "desempenho" };
+  var TL = window.AppTelas({
+    $: $,
+    openOnly: openOnly,
+    renderBook: renderBook,
+    renderSheet: renderSheet,
+    abrirCartoes: abrirCartoes,
+    renderHist: renderHist,
+    openFontes: openFontes,
+    retomar: retomar,
+    goHome: goHome,
+    pararRelogios: function () {
+      clearInterval(qt);
+      clearInterval(timer);
+    },
+  });
   function setHash(v, rep) {
-    if (curV !== v) {
-      curV = v;
-      if (rep) {
-        stk[stk.length - 1] = v;
-      } else {
-        stk.push(v);
-      }
-      if (!NOH && location.hash !== "#" + v) {
-        skip = true;
-        try {
-          if (rep) {
-            location.replace("#" + v);
-          } else {
-            location.hash = v;
-          }
-        } catch (e) {
-          skip = false;
-        }
-      }
-    }
-    $("navb").classList.remove("off");
-    $("homebtn").hidden = v === "inicio";
+    return TL.setHash(v, rep);
   }
   function running() {
-    return curV === "quiz" && !$("quiz").classList.contains("hidden");
+    return TL.running();
   }
-  function askExit(v) {
-    pend = v;
-    $("exitq").classList.remove("hidden");
-    window.scrollTo(0, 0);
-    $("exstay").focus();
-  }
-  function navTo(v) {
-    if (v === "caderno") {
-      openOnly("book");
-      renderBook();
-    } else if (v === "lista") {
-      openOnly("sheet");
-      renderSheet();
-    } else if (v === "cartoes") {
-      abrirCartoes();
-    } else if (v === "desempenho") {
-      openOnly("hist");
-      renderHist();
-    } else if (v === "fontes") {
-      openFontes();
-    } else if (v === "quiz") {
-      retomar();
-    } else {
-      goHome();
-    }
-  }
-  window.addEventListener("hashchange", function () {
-    if (skip) {
-      skip = false;
-      return;
-    }
-    var v = location.hash.slice(1) || "inicio";
-    if (!VW[v] || v === curV) return;
-    if (running()) {
-      skip = true;
-      try {
-        history.forward();
-      } catch (e) {
-        skip = false;
-        location.hash = "quiz";
-      }
-      askExit(v);
-      return;
-    }
-    if (stk.length > 1 && stk[stk.length - 2] === v) {
-      stk.pop();
-    } else {
-      stk.push(v);
-    }
-    curV = v;
-    navTo(v);
-  });
-  $("back").onclick = function () {
-    if (running()) {
-      askExit("inicio");
-    } else if (curV === "inicio") {
-      if (!NOH) location.href = location.pathname;
-      else location.reload();
-    } else if (!NOH && stk.length > 1) {
-      history.back();
-    } else {
-      goHome();
-    }
-  };
-  $("homebtn").onclick = function () {
-    if (running()) {
-      askExit("inicio");
-    } else {
-      goHome();
-    }
-  };
-  $("exstay").onclick = function () {
-    $("exitq").classList.add("hidden");
-  };
-  $("exleave").onclick = function () {
-    $("exitq").classList.add("hidden");
-    clearInterval(qt);
-    clearInterval(timer);
-    stk.pop();
-    curV = "";
-    var v = pend || "inicio";
-    pend = null;
-    navTo(v);
-  };
-  document.addEventListener("keydown", function (e) {
-    if (e.key !== "Escape") return;
-    if (!$("exitq").classList.contains("hidden")) {
-      $("exstay").click();
-    } else if (curV !== "inicio") {
-      $("back").click();
-    }
-  });
   $("gohome").onclick = goHome;
   /* Fontes e "retomar de onde parou": ver app-sessao.js */
   var SE = window.AppSessao({
