@@ -23,7 +23,9 @@ Este projeto prioriza a economia de contexto e tokens. Toda interação deve seg
 
 - **Limite de Linhas**: Nenhum arquivo de código deve exceder **300 linhas**. O ideal é manter os arquivos abaixo de **200 linhas**.
 - **Ação Corretiva**: Se, ao ler um arquivo, você detectar que ele excede esse limite, sua primeira tarefa deve ser **propor um plano de modularização**, dividindo-o em arquivos menores com responsabilidades únicas, antes de fazer qualquer outra edição.
-- **Arquivos de Dados**: os bancos `perguntas-*.js` têm poucas linhas, mas muito longas (até ~130 KB). Para eles o limite de linhas não se aplica e o critério é o tamanho. Nunca leia um banco inteiro: localize a questão com `grep` pelo id e leia só o trecho.
+- **Arquivos de Dados**: os bancos `perguntas-*.js` têm poucas linhas, mas muito longas (até ~130 KB). Para eles o limite de linhas não se aplica e o critério é o tamanho. Nunca leia um banco inteiro: localize a questão com `grep` pelo id e leia só o trecho. O mesmo vale para `figuras-animq-auto-dados.js` (gerado por `build/novas.py`).
+- **Exceções Toleradas** (pouco acima de 300 linhas; dividir só se a tarefa exigir mexer muito neles): `figuras-anim.js`, `editor.js`, `nuvem.js`, `figuras-animq-eletro.js`, `figuras-animq-fluidos2.js`.
+- **Modularização em Andamento**: `script.js` (~2900 linhas, será dividido por assunto), `style.css` e `build/novas.py`. Ao editá-los, leia só o trecho necessário.
 - **Novas Funcionalidades**: Ao criar novas funcionalidades, já as estruture em módulos pequenos, seguindo o princípio da responsabilidade única.
 
 ## 2. Hierarquia de Contexto (CLAUDE.md)

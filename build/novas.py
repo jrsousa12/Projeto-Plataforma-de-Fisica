@@ -473,7 +473,7 @@ def entrada_molde(d, nid, molde):
             "resultado": esc(mn(f"{nome} = {_num(val)}{un}"))}
 
 def gravar_moldes(entradas):
-    p = os.path.join(APP, "figuras-animq-auto.js"); s = open(p, encoding="utf-8").read()
+    p = os.path.join(APP, "figuras-animq-auto-dados.js"); s = open(p, encoding="utf-8").read()
     m = re.search(r"/\*AUTO:BEGIN\*/(.*?)/\*AUTO:END\*/", s, re.S); lista = json.loads(m.group(1))
     ch = {e["key"] for e in entradas}; lista = [e for e in lista if e["key"] not in ch] + entradas
     open(p, "w", encoding="utf-8").write(s[:m.start(1)] + json.dumps(lista, ensure_ascii=False, indent=0) + s[m.end(1):])

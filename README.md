@@ -21,7 +21,8 @@ Quiz de Física (ensino médio) que funciona direto no navegador, sem instalar n
 | `quiz-edin.js`, `quiz-eletro.js`, `quiz-fluidos.js`, `quiz-mec.js`, `quiz-onda.js`, `quiz-optica.js`, `quiz-termo.js` | Configuração de cada quiz: nome, áreas, cartões, resumo, mensagens e questões numéricas |
 | `figuras-fluidos.js`, `figuras-termo.js`, `figuras.js` | Figuras (SVG) usadas nas perguntas e retratos ilustrados dos cientistas (desenhos próprios) |
 | `figuras-anim.js` | Kit de animação (cenas, legendas, linha do tempo) |
-| `figuras-animq-auto.js` | Animações de resolução geradas automaticamente pelos moldes (não editar à mão) |
+| `figuras-animq-auto.js` | Desenho das animações de resolução automáticas (moldes) |
+| `figuras-animq-auto-dados.js` | Dados das animações de resolução, gravados por build/novas.py (não editar à mão) |
 | `figuras-animq-edin.js`, `figuras-animq-eletro.js`, `figuras-animq-eletro2.js`, `figuras-animq-eletro3.js`, `figuras-animq-eletro4.js`, `figuras-animq-fluidos.js`, `figuras-animq-fluidos2.js`, `figuras-animq-mec.js`, `figuras-animq-onda.js`, `figuras-animq-optica.js`, `figuras-animq-termo.js`, `figuras-animq-termo2.js`, `figuras-animq-termo3.js` | Animações feitas à mão para cada questão, por área |
 | `figuras-fenomeno-base.js`, `figuras-fenomeno-eletro.js`, `figuras-fenomeno-mec.js`, `figuras-fenomeno-mfluidos.js`, `figuras-fenomeno-onda.js`, `figuras-fenomeno-optica.js`, `figuras-fenomeno-termo.js` | Simulações do fenômeno (corpo em movimento + gráfico desenhado no tempo), que substituem as resoluções passo a passo |
 | `fontes.js` | Lista de fontes de referência (botão FONTE e tela Fontes) |
