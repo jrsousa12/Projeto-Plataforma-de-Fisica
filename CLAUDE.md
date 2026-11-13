@@ -4,12 +4,16 @@ Este projeto prioriza a economia de contexto e tokens. Toda interação deve seg
 
 ## 0. Contexto do Projeto
 
-- **Stack**: [preencha: ex. Node.js + TypeScript, Python + FastAPI]
+- **Stack**: site estático HTML/CSS/JS puro (PWA com `sw.js`), sem framework nem npm; Firebase opcional (`nuvem.js`). Ferramentas e testes em Python 3.12 + Playwright (`build/`). Publicado no GitHub Pages.
 - **Comandos úteis**:
-  - Build: `[preencha]`
-  - Testes: `[preencha]`
-  - Lint: `[preencha]`
-- **Convenções**: [preencha: ex. camelCase, testes com Jest, etc.]
+  - Build: `bash build/tudo.sh` (arquivo único, versão do cache, validação, README)
+  - Testes: `node validar-banco.js` (rápido); `cd build && python3 testes.py` (navegador, ~15 min)
+  - Lint: `for f in *.js; do node --check "$f"; done` (só sintaxe; não há linter)
+- **Convenções**:
+  - Nomes e comentários em português; arquivos com prefixo por área (`perguntas-*`, `quiz-*`, `figuras-*`).
+  - Novo quiz: registrar em `quizzes.js` e rodar `node validar-banco.js`.
+  - `sw.js` (versão) e a tabela do README são gerados por `build/versao.py` e `build/gerar_readme.py`; não editar à mão.
+  - Público: o dono é professor e não programa; explicar em português simples.
 
 > Mantenha esta seção curta. Regras específicas de domínio vão nos `CLAUDE.md` dos subdiretórios.
 
@@ -19,6 +23,7 @@ Este projeto prioriza a economia de contexto e tokens. Toda interação deve seg
 
 - **Limite de Linhas**: Nenhum arquivo de código deve exceder **300 linhas**. O ideal é manter os arquivos abaixo de **200 linhas**.
 - **Ação Corretiva**: Se, ao ler um arquivo, você detectar que ele excede esse limite, sua primeira tarefa deve ser **propor um plano de modularização**, dividindo-o em arquivos menores com responsabilidades únicas, antes de fazer qualquer outra edição.
+- **Arquivos de Dados**: os bancos `perguntas-*.js` têm poucas linhas, mas muito longas (até ~130 KB). Para eles o limite de linhas não se aplica e o critério é o tamanho. Nunca leia um banco inteiro: localize a questão com `grep` pelo id e leia só o trecho.
 - **Novas Funcionalidades**: Ao criar novas funcionalidades, já as estruture em módulos pequenos, seguindo o princípio da responsabilidade única.
 
 ## 2. Hierarquia de Contexto (CLAUDE.md)
@@ -32,7 +37,7 @@ Este projeto prioriza a economia de contexto e tokens. Toda interação deve seg
 ## 3. Estratégia de Edição e Leitura de Código
 
 - **Prefira Edições Cirúrgicas**: Sempre que possível, edite o arquivo existente usando as ferramentas de edição de linha, em vez de reescrevê-lo por completo. Isso evita a geração de tokens desnecessários.
-- **Leitura Sob Demanda**: Não leia arquivos inteiros de forma indiscriminada. Use `@nome_do_arquivo` para anexar apenas os arquivos diretamente relevantes para a tarefa atual. Evite varrer o projeto em busca de contexto que não será usado.
+- **Leitura Sob Demanda**: Não leia arquivos inteiros de forma indiscriminada. Leia apenas os arquivos (ou trechos) diretamente relevantes para a tarefa atual, usando busca (`grep`) e leitura por intervalo de linhas. O usuário pode indicar arquivos com `@nome_do_arquivo`. Evite varrer o projeto em busca de contexto que não será usado.
 - **Plano Antes do Código**: Para tarefas complexas, descreva o plano em passos lógicos (ou um diagrama simples) e valide com o usuário antes de tocar nos arquivos. Isso reduz drasticamente o consumo de tokens em retrabalho.
 
 ## 4. Higiene de Comandos e Saída de Terminal
@@ -42,7 +47,7 @@ Este projeto prioriza a economia de contexto e tokens. Toda interação deve seg
 
 ## 5. Protocolo de Sessão (Lembretes)
 
-- **Troca de Tarefa**: Se o usuário solicitar uma tarefa completamente não relacionada à anterior, lembre-o (ou execute proativamente) o comando `/clear` para zerar o contexto e economizar cota.
+- **Troca de Tarefa**: Se o usuário solicitar uma tarefa completamente não relacionada à anterior, lembre-o de usar o comando `/clear` para zerar o contexto e economizar cota (só o usuário pode executar `/clear` e `/compact`).
 - **Tarefa Longa (Mesmo Assunto)**: Se a conversa sobre uma mesma tarefa estiver muito longa, sugira o uso de `/compact` com um direcionamento (ex: `/compact mantenha as decisões de arquitetura e os arquivos alterados`).
 
 ## 6. Protocolo de Monitoramento de Contexto (Vigia)
