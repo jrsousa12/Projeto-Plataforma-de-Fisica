@@ -41,20 +41,32 @@ window.__boot = function (id) {
     shuf = SO.shuf,
     poolSel = SO.poolSel,
     pickSet = SO.pickSet;
+  /* Relógio da rodada, pausa e tempo por pergunta: ver app-relogio.js */
+  var RL = window.AppRelogio({
+    $: $,
+    QZ: QZ,
+    fmt: fmt,
+    finish: finish,
+    pick: pick,
+    save: save,
+    running: running,
+    mode: function () {
+      return mode;
+    },
+    locked: function () {
+      return locked;
+    },
+    dq: function () {
+      return Q[order[i]];
+    },
+  });
   var order = [],
     i = 0,
     score = 0,
     res = [],
     locked = false,
     hinted = false,
-    t0 = 0,
-    timer = null,
-    pz = 0,
-    parked = false,
-    qrem = 0,
-    qrest = 0,
-    qTL = 30,
-    autoP = false;
+    parked = false;
   function fmt(s) {
     var m = Math.floor(s / 60),
       r = s % 60;
@@ -63,28 +75,12 @@ window.__boot = function (id) {
   function num(n) {
     return String(n).replace(".", ",");
   }
-  function tick() {
-    if (pz) return;
-    var sc2 = Math.floor((Date.now() - t0) / 1000);
-    if (mode === "simulado") {
-      var r = 2400 - sc2;
-      $("tm").textContent = fmt(Math.max(r, 0));
-      if (r <= 0 && !$("quiz").classList.contains("hidden")) {
-        finish();
-      }
-    } else {
-      $("tm").textContent = fmt(sc2);
-    }
-  }
   function dots() {
     var h = "";
     for (var k = 0; k < order.length; k++) {
       h += '<div class="dot ' + (k < res.length ? (res[k].ok ? "ok" : "bad") : k === i ? "cur" : "") + '"></div>';
     }
     $("dots").innerHTML = h;
-  }
-  function elapsed() {
-    return Math.max(0, Math.floor(((pz || Date.now()) - t0) / 1000));
   }
   function save() {
     try {
@@ -104,59 +100,13 @@ window.__boot = function (id) {
         sc: score,
         st: streak,
         f: isFull,
-        el: elapsed(),
-        qr: qrem,
+        el: RL.elapsed(),
+        qr: RL.qrem(),
         at: Date.now(),
       });
     } catch (e) {}
   }
-  function setPz(p) {
-    var q = $("quiz"),
-      b = $("tpause");
-    if (!b) return;
-    if (p && !pz) pz = Date.now();
-    else if (!p && pz) {
-      t0 += Date.now() - pz;
-      pz = 0;
-      tick();
-    }
-    q.classList.toggle("pausado", !!pz);
-    b.setAttribute("aria-pressed", pz ? "true" : "false");
-    b.textContent = pz ? "▶ Continuar" : "⏸ Pausar";
-    b.setAttribute("aria-label", pz ? "Continuar o tempo" : "Pausar o tempo");
-    if (pz) save();
-  }
-  $("tpause").onclick = function () {
-    setPz(!pz);
-  };
-  /* Pausa o relógio sem sair da tela (também o tempo da pergunta no modo cronometrado) e devolve se pausou agora. */
-  function qPause() {
-    if ($("quiz").classList.contains("hidden") || pz) return false;
-    if (mode === "tempo" && !locked) {
-      qrem = Math.max(1, qTL * 1000 - (Date.now() - qs));
-      clearInterval(qt);
-    } else qrem = 0;
-    setPz(true);
-    return true;
-  }
-  function qResume() {
-    setPz(false);
-    if (mode === "tempo" && qrem > 0 && !locked) {
-      qs = Date.now() - (qTL * 1000 - qrem);
-      qrem = 0;
-      runQt();
-    } else qrem = 0;
-  }
   window.addEventListener("pagehide", save);
-  document.addEventListener("visibilitychange", function () {
-    if (document.visibilityState === "hidden") {
-      if (running() && qPause()) autoP = true;
-      save();
-    } else if (autoP) {
-      autoP = false;
-      if (running()) qResume();
-    }
-  });
   function start(list, full, S) {
     isFull = full !== false;
     order = list;
@@ -164,12 +114,8 @@ window.__boot = function (id) {
     score = 0;
     res = [];
     streak = 0;
-    pz = 0;
     parked = false;
-    autoP = false;
-    qrem = 0;
-    qrest = S && S.qr > 0 ? S.qr : 0;
-    setPz(false);
+    RL.zerar(S);
     seqUi();
     if (window.Meta) Meta.ui();
     if (S) {
@@ -187,10 +133,7 @@ window.__boot = function (id) {
     $("quiz").classList.remove("hidden");
     setHash("quiz");
     $("exitq").classList.add("hidden");
-    t0 = S ? Date.now() - S.el * 1000 : Date.now();
-    clearInterval(timer);
-    timer = setInterval(tick, 1000);
-    tick();
+    RL.iniciar(S);
     $("tpause").classList.toggle("hidden", mode !== "estudo");
     if (S && i >= order.length) {
       finish();
@@ -276,7 +219,7 @@ window.__boot = function (id) {
     $("hbtn").classList.remove("hidden");
     $("hbtn").textContent = mode === "tempo" ? "Ver dica (vale meio ponto)" : "Ver dica";
     if (mode === "simulado") $("hbtn").classList.add("hidden");
-    startQ();
+    RL.startQ();
     $("next").classList.add("hidden");
     var box = $("opts");
     box.innerHTML = "";
@@ -424,7 +367,7 @@ window.__boot = function (id) {
   function pick(k, nok) {
     if (locked) return;
     locked = true;
-    clearInterval(qt);
+    RL.pararPergunta();
     var d = Q[order[i]],
       oi = k < 0 ? -1 : perm[k],
       ok = nok !== undefined ? nok : oi === d.a,
@@ -596,11 +539,8 @@ window.__boot = function (id) {
     $("rins").innerHTML = h;
   }
   function finish() {
-    clearInterval(timer);
-    clearInterval(qt);
+    var secs = RL.encerrar();
     ST.del("sess");
-    pz = 0;
-    setPz(false);
     /* simulado com o tempo esgotado: as perguntas que faltaram contam como sem resposta e aparecem na revisão */
     if (mode === "simulado" && res.length < order.length) {
       for (var k = res.length; k < order.length; k++) {
@@ -609,8 +549,7 @@ window.__boot = function (id) {
       }
       i = order.length - 1;
     }
-    var secs = Math.floor((Date.now() - t0) / 1000),
-      right = res.filter(function (r) {
+    var right = res.filter(function (r) {
         return r.ok;
       }).length,
       hints = res.filter(function (r) {
@@ -710,7 +649,6 @@ window.__boot = function (id) {
     start(window.__wrong.slice(), false);
   };
   var mode = "estudo",
-    TL = 30,
     isFull = true;
   var streak = 0,
     seqUi = function () {
@@ -754,8 +692,7 @@ window.__boot = function (id) {
       "</div>";
   }
   function goHome() {
-    clearInterval(timer);
-    clearInterval(qt);
+    RL.parar();
     if (!parked) ST.del("sess");
     ["quiz", "end", "bar", "dots", "book", "sheet", "cards", "hist", "fontes"].forEach(function (id) {
       $(id).classList.add("hidden");
@@ -767,45 +704,11 @@ window.__boot = function (id) {
     $("exitq").classList.add("hidden");
     retUi();
   }
-  var qt = null,
-    qs = 0,
-    nick = "Anônimo";
+  var nick = "Anônimo";
   function esc(t) {
     return String(t).replace(/[&<>"]/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
     });
-  }
-  function runQt() {
-    var tb = $("tbar");
-    qt = setInterval(function () {
-      var l = qTL * 1000 - (Date.now() - qs);
-      if (l <= 0) {
-        $("tfill").style.width = "0%";
-        pick(-1);
-        return;
-      }
-      $("tfill").style.width = l / (qTL * 10) + "%";
-      tb.classList.toggle("low", l < 8000);
-    }, 200);
-  }
-  function startQ() {
-    clearInterval(qt);
-    var tb = $("tbar");
-    if (mode !== "tempo") {
-      tb.classList.add("hidden");
-      return;
-    }
-    tb.classList.remove("hidden");
-    tb.classList.remove("low");
-    qs = Date.now();
-    $("tfill").style.width = "100%";
-    var dq = Q[order[i]];
-    qTL = (dq.c || dq.g) && QZ.tempoCalc ? QZ.tempoCalc : TL;
-    if (qrest > 0) {
-      qs = Date.now() - (qTL * 1000 - qrest);
-      qrest = 0;
-    }
-    runQt();
   }
   function begin(m) {
     mode = m;
@@ -1219,7 +1122,7 @@ window.__boot = function (id) {
   };
   /* Navegação entre telas, botão voltar e aviso de sair do quiz: ver app-telas.js */
   var VMAP = { home: "inicio", book: "caderno", sheet: "lista", cards: "cartoes", hist: "desempenho" };
-  var TL = window.AppTelas({
+  var TE = window.AppTelas({
     $: $,
     openOnly: openOnly,
     renderBook: renderBook,
@@ -1229,16 +1132,13 @@ window.__boot = function (id) {
     openFontes: openFontes,
     retomar: retomar,
     goHome: goHome,
-    pararRelogios: function () {
-      clearInterval(qt);
-      clearInterval(timer);
-    },
+    pararRelogios: RL.parar,
   });
   function setHash(v, rep) {
-    return TL.setHash(v, rep);
+    return TE.setHash(v, rep);
   }
   function running() {
-    return TL.running();
+    return TE.running();
   }
   $("gohome").onclick = goHome;
   /* Fontes e "retomar de onde parou": ver app-sessao.js */
@@ -1252,13 +1152,11 @@ window.__boot = function (id) {
     setHash: setHash,
     goHome: goHome,
     running: running,
-    qPause: qPause,
+    qPause: RL.qPause,
     save: save,
     estacionar: function () {
       parked = true;
-      autoP = false;
-      clearInterval(timer);
-      clearInterval(qt);
+      RL.estacionar();
     },
     retomarCom: function (S) {
       mode = S.m;

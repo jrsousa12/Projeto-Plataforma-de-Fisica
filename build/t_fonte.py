@@ -51,7 +51,7 @@ with sync_playwright() as p:
         pg.locator('#retq').click();pg.wait_for_timeout(300)
         ck(pg.locator('#quiz').is_visible(),q+': quiz retomado')
         ck(pg.evaluate("document.getElementById('count').textContent").startswith('Pergunta 2 de 10'),q+': na pergunta seguinte')
-        e2=pg.evaluate("elapsed? 0:0") if False else pg.evaluate("__qz('elapsed()')")
+        e2=pg.evaluate("elapsed? 0:0") if False else pg.evaluate("__qz('RL.elapsed()')")
         ck(abs(e2-e1)<=2,q+': tempo ficou parado (%s -> %s)'%(e1,e2))
         ck(pg.evaluate("__qz('score')")>=0,q+': pontuação preservada')
         ck(pg.locator('#retq').is_hidden() or not pg.locator('#home').is_visible(),q+': retorno só na tela inicial')
@@ -70,7 +70,7 @@ with sync_playwright() as p:
     pg.wait_for_timeout(3000)
     pg.locator('#homebtn').click();pg.locator('#retq').click();pg.wait_for_timeout(400)
     w=pg.evaluate("document.getElementById('tfill').style.width")
-    rest=pg.evaluate("__qz('qTL*1000-(Date.now()-qs)')")
+    rest=pg.evaluate("__qz('RL.resta()')")
     ck(s and abs(rest-s['qr'])<1500,'cronometrado: tempo restante preservado (%s vs %s)'%(rest,s and s['qr']))
     # 8) fim do quiz apaga a sessão guardada; Fontes sem quiz não mostra retorno
     pg.close()

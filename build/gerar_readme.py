@@ -22,6 +22,7 @@ REGRAS = [  # (padrões, descrição); arquivos com a mesma descrição aparecem
  (["app-revisao.js"], "Rever perguntas já respondidas (botão Anterior do modo estudo)"),
  (["app-sessao.js"], "Guardar e retomar o quiz de onde parou; tela de Fontes de referência"),
  (["app-telas.js"], "Navegação entre telas (endereços #nome, botão voltar, aviso de sair do quiz)"),
+ (["app-relogio.js"], "Relógio do quiz (tempo da rodada, pausa e tempo por pergunta no cronometrado)"),
  (["app-meta.js"], "Meta diária de questões"),
  (["app-nav.js"], "Barra de navegação inferior e seleção de áreas"),
  (["app-escolha.js"], "Tela de escolha do quiz e início (?q=...)"),
