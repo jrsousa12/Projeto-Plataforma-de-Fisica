@@ -19,6 +19,7 @@ REGRAS = [  # (padrões, descrição); arquivos com a mesma descrição aparecem
  (["app-validacao.js"], "Validação do banco ao abrir (console; #teste mostra no topo)"),
  (["app-armazenamento.js"], "Gravação do progresso no aparelho (com migração do formato antigo)"),
  (["app-sorteio.js"], "Sorteio das questões da rodada (áreas, nível, reforço do caderno)"),
+ (["app-revisao.js"], "Rever perguntas já respondidas (botão Anterior do modo estudo)"),
  (["app-meta.js"], "Meta diária de questões"),
  (["app-nav.js"], "Barra de navegação inferior e seleção de áreas"),
  (["app-escolha.js"], "Tela de escolha do quiz e início (?q=...)"),
