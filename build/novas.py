@@ -196,14 +196,16 @@ def _limpa(s):
     s = re.sub(r"10\^\(?(-?\d+)\)?", r"1e\1", s)
     s = re.sub(r"(\d),(\d)", r"\1.\2", s)
     return s
-UNID_TOK = r"(?:cal|kcal|kg|g|mg|cm|mm|km|dm|m|s|min|h|N|Pa|J|W|V|C|A|K|L|mL|atm|mmHg|cmHg|mol|Hz|µC|μC|nC|mC|°C|eV)"
+UNID_TOK = r"(?:cal|kcal|kg|g|mg|cm|mm|km|dm|m|s|min|h|N|Pa|J|W|V|C|A|K|L|mL|atm|mmHg|cmHg|mol|Hz|µC|μC|nC|mC|°C|eV|Ω|kΩ|MΩ|kW|MW|kWh|Wh|kV|mV|mA|µA|μA|kJ|MJ|kPa|kN|T|mT|µT|μT|Wb|nm|µm|μm|di|rad|F|µF|μF|nF|pF|kHz|MHz|GHz|ms|µs|μs|cm³|m³|dB|lx|VA)"
 def _expr(parte):
     """(expressão numérica, unidades) de um lado de '='; (None, '') se houver variáveis/rótulos."""
-    p = _limpa(parte)
+    p = re.sub(r"\s*\([^()]*[A-Za-zµμ][^()]*\)[\s.]*$", "", parte)   # comentário final, ex.: (15 kcal)
+    p = _limpa(p).rstrip(" .")                      # ponto final da frase
+    p = re.sub(r"(?<![\d.])(\d+(?:\.\d+)?)\s*\*\s*1e(-?\d+)", r"(\1e\2)", p)   # 4 × 10⁻⁶ é um número só
     p = re.sub(r"(\)|\d)\s*²", r"\1**2", p); p = re.sub(r"(\)|\d)\s*³", r"\1**3", p)
     un = []
     def tira(m): un.append(m.group(0)); return ""
-    p = re.sub(r"(?<=[\d)])\s*" + UNID_TOK + r"[²³]?(?:\*\*\d)?(?:/" + UNID_TOK + r"[²³]?(?:\*\*\d)?)?(?![A-Za-zµμ])", tira, p)
+    p = re.sub(r"(?<=[\d)])\s*" + UNID_TOK + r"[²³]?(?:\*\*\d)?(?:[/*]" + UNID_TOK + r"[²³]?(?:\*\*\d)?)*(?![A-Za-zµμ])", tira, p)
     p = re.sub(r"(?<=\d)e(?=-?\d)", "E", p)           # notação científica
     if re.search(r"[A-Za-zµμΔΩαβγρτλ%]", p.replace("E", "")): return None, ""
     p = p.replace("E", "e").replace(" ", "")
