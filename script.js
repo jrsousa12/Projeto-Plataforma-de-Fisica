@@ -1590,7 +1590,6 @@ window.__boot = function (id) {
     },
   };
   var DBGF = location.hash === "#debug",
-    TSTF = location.hash === "#teste",
     SS = sessGet();
   goHome();
   try {
@@ -1621,41 +1620,7 @@ window.__boot = function (id) {
         return d.t === k;
       }).length;
   });
-  /* Validação do banco: roda ao abrir a página. Abra com #teste para ver o resultado no topo. */
-  function validateBank() {
-    var er = [],
-      ids = {},
-      qs = {};
-    Q.forEach(function (d, k) {
-      var w = "Q" + (k + 1) + " (" + (d.id || "sem id") + ")";
-      if (!d.id) er.push(w + ": sem id");
-      else if (ids[d.id]) er.push(w + ": id repetido");
-      ids[d.id] = 1;
-      if (!TN[d.t]) er.push(w + ": área inválida");
-      if (!d.h) er.push(w + ": sem dica");
-      if (!d.g) {
-        if (!d.e) er.push(w + ": sem explicação");
-        if (!d.o || d.o.length < 2) er.push(w + ": poucas alternativas");
-        else {
-          if (!(d.a >= 0 && d.a < d.o.length)) er.push(w + ": gabarito fora do intervalo");
-          if (new Set(d.o).size !== d.o.length) er.push(w + ": alternativas repetidas");
-        }
-        if (qs[d.q]) er.push(w + ": pergunta repetida");
-        qs[d.q] = 1;
-      }
-      if (d.f && !FIG[d.f]) er.push(w + ": figura inexistente (" + d.f + ")");
-    });
-    return er;
-  }
-  var BE = validateBank();
-  if (BE.length) {
-    console.warn("Banco com problemas:\n" + BE.join("\n"));
-  }
-  if (TSTF) {
-    document.querySelector(".hero p").textContent = BE.length
-      ? "Banco: " + BE.length + " problema(s). Veja o console."
-      : "Banco OK: " + Q.length + " questões validadas.";
-  }
+  window.AppValidacao({ Q: Q, TN: TN, FIG: FIG });
   if (DBGF) {
     window.__qz = function (c) {
       return eval(c);
