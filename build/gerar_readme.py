@@ -45,7 +45,7 @@ def arquivos():
         ds[:] = [d for d in ds if d not in (".git", "__pycache__") and not (raiz == APP and d == "build")]  # build/ são ferramentas, não o app
         for f in fs:
             rel = os.path.relpath(os.path.join(raiz, f), APP).replace(os.sep, "/")
-            if rel not in ("README.md", ".gitignore", "CLAUDE.md") and not f.startswith("_") and not f.endswith(".pyc"): r.append(rel)
+            if rel not in ("README.md", ".gitignore", "CLAUDE.md", "NOTAS.md") and not f.startswith("_") and not f.endswith(".pyc"): r.append(rel)
     return sorted(r)
 def montar():
     grupos = {}; sem = []
