@@ -14,6 +14,7 @@ Este projeto prioriza a economia de contexto e tokens. Toda interação deve seg
   - Novo quiz: registrar em `quizzes.js` e rodar `node validar-banco.js`.
   - `sw.js` (versão) e a tabela do README são gerados por `build/versao.py` e `build/gerar_readme.py`; não editar à mão.
   - Público: o dono é professor e não programa; explicar em português simples.
+  - **Idioma**: responder sempre em português do Brasil (PT-BR), inclusive resumos, avisos e mensagens de commit.
 
 > Mantenha esta seção curta. Regras específicas de domínio vão nos `CLAUDE.md` dos subdiretórios.
 
