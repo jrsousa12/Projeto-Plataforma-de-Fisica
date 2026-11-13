@@ -27,7 +27,8 @@ Este projeto prioriza a economia de contexto e tokens. Toda interação deve seg
 - **Arquivos de Dados**: os bancos `perguntas-*.js` têm poucas linhas, mas muito longas (até ~130 KB). Para eles o limite de linhas não se aplica e o critério é o tamanho. Nunca leia um banco inteiro: localize a questão com `grep` pelo id e leia só o trecho. O mesmo vale para `figuras-animq-auto-dados.js` (gerado por `build/novas.py`).
 - **Exceções Toleradas** (pouco acima de 300 linhas; dividir só se a tarefa exigir mexer muito neles): `editor.js`, `nuvem.js`, `figuras-animq-eletro.js`, `figuras-animq-fluidos2.js`.
 - **`script.js` (~705 linhas)**: exceção tolerada por decisão do dono (13/11/2026). É o núcleo do quiz (início da rodada, `show`/`pick`, `finish`, níveis), muito ligado entre si; não dividir sem pedido do dono. Ao editar, leia só o trecho necessário.
-- **Modularização em Andamento**: `style.css` e `build/novas.py` (opcional; plano em `NOTAS.md`). Ao editá-los, leia só o trecho necessário.
+- **Modularização em Andamento**: `build/novas.py` (opcional; plano em `NOTAS.md`). Ao editá-lo, leia só o trecho necessário.
+- **Visual (`style.css` + `estilo-*.css`)**: a ordem dos `<link>` decide qual regra vale; não reordenar. Arquivo `.css` novo: `index.html`, `editor.html` e `sw.js`.
 - **Novas Funcionalidades**: Ao criar novas funcionalidades, já as estruture em módulos pequenos, seguindo o princípio da responsabilidade única.
 
 ## 2. Hierarquia de Contexto (CLAUDE.md)

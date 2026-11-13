@@ -9,7 +9,8 @@ Quiz de Física (ensino médio) que funciona direto no navegador, sem instalar n
 |---|---|
 | `index.html` | Página principal do quiz |
 | `quizzes.js` | **Lista única dos quizzes**: nome, arquivos e onde cada um guarda o progresso (veja "Acrescentar um quiz") |
-| `style.css` | Visual (cores, fontes, menus) |
+| `style.css` | Visual: base, paletas, tema minimalista e escolha do modo |
+| `estilo-escolar.css`, `estilo-extras.css`, `estilo-telas.css` | Visual, continuação (nesta ordem): visual escolar e menus; extras, cartões e animações; resultado, desempenho, fontes e cores de cada área |
 | `script.js` | Lógica do quiz (início da rodada, pergunta, resposta, fim da rodada, níveis) |
 | `app-graficos.js` | Gráficos de desempenho do histórico |
 | `app-historico.js` | Tela de histórico e desempenho |

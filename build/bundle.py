@@ -4,8 +4,9 @@ d=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))+os.sep
 h=open(d+'index.html',encoding='utf-8').read()
 for pat in (r'<!-- Segurança:.*?-->\n?',r'<meta http-equiv="Content-Security-Policy"[^>]*>\n?',r'<link rel="manifest"[^>]*>\n?',r'<link rel="apple-touch-icon"[^>]*>\n?',r'<link rel="icon"[^>]*>\n?',r'<div id="splash".*?</div>\n?',r'<a class="btn alt" id="salalink2?".*?</a>'):
     h=re.sub(pat,'',h,flags=re.S)
-css=open(d+'style.css',encoding='utf-8').read()
-h=h.replace('<link rel="stylesheet" href="style.css">','<style>\n'+css+'</style>')
+# o visual é dividido em vários arquivos .css: entram juntos, na ordem em que o index.html os carrega
+css=''.join(open(d+m,encoding='utf-8').read() for m in re.findall(r'<link rel="stylesheet" href="([^"]+)">',h))
+h=re.sub(r'(<link rel="stylesheet" href="[^"]+">\n?)+','<style>\n'+css.replace('\\','\\\\')+'</style>\n',h,count=1)
 # no arquivo único todos os quizzes vêm embutidos, antes do banco-extra
 from lista_quizzes import quizzes
 quiz=[]

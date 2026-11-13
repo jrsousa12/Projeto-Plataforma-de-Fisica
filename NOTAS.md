@@ -27,6 +27,7 @@ Todo arquivo novo do app entra em: `index.html` (`<script>`, na ordem certa), `s
    - **Encerrado**: o resto do `script.js` (início da rodada, `show`/`pick`, `finish`, níveis) fica como exceção tolerada (registrado no `CLAUDE.md`).
 7. Opcional: `style.css` e `build/novas.py`.
    - **Kit de animação** — feito: `figuras-anim.js` 540 → 212, mais `figuras-anim-pecas.js` (175, peças de desenho) e `figuras-anim-passos.js` (163, cena com legendas, medidores, termômetro). Registrados em `quizzes.js` (o `sw.js` e o `bundle.py` leem de lá). Os três usam `window.AN = window.AN || {}` porque o `validar-banco.js` carrega em ordem alfabética.
+   - **Visual** — feito: `style.css` 739 → 236, mais `estilo-escolar.css` (169, visual escolar e menus), `estilo-extras.css` (210, extras, cartões, animações) e `estilo-telas.css` (124, resultado, desempenho, fontes, cores por área). Só cortes em blocos seguidos: no CSS a ordem decide, então a ordem dos `<link>` no `index.html`/`editor.html` não pode mudar. O `bundle.py` junta os `.css` na ordem do `index.html` (arquivo único saiu idêntico). Teste novo: `build/t_estilo.py`. Falta só o `build/novas.py` (opcional).
 
 ## Decisões que valem daqui em diante
 
