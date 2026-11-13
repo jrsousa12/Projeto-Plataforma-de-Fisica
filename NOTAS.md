@@ -10,11 +10,14 @@ Todo arquivo novo do app entra em: `index.html` (`<script>`, na ordem certa), `s
 
 1. **Dados das animações automáticas** — feito (`4d36e8c`): `figuras-animq-auto-dados.js` separado de `figuras-animq-auto.js`.
 2. **Blocos independentes do `script.js`** — feito (`9a9a20d`): `app-meta.js`, `app-nav.js`, `app-escolha.js`, `app-subscritos.js`, `app-sombra.js`.
-3. **Histórico e gráficos** → `app-historico.js` — próximo. Primeiro mapear variáveis compartilhadas do `__boot`; se houver dependência demais, parar e mostrar ao dono.
-4. **Relatório e folha** → arquivo próprio — depois do passo 3.
+3. **Histórico e gráficos** — feito: `app-graficos.js` (250) e `app-historico.js` (166); `script.js` 2425 → 2046. `histAdd` ficou no `script.js` (lê a pontuação, que muda). Teste novo: `build/t_hist.py`.
+4. **Relatório e folha** → arquivo próprio — próximo. Mapear antes, incluindo o parâmetro `id` do `__boot`.
 5. Opcional: `style.css` e `build/novas.py`.
 
 ## Decisões que valem daqui em diante
+
+- Todo teste novo vai para `build/t_*.py` (o `testes.py` roda todos), para poder repetir depois.
+- No mapeamento de dependências, incluir o parâmetro `id` do `__boot` (passou despercebido no passo 3; o teste pegou).
 
 - Arquivos novos do app usam prefixo `app-` (o prefixo `quiz-` é lido pelo `validar-banco.js` como banco).
 - A divisão não muda a lógica: só move código; variáveis compartilhadas passam por um objeto comum.
