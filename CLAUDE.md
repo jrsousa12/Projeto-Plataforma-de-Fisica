@@ -23,6 +23,7 @@ Este projeto prioriza a economia de contexto e tokens. Toda interação deve seg
   - Animações: antes de criar ou editar, ler `build/CLAUDE.md` (molde → reaproveitar → kit `figuras-anim-kit.js`; nunca recopiar peças).
   - `sw.js` (versão) e a tabela do README são gerados por `build/versao.py` e `build/gerar_readme.py`; não editar à mão.
   - Público: o dono é professor e não programa; explicar em português simples.
+  - Protocolo de tokens reutilizável: `/protocolo-token` (`.claude/skills/protocolo-token/`); em outros projetos, buscar daqui.
   - **Idioma**: responder sempre em português do Brasil (PT-BR), inclusive resumos, avisos e mensagens de commit.
 
 > Mantenha esta seção curta. Regras específicas de domínio vão nos `CLAUDE.md` dos subdiretórios.
