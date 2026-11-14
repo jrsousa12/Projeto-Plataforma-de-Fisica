@@ -10,8 +10,9 @@ sw=open(RAIZ+'sw.js',encoding='utf-8').read()
 for f in CSS: assert '"%s"'%f in sw, f+' falta no sw.js (não funcionaria sem internet)'
 uni=open(RAIZ+'build/saida/quiz-arquivo-unico.html',encoding='utf-8').read()
 assert 'rel="stylesheet"' not in uni, 'o arquivo único ainda aponta para .css externo'
+import compactar   # no arquivo único o visual entra compactado
 for f in CSS:
-    trecho=open(RAIZ+f,encoding='utf-8').read().strip().splitlines()[-1]
+    trecho=compactar.css(open(RAIZ+f,encoding='utf-8').read()).strip()[-80:]
     assert trecho in uni, f+' não entrou no arquivo único'
 with sync_playwright() as p:
     b=p.chromium.launch(executable_path=os.environ.get('CHROME_PATH') or None,args=['--no-sandbox']); errs=[]

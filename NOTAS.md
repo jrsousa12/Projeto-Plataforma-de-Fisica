@@ -46,3 +46,8 @@ Todo arquivo novo do app entra em: `index.html` (`<script>`, na ordem certa), `s
 
 - Remoto mudou para `jrsousa12/Projeto-Plataforma-de-Fisica`; atualizar o endereço do `origin` quando o dono quiser.
 - Rodar `/fewer-permission-prompts` (só o dono pode).
+
+## Otimização (14/11/2026)
+
+- **Bancos em paralelo** — feito (`5c0994e`): `QuizLista.carregar` (`quizzes.js`) pede todos os arquivos juntos e executa na ordem (`async = false`).
+- **Arquivo único compactado** — feito: `build/bundle.py` passa o código por `build/compactar.py` (CSS) e `build/compactar.js` (JavaScript, lido pelo TypeScript instalado no computador; sem ele, entra sem compactar e avisa). Tira comentários e espaços; mantém as quebras de linha e não renomeia nada. 1242 → 1147 KB. O site publicado (GitHub Pages) continua sem compactar, por decisão do dono.
