@@ -17,7 +17,7 @@ Este projeto prioriza a economia de contexto e tokens. Toda interação deve seg
     1. Fontes em PT-BR na lista FONTE (Toda Matéria, InfoEscola, GREF), conferindo cada endereço.
     2. Exportar questões para o Kahoot (`build/IDEIAS.md`); combinar os termos com o dono antes de começar.
     3. Simulado em PDF com gabarito, reaproveitando a seleção de questões do item 2.
-    4. Conversor de Word (docx) + imagens (`build/IDEIAS.md`); lembrar o dono a partir de 20/11/2026, ao mostrar o projeto; plano aprovado antes de codar.
+    4. Conversor de Word (docx) e PDF + imagens, com catálogo de peças reaproveitáveis (`build/IDEIAS.md`); lembrar o dono a partir de 20/11/2026, ao mostrar o projeto; plano aprovado antes de codar.
     5. Peça de gráfico com eixos no kit (item 3 de `IDEIAS.md`), junto com as primeiras imagens marcadas `[redesenhar]` do item 4.
     - Só o dono: atualizar o endereço do `origin` (`Projeto-Plataforma-de-Fisica`) e rodar `/fewer-permission-prompts`.
   - Animações: antes de criar ou editar, ler `build/CLAUDE.md` (molde → reaproveitar → kit `figuras-anim-kit.js`; nunca recopiar peças).
