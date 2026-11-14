@@ -4,8 +4,9 @@ d=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))+os.sep
 h=open(d+'index.html',encoding='utf-8').read()
 for pat in (r'<!-- Segurança:.*?-->\n?',r'<meta http-equiv="Content-Security-Policy"[^>]*>\n?',r'<link rel="manifest"[^>]*>\n?',r'<link rel="apple-touch-icon"[^>]*>\n?',r'<link rel="icon"[^>]*>\n?',r'<div id="splash".*?</div>\n?',r'<a class="btn alt" id="salalink2?".*?</a>'):
     h=re.sub(pat,'',h,flags=re.S)
-css=open(d+'style.css',encoding='utf-8').read()
-h=h.replace('<link rel="stylesheet" href="style.css">','<style>\n'+css+'</style>')
+# o visual é dividido em vários arquivos .css: entram juntos, na ordem em que o index.html os carrega
+css=''.join(open(d+m,encoding='utf-8').read() for m in re.findall(r'<link rel="stylesheet" href="([^"]+)">',h))
+h=re.sub(r'(<link rel="stylesheet" href="[^"]+">\n?)+','<style>\n'+css.replace('\\','\\\\')+'</style>\n',h,count=1)
 # no arquivo único todos os quizzes vêm embutidos, antes do banco-extra
 from lista_quizzes import quizzes
 quiz=[]
@@ -17,7 +18,7 @@ def inline(f):
 tag='<script src="banco-extra.js"></script>'
 assert tag in h
 h=h.replace(tag,'\n'.join(inline(f) for f in quiz)+'\n'+tag)
-for f in ('quizzes.js','firebase-config.js','perfil.js','fontes.js','nuvem.js','banco-proprio.js','banco-extra.js','fx.js','eq.js','script.js'):
+for f in ('quizzes.js','firebase-config.js','perfil.js','fontes.js','nuvem.js','banco-proprio.js','banco-extra.js','fx.js','eq.js','app-meta.js','app-graficos.js','app-historico.js','app-folha.js','app-relatorio.js','app-cartoes.js','app-caderno.js','app-validacao.js','app-armazenamento.js','app-sorteio.js','app-revisao.js','app-sessao.js','app-telas.js','app-relogio.js','app-resultado.js','app-animacao.js','app-numeros.js','app-retorno.js','app-perfil.js','app-compartilhar.js','script.js','app-nav.js','app-escolha.js','app-subscritos.js','app-sombra.js'):
     t='<script src="%s"></script>'%f
     assert t in h,f
     h=h.replace(t,inline(f))

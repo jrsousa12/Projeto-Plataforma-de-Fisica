@@ -8,8 +8,33 @@ APP = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."); README = o
 REGRAS = [  # (padrões, descrição); arquivos com a mesma descrição aparecem juntos
  (["index.html"], "Página principal do quiz"),
  (["quizzes.js"], "**Lista única dos quizzes**: nome, arquivos e onde cada um guarda o progresso (veja \"Acrescentar um quiz\")"),
- (["style.css"], "Visual (cores, fontes, menus)"),
- (["script.js"], "Lógica do quiz"),
+ (["style.css"], "Visual: base, paletas, tema minimalista e escolha do modo"),
+ (["estilo-escolar.css", "estilo-extras.css", "estilo-telas.css"], "Visual, continuação (nesta ordem): visual escolar e menus; extras, cartões e animações; resultado, desempenho, fontes e cores de cada área"),
+ (["script.js"], "Lógica do quiz (início da rodada, pergunta, resposta, fim da rodada, níveis)"),
+ (["app-graficos.js"], "Gráficos de desempenho do histórico"),
+ (["app-historico.js"], "Tela de histórico e desempenho"),
+ (["app-folha.js"], "Lista de exercícios e prova para imprimir"),
+ (["app-relatorio.js"], "Relatório por área e conta na nuvem (tela de desempenho)"),
+ (["app-cartoes.js"], "Cartões de revisão (conceitos e curiosidades)"),
+ (["app-caderno.js"], "Caderno de erros (lista, exportar e importar)"),
+ (["app-validacao.js"], "Validação do banco ao abrir (console; #teste mostra no topo)"),
+ (["app-armazenamento.js"], "Gravação do progresso no aparelho (com migração do formato antigo)"),
+ (["app-sorteio.js"], "Sorteio das questões da rodada (áreas, nível, reforço do caderno)"),
+ (["app-revisao.js"], "Rever perguntas já respondidas (botão Anterior do modo estudo)"),
+ (["app-sessao.js"], "Guardar e retomar o quiz de onde parou; tela de Fontes de referência"),
+ (["app-telas.js"], "Navegação entre telas (endereços #nome, botão voltar, aviso de sair do quiz)"),
+ (["app-relogio.js"], "Relógio do quiz (tempo da rodada, pausa e tempo por pergunta no cronometrado)"),
+ (["app-resultado.js"], "Tela do resultado (nota, desempenho por área, revisão das erradas e ranking)"),
+ (["app-animacao.js"], "Controles da animação da explicação (pausar, ver de novo, linha do tempo, legendas)"),
+ (["app-numeros.js"], "Questões numéricas (sorteio de valores, notação científica, leitura do número digitado)"),
+ (["app-retorno.js"], "Retorno depois de responder (Correto/Não foi dessa vez, explicação, Você marcou, meta do dia)"),
+ (["app-perfil.js"], "Quadro de perguntas dominadas, treino adaptativo e botões da conta na nuvem"),
+ (["app-compartilhar.js"], "Botão Compartilhar resultado (compartilha, copia ou mostra o texto)"),
+ (["app-meta.js"], "Meta diária de questões"),
+ (["app-nav.js"], "Barra de navegação inferior e seleção de áreas"),
+ (["app-escolha.js"], "Tela de escolha do quiz e início (?q=...)"),
+ (["app-subscritos.js"], "Subscritos nas temperaturas (TC, TF, TK)"),
+ (["app-sombra.js"], "Sombra da barra superior ao rolar"),
  (["perguntas-eletro.js"], "**Banco de perguntas** de Eletrostática (edite aqui para incluir questões)"),
  (["perguntas-fluidos.js"], "**Banco de perguntas** de Mecânica dos Fluidos"),
  (["perguntas-termo.js"], "**Banco de perguntas** de Termologia"),
@@ -20,7 +45,10 @@ REGRAS = [  # (padrões, descrição); arquivos com a mesma descrição aparecem
  (["quiz-*.js"], "Configuração de cada quiz: nome, áreas, cartões, resumo, mensagens e questões numéricas"),
  (["figuras.js", "figuras-fluidos.js", "figuras-termo.js"], "Figuras (SVG) usadas nas perguntas e retratos ilustrados dos cientistas (desenhos próprios)"),
  (["figuras-anim.js"], "Kit de animação (cenas, legendas, linha do tempo)"),
- (["figuras-animq-auto.js"], "Animações de resolução geradas automaticamente pelos moldes (não editar à mão)"),
+ (["figuras-anim-pecas.js"], "Peças de desenho das animações (cargas, cotas, setas, béquer)"),
+ (["figuras-anim-passos.js"], "Animações de resolução passo a passo (cena com legendas, medidores, termômetro)"),
+ (["figuras-animq-auto.js"], "Desenho das animações de resolução automáticas (moldes)"),
+ (["figuras-animq-auto-dados.js"], "Dados das animações de resolução, gravados por build/novas.py (não editar à mão)"),
  (["figuras-animq-*.js"], "Animações feitas à mão para cada questão, por área"),
  (["figuras-fenomeno-*.js"], "Simulações do fenômeno (corpo em movimento + gráfico desenhado no tempo), que substituem as resoluções passo a passo"),
  (["fontes.js"], "Lista de fontes de referência (botão FONTE e tela Fontes)"),
@@ -39,7 +67,7 @@ def arquivos():
         ds[:] = [d for d in ds if d not in (".git", "__pycache__") and not (raiz == APP and d == "build")]  # build/ são ferramentas, não o app
         for f in fs:
             rel = os.path.relpath(os.path.join(raiz, f), APP).replace(os.sep, "/")
-            if rel not in ("README.md", ".gitignore") and not f.startswith("_") and not f.endswith(".pyc"): r.append(rel)
+            if rel not in ("README.md", ".gitignore", "CLAUDE.md", "NOTAS.md") and not f.startswith("_") and not f.endswith(".pyc"): r.append(rel)
     return sorted(r)
 def montar():
     grupos = {}; sem = []
