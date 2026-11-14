@@ -46,7 +46,8 @@ Todo arquivo novo do app entra em: `index.html` (`<script>`, na ordem certa), `s
 
 - **Item 1 do `build/IDEIAS.md` feito** (`build/novas_distratores.py`, comando `novas.py distratores`). Próximos passos, nesta ordem:
   1. `build/t_sessao.py` confiável — feito: espera o quiz e a pergunta aparecerem (função `pronta`) em vez de tempo fixo; passou 8 de 8.
-  2. Item 3 do `IDEIAS.md` (peça de gráfico com eixos no kit) só quando houver figuras estáticas novas.
+  2. **Próxima:** exportar questões para o Kahoot (`build/IDEIAS.md`). Antes de iniciar, conversar com o dono sobre os termos; só começar se ele aceitar.
+  3. Item 3 do `IDEIAS.md` (peça de gráfico com eixos no kit) só quando houver figuras estáticas novas.
 
 - Remoto mudou para `jrsousa12/Projeto-Plataforma-de-Fisica`; atualizar o endereço do `origin` quando o dono quiser.
 - Rodar `/fewer-permission-prompts` (só o dono pode).

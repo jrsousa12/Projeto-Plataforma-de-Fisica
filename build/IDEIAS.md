@@ -1,6 +1,8 @@
 # Ideias para o futuro
 
-## Exportar questões para o Kahoot (dica)
+## Exportar questões para o Kahoot (dica) — PRÓXIMA
+> **Antes de iniciar:** conversar com o dono sobre os termos (o que será feito, regras, condições e termos de uso do Kahoot). Só começar se ele aceitar; se não aceitar, a ideia fica parada.
+
 Hoje criar um Kahoot a partir do banco é um passo manual (o Claude monta pelo conector). Dá para automatizar com um script `build/exportar_kahoot.py`:
 - entrada: área (`eletro`, `fluidos`, `termo`) e/ou lista de ids, nível e quantidade;
 - saída: JSON no formato do conector do Kahoot (ou planilha do modelo de importação do Kahoot) com enunciado, 4 alternativas, resposta certa e tempo (20 s; 60 s nas de cálculo);
