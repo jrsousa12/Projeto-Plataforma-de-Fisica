@@ -8,17 +8,22 @@ def responder(f):
     else: f.locator('#opts .opt').nth(0).click()
     f.wait_for_timeout(150)
     if f.locator('#next:not(.hidden)').count(): f.locator('#next').click(); f.wait_for_timeout(200)
+def pronta(f):
+    # espera o quiz aparecer com a pergunta escrita (em vez de tempo fixo)
+    f.locator('#quiz').wait_for(state='visible')
+    f.wait_for_function('()=>{var e=document.querySelector("#q");return e&&e.innerText.trim().length>0}')
 with sync_playwright() as p:
     b=abrir(p)
     pg=b.new_page(viewport={'width':800,'height':1000}); errs=[]; pg.on('pageerror',lambda e:errs.append(str(e)))
     for q in ('termo','mec'):
         u='http://localhost:8123/index.html?q=%s'%q
-        pg.goto(u); pg.wait_for_timeout(500)
-        pg.locator('#go').click(); pg.wait_for_timeout(300)
-        responder(pg); pg.wait_for_timeout(300); atual=pg.locator('#q').inner_text()
+        pg.goto(u); pg.locator('#go').wait_for(state='visible')
+        pg.locator('#go').click(); pronta(pg); antes=pg.locator('#q').inner_text()
+        responder(pg); pg.wait_for_function('t=>{var e=document.querySelector("#q");return e&&e.innerText.trim()&&e.innerText!==t}',arg=antes)
+        pg.wait_for_timeout(200); atual=pg.locator('#q').inner_text()
         pg.evaluate('QzFonte.abrir()'); pg.wait_for_timeout(300)
         assert pg.locator('#fontes:not(.hidden)').count()==1 and pg.locator('#fvolta').is_visible()
-        pg.goto(u); pg.wait_for_timeout(500)
+        pg.goto(u); pronta(pg)
         print(q,'|',pg.url)
         assert pg.locator('#quiz').is_visible(), 'não retomou ao recarregar'
         assert pg.locator('#q').inner_text()==atual, ('não retomou na mesma pergunta', atual[:60], pg.locator('#q').inner_text()[:60])
@@ -26,7 +31,7 @@ with sync_playwright() as p:
         pg.evaluate('QzFonte.abrir()'); pg.wait_for_timeout(200)
         pg.evaluate("""()=>{for(var k in localStorage){var v=localStorage.getItem(k);
           if(/sess/.test(k)&&v&&v.indexOf('"v":2')>=0){var S=JSON.parse(v);S.at-=13*3600e3;localStorage.setItem(k,JSON.stringify(S));}}}""")
-        pg.goto(u); pg.wait_for_timeout(500)
+        pg.goto(u); pg.locator('#home').wait_for(state='visible'); pg.wait_for_load_state('load')
         assert pg.locator('#home').is_visible() and pg.locator('#retq.hidden').count()==1, 'sessão velha ainda oferecida'
         pg.evaluate('localStorage.clear()')
     print('erros',errs); assert not errs; b.close()
