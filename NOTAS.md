@@ -44,6 +44,8 @@ Todo arquivo novo do app entra em: `index.html` (`<script>`, na ordem certa), `s
 
 ## Pendências
 
+- **Sequência oficial das próximas tarefas (14/11/2026):** ver `CLAUDE.md`, seção 0, "Próximas tarefas".
+
 - **Item 1 do `build/IDEIAS.md` feito** (`build/novas_distratores.py`, comando `novas.py distratores`). Próximos passos, nesta ordem:
   1. `build/t_sessao.py` confiável — feito: espera o quiz e a pergunta aparecerem (função `pronta`) em vez de tempo fixo; passou 8 de 8.
   2. **Próxima:** exportar questões para o Kahoot (`build/IDEIAS.md`). Antes de iniciar, conversar com o dono sobre os termos; só começar se ele aceitar.

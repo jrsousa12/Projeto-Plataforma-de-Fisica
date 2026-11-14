@@ -13,7 +13,13 @@ Este projeto prioriza a economia de contexto e tokens. Toda interação deve seg
   - Nomes e comentários em português; arquivos com prefixo por área (`perguntas-*`, `quiz-*`, `figuras-*`).
   - Novo quiz: registrar em `quizzes.js` e rodar `node validar-banco.js`.
   - Melhorias planejadas (lista numerada): `build/IDEIAS.md`; o que vem depois de cada uma: `NOTAS.md` (Pendências).
-  - **Lembrete (a partir de 20/11/2026):** ao mostrar o projeto, lembrar o dono da ideia "Importar questões de Word (docx)" em `build/IDEIAS.md` (conversor + imagens) para dar andamento.
+  - **Próximas tarefas (fazer nesta ordem; ao concluir, riscar aqui e anotar em `NOTAS.md`):**
+    1. Fontes em PT-BR na lista FONTE (Toda Matéria, InfoEscola, GREF), conferindo cada endereço.
+    2. Exportar questões para o Kahoot (`build/IDEIAS.md`); combinar os termos com o dono antes de começar.
+    3. Simulado em PDF com gabarito, reaproveitando a seleção de questões do item 2.
+    4. Conversor de Word (docx) + imagens (`build/IDEIAS.md`); lembrar o dono a partir de 20/11/2026, ao mostrar o projeto; plano aprovado antes de codar.
+    5. Peça de gráfico com eixos no kit (item 3 de `IDEIAS.md`), junto com as primeiras imagens marcadas `[redesenhar]` do item 4.
+    - Só o dono: atualizar o endereço do `origin` (`Projeto-Plataforma-de-Fisica`) e rodar `/fewer-permission-prompts`.
   - Animações: antes de criar ou editar, ler `build/CLAUDE.md` (molde → reaproveitar → kit `figuras-anim-kit.js`; nunca recopiar peças).
   - `sw.js` (versão) e a tabela do README são gerados por `build/versao.py` e `build/gerar_readme.py`; não editar à mão.
   - Público: o dono é professor e não programa; explicar em português simples.
