@@ -54,6 +54,7 @@ Este projeto prioriza a economia de contexto e tokens. Toda interação deve seg
 - **Prefira Edições Cirúrgicas**: Sempre que possível, edite o arquivo existente usando as ferramentas de edição de linha, em vez de reescrevê-lo por completo. Isso evita a geração de tokens desnecessários.
 - **Leitura Sob Demanda**: Não leia arquivos inteiros de forma indiscriminada. Leia apenas os arquivos (ou trechos) diretamente relevantes para a tarefa atual, usando busca (`grep`) e leitura por intervalo de linhas. O usuário pode indicar arquivos com `@nome_do_arquivo`. Evite varrer o projeto em busca de contexto que não será usado.
 - **Plano Antes do Código**: Para tarefas complexas, descreva o plano em passos lógicos (ou um diagrama simples) e valide com o usuário antes de tocar nos arquivos. Isso reduz drasticamente o consumo de tokens em retrabalho.
+- **Motores para tarefas repetitivas**: se uma tarefa se repete (gerar, converter, conferir ou corrigir em lote), criar um script (motor) que a faça, em vez de refazê-la à mão a cada vez; depois, só rodar o motor e ler o resumo da saída. Ex.: `build/novas.py`.
 
 ## 4. Higiene de Comandos e Saída de Terminal
 

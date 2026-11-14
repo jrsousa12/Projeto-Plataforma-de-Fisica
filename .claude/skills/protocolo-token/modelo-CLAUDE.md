@@ -37,6 +37,7 @@ Este projeto prioriza a economia de contexto e tokens. Estas diretrizes são de 
 - **Edições cirúrgicas**: editar o trecho, não reescrever o arquivo.
 - **Leitura sob demanda**: só os arquivos/trechos da tarefa, com `grep` e intervalos de linhas. O dono pode indicar arquivos com `@nome`.
 - **Plano antes do código**: em tarefas complexas, descrever os passos e validar com o dono antes de mexer.
+- **Motores para tarefas repetitivas**: se uma tarefa se repete (gerar, converter, conferir ou corrigir em lote), criar um script (motor) que a faça, em vez de refazê-la à mão a cada vez; depois, só rodar o motor e ler o resumo da saída.
 
 ## 4. Higiene de Comandos
 
