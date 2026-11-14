@@ -19,7 +19,7 @@ Responder sempre em PT-BR simples: o dono é professor e não programa.
 
 Verificar `~/.claude/CLAUDE.md` e `~/.claude/skills/protocolo-token/`. Para o que faltar, **perguntar** ao dono (AskUserQuestion), explicando em uma frase cada:
 
-1. **Arquivo global** `~/.claude/CLAUDE.md`: "faz as regras valerem em todos os projetos deste computador, sem copiar nada". Criar com as seções 1 a 7 do modelo + as linhas de **Público** e **Idioma** (sem o resto da seção 0, que é de cada projeto). Se o arquivo já existir: acrescentar só o que falta, nunca apagar.
+1. **Arquivo global** `~/.claude/CLAUDE.md`: "faz as regras valerem em todos os projetos deste computador, sem copiar nada". Criar com as seções 1 a 8 do modelo + as linhas de **Público** e **Idioma** (sem o resto da seção 0, que é de cada projeto). Se o arquivo já existir: acrescentar só o que falta, nunca apagar.
 2. **Comando global** `~/.claude/skills/protocolo-token/`: "faz o /protocolo-token funcionar em qualquer projeto deste computador". Copiar `SKILL.md` e `modelo-CLAUDE.md`.
 
 Se o dono recusar, seguir sem instalar.
@@ -29,7 +29,7 @@ Se o dono recusar, seguir sem instalar.
 ### Não (projeto novo)
 1. Olhar só o essencial para preencher a seção 0: lista de arquivos da raiz, `README` (início), arquivos de build/teste (`package.json`, `requirements.txt`, `Makefile` etc.).
 2. Criar `CLAUDE.md` a partir do modelo, preenchendo a seção 0. O que não der para descobrir, **perguntar** ao dono; não inventar.
-3. Se o arquivo global já existir (Passo 1A), as seções 1 a 7 podem virar uma linha: "Segue o protocolo-token (`~/.claude/CLAUDE.md`)". Na nuvem, manter as seções completas, porque o global não existe lá.
+3. Se o arquivo global já existir (Passo 1A), as seções 1 a 8 podem virar uma linha: "Segue o protocolo-token (`~/.claude/CLAUDE.md`)". Na nuvem, manter as seções completas, porque o global não existe lá.
 
 ### Sim (projeto já iniciado)
 1. Ler o `CLAUDE.md` atual (só ele).
@@ -46,6 +46,12 @@ git ls-files | grep -vE '(node_modules|vendor|dist|\.min\.|\.lock|\.json$|\.md$)
 ```
 
 Mostrar a lista ao dono e **propor** (não executar) a divisão de cada um, ou registrá-lo como exceção tolerada no `CLAUDE.md`, conforme o dono decidir.
+
+## Passo 3B — Motores e automações
+
+1. Listar os scripts que o projeto já tem (pasta de build/ferramentas, `package.json` "scripts", `Makefile`) e registrá-los em "Comandos úteis" da seção 0, com uma frase cada.
+2. Comparar com os tipos da seção 8 do modelo e com as tarefas que se repetem no projeto (ver histórico do git e notas do dono).
+3. **Propor** (não criar) os motores que faltam, em lista curta: o que faria, quanto trabalho/tokens poupa. Criar só os que o dono aprovar, já pequenos e testados.
 
 ## Passo 4 — Levar o comando junto
 
