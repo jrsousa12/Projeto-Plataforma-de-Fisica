@@ -114,3 +114,22 @@ Motor = script que faz o trabalho pesado e devolve só um resumo curto. Criar qu
 - **Ajudantes de teste**: `build/navegador.py` (Chromium), `build/mockfb.py` (Firebase simulado).
 - **Revisão em lote**: `build/revisao.py`, `build/captura_real.py ID...`.
 - **Memória**: `build/IDEIAS.md` e `NOTAS.md` (Pendências).
+
+## 9. Recursos de Apoio (usar antes de criar ou pesquisar)
+
+- **Modelos e exemplos**: `python3 build/novas.py modelo <área> <n>`; `build/exemplos/`.
+- **Cache de fontes**: `build/novas/fontes_cache` (o `novas.py` usa sem internet).
+- **Fontes confiáveis**: `build/fontes_confiaveis.json`.
+- **Já aplicado**: `build/novas/aplicadas.jsonl`; não refazer.
+- **Guias**: `build/NOVAS.md` (questões), `build/CLAUDE.md` (animações), `build/PARA_O_CLAUDE_CODE.md` (publicação automática, planejada).
+- **Fonte única**: `quizzes.js` (lista de quizzes; Python lê via `build/lista_quizzes.py`).
+- **Relatórios**: `build/novas/relatorio.md`; ler só o resumo.
+
+
+## 10. Dicas para o Dono (lembrar quando couber, em uma frase)
+
+- Uma tarefa por conversa; `/clear` ao trocar de assunto.
+- Indicar o arquivo com `@nome` quando souber qual é.
+- Pedidos diretos ("faça X em Y"); responder "sim"/"não" às perguntas basta.
+- Decisões tomadas ficam anotadas (`NOTAS.md`), para não serem perguntadas de novo.
+

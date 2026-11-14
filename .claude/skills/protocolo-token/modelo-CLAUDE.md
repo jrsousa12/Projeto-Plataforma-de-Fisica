@@ -78,3 +78,22 @@ Motor = script que faz o trabalho pesado e devolve só um resumo curto. Criar qu
 - **Ajudantes comuns de teste**: abrir navegador, simular serviço externo etc. num só módulo usado por todos os testes.
 - **Revisão em lote**: capturas/relatórios de muitos itens de uma vez, em vez de um por um.
 - **Memória do projeto**: listas de ideias e pendências (`IDEIAS.md`, `NOTAS.md`) para não redescobrir decisões.
+
+## 9. Recursos de Apoio (criar quando o projeto pedir)
+
+- **Modelos e exemplos**: esqueletos gerados por comando e uma pasta `exemplos/`; começar copiando, nunca do zero.
+- **Cache de consultas externas**: guardar páginas/respostas da internet já consultadas e reusá-las, em vez de buscar de novo.
+- **Lista de fontes confiáveis**: arquivo com os sites aceitos; dispensa pesquisar fontes a cada tarefa.
+- **Registro do que já foi feito**: arquivo (ex.: `.jsonl`) com os itens já aplicados; não refazer nem reconferir.
+- **Guias passo a passo**: receitas curtas em `.md` para cada processo repetido; seguir a receita em vez de redescobrir.
+- **Fonte única da verdade**: cada lista (itens, páginas, configurações) num só arquivo, lido por todos os scripts.
+- **Relatórios em arquivo**: saída longa vai para um `.md`/`.txt`; na conversa, só o resumo.
+
+
+## 10. Dicas para o Dono (lembrar quando couber, em uma frase)
+
+- Uma tarefa por conversa; `/clear` ao trocar de assunto.
+- Indicar o arquivo com `@nome` quando souber qual é.
+- Pedidos diretos ("faça X em Y"); responder "sim"/"não" às perguntas basta.
+- Decisões tomadas ficam anotadas (`NOTAS.md`), para não serem perguntadas de novo.
+
