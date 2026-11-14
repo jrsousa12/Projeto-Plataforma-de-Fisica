@@ -7,7 +7,7 @@ Este projeto prioriza a economia de contexto e tokens. Toda interação deve seg
 - **Stack**: site estático HTML/CSS/JS puro (PWA com `sw.js`), sem framework nem npm; Firebase opcional (`nuvem.js`). Ferramentas e testes em Python 3.12 + Playwright (`build/`). Publicado no GitHub Pages.
 - **Comandos úteis**:
   - Build: `bash build/tudo.sh` (arquivo único, versão do cache, validação, README)
-  - Testes: `node validar-banco.js` (rápido); `cd build && python3 testes.py` (navegador, ~15 min)
+  - Testes: `node validar-banco.js` (rápido); `cd build && python3 testes.py --mudou` (só o que mudou, durante a tarefa); `python3 testes.py` (todos, ~15 min, no fim)
   - Lint: `for f in *.js; do node --check "$f"; done` (só sintaxe; não há linter)
 - **Convenções**:
   - Nomes e comentários em português; arquivos com prefixo por área (`perguntas-*`, `quiz-*`, `figuras-*`).

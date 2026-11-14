@@ -1,7 +1,8 @@
 from playwright.sync_api import sync_playwright
+from navegador import abrir
 import json
 with sync_playwright() as p:
-    b=p.chromium.launch(executable_path=__import__('os').environ.get('CHROME_PATH') or None,args=['--no-sandbox'])
+    b=abrir(p)
     pg=b.new_page(viewport={'width':400,'height':820}); errs=[]
     pg.on('pageerror',lambda e:errs.append(str(e)))
     pg.on('console',lambda m: errs.append(m.text) if m.type=='error' else None)

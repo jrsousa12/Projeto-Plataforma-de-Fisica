@@ -1,11 +1,21 @@
 #!/usr/bin/env python3
-"""Roda todos os testes de navegador e resume: ./testes.py [nome ...]  (sem nomes = todos)."""
+"""Roda os testes de navegador e resume.
+./testes.py [nome ...]      sem nomes = todos (~15 min; usar no fim da tarefa)
+./testes.py --mudou [ref]   só os ligados aos arquivos alterados (git diff contra ref, padrão HEAD)"""
 import subprocess,sys,glob,os,re,time
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 # o t_flow.py abre o arquivo único (build/saida/), que não fica no Git: gera antes de testar
 subprocess.run([sys.executable,'bundle.py'],check=True,stdout=subprocess.DEVNULL)
 ignorar=("Clipboard API has been blocked","reading 'textContent'")  # artefatos conhecidos do ambiente de teste
-nomes=sys.argv[1:] or sorted(glob.glob('t_*.py'))
+nomes=sys.argv[1:]
+if nomes[:1]==['--mudou']:
+    import testes_mudou
+    arqs=testes_mudou.alterados(*nomes[1:2]);nomes,motivos=testes_mudou.escolher(arqs)
+    if nomes is None: print('Mudou',motivos['todos'],'-> rodando todos.')
+    elif not nomes: print('Nenhum teste ligado a:',', '.join(arqs) or '(nada alterado)');sys.exit(0)
+    else:
+        for t in nomes: print('  ',t,'<-',motivos[t])
+nomes=nomes or sorted(glob.glob('t_*.py'))
 falhas=0
 for t in nomes:
     t0=time.time()

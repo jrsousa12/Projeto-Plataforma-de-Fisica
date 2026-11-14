@@ -1,8 +1,9 @@
 import json
 from playwright.sync_api import sync_playwright
+from navegador import abrir
 B='http://localhost:8123/'
 with sync_playwright() as p:
-    b=p.chromium.launch(executable_path=__import__('os').environ.get('CHROME_PATH') or None,args=['--no-sandbox']);errs=[]
+    b=abrir(p);errs=[]
     def novo(ctx=None):
         ctx=ctx or b.new_context(viewport={'width':400,'height':820},accept_downloads=True)
         pg=ctx.new_page();pg.on('pageerror',lambda e:errs.append(str(e)))

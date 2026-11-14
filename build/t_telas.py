@@ -2,9 +2,10 @@
 sair do quiz pede confirmação (Ficar / Sair) e Esc fecha o aviso."""
 import os
 from playwright.sync_api import sync_playwright
+from navegador import abrir
 def vis(pg,s): return pg.locator(s+':not(.hidden)').count()==1
 with sync_playwright() as p:
-    b=p.chromium.launch(executable_path=os.environ.get('CHROME_PATH') or None,args=['--no-sandbox'])
+    b=abrir(p)
     pg=b.new_page(viewport={'width':800,'height':1000}); errs=[]; pg.on('pageerror',lambda e:errs.append(str(e)))
     pg.goto('http://localhost:8123/index.html?q=mec'); pg.wait_for_timeout(500)
     assert vis(pg,'#home') and pg.locator('#homebtn').is_hidden()

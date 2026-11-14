@@ -26,8 +26,12 @@ Passo a passo das questões: `NOVAS.md`. Aqui ficam só as regras para gastar po
 ## Economia de leitura
 - Achar cena para reaproveitar: `grep -i palavra build/CENAS.md` (catálogo gerado pelo `tudo.sh`; chave + frase de cada cena).
 - Não abrir os `figuras-animq-*.js` inteiros: usar `grep -n 'C("chave"\|N.scene("chave"'` e ler só o trecho.
-- Fazer as animações em lote; a cada lote, rodar só `node validar-banco.js` e `python3 revisao.py --novas`. `testes.py` completo só no fim.
+- Fazer as animações em lote; a cada lote, rodar só `node validar-banco.js` e `python3 revisao.py --novas`. `testes.py --mudou` no meio; completo só no fim.
 
 ## Qualidade
 - Mexeu em peça ou arquivo de cenas sem querer mudar o visual → `node catalogo_cenas.js` antes e depois: a impressão digital tem de ser a mesma.
 - Arquivo novo de figuras: registrar em `quizzes.js` (lista de cada quiz; o `sw.js` lê dali) e em `gerar_readme.py`.
+
+## Testes
+- Teste novo de navegador: `from navegador import abrir, B` e `b = abrir(p)` (não recopiar o `launch`).
+- Arquivo sem teste ligado: acrescentar a regra em `testes_mudou.py` (`REGRAS`).
