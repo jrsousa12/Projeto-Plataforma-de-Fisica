@@ -47,6 +47,7 @@ def escolher(arquivos):
         if re.match(r'^build/t_\w+\.py$', arq): por([nome], arq); continue
         regra = next((ts for pad, ts in REGRAS if re.search(pad, arq)), 'nenhuma')
         if regra is TODOS: return None, {'todos': arq}
+        if regra == []: continue   # textos: nenhum teste
         cit = [] if nome == 'index.html' else citam(nome)
         if regra == 'nenhuma': regra = [] if arq.startswith('build/') or cit else BASICOS
         por(regra + cit, arq)

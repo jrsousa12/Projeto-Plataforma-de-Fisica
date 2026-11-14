@@ -4,6 +4,7 @@
 2. Escreva as questões **com suas palavras**, baseadas numa página de `fontes_confiaveis.json`. Cada questão precisa de:
    - `fonte`: `url` (https, de um site da lista), `titulo`, `conferido_em`, `base` (o que foi usado) e `verificar` (palavras-chave que existem na página).
    - Cálculo (`"c": 1`): bloco `calc` com `vars` (valores com unidade), `expr`, `expr2` (outro caminho de conta) e `unidade` da resposta.
+   - Alternativas do cálculo: deixe `"o": "auto"` e rode `python3 novas.py distratores arquivo.json`. O motor grava as 4 alternativas, o gabarito (`a`) e a frase de cada errada (`x`), a partir de erros típicos: T final no lugar de ΔT, unidade não convertida, resposta no SI, multiplicou em vez de dividir, potência de 10. Confira as frases antes do `aplicar`.
    - Animação: `"an": "chave"` (cena existente ou nova) **ou** `"animacao": {"decisao": "nao_aplica", "motivo": "..."}`.
 3. `python3 novas.py verificar [--online]` confere tudo e escreve `novas/relatorio.md`. Sai com erro se:
    - a fonte não é de site confiável, falta campo, ou o texto copia a fonte;

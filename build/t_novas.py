@@ -40,6 +40,21 @@ JS = ("const vm=require('vm'),fs=require('fs');const w={matchMedia:()=>({matches
 r = subprocess.run(["node", "-e", JS, json.dumps(ents, ensure_ascii=False)], capture_output=True, text=True)
 ck("conceito: desenho registra as 4 cenas", r.stdout.strip() == "4")
 
+# distratores automáticos: 3 erradas diferentes da certa e entre si, cada uma com frase; o verificar aceita
+import novas_distratores as DS
+ex = json.load(open("exemplos/molde_dilatacao.json", encoding="utf-8"))["questoes"][0]
+o, a_, x = DS.gerar(ex); vals = [novas.opcao_num(t)[0] for t in o]
+ck("distratores: certa na posição a", novas.mesmo(vals[a_], 4.2, 1e-6))
+ck("distratores: 4 valores diferentes", len({round(v, 9) for v in vals}) == 4)
+ck("distratores: uma frase por errada", sorted(x) == sorted(str(i) for i in range(4) if i != a_))
+ck("distratores: T final no lugar de ΔT", any("temperatura final" in f for f in x.values()))
+km = {"q": "72 km em 2 h", "calc": {"vars": {"d": "72 km", "t": "2 h"}, "expr": "d/t", "unidade": "m/s"}}
+ck("distratores: unidade não convertida", any("converter" in f for f in DS.gerar(km)[2].values()))
+cal = {"q": "200 g aquecidos 30 °C", "calc": {"vars": {"m": "200 g", "c": "1 cal/g·°C", "dT": "30 °C"}, "expr": "m*c*dT", "unidade": "cal"}}
+ck("distratores: unidades que combinam não viram erro", not any("Não converteu" in f for f in DS.gerar(cal)[2].values()))
+for t in ("4,2 × 10⁻⁷ m", "25 200 J", "0,0042 mm"): ck(f"formatar lê de volta {t}", DS.formatar(novas.opcao_num(t)[0], t.split()[-1]) == t)
+d = dict(copy.deepcopy(ex), o=o, a=a_, x=x); R = novas.Rel(); novas.checar_calculo(d, "x", R); ck("distratores: checar_calculo sem erro", not R.erros)
+
 # comandos: verificar (sem gravar relatório) e auditar --estrito
 arqs = sorted(glob.glob("novas/*.json"))
 with contextlib.redirect_stdout(io.StringIO()): R, _ = novas.verificar(arqs[:1], salvar=False)

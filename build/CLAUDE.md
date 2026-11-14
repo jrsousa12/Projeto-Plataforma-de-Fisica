@@ -3,7 +3,7 @@
 Passo a passo das questões: `NOVAS.md`. Aqui ficam só as regras para gastar pouco e manter a qualidade.
 
 ## Ordem de decisão (da mais barata para a mais cara)
-1. **Cálculo** → molde (`"animacao": {"decisao": "molde", ...}`). Não escrever desenho.
+1. **Cálculo** → molde (`"animacao": {"decisao": "molde", ...}`). Não escrever desenho. Alternativas: `"o": "auto"` + `novas.py distratores` (não escrever erradas à mão).
 2. **Conceito que cabe num molde de conceito** → `"animacao": {"decisao": "conceito", "molde": ...}` (só textos; ver abaixo).
 3. **Conceito parecido com cena existente** → reaproveitar com `"an": "chave"` (o `verificar` sugere as parecidas).
 4. **Cena nova** → montar com as peças do kit; desenho cru (SVG à mão) só para o que o kit não tem.
