@@ -73,7 +73,8 @@ Motor = script que faz o trabalho pesado e devolve só um resumo curto. Criar qu
 - **Extrator de dados**: exporta só o pedaço necessário (ex.: JSON de um banco), em vez de ler o arquivo inteiro.
 - **Correção em lote**: acha e corrige um mesmo erro em todos os arquivos de uma vez.
 - **Gerados automáticos**: versão, tabelas do README, listas; nunca editar à mão (anotar na seção 0).
-- **Testes seletivos**: rodar só os testes ligados ao que mudou durante a tarefa; todos só no fim.
+- **Testes guardados**: todo teste criado numa tarefa vira arquivo permanente (um por assunto, ex.: `testes/t_<assunto>`), nunca descartável. Antes de criar, procurar um teste existente e ampliá-lo; não reescrever testes que já existem.
+- **Testes seletivos**: um mapa "arquivo alterado → testes ligados" escolhe só os testes fundamentais da tarefa (incluído ou modificado); teste novo entra no mapa na hora. Suíte completa só no fim da tarefa ou antes de publicar.
 - **Ajudantes comuns de teste**: abrir navegador, simular serviço externo etc. num só módulo usado por todos os testes.
 - **Revisão em lote**: capturas/relatórios de muitos itens de uma vez, em vez de um por um.
 - **Memória do projeto**: listas de ideias e pendências (`IDEIAS.md`, `NOTAS.md`) para não redescobrir decisões.

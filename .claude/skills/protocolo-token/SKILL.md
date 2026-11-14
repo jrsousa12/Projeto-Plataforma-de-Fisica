@@ -51,7 +51,8 @@ Mostrar a lista ao dono e **propor** (não executar) a divisão de cada um, ou r
 
 1. Listar os scripts que o projeto já tem (pasta de build/ferramentas, `package.json` "scripts", `Makefile`) e registrá-los em "Comandos úteis" da seção 0, com uma frase cada.
 2. Comparar com os tipos da seção 8 do modelo e com as tarefas que se repetem no projeto (ver histórico do git e notas do dono).
-3. **Propor** (não criar) os motores que faltam, em lista curta: o que faria, quanto trabalho/tokens poupa. Criar só os que o dono aprovar, já pequenos e testados.
+3. Testes: ver se existem testes guardados por assunto e um jeito de rodar só os ligados ao que mudou; se faltar, incluir na proposta.
+4. **Propor** (não criar) os motores que faltam, em lista curta: o que faria, quanto trabalho/tokens poupa. Criar só os que o dono aprovar, já pequenos e testados.
 
 ## Passo 4 — Levar o comando junto
 

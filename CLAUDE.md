@@ -109,7 +109,8 @@ Motor = script que faz o trabalho pesado e devolve só um resumo curto. Criar qu
 - **Extrator**: `node build/dump_banco.js` (bancos em JSON); `build/lista_quizzes.py`.
 - **Correção em lote**: `build/eqaudit.js`, `build/eqcheck.js`, `build/corrigir_eq.py` (frações).
 - **Gerados**: `build/versao.py` (`sw.js`) e `build/gerar_readme.py` (README); não editar à mão.
-- **Testes seletivos**: `python3 build/testes.py --mudou` (escolha em `build/testes_mudou.py`).
+- **Testes guardados**: todo teste criado numa tarefa fica salvo em `build/t_<assunto>.py` (estrutura em `build/navegador.py`); antes de criar, procurar um `t_*.py` do assunto e ampliá-lo. Nunca teste descartável nem repetido.
+- **Testes seletivos**: `python3 build/testes.py --mudou` roda só os testes ligados ao que mudou (mapa `REGRAS` em `build/testes_mudou.py`); teste novo entra no mapa na hora. Todos (`testes.py`) só no fim.
 - **Ajudantes de teste**: `build/navegador.py` (Chromium), `build/mockfb.py` (Firebase simulado).
 - **Revisão em lote**: `build/revisao.py`, `build/captura_real.py ID...`.
 - **Memória**: `build/IDEIAS.md` e `NOTAS.md` (Pendências).
