@@ -54,7 +54,7 @@ Este projeto prioriza a economia de contexto e tokens. Toda interação deve seg
 - **Prefira Edições Cirúrgicas**: Sempre que possível, edite o arquivo existente usando as ferramentas de edição de linha, em vez de reescrevê-lo por completo. Isso evita a geração de tokens desnecessários.
 - **Leitura Sob Demanda**: Não leia arquivos inteiros de forma indiscriminada. Leia apenas os arquivos (ou trechos) diretamente relevantes para a tarefa atual, usando busca (`grep`) e leitura por intervalo de linhas. O usuário pode indicar arquivos com `@nome_do_arquivo`. Evite varrer o projeto em busca de contexto que não será usado.
 - **Plano Antes do Código**: Para tarefas complexas, descreva o plano em passos lógicos (ou um diagrama simples) e valide com o usuário antes de tocar nos arquivos. Isso reduz drasticamente o consumo de tokens em retrabalho.
-- **Motores para tarefas repetitivas**: se uma tarefa se repete (gerar, converter, conferir ou corrigir em lote), criar um script (motor) que a faça, em vez de refazê-la à mão a cada vez; depois, só rodar o motor e ler o resumo da saída. Ex.: `build/novas.py`.
+- **Motores para tarefas repetitivas**: se uma tarefa se repete (gerar, converter, conferir ou corrigir em lote), criar um script (motor) que a faça, em vez de refazê-la à mão a cada vez; depois, só rodar o motor e ler o resumo da saída. Ex.: `build/novas.py` (lista na seção 8).
 
 ## 4. Higiene de Comandos e Saída de Terminal
 
@@ -74,6 +74,7 @@ Você é responsável por monitorar ativamente o crescimento do contexto durante
 - Ao perceber que um arquivo em edição se aproxima ou ultrapassa **300 linhas**.
 - Quando a conversa sobre uma mesma tarefa ficar longa e o histórico começar a acumular muita informação repetida ou já resolvida.
 - Quando notar que está relendo arquivos ou trechos que já leu nesta sessão sem necessidade.
+- Quando a mesma tarefa for feita à mão pela 2ª ou 3ª vez (propor um motor, seção 8).
 
 ### Como alertar
 - Seja breve e direto. Nada de parágrafos longos.
@@ -95,3 +96,20 @@ Nunca prossiga editando um arquivo acima do limite sem antes **perguntar** se o 
 
 - Este `CLAUDE.md` deve permanecer **abaixo de 200 linhas**. Se crescer além disso, mova seções específicas para os `CLAUDE.md` dos subdiretórios.
 - Revise este arquivo a cada mudança estrutural relevante no projeto (nova stack, novo módulo, novo fluxo de build).
+
+## 8. Motores e Automações
+
+Motor = script que faz o trabalho pesado e devolve só um resumo curto. Criar quando a tarefa se repete; propor ao dono antes (plano aprovado) e manter cada motor pequeno (seção 1). Usar o que já existe antes de ler arquivos:
+
+- **Build único**: `build/tudo.sh` (monta, versiona, valida, gera catálogo e README).
+- **Validador/auditor**: `node validar-banco.js`; `python3 build/novas.py auditar --estrito`.
+- **Gerador de questões**: `build/novas.py` (fonte, cálculo, unidades, distratores, animação).
+- **Moldes e kit**: `figuras-anim-kit.js` + moldes (`build/CLAUDE.md`); nunca recopiar peças.
+- **Catálogo**: `build/CENAS.md` (gerado por `build/catalogo_cenas.js`): achar cena sem abrir `figuras-animq-*.js`.
+- **Extrator**: `node build/dump_banco.js` (bancos em JSON); `build/lista_quizzes.py`.
+- **Correção em lote**: `build/eqaudit.js`, `build/eqcheck.js`, `build/corrigir_eq.py` (frações).
+- **Gerados**: `build/versao.py` (`sw.js`) e `build/gerar_readme.py` (README); não editar à mão.
+- **Testes seletivos**: `python3 build/testes.py --mudou` (escolha em `build/testes_mudou.py`).
+- **Ajudantes de teste**: `build/navegador.py` (Chromium), `build/mockfb.py` (Firebase simulado).
+- **Revisão em lote**: `build/revisao.py`, `build/captura_real.py ID...`.
+- **Memória**: `build/IDEIAS.md` e `NOTAS.md` (Pendências).
