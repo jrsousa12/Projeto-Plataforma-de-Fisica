@@ -2,8 +2,7 @@
 (function(){"use strict";
 var N=window.AN,t_=N.t;
 var RC="var(--acc)",NG="var(--neg)";
-function ray(x1,y1,x2,y2,cl,col){var a=Math.atan2(y2-y1,x2-x1),h=7,p=function(r,b){return(x2-r*Math.cos(a+b)).toFixed(1)+" "+(y2-r*Math.sin(a+b)).toFixed(1)};
- return'<g class="'+(cl||"")+'"><line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="'+(col||RC)+'" stroke-width="2.6"/><path d="M'+x2+' '+y2+'L'+p(h,.45)+'L'+p(h,-.45)+'Z" fill="'+(col||RC)+'"/></g>'}
+var ray=N.raio; /* kit: figuras-anim-kit.js */
 function W(d){return'<path d="'+d+'" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>'}
 function bat(x,yc){return'<line x1="'+(x-12)+'" y1="'+(yc-6)+'" x2="'+(x+12)+'" y2="'+(yc-6)+'" stroke="currentColor" stroke-width="3"/><line x1="'+(x-7)+'" y1="'+(yc+6)+'" x2="'+(x+7)+'" y2="'+(yc+6)+'" stroke="currentColor" stroke-width="3"/>'+t_(x-22,yc-8,"+",{s:13,a:"end"})+t_(x-22,yc+14,"−",{s:13,a:"end"})}
 function lamp(x,y){return'<circle cx="'+x+'" cy="'+y+'" r="13" fill="var(--acc)" fill-opacity=".18" stroke="currentColor" stroke-width="2.2"/><line x1="'+(x-9)+'" y1="'+(y-9)+'" x2="'+(x+9)+'" y2="'+(y+9)+'" stroke="currentColor" stroke-width="2"/><line x1="'+(x-9)+'" y1="'+(y+9)+'" x2="'+(x+9)+'" y2="'+(y-9)+'" stroke="currentColor" stroke-width="2"/>'}

@@ -2,9 +2,8 @@
 (function(){"use strict";
 var N=window.AN,t_=N.t,PI=Math.PI;
 var RC="var(--acc)",NG="var(--neg)";
-function ray(x1,y1,x2,y2,cl,col,dash){var a=Math.atan2(y2-y1,x2-x1),h=7,mx=x2,my=y2,p=function(r,b){return(mx-r*Math.cos(a+b)).toFixed(1)+" "+(my-r*Math.sin(a+b)).toFixed(1)};
- return'<g class="'+(cl||"")+'"><line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="'+(col||RC)+'" stroke-width="2.6"'+(dash?' stroke-dasharray="5 4"':'')+'/><path d="M'+mx+' '+my+'L'+p(h,.45)+'L'+p(h,-.45)+'Z" fill="'+(col||RC)+'"/></g>'}
-function dsh(x1,y1,x2,y2,cl){return'<g class="'+(cl||"")+'"><line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="currentColor" stroke-opacity=".5" stroke-dasharray="4 3"/></g>'}
+var ray=N.raio; /* kit: figuras-anim-kit.js */
+var dsh=N.tracejado; /* kit: figuras-anim-kit.js */
 function dot(x,y,r,fill){return'<circle cx="'+x+'" cy="'+y+'" r="'+(r||5)+'" fill="'+(fill||"currentColor")+'"/>'}
 
 /* ---- queda livre: posições a cada segundo ---- */

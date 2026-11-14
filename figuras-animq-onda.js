@@ -2,8 +2,8 @@
 (function(){"use strict";
 var N=window.AN,t_=N.t,PI=Math.PI;
 function C(key,alt,H,s,tr,T,caps,times){N.scene(key,alt,H,s,tr,T,caps,times)}
-function sinp(x0,x1,y,A,lam,ph,st){var p="",x;st=st||3;for(x=x0;x<=x1+.01;x+=st)p+=(x===x0?"M":"L")+x.toFixed(1)+" "+(y-A*Math.sin(2*PI*(x-x0)/lam+(ph||0))).toFixed(1);return p}
-function env(x0,L,y,A,fn){var p="",i,n=60;for(i=0;i<=n;i++){var x=x0+L*i/n;p+=(i?"L":"M")+x.toFixed(1)+" "+(y-A*fn(i/n)).toFixed(1)}return p}
+var sinp=N.onda; /* kit: figuras-anim-kit.js */
+var env=N.curva; /* kit: figuras-anim-kit.js */
 var FL='style="transform-box:fill-box;transform-origin:50% 50%"';
 
 /* ---- som: onda longitudinal ---- */

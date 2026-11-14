@@ -2,9 +2,8 @@
 (function(){"use strict";
 var N=window.AN,t_=N.t,PI=Math.PI;
 var RC="var(--acc)";
-function ray(x1,y1,x2,y2,cl,col,dash){var a=Math.atan2(y2-y1,x2-x1),h=7,mx=(x1+x2)/2,my=(y1+y2)/2,p=function(r,b){return(mx+r*Math.cos(a+b)).toFixed(1)+" "+(my+r*Math.sin(a+b)).toFixed(1)};
- return'<g class="'+(cl||"")+'"><line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="'+(col||RC)+'" stroke-width="2.4"'+(dash?' stroke-dasharray="5 4"':'')+'/><path d="M'+p(h,0)+'L'+p(h,2.6)+'L'+p(h,-2.6)+'Z" fill="'+(col||RC)+'"/></g>'}
-function dsh(x1,y1,x2,y2,cl){return'<g class="'+(cl||"")+'"><line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="currentColor" stroke-opacity=".5" stroke-dasharray="4 3"/></g>'}
+function ray(x1,y1,x2,y2,cl,col,dash){return N.raio(x1,y1,x2,y2,cl,col,dash,1)} /* kit: ponta no meio */
+var dsh=N.tracejado; /* kit: figuras-anim-kit.js */
 function pt(x,y,lab,dy){return'<circle cx="'+x+'" cy="'+y+'" r="3.5" fill="currentColor"/>'+t_(x,y+(dy||16),lab,{s:11})}
 
 /* ---- reflexão no espelho plano ---- */

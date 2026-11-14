@@ -4,8 +4,8 @@
 var N=window.AN;if(!N)return;
 var t_=N.t,HOT="var(--f-calor)",COLD="var(--f-agua)";
 var DATA=window.AN_AUTO||[];
-function flame(x,y,cl){return'<g class="'+cl+'"><path d="M'+x+' '+y+'c-9-9-9-17-2-26 1 6 5 8 7 13 3-4 2-9 1-12 8 8 11 17 3 25-3 4-6 4-9 0z" fill="'+HOT+'" stroke="#a63a0f" stroke-width="1.2"/><path d="M'+x+' '+(y-2)+'c-4-4-3-9 0-13 2 4 5 6 1 13z" fill="#facc15"/></g>'}
-function arr(x1,y1,x2,y2,c,cl){var a=Math.atan2(y2-y1,x2-x1),h=7;return'<g class="'+cl+'"><line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="'+c+'" stroke-width="3" stroke-linecap="round"/><path d="M'+x2+' '+y2+'L'+(x2-h*Math.cos(a-.5))+' '+(y2-h*Math.sin(a-.5))+'L'+(x2-h*Math.cos(a+.5))+' '+(y2-h*Math.sin(a+.5))+'z" fill="'+c+'"/></g>'}
+var flame=N.chama; /* kit: figuras-anim-kit.js */
+var arr=N.seta; /* kit: figuras-anim-kit.js */
 /* desenho pequeno (altura até 84) que ilustra o tipo de conta; cada molde é opcional */
 function motivo(m,T,tr){var s="";
  if(m==="dilatacao"){s+='<rect x="40" y="26" width="14" height="40" fill="#9aa6b8" stroke="currentColor" stroke-width="2"/><rect x="56" y="38" width="170" height="18" rx="3" fill="#9aa6b8" fill-opacity=".55" stroke="currentColor" stroke-width="2"/><rect class="ex" x="226" y="38" width="30" height="18" rx="3" fill="'+HOT+'" fill-opacity=".7" stroke="currentColor" stroke-width="2" style="transform-box:fill-box;transform-origin:0 50%"/>'+flame(140,78,"fl");tr.push(N.sc(".ex",T,[[0,.05,1],[2,.05,1],[9,1,1]]))}

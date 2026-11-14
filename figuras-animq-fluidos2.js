@@ -1,7 +1,7 @@
 /* Mecânica dos Fluidos: animações novas (densidade, pressão, atmosfera). */
 (function(){"use strict";
 var N=window.AN,t_=N.t,PI=Math.PI,W="var(--f-agua)",RED="var(--f-verm)",AMB="var(--f-amar)";
-function arr(x1,y1,x2,y2,c,cl,w){var a=Math.atan2(y2-y1,x2-x1),h=7;return'<g class="'+(cl||"")+'"><line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="'+c+'" stroke-width="'+(w||3)+'" stroke-linecap="round"/><path d="M'+x2+' '+y2+'L'+(x2-h*Math.cos(a-.5))+' '+(y2-h*Math.sin(a-.5))+'L'+(x2-h*Math.cos(a+.5))+' '+(y2-h*Math.sin(a+.5))+'z" fill="'+c+'"/></g>'}
+var arr=N.seta; /* kit: figuras-anim-kit.js */
 function R(x,y,w,h,f,o,cl,st){return'<rect'+(cl?' class="'+cl+'"':'')+' x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="3" fill="'+f+'" fill-opacity="'+(o==null?1:o)+'" stroke="currentColor" stroke-width="2"'+(st?' style="'+st+'"':'')+'/>'}
 function glass(x,y,w,h){return'<path d="M'+x+' '+y+'V'+(y+h-6)+'a6 6 0 0 0 6 6h'+(w-12)+'a6 6 0 0 0 6-6V'+y+'" fill="none" stroke="currentColor" stroke-width="2.4"/>'}
 function wat(x,y,w,h,cl,f,o){return'<rect'+(cl?' class="'+cl+'"':'')+' x="'+(x+1.5)+'" y="'+y+'" width="'+(w-3)+'" height="'+h+'" rx="3" fill="'+(f||W)+'" fill-opacity="'+(o||.5)+'" style="transform-box:fill-box;transform-origin:50% 100%"/>'}
