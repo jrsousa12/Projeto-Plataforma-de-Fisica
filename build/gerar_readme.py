@@ -32,6 +32,7 @@ REGRAS = [  # (padrões, descrição); arquivos com a mesma descrição aparecem
  (["fx.js"], "Som, vibração e confete"),
  (["eq.js"], "Mostra divisões \"a / b\" como fração empilhada (explicações, dicas, cartões e animações)"),
  (["manifest.webmanifest", "sw.js", "icon-*.png", "icon.svg"], "Instalação no celular e uso sem internet"),
+ (["CLAUDE.md"], "Regras para o Claude Code neste projeto (economia de tokens, fontes, testes)"),
 ]
 def arquivos():
     r = []

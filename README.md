@@ -33,6 +33,7 @@ Quiz de Física (ensino médio) que funciona direto no navegador, sem instalar n
 | `fx.js` | Som, vibração e confete |
 | `eq.js` | Mostra divisões "a / b" como fração empilhada (explicações, dicas, cartões e animações) |
 | `icon-192.png`, `icon-512.png`, `icon.svg`, `manifest.webmanifest`, `sw.js` | Instalação no celular e uso sem internet |
+| `CLAUDE.md` | Regras para o Claude Code neste projeto (economia de tokens, fontes, testes) |
 <!-- ARQUIVOS:FIM -->
 
 ## Publicar no GitHub Pages
