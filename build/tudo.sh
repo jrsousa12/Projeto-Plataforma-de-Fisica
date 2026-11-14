@@ -8,4 +8,5 @@ python3 versao.py
 cd "$AQUI/.." && node validar-banco.js | tail -2
 cd "$AQUI" && python3 novas.py auditar --estrito | tail -2
 python3 t_eq.py | tail -2
+node catalogo_cenas.js
 python3 gerar_readme.py
