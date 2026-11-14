@@ -20,3 +20,13 @@ Gerar a partir do banco um simulado em PDF com gabarito, ou exportar uma seleç�
 1. ~~**Distratores automáticos (cálculo):**~~ (feito em 14/11/2026: `novas.py distratores`) o motor gera as 3 alternativas erradas a partir de erros típicos (unidade não convertida, potência de 10, divisão invertida, T final no lugar de ΔT), já com a frase do `x` e a conta conferida. Módulo novo `novas_distratores.py` + teste em `t_novas.py`.
 2. ~~**Testes só do que mudou:**~~ (feito) `testes.py --mudou` lê `git diff` e roda só os `t_*.py` ligados aos arquivos alterados (~1–3 min em vez de ~15); o completo fica para o fim da tarefa. Ajudante comum de navegador para os testes (28 arquivos repetem a abertura do Chromium).
 3. **Figuras estáticas:** peça de gráfico com eixos (`gx`/`gy`/`path` copiados 5× em `figuras-fenomeno-*.js`) no kit; fazer quando houver figuras novas.
+
+## Importar questões de Word (docx) — retomar a partir de 20/11/2026 (apresentação do projeto)
+> Conversa de 14/11/2026. Nada implementado; só o plano.
+- **Medição do banco (14/11):** 717 questões, 563 (79%) com animação; ~571 caracteres ≈ 180 tokens por questão; animação ≈ 200 tokens (manual) ou ≈ 100 (motor).
+- **Estimativa p/ 1000 questões:** criar do zero ~2–6 milhões de tokens (conforme animação); pelo motor ~1–2 milhões; **docx + conversor ~20–50 mil** (quase tudo para criar o conversor, uma vez só).
+- **Ideia central:** um script Python (`python-docx`, já instalado) converte o Word direto para o formato do banco, sem as questões passarem pelo Claude, que só lê o relatório de erros. Planilha (xlsx/Google Planilhas) é alternativa ainda mais simples.
+- **Modelo fixo no Word:** `1. enunciado` / `a) … d)` / `Gabarito:` / `Dica:` / `Explicação:`; assunto e nível pelo título da seção (ex.: `## Eletrodinâmica – nível 1`). Explicação de cada alternativa errada (`x`) escrita pelo professor sai de graça; se o Claude completar, ~50 tokens/questão.
+- **Imagens (modelo misto):** o conversor salva toda imagem como arquivo (`img/<id>.png`, ~0 token); exige ajuste pequeno no quiz (`script.js` só usa SVG via campo `f`) e no `sw.js`. Só as marcadas `[redesenhar]` viram SVG no estilo da plataforma (~2–3 mil tokens cada; leve e com modo escuro).
+- **Cuidados:** fórmulas do editor de equações do Word dão mais trabalho (texto simples é melhor); texto dentro de imagem (escaneada) não é lido pelo conversor.
+- **Próximo passo:** montar plano curto do conversor (arquivos, modelo do Word, teste) e validar com o dono antes de codar.

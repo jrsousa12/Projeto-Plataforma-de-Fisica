@@ -13,6 +13,7 @@ Este projeto prioriza a economia de contexto e tokens. Toda interação deve seg
   - Nomes e comentários em português; arquivos com prefixo por área (`perguntas-*`, `quiz-*`, `figuras-*`).
   - Novo quiz: registrar em `quizzes.js` e rodar `node validar-banco.js`.
   - Melhorias planejadas (lista numerada): `build/IDEIAS.md`; o que vem depois de cada uma: `NOTAS.md` (Pendências).
+  - **Lembrete (a partir de 20/11/2026):** ao mostrar o projeto, lembrar o dono da ideia "Importar questões de Word (docx)" em `build/IDEIAS.md` (conversor + imagens) para dar andamento.
   - Animações: antes de criar ou editar, ler `build/CLAUDE.md` (molde → reaproveitar → kit `figuras-anim-kit.js`; nunca recopiar peças).
   - `sw.js` (versão) e a tabela do README são gerados por `build/versao.py` e `build/gerar_readme.py`; não editar à mão.
   - Público: o dono é professor e não programa; explicar em português simples.
