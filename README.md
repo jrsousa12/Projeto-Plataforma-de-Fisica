@@ -133,7 +133,7 @@ Depois de editar um `perguntas-*.js`, rode `node validar-banco.js` (precisa do N
 
 A cada envio, dois fluxos rodam sozinhos:
 
-- **Validar quiz:** confere a sintaxe dos arquivos, os bancos de perguntas e a tabela de arquivos deste README e, em seguida, roda os testes de navegador (`build/t_*.py`, cerca de 15 minutos), que abrem o quiz no Chromium e conferem telas, modos, animações e a nuvem simulada. Um X vermelho mostra qual passo falhou.
+- **Validar quiz:** confere a sintaxe dos arquivos, os bancos de perguntas e a tabela de arquivos deste README e, em seguida, roda os testes de navegador (`build/t_*.py`, cerca de 5 minutos, 4 ao mesmo tempo), que abrem o quiz no Chromium e conferem telas, modos, animações e a nuvem simulada. Um X vermelho mostra qual passo falhou.
 - **Atualizar versão do app:** só no `main`. Recalcula a versão do cache do `sw.js` (para os celulares baixarem a versão nova) e a tabela de arquivos do README. Se algo mudou, grava um commit automático "Atualiza a versão do app". Assim, não é preciso rodar `build/tudo.sh` antes de enviar arquivos pelo site do GitHub.
 
-Para rodar os testes no seu computador: `pip install playwright pillow`, `python -m playwright install chromium` e `cd build && python3 testes.py`.
+Para rodar os testes no seu computador: `pip install playwright pillow`, `python -m playwright install chromium` e `cd build && python3 testes.py`. Para conferir só o que foi alterado, mais rápido: `python3 build/rapido.py`.

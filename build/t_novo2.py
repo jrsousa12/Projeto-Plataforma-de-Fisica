@@ -1,5 +1,6 @@
+import os as _os;P=_os.environ.get('PORTA','8123');PFB=_os.environ.get('PORTA_FB','8124')  # portas do servidor de teste (run2.sh)
 from playwright.sync_api import sync_playwright
-B='http://localhost:8123/'
+B='http://localhost:'+P+'/'
 bad=[]
 def ck(c,m):
     if not c:bad.append(m)

@@ -1,9 +1,12 @@
+import os as _os;P=_os.environ.get('PORTA','8123');PFB=_os.environ.get('PORTA_FB','8124')  # portas do servidor de teste (run2.sh)
 from playwright.sync_api import sync_playwright
-B='http://localhost:8123/'
+B='http://localhost:'+P+'/'
 with sync_playwright() as p:
     b=p.chromium.launch(executable_path=__import__('os').environ.get('CHROME_PATH') or None,args=['--no-sandbox'])
     errs=[];tot=0;bad=[]
-    for q in tuple(__import__("lista_quizzes").ids()):
+    # QUIZ=termo,mec limita aos quizzes indicados (o build/rapido.py usa isso); sem QUIZ, testa todos
+    so=[x for x in __import__("os").environ.get("QUIZ","").split(",") if x]
+    for q in [x for x in __import__("lista_quizzes").ids() if not so or x in so]:
         pg=b.new_page(viewport={'width':400,'height':820})
         pg.on('pageerror',lambda e:errs.append(str(e)));pg.on('console',lambda m: errs.append(m.text) if m.type=='error' else None)
         pg.goto(B+'index.html?q='+q+'#debug');pg.wait_for_timeout(500)

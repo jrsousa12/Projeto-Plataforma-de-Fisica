@@ -1,6 +1,7 @@
+import os as _os;P=_os.environ.get('PORTA','8123');PFB=_os.environ.get('PORTA_FB','8124')  # portas do servidor de teste (run2.sh)
 import json
 from playwright.sync_api import sync_playwright
-B='http://localhost:8123/'
+B='http://localhost:'+P+'/'
 with sync_playwright() as p:
     b=p.chromium.launch(executable_path=__import__('os').environ.get('CHROME_PATH') or None,args=['--no-sandbox']);errs=[]
     def novo(ctx=None):

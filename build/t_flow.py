@@ -1,3 +1,4 @@
+import os as _os;P=_os.environ.get('PORTA','8123');PFB=_os.environ.get('PORTA_FB','8124')  # portas do servidor de teste (run2.sh)
 import html,sys,os
 from playwright.sync_api import sync_playwright
 def play(pg,fr,btn,perfect,tag,errs):
@@ -29,7 +30,7 @@ def play(pg,fr,btn,perfect,tag,errs):
     print('  após botões, erros:',errs)
 with sync_playwright() as p:
     b=p.chromium.launch(executable_path=__import__('os').environ.get('CHROME_PATH') or None,args=['--no-sandbox'])
-    for name,url,iframe in (('http','http://localhost:8123/index.html?q=eletro',False),('arquivo único','file://'+os.path.abspath('saida/quiz-arquivo-unico.html')+'?q=eletro',False),('prévia (iframe)','file://'+os.path.abspath('wrap_bundle.html'),True)):
+    for name,url,iframe in (('http','http://localhost:'+P+'/index.html?q=eletro',False),('arquivo único','file://'+os.path.abspath('saida/quiz-arquivo-unico.html')+'?q=eletro',False),('prévia (iframe)','file://'+os.path.abspath('wrap_bundle.html'),True)):
         if iframe:
             s=open('saida/quiz-arquivo-unico.html',encoding='utf-8').read()
             open('wrap_bundle.html','w',encoding='utf-8').write('<!doctype html><iframe id="f" style="width:390px;height:800px" sandbox="allow-scripts allow-modals allow-popups" srcdoc="'+html.escape(s,quote=True)+'"></iframe>')

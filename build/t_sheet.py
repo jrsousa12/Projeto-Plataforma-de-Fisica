@@ -1,9 +1,10 @@
+import os as _os;P=_os.environ.get('PORTA','8123');PFB=_os.environ.get('PORTA_FB','8124')  # portas do servidor de teste (run2.sh)
 from playwright.sync_api import sync_playwright
 with sync_playwright() as p:
     b=p.chromium.launch(executable_path=__import__('os').environ.get('CHROME_PATH') or None,args=['--no-sandbox'])
     pg=b.new_page(viewport={'width':800,'height':1000}); errs=[]
     pg.on('pageerror',lambda e:errs.append(str(e)))
-    pg.goto('http://localhost:8123/index.html?q=fluidos'); pg.wait_for_timeout(400)
+    pg.goto('http://localhost:'+P+'/index.html?q=fluidos'); pg.wait_for_timeout(400)
     pg.click('#bnav [data-v=lista]') if pg.locator('#bnav [data-v=lista]').count() else pg.evaluate("document.getElementById('sopen').click()")
     pg.wait_for_timeout(300)
     pg.select_option('#sn','15'); pg.select_option('#sfm','prova'); pg.fill('#sh','Escola ATL · 1º ano A'); pg.wait_for_timeout(200)
