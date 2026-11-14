@@ -172,21 +172,23 @@
       });
       return r;
     },
-    /* carrega uma lista de scripts em ordem; devolve uma Promise */
+    /* carrega uma lista de scripts; devolve uma Promise.
+       Baixa todos ao mesmo tempo, mas executa na ordem da lista (async = false). */
     carregar: function (arqs) {
-      return arqs.reduce(function (p, f) {
-        return p.then(function () {
+      return Promise.all(
+        arqs.map(function (f) {
           return new Promise(function (ok, err) {
             var s = document.createElement("script");
             s.src = f;
+            s.async = false;
             s.onload = ok;
             s.onerror = function () {
               err(new Error(f));
             };
             document.head.appendChild(s);
           });
-        });
-      }, Promise.resolve());
+        })
+      );
     },
   };
   if (typeof module !== "undefined" && module.exports) module.exports = Q;
