@@ -44,6 +44,10 @@ Todo arquivo novo do app entra em: `index.html` (`<script>`, na ordem certa), `s
 
 ## Pendências
 
+- **Depois do item 1 do `build/IDEIAS.md`** (distratores automáticos), nesta ordem:
+  1. Deixar o `build/t_sessao.py` confiável: falhou 1 vez em 7 sem mudança (confere a pergunta antes de a página terminar de carregar; esperar o elemento em vez de tempo fixo).
+  2. Item 3 do `IDEIAS.md` (peça de gráfico com eixos no kit) só quando houver figuras estáticas novas.
+
 - Remoto mudou para `jrsousa12/Projeto-Plataforma-de-Fisica`; atualizar o endereço do `origin` quando o dono quiser.
 - Rodar `/fewer-permission-prompts` (só o dono pode).
 
