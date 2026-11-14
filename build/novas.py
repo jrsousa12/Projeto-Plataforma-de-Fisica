@@ -18,6 +18,7 @@ from novas_checagens import *
 from novas_fonte import *
 from novas_animacao import *
 from novas_moldes import *
+from novas_conceito import *
 
 # ----------------------------------------------------------------- comandos
 def carregar(arq):
@@ -64,6 +65,7 @@ def aplicar(arq):
         novo = dict(d); novo["id"] = f"{pre}{prox:03d}"; prox += 1
         dec = d.get("animacao") or {}
         if dec.get("decisao") == "molde": mold.append(entrada_molde(d, novo["id"], dec.get("molde", "generico"))); novo["an"] = f"calc_{novo['id']}"
+        elif dec.get("decisao") == "conceito": mold.append(entrada_conceito(d, novo["id"], dec)); novo["an"] = f"conc_{novo['id']}"
         sai.append(limpo(novo)); log.append({"id": novo["id"], "fonte": d.get("fonte"), "calc": d.get("calc"), "data": str(datetime.date.today())})
     if mold: gravar_moldes(mold)
     for d in qs: atualizar_fontes(quiz, d.get("fonte"))

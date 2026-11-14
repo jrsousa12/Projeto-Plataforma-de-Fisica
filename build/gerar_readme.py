@@ -49,6 +49,7 @@ REGRAS = [  # (padrões, descrição); arquivos com a mesma descrição aparecem
  (["figuras-anim-kit.js"], "Kit de peças comuns às animações (chama, seta, raio, tracejado, onda, curva, mola)"),
  (["figuras-anim-passos.js"], "Animações de resolução passo a passo (cena com legendas, medidores, termômetro)"),
  (["figuras-animq-auto.js"], "Desenho das animações de resolução automáticas (moldes)"),
+ (["figuras-animq-conceito.js"], "Desenho das animações de conceito automáticas (antes/depois, etapas, comparação, gráfico)"),
  (["figuras-animq-auto-dados.js"], "Dados das animações de resolução, gravados por build/novas.py (não editar à mão)"),
  (["figuras-animq-*.js"], "Animações feitas à mão para cada questão, por área"),
  (["figuras-fenomeno-*.js"], "Simulações do fenômeno (corpo em movimento + gráfico desenhado no tempo), que substituem as resoluções passo a passo"),

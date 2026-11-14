@@ -50,6 +50,7 @@ Quiz de Física (ensino médio) que funciona direto no navegador, sem instalar n
 | `figuras-anim-kit.js` | Kit de peças comuns às animações (chama, seta, raio, tracejado, onda, curva, mola) |
 | `figuras-anim-passos.js` | Animações de resolução passo a passo (cena com legendas, medidores, termômetro) |
 | `figuras-animq-auto.js` | Desenho das animações de resolução automáticas (moldes) |
+| `figuras-animq-conceito.js` | Desenho das animações de conceito automáticas (antes/depois, etapas, comparação, gráfico) |
 | `figuras-animq-auto-dados.js` | Dados das animações de resolução, gravados por build/novas.py (não editar à mão) |
 | `figuras-animq-edin.js`, `figuras-animq-eletro.js`, `figuras-animq-eletro2.js`, `figuras-animq-eletro3.js`, `figuras-animq-eletro4.js`, `figuras-animq-fluidos.js`, `figuras-animq-fluidos2.js`, `figuras-animq-mec.js`, `figuras-animq-onda.js`, `figuras-animq-optica.js`, `figuras-animq-termo.js`, `figuras-animq-termo2.js`, `figuras-animq-termo3.js` | Animações feitas à mão para cada questão, por área |
 | `figuras-fenomeno-base.js`, `figuras-fenomeno-eletro.js`, `figuras-fenomeno-mec.js`, `figuras-fenomeno-mfluidos.js`, `figuras-fenomeno-onda.js`, `figuras-fenomeno-optica.js`, `figuras-fenomeno-termo.js` | Simulações do fenômeno (corpo em movimento + gráfico desenhado no tempo), que substituem as resoluções passo a passo |

@@ -1,5 +1,5 @@
 /* Service worker: deixa o quiz funcionar sem internet depois da primeira visita. */
-var CACHE = "quiz-fisica-cae3498f";
+var CACHE = "quiz-fisica-9bc92f02";
 /* Arquivos gerais; os de cada quiz vêm da lista única em quizzes.js. */
 var BASE = [
   "./",

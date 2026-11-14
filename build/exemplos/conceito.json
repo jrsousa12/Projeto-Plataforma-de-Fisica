@@ -1,0 +1,25 @@
+{
+ "_leia": "Exemplos do bloco 'animacao' dos moldes de conceito. Na questão: \"animacao\": {\"decisao\": \"conceito\", \"molde\": ..., ...}. Linhas separadas por '|'. Usado por t_novas.py.",
+ "antes_depois": {
+  "decisao": "conceito", "molde": "antes_depois",
+  "antes": {"titulo": "Trilho a 20 °C", "texto": "comprimento L₀", "icone": "barra"},
+  "depois": {"titulo": "Trilho a 55 °C", "texto": "comprimento maior|que L₀", "icone": "barra", "escala": 1.25},
+  "legendas": ["Antes: o trilho tem comprimento L₀", "Aquecido, os átomos vibram mais|e o trilho se alonga"]
+ },
+ "etapas": {
+  "decisao": "conceito", "molde": "etapas",
+  "etapas": [{"titulo": "Gelo|a 0 °C", "icone": "gelo"}, {"titulo": "Recebe|calor", "icone": "chama"}, {"titulo": "Vira|água", "icone": "agua"}],
+  "legendas": ["O gelo está na temperatura de fusão", "Ele recebe calor da chama,|mas a temperatura não muda", "Toda a energia vai para mudar|de estado: o gelo derrete"]
+ },
+ "comparacao": {
+  "decisao": "conceito", "molde": "comparacao",
+  "a": {"titulo": "Carga positiva", "texto": "falta de elétrons", "icone": "mais"},
+  "b": {"titulo": "Carga negativa", "texto": "excesso de elétrons", "icone": "menos"},
+  "legendas": ["Corpo positivo: perdeu elétrons", "Corpo negativo: ganhou elétrons|cargas opostas se atraem"]
+ },
+ "grafico": {
+  "decisao": "conceito", "molde": "grafico",
+  "x": "tempo", "y": "temperatura", "curva": "patamar",
+  "legendas": ["A temperatura sobe enquanto o gelo esquenta", "No patamar, o calor só muda o estado:|a temperatura fica parada"]
+ }
+}

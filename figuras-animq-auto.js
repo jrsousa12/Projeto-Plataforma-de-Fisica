@@ -34,5 +34,5 @@ function build(d){var vars=d.vars||[],n=Math.min(vars.length,4),T=16,tr=[],s=mot
  c=N.cap(st.map(function(a){return a[1]}),st.map(function(a){return a[0]}),T,H);
  for(var k=1;k<st.length;k++)tr.push(N.vis(".s"+(k+1),T,st[k][0]));
  N.reg(d.key,{a:d.alt,h:H,s:s+c.s,t:tr.concat(c.t),T:T})}
-DATA.forEach(function(d){try{build(d)}catch(e){}});
+DATA.forEach(function(d){if(d.tipo==="conceito")return;try{build(d)}catch(e){}});
 })();

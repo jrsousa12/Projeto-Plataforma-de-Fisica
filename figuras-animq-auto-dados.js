@@ -1,5 +1,6 @@
 /* Dados das animações automáticas de resolução (moldes), gravados por build/novas.py: não edite à mão.
-   Cada item: {key, alt, molde, vars[], formula, subst, resultado}. O desenho fica em figuras-animq-auto.js. */
+   Cada item: {key, alt, molde, vars[], formula, subst, resultado}. O desenho fica em figuras-animq-auto.js.
+   Itens com tipo:"conceito" (moldes de conceito) são desenhados por figuras-animq-conceito.js. */
 window.AN_AUTO=/*AUTO:BEGIN*/[
 {
 "key": "calc_t106",
