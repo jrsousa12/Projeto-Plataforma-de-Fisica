@@ -1,0 +1,82 @@
+{
+ "_leia": "Ficha da área: 'calculo' = erros de conta típicos (tipo fator|inverso|soma|sem_quadrado; 'var' = nome da variável do bloco calc, em expressão regular); 'teoria' = ideias erradas comuns (palavras do enunciado que ligam a ideia). Guia: build/NOVAS.md.",
+ "calculo": [
+  {
+   "tipo": "fator",
+   "var": "^R$",
+   "valor": 2,
+   "frase": "Usou o raio de curvatura como se fosse a distância focal (f = R/2)."
+  }
+ ],
+ "teoria": [
+  {
+   "palavras": [
+    "enxerg",
+    "ver",
+    "olho",
+    "visao"
+   ],
+   "ideia": "Enxergamos porque o olho emite luz até os objetos.",
+   "por_que": "Enxergamos porque a luz que vem do objeto (emitida ou refletida) entra no olho."
+  },
+  {
+   "palavras": [
+    "cor",
+    "vermelh",
+    "azul",
+    "verde",
+    "branca"
+   ],
+   "ideia": "Um objeto vermelho tem a cor vermelha dentro dele.",
+   "por_que": "Ele reflete principalmente a luz vermelha e absorve as outras; sob luz azul parece escuro."
+  },
+  {
+   "palavras": [
+    "espelho plano",
+    "imagem",
+    "atras"
+   ],
+   "ideia": "A imagem no espelho plano fica na superfície do espelho.",
+   "por_que": "A imagem fica atrás do espelho, à mesma distância que o objeto está na frente."
+  },
+  {
+   "palavras": [
+    "refra",
+    "agua",
+    "lapis",
+    "quebrad",
+    "piscina"
+   ],
+   "ideia": "O lápis na água parece quebrado porque a água entorta o lápis.",
+   "por_que": "A luz muda de direção ao passar da água para o ar (refração); o lápis não muda."
+  },
+  {
+   "palavras": [
+    "sombra",
+    "eclipse",
+    "propagacao retilinea"
+   ],
+   "ideia": "A sombra é um tipo de luz escura.",
+   "por_que": "A sombra é a região onde a luz não chega, porque a luz anda em linha reta e o objeto a bloqueia."
+  },
+  {
+   "palavras": [
+    "lente",
+    "convergente",
+    "lupa",
+    "divergente"
+   ],
+   "ideia": "Toda lente aumenta a imagem.",
+   "por_que": "A lente divergente sempre dá imagem menor; a convergente só aumenta com o objeto perto, antes do foco."
+  },
+  {
+   "palavras": [
+    "miopia",
+    "hipermetropia",
+    "oculos"
+   ],
+   "ideia": "Quem tem miopia usa lente convergente.",
+   "por_que": "Miopia se corrige com lente divergente; hipermetropia, com convergente."
+  }
+ ]
+}

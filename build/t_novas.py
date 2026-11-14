@@ -10,7 +10,7 @@ def ck(nome, cond):
 
 # cada módulo pequeno (limite do CLAUDE.md) e os nomes usados por outros scripts continuam em novas
 for f in ["novas.py"] + glob.glob("novas_*.py"): ck(f"{f} até 300 linhas", sum(1 for _ in open(f, encoding="utf-8")) <= 300)
-for n in ["guardar_cache", "verificar", "aplicar", "auditar", "animacoes", "modelo", "checar_calculo", "checar_fonte", "classificar_animacao", "entrada_molde"]:
+for n in ["guardar_cache", "verificar", "aplicar", "auditar", "animacoes", "modelo", "checar_calculo", "checar_fonte", "classificar_animacao", "entrada_molde", "checar_teoria", "pente_fino"]:
     ck(f"novas.{n}", callable(getattr(novas, n, None)))
 
 # unidades e calculadora segura
@@ -54,6 +54,31 @@ cal = {"q": "200 g aquecidos 30 °C", "calc": {"vars": {"m": "200 g", "c": "1 ca
 ck("distratores: unidades que combinam não viram erro", not any("Não converteu" in f for f in DS.gerar(cal)[2].values()))
 for t in ("4,2 × 10⁻⁷ m", "25 200 J", "0,0042 mm"): ck(f"formatar lê de volta {t}", DS.formatar(novas.opcao_num(t)[0], t.split()[-1]) == t)
 d = dict(copy.deepcopy(ex), o=o, a=a_, x=x); R = novas.Rel(); novas.checar_calculo(d, "x", R); ck("distratores: checar_calculo sem erro", not R.erros)
+
+# fichas por área: formato certo e erros típicos da área entram nos distratores
+import novas_fichas as FI
+for q in novas.PREFIXO: ck(f"ficha {q} existe e é válida", os.path.exists(f"fichas/{q}.json") and not FI.checar_ficha(q))
+def fr(quiz, c, q="Enunciado."): return list(DS.gerar({"q": q, "calc": c, "_quiz": quiz})[2].values())
+ck("ficha onda: período × frequência", any("período" in f for f in fr("onda", {"vars": {"lam": "2 m", "f": "5 Hz"}, "expr": "lam*f", "unidade": "m/s"})))
+ck("ficha eletro: esqueceu d²", any("quadrado" in f for f in fr("eletro", {"vars": {"q": "2e-6 C", "d": "0,3 m"}, "expr": "9e9*q*q/d**2", "unidade": "N"})))
+ck("ficha termo: °C sem kelvin", any("kelvin" in f for f in fr("termo", {"vars": {"P": "2e5 Pa", "V": "0,03 m³", "T": "300 K"}, "expr": "P*V/T", "unidade": "J/K"})))
+ck("sem quiz: só erros gerais", not any("período" in f for f in fr(None, {"vars": {"lam": "2 m", "f": "5 Hz"}, "expr": "lam*f", "unidade": "m/s"})))
+
+# motor de teoria: pistas que entregam a resposta e sugestões da ficha
+def av(d, quiz=None): R = novas.Rel(); return novas.checar_teoria(d, "x", R, quiz), R
+base = {"q": "Por que a pressão aumenta com a profundidade?", "a": 0, "x": {"1": "a", "2": "b", "3": "c"}}
+ck("teoria: certa longa demais", "longa" in av(dict(base, o=["Porque o peso da coluna de líquido acima aumenta com a profundidade", "Por causa do ar", "Pela cor", "Pelo frio"]))[0])
+ck("teoria: absolutas só nas erradas", "absoluta" in av(dict(base, o=["Depende da altura", "Sempre igual", "Nunca muda", "Só no mar"]))[0])
+ck("teoria: repetida", "repetida" in av(dict(base, o=["A", "B", "B", "C"]))[0])
+ck("teoria: 10⁶ e 10³ não são repetidas", "repetida" not in av(dict(base, o=["3 × 10⁶ J", "3 × 10³ J", "1 J", "2 J"]))[0])
+ck("teoria: todas as anteriores com embaralhamento", "anteriores" in av(dict(base, o=["Altura", "Cor", "Frio", "Todas as anteriores"]))[0])
+ck("teoria: 'acima' comum não é 'anteriores'", "anteriores" not in av(dict(base, o=["Altura acima", "Cor", "Frio", "Ar"]))[0])
+ck("teoria: negação sem destaque", "negacao" in av(dict(base, q="Qual alternativa não está certa?", o=["A", "B", "C", "D"]))[0])
+ck("teoria: NÃO em maiúsculas passa", "negacao" not in av(dict(base, q="Qual alternativa NÃO está certa?", o=["A", "B", "C", "D"]))[0])
+ck("teoria: falta x", "sem_x" in av(dict(base, x={}, o=["A", "B", "C", "D"]))[0])
+ck("teoria: questão de cálculo fica de fora", av(dict(base, c=1, o=["A", "B", "B", "C"]))[0] == [])
+_, R = av(dict(base, q="Um navio pesado de aço flutua?", o=["Sim, pela densidade média", "Não", "Só no mar", "Depende"]), "fluidos")
+ck("teoria: sugere ideia errada da ficha", any("densidade" in i for i in R.infos))
 
 # comandos: verificar (sem gravar relatório) e auditar --estrito
 arqs = sorted(glob.glob("novas/*.json"))

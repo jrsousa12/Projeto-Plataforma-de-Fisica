@@ -3,6 +3,7 @@ Refaz a conta do bloco calc com um erro típico de aluno e usa o resultado como 
 import hashlib
 from novas_comum import *
 from novas_unidades import Q, avaliar, mesmo, qty, unidade
+from novas_fichas import regras_calculo
 
 SUPER = str.maketrans("0123456789-", "⁰¹²³⁴⁵⁶⁷⁸⁹⁻")
 
@@ -41,6 +42,18 @@ def candidatos(d):
     for k in vs:
         if re.match(r"^(dT|deltaT|ΔT)", k) and len(temps) >= 2 and not mesmo(temps[-1], vs[k].v, 1e-6):
             troca(k, Q(temps[-1], vs[k].d), f"Usou a temperatura final ({formatar(temps[-1], '°C')}) no lugar da variação {nome(k)}.")
+    # 1b. erros típicos da área (build/fichas/<quiz>.json, parte "calculo")
+    for r in regras_calculo(d.get("_quiz")):
+        for k in vs:
+            if not re.search(r["var"], k): continue
+            x, fr, t = vs[k], r["frase"].replace("{nome}", nome(k)), r["tipo"]
+            if t == "fator": troca(k, Q(x.v * r["valor"], x.d), fr)
+            elif t == "soma": troca(k, Q(x.v + r["valor"], x.d), fr)
+            elif t == "inverso" and x.v: troca(k, Q(1 / x.v, x.d), fr)
+            elif t == "sem_quadrado" and x.v > 0:
+                try: p = math.log2(_conta(c, dict(vs, **{k: x * 2})) / val)
+                except Exception: continue
+                if abs(abs(p) - 2) < 1e-6: troca(k, Q(math.sqrt(x.v), x.d), fr)
     # 2. unidades não convertidas: só quando as unidades do enunciado não combinam entre si
     nums = {}
     for k, txt in c["vars"].items():
@@ -89,8 +102,10 @@ def preencher(arq):
     j = json.load(open(arq, encoding="utf-8")); n = 0
     for i, d in enumerate(j["questoes"]):
         if d.get("o") != "auto": continue
+        d["_quiz"] = j.get("quiz")
         try: d["o"], d["a"], d["x"] = gerar(d); n += 1
         except Exception as ex: print(f"#{i+1}: não gerou ({ex})"); continue
+        finally: d.pop("_quiz", None)
         print(f"#{i+1}: " + " | ".join(("✔ " if k == d["a"] else "") + t for k, t in enumerate(d["o"])))
     json.dump(j, open(arq, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(f"{n} questão(ões) preenchida(s) em {os.path.basename(arq)}. Confira as frases e rode: python3 novas.py verificar {arq}")

@@ -10,6 +10,7 @@ Uso (a partir da pasta build/):
   python3 novas.py aplicar arq.json        verifica e, se tudo passar, grava em app/perguntas-<quiz>.js
   python3 novas.py auditar [--estrito]     confere a aritmética das explicações de TODOS os bancos
   python3 novas.py animacoes               cobertura de animação do banco inteiro
+  python3 novas.py teoria                  pente-fino das questões de teoria do banco (detalhes em novas/teoria.md)
 Saída 1 se houver erro. Relatório em novas/relatorio.md.
 """
 # O código fica dividido em novas_*.py (um assunto por arquivo); aqui ficam só os comandos.
@@ -21,6 +22,7 @@ from novas_animacao import *
 from novas_moldes import *
 from novas_conceito import *
 from novas_distratores import preencher
+from novas_teoria import checar_teoria, pente_fino
 
 # ----------------------------------------------------------------- comandos
 def carregar(arq):
@@ -42,6 +44,7 @@ def verificar(arqs, online=False, salvar=True):
             checar_fonte(d, loc, R, dom, online)
             duplicadas(d, loc, R, info, quiz)
             checar_calculo(d, loc, R)
+            if not d.get("c"): checar_teoria(d, loc, R, quiz)
             checar_equacoes(d, loc, R)
             if d.get("c") and not d.get("calc") is None: auditar_explicacao(d, loc, R, estrito=True)
             st, mot = classificar_animacao(d, loc, R, info)
@@ -120,4 +123,5 @@ if __name__ == "__main__":
     elif cmd == "aplicar": aplicar(a[1])
     elif cmd == "auditar": sys.exit(auditar("--estrito" in a))
     elif cmd == "animacoes": sys.exit(animacoes())
+    elif cmd == "teoria": sys.exit(pente_fino())
     else: print(__doc__)

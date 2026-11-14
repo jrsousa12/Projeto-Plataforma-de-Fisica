@@ -19,6 +19,7 @@ Gerar a partir do banco um simulado em PDF com gabarito, ou exportar uma seleç�
 > Item 2 feito em 14/11/2026: `testes.py --mudou` (regras em `build/testes_mudou.py`) e ajudante `build/navegador.py`.
 1. ~~**Distratores automáticos (cálculo):**~~ (feito em 14/11/2026: `novas.py distratores`) o motor gera as 3 alternativas erradas a partir de erros típicos (unidade não convertida, potência de 10, divisão invertida, T final no lugar de ΔT), já com a frase do `x` e a conta conferida. Módulo novo `novas_distratores.py` + teste em `t_novas.py`.
 2. ~~**Testes só do que mudou:**~~ (feito) `testes.py --mudou` lê `git diff` e roda só os `t_*.py` ligados aos arquivos alterados (~1–3 min em vez de ~15); o completo fica para o fim da tarefa. Ajudante comum de navegador para os testes (28 arquivos repetem a abertura do Chromium).
+4. ~~**Motores de cálculo e teoria calibrados por área:**~~ (feito em 14/11/2026) um motor de cada tipo para todas as áreas + ficha por área (`build/fichas/<quiz>.json`): erros de conta típicos (período × frequência, °C sem kelvin, d² esquecido, raio × diâmetro, f = R/2...) e ideias erradas comuns dos alunos. Teoria: `novas_teoria.py` e comando `novas.py teoria`.
 3. **Figuras estáticas:** peça de gráfico com eixos (`gx`/`gy`/`path` copiados 5× em `figuras-fenomeno-*.js`) no kit; fazer quando houver figuras novas.
 
 ## Importar questões de Word (docx) — retomar a partir de 20/11/2026 (apresentação do projeto)

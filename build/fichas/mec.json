@@ -1,0 +1,89 @@
+{
+ "_leia": "Ficha da área: 'calculo' = erros de conta típicos (tipo fator|inverso|soma|sem_quadrado; 'var' = nome da variável do bloco calc, em expressão regular); 'teoria' = ideias erradas comuns (palavras do enunciado que ligam a ideia). Guia: build/NOVAS.md.",
+ "calculo": [
+  {
+   "tipo": "sem_quadrado",
+   "var": "^(v|v0|v1|v2|va|vb|vf|t|dt)$",
+   "frase": "Esqueceu de elevar {nome} ao quadrado."
+  }
+ ],
+ "teoria": [
+  {
+   "palavras": [
+    "queda",
+    "cai",
+    "caem",
+    "solt",
+    "pesad"
+   ],
+   "ideia": "O corpo mais pesado cai mais rápido.",
+   "por_que": "Sem resistência do ar, todos os corpos caem com a mesma aceleração g."
+  },
+  {
+   "palavras": [
+    "movimento",
+    "velocidade constante",
+    "forca resultante"
+   ],
+   "ideia": "Para manter um corpo em movimento é preciso uma força.",
+   "por_que": "Pela 1ª lei de Newton, sem força resultante o corpo continua em movimento retilíneo uniforme."
+  },
+  {
+   "palavras": [
+    "acao",
+    "reacao",
+    "3a lei",
+    "terceira lei"
+   ],
+   "ideia": "Ação e reação se anulam porque são opostas.",
+   "por_que": "Ação e reação agem em corpos diferentes, por isso não se anulam."
+  },
+  {
+   "palavras": [
+    "caminhao",
+    "colis",
+    "choque",
+    "bate"
+   ],
+   "ideia": "Na colisão, o caminhão faz mais força no carro do que o carro no caminhão.",
+   "por_que": "Pela 3ª lei, as forças têm a mesma intensidade; o carro sofre mais porque tem menos massa."
+  },
+  {
+   "palavras": [
+    "altura maxima",
+    "ponto mais alto",
+    "lancad",
+    "para cima"
+   ],
+   "ideia": "No ponto mais alto a aceleração é zero.",
+   "por_que": "No ponto mais alto só a velocidade é zero; a aceleração continua sendo g, para baixo."
+  },
+  {
+   "palavras": [
+    "peso",
+    "massa",
+    "lua"
+   ],
+   "ideia": "Peso e massa são a mesma coisa.",
+   "por_que": "Massa é a quantidade de matéria (kg); peso é a força da gravidade sobre ela (N) e muda de lugar para lugar."
+  },
+  {
+   "palavras": [
+    "curva",
+    "circular",
+    "centrifug"
+   ],
+   "ideia": "Na curva aparece uma força que joga o corpo para fora.",
+   "por_que": "Visto do chão, há só a força centrípeta, para dentro; o corpo tende a seguir reto por inércia."
+  },
+  {
+   "palavras": [
+    "energia",
+    "conserv",
+    "atrito"
+   ],
+   "ideia": "A energia some quando há atrito.",
+   "por_que": "A energia não some: o atrito transforma energia mecânica em térmica."
+  }
+ ]
+}

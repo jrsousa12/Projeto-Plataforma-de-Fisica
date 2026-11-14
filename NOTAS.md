@@ -51,6 +51,10 @@ Todo arquivo novo do app entra em: `index.html` (`<script>`, na ordem certa), `s
   2. **Próxima:** exportar questões para o Kahoot (`build/IDEIAS.md`). Antes de iniciar, conversar com o dono sobre os termos; só começar se ele aceitar.
   3. Item 3 do `IDEIAS.md` (peça de gráfico com eixos no kit) só quando houver figuras estáticas novas.
 
+- **Motores calibrados por área (14/11/2026):** `build/novas_teoria.py`, `build/novas_fichas.py` e `build/fichas/<quiz>.json`. Decisão: um motor de cálculo e um de teoria para todas as áreas, com uma ficha de dados por área (não dois motores por área). O quiz embaralha as alternativas (`shuf` em `script.js`), por isso não se confere a letra do gabarito. Pendências:
+  - Pente-fino do banco (`novas.py teoria`): 105 avisos, quase todos "certa bem mais longa" (94) e "sempre/nunca só nas erradas" (10). Corrigir aos poucos, com o dono, olhando `build/novas/teoria.md`.
+  - Ampliar as fichas quando surgir erro típico novo (ex.: graus × radianos, séries × paralelo).
+
 - Remoto mudou para `jrsousa12/Projeto-Plataforma-de-Fisica`; atualizar o endereço do `origin` quando o dono quiser.
 - Rodar `/fewer-permission-prompts` (só o dono pode).
 

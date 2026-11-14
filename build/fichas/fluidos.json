@@ -1,0 +1,87 @@
+{
+ "_leia": "Ficha da área: 'calculo' = erros de conta típicos (tipo fator|inverso|soma|sem_quadrado; 'var' = nome da variável do bloco calc, em expressão regular); 'teoria' = ideias erradas comuns (palavras do enunciado que ligam a ideia). Guia: build/NOVAS.md.",
+ "calculo": [
+  {
+   "tipo": "fator",
+   "var": "^r$",
+   "valor": 2,
+   "frase": "Usou o diâmetro no lugar do raio."
+  },
+  {
+   "tipo": "sem_quadrado",
+   "var": "^(r|v|v1|v2)$",
+   "frase": "Esqueceu de elevar {nome} ao quadrado (área πr² ou ½·ρ·v²)."
+  }
+ ],
+ "teoria": [
+  {
+   "palavras": [
+    "afund",
+    "flutu",
+    "bolo",
+    "navio",
+    "pesad"
+   ],
+   "ideia": "Objetos pesados afundam e leves flutuam.",
+   "por_que": "Quem decide é a densidade: flutua o que é menos denso que o líquido (um navio de aço flutua)."
+  },
+  {
+   "palavras": [
+    "pressao",
+    "formato",
+    "recipiente",
+    "fundo",
+    "paradoxo"
+   ],
+   "ideia": "A pressão no fundo depende da quantidade de líquido no recipiente.",
+   "por_que": "Depende só da altura da coluna, da densidade e de g (p = d·g·h), não do formato."
+  },
+  {
+   "palavras": [
+    "empuxo",
+    "profund"
+   ],
+   "ideia": "O empuxo aumenta quanto mais fundo o objeto estiver.",
+   "por_que": "Com o objeto todo submerso, o empuxo não muda com a profundidade: depende do volume deslocado."
+  },
+  {
+   "palavras": [
+    "canudo",
+    "suga",
+    "aspira",
+    "seringa"
+   ],
+   "ideia": "No canudo, a boca puxa o líquido para cima.",
+   "por_que": "A boca diminui a pressão dentro do canudo, e a pressão atmosférica empurra o líquido para cima."
+  },
+  {
+   "palavras": [
+    "bernoulli",
+    "velocidade",
+    "aviao",
+    "asa"
+   ],
+   "ideia": "Onde o fluido anda mais rápido, a pressão é maior.",
+   "por_que": "Pela equação de Bernoulli, onde a velocidade é maior a pressão é menor."
+  },
+  {
+   "palavras": [
+    "vazao",
+    "estreit",
+    "mangueira",
+    "cano"
+   ],
+   "ideia": "Num cano mais estreito a água anda mais devagar.",
+   "por_que": "A vazão se conserva (A·v constante): no trecho estreito a velocidade aumenta."
+  },
+  {
+   "palavras": [
+    "prensa",
+    "hidraulic",
+    "pascal"
+   ],
+   "ideia": "Na prensa hidráulica a força aumenta e a energia também.",
+   "por_que": "A força aumenta, mas o deslocamento diminui na mesma proporção: a energia (trabalho) não aumenta."
+  }
+ ]
+}

@@ -1,0 +1,86 @@
+{
+ "_leia": "Ficha da área: 'calculo' = erros de conta típicos (tipo fator|inverso|soma|sem_quadrado; 'var' = nome da variável do bloco calc, em expressão regular); 'teoria' = ideias erradas comuns (palavras do enunciado que ligam a ideia). Guia: build/NOVAS.md.",
+ "calculo": [
+  {
+   "tipo": "inverso",
+   "var": "^(f|f1|f2|fa|fb|T)$",
+   "frase": "Confundiu período com frequência (usou 1/{nome})."
+  },
+  {
+   "tipo": "fator",
+   "var": "^lam$",
+   "valor": 0.5,
+   "frase": "Mediu de uma crista a um vale (meia onda) como se fosse o comprimento de onda."
+  }
+ ],
+ "teoria": [
+  {
+   "palavras": [
+    "onda",
+    "transport",
+    "materia"
+   ],
+   "ideia": "A onda carrega a matéria do meio junto com ela.",
+   "por_que": "A onda transporta energia; as partículas do meio só oscilam no lugar."
+  },
+  {
+   "palavras": [
+    "som",
+    "vacuo",
+    "espaco"
+   ],
+   "ideia": "O som se propaga no vácuo.",
+   "por_que": "O som é onda mecânica: precisa de um meio material (ar, água, sólido)."
+  },
+  {
+   "palavras": [
+    "agudo",
+    "grave",
+    "alto",
+    "volume",
+    "intensidade"
+   ],
+   "ideia": "Som alto é o mesmo que som agudo.",
+   "por_que": "Agudo/grave é a altura (frequência); alto/baixo no dia a dia é a intensidade (volume)."
+  },
+  {
+   "palavras": [
+    "frequencia",
+    "meio",
+    "refra",
+    "muda"
+   ],
+   "ideia": "Quando a onda muda de meio, a frequência muda.",
+   "por_que": "A frequência é da fonte e não muda; mudam a velocidade e o comprimento de onda."
+  },
+  {
+   "palavras": [
+    "amplitude",
+    "velocidade"
+   ],
+   "ideia": "Onda com amplitude maior anda mais rápido.",
+   "por_que": "A velocidade depende do meio, não da amplitude."
+  },
+  {
+   "palavras": [
+    "doppler",
+    "ambulancia",
+    "sirene",
+    "aproxima"
+   ],
+   "ideia": "Na ambulância que se aproxima, o som fica mais forte, mas a frequência não muda.",
+   "por_que": "A frequência percebida aumenta (som mais agudo) quando a fonte se aproxima: efeito Doppler."
+  },
+  {
+   "palavras": [
+    "luz",
+    "som",
+    "mais rapido",
+    "trovao",
+    "relampago"
+   ],
+   "ideia": "O som é mais rápido que a luz.",
+   "por_que": "A luz (3 × 10⁸ m/s) é muito mais rápida que o som no ar (cerca de 340 m/s)."
+  }
+ ]
+}

@@ -4,7 +4,9 @@
 2. Escreva as questões **com suas palavras**, baseadas numa página de `fontes_confiaveis.json`. Cada questão precisa de:
    - `fonte`: `url` (https, de um site da lista), `titulo`, `conferido_em`, `base` (o que foi usado) e `verificar` (palavras-chave que existem na página).
    - Cálculo (`"c": 1`): bloco `calc` com `vars` (valores com unidade), `expr`, `expr2` (outro caminho de conta) e `unidade` da resposta.
-   - Alternativas do cálculo: deixe `"o": "auto"` e rode `python3 novas.py distratores arquivo.json`. O motor grava as 4 alternativas, o gabarito (`a`) e a frase de cada errada (`x`), a partir de erros típicos: T final no lugar de ΔT, unidade não convertida, resposta no SI, multiplicou em vez de dividir, potência de 10. Confira as frases antes do `aplicar`.
+   - Alternativas do cálculo: deixe `"o": "auto"` e rode `python3 novas.py distratores arquivo.json`. O motor grava as 4 alternativas, o gabarito (`a`) e a frase de cada errada (`x`), a partir de erros típicos: T final no lugar de ΔT, unidade não convertida, resposta no SI, multiplicou em vez de dividir, potência de 10, e mais os erros típicos da área, que ficam na ficha `fichas/<quiz>.json` (parte `calculo`). Confira as frases antes do `aplicar`.
+   - Questões de teoria: o `verificar` avisa sobre pistas que entregam a resposta (certa muito mais longa, "sempre/nunca" só nas erradas, "todas as anteriores", pergunta negativa sem NÃO em maiúsculas, falta de `x`) e sugere ideias erradas comuns da ficha da área (parte `teoria`) para usar como alternativa. Pente-fino do banco inteiro: `python3 novas.py teoria` (detalhes em `novas/teoria.md`).
+   - Calibrar um motor = acrescentar itens na ficha da área (sem programar); o formato está no `_leia` de cada ficha.
    - Animação: `"an": "chave"` (cena existente ou nova) **ou** `"animacao": {"decisao": "nao_aplica", "motivo": "..."}`.
 3. `python3 novas.py verificar [--online]` confere tudo e escreve `novas/relatorio.md`. Sai com erro se:
    - a fonte não é de site confiável, falta campo, ou o texto copia a fonte;

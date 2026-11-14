@@ -1,0 +1,75 @@
+{
+ "_leia": "Ficha da área: 'calculo' = erros de conta típicos (tipo fator|inverso|soma|sem_quadrado; 'var' = nome da variável do bloco calc, em expressão regular); 'teoria' = ideias erradas comuns (palavras do enunciado que ligam a ideia). Guia: build/NOVAS.md.",
+ "calculo": [
+  {
+   "tipo": "sem_quadrado",
+   "var": "^(d|r)$",
+   "frase": "Esqueceu de elevar a distância {nome} ao quadrado (F = k·q₁·q₂/d²)."
+  }
+ ],
+ "teoria": [
+  {
+   "palavras": [
+    "eletriza",
+    "atrito",
+    "friccao"
+   ],
+   "ideia": "Na eletrização por atrito, cargas positivas passam de um corpo para o outro.",
+   "por_que": "Quem passa de um corpo para o outro são os elétrons (cargas negativas)."
+  },
+  {
+   "palavras": [
+    "neutro",
+    "sem carga"
+   ],
+   "ideia": "Corpo neutro não tem cargas elétricas.",
+   "por_que": "Corpo neutro tem cargas positivas e negativas em mesma quantidade."
+  },
+  {
+   "palavras": [
+    "atra",
+    "neutro",
+    "papel",
+    "pente"
+   ],
+   "ideia": "Corpo eletrizado não atrai corpo neutro.",
+   "por_que": "Atrai: ele separa as cargas do corpo neutro (polarização), e a parte de sinal oposto fica mais perto."
+  },
+  {
+   "palavras": [
+    "campo eletrico",
+    "linhas de campo"
+   ],
+   "ideia": "As linhas de campo saem das cargas negativas.",
+   "por_que": "As linhas saem das cargas positivas e chegam às negativas."
+  },
+  {
+   "palavras": [
+    "condutor",
+    "interior",
+    "dentro",
+    "gaiola"
+   ],
+   "ideia": "O campo elétrico é forte dentro de um condutor eletrizado.",
+   "por_que": "Em equilíbrio, o campo dentro do condutor é nulo e as cargas ficam na superfície."
+  },
+  {
+   "palavras": [
+    "distancia",
+    "dobr",
+    "forca eletrica"
+   ],
+   "ideia": "Dobrando a distância, a força elétrica cai pela metade.",
+   "por_que": "A força cai com o quadrado da distância: dobrando d, a força fica 4 vezes menor."
+  },
+  {
+   "palavras": [
+    "potencial",
+    "tensao",
+    "diferenca de potencial"
+   ],
+   "ideia": "Potencial elétrico e campo elétrico são a mesma grandeza.",
+   "por_que": "Campo é vetor (N/C ou V/m); potencial é escalar (V) e mede energia por unidade de carga."
+  }
+ ]
+}

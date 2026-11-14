@@ -9,7 +9,7 @@ BASICOS = ['t_flow.py', 't_ui.py']   # rodada completa (http, arquivo único, pr
 REGRAS = [
     (r'\.(md|txt|png|svg|webmanifest)$|^\.gitignore$|^build/(novas|exemplos)/', []),  # textos e dados de rascunho
     (r'^build/(navegador\.py|run2\.sh|mockfb\.py|testes(_mudou)?\.py|lista_quizzes\.py)$', TODOS),
-    (r'^build/novas', ['t_novas.py']),
+    (r'^build/(novas|fichas/)', ['t_novas.py']),
     (r'^build/(bundle|compactar)\.py$', ['t_flow.py', 't_estilo.py']),
     (r'^(perguntas-|banco-|quizzes\.js|validar-banco\.js)', ['t_valida.py', 't_lazy.py']),
     (r'\.css$', ['t_estilo.py']),
