@@ -68,6 +68,7 @@ Motor = script que faz o trabalho pesado e devolve só um resumo curto. Criar qu
 - **Comando único de build**: um script que roda tudo em ordem (montar, versionar, validar, gerar docs), cada etapa com `| tail -2`.
 - **Validador/auditor**: confere dados em lote (formato, cálculo, unidades, links) e lista só os erros.
 - **Gerador de conteúdo**: cria itens novos (questões, páginas, registros) a partir de dados mínimos, já conferidos.
+- **Motor de teoria e de cálculo** (projetos com questões): um motor de cada tipo para todas as áreas + uma ficha de dados por área (erros típicos e ideias erradas comuns). Calibrar = editar a ficha. Receita: `motor-teoria.md` do protocolo-token.
 - **Moldes e kit de peças**: partes prontas reaproveitáveis; o novo se monta com elas, nunca recopiando código.
 - **Catálogo/índice**: gera um `.md` curto do que já existe (chave + frase), para achar o que reaproveitar sem abrir arquivos grandes.
 - **Extrator de dados**: exporta só o pedaço necessário (ex.: JSON de um banco), em vez de ler o arquivo inteiro.
