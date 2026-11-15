@@ -57,6 +57,11 @@ Todo arquivo novo do app entra em: `index.html` (`<script>`, na ordem certa), `s
   - Pente-fino do banco (`novas.py teoria`): 105 avisos, quase todos "certa bem mais longa" (94) e "sempre/nunca só nas erradas" (10). Corrigir aos poucos, com o dono, olhando `build/novas/teoria.md`.
   - Ampliar as fichas quando surgir erro típico novo (ex.: graus × radianos, séries × paralelo).
 
+- **Economia de tokens (15/11/2026):** feito `.claude/settings.json`: trava que impede ler os bancos (`perguntas-*.js`, `figuras-animq-auto-dados.js`) com Read/Grep ou `cat`/`grep`/`sed` (`.claude/hooks/bloquear-bancos.sh`) e barra de status com o uso do contexto (`.claude/hooks/barra-contexto.sh`; avisa em 50% e 80%). Próximos passos:
+  1. Rodar `/fewer-permission-prompts` (só o dono; já listado abaixo).
+  2. Usar `/model` com Sonnet ou Haiku em tarefas simples (corrigir questão, trocar texto); Opus para planos e animações.
+  3. Quando `NOTAS.md` ou `build/IDEIAS.md` passarem de ~150 linhas, mover os itens concluídos para um arquivo de histórico.
+
 - Remoto mudou para `jrsousa12/Projeto-Plataforma-de-Fisica`; atualizar o endereço do `origin` quando o dono quiser.
 - Rodar `/fewer-permission-prompts` (só o dono pode).
 
