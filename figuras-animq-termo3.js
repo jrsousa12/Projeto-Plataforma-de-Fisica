@@ -2,8 +2,8 @@
 (function(){"use strict";
 var N=window.AN,t_=N.t,PI=Math.PI;
 var HOT="var(--f-calor)",COLD="var(--f-agua)";
-function flame(x,y,cl){return'<g class="'+(cl||"")+'"><path d="M'+x+' '+y+'c-9-9-9-17-2-26 1 6 5 8 7 13 3-4 2-9 1-12 8 8 11 17 3 25-3 4-6 4-9 0z" fill="'+HOT+'" stroke="#a63a0f" stroke-width="1.2"/><path d="M'+x+' '+(y-2)+'c-4-4-3-9 0-13 2 4 5 6 1 13z" fill="#facc15"/></g>'}
-function arr(x1,y1,x2,y2,c,cl,w){var a=Math.atan2(y2-y1,x2-x1),h=7;return'<g class="'+(cl||"")+'"><line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="'+c+'" stroke-width="'+(w||3)+'" stroke-linecap="round"/><path d="M'+x2+' '+y2+'L'+(x2-h*Math.cos(a-.5))+' '+(y2-h*Math.sin(a-.5))+'L'+(x2-h*Math.cos(a+.5))+' '+(y2-h*Math.sin(a+.5))+'z" fill="'+c+'"/></g>'}
+var flame=N.chama; /* kit: figuras-anim-kit.js */
+var arr=N.seta; /* kit: figuras-anim-kit.js */
 function S(k,b){return'<g class="s'+k+'">'+b+'</g>'}
 function cup(x,y,w,h,f,cl){return'<path d="M'+x+' '+y+'V'+(y+h-6)+'a6 6 0 0 0 6 6h'+(w-12)+'a6 6 0 0 0 6-6V'+y+'" fill="none" stroke="currentColor" stroke-width="2.4"/><rect class="'+(cl||"")+'" x="'+(x+1.5)+'" y="'+(y+h*.28)+'" width="'+(w-3)+'" height="'+(h*.72-2)+'" rx="3" fill="'+f+'" fill-opacity=".5"/>'}
 function C(key,alt,H,s,tr,T,caps,times){N.scene(key,alt,H,s,tr,T,caps,times)}

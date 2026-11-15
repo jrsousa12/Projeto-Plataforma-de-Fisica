@@ -2,9 +2,10 @@
 no modo estudo o relógio anda, o botão Pausar congela e Continuar retoma."""
 import os
 from playwright.sync_api import sync_playwright
+from navegador import abrir
 def larg(pg): return pg.evaluate("parseFloat(document.getElementById('tfill').style.width)")
 with sync_playwright() as p:
-    b=p.chromium.launch(executable_path=os.environ.get('CHROME_PATH') or None,args=['--no-sandbox'])
+    b=abrir(p)
     pg=b.new_page(viewport={'width':800,'height':1000}); errs=[]; pg.on('pageerror',lambda e:errs.append(str(e)))
     pg.clock.install()
     pg.goto('http://localhost:8123/index.html?q=mec'); pg.wait_for_timeout(500)

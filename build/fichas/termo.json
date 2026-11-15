@@ -1,0 +1,110 @@
+{
+ "_leia": "Ficha da área: 'calculo' = erros de conta típicos (tipo fator|inverso|soma|sem_quadrado; 'var' = nome da variável do bloco calc, em expressão regular); 'teoria' = ideias erradas comuns (palavras do enunciado que ligam a ideia). Guia: build/NOVAS.md.",
+ "calculo": [
+  {
+   "tipo": "soma",
+   "var": "^T(\\d|i|f|0)?$",
+   "valor": -273,
+   "frase": "Usou a temperatura em °C, sem passar para kelvin."
+  },
+  {
+   "tipo": "fator",
+   "var": "^gama$",
+   "valor": 0.3333333333333333,
+   "frase": "Usou o coeficiente linear (α) no lugar do volumétrico (γ = 3α)."
+  },
+  {
+   "tipo": "fator",
+   "var": "^beta$",
+   "valor": 0.5,
+   "frase": "Usou o coeficiente linear (α) no lugar do superficial (β = 2α)."
+  }
+ ],
+ "teoria": [
+  {
+   "palavras": [
+    "calor",
+    "temperatura"
+   ],
+   "ideia": "Calor e temperatura são a mesma coisa.",
+   "por_que": "Temperatura mede a agitação das partículas; calor é a energia que passa de um corpo mais quente para um mais frio."
+  },
+  {
+   "palavras": [
+    "frio",
+    "cobertor",
+    "agasalho",
+    "casaco"
+   ],
+   "ideia": "O cobertor esquenta porque produz calor.",
+   "por_que": "O cobertor é isolante: só diminui a perda de calor do corpo, não produz calor."
+  },
+  {
+   "palavras": [
+    "frio",
+    "gelo",
+    "esfria"
+   ],
+   "ideia": "O frio passa do gelo para os outros corpos.",
+   "por_que": "Não existe 'fluxo de frio': é o calor que sai do corpo mais quente para o gelo."
+  },
+  {
+   "palavras": [
+    "metal",
+    "madeira",
+    "toque",
+    "tato",
+    "mais frio"
+   ],
+   "ideia": "O metal está mais frio que a madeira na mesma sala.",
+   "por_que": "Estão na mesma temperatura; o metal parece mais frio porque conduz o calor da mão mais depressa."
+  },
+  {
+   "palavras": [
+    "ferv",
+    "ebulic",
+    "fogo"
+   ],
+   "ideia": "Aumentar o fogo faz a água fervente ficar mais quente.",
+   "por_que": "Durante a ebulição a temperatura fica constante; mais fogo só faz a água evaporar mais rápido."
+  },
+  {
+   "palavras": [
+    "dilat",
+    "furo",
+    "anel",
+    "orificio"
+   ],
+   "ideia": "Ao aquecer uma chapa, o furo diminui.",
+   "por_que": "O furo dilata como se fosse feito do mesmo material: ele aumenta."
+  },
+  {
+   "palavras": [
+    "equilibrio termico",
+    "contato"
+   ],
+   "ideia": "No equilíbrio térmico os corpos têm a mesma quantidade de calor.",
+   "por_que": "No equilíbrio eles têm a mesma temperatura; calor não fica guardado no corpo."
+  },
+  {
+   "palavras": [
+    "mudanca de estado",
+    "fusao",
+    "derret",
+    "latente"
+   ],
+   "ideia": "A temperatura sobe enquanto o gelo derrete.",
+   "por_que": "Na mudança de estado a temperatura fica constante; a energia vai para a mudança (calor latente)."
+  },
+  {
+   "palavras": [
+    "vacuo",
+    "irradia",
+    "radiacao",
+    "sol"
+   ],
+   "ideia": "O calor do Sol chega à Terra por condução.",
+   "por_que": "No vácuo não há matéria para conduzir; o calor chega por radiação (ondas eletromagnéticas)."
+  }
+ ]
+}

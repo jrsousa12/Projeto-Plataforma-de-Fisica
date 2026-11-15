@@ -3,8 +3,9 @@
 notação científica (2,5 × 10⁴); o botão diz "Próxima pergunta" e, na última, "Ver resultado"."""
 import os
 from playwright.sync_api import sync_playwright
+from navegador import abrir
 with sync_playwright() as p:
-    b=p.chromium.launch(executable_path=os.environ.get('CHROME_PATH') or None,args=['--no-sandbox'])
+    b=abrir(p)
     pg=b.new_page(viewport={'width':400,'height':820}); errs=[]
     pg.on('pageerror',lambda e:errs.append(str(e)))
     pg.goto('http://localhost:8123/index.html?q=mec#debug'); pg.wait_for_timeout(500)

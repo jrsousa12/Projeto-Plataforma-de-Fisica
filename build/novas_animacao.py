@@ -1,5 +1,6 @@
 """Viabilidade de animação, estrutura (validador do app) e questões duplicadas. Usado pelo novas.py."""
 from novas_comum import *  # caminhos, imports e utilidades
+from novas_conceito import checar_conceito
 
 # ----------------------------------------------------------------- viabilidade de animação
 FAMILIAS = {  # fórmula na explicação -> construtor de resolução já existente
@@ -23,6 +24,9 @@ def classificar_animacao(d, loc, R, info):
         if not d.get("calc"): R.E(loc, "animacao.decisao='molde' só vale para questão de cálculo (precisa do bloco 'calc')"); return ("erro", "")
         if dec.get("molde", "generico") not in MOLDES: R.E(loc, f"molde '{dec.get('molde')}' desconhecido. Use: {', '.join(MOLDES)}"); return ("erro", "")
         return ("molde", f"animação de resolução gerada pelo molde '{dec.get('molde', 'generico')}'")
+    if dec.get("decisao") == "conceito":
+        if not checar_conceito(dec, loc, R): return ("erro", "")
+        return ("molde", f"animação de conceito gerada pelo molde '{dec.get('molde')}'")
     txt = d.get("q", "") + " " + d.get("e", "")
     quiz = d.get("_quiz", "")
     if d.get("c") or d.get("calc"):

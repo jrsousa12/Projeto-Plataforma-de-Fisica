@@ -6,9 +6,11 @@ Uso (a partir da pasta build/):
   python3 novas.py verificar [arq.json..]  roda todas as verificações (padrão: tudo em novas/*.json)
         --online                           tenta abrir as URLs das fontes e conferir palavras-chave
   python3 novas.py cache URL texto.txt     guarda o texto de uma página para conferir 'fonte.verificar' sem internet
+  python3 novas.py distratores arq.json  preenche "o": "auto" (cálculo) com 3 alternativas erradas e as frases do "x"
   python3 novas.py aplicar arq.json        verifica e, se tudo passar, grava em app/perguntas-<quiz>.js
   python3 novas.py auditar [--estrito]     confere a aritmética das explicações de TODOS os bancos
   python3 novas.py animacoes               cobertura de animação do banco inteiro
+  python3 novas.py teoria                  pente-fino das questões de teoria do banco (detalhes em novas/teoria.md)
 Saída 1 se houver erro. Relatório em novas/relatorio.md.
 """
 # O código fica dividido em novas_*.py (um assunto por arquivo); aqui ficam só os comandos.
@@ -18,6 +20,9 @@ from novas_checagens import *
 from novas_fonte import *
 from novas_animacao import *
 from novas_moldes import *
+from novas_conceito import *
+from novas_distratores import preencher
+from novas_teoria import checar_teoria, pente_fino
 
 # ----------------------------------------------------------------- comandos
 def carregar(arq):
@@ -35,14 +40,16 @@ def verificar(arqs, online=False, salvar=True):
         for i, d in enumerate(qs):
             d["_quiz"] = quiz; loc = f"{base}#{i+1}"; tot += 1
             if "id" not in d: d["id"] = f"novo{i+1}"
+            if d.get("o") == "auto": R.E(loc, f'alternativas ainda em "auto": rode python3 novas.py distratores {base}'); continue
             checar_fonte(d, loc, R, dom, online)
             duplicadas(d, loc, R, info, quiz)
             checar_calculo(d, loc, R)
+            if not d.get("c"): checar_teoria(d, loc, R, quiz)
             checar_equacoes(d, loc, R)
             if d.get("c") and not d.get("calc") is None: auditar_explicacao(d, loc, R, estrito=True)
             st, mot = classificar_animacao(d, loc, R, info)
             linhas.append((loc, d.get("q", "")[:70], st, mot))
-        validar_estrutura(quiz, qs, R, base)
+        validar_estrutura(quiz, [d for d in qs if d.get("o") != "auto"], R, base)
     if salvar:
         with open(os.path.join(NOVAS, "relatorio.md"), "w", encoding="utf-8") as f:
             f.write(f"# Relatório das questões novas ({datetime.date.today()})\n\n{tot} questões verificadas, {len(R.erros)} erro(s), {len(R.avisos)} aviso(s).\n\n## Animações\n\n| Questão | Enunciado | Situação | Observação |\n|---|---|---|---|\n")
@@ -64,6 +71,7 @@ def aplicar(arq):
         novo = dict(d); novo["id"] = f"{pre}{prox:03d}"; prox += 1
         dec = d.get("animacao") or {}
         if dec.get("decisao") == "molde": mold.append(entrada_molde(d, novo["id"], dec.get("molde", "generico"))); novo["an"] = f"calc_{novo['id']}"
+        elif dec.get("decisao") == "conceito": mold.append(entrada_conceito(d, novo["id"], dec)); novo["an"] = f"conc_{novo['id']}"
         sai.append(limpo(novo)); log.append({"id": novo["id"], "fonte": d.get("fonte"), "calc": d.get("calc"), "data": str(datetime.date.today())})
     if mold: gravar_moldes(mold)
     for d in qs: atualizar_fontes(quiz, d.get("fonte"))
@@ -102,7 +110,7 @@ def modelo(quiz, n=1):
     ex = {"t": areas[0], "q": "Enunciado novo (reescrito com suas palavras).", "o": ["Correta", "Errada 1", "Errada 2", "Errada 3"], "a": 0, "h": "Dica curta.", "e": "Explicação.", "n": 2,
           "fonte": {"site": "OpenStax", "url": "https://openstax.org/...", "titulo": "Título da página", "conferido_em": str(datetime.date.today()), "base": "o que se usou da fonte (conceito/valor)", "verificar": ["palavra-chave 1", "palavra-chave 2"]},
           "animacao": {"decisao": "nao_aplica", "motivo": "preencha ou use 'an': 'chave'"}}
-    calc = {"c": 1, "calc": {"vars": {"m": "200 g", "c": "1 cal/g·°C", "dT": "30 °C"}, "expr": "m*c*dT", "expr2": "m*(c*dT)", "unidade": "cal", "tol": 0.005}}
+    calc = {"o": "auto", "c": 1, "calc": {"vars": {"m": "200 g", "c": "1 cal/g·°C", "dT": "30 °C"}, "expr": "m*c*dT", "expr2": "m*(c*dT)", "unidade": "cal", "tol": 0.005}}
     j = {"quiz": quiz, "areas": info["quizzes"][quiz]["areas"], "questoes": [ex] * n + [dict(ex, **calc)]}
     p = os.path.join(NOVAS, f"{quiz}_{datetime.date.today()}.json"); json.dump(j, open(p, "w", encoding="utf-8"), ensure_ascii=False, indent=1); print("criado", p)
 
@@ -111,7 +119,9 @@ if __name__ == "__main__":
     if cmd == "modelo": modelo(a[1], int(a[2]) if len(a) > 2 else 1)
     elif cmd == "verificar": R, _ = verificar([x for x in a[1:] if not x.startswith("--")], "--online" in a); sys.exit(1 if R.erros else 0)
     elif cmd == "cache": guardar_cache(a[1], a[2])
+    elif cmd == "distratores": preencher(a[1])
     elif cmd == "aplicar": aplicar(a[1])
     elif cmd == "auditar": sys.exit(auditar("--estrito" in a))
     elif cmd == "animacoes": sys.exit(animacoes())
+    elif cmd == "teoria": sys.exit(pente_fino())
     else: print(__doc__)

@@ -1,5 +1,6 @@
 import html,sys,os
 from playwright.sync_api import sync_playwright
+from navegador import abrir
 def play(pg,fr,btn,perfect,tag,errs):
     f=fr
     f.locator(btn).click(); pg.wait_for_timeout(300)
@@ -28,7 +29,7 @@ def play(pg,fr,btn,perfect,tag,errs):
             pg.wait_for_timeout(300)
     print('  após botões, erros:',errs)
 with sync_playwright() as p:
-    b=p.chromium.launch(executable_path=__import__('os').environ.get('CHROME_PATH') or None,args=['--no-sandbox'])
+    b=abrir(p)
     for name,url,iframe in (('http','http://localhost:8123/index.html?q=eletro',False),('arquivo único','file://'+os.path.abspath('saida/quiz-arquivo-unico.html')+'?q=eletro',False),('prévia (iframe)','file://'+os.path.abspath('wrap_bundle.html'),True)):
         if iframe:
             s=open('saida/quiz-arquivo-unico.html',encoding='utf-8').read()

@@ -4,6 +4,9 @@
 2. Escreva as questões **com suas palavras**, baseadas numa página de `fontes_confiaveis.json`. Cada questão precisa de:
    - `fonte`: `url` (https, de um site da lista), `titulo`, `conferido_em`, `base` (o que foi usado) e `verificar` (palavras-chave que existem na página).
    - Cálculo (`"c": 1`): bloco `calc` com `vars` (valores com unidade), `expr`, `expr2` (outro caminho de conta) e `unidade` da resposta.
+   - Alternativas do cálculo: deixe `"o": "auto"` e rode `python3 novas.py distratores arquivo.json`. O motor grava as 4 alternativas, o gabarito (`a`) e a frase de cada errada (`x`), a partir de erros típicos: T final no lugar de ΔT, unidade não convertida, resposta no SI, multiplicou em vez de dividir, potência de 10, e mais os erros típicos da área, que ficam na ficha `fichas/<quiz>.json` (parte `calculo`). Confira as frases antes do `aplicar`.
+   - Questões de teoria: o `verificar` avisa sobre pistas que entregam a resposta (certa muito mais longa, "sempre/nunca" só nas erradas, "todas as anteriores", pergunta negativa sem NÃO em maiúsculas, falta de `x`) e sugere ideias erradas comuns da ficha da área (parte `teoria`) para usar como alternativa. Pente-fino do banco inteiro: `python3 novas.py teoria` (detalhes em `novas/teoria.md`).
+   - Calibrar um motor = acrescentar itens na ficha da área (sem programar); o formato está no `_leia` de cada ficha.
    - Animação: `"an": "chave"` (cena existente ou nova) **ou** `"animacao": {"decisao": "nao_aplica", "motivo": "..."}`.
 3. `python3 novas.py verificar [--online]` confere tudo e escreve `novas/relatorio.md`. Sai com erro se:
    - a fonte não é de site confiável, falta campo, ou o texto copia a fonte;
@@ -26,5 +29,6 @@ O quadro FONTE (4 principais) e a tela Fontes leem a lista curada em `app/fontes
 ## Automações extras
 - **Fonte na lista FONTE:** `novas.py aplicar` inclui a página usada (`fonte.url`) na lista `app/fontes.js` da área, se ainda não estiver lá.
 - **Animação automática (molde):** em questão de cálculo use `"animacao": {"decisao": "molde", "molde": "dilatacao"}` (moldes: `generico`, `dilatacao`, `calor`, `pressao`, `coulomb`, `bernoulli`, `latente`, `potencial`). No bloco `calc` você pode acrescentar `simbolo` (ex.: `"ΔL"`), `formula` (texto da fórmula) e `rotulos` (ex.: `{"L0": "L₀", "alfa": "α"}`). O `aplicar` grava a cena em `app/figuras-animq-auto.js` com os dados e a conta, e preenche `an` sozinho. Veja `exemplos/molde_dilatacao.json`.
+- **Animação de conceito (molde):** em questão sem conta use `"animacao": {"decisao": "conceito", "molde": "antes_depois"}` (moldes: `antes_depois`, `etapas`, `comparacao`, `grafico`). Exemplos em `exemplos/conceito.json`; o `aplicar` grava a cena e preenche `an` (`conc_<id>`).
 - **Revisão visual:** `python3 revisao.py --novas` (ou ids, `--area termo`, `--todas`) gera folhas com o começo e o fim de cada animação e acusa texto fora da figura ou sobreposto. Precisa de `python3 -m http.server 8123` rodando na raiz do repositório.
 - **README:** `python3 gerar_readme.py` refaz a tabela de arquivos (o `tudo.sh` já roda). Arquivo novo sem descrição é avisado: acrescente uma linha em `REGRAS`.

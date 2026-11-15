@@ -1,0 +1,80 @@
+{
+ "_leia": "Ficha da área: 'calculo' = erros de conta típicos (tipo fator|inverso|soma|sem_quadrado; 'var' = nome da variável do bloco calc, em expressão regular); 'teoria' = ideias erradas comuns (palavras do enunciado que ligam a ideia). Guia: build/NOVAS.md.",
+ "calculo": [
+  {
+   "tipo": "sem_quadrado",
+   "var": "^(U|i)$",
+   "frase": "Esqueceu de elevar {nome} ao quadrado (P = U²/R ou P = R·i²)."
+  }
+ ],
+ "teoria": [
+  {
+   "palavras": [
+    "corrente",
+    "gasta",
+    "consum",
+    "lampada"
+   ],
+   "ideia": "A lâmpada gasta a corrente: sai menos corrente do que entra.",
+   "por_que": "A corrente é a mesma na entrada e na saída; a lâmpada transforma energia, não 'gasta' carga."
+  },
+  {
+   "palavras": [
+    "serie",
+    "paralelo",
+    "residencia",
+    "casa",
+    "tomada"
+   ],
+   "ideia": "Os aparelhos de casa são ligados em série.",
+   "por_que": "São ligados em paralelo, para cada um receber a mesma tensão e funcionar sozinho."
+  },
+  {
+   "palavras": [
+    "passaro",
+    "fio",
+    "choque"
+   ],
+   "ideia": "O pássaro no fio não leva choque porque está isolado do poste.",
+   "por_que": "Ele não leva choque porque as duas patas estão quase no mesmo potencial: não há corrente por ele."
+  },
+  {
+   "palavras": [
+    "bateria",
+    "pilha",
+    "carga"
+   ],
+   "ideia": "A bateria guarda corrente elétrica.",
+   "por_que": "A bateria guarda energia química e mantém uma diferença de potencial."
+  },
+  {
+   "palavras": [
+    "resistencia",
+    "fio",
+    "grosso",
+    "comprimento"
+   ],
+   "ideia": "Fio mais grosso tem mais resistência.",
+   "por_que": "Fio mais grosso tem menos resistência (R = ρL/A): há mais espaço para as cargas passarem."
+  },
+  {
+   "palavras": [
+    "curto",
+    "fusivel",
+    "disjuntor"
+   ],
+   "ideia": "O fusível serve para aumentar a corrente.",
+   "por_que": "O fusível interrompe o circuito quando a corrente passa do limite, protegendo a instalação."
+  },
+  {
+   "palavras": [
+    "velocidade",
+    "eletron",
+    "acende",
+    "rapido"
+   ],
+   "ideia": "Os elétrons andam da tomada até a lâmpada quase à velocidade da luz.",
+   "por_que": "Os elétrons andam devagar; quem se propaga rápido é o campo elétrico ao longo do fio."
+  }
+ ]
+}

@@ -10,7 +10,7 @@ def ck(nome, cond):
 
 # cada módulo pequeno (limite do CLAUDE.md) e os nomes usados por outros scripts continuam em novas
 for f in ["novas.py"] + glob.glob("novas_*.py"): ck(f"{f} até 300 linhas", sum(1 for _ in open(f, encoding="utf-8")) <= 300)
-for n in ["guardar_cache", "verificar", "aplicar", "auditar", "animacoes", "modelo", "checar_calculo", "checar_fonte", "classificar_animacao", "entrada_molde"]:
+for n in ["guardar_cache", "verificar", "aplicar", "auditar", "animacoes", "modelo", "checar_calculo", "checar_fonte", "classificar_animacao", "entrada_molde", "checar_teoria", "pente_fino"]:
     ck(f"novas.{n}", callable(getattr(novas, n, None)))
 
 # unidades e calculadora segura
@@ -22,6 +22,63 @@ v, u = novas.opcao_num("3,2 × 10⁻³ C"); ck("alternativa 3,2 × 10⁻³ C", n
 # checar_equacoes aceita "x" como lista ou dicionário (antes a lista quebrava o verificar)
 for x in (["a = 10/2 = 5"], {"0": "a = 10/2 = 5"}):
     R = novas.Rel(); novas.checar_equacoes({"e": "", "h": "", "x": x}, "t", R); ck(f"x {type(x).__name__}", True)
+
+# moldes de conceito: exemplos passam, erros comuns são barrados, e o desenho registra as 4 cenas
+import copy, json
+EX = json.load(open("exemplos/conceito.json", encoding="utf-8")); EX.pop("_leia")
+def erros_conc(dec): R = novas.Rel(); novas.checar_conceito(dec, "x", R); return R.erros
+for k, dec in EX.items(): ck(f"conceito exemplo {k} válido", not erros_conc(dec))
+ruim = copy.deepcopy(EX["antes_depois"]); ruim["antes"]["texto"] = "um texto comprido demais para caber"; ck("conceito: texto longo barrado", erros_conc(ruim))
+ruim = copy.deepcopy(EX["comparacao"]); ruim["a"]["icone"] = "foguete"; ck("conceito: ícone desconhecido barrado", erros_conc(ruim))
+ruim = copy.deepcopy(EX["etapas"]); ruim["legendas"].pop(); ck("conceito: uma legenda por etapa", erros_conc(ruim))
+ruim = copy.deepcopy(EX["grafico"]); ruim["curva"] = "zigue"; ck("conceito: curva desconhecida barrada", erros_conc(ruim))
+ents = [novas.entrada_conceito({"q": "teste"}, f"z{i}", d) for i, d in enumerate(EX.values())]
+ck("conceito: chave conc_ e tipo", all(e["key"].startswith("conc_") and e["tipo"] == "conceito" for e in ents))
+JS = ("const vm=require('vm'),fs=require('fs');const w={matchMedia:()=>({matches:false})};w.window=w;vm.createContext(w);w.AN_AUTO=JSON.parse(process.argv[1]);"
+      "for(const f of ['figuras-anim.js','figuras-anim-pecas.js','figuras-anim-kit.js','figuras-anim-passos.js','figuras-animq-auto.js','figuras-animq-conceito.js'])vm.runInContext(fs.readFileSync('../'+f,'utf8'),w);"
+      "console.log(Object.keys(w.ANIM).filter(k=>k.startsWith('conc_')&&w.ANIM[k].s.length>200).length)")
+r = subprocess.run(["node", "-e", JS, json.dumps(ents, ensure_ascii=False)], capture_output=True, text=True)
+ck("conceito: desenho registra as 4 cenas", r.stdout.strip() == "4")
+
+# distratores automáticos: 3 erradas diferentes da certa e entre si, cada uma com frase; o verificar aceita
+import novas_distratores as DS
+ex = json.load(open("exemplos/molde_dilatacao.json", encoding="utf-8"))["questoes"][0]
+o, a_, x = DS.gerar(ex); vals = [novas.opcao_num(t)[0] for t in o]
+ck("distratores: certa na posição a", novas.mesmo(vals[a_], 4.2, 1e-6))
+ck("distratores: 4 valores diferentes", len({round(v, 9) for v in vals}) == 4)
+ck("distratores: uma frase por errada", sorted(x) == sorted(str(i) for i in range(4) if i != a_))
+ck("distratores: T final no lugar de ΔT", any("temperatura final" in f for f in x.values()))
+km = {"q": "72 km em 2 h", "calc": {"vars": {"d": "72 km", "t": "2 h"}, "expr": "d/t", "unidade": "m/s"}}
+ck("distratores: unidade não convertida", any("converter" in f for f in DS.gerar(km)[2].values()))
+cal = {"q": "200 g aquecidos 30 °C", "calc": {"vars": {"m": "200 g", "c": "1 cal/g·°C", "dT": "30 °C"}, "expr": "m*c*dT", "unidade": "cal"}}
+ck("distratores: unidades que combinam não viram erro", not any("Não converteu" in f for f in DS.gerar(cal)[2].values()))
+for t in ("4,2 × 10⁻⁷ m", "25 200 J", "0,0042 mm"): ck(f"formatar lê de volta {t}", DS.formatar(novas.opcao_num(t)[0], t.split()[-1]) == t)
+d = dict(copy.deepcopy(ex), o=o, a=a_, x=x); R = novas.Rel(); novas.checar_calculo(d, "x", R); ck("distratores: checar_calculo sem erro", not R.erros)
+
+# fichas por área: formato certo e erros típicos da área entram nos distratores
+import novas_fichas as FI
+for q in novas.PREFIXO: ck(f"ficha {q} existe e é válida", os.path.exists(f"fichas/{q}.json") and not FI.checar_ficha(q))
+def fr(quiz, c, q="Enunciado."): return list(DS.gerar({"q": q, "calc": c, "_quiz": quiz})[2].values())
+ck("ficha onda: período × frequência", any("período" in f for f in fr("onda", {"vars": {"lam": "2 m", "f": "5 Hz"}, "expr": "lam*f", "unidade": "m/s"})))
+ck("ficha eletro: esqueceu d²", any("quadrado" in f for f in fr("eletro", {"vars": {"q": "2e-6 C", "d": "0,3 m"}, "expr": "9e9*q*q/d**2", "unidade": "N"})))
+ck("ficha termo: °C sem kelvin", any("kelvin" in f for f in fr("termo", {"vars": {"P": "2e5 Pa", "V": "0,03 m³", "T": "300 K"}, "expr": "P*V/T", "unidade": "J/K"})))
+ck("sem quiz: só erros gerais", not any("período" in f for f in fr(None, {"vars": {"lam": "2 m", "f": "5 Hz"}, "expr": "lam*f", "unidade": "m/s"})))
+
+# motor de teoria: pistas que entregam a resposta e sugestões da ficha
+def av(d, quiz=None): R = novas.Rel(); return novas.checar_teoria(d, "x", R, quiz), R
+base = {"q": "Por que a pressão aumenta com a profundidade?", "a": 0, "x": {"1": "a", "2": "b", "3": "c"}}
+ck("teoria: certa longa demais", "longa" in av(dict(base, o=["Porque o peso da coluna de líquido acima aumenta com a profundidade", "Por causa do ar", "Pela cor", "Pelo frio"]))[0])
+ck("teoria: absolutas só nas erradas", "absoluta" in av(dict(base, o=["Depende da altura", "Sempre igual", "Nunca muda", "Só no mar"]))[0])
+ck("teoria: repetida", "repetida" in av(dict(base, o=["A", "B", "B", "C"]))[0])
+ck("teoria: 10⁶ e 10³ não são repetidas", "repetida" not in av(dict(base, o=["3 × 10⁶ J", "3 × 10³ J", "1 J", "2 J"]))[0])
+ck("teoria: todas as anteriores com embaralhamento", "anteriores" in av(dict(base, o=["Altura", "Cor", "Frio", "Todas as anteriores"]))[0])
+ck("teoria: 'acima' comum não é 'anteriores'", "anteriores" not in av(dict(base, o=["Altura acima", "Cor", "Frio", "Ar"]))[0])
+ck("teoria: negação sem destaque", "negacao" in av(dict(base, q="Qual alternativa não está certa?", o=["A", "B", "C", "D"]))[0])
+ck("teoria: NÃO em maiúsculas passa", "negacao" not in av(dict(base, q="Qual alternativa NÃO está certa?", o=["A", "B", "C", "D"]))[0])
+ck("teoria: falta x", "sem_x" in av(dict(base, x={}, o=["A", "B", "C", "D"]))[0])
+ck("teoria: questão de cálculo fica de fora", av(dict(base, c=1, o=["A", "B", "B", "C"]))[0] == [])
+_, R = av(dict(base, q="Um navio pesado de aço flutua?", o=["Sim, pela densidade média", "Não", "Só no mar", "Depende"]), "fluidos")
+ck("teoria: sugere ideia errada da ficha", any("densidade" in i for i in R.infos))
 
 # comandos: verificar (sem gravar relatório) e auditar --estrito
 arqs = sorted(glob.glob("novas/*.json"))

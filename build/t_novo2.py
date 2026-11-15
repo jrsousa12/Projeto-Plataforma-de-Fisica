@@ -1,10 +1,11 @@
 from playwright.sync_api import sync_playwright
+from navegador import abrir
 B='http://localhost:8123/'
 bad=[]
 def ck(c,m):
     if not c:bad.append(m)
 with sync_playwright() as p:
-    b=p.chromium.launch(executable_path=__import__('os').environ.get('CHROME_PATH') or None,args=['--no-sandbox'])
+    b=abrir(p)
     ctx=b.new_context(viewport={'width':400,'height':820});errs=[]
     pg=ctx.new_page();pg.on('pageerror',lambda e:errs.append(str(e)))
     pg.goto(B+'index.html');pg.wait_for_timeout(1200)

@@ -1,11 +1,12 @@
 import os,re
 from playwright.sync_api import sync_playwright
+from navegador import abrir
 B='http://localhost:8123/'
 ERR=[]
 def ck(c,m):
     if not c: ERR.append(m); print('FALHOU:',m)
 with sync_playwright() as p:
-    b=p.chromium.launch(executable_path=__import__('os').environ.get('CHROME_PATH') or None,args=['--no-sandbox'])
+    b=abrir(p)
     errs=[]
     def novo(url):
         pg=b.new_page(viewport={'width':400,'height':820})

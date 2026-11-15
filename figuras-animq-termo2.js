@@ -4,8 +4,8 @@ var N=window.AN,t_=N.t,PI=Math.PI;
 var HOT="var(--f-calor)",COLD="var(--f-agua)",RED="var(--f-verm)";
 function mol(x,y,c,cl,r){return'<circle class="'+(cl||"")+'" cx="'+x+'" cy="'+y+'" r="'+(r||4.5)+'" fill="'+c+'" stroke="currentColor" stroke-width="1"/>'}
 function box(x,y,w,h,f){return'<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="8" fill="'+(f||"var(--surface)")+'" fill-opacity=".6" stroke="currentColor" stroke-width="2"/>'}
-function flame(x,y,cl){return'<g class="'+(cl||"")+'"><path d="M'+x+' '+y+'c-9-9-9-17-2-26 1 6 5 8 7 13 3-4 2-9 1-12 8 8 11 17 3 25-3 4-6 4-9 0z" fill="'+HOT+'" stroke="#a63a0f" stroke-width="1.2"/><path d="M'+x+' '+(y-2)+'c-4-4-3-9 0-13 2 4 5 6 1 13z" fill="#facc15"/></g>'}
-function arr(x1,y1,x2,y2,c,cl,w){var a=Math.atan2(y2-y1,x2-x1),h=7;return'<g class="'+(cl||"")+'"><line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="'+c+'" stroke-width="'+(w||3)+'" stroke-linecap="round"/><path d="M'+x2+' '+y2+'L'+(x2-h*Math.cos(a-.5))+' '+(y2-h*Math.sin(a-.5))+'L'+(x2-h*Math.cos(a+.5))+' '+(y2-h*Math.sin(a+.5))+'z" fill="'+c+'"/></g>'}
+var flame=N.chama; /* kit: figuras-anim-kit.js */
+var arr=N.seta; /* kit: figuras-anim-kit.js */
 function C(key,alt,H,s,tr,T,caps,times){N.scene(key,alt,H,s,tr,T,caps,times)}
 
 /* ---- temperatura = agitação média ---- */

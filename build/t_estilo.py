@@ -2,6 +2,7 @@
 sem falhas; o arquivo único traz o CSS de todos; e alguns estilos de cada arquivo chegam aos elementos."""
 import os,re
 from playwright.sync_api import sync_playwright
+from navegador import abrir
 RAIZ=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))+os.sep
 CSS=re.findall(r'<link rel="stylesheet" href="([^"]+)">',open(RAIZ+'index.html',encoding='utf-8').read())
 print('arquivos de visual:',CSS)
@@ -10,11 +11,12 @@ sw=open(RAIZ+'sw.js',encoding='utf-8').read()
 for f in CSS: assert '"%s"'%f in sw, f+' falta no sw.js (não funcionaria sem internet)'
 uni=open(RAIZ+'build/saida/quiz-arquivo-unico.html',encoding='utf-8').read()
 assert 'rel="stylesheet"' not in uni, 'o arquivo único ainda aponta para .css externo'
+import compactar   # no arquivo único o visual entra compactado
 for f in CSS:
-    trecho=open(RAIZ+f,encoding='utf-8').read().strip().splitlines()[-1]
+    trecho=compactar.css(open(RAIZ+f,encoding='utf-8').read()).strip()[-80:]
     assert trecho in uni, f+' não entrou no arquivo único'
 with sync_playwright() as p:
-    b=p.chromium.launch(executable_path=os.environ.get('CHROME_PATH') or None,args=['--no-sandbox']); errs=[]
+    b=abrir(p); errs=[]
     for pag,extra in (('index.html',[]),('editor.html',['editor.css'])):
         pg=b.new_page(); ruins=[]
         pg.on('pageerror',lambda e:errs.append(str(e)))

@@ -2,13 +2,14 @@
 "← Anterior", navega entre as já respondidas e volta à pergunta atual."""
 import os
 from playwright.sync_api import sync_playwright
+from navegador import abrir
 def responder(f):
     if f.locator('#num').count(): f.locator('#num').fill('1'); f.locator('#nsend').click()
     else: f.locator('#opts .opt').nth(0).click()
     f.wait_for_timeout(150)
     if f.locator('#next:not(.hidden)').count(): f.locator('#next').click(); f.wait_for_timeout(200)
 with sync_playwright() as p:
-    b=p.chromium.launch(executable_path=os.environ.get('CHROME_PATH') or None,args=['--no-sandbox'])
+    b=abrir(p)
     pg=b.new_page(viewport={'width':800,'height':1000}); errs=[]; pg.on('pageerror',lambda e:errs.append(str(e)))
     for q in ('termo','mec'):
         pg.goto('http://localhost:8123/index.html?q=%s'%q); pg.wait_for_timeout(500)

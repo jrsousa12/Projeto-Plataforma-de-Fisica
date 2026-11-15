@@ -44,5 +44,28 @@ Todo arquivo novo do app entra em: `index.html` (`<script>`, na ordem certa), `s
 
 ## Pendências
 
+- **Sequência oficial das próximas tarefas (14/11/2026):** ver `CLAUDE.md`, seção 0, "Próximas tarefas".
+
+- **Motor de questão única (15/11/2026):** `build/questao.py` mostra, busca e altera uma questão sem abrir o banco (os bancos têm linhas de até ~130 KB; um `grep` trazia o banco inteiro). Teste: `build/t_questao.py`. Opção descartada por ora: reorganizar os bancos com uma questão por linha.
+
+- **Item 1 do `build/IDEIAS.md` feito** (`build/novas_distratores.py`, comando `novas.py distratores`). Próximos passos, nesta ordem:
+  1. `build/t_sessao.py` confiável — feito: espera o quiz e a pergunta aparecerem (função `pronta`) em vez de tempo fixo; passou 8 de 8.
+  2. **Próxima:** exportar questões para o Kahoot (`build/IDEIAS.md`). Antes de iniciar, conversar com o dono sobre os termos; só começar se ele aceitar.
+  3. Item 3 do `IDEIAS.md` (peça de gráfico com eixos no kit) só quando houver figuras estáticas novas.
+
+- **Motores calibrados por área (14/11/2026):** `build/novas_teoria.py`, `build/novas_fichas.py` e `build/fichas/<quiz>.json`. Decisão: um motor de cálculo e um de teoria para todas as áreas, com uma ficha de dados por área (não dois motores por área). O quiz embaralha as alternativas (`shuf` em `script.js`), por isso não se confere a letra do gabarito. Pendências:
+  - Pente-fino do banco (`novas.py teoria`): 105 avisos, quase todos "certa bem mais longa" (94) e "sempre/nunca só nas erradas" (10). Corrigir aos poucos, com o dono, olhando `build/novas/teoria.md`.
+  - Ampliar as fichas quando surgir erro típico novo (ex.: graus × radianos, séries × paralelo).
+
+- **Economia de tokens (15/11/2026):** feito `.claude/settings.json`: trava que impede ler os bancos (`perguntas-*.js`, `figuras-animq-auto-dados.js`) com Read/Grep ou `cat`/`grep`/`sed` (`.claude/hooks/bloquear-bancos.sh`) e barra de status com o uso do contexto (`.claude/hooks/barra-contexto.sh`; avisa em 50% e 80%). Próximos passos:
+  1. Rodar `/fewer-permission-prompts` (só o dono; já listado abaixo).
+  2. Usar `/model` com Sonnet ou Haiku em tarefas simples (corrigir questão, trocar texto); Opus para planos e animações.
+  3. Quando `NOTAS.md` ou `build/IDEIAS.md` passarem de ~150 linhas, mover os itens concluídos para um arquivo de histórico.
+
 - Remoto mudou para `jrsousa12/Projeto-Plataforma-de-Fisica`; atualizar o endereço do `origin` quando o dono quiser.
 - Rodar `/fewer-permission-prompts` (só o dono pode).
+
+## Otimização (14/11/2026)
+
+- **Bancos em paralelo** — feito (`5c0994e`): `QuizLista.carregar` (`quizzes.js`) pede todos os arquivos juntos e executa na ordem (`async = false`).
+- **Arquivo único compactado** — feito: `build/bundle.py` passa o código por `build/compactar.py` (CSS) e `build/compactar.js` (JavaScript, lido pelo TypeScript instalado no computador; sem ele, entra sem compactar e avisa). Tira comentários e espaços; mantém as quebras de linha e não renomeia nada. 1242 → 1147 KB. O site publicado (GitHub Pages) continua sem compactar, por decisão do dono.

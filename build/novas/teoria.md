@@ -1,0 +1,109 @@
+# Pente-fino das questões de teoria (2026-11-14)
+
+477 questões, 105 aviso(s).
+
+- edin/d036: teoria: 3 erradas usam 'sempre/nunca/apenas' e a certa não; a pista entrega a resposta
+- edin/d050: teoria: a certa tem 44 letras e as erradas 24 em média; encurte a certa ou alongue as erradas
+- edin/d066: teoria: a certa tem 46 letras e as erradas 27 em média; encurte a certa ou alongue as erradas
+- edin/d070: teoria: a certa tem 64 letras e as erradas 35 em média; encurte a certa ou alongue as erradas
+- edin/d071: teoria: a certa tem 50 letras e as erradas 19 em média; encurte a certa ou alongue as erradas
+- edin/d071: teoria: 2 erradas usam 'sempre/nunca/apenas' e a certa não; a pista entrega a resposta
+- eletro/q012: teoria: 2 erradas usam 'sempre/nunca/apenas' e a certa não; a pista entrega a resposta
+- eletro/q045: teoria: só a certa repete palavras do enunciado; use essas palavras também em uma errada
+- eletro/q087: teoria: a certa tem 46 letras e as erradas 28 em média; encurte a certa ou alongue as erradas
+- eletro/q094: teoria: a certa tem 63 letras e as erradas 32 em média; encurte a certa ou alongue as erradas
+- eletro/q097: teoria: 2 erradas usam 'sempre/nunca/apenas' e a certa não; a pista entrega a resposta
+- eletro/q099: teoria: a certa tem 61 letras e as erradas 33 em média; encurte a certa ou alongue as erradas
+- eletro/q106: teoria: a certa tem 84 letras e as erradas 46 em média; encurte a certa ou alongue as erradas
+- eletro/q107: teoria: a certa tem 51 letras e as erradas 29 em média; encurte a certa ou alongue as erradas
+- eletro/q109: teoria: a certa tem 71 letras e as erradas 35 em média; encurte a certa ou alongue as erradas
+- eletro/q114: teoria: a certa tem 66 letras e as erradas 32 em média; encurte a certa ou alongue as erradas
+- eletro/q119: teoria: a certa tem 52 letras e as erradas 20 em média; encurte a certa ou alongue as erradas
+- eletro/q124: teoria: a certa tem 93 letras e as erradas 36 em média; encurte a certa ou alongue as erradas
+- eletro/q130: teoria: 2 erradas usam 'sempre/nunca/apenas' e a certa não; a pista entrega a resposta
+- eletro/q133: teoria: 2 erradas usam 'sempre/nunca/apenas' e a certa não; a pista entrega a resposta
+- eletro/q134: teoria: a certa tem 77 letras e as erradas 39 em média; encurte a certa ou alongue as erradas
+- eletro/q141: teoria: a certa tem 76 letras e as erradas 43 em média; encurte a certa ou alongue as erradas
+- eletro/q145: teoria: a certa tem 75 letras e as erradas 33 em média; encurte a certa ou alongue as erradas
+- eletro/q155: teoria: a certa tem 77 letras e as erradas 42 em média; encurte a certa ou alongue as erradas
+- eletro/q155: teoria: 3 erradas usam 'sempre/nunca/apenas' e a certa não; a pista entrega a resposta
+- eletro/q157: teoria: a certa tem 50 letras e as erradas 28 em média; encurte a certa ou alongue as erradas
+- eletro/q183: teoria: a certa tem 94 letras e as erradas 45 em média; encurte a certa ou alongue as erradas
+- eletro/q186: teoria: a certa tem 64 letras e as erradas 39 em média; encurte a certa ou alongue as erradas
+- eletro/q190: teoria: a certa tem 70 letras e as erradas 36 em média; encurte a certa ou alongue as erradas
+- eletro/q191: teoria: a certa tem 66 letras e as erradas 34 em média; encurte a certa ou alongue as erradas
+- eletro/q202: teoria: a certa tem 74 letras e as erradas 16 em média; encurte a certa ou alongue as erradas
+- fluidos/f001: teoria: a certa tem 138 letras e as erradas 58 em média; encurte a certa ou alongue as erradas
+- fluidos/f004: teoria: a certa tem 86 letras e as erradas 33 em média; encurte a certa ou alongue as erradas
+- fluidos/f005: teoria: a certa tem 56 letras e as erradas 27 em média; encurte a certa ou alongue as erradas
+- fluidos/f012: teoria: a certa tem 54 letras e as erradas 29 em média; encurte a certa ou alongue as erradas
+- fluidos/f013: teoria: a certa tem 28 letras e as erradas 10 em média; encurte a certa ou alongue as erradas
+- fluidos/f016: teoria: a certa tem 66 letras e as erradas 38 em média; encurte a certa ou alongue as erradas
+- fluidos/f018: teoria: a certa tem 74 letras e as erradas 41 em média; encurte a certa ou alongue as erradas
+- fluidos/f023: teoria: a certa tem 56 letras e as erradas 21 em média; encurte a certa ou alongue as erradas
+- fluidos/f026: teoria: a certa tem 97 letras e as erradas 48 em média; encurte a certa ou alongue as erradas
+- fluidos/f027: teoria: a certa tem 86 letras e as erradas 37 em média; encurte a certa ou alongue as erradas
+- fluidos/f029: teoria: a certa tem 81 letras e as erradas 24 em média; encurte a certa ou alongue as erradas
+- fluidos/f031: teoria: a certa tem 77 letras e as erradas 34 em média; encurte a certa ou alongue as erradas
+- fluidos/f032: teoria: a certa tem 62 letras e as erradas 27 em média; encurte a certa ou alongue as erradas
+- fluidos/f033: teoria: a certa tem 71 letras e as erradas 28 em média; encurte a certa ou alongue as erradas
+- fluidos/f038: teoria: a certa tem 82 letras e as erradas 42 em média; encurte a certa ou alongue as erradas
+- fluidos/f052: teoria: a certa tem 44 letras e as erradas 22 em média; encurte a certa ou alongue as erradas
+- fluidos/f053: teoria: a certa tem 61 letras e as erradas 34 em média; encurte a certa ou alongue as erradas
+- fluidos/f056: teoria: a certa tem 61 letras e as erradas 36 em média; encurte a certa ou alongue as erradas
+- fluidos/f058: teoria: a certa tem 56 letras e as erradas 30 em média; encurte a certa ou alongue as erradas
+- fluidos/f062: teoria: a certa tem 56 letras e as erradas 33 em média; encurte a certa ou alongue as erradas
+- fluidos/f064: teoria: a certa tem 73 letras e as erradas 36 em média; encurte a certa ou alongue as erradas
+- fluidos/f067: teoria: a certa tem 79 letras e as erradas 36 em média; encurte a certa ou alongue as erradas
+- fluidos/f083: teoria: a certa tem 74 letras e as erradas 32 em média; encurte a certa ou alongue as erradas
+- mec/m011: teoria: a certa tem 40 letras e as erradas 22 em média; encurte a certa ou alongue as erradas
+- mec/m022: teoria: a certa tem 46 letras e as erradas 27 em média; encurte a certa ou alongue as erradas
+- mec/m026: teoria: a certa tem 64 letras e as erradas 38 em média; encurte a certa ou alongue as erradas
+- mec/m060: teoria: a certa tem 81 letras e as erradas 32 em média; encurte a certa ou alongue as erradas
+- mec/m062: teoria: a certa tem 73 letras e as erradas 35 em média; encurte a certa ou alongue as erradas
+- mec/m068: teoria: a certa tem 68 letras e as erradas 37 em média; encurte a certa ou alongue as erradas
+- mec/m070: teoria: a certa tem 88 letras e as erradas 48 em média; encurte a certa ou alongue as erradas
+- onda/o003: teoria: a certa tem 110 letras e as erradas 48 em média; encurte a certa ou alongue as erradas
+- onda/o033: teoria: a certa tem 101 letras e as erradas 46 em média; encurte a certa ou alongue as erradas
+- onda/o035: teoria: a certa tem 82 letras e as erradas 45 em média; encurte a certa ou alongue as erradas
+- onda/o036: teoria: a certa tem 51 letras e as erradas 25 em média; encurte a certa ou alongue as erradas
+- onda/o042: teoria: a certa tem 95 letras e as erradas 39 em média; encurte a certa ou alongue as erradas
+- onda/o047: teoria: a certa tem 107 letras e as erradas 55 em média; encurte a certa ou alongue as erradas
+- onda/o053: teoria: 2 erradas usam 'sempre/nunca/apenas' e a certa não; a pista entrega a resposta
+- onda/o061: teoria: a certa tem 104 letras e as erradas 62 em média; encurte a certa ou alongue as erradas
+- optica/p028: teoria: a certa tem 85 letras e as erradas 41 em média; encurte a certa ou alongue as erradas
+- optica/p034: teoria: a certa tem 98 letras e as erradas 39 em média; encurte a certa ou alongue as erradas
+- optica/p037: teoria: a certa tem 105 letras e as erradas 57 em média; encurte a certa ou alongue as erradas
+- optica/p041: teoria: a certa tem 101 letras e as erradas 42 em média; encurte a certa ou alongue as erradas
+- optica/p055: teoria: a certa tem 79 letras e as erradas 39 em média; encurte a certa ou alongue as erradas
+- optica/p057: teoria: a certa tem 57 letras e as erradas 35 em média; encurte a certa ou alongue as erradas
+- termo/t001: teoria: a certa tem 53 letras e as erradas 26 em média; encurte a certa ou alongue as erradas
+- termo/t002: teoria: a certa tem 109 letras e as erradas 50 em média; encurte a certa ou alongue as erradas
+- termo/t004: teoria: a certa tem 57 letras e as erradas 28 em média; encurte a certa ou alongue as erradas
+- termo/t014: teoria: a certa tem 62 letras e as erradas 25 em média; encurte a certa ou alongue as erradas
+- termo/t017: teoria: a certa tem 60 letras e as erradas 13 em média; encurte a certa ou alongue as erradas
+- termo/t019: teoria: a certa tem 61 letras e as erradas 29 em média; encurte a certa ou alongue as erradas
+- termo/t020: teoria: a certa tem 74 letras e as erradas 24 em média; encurte a certa ou alongue as erradas
+- termo/t021: teoria: a certa tem 85 letras e as erradas 35 em média; encurte a certa ou alongue as erradas
+- termo/t026: teoria: a certa tem 88 letras e as erradas 33 em média; encurte a certa ou alongue as erradas
+- termo/t030: teoria: a certa tem 81 letras e as erradas 34 em média; encurte a certa ou alongue as erradas
+- termo/t032: teoria: a certa tem 67 letras e as erradas 32 em média; encurte a certa ou alongue as erradas
+- termo/t039: teoria: a certa tem 48 letras e as erradas 16 em média; encurte a certa ou alongue as erradas
+- termo/t040: teoria: a certa tem 100 letras e as erradas 42 em média; encurte a certa ou alongue as erradas
+- termo/t042: teoria: a certa tem 119 letras e as erradas 29 em média; encurte a certa ou alongue as erradas
+- termo/t045: teoria: a certa tem 45 letras e as erradas 19 em média; encurte a certa ou alongue as erradas
+- termo/t046: teoria: a certa tem 49 letras e as erradas 27 em média; encurte a certa ou alongue as erradas
+- termo/t050: teoria: a certa tem 68 letras e as erradas 18 em média; encurte a certa ou alongue as erradas
+- termo/t051: teoria: a certa tem 58 letras e as erradas 21 em média; encurte a certa ou alongue as erradas
+- termo/t051: teoria: 2 erradas usam 'sempre/nunca/apenas' e a certa não; a pista entrega a resposta
+- termo/t052: teoria: a certa tem 43 letras e as erradas 24 em média; encurte a certa ou alongue as erradas
+- termo/t054: teoria: a certa tem 83 letras e as erradas 33 em média; encurte a certa ou alongue as erradas
+- termo/t055: teoria: a certa tem 53 letras e as erradas 24 em média; encurte a certa ou alongue as erradas
+- termo/t056: teoria: a certa tem 95 letras e as erradas 28 em média; encurte a certa ou alongue as erradas
+- termo/t058: teoria: a certa tem 68 letras e as erradas 22 em média; encurte a certa ou alongue as erradas
+- termo/t060: teoria: a certa tem 58 letras e as erradas 27 em média; encurte a certa ou alongue as erradas
+- termo/t068: teoria: a certa tem 58 letras e as erradas 33 em média; encurte a certa ou alongue as erradas
+- termo/t069: teoria: a certa tem 56 letras e as erradas 23 em média; encurte a certa ou alongue as erradas
+- termo/t081: teoria: a certa tem 45 letras e as erradas 24 em média; encurte a certa ou alongue as erradas
+- termo/t082: teoria: a certa tem 62 letras e as erradas 24 em média; encurte a certa ou alongue as erradas
+- termo/t082: teoria: 2 erradas usam 'sempre/nunca/apenas' e a certa não; a pista entrega a resposta
