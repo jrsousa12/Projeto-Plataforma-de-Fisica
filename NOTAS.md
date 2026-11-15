@@ -46,6 +46,8 @@ Todo arquivo novo do app entra em: `index.html` (`<script>`, na ordem certa), `s
 
 - **Sequência oficial das próximas tarefas (14/11/2026):** ver `CLAUDE.md`, seção 0, "Próximas tarefas".
 
+- **Motor de revisão de textos (15/11/2026):** `build/revtexto.py` (comandos) + `revtexto_portugues.py`, `revtexto_fisica.py`, `revtexto_clareza.py`; listas, limites e avisos a ignorar em `build/revtexto_termos.json`. Só aponta, não altera; relatório em `build/revtexto/relatorio.md` (fora do Git). Decisões do dono: sem corretor ortográfico completo por ora; já aceita arquivos `.txt/.md/.html` (plataforma futura com textos). Primeira rodada nos bancos: 94 questões com a correta bem mais longa que as outras e 16 com alternativas muito desiguais. Pendências: revisar esses avisos com o dono; marcar em `ignorar` os que estiverem certos. Teste: `build/t_revtexto.py`.
+
 - **Motor de questão única (15/11/2026):** `build/questao.py` mostra, busca e altera uma questão sem abrir o banco (os bancos têm linhas de até ~130 KB; um `grep` trazia o banco inteiro). Teste: `build/t_questao.py`. Opção descartada por ora: reorganizar os bancos com uma questão por linha.
 
 - **Item 1 do `build/IDEIAS.md` feito** (`build/novas_distratores.py`, comando `novas.py distratores`). Próximos passos, nesta ordem:

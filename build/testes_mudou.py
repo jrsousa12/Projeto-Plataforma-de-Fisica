@@ -13,6 +13,7 @@ REGRAS = [
     (r'^build/(bundle|compactar)\.py$', ['t_flow.py', 't_estilo.py']),
     (r'^(perguntas-|banco-|quizzes\.js|validar-banco\.js)', ['t_valida.py', 't_lazy.py', 't_questao.py']),
     (r'^build/(t_)?questao\.py$', ['t_questao.py']),
+    (r'^build/(t_)?revtexto', ['t_revtexto.py']),
     (r'\.css$', ['t_estilo.py']),
     (r'^figuras', ['t_anim.py', 't_figs2.py']),
     (r'^(eq\.js|app-subscritos\.js)', ['t_eq.py']),

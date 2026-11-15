@@ -2,6 +2,7 @@ __pycache__/
 *.pyc
 # saídas geradas pelos testes e pela revisão visual
 build/revisao/
+build/revtexto/
 build/wrap_bundle.html
 build/npm/
 build/saida/

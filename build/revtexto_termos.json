@@ -1,0 +1,53 @@
+{
+  "_leia": "Dados do motor de revisão de textos (revtexto.py). Pode editar à vontade: é só texto. Depois rode: python3 build/t_revtexto.py",
+  "preferir": {
+    "_leia": "termo que aparece -> termo que a plataforma usa (padrão único). Ex.: \"aceleração gravitacional\": \"aceleração da gravidade\"",
+    "graus kelvin": "kelvin",
+    "graus Kelvin": "kelvin"
+  },
+  "sem_acento": {
+    "voce": "você", "voces": "vocês", "nao": "não", "entao": "então", "tambem": "também",
+    "alem": "além", "porem": "porém", "atraves": "através", "fisica": "física", "fisico": "físico",
+    "eletrico": "elétrico", "eletrica": "elétrica", "eletron": "elétron", "eletrons": "elétrons",
+    "energia cinetica": "energia cinética", "cinetica": "cinética",
+    "potencia": "potência", "resistencia": "resistência", "tensao": "tensão", "pressao": "pressão",
+    "velocidade media": "velocidade média", "aceleracao": "aceleração", "gravitacao": "gravitação",
+    "temperatura media": "temperatura média", "termica": "térmica",
+    "optica": "óptica", "otica": "óptica", "lampada": "lâmpada", "lampadas": "lâmpadas",
+    "frequencia": "frequência", "periodo": "período", "metodo": "método", "numero": "número",
+    "formula": "fórmula", "calculo": "cálculo", "possivel": "possível", "impossivel": "impossível",
+    "equilibrio": "equilíbrio", "liquido": "líquido", "solido": "sólido", "agua": "água",
+    "unica": "única", "unico": "único", "analise": "análise", "exercicio": "exercício",
+    "questao": "questão", "questoes": "questões", "alternativa correta e": "alternativa correta é"
+  },
+  "_sem_acento_obs": "Palavras ambíguas (esta/está, e/é, ate/até, pais/país) ficam de fora de propósito.",
+  "repeticao_ok": ["nós nós"],
+  "abreviacoes": ["ex", "aprox", "etc", "obs", "fig", "pág", "p", "sr", "sra", "dr", "prof"],
+  "unidades": {
+    "_leia": "padrão (expressão regular) -> sugestão. Unidade escrita de um jeito que foge do padrão.",
+    "\\bKm\\b": "km (k minúsculo)",
+    "\\bK[gG]\\b|\\bKG\\b": "kg (minúsculo)",
+    "\\bK[wW]\\b": "kW",
+    "\\b[kK]hz\\b|\\bKHz\\b": "kHz",
+    "\\bhz\\b|\\bHZ\\b": "Hz",
+    "\\bm/s2\\b": "m/s²",
+    "\\b(c|m|k)?m2\\b": "use o expoente: m², cm²…",
+    "\\b(c|m|k)?m3\\b": "use o expoente: m³, cm³…",
+    "\\bsegs?\\b|\\bseg\\.": "s (segundo)",
+    "\\bhrs?\\b": "h (hora)",
+    "º\\s?C\\b": "°C (sinal de grau), não ºC"
+  },
+  "_unidades_coladas_obs": "Só unidades de 2+ letras: '2h' ou '3C' podem ser 2 vezes h ou 3 vezes C.",
+  "unidades_coladas": "km|kg|cm|mm|m/s²|m/s|km/h|kJ|kW|Hz|kHz|mA|Pa|atm|mL|kcal|cal|min|Ω|μC|nC|°C",
+  "simbolos_com_unidade": ["v", "F", "m", "t", "d", "Q", "E", "P", "V", "U", "i", "R", "T", "p", "a", "g", "f", "λ", "I", "W", "Δt", "Δs", "ΔT", "Δx", "Ec", "Ep"],
+  "limites": {
+    "palavras_por_frase": 40,
+    "correta_maior_vezes": 1.6,
+    "alternativas_razao": 5,
+    "diferenca_minima": 15
+  },
+  "comandos_sem_pergunta": ["calcule", "determine", "assinale", "indique", "marque", "complete", "escolha", "identifique", "estime", "classifique", "associe", "ordene", "selecione", "aponte", "explique", "considere"],
+  "ignorar": {
+    "_leia": "avisos já conferidos que estão certos: \"id\": [\"trecho do aviso\", ...]. Ex.: \"t002\": [\"correta é a mais longa\"]"
+  }
+}

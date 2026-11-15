@@ -113,7 +113,8 @@ Motor = script que faz o trabalho pesado e devolve só um resumo curto. Criar qu
 - **Testes guardados**: todo teste criado numa tarefa fica salvo em `build/t_<assunto>.py` (estrutura em `build/navegador.py`); antes de criar, procurar um `t_*.py` do assunto e ampliá-lo. Nunca teste descartável nem repetido.
 - **Testes seletivos**: `python3 build/testes.py --mudou` roda só os testes ligados ao que mudou (mapa `REGRAS` em `build/testes_mudou.py`); teste novo entra no mapa na hora. Todos (`testes.py`) só no fim.
 - **Ajudantes de teste**: `build/navegador.py` (Chromium), `build/mockfb.py` (Firebase simulado).
-- **Revisão em lote**: `build/revisao.py`, `build/captura_real.py ID...`.
+- **Revisão em lote**: `build/revisao.py` (visual das animações), `build/captura_real.py ID...`.
+- **Revisão de textos**: `build/revtexto.py` (português, unidades, clareza; só aponta, não altera). Listas e limites: `build/revtexto_termos.json`.
 - **Memória**: `build/IDEIAS.md` e `NOTAS.md` (Pendências).
 - **Travas e barra**: `.claude/settings.json` + `.claude/hooks/` (bloqueia ler bancos; barra mostra % do contexto; `session-start.sh` confere Playwright e TypeScript na nuvem).
 
