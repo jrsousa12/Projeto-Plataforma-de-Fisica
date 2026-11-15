@@ -57,6 +57,8 @@ Quiz de Física (ensino médio) que funciona direto no navegador, sem instalar n
 | `fontes.js` | Lista de fontes de referência (botão FONTE e tela Fontes) |
 | `banco-extra.js`, `banco-proprio.js`, `editor.css`, `editor.html`, `editor.js` | Editor de questões; `banco-proprio.js` leva as perguntas próprias aos alunos |
 | `validar-banco.js` | Confere os bancos de perguntas (ids repetidos, gabarito, alternativas, áreas) e a lista quizzes.js |
+| `.claude/hooks/barra-contexto.sh`, `.claude/hooks/bloquear-bancos.sh`, `.claude/hooks/session-start.sh`, `.claude/settings.json` | Configuração do Claude Code: trava que impede ler os bancos direto, barra com o uso do contexto e conferência das ferramentas ao abrir uma sessão na nuvem |
+| `.claude/skills/protocolo-token/SKILL.md`, `.claude/skills/protocolo-token/modelo-CLAUDE.md`, `.claude/skills/protocolo-token/motor-questao.md`, `.claude/skills/protocolo-token/motor-teoria.md`, `.claude/skills/protocolo-token/travas-e-barra.md` | Comando /protocolo-token: regras de economia de tokens e receitas (motores, travas) para aplicar em qualquer projeto |
 | `.github/workflows/validar.yml`, `.github/workflows/versao.yml` | Fluxos automáticos do GitHub: a cada envio validam os bancos, rodam os testes de navegador e atualizam a versão do app |
 | `firebase-config.js`, `nuvem.js` | Nuvem opcional (Firebase): login por código e sincronização do histórico do aluno |
 | `perfil.js` | Desempenho do aluno, treino adaptativo (tudo guardado no aparelho) |
