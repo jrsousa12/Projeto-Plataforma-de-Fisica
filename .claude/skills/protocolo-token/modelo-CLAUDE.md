@@ -79,7 +79,8 @@ Motor = script que faz o trabalho pesado e devolve só um resumo curto. Criar qu
 - **Testes seletivos**: um mapa "arquivo alterado → testes ligados" escolhe só os testes fundamentais da tarefa (incluído ou modificado); teste novo entra no mapa na hora. Suíte completa só no fim da tarefa ou antes de publicar.
 - **Ajudantes comuns de teste**: abrir navegador, simular serviço externo etc. num só módulo usado por todos os testes.
 - **Revisão em lote**: capturas/relatórios de muitos itens de uma vez, em vez de um por um.
-- **Memória do projeto**: listas de ideias e pendências (`IDEIAS.md`, `NOTAS.md`) para não redescobrir decisões.
+- **Memória do projeto**: listas de ideias e pendências (`IDEIAS.md`, `NOTAS.md`) para não redescobrir decisões. Quando passarem de ~150 linhas, mover o que já foi feito para um arquivo de histórico.
+- **Travas e barra**: `.claude/settings.json` + `.claude/hooks/` impedem ler dados enormes direto e mostram o % do contexto usado (receita: `travas-e-barra.md` do protocolo-token).
 
 ## 9. Recursos de Apoio (criar quando o projeto pedir)
 
@@ -97,5 +98,7 @@ Motor = script que faz o trabalho pesado e devolve só um resumo curto. Criar qu
 - Uma tarefa por conversa; `/clear` ao trocar de assunto.
 - Indicar o arquivo com `@nome` quando souber qual é.
 - Pedidos diretos ("faça X em Y"); responder "sim"/"não" às perguntas basta.
+- Tarefa simples (corrigir um texto, trocar um valor): `/model` com Sonnet ou Haiku; Opus para planos e tarefas difíceis.
+- Olhar a barra de contexto embaixo: perto de 50%, `/compact`; ao terminar o assunto, `/clear`.
 - Decisões tomadas ficam anotadas (`NOTAS.md`), para não serem perguntadas de novo.
 
