@@ -72,6 +72,12 @@ Se o projeto tiver questões, aulas, apostilas ou páginas de texto, seguir `mot
 1. Ver se já existe motor que revisa textos. Se não, **perguntar** ao dono quais conferências quer (português, área, clareza) e se aceita corretor ortográfico completo (padrão: não).
 2. **Propor** o motor; criar só com o plano aprovado, calibrado no conteúdo real (cortar alarmes falsos) e com teste guardado.
 
+## Passo 3F — Kit de peças de desenho (projeto com figuras ou animações)
+
+Se o projeto desenhar figuras (SVG, canvas), seguir `kit-figuras.md` (nesta pasta):
+1. Procurar desenho repetido em 2 ou mais arquivos (eixos, setas, molas). Se houver, **propor** levá-lo para um kit de peças. Ilustrações entram no mesmo kit das animações, nunca num motor separado.
+2. Fazer a troca só com a conferência por impressão digital (antes = depois) e listar as peças no `CLAUDE.md` da área.
+
 ## Passo 3D — Travas e barra de contexto
 
 Seguir `travas-e-barra.md` (nesta pasta):
@@ -81,7 +87,7 @@ Seguir `travas-e-barra.md` (nesta pasta):
 
 ## Passo 4 — Levar o comando junto
 
-Se o projeto não tiver `.claude/skills/protocolo-token/`, copiar os seis arquivos (`SKILL.md`, `modelo-CLAUDE.md`, `motor-teoria.md`, `motor-questao.md`, `motor-revtexto.md`, `travas-e-barra.md`) para lá, para que o `/protocolo-token` funcione nas próximas sessões desse projeto (inclusive na nuvem).
+Se o projeto não tiver `.claude/skills/protocolo-token/`, copiar os sete arquivos (`SKILL.md`, `modelo-CLAUDE.md`, `motor-teoria.md`, `motor-questao.md`, `motor-revtexto.md`, `kit-figuras.md`, `travas-e-barra.md`) para lá, para que o `/protocolo-token` funcione nas próximas sessões desse projeto (inclusive na nuvem).
 
 ## Passo 5 — Fechar
 

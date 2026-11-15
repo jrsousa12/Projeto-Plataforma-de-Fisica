@@ -70,6 +70,7 @@ Motor = script que faz o trabalho pesado e devolve só um resumo curto. Criar qu
 - **Gerador de conteúdo**: cria itens novos (questões, páginas, registros) a partir de dados mínimos, já conferidos.
 - **Motor de teoria e de cálculo** (projetos com questões): um motor de cada tipo para todas as áreas + uma ficha de dados por área (erros típicos e ideias erradas comuns). Calibrar = editar a ficha. Receita: `motor-teoria.md` do protocolo-token.
 - **Revisão de textos** (projetos com textos): aponta, sem alterar, erros de português, da área (ex.: unidades) e de clareza; listas e limites num JSON que o dono edita; calibrado no conteúdo real. Receita: `motor-revtexto.md` do protocolo-token.
+- **Kit de peças de desenho** (projetos com figuras ou animações): peça repetida em 2+ arquivos vai para o kit; ilustração usa o mesmo kit das animações; troca conferida por impressão digital (receita em `kit-figuras.md`).
 - **Moldes e kit de peças**: partes prontas reaproveitáveis; o novo se monta com elas, nunca recopiando código.
 - **Catálogo/índice**: gera um `.md` curto do que já existe (chave + frase), para achar o que reaproveitar sem abrir arquivos grandes.
 - **Extrator de dados**: exporta só o pedaço necessário (ex.: JSON de um banco), em vez de ler o arquivo inteiro.
