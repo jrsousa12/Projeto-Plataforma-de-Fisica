@@ -23,6 +23,8 @@ Verificar `~/.claude/CLAUDE.md` e `~/.claude/skills/protocolo-token/`. Para o qu
 2. **Comando global** `~/.claude/skills/protocolo-token/`: "faz o /protocolo-token funcionar em qualquer projeto deste computador". Copiar os cinco arquivos desta pasta.
 3. **Barra de contexto global** (`~/.claude/settings.json`): "mostra embaixo quanto da conversa já foi usado, em todos os projetos". Seguir a parte 2 de `travas-e-barra.md`.
 
+4. **Rede da nuvem** (indicação, não instalação): lembrar o dono de, no claude.ai, abrir Configurações → Ambientes e, no ambiente usado pelo projeto, deixar marcada a opção de liberar os sites de pacotes (pypi.org, npm). Sem ela, o gancho de início de sessão (`session-start.sh`) não consegue instalar o que faltar. Se o nome do ambiente tiver acento, sugerir tirar (ex.: "Plataforma de Fisica"): com acento, o Claude não consegue mudar a sessão para ele. Na nuvem, não insistir: o dono já recusou uma vez (15/11/2026) e prefere decidir pelo computador.
+
 Se o dono recusar, seguir sem instalar.
 
 ## Passo 2 — O projeto já tem `CLAUDE.md` na raiz?
