@@ -32,3 +32,9 @@ Gerar a partir do banco um simulado em PDF com gabarito, ou exportar uma seleç�
 - **Cuidados:** fórmulas do editor de equações do Word dão mais trabalho (texto simples é melhor); texto dentro de imagem (escaneada) não é lido pelo conversor.
 - **Ampliação (14/11/2026, pedido do dono):** ler também **PDF** (extrair imagens com biblioteca a instalar, ex.: PyMuPDF); e **catálogo de peças reaproveitáveis**: cada `[redesenhar]` vira peças no kit (`figuras-anim-kit.js`) + registro em catálogo, para figuras parecidas futuras saírem com poucas centenas de tokens. Vetorização automática (decalque) descartada: pesada, feia e sem modo escuro.
 - **Próximo passo (a partir de 20/11/2026, na ordem das tarefas do `CLAUDE.md`):** montar plano curto do conversor (arquivos, modelo do Word/PDF, catálogo de peças, teste) e validar com o dono antes de codar.
+
+## Modo online (turma conectada) — sem data
+> Conversa de 15/11/2026. Só ideia; nada decidido. Base possível: `nuvem.js` (Firebase, já opcional).
+- **Ganhos:** professor vê resultado por aluno e as questões mais erradas; ranking da turma; partida ao vivo em sala; progresso salvo em qualquer aparelho; tarefa de casa por link com prazo.
+- **Custos:** login e dados de alunos menores (LGPD); depende da internet da escola (o modo sem internet continua); limites/custo do Firebase; partida ao vivo é a parte mais trabalhosa.
+- **Caminho sugerido:** ao vivo em sala → usar a exportação para o Kahoot (tarefa 2) em vez de construir; acompanhamento por aluno → depois, sobre o `nuvem.js`, com plano aprovado pelo dono.
