@@ -26,6 +26,9 @@ with sync_playwright() as p:
         pg.goto(u); pronta(pg)
         print(q,'|',pg.url)
         assert pg.locator('#quiz').is_visible(), 'não retomou ao recarregar'
+        # o texto pode terminar de aparecer (fórmulas) depois que a pergunta começa: esperar até 5 s
+        try: pg.wait_for_function('t=>{var e=document.querySelector("#q");return e&&e.innerText===t}',arg=atual,timeout=5000)
+        except Exception: pass
         assert pg.locator('#q').inner_text()==atual, ('não retomou na mesma pergunta', atual[:60], pg.locator('#q').inner_text()[:60])
         # sessão com mais de 12 h: botão some
         pg.evaluate('QzFonte.abrir()'); pg.wait_for_timeout(200)
