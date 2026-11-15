@@ -8,7 +8,7 @@ description: Aplica o protocolo de economia de tokens e contexto do dono a um pr
 Aplica as regras de `modelo-CLAUDE.md` (nesta mesma pasta) ao projeto atual.
 Responder sempre em PT-BR simples: o dono é professor e não programa.
 
-**Origem oficial**: repositório `jrsousa12/projeto-plataforma-de-fisica`, pasta `.claude/skills/protocolo-token/`. Se esta pasta não existir no projeto atual, buscar os arquivos de lá (`SKILL.md`, `modelo-CLAUDE.md`, `motor-teoria.md`, `motor-questao.md`, `travas-e-barra.md`) (GitHub) antes de seguir.
+**Origem oficial**: repositório `jrsousa12/projeto-plataforma-de-fisica`, pasta `.claude/skills/protocolo-token/`. Se esta pasta não existir no projeto atual, buscar os arquivos de lá (`SKILL.md`, `modelo-CLAUDE.md`, `motor-teoria.md`, `motor-questao.md`, `motor-revtexto.md`, `travas-e-barra.md`) (GitHub) antes de seguir.
 
 ## Passo 1 — Onde estou?
 
@@ -20,7 +20,7 @@ Responder sempre em PT-BR simples: o dono é professor e não programa.
 Verificar `~/.claude/CLAUDE.md` e `~/.claude/skills/protocolo-token/`. Para o que faltar, **perguntar** ao dono (AskUserQuestion), explicando em uma frase cada:
 
 1. **Arquivo global** `~/.claude/CLAUDE.md`: "faz as regras valerem em todos os projetos deste computador, sem copiar nada". Criar com as seções 1 a 10 do modelo + as linhas de **Público** e **Idioma** (sem o resto da seção 0, que é de cada projeto). Se o arquivo já existir: acrescentar só o que falta, nunca apagar.
-2. **Comando global** `~/.claude/skills/protocolo-token/`: "faz o /protocolo-token funcionar em qualquer projeto deste computador". Copiar os cinco arquivos desta pasta.
+2. **Comando global** `~/.claude/skills/protocolo-token/`: "faz o /protocolo-token funcionar em qualquer projeto deste computador". Copiar os seis arquivos desta pasta.
 3. **Barra de contexto global** (`~/.claude/settings.json`): "mostra embaixo quanto da conversa já foi usado, em todos os projetos". Seguir a parte 2 de `travas-e-barra.md`.
 
 4. **Rede da nuvem** (indicação, não instalação): lembrar o dono de, no claude.ai, abrir Configurações → Ambientes e, no ambiente usado pelo projeto, deixar marcada a opção de liberar os sites de pacotes (pypi.org, npm). Sem ela, o gancho de início de sessão (`session-start.sh`) não consegue instalar o que faltar. Se o nome do ambiente tiver acento, sugerir tirar (ex.: "Plataforma de Fisica"): com acento, o Claude não consegue mudar a sessão para ele. Na nuvem, não insistir: o dono já recusou uma vez (15/11/2026) e prefere decidir pelo computador.
@@ -66,6 +66,12 @@ Se o projeto tiver banco de questões (quiz, simulado, provas), seguir `motor-te
 3. Ver também o motor de item único (`motor-questao.md`): quase todo banco de questões precisa dele para mexer em uma questão sem abrir o banco.
 4. **Propor** o motor + as fichas (uma por área). Criar só com o plano aprovado, já com teste guardado e rodando o pente-fino no banco real.
 
+## Passo 3E — Motor de revisão de textos (projeto com textos para pessoas lerem)
+
+Se o projeto tiver questões, aulas, apostilas ou páginas de texto, seguir `motor-revtexto.md` (nesta pasta):
+1. Ver se já existe motor que revisa textos. Se não, **perguntar** ao dono quais conferências quer (português, área, clareza) e se aceita corretor ortográfico completo (padrão: não).
+2. **Propor** o motor; criar só com o plano aprovado, calibrado no conteúdo real (cortar alarmes falsos) e com teste guardado.
+
 ## Passo 3D — Travas e barra de contexto
 
 Seguir `travas-e-barra.md` (nesta pasta):
@@ -75,7 +81,7 @@ Seguir `travas-e-barra.md` (nesta pasta):
 
 ## Passo 4 — Levar o comando junto
 
-Se o projeto não tiver `.claude/skills/protocolo-token/`, copiar os cinco arquivos (`SKILL.md`, `modelo-CLAUDE.md`, `motor-teoria.md`, `motor-questao.md`, `travas-e-barra.md`) para lá, para que o `/protocolo-token` funcione nas próximas sessões desse projeto (inclusive na nuvem).
+Se o projeto não tiver `.claude/skills/protocolo-token/`, copiar os seis arquivos (`SKILL.md`, `modelo-CLAUDE.md`, `motor-teoria.md`, `motor-questao.md`, `motor-revtexto.md`, `travas-e-barra.md`) para lá, para que o `/protocolo-token` funcione nas próximas sessões desse projeto (inclusive na nuvem).
 
 ## Passo 5 — Fechar
 
