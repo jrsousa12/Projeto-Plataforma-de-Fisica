@@ -115,7 +115,7 @@ Motor = script que faz o trabalho pesado e devolve só um resumo curto. Criar qu
 - **Ajudantes de teste**: `build/navegador.py` (Chromium), `build/mockfb.py` (Firebase simulado).
 - **Revisão em lote**: `build/revisao.py`, `build/captura_real.py ID...`.
 - **Memória**: `build/IDEIAS.md` e `NOTAS.md` (Pendências).
-- **Travas e barra**: `.claude/settings.json` + `.claude/hooks/` (bloqueia ler bancos; barra mostra % do contexto).
+- **Travas e barra**: `.claude/settings.json` + `.claude/hooks/` (bloqueia ler bancos; barra mostra % do contexto; `session-start.sh` confere Playwright e TypeScript na nuvem).
 
 ## 9. Recursos de Apoio (usar antes de criar ou pesquisar)
 
