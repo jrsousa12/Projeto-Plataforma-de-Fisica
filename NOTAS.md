@@ -44,6 +44,8 @@ Todo arquivo novo do app entra em: `index.html` (`<script>`, na ordem certa), `s
 
 ## Pendências
 
+- **Peça de gráfico no kit (15/11/2026):** `N.grafico` e `N.eixos` em `figuras-anim-kit.js`; `figuras-fenomeno-base.js` e `-mec.js` já usam (visual idêntico). `catalogo_cenas.js` agora inclui as simulações do fenômeno na impressão digital. Pendência: `figuras-fenomeno-mec.js` (295 linhas) ainda recopia a biblioteca de `figuras-fenomeno-base.js` (`curve`, `area`, `trk`, `mk`, `xy`...); unificar carregando o `-base` no quiz de mecânica (atenção: lá o `x0t` troca o "0" da origem).
+
 - **Sequência oficial das próximas tarefas (14/11/2026):** ver `CLAUDE.md`, seção 0, "Próximas tarefas".
 
 - **Motor de revisão de textos (15/11/2026):** `build/revtexto.py` (comandos) + `revtexto_portugues.py`, `revtexto_fisica.py`, `revtexto_clareza.py`; listas, limites e avisos a ignorar em `build/revtexto_termos.json`. Só aponta, não altera; relatório em `build/revtexto/relatorio.md` (fora do Git). Decisões do dono: sem corretor ortográfico completo por ora; já aceita arquivos `.txt/.md/.html` (plataforma futura com textos). Primeira rodada nos bancos: 94 questões com a correta bem mais longa que as outras e 16 com alternativas muito desiguais. Pendências: revisar esses avisos com o dono; marcar em `ignorar` os que estiverem certos. Teste: `build/t_revtexto.py`.

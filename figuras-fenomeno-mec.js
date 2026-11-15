@@ -7,9 +7,7 @@ function r(n){return Math.round(n*10)/10}
 var uid=0;
 
 /* eixos: x0,y0 = origem; w,h = tamanho; xe/ye = valores nas pontas */
-function axes(x0,y0,w,h,xl,yl,xe,ye,x0t){
- return'<path d="M'+x0+' '+(y0-h-4)+'V'+y0+'H'+(x0+w+4)+'" fill="none" stroke="currentColor" stroke-width="1.6"/>'+
-  t_(x0+w,y0+13,xe+(xl?" "+xl:""),{s:10,a:"end"})+t_(x0-4,y0+4,x0t||"0",{s:10,a:"end"})+t_(x0-4,y0-h+4,ye,{s:10,a:"end"})+t_(x0+4,y0-h-8,yl,{s:11,a:"start"})}
+function axes(x0,y0,w,h,xl,yl,xe,ye,x0t){return N.eixos(x0,y0,w,h,xl,yl,xe,ye,"",x0t)}
 /* traço que é desenhado com o tempo */
 function curve(d,cls,col){return'<path class="'+cls+'" d="'+d+'" pathLength="1" fill="none" stroke="'+col+'" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:0"/>'}
 function draw(cls,T,t0,t1){return N.pr("."+cls,T,"strokeDashoffset",[[t0,1],[t1,0]],"linear")}
@@ -32,7 +30,7 @@ function uv(key,alt,o){
  var x0=44,y0=118,w=232,h=92,T0=1.4,D=4,T=T0+D+3.4,H=268,v0=o.v0,a=o.a,tf=o.tf,vf=v0+a*tf,vm=Math.max(v0,vf),
   S=v0*tf+a*tf*tf/2,bw=o.bw,xs0=16,tr=288-bw,id="ar"+(++uid);
  function v(q){return v0+a*tf*q}function s(q){return v0*tf*q+a*tf*tf*q*q/2}
- function gx(q){return x0+w*q}function gy(vv){return y0-h*vv/vm}
+ var g=N.grafico(x0,y0,w,h,vm),gx=g.x,gy=g.y;
  var xe=xs0+tr,svg='<line x1="10" y1="188" x2="310" y2="188" stroke="currentColor" stroke-width="2"/>'+
   '<g class="bd"><g transform="translate('+xe+' 188)">'+o.body+'</g></g>'+
   axes(x0,y0,w,h,"s",o.yl||"v (m/s)",f(tf),f(vm))+
@@ -47,8 +45,7 @@ function uv(key,alt,o){
 function vert(o){
  var x0=112,y0=196,w=188,h=150,T0=1.4,D=4,T=T0+D+3.4,H=272,y00=o.y0,v0=o.v0,tf=o.tf,hm=o.hm,id="ar"+(++uid);
  function y(q){return y00+v0*tf*q-5*tf*tf*q*q}function vv(q){return v0-10*tf*q}
- function gx(q){return x0+w*q}function gy(m){return y0-h*m/hm}
- var d="",i;for(i=0;i<=24;i++)d+=(i?"L":"M")+r(gx(i/24))+" "+r(gy(y(i/24)))+" ";
+ var g=N.grafico(x0,y0,w,h,hm),gx=g.x,gy=g.y,d=g.d(y,24);
  var bx=58,svg='<line x1="20" y1="'+y0+'" x2="96" y2="'+y0+'" stroke="currentColor" stroke-width="2"/>'+(o.tower?'<rect x="30" y="'+gy(y00)+'" width="16" height="'+(y0-gy(y00))+'" fill="currentColor" fill-opacity=".14" stroke="currentColor" stroke-width="1.6"/>':'')+
   '<g class="bl"><circle cx="'+bx+'" cy="'+(gy(y(1))-7)+'" r="7" fill="'+ACC+'" stroke="currentColor" stroke-width="2"/></g>'+
   axes(x0,y0,w,h,"s","h (m)",f(tf),f(hm))+curve(d,"cv",ACC)+'<circle class="pt" cx="'+gx(1)+'" cy="'+gy(y(1))+'" r="5" fill="'+NEG+'"/>';
@@ -59,7 +56,7 @@ function vert(o){
 /* ===== C. movimento uniforme: corpos + gráfico s×t ===== */
 function mu(key,alt,o){
  var x0=44,y0=118,w=232,h=92,T0=1.4,D=4,T=T0+D+3.4,H=268,L=o.L,tf=o.tf,bw=44,xs0=16,tr=288-2*bw,svg='<line x1="10" y1="188" x2="310" y2="188" stroke="currentColor" stroke-width="2"/>',tracks=[],i,c;
- function gx(q){return x0+w*q}function gy(s){return y0-h*s/L}
+ var g=N.grafico(x0,y0,w,h,L),gx=g.x,gy=g.y;
  function pos(c,q){return c.s0+c.v*tf*q}
  svg+=axes(x0,y0,w,h,o.tl,o.yl,f(tf),f(L));
  o.cars.forEach(function(c,i){
@@ -94,7 +91,7 @@ function circ(key,alt,o){
   (o.arrows?'<line x1="'+(cx+R)+'" y1="'+cy+'" x2="'+(cx+R)+'" y2="'+(cy-32)+'" stroke="'+NEG+'" stroke-width="3"/><path d="M'+(cx+R)+' '+(cy-40)+'L'+(cx+R-5)+' '+(cy-30)+'L'+(cx+R+5)+' '+(cy-30)+'Z" fill="'+NEG+'"/>'+
    (o.arrows===1?'<line x1="'+(cx+R)+'" y1="'+cy+'" x2="'+(cx+R-30)+'" y2="'+cy+'" stroke="currentColor" stroke-width="3"/><path d="M'+(cx+R-38)+' '+cy+'L'+(cx+R-28)+' '+(cy-5)+'L'+(cx+R-28)+' '+(cy+5)+'Z" fill="currentColor"/>':''):'')+'</g>';
  tr.push(N.rot(".rt",T,[[T0,-360*o.turns],[T0+D,0]],"linear"));
- if(o.graph){var x0=162,y0=128,w=132,h=96,gx=function(q){return x0+w*q},gy=function(q){return y0-h*q};
+ if(o.graph){var x0=162,y0=128,w=132,h=96,g=N.grafico(x0,y0,w,h,1),gx=g.x,gy=g.y;
   svg+=axes(x0,y0,w,h,o.xl,o.yl,o.xe,o.ye)+area(id,"ar",x0,y0-h-4,w,h+4,"M"+x0+" "+y0+"L"+gx(1)+" "+gy(1)+"L"+gx(1)+" "+y0+"Z",ACC)+curve("M"+x0+" "+y0+"L"+gx(1)+" "+gy(1),"cv",ACC)+'<circle class="pt" cx="'+gx(1)+'" cy="'+gy(1)+'" r="5" fill="'+NEG+'"/>';
   tr.push(draw("cv",T,T0,T0+D),trk(".pt",T,T0,D,function(q){return[gx(q),gy(q)]},12))}
  else svg+=t_(46,24,o.leg1,{s:12,a:"start",f:NEG})+t_(46,40,o.leg2,{s:12,a:"start"});
@@ -164,9 +161,9 @@ imp("calc_m065","Simulação: um chute de 0,01 s lança uma bola de 0,5 kg a 20 
 function mvg(cl,x,y,inner,extra){return'<g class="'+cl+'"><g transform="translate('+x+' '+y+')'+(extra||"")+'">'+inner+'</g></g>'}
 function xy(key,alt,o){
  var x0=48,y0=196,w=228,h=84,T0=1.4,D=o.D||4,T=T0+D+3.4,H=276,id="ar"+(++uid),ym=o.ym,svg=o.sc||"",tr=[],i,n=o.n||48;
- function gx(q){return x0+w*q}function gy(v){return y0-h*v/ym}
+ var g=N.grafico(x0,y0,w,h,ym),gx=g.x,gy=g.y;
  svg+=axes(x0,y0,w,h,o.xl,o.yl,o.xe,o.ye,o.x0t);
- function path(Y){var d="";for(i=0;i<=n;i++)d+=(i?"L":"M")+r(gx(i/n))+" "+r(gy(Y(i/n)))+" ";return d}
+ function path(Y){return g.d(Y,n)}
  if(o.area){var p=path(o.cv[0].Y);svg+=area(id,"ar",x0,y0-h-4,w,h+4,"M"+x0+" "+y0+" L"+p.slice(1)+"L"+gx(1)+" "+y0+"Z",o.cv[0].col||ACC);tr.push(grow("ar",T,T0,T0+D))}
  o.cv.forEach(function(c,k){svg+=curve(path(c.Y),"cv"+k,c.col||ACC)+'<circle class="pt'+k+'" cx="'+gx(1)+'" cy="'+gy(c.Y(1))+'" r="5" fill="'+(c.col||ACC)+'"/>';
   tr.push(draw("cv"+k,T,T0,T0+D),trk(".pt"+k,T,T0,D,function(q){return[gx(q),gy(c.Y(q))]},n))});

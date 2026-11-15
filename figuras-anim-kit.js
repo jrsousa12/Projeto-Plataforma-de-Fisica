@@ -91,4 +91,25 @@
       '" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/></g>'
     );
   };
+
+  /* gráfico: origem (x0,y0), tamanho w×h, ym = valor no topo. g.x(q) com q de 0 a 1; g.y(v); g.d(Y,n) = "d" da curva Y(q) */
+  N.grafico = function (x0, y0, w, h, ym) {
+    var r = function (n) { return Math.round(n * 10) / 10; },
+      g = { x: function (q) { return x0 + w * q; }, y: function (v) { return y0 - (h * v) / ym; } };
+    g.d = function (Y, n) {
+      var d = "", i;
+      for (i = 0; i <= n; i++) d += (i ? "L" : "M") + r(g.x(i / n)) + " " + r(g.y(Y(i / n))) + " ";
+      return d;
+    };
+    return g;
+  };
+
+  /* eixos do gráfico: xe/ye = valores nas pontas; zero = rótulo da origem ("0"); x0t = texto extra no início do eixo x */
+  N.eixos = function (x0, y0, w, h, xl, yl, xe, ye, x0t, zero) {
+    var t = N.t;
+    return '<path d="M' + x0 + " " + (y0 - h - 4) + "V" + y0 + "H" + (x0 + w + 4) + '" fill="none" stroke="currentColor" stroke-width="1.6"/>' +
+      t(x0 + w, y0 + 13, xe + (xl ? " " + xl : ""), { s: 10, a: "end" }) + t(x0 - 4, y0 + 4, zero || "0", { s: 10, a: "end" }) +
+      (x0t ? t(x0, y0 + 13, x0t, { s: 10, a: "start" }) : "") +
+      t(x0 - 4, y0 - h + 4, ye, { s: 10, a: "end" }) + t(x0 + 4, y0 - h - 8, yl, { s: 11, a: "start" });
+  };
 })();

@@ -6,9 +6,7 @@ function r(n){return Math.round(n*10)/10}
 var uid=0;
 
 /* eixos: x0,y0 = origem; w,h = tamanho; xe/ye = valores nas pontas */
-function axes(x0,y0,w,h,xl,yl,xe,ye,x0t){
- return'<path d="M'+x0+' '+(y0-h-4)+'V'+y0+'H'+(x0+w+4)+'" fill="none" stroke="currentColor" stroke-width="1.6"/>'+
-  t_(x0+w,y0+13,xe+(xl?" "+xl:""),{s:10,a:"end"})+t_(x0-4,y0+4,"0",{s:10,a:"end"})+(x0t?t_(x0,y0+13,x0t,{s:10,a:"start"}):"")+t_(x0-4,y0-h+4,ye,{s:10,a:"end"})+t_(x0+4,y0-h-8,yl,{s:11,a:"start"})}
+function axes(x0,y0,w,h,xl,yl,xe,ye,x0t){return N.eixos(x0,y0,w,h,xl,yl,xe,ye,x0t)}
 /* traço que é desenhado com o tempo */
 function curve(d,cls,col){return'<path class="'+cls+'" d="'+d+'" pathLength="1" fill="none" stroke="'+col+'" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:1;stroke-dashoffset:0"/>'}
 function draw(cls,T,t0,t1){return N.pr("."+cls,T,"strokeDashoffset",[[t0,1],[t1,0]],"linear")}
@@ -30,9 +28,9 @@ function arr(x1,x2,y,lab,col,ly){var d=x2>x1?1:-1;return'<line x1="'+x1+'" y1="'
 function mvg(cl,x,y,inner,extra){return'<g class="'+cl+'"><g transform="translate('+x+' '+y+')'+(extra||"")+'">'+inner+'</g></g>'}
 function xy(key,alt,o){
  var x0=48,y0=196,w=228,h=84,T0=1.4,D=o.D||4,T=T0+D+3.4,H=276,id="ar"+(++uid),ym=o.ym,svg=o.sc||"",tr=[],i,n=o.n||48;
- function gx(q){return x0+w*q}function gy(v){return y0-h*v/ym}
+ var g=N.grafico(x0,y0,w,h,ym),gx=g.x,gy=g.y;
  svg+=axes(x0,y0,w,h,o.xl,o.yl,o.xe,o.ye,o.x0t);
- function path(Y){var d="";for(i=0;i<=n;i++)d+=(i?"L":"M")+r(gx(i/n))+" "+r(gy(Y(i/n)))+" ";return d}
+ function path(Y){return g.d(Y,n)}
  if(o.area){var p=path(o.cv[0].Y);svg+=area(id,"ar",x0,y0-h-4,w,h+4,"M"+x0+" "+y0+" L"+p.slice(1)+"L"+gx(1)+" "+y0+"Z",o.cv[0].col||ACC);tr.push(grow("ar",T,T0,T0+D))}
  o.cv.forEach(function(c,k){svg+=curve(path(c.Y),"cv"+k,c.col||ACC)+'<circle class="pt'+k+'" cx="'+gx(1)+'" cy="'+gy(c.Y(1))+'" r="5" fill="'+(c.col||ACC)+'"/>';
   tr.push(draw("cv"+k,T,T0,T0+D),trk(".pt"+k,T,T0,D,function(q){return[gx(q),gy(c.Y(q))]},n))});

@@ -22,6 +22,8 @@ for (const f of cenas) {
   out.push(""); total += novas.length;
 }
 fs.writeFileSync(path.join(__dirname, "CENAS.md"), out.join("\n"));
+/* simulações do fenômeno (todas calc_): entram só na impressão digital */
+fs.readdirSync(APP).filter(f => /^figuras-fenomeno-.*\.js$/.test(f)).sort((x, y) => (y.includes("-base") - x.includes("-base")) || (x < y ? -1 : 1)).forEach(roda);
 /* impressão digital de TODAS as cenas (inclui calc_): igual antes/depois de uma edição = visual idêntico */
 const A = win.ANIM, ks = Object.keys(A).sort();
 const dig = require("crypto").createHash("sha1").update(ks.map(k => k + JSON.stringify(A[k], (_, v) => typeof v === "function" ? String(v) : v)).join("\n")).digest("hex").slice(0, 12);

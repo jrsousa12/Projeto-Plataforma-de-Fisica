@@ -17,7 +17,7 @@ Passo a passo das questões: `NOVAS.md`. Aqui ficam só as regras para gastar po
 - Código: `novas_conceito.py` (checagem/dados) e `app/figuras-animq-conceito.js` (desenho). Molde novo → nos dois + exemplo + `t_novas.py`.
 
 ## Peças prontas (não recopiar nos arquivos)
-- `figuras-anim-kit.js`: `N.chama(x,y,cl)`, `N.seta(x1,y1,x2,y2,cor,cl,w)`, `N.raio(x1,y1,x2,y2,cl,cor,tracejado,meio)`, `N.tracejado(x1,y1,x2,y2,cl)`, `N.onda(x0,x1,y,A,lam,fase,passo)` e `N.curva(x0,L,y,A,fn)` (dão o `d` do path), `N.mola(x1,x2,y,voltas,a,cl)`.
+- `figuras-anim-kit.js`: `N.chama(x,y,cl)`, `N.seta(x1,y1,x2,y2,cor,cl,w)`, `N.raio(x1,y1,x2,y2,cl,cor,tracejado,meio)`, `N.tracejado(x1,y1,x2,y2,cl)`, `N.onda(x0,x1,y,A,lam,fase,passo)` e `N.curva(x0,L,y,A,fn)` (dão o `d` do path), `N.mola(x1,x2,y,voltas,a,cl)`, `N.grafico(x0,y0,w,h,ym)` (`g.x(q)`, `g.y(v)`, `g.d(Y,n)` = curva) e `N.eixos(x0,y0,w,h,xl,yl,xe,ye,x0t,zero)`.
 - `figuras-anim-pecas.js`: `N.t` (texto), `N.bk` (béquer com líquido), `N.ch` (carga), `N.ar` (seta por ângulo), `N.dm`/`N.dv` (cotas), `N.sb` (subscrito).
 - `figuras-anim-passos.js`: `N.scene` (cena + legendas), `N.el`/`N.pl` (elétron/próton), `N.th` (termômetro), `N.nd` (material neutro), `N.seq`, `N.jit`, `N.calc`.
 - `figuras-anim.js`: trilhas `N.tr`, `N.rot`, `N.sc`, `N.op`, `N.vis`, `N.pr`; setas `N.arrow`/`N.varrow`.
@@ -29,7 +29,7 @@ Passo a passo das questões: `NOVAS.md`. Aqui ficam só as regras para gastar po
 - Fazer as animações em lote; a cada lote, rodar só `node validar-banco.js` e `python3 revisao.py --novas`. `testes.py --mudou` no meio; completo só no fim.
 
 ## Qualidade
-- Mexeu em peça ou arquivo de cenas sem querer mudar o visual → `node catalogo_cenas.js` antes e depois: a impressão digital tem de ser a mesma.
+- Mexeu em peça ou arquivo de cenas sem querer mudar o visual → `node catalogo_cenas.js` antes e depois: a impressão digital (inclui `figuras-fenomeno-*`) tem de ser a mesma.
 - Arquivo novo de figuras: registrar em `quizzes.js` (lista de cada quiz; o `sw.js` lê dali) e em `gerar_readme.py`.
 
 ## Testes
