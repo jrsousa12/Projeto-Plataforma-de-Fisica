@@ -46,6 +46,8 @@ Todo arquivo novo do app entra em: `index.html` (`<script>`, na ordem certa), `s
 
 - **Sequência oficial das próximas tarefas (14/11/2026):** ver `CLAUDE.md`, seção 0, "Próximas tarefas".
 
+- **Motor de questão única (15/11/2026):** `build/questao.py` mostra, busca e altera uma questão sem abrir o banco (os bancos têm linhas de até ~130 KB; um `grep` trazia o banco inteiro). Teste: `build/t_questao.py`. Opção descartada por ora: reorganizar os bancos com uma questão por linha.
+
 - **Item 1 do `build/IDEIAS.md` feito** (`build/novas_distratores.py`, comando `novas.py distratores`). Próximos passos, nesta ordem:
   1. `build/t_sessao.py` confiável — feito: espera o quiz e a pergunta aparecerem (função `pronta`) em vez de tempo fixo; passou 8 de 8.
   2. **Próxima:** exportar questões para o Kahoot (`build/IDEIAS.md`). Antes de iniciar, conversar com o dono sobre os termos; só começar se ele aceitar.

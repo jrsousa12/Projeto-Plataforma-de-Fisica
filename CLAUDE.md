@@ -34,7 +34,7 @@ Este projeto prioriza a economia de contexto e tokens. Toda interação deve seg
 
 - **Limite de Linhas**: Nenhum arquivo de código deve exceder **300 linhas**. O ideal é manter os arquivos abaixo de **200 linhas**.
 - **Ação Corretiva**: Se, ao ler um arquivo, você detectar que ele excede esse limite, sua primeira tarefa deve ser **propor um plano de modularização**, dividindo-o em arquivos menores com responsabilidades únicas, antes de fazer qualquer outra edição.
-- **Arquivos de Dados**: os bancos `perguntas-*.js` têm poucas linhas, mas muito longas (até ~130 KB). Para eles o limite de linhas não se aplica e o critério é o tamanho. Nunca leia um banco inteiro: localize a questão com `grep` pelo id e leia só o trecho. O mesmo vale para `figuras-animq-auto-dados.js` (gerado por `build/novas.py`).
+- **Arquivos de Dados**: os bancos `perguntas-*.js` têm poucas linhas, mas muito longas (até ~130 KB). Para eles o limite de linhas não se aplica e o critério é o tamanho. Nunca leia nem faça `grep` num banco (a linha inteira vem junto): use `python3 build/questao.py ID` (mostrar), `--busca texto` e `ID campo=valor` / `campo:=json` (alterar). O mesmo vale para `figuras-animq-auto-dados.js` (gerado por `build/novas.py`).
 - **Exceções Toleradas** (pouco acima de 300 linhas; dividir só se a tarefa exigir mexer muito neles): `editor.js`, `nuvem.js`, `figuras-animq-eletro.js`, `figuras-animq-fluidos2.js`.
 - **`script.js` (~705 linhas)**: exceção tolerada por decisão do dono (13/11/2026). É o núcleo do quiz (início da rodada, `show`/`pick`, `finish`, níveis), muito ligado entre si; não dividir sem pedido do dono. Ao editar, leia só o trecho necessário.
 - **Motor de questões (`build/novas.py`)**: só os comandos; o resto fica em `build/novas_*.py`, um assunto por arquivo (`unidades`, `checagens`, `fonte`, `animacao`, `moldes`, `conceito`, `distratores`, `teoria`, `fichas`, `comum`). Calibração por área: `build/fichas/<quiz>.json` (dados, não código). Novidade vai no módulo do assunto; teste em `build/t_novas.py`.
@@ -106,6 +106,7 @@ Motor = script que faz o trabalho pesado e devolve só um resumo curto. Criar qu
 - **Gerador de questões**: `build/novas.py` (fonte, cálculo, unidades, distratores, teoria, animação); fichas por área em `build/fichas/`.
 - **Moldes e kit**: `figuras-anim-kit.js` + moldes (`build/CLAUDE.md`); nunca recopiar peças.
 - **Catálogo**: `build/CENAS.md` (gerado por `build/catalogo_cenas.js`): achar cena sem abrir `figuras-animq-*.js`.
+- **Questão única**: `build/questao.py` (mostrar, buscar e alterar uma questão sem abrir o banco).
 - **Extrator**: `node build/dump_banco.js` (bancos em JSON); `build/lista_quizzes.py`.
 - **Correção em lote**: `build/eqaudit.js`, `build/eqcheck.js`, `build/corrigir_eq.py` (frações).
 - **Gerados**: `build/versao.py` (`sw.js`) e `build/gerar_readme.py` (README); não editar à mão.
