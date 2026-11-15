@@ -8,7 +8,7 @@ description: Aplica o protocolo de economia de tokens e contexto do dono a um pr
 Aplica as regras de `modelo-CLAUDE.md` (nesta mesma pasta) ao projeto atual.
 Responder sempre em PT-BR simples: o dono é professor e não programa.
 
-**Origem oficial**: repositório `jrsousa12/projeto-plataforma-de-fisica`, pasta `.claude/skills/protocolo-token/`. Se esta pasta não existir no projeto atual, buscar os três arquivos de lá (GitHub) antes de seguir.
+**Origem oficial**: repositório `jrsousa12/projeto-plataforma-de-fisica`, pasta `.claude/skills/protocolo-token/`. Se esta pasta não existir no projeto atual, buscar os quatro arquivos de lá (GitHub) antes de seguir.
 
 ## Passo 1 — Onde estou?
 
@@ -20,7 +20,7 @@ Responder sempre em PT-BR simples: o dono é professor e não programa.
 Verificar `~/.claude/CLAUDE.md` e `~/.claude/skills/protocolo-token/`. Para o que faltar, **perguntar** ao dono (AskUserQuestion), explicando em uma frase cada:
 
 1. **Arquivo global** `~/.claude/CLAUDE.md`: "faz as regras valerem em todos os projetos deste computador, sem copiar nada". Criar com as seções 1 a 10 do modelo + as linhas de **Público** e **Idioma** (sem o resto da seção 0, que é de cada projeto). Se o arquivo já existir: acrescentar só o que falta, nunca apagar.
-2. **Comando global** `~/.claude/skills/protocolo-token/`: "faz o /protocolo-token funcionar em qualquer projeto deste computador". Copiar `SKILL.md`, `modelo-CLAUDE.md` e `motor-teoria.md`.
+2. **Comando global** `~/.claude/skills/protocolo-token/`: "faz o /protocolo-token funcionar em qualquer projeto deste computador". Copiar `SKILL.md`, `modelo-CLAUDE.md`, `motor-teoria.md` e `motor-questao.md`.
 
 Se o dono recusar, seguir sem instalar.
 
@@ -51,19 +51,21 @@ Mostrar a lista ao dono e **propor** (não executar) a divisão de cada um, ou r
 
 1. Listar os scripts que o projeto já tem (pasta de build/ferramentas, `package.json` "scripts", `Makefile`) e registrá-los em "Comandos úteis" da seção 0, com uma frase cada.
 2. Comparar com os tipos das seções 8 e 9 do modelo e com as tarefas que se repetem no projeto (ver histórico do git e notas do dono).
-3. Testes: ver se existem testes guardados por assunto e um jeito de rodar só os ligados ao que mudou; se faltar, incluir na proposta.
-4. **Propor** (não criar) os motores que faltam, em lista curta: o que faria, quanto trabalho/tokens poupa. Criar só os que o dono aprovar, já pequenos e testados.
+3. Dados em linhas enormes: rodar a detecção de `motor-questao.md` (nesta pasta). Se houver arquivo de dados com linha acima de ~2 000 caracteres e não existir motor de item único, incluí-lo na proposta, seguindo a receita.
+4. Testes: ver se existem testes guardados por assunto e um jeito de rodar só os ligados ao que mudou; se faltar, incluir na proposta.
+5. **Propor** (não criar) os motores que faltam, em lista curta: o que faria, quanto trabalho/tokens poupa. Criar só os que o dono aprovar, já pequenos e testados.
 
 ## Passo 3C — Motor de teoria (só em projeto com questões)
 
 Se o projeto tiver banco de questões (quiz, simulado, provas), seguir `motor-teoria.md` (nesta pasta):
 1. Ver se já existe motor que confere questões de teoria e de cálculo. Se existir um motor por área, propor juntar em um só, com fichas.
 2. **Perguntar** ao dono: quais são as áreas e se o app embaralha as alternativas.
-3. **Propor** o motor + as fichas (uma por área). Criar só com o plano aprovado, já com teste guardado e rodando o pente-fino no banco real.
+3. Ver também o motor de item único (`motor-questao.md`): quase todo banco de questões precisa dele para mexer em uma questão sem abrir o banco.
+4. **Propor** o motor + as fichas (uma por área). Criar só com o plano aprovado, já com teste guardado e rodando o pente-fino no banco real.
 
 ## Passo 4 — Levar o comando junto
 
-Se o projeto não tiver `.claude/skills/protocolo-token/`, copiar os três arquivos (`SKILL.md`, `modelo-CLAUDE.md`, `motor-teoria.md`) para lá, para que o `/protocolo-token` funcione nas próximas sessões desse projeto (inclusive na nuvem).
+Se o projeto não tiver `.claude/skills/protocolo-token/`, copiar os quatro arquivos (`SKILL.md`, `modelo-CLAUDE.md`, `motor-teoria.md`, `motor-questao.md`) para lá, para que o `/protocolo-token` funcione nas próximas sessões desse projeto (inclusive na nuvem).
 
 ## Passo 5 — Fechar
 

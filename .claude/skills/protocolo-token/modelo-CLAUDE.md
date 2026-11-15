@@ -22,7 +22,7 @@ Este projeto prioriza a economia de contexto e tokens. Estas diretrizes são de 
 
 - **Limite**: nenhum arquivo de código acima de **300 linhas**; ideal abaixo de **200**.
 - **Ação corretiva**: ao ler um arquivo acima do limite, a primeira tarefa é **propor um plano de modularização** antes de qualquer outra edição.
-- **Arquivos de dados** (linhas longas, gerados, bancos): o critério é o tamanho, não as linhas. Nunca ler inteiro; localizar com `grep` e ler só o trecho.
+- **Arquivos de dados** (linhas longas, gerados, bancos): o critério é o tamanho, não as linhas. Nunca ler inteiro; localizar com `grep` e ler só o trecho. Se as linhas forem enormes (o `grep` traz tudo), usar o **motor de item único** (seção 8): nunca ler nem dar `grep` nesses arquivos.
 - **Exceções toleradas**: (listar aqui, com o motivo e a data da decisão do dono)
 - **Novas funcionalidades**: já nascem em módulos pequenos, uma responsabilidade por arquivo.
 
@@ -72,6 +72,7 @@ Motor = script que faz o trabalho pesado e devolve só um resumo curto. Criar qu
 - **Moldes e kit de peças**: partes prontas reaproveitáveis; o novo se monta com elas, nunca recopiando código.
 - **Catálogo/índice**: gera um `.md` curto do que já existe (chave + frase), para achar o que reaproveitar sem abrir arquivos grandes.
 - **Extrator de dados**: exporta só o pedaço necessário (ex.: JSON de um banco), em vez de ler o arquivo inteiro.
+- **Motor de item único** (dados em linhas enormes): mostra um item pelo id (`ID`, `-c campos`), busca por texto (`--busca`), altera (`campo=texto`, `campo:=json`, `-x campo`) trocando só o trecho do item, com teste guardado. Receita: `motor-questao.md` do protocolo-token.
 - **Correção em lote**: acha e corrige um mesmo erro em todos os arquivos de uma vez.
 - **Gerados automáticos**: versão, tabelas do README, listas; nunca editar à mão (anotar na seção 0).
 - **Testes guardados**: todo teste criado numa tarefa vira arquivo permanente (um por assunto, ex.: `testes/t_<assunto>`), nunca descartável. Antes de criar, procurar um teste existente e ampliá-lo; não reescrever testes que já existem.
