@@ -29,9 +29,9 @@ with sync_playwright() as p:
     pg.click('#mnu');pg.click('body',position={'x':200,'y':600});pg.wait_for_timeout(100)
     ck(not pg.locator('#fz').is_visible(),'clique fora fecha')
     # resumo
-    pg.click('details.sum summary');pg.wait_for_timeout(200)
-    ck(pg.locator('details.sum .fr').count()>=4,'frações no resumo')
-    pg.locator('details.sum').scroll_into_view_if_needed();pg.screenshot(path='/tmp/m3.png')
+    pg.click('#home details.sum summary');pg.wait_for_timeout(200)
+    ck(pg.locator('#home details.sum .fr').count()>=4,'frações no resumo')
+    pg.locator('#home details.sum').scroll_into_view_if_needed();pg.screenshot(path='/tmp/m3.png')
     # cartões
     pg.locator('#bnav [data-v=cards]').click();pg.wait_for_timeout(200)
     t0=pg.inner_text('#cc');pg.click('#cflip');pg.wait_for_timeout(250)
