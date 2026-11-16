@@ -12,7 +12,7 @@ Aplica `modelo-CLAUDE.md` ao projeto atual. Responder em PT-BR simples (o dono �
 - **Nunca apagar** regra do dono; em conflito, perguntar.
 - Ler só o necessário; não varrer o projeto.
 
-**Arquivos da skill** (copiar sempre todos): `SKILL.md`, `modelo-CLAUDE.md`, `motor-questao.md`, `motor-teoria.md`, `motor-revtexto.md`, `kit-figuras.md`, `travas-e-barra.md`.
+**Arquivos da skill** (copiar sempre todos): `SKILL.md`, `modelo-CLAUDE.md`, `motor-questao.md`, `motor-teoria.md`, `motor-revtexto.md`, `kit-figuras.md`, `travas-e-barra.md`, `diagnostico.sh`.
 **Origem**: GitHub `jrsousa12/projeto-plataforma-de-fisica`, pasta `.claude/skills/protocolo-token/`. Faltou algum arquivo aqui → buscar de lá antes de seguir.
 
 ## Passo 1 — Onde estou?
@@ -31,14 +31,11 @@ Aplica `modelo-CLAUDE.md` ao projeto atual. Responder em PT-BR simples (o dono �
 
 ## Passo 3 — Diagnóstico (só olhar, anotar o que falta)
 
-```bash
-git ls-files | grep -vE '(node_modules|vendor|dist|\.min\.|\.lock|\.json$|\.md$)' \
-  | xargs wc -l 2>/dev/null | awk '$1>300 && $2!="total"' | sort -rn | head -20
-```
+Rodar `bash .claude/skills/protocolo-token/diagnostico.sh` (ou o da pasta global) **antes de ler qualquer arquivo**. Ele confere sozinho a tabela abaixo e imprime só `OK` / `FALTA` / `INFO`; ler o resumo e abrir apenas as receitas apontadas. Sem o script, conferir a tabela à mão.
 
 | Se o projeto tem… | Conferir | Receita |
 |---|---|---|
-| sempre | arquivos > 300 linhas (comando acima) → dividir ou registrar exceção | — |
+| sempre | arquivos > 300 linhas não citados no `CLAUDE.md` → dividir ou registrar exceção | — |
 | sempre | scripts existentes listados em "Comandos úteis" | seções 8–9 do modelo |
 | sempre | testes guardados por assunto + rodar só o que mudou | seção 8 do modelo |
 | sempre | barra de contexto (global ou do projeto) | `travas-e-barra.md` |

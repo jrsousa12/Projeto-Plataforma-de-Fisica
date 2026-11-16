@@ -44,6 +44,8 @@ Todo arquivo novo do app entra em: `index.html` (`<script>`, na ordem certa), `s
 
 ## Pendências
 
+- **Protocolo-token reorganizado + diagnóstico (16/11/2026):** `SKILL.md` em passos 1–6 com tabela; `diagnostico.sh` confere o projeto e imprime só OK/FALTA/INFO (teste `build/t_diagnostico.py`). Pendência: copiar `diagnostico.sh` para `~/.claude/skills/protocolo-token/` no notebook (rodar `/protocolo-token` lá).
+
 - **Peça de gráfico no kit (15/11/2026):** `N.grafico` e `N.eixos` em `figuras-anim-kit.js`; `figuras-fenomeno-base.js` e `-mec.js` já usam (visual idêntico). `catalogo_cenas.js` agora inclui as simulações do fenômeno na impressão digital. Pendência: `figuras-fenomeno-mec.js` (295 linhas) ainda recopia a biblioteca de `figuras-fenomeno-base.js` (`curve`, `area`, `trk`, `mk`, `xy`...); unificar carregando o `-base` no quiz de mecânica (atenção: lá o `x0t` troca o "0" da origem).
 
 - **Sequência oficial das próximas tarefas (14/11/2026):** ver `CLAUDE.md`, seção 0, "Próximas tarefas".
